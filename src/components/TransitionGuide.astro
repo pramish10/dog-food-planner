@@ -10,18 +10,18 @@ const TRANSITION_DAYS = [
 ];
 ---
 
-<section id="transition-section" class="py-12 sm:py-20 bg-[#fafafa] border-b border-[#ebebeb]">
+<section id="transition-section" class="py-12 sm:py-20 bg-[#fafafa] dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
   <div class="max-w-5xl mx-auto px-3.5 sm:px-6">
     
     <!-- Section Header -->
     <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
-      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] bg-[#ffffff] border border-[#ebebeb] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#ffffff] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
         <span class="text-[#10b981]">02</span> // DIGESTIVE PROTOCOL
       </div>
-      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-2 sm:mb-3">
+      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2 sm:mb-3">
         The 7-Day Gentle Transition Roadmap
       </h2>
-      <p class="text-xs sm:text-base text-[#4d4d4d] leading-relaxed">
+      <p class="text-xs sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
         A canine digestive tract requires 5–7 days to recalibrate stomach acid pH and microbiome bacteria when shifting from high-carb kibble to fresh or raw meals.
       </p>
     </div>
@@ -29,27 +29,27 @@ const TRANSITION_DAYS = [
     <!-- 7-Day Timeline Cards (Responsive Grid: 2 cols on mobile, 4 on tablet, 7 on desktop) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2.5 sm:gap-3 mb-8 sm:mb-10">
       {TRANSITION_DAYS.map((item) => (
-        <div class="p-3.5 sm:p-4 bg-white rounded-xl border border-[#ebebeb] flex flex-col justify-between hover:border-[#171717] transition-all group">
+        <div class="p-3.5 sm:p-4 bg-white dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
           <div>
             <div class="flex items-center justify-between mb-1.5">
-              <span class="font-mono text-[10px] sm:text-xs font-bold text-[#171717] bg-[#f2f2f2] group-hover:bg-[#171717] group-hover:text-white px-2 py-0.5 rounded transition-colors">
+              <span class="font-mono text-[10px] sm:text-xs font-bold text-[#171717] dark:text-[#ededed] bg-[#f2f2f2] dark:bg-[#262626] group-hover:bg-[#171717] dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-[#171717] px-2 py-0.5 rounded transition-colors">
                 DAY {item.day}
               </span>
             </div>
 
             <!-- Ratio Stacked Bar -->
-            <div class="w-full bg-[#ebebeb] h-2 sm:h-2.5 rounded-full overflow-hidden flex my-2 sm:my-3">
+            <div class="w-full bg-[#ebebeb] dark:bg-[#262626] h-2 sm:h-2.5 rounded-full overflow-hidden flex my-2 sm:my-3">
               <div class="bg-[#10b981] h-full" style={`width: ${item.freshPct}%`}></div>
-              <div class="bg-[#d1d1d1] h-full" style={`width: ${item.oldPct}%`}></div>
+              <div class="bg-[#d1d1d1] dark:bg-[#404040] h-full" style={`width: ${item.oldPct}%`}></div>
             </div>
 
             <div class="text-[10px] sm:text-[11px] font-mono mb-2">
               <span class="text-[#10b981] font-bold">{item.freshPct}% Fresh</span>
-              <span class="text-[#8f8f8f] block text-[9px] sm:text-[10px]">{item.oldPct}% Old Diet</span>
+              <span class="text-[#8f8f8f] dark:text-[#737373] block text-[9px] sm:text-[10px]">{item.oldPct}% Old Diet</span>
             </div>
           </div>
 
-          <p class="text-[10px] sm:text-[11px] text-[#4d4d4d] leading-snug pt-2 border-t border-[#ebebeb]">
+          <p class="text-[10px] sm:text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] leading-snug pt-2 border-t border-[#ebebeb] dark:border-[#262626]">
             {item.desc}
           </p>
         </div>
@@ -57,28 +57,28 @@ const TRANSITION_DAYS = [
     </div>
 
     <!-- Transition Pro-Tips Banner -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-4 sm:p-6 bg-white rounded-xl border border-[#ebebeb]">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 p-4 sm:p-6 bg-white dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
       <div class="flex items-start gap-2.5 sm:gap-3">
         <span class="text-lg sm:text-xl">🥣</span>
         <div>
-          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-0.5 sm:mb-1">Add Pure Pumpkin</h4>
-          <p class="text-xs text-[#4d4d4d]">1 tbsp of pure organic pumpkin puree calms loose stool during the first 72 hours.</p>
+          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-0.5 sm:mb-1">Add Pure Pumpkin</h4>
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">1 tbsp of pure organic pumpkin puree calms loose stool during the first 72 hours.</p>
         </div>
       </div>
 
       <div class="flex items-start gap-2.5 sm:gap-3">
         <span class="text-lg sm:text-xl">🌡️</span>
         <div>
-          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-0.5 sm:mb-1">Room Temperature</h4>
-          <p class="text-xs text-[#4d4d4d]">Serve at room temp or warm with a splash of bone broth to release enticing aromas.</p>
+          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-0.5 sm:mb-1">Room Temperature</h4>
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">Serve at room temp or warm with a splash of bone broth to release enticing aromas.</p>
         </div>
       </div>
 
       <div class="flex items-start gap-2.5 sm:gap-3">
         <span class="text-lg sm:text-xl">💧</span>
         <div>
-          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-0.5 sm:mb-1">Natural Hydration</h4>
-          <p class="text-xs text-[#4d4d4d]">Dogs naturally drink less water on fresh diets due to high biological moisture (70%+).</p>
+          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-0.5 sm:mb-1">Natural Hydration</h4>
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">Dogs naturally drink less water on fresh diets due to high biological moisture (70%+).</p>
         </div>
       </div>
     </div>
