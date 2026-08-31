@@ -2,55 +2,55 @@
 const TESTIMONIALS = [
   {
     author: 'Dr. Katherine Reynolds, DVM',
-    role: 'Veterinary Integrative Nutritionist',
+    role: 'Integrative Nutritionist',
     quote: 'The precision of DogFoodPlanner’s RER calculation and macro transparency provides pet parents with clinical-grade feeding blueprints without locking them into overpriced subscriptions.',
     badge: 'Verified DVM Endorsement'
   },
   {
-    author: 'Marcus Vance & "Apollo" (German Shepherd)',
-    role: 'Canine Agility Competitor',
-    quote: 'Apollo had chronic itching and dull coat for 2 years on premium kibble. Following the Turkey & Pumpkin gently cooked formulation cleared his skin within 21 days. His energy is unbelievable.',
-    badge: 'Coat & Skin Transformation'
+    author: 'Marcus Vance & "Apollo"',
+    role: 'Agility Competitor (GSD)',
+    quote: 'Apollo had chronic itching and dull coat on premium dry kibble. Following the Turkey & Pumpkin gently cooked formulation cleared his skin within 21 days. His energy is unbelievable.',
+    badge: 'Coat Transformation'
   },
   {
-    author: 'Elena Rostova & "Buster" (French Bulldog)',
-    role: 'Pet Parent',
+    author: 'Elena Rostova & "Buster"',
+    role: 'French Bulldog Parent',
     quote: 'Frenchies have notorious digestive sensitivities. Using the 50% Superfood Topper with bone broth cut Buster’s gas completely and reduced stool volume by half. Essential tool for dog parents.',
     badge: 'Microbiome & Digestion'
   }
 ];
 ---
 
-<section class="py-16 sm:py-24 bg-white border-b border-[#ebebeb]">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+<section class="py-12 sm:py-20 bg-white border-b border-[#ebebeb]">
+  <div class="max-w-5xl mx-auto px-3.5 sm:px-6">
     
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
-        <span class="text-[#0070f3]">05</span> // VETERINARY & USER VALIDATION
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
+        <span class="text-[#0070f3]">05</span> // VETERINARY VALIDATION
       </div>
-      <h2 class="text-3xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-3">
+      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-2 sm:mb-3">
         Trusted by Veterinarians & Devoted Dog Parents
       </h2>
-      <p class="text-sm sm:text-base text-[#4d4d4d]">
+      <p class="text-xs sm:text-base text-[#4d4d4d] leading-relaxed">
         Over 45,000 canine meal plans formulated with observable clinical transformations.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-5">
       {TESTIMONIALS.map((t) => (
-        <div class="hairline-card p-6 bg-[#fafafa] flex flex-col justify-between">
+        <div class="hairline-card p-4 sm:p-6 bg-[#fafafa] flex flex-col justify-between">
           <div>
-            <span class="inline-block font-mono text-[10px] font-bold text-[#0070f3] bg-[#0070f3]/10 px-2 py-0.5 rounded mb-4">
+            <span class="inline-block font-mono text-[9px] sm:text-[10px] font-bold text-[#0070f3] bg-[#0070f3]/10 px-2 py-0.5 rounded mb-3 sm:mb-4">
               {t.badge}
             </span>
-            <p class="text-xs text-[#171717] leading-relaxed mb-6 italic">
+            <p class="text-xs text-[#171717] leading-relaxed mb-4 sm:mb-6 italic">
               "{t.quote}"
             </p>
           </div>
 
-          <div class="pt-4 border-t border-[#ebebeb]">
+          <div class="pt-3 sm:pt-4 border-t border-[#ebebeb]">
             <div class="font-semibold text-xs text-[#171717]">{t.author}</div>
-            <div class="text-[11px] text-[#8f8f8f] font-mono mt-0.5">{t.role}</div>
+            <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] font-mono mt-0.5">{t.role}</div>
           </div>
         </div>
       ))}

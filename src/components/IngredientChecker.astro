@@ -2,29 +2,29 @@
 import { INGREDIENT_DATABASE } from '../data/ingredients';
 ---
 
-<section id="safety-checker" class="py-16 sm:py-24 bg-white border-b border-[#ebebeb]">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+<section id="safety-checker" class="py-12 sm:py-20 bg-white border-b border-[#ebebeb]">
+  <div class="max-w-5xl mx-auto px-3.5 sm:px-6">
     
     <!-- Header -->
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
         <span class="text-[#ee0000]">03</span> // SAFETY & TOXICITY LOOKUP
       </div>
-      <h2 class="text-3xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-3">
+      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-2 sm:mb-3">
         Canine Ingredient Safety & Toxicity Scanner
       </h2>
-      <p class="text-sm sm:text-base text-[#4d4d4d]">
+      <p class="text-xs sm:text-base text-[#4d4d4d] leading-relaxed">
         Search any whole food to check clinical safety, bioavailability, and dangerous household toxins before introducing it to your dog's bowl.
       </p>
     </div>
 
-    <!-- Search and Filter Bar -->
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-8">
+    <!-- Search and Filter Bar (Mobile-optimized stack) -->
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-6 sm:mb-8">
       <div class="relative w-full sm:max-w-md">
         <input 
           type="text" 
           id="ingredient-search-input" 
-          placeholder="Search ingredient (e.g. pumpkin, salmon, xylitol, bones...)" 
+          placeholder="Search food (e.g. pumpkin, salmon, xylitol...)" 
           class="w-full pl-9 pr-4 py-2.5 text-xs bg-[#fafafa] border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all font-mono"
         />
         <svg class="w-4 h-4 text-[#8f8f8f] absolute left-3 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -32,44 +32,44 @@ import { INGREDIENT_DATABASE } from '../data/ingredients';
         </svg>
       </div>
 
-      <!-- Filter Buttons -->
-      <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto">
-        <button type="button" data-filter="ALL" class="safety-filter-btn active px-3 py-1.5 text-xs font-mono font-medium rounded-md bg-[#171717] text-white transition-all">
+      <!-- Filter Buttons (Horizontal wrap) -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 no-scrollbar">
+        <button type="button" data-filter="ALL" class="safety-filter-btn active shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#171717] text-white transition-all touch-manipulation cursor-pointer">
           ALL
         </button>
-        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn px-3 py-1.5 text-xs font-mono font-medium rounded-md bg-[#f2f2f2] text-[#4d4d4d] hover:text-[#171717] transition-all">
+        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] text-[#4d4d4d] hover:text-[#171717] transition-all touch-manipulation cursor-pointer">
           SAFE & SUPERFOODS
         </button>
-        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn px-3 py-1.5 text-xs font-mono font-medium rounded-md bg-[#f2f2f2] text-[#4d4d4d] hover:text-[#171717] transition-all">
+        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] text-[#4d4d4d] hover:text-[#171717] transition-all touch-manipulation cursor-pointer">
           FATAL TOXINS
         </button>
       </div>
     </div>
 
-    <!-- Ingredient Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="ingredients-grid">
+    <!-- Ingredient Grid (1-column on mobile, 2-column on md+) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4" id="ingredients-grid">
       {INGREDIENT_DATABASE.map((item) => (
         <div 
-          class="ingredient-card p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa] hover:border-[#171717] transition-all flex flex-col justify-between"
+          class="ingredient-card p-4 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa] hover:border-[#171717] transition-all flex flex-col justify-between"
           data-status={item.status}
           data-name={item.name.toLowerCase()}
         >
           <div>
-            <div class="flex items-center justify-between gap-2 mb-2">
-              <h4 class="font-semibold text-sm text-[#171717]">{item.name}</h4>
+            <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 mb-2">
+              <h4 class="font-semibold text-xs sm:text-sm text-[#171717]">{item.name}</h4>
               
               {item.status === 'SAFE_AND_BENEFICIAL' && (
-                <span class="font-mono text-[10px] font-bold text-[#10b981] bg-[#10b981]/15 px-2 py-0.5 rounded border border-[#10b981]/30">
+                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-[#10b981] bg-[#10b981]/15 px-2 py-0.5 rounded border border-[#10b981]/30 w-fit">
                   ✓ SAFE & NOURISHING
                 </span>
               )}
               {item.status === 'FEED_WITH_CAUTION' && (
-                <span class="font-mono text-[10px] font-bold text-[#f5a623] bg-[#f5a623]/15 px-2 py-0.5 rounded border border-[#f5a623]/30">
+                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-[#f5a623] bg-[#f5a623]/15 px-2 py-0.5 rounded border border-[#f5a623]/30 w-fit">
                   ⚠ CAUTION / LIMIT
                 </span>
               )}
               {item.status === 'DANGEROUS_TOXIC' && (
-                <span class="font-mono text-[10px] font-bold text-[#ee0000] bg-[#ee0000]/15 px-2 py-0.5 rounded border border-[#ee0000]/30 animate-pulse">
+                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-[#ee0000] bg-[#ee0000]/15 px-2 py-0.5 rounded border border-[#ee0000]/30 animate-pulse w-fit">
                   ☠ STRICTLY TOXIC
                 </span>
               )}
@@ -80,8 +80,8 @@ import { INGREDIENT_DATABASE } from '../data/ingredients';
             </p>
           </div>
 
-          <div class="pt-3 border-t border-[#ebebeb] text-[11px] text-[#8f8f8f]">
-            <strong class="text-[#171717] font-medium">Feeding Guidance: </strong> {item.servingAdvice}
+          <div class="pt-2.5 sm:pt-3 border-t border-[#ebebeb] text-[10px] sm:text-[11px] text-[#8f8f8f]">
+            <strong class="text-[#171717] font-medium">Guidance: </strong> {item.servingAdvice}
           </div>
         </div>
       ))}

@@ -3,48 +3,48 @@ import { CANINE_BREEDS } from '../data/breeds';
 import { RECIPES } from '../data/recipes';
 ---
 
-<section id="planner-section" class="py-16 sm:py-24 bg-[#fafafa] border-b border-[#ebebeb]">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+<section id="planner-section" class="py-12 sm:py-20 bg-[#fafafa] border-b border-[#ebebeb]">
+  <div class="max-w-4xl mx-auto px-3.5 sm:px-6">
     
     <!-- Section Header -->
-    <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#ffffff] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
-        <span class="text-[#0070f3]">01</span> // INTERACTIVE CANINE NUTRITION QUIZ
+    <div class="text-center mb-8 sm:mb-12">
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] bg-[#ffffff] border border-[#ebebeb] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
+        <span class="text-[#0070f3]">01</span> // FREE CANINE NUTRITION CALCULATOR
       </div>
-      <h2 class="text-3xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-3">
+      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-2 sm:mb-3">
         Tailor the perfect bowl in under 60 seconds.
       </h2>
-      <p class="text-sm sm:text-base text-[#4d4d4d] max-w-lg mx-auto">
+      <p class="text-xs sm:text-base text-[#4d4d4d] max-w-lg mx-auto leading-relaxed">
         Our clinical calculator computes your dog's exact metabolic rate and matches whole-food ingredients to their distinct life stage.
       </p>
     </div>
 
-    <!-- Quiz Card Container -->
-    <div class="hairline-card p-6 sm:p-10 bg-white relative overflow-hidden">
+    <!-- Quiz Card Container (Responsive Padding) -->
+    <div class="hairline-card p-4 sm:p-8 md:p-10 bg-white relative overflow-hidden">
       
       <!-- Progress Bar -->
-      <div class="w-full bg-[#f2f2f2] h-1.5 rounded-full mb-8 overflow-hidden">
+      <div class="w-full bg-[#f2f2f2] h-1.5 rounded-full mb-6 sm:mb-8 overflow-hidden">
         <div id="quiz-progress-bar" class="bg-[#171717] h-full transition-all duration-300 w-1/5"></div>
       </div>
 
       <!-- Step Indicator Badge -->
-      <div class="flex items-center justify-between mb-6 pb-4 border-b border-[#ebebeb]">
-        <span id="step-badge" class="font-mono text-xs font-semibold text-[#8f8f8f] uppercase tracking-wider">
+      <div class="flex items-center justify-between mb-5 sm:mb-6 pb-3 sm:pb-4 border-b border-[#ebebeb]">
+        <span id="step-badge" class="font-mono text-[10px] sm:text-xs font-semibold text-[#8f8f8f] uppercase tracking-wider">
           STEP 1 OF 5: DOG PROFILE
         </span>
-        <span class="text-xs text-[#8f8f8f] font-mono">Veterinary Standard AAFCO/NRC</span>
+        <span class="text-[10px] sm:text-xs text-[#8f8f8f] font-mono hidden xs:inline">NRC Standard Math</span>
       </div>
 
       <form id="dog-planner-form" onsubmit="return false;">
         
         <!-- STEP 1: Basic Profile -->
         <div class="quiz-step active-step" data-step="1">
-          <h3 class="text-xl font-semibold text-[#171717] mb-2">Tell us about your dog</h3>
-          <p class="text-sm text-[#8f8f8f] mb-6">Let's get started with basic identity and life stage.</p>
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Tell us about your dog</h3>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Let's get started with basic identity and life stage.</p>
 
-          <div class="space-y-5">
+          <div class="space-y-4 sm:space-y-5">
             <div>
-              <label for="dog-name" class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+              <label for="dog-name" class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
                 Dog's Name
               </label>
               <input 
@@ -53,75 +53,75 @@ import { RECIPES } from '../data/recipes';
                 placeholder="e.g. Luna, Cooper, Bella" 
                 value="Luna"
                 required
-                class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#ebebeb] rounded-md text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717] transition-all"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717] transition-all"
               />
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+              <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
                 Life Stage & Age
               </label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                <label class="cursor-pointer">
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
+                <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="age-stage" value="puppy-early" class="peer sr-only" />
-                  <div class="p-3 border border-[#ebebeb] rounded-md text-center peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                  <div class="p-2.5 sm:p-3 border border-[#ebebeb] rounded-lg text-center peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-center">
                     <div class="font-semibold text-xs">Puppy (2–4 mo)</div>
-                    <div class="text-[11px] text-[#8f8f8f] peer-checked:text-white/80">3.0x Metabolic Burn</div>
+                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] peer-checked:text-white/80">3.0x Burn</div>
                   </div>
                 </label>
 
-                <label class="cursor-pointer">
+                <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="age-stage" value="puppy-late" class="peer sr-only" />
-                  <div class="p-3 border border-[#ebebeb] rounded-md text-center peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                  <div class="p-2.5 sm:p-3 border border-[#ebebeb] rounded-lg text-center peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-center">
                     <div class="font-semibold text-xs">Puppy (4–12 mo)</div>
-                    <div class="text-[11px] text-[#8f8f8f] peer-checked:text-white/80">2.0x Metabolic Burn</div>
+                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] peer-checked:text-white/80">2.0x Burn</div>
                   </div>
                 </label>
 
-                <label class="cursor-pointer">
+                <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="age-stage" value="adult" checked class="peer sr-only" />
-                  <div class="p-3 border border-[#ebebeb] rounded-md text-center peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                  <div class="p-2.5 sm:p-3 border border-[#ebebeb] rounded-lg text-center peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-center">
                     <div class="font-semibold text-xs">Adult (1–7 yrs)</div>
-                    <div class="text-[11px] text-[#8f8f8f] peer-checked:text-white/80">Standard Maintenance</div>
+                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] peer-checked:text-white/80">Standard</div>
                   </div>
                 </label>
 
-                <label class="cursor-pointer">
+                <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="age-stage" value="senior" class="peer sr-only" />
-                  <div class="p-3 border border-[#ebebeb] rounded-md text-center peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                  <div class="p-2.5 sm:p-3 border border-[#ebebeb] rounded-lg text-center peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-center">
                     <div class="font-semibold text-xs">Senior (7+ yrs)</div>
-                    <div class="text-[11px] text-[#8f8f8f] peer-checked:text-white/80">Joint & Organ Focus</div>
+                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] peer-checked:text-white/80">Joint Focus</div>
                   </div>
                 </label>
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+              <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
                 Gender & Reproductive Status
               </label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                <label class="cursor-pointer">
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
+                <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="gender" value="female-spayed" checked class="peer sr-only" />
-                  <div class="p-2.5 border border-[#ebebeb] rounded-md text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                  <div class="p-2.5 border border-[#ebebeb] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
                     Female (Spayed)
                   </div>
                 </label>
-                <label class="cursor-pointer">
+                <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="gender" value="female-intact" class="peer sr-only" />
-                  <div class="p-2.5 border border-[#ebebeb] rounded-md text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                  <div class="p-2.5 border border-[#ebebeb] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
                     Female (Intact)
                   </div>
                 </label>
-                <label class="cursor-pointer">
+                <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="gender" value="male-neutered" class="peer sr-only" />
-                  <div class="p-2.5 border border-[#ebebeb] rounded-md text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                  <div class="p-2.5 border border-[#ebebeb] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
                     Male (Neutered)
                   </div>
                 </label>
-                <label class="cursor-pointer">
+                <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="gender" value="male-intact" class="peer sr-only" />
-                  <div class="p-2.5 border border-[#ebebeb] rounded-md text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                  <div class="p-2.5 border border-[#ebebeb] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
                     Male (Intact)
                   </div>
                 </label>
@@ -132,17 +132,17 @@ import { RECIPES } from '../data/recipes';
 
         <!-- STEP 2: Breed & Physical Metrics -->
         <div class="quiz-step hidden" data-step="2">
-          <h3 class="text-xl font-semibold text-[#171717] mb-2">Physical Metrics & Body Score</h3>
-          <p class="text-sm text-[#8f8f8f] mb-6">Weight and body condition score determine precise caloric density.</p>
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Physical Metrics & Body Score</h3>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Weight and body condition score determine precise caloric density.</p>
 
-          <div class="space-y-5">
+          <div class="space-y-4 sm:space-y-5">
             <div>
-              <label for="dog-breed" class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+              <label for="dog-breed" class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
                 Breed / Genetic Size
               </label>
               <select 
                 id="dog-breed" 
-                class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#ebebeb] rounded-md text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
               >
                 {CANINE_BREEDS.map((b) => (
                   <option value={b.name}>{b.name} ({b.category})</option>
@@ -150,9 +150,9 @@ import { RECIPES } from '../data/recipes';
               </select>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label for="dog-weight" class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+                <label for="dog-weight" class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
                   Current Weight (lbs)
                 </label>
                 <div class="relative">
@@ -163,35 +163,35 @@ import { RECIPES } from '../data/recipes';
                     max="220" 
                     value="45" 
                     required 
-                    class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#ebebeb] rounded-md text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
+                    class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
                   />
-                  <span class="absolute right-3.5 top-2.5 text-xs text-[#8f8f8f] font-mono">LBS</span>
+                  <span class="absolute right-3.5 top-2.5 text-[10px] sm:text-xs text-[#8f8f8f] font-mono">LBS</span>
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+                <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
                   Weight Management Goal
                 </label>
                 <select 
                   id="target-goal" 
-                  class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#ebebeb] rounded-md text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
+                  class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
                 >
                   <option value="maintain" selected>Maintain Current Weight (Balanced)</option>
-                  <option value="lose">Gentle Fat Loss (-20% Calorie Deficit)</option>
-                  <option value="gain">Healthy Muscle / Weight Gain (+20% Surplus)</option>
+                  <option value="lose">Gentle Fat Loss (-20% Deficit)</option>
+                  <option value="gain">Healthy Muscle Gain (+20% Surplus)</option>
                 </select>
               </div>
             </div>
 
             <!-- Body Condition Score 1-9 Visual Selector -->
             <div>
-              <div class="flex items-center justify-between mb-2">
-                <label class="text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono">
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono">
                   Body Condition Score (BCS 1–9)
                 </label>
-                <span id="bcs-label" class="font-mono text-xs font-bold text-[#0070f3] bg-[#d3e5ff]/40 px-2 py-0.5 rounded">
-                  BCS 5/9: Ideal Lean Weight
+                <span id="bcs-label" class="font-mono text-[10px] sm:text-xs font-bold text-[#0070f3] bg-[#d3e5ff]/40 px-2 py-0.5 rounded">
+                  BCS 5/9: Ideal Weight
                 </span>
               </div>
               <input 
@@ -200,12 +200,12 @@ import { RECIPES } from '../data/recipes';
                 min="1" 
                 max="9" 
                 value="5" 
-                class="w-full h-2 bg-[#f2f2f2] rounded-lg appearance-none cursor-pointer accent-[#171717]"
+                class="w-full h-2.5 bg-[#f2f2f2] rounded-lg appearance-none cursor-pointer accent-[#171717] touch-manipulation"
               />
-              <div class="flex justify-between text-[11px] text-[#8f8f8f] font-mono mt-1">
-                <span>1 (Emaciated)</span>
-                <span class="text-[#10b981] font-semibold">4–5 (Ideal Ribbon)</span>
-                <span>9 (Severely Obese)</span>
+              <div class="flex justify-between text-[10px] sm:text-[11px] text-[#8f8f8f] font-mono mt-1">
+                <span>1 (Thin)</span>
+                <span class="text-[#10b981] font-semibold">4–5 (Ideal)</span>
+                <span>9 (Obese)</span>
               </div>
             </div>
           </div>
@@ -213,51 +213,51 @@ import { RECIPES } from '../data/recipes';
 
         <!-- STEP 3: Activity Level & Lifestyle -->
         <div class="quiz-step hidden" data-step="3">
-          <h3 class="text-xl font-semibold text-[#171717] mb-2">Daily Activity & Energy Output</h3>
-          <p class="text-sm text-[#8f8f8f] mb-6">How much physical activity does your dog participate in each day?</p>
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Daily Activity & Energy Output</h3>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">How much physical activity does your dog participate in daily?</p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-            <label class="cursor-pointer">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3.5">
+            <label class="cursor-pointer touch-manipulation">
               <input type="radio" name="activity-level" value="sedentary" class="peer sr-only" />
-              <div class="p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
+              <div class="p-3.5 sm:p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
                 <div>
-                  <div class="font-semibold text-sm mb-1">🛋️ Couch Companion / Low Activity</div>
-                  <p class="text-xs text-[#8f8f8f] peer-checked:text-white/80">Leisurely backyard potty breaks and under 30 minutes of walking daily.</p>
+                  <div class="font-semibold text-xs sm:text-sm mb-0.5">🛋️ Couch / Low Activity</div>
+                  <p class="text-[11px] sm:text-xs text-[#8f8f8f] peer-checked:text-white/80">Leisurely yard breaks, &lt;30 mins walk.</p>
                 </div>
-                <div class="font-mono text-[10px] mt-3 uppercase text-[#8f8f8f] peer-checked:text-white/60">Multiplier: 0.85x</div>
+                <div class="font-mono text-[9px] sm:text-[10px] mt-2 sm:mt-3 uppercase text-[#8f8f8f] peer-checked:text-white/60">0.85x Multiplier</div>
               </div>
             </label>
 
-            <label class="cursor-pointer">
+            <label class="cursor-pointer touch-manipulation">
               <input type="radio" name="activity-level" value="moderate" checked class="peer sr-only" />
-              <div class="p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
+              <div class="p-3.5 sm:p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
                 <div>
-                  <div class="font-semibold text-sm mb-1">🐕 Moderate Daily Walker</div>
-                  <p class="text-xs text-[#8f8f8f] peer-checked:text-white/80">1–2 daily neighborhood walks (30–60 mins) plus regular indoor play.</p>
+                  <div class="font-semibold text-xs sm:text-sm mb-0.5">🐕 Moderate Daily Walker</div>
+                  <p class="text-[11px] sm:text-xs text-[#8f8f8f] peer-checked:text-white/80">1–2 daily walks (30–60 mins) & play.</p>
                 </div>
-                <div class="font-mono text-[10px] mt-3 uppercase text-[#8f8f8f] peer-checked:text-white/60">Multiplier: 1.0x (Standard)</div>
+                <div class="font-mono text-[9px] sm:text-[10px] mt-2 sm:mt-3 uppercase text-[#8f8f8f] peer-checked:text-white/60">1.0x (Standard)</div>
               </div>
             </label>
 
-            <label class="cursor-pointer">
+            <label class="cursor-pointer touch-manipulation">
               <input type="radio" name="activity-level" value="active" class="peer sr-only" />
-              <div class="p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
+              <div class="p-3.5 sm:p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
                 <div>
-                  <div class="font-semibold text-sm mb-1">⚡ Active Athlete / Hiker</div>
-                  <p class="text-xs text-[#8f8f8f] peer-checked:text-white/80">60–120+ minutes of daily vigorous exercise, running, swimming, or off-leash fetch.</p>
+                  <div class="font-semibold text-xs sm:text-sm mb-0.5">⚡ Active Athlete / Hiker</div>
+                  <p class="text-[11px] sm:text-xs text-[#8f8f8f] peer-checked:text-white/80">60–120+ mins vigorous runs & fetch.</p>
                 </div>
-                <div class="font-mono text-[10px] mt-3 uppercase text-[#8f8f8f] peer-checked:text-white/60">Multiplier: 1.25x</div>
+                <div class="font-mono text-[9px] sm:text-[10px] mt-2 sm:mt-3 uppercase text-[#8f8f8f] peer-checked:text-white/60">1.25x Multiplier</div>
               </div>
             </label>
 
-            <label class="cursor-pointer">
+            <label class="cursor-pointer touch-manipulation">
               <input type="radio" name="activity-level" value="working" class="peer sr-only" />
-              <div class="p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
+              <div class="p-3.5 sm:p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
                 <div>
-                  <div class="font-semibold text-sm mb-1">🏔️ High-Endurance Working Dog</div>
-                  <p class="text-xs text-[#8f8f8f] peer-checked:text-white/80">Herding, agility champions, field hunting, or endurance sledding.</p>
+                  <div class="font-semibold text-xs sm:text-sm mb-0.5">🏔️ High-Endurance Working</div>
+                  <p class="text-[11px] sm:text-xs text-[#8f8f8f] peer-checked:text-white/80">Herding, agility, or field endurance.</p>
                 </div>
-                <div class="font-mono text-[10px] mt-3 uppercase text-[#8f8f8f] peer-checked:text-white/60">Multiplier: 1.55x</div>
+                <div class="font-mono text-[9px] sm:text-[10px] mt-2 sm:mt-3 uppercase text-[#8f8f8f] peer-checked:text-white/60">1.55x Multiplier</div>
               </div>
             </label>
           </div>
@@ -265,23 +265,23 @@ import { RECIPES } from '../data/recipes';
 
         <!-- STEP 4: Allergies & Primary Health Focus -->
         <div class="quiz-step hidden" data-step="4">
-          <h3 class="text-xl font-semibold text-[#171717] mb-2">Allergies & Targeted Health Support</h3>
-          <p class="text-sm text-[#8f8f8f] mb-6">Exclude triggers and supercharge organs that need therapeutic nutrition.</p>
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Allergies & Targeted Health Support</h3>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Exclude triggers and supercharge organs that need therapeutic nutrition.</p>
 
-          <div class="space-y-6">
+          <div class="space-y-5">
             <div>
-              <label class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
-                Known Sensitivities or Exclusions (Select all that apply)
+              <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+                Known Sensitivities or Exclusions (Select all)
               </label>
-              <div class="flex flex-wrap gap-2" id="allergy-pills">
+              <div class="flex flex-wrap gap-1.5 sm:gap-2" id="allergy-pills">
                 {['Chicken / Poultry', 'Beef', 'Dairy', 'Grains / Wheat', 'Soy', 'Eggs', 'Corn', 'None'].map((item) => (
-                  <label class="cursor-pointer">
+                  <label class="cursor-pointer touch-manipulation">
                     <input 
                       type="checkbox" 
                       value={item.toLowerCase()} 
                       class="allergy-check peer sr-only" 
                     />
-                    <span class="inline-block px-3 py-1.5 text-xs font-medium border border-[#ebebeb] rounded-full peer-checked:border-[#ee0000] peer-checked:bg-[#ee0000] peer-checked:text-white transition-all">
+                    <span class="inline-block px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-medium border border-[#ebebeb] rounded-full peer-checked:border-[#ee0000] peer-checked:bg-[#ee0000] peer-checked:text-white transition-all">
                       {item}
                     </span>
                   </label>
@@ -290,12 +290,12 @@ import { RECIPES } from '../data/recipes';
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+              <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
                 Primary Health Focus
               </label>
               <select 
                 id="health-focus" 
-                class="w-full px-3.5 py-2.5 text-sm bg-white border border-[#ebebeb] rounded-md text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
+                class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
               >
                 <option value="Sensitive Digestion">🌱 Sensitive Digestion & Microbiome Balance</option>
                 <option value="Hip & Joint">🦴 Hip & Joint Mobility Support</option>
@@ -309,45 +309,45 @@ import { RECIPES } from '../data/recipes';
 
         <!-- STEP 5: Feeding Philosophy & Protein Choice -->
         <div class="quiz-step hidden" data-step="5">
-          <h3 class="text-xl font-semibold text-[#171717] mb-2">Select Your Feeding Philosophy</h3>
-          <p class="text-sm text-[#8f8f8f] mb-6">Choose how you wish to prepare or serve your dog's meals.</p>
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Select Your Feeding Philosophy</h3>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Choose how you wish to prepare or serve your dog's meals.</p>
 
-          <div class="space-y-6">
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-              <label class="cursor-pointer">
+          <div class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5">
+              <label class="cursor-pointer touch-manipulation">
                 <input type="radio" name="diet-preference" value="fresh-cooked" checked class="peer sr-only" />
-                <div class="p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
+                <div class="p-3.5 sm:p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
                   <div>
-                    <div class="font-semibold text-sm mb-1">🍲 Fresh-Cooked Meal</div>
-                    <p class="text-xs text-[#8f8f8f] peer-checked:text-white/80">Gently simmered whole meats, fresh purees, and bioavailable supplements.</p>
+                    <div class="font-semibold text-xs sm:text-sm mb-0.5">🍲 Fresh-Cooked</div>
+                    <p class="text-[11px] sm:text-xs text-[#8f8f8f] peer-checked:text-white/80">Simmered whole meats, purees, and vitamins.</p>
                   </div>
-                  <span class="inline-block mt-3 text-[10px] font-mono uppercase bg-[#10b981]/20 text-[#10b981] peer-checked:bg-white/20 peer-checked:text-white px-2 py-0.5 rounded w-fit">
+                  <span class="inline-block mt-2 sm:mt-3 text-[9px] sm:text-[10px] font-mono uppercase bg-[#10b981]/20 text-[#10b981] peer-checked:bg-white/20 peer-checked:text-white px-2 py-0.5 rounded w-fit">
                     Most Popular
                   </span>
                 </div>
               </label>
 
-              <label class="cursor-pointer">
+              <label class="cursor-pointer touch-manipulation">
                 <input type="radio" name="diet-preference" value="raw-barf" class="peer sr-only" />
-                <div class="p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
+                <div class="p-3.5 sm:p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
                   <div>
-                    <div class="font-semibold text-sm mb-1">🥩 Ancestral Raw BARF</div>
-                    <p class="text-xs text-[#8f8f8f] peer-checked:text-white/80">80/10/10 biological balance of raw muscle, edible bone, and secreting organs.</p>
+                    <div class="font-semibold text-xs sm:text-sm mb-0.5">🥩 Ancestral Raw BARF</div>
+                    <p class="text-[11px] sm:text-xs text-[#8f8f8f] peer-checked:text-white/80">80/10/10 ratio of muscle, bone, and organs.</p>
                   </div>
-                  <span class="inline-block mt-3 text-[10px] font-mono uppercase bg-[#7928ca]/20 text-[#7928ca] peer-checked:bg-white/20 peer-checked:text-white px-2 py-0.5 rounded w-fit">
+                  <span class="inline-block mt-2 sm:mt-3 text-[9px] sm:text-[10px] font-mono uppercase bg-[#7928ca]/20 text-[#7928ca] peer-checked:bg-white/20 peer-checked:text-white px-2 py-0.5 rounded w-fit">
                     PMR+ Ratios
                   </span>
                 </div>
               </label>
 
-              <label class="cursor-pointer">
+              <label class="cursor-pointer touch-manipulation">
                 <input type="radio" name="diet-preference" value="superfood-topper" class="peer sr-only" />
-                <div class="p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
+                <div class="p-3.5 sm:p-4 border border-[#ebebeb] rounded-lg peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all h-full flex flex-col justify-between">
                   <div>
-                    <div class="font-semibold text-sm mb-1">🥣 Superfood Topper</div>
-                    <p class="text-xs text-[#8f8f8f] peer-checked:text-white/80">25%–50% nutrient booster added to existing kibble. 100% budget friendly.</p>
+                    <div class="font-semibold text-xs sm:text-sm mb-0.5">🥣 Superfood Topper</div>
+                    <p class="text-[11px] sm:text-xs text-[#8f8f8f] peer-checked:text-white/80">25%–50% nutrient booster on kibble.</p>
                   </div>
-                  <span class="inline-block mt-3 text-[10px] font-mono uppercase bg-[#0070f3]/20 text-[#0070f3] peer-checked:bg-white/20 peer-checked:text-white px-2 py-0.5 rounded w-fit">
+                  <span class="inline-block mt-2 sm:mt-3 text-[9px] sm:text-[10px] font-mono uppercase bg-[#0070f3]/20 text-[#0070f3] peer-checked:bg-white/20 peer-checked:text-white px-2 py-0.5 rounded w-fit">
                     Cost Saver
                   </span>
                 </div>
@@ -355,12 +355,12 @@ import { RECIPES } from '../data/recipes';
             </div>
 
             <div>
-              <label class="block text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
+              <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
                 Primary Protein Base
               </label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {['Turkey', 'Beef', 'Salmon', 'Lamb'].map((p, idx) => (
-                  <label class="cursor-pointer">
+                  <label class="cursor-pointer touch-manipulation">
                     <input 
                       type="radio" 
                       name="protein-choice" 
@@ -368,7 +368,7 @@ import { RECIPES } from '../data/recipes';
                       checked={idx === 0} 
                       class="peer sr-only" 
                     />
-                    <div class="p-2.5 border border-[#ebebeb] rounded-md text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
+                    <div class="p-2 border border-[#ebebeb] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
                       {p}
                     </div>
                   </label>
@@ -378,21 +378,21 @@ import { RECIPES } from '../data/recipes';
           </div>
         </div>
 
-        <!-- Navigation Buttons -->
-        <div class="flex items-center justify-between mt-10 pt-6 border-t border-[#ebebeb]">
+        <!-- Navigation Buttons (Mobile responsive layout) -->
+        <div class="flex items-center justify-between mt-8 sm:mt-10 pt-4 sm:pt-6 border-t border-[#ebebeb] gap-2">
           <button 
             type="button" 
             id="prev-btn" 
-            class="hidden px-5 py-2 text-xs font-medium text-[#171717] bg-white border border-[#ebebeb] rounded-full hover:bg-[#f2f2f2] transition-colors"
+            class="hidden px-4 sm:px-5 py-2.5 text-xs font-medium text-[#171717] bg-white border border-[#ebebeb] rounded-full hover:bg-[#f2f2f2] active:scale-[0.98] transition-colors"
           >
             ← Back
           </button>
           
-          <div class="ml-auto flex items-center gap-3">
+          <div class="ml-auto flex items-center gap-2">
             <button 
               type="button" 
               id="next-btn" 
-              class="px-6 py-2.5 text-xs font-semibold text-white bg-[#171717] hover:bg-[#333333] active:scale-[0.98] transition-all rounded-full shadow-sm"
+              class="px-5 sm:px-6 py-2.5 text-xs font-semibold text-white bg-[#171717] hover:bg-[#333333] active:scale-[0.98] transition-all rounded-full shadow-sm"
             >
               Continue →
             </button>
@@ -400,7 +400,7 @@ import { RECIPES } from '../data/recipes';
             <button 
               type="button" 
               id="generate-plan-btn" 
-              class="hidden px-8 py-2.5 text-xs font-semibold text-white bg-[#171717] hover:bg-[#0070f3] active:scale-[0.98] transition-all rounded-full shadow-md"
+              class="hidden px-6 sm:px-8 py-2.5 text-xs font-semibold text-white bg-[#171717] hover:bg-[#0070f3] active:scale-[0.98] transition-all rounded-full shadow-md"
             >
               ✨ Generate Clinical Plan
             </button>
@@ -428,9 +428,9 @@ import { RECIPES } from '../data/recipes';
 
   const stepTitles = [
     'STEP 1 OF 5: DOG PROFILE',
-    'STEP 2 OF 5: PHYSICAL METRICS & BCS',
+    'STEP 2 OF 5: METRICS & BCS',
     'STEP 3 OF 5: ACTIVITY & LIFESTYLE',
-    'STEP 4 OF 5: ALLERGIES & HEALTH FOCUS',
+    'STEP 4 OF 5: ALLERGIES & HEALTH',
     'STEP 5 OF 5: FEEDING PHILOSOPHY'
   ];
 
@@ -490,14 +490,14 @@ import { RECIPES } from '../data/recipes';
     const val = parseInt((e.target as HTMLInputElement).value);
     if (!bcsLabel) return;
     if (val <= 3) {
-      bcsLabel.textContent = `BCS ${val}/9: Underweight (Ribs visibly prominent)`;
-      bcsLabel.className = 'font-mono text-xs font-bold text-[#ee0000] bg-[#ee0000]/10 px-2 py-0.5 rounded';
+      bcsLabel.textContent = `BCS ${val}/9: Underweight`;
+      bcsLabel.className = 'font-mono text-[10px] sm:text-xs font-bold text-[#ee0000] bg-[#ee0000]/10 px-2 py-0.5 rounded';
     } else if (val <= 5) {
-      bcsLabel.textContent = `BCS ${val}/9: Ideal Weight (Tuck and waist evident)`;
-      bcsLabel.className = 'font-mono text-xs font-bold text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded';
+      bcsLabel.textContent = `BCS ${val}/9: Ideal Weight`;
+      bcsLabel.className = 'font-mono text-[10px] sm:text-xs font-bold text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded';
     } else {
-      bcsLabel.textContent = `BCS ${val}/9: Overweight (Heavy fat covering ribs)`;
-      bcsLabel.className = 'font-mono text-xs font-bold text-[#f5a623] bg-[#f5a623]/10 px-2 py-0.5 rounded';
+      bcsLabel.textContent = `BCS ${val}/9: Overweight`;
+      bcsLabel.className = 'font-mono text-[10px] sm:text-xs font-bold text-[#f5a623] bg-[#f5a623]/10 px-2 py-0.5 rounded';
     }
   });
 

@@ -1,108 +1,113 @@
 ---
 ---
 
-<section id="science-section" class="py-16 sm:py-24 bg-[#fafafa] border-b border-[#ebebeb]">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+<section id="science-section" class="py-12 sm:py-20 bg-[#fafafa] border-b border-[#ebebeb]">
+  <div class="max-w-5xl mx-auto px-3.5 sm:px-6">
     
     <!-- Header -->
-    <div class="text-center max-w-2xl mx-auto mb-14">
-      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-white border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] bg-white border border-[#ebebeb] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
         <span class="text-[#7928ca]">04</span> // CLINICAL COMPARISON
       </div>
-      <h2 class="text-3xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-3">
+      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-2 sm:mb-3">
         Why Biological Whole Food Trumps Kibble
       </h2>
-      <p class="text-sm sm:text-base text-[#4d4d4d]">
+      <p class="text-xs sm:text-base text-[#4d4d4d] leading-relaxed">
         A side-by-side analysis of biological bioavailability, processing temperatures, and financial transparency.
       </p>
     </div>
 
-    <!-- Comparison Table Card -->
-    <div class="hairline-card overflow-x-auto">
-      <table class="w-full text-left border-collapse text-xs">
+    <!-- Mobile Scroll Hint -->
+    <div class="flex items-center justify-end md:hidden mb-2 text-[10px] font-mono text-[#8f8f8f]">
+      <span>↔ Scroll table horizontally</span>
+    </div>
+
+    <!-- Comparison Table Card (Touch friendly scroll container) -->
+    <div class="hairline-card overflow-x-auto -mx-1 sm:mx-0">
+      <table class="w-full text-left border-collapse text-[11px] sm:text-xs min-w-[580px]">
         <thead>
           <tr class="border-b border-[#ebebeb] bg-[#fafafa]">
-            <th class="p-4 sm:p-5 font-mono uppercase text-[#8f8f8f] font-semibold">Nutritional Metric</th>
-            <th class="p-4 sm:p-5 font-mono uppercase text-[#10b981] font-bold bg-[#10b981]/5">
-              ✨ DogFoodPlanner (Fresh/Raw)
+            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#8f8f8f] font-semibold w-1/4">Nutritional Metric</th>
+            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#10b981] font-bold bg-[#10b981]/5 w-1/4">
+              ✨ DogFoodPlanner
             </th>
-            <th class="p-4 sm:p-5 font-mono uppercase text-[#8f8f8f] font-semibold">Pre-Pack Subscriptions</th>
-            <th class="p-4 sm:p-5 font-mono uppercase text-[#ee0000] font-semibold">Commercial Dry Kibble</th>
+            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#8f8f8f] font-semibold w-1/4">Subscriptions</th>
+            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#ee0000] font-semibold w-1/4">Dry Kibble</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-[#ebebeb]">
           <tr class="hover:bg-[#fafafa]/80 transition-colors">
-            <td class="p-4 sm:p-5 font-medium text-[#171717]">
-              Processing Method & Heat
+            <td class="p-3.5 sm:p-5 font-medium text-[#171717]">
+              Processing Method
             </td>
-            <td class="p-4 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5">
-              Gently Simmered (160°F) or Raw Living Enzymes
+            <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5">
+              Gently Cooked (160°F) or Raw Enzymes
             </td>
-            <td class="p-4 sm:p-5 text-[#4d4d4d]">
-              Flash-Frozen Cooked Pouches
+            <td class="p-3.5 sm:p-5 text-[#4d4d4d]">
+              Flash-Frozen Cooked
             </td>
-            <td class="p-4 sm:p-5 text-[#ee0000]">
-              Ultra-High Extrusion (300°F–400°F) creating AGEs
+            <td class="p-3.5 sm:p-5 text-[#ee0000]">
+              High-Heat Extrusion (400°F)
             </td>
           </tr>
 
           <tr class="hover:bg-[#fafafa]/80 transition-colors">
-            <td class="p-4 sm:p-5 font-medium text-[#171717]">
-              Starch & Net Carbohydrates
+            <td class="p-3.5 sm:p-5 font-medium text-[#171717]">
+              Net Carbohydrates
             </td>
-            <td class="p-4 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5">
-              &lt; 3.5% (Natural vegetable fiber only)
+            <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5">
+              &lt; 3.5% (Vegetables only)
             </td>
-            <td class="p-4 sm:p-5 text-[#4d4d4d]">
+            <td class="p-3.5 sm:p-5 text-[#4d4d4d]">
               10% – 15%
             </td>
-            <td class="p-4 sm:p-5 text-[#ee0000]">
-              45% – 60% (High-glycemic grain/potato fillers)
+            <td class="p-3.5 sm:p-5 text-[#ee0000]">
+              45% – 60% (Starch fillers)
             </td>
           </tr>
 
           <tr class="hover:bg-[#fafafa]/80 transition-colors">
-            <td class="p-4 sm:p-5 font-medium text-[#171717]">
+            <td class="p-3.5 sm:p-5 font-medium text-[#171717]">
               Biological Moisture
             </td>
-            <td class="p-4 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5">
-              70% – 75% (Essential renal & urinary hydration)
+            <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5">
+              70% – 75% (Essential renal hydration)
             </td>
-            <td class="p-4 sm:p-5 text-[#4d4d4d]">
+            <td class="p-3.5 sm:p-5 text-[#4d4d4d]">
               70% – 75%
             </td>
-            <td class="p-4 sm:p-5 text-[#ee0000]">
-              8% – 10% (Chronic sub-clinical dehydration)
+            <td class="p-3.5 sm:p-5 text-[#ee0000]">
+              8% – 10% (Sub-clinical dehydration)
             </td>
           </tr>
 
           <tr class="hover:bg-[#fafafa]/80 transition-colors">
-            <td class="p-4 sm:p-5 font-medium text-[#171717]">
-              Flexibility & Freedom
+            <td class="p-3.5 sm:p-5 font-medium text-[#171717]">
+              Plan Freedom
             </td>
-            <td class="p-4 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5">
-              100% Free Recipe Control (Cook fresh, raw, or 25% topper)
+            <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5">
+              100% Free Recipe & Prep Control
             </td>
-            <td class="p-4 sm:p-5 text-[#4d4d4d]">
-              Locked to recurring brand shipments
+            <td class="p-3.5 sm:p-5 text-[#4d4d4d]">
+              Locked to monthly billing
             </td>
-            <td class="p-4 sm:p-5 text-[#4d4d4d]">
-              Locked to commercial pet store bag sizes
+            <td class="p-3.5 sm:p-5 text-[#4d4d4d]">
+              Pet store bag sizes
             </td>
           </tr>
 
           <tr class="hover:bg-[#fafafa]/80 transition-colors">
-            <td class="p-4 sm:p-5 font-medium text-[#171717]">
-              Average Monthly Cost (45 lb dog)
+            <td class="p-3.5 sm:p-5 font-medium text-[#171717]">
+              Monthly Cost (45 lb dog)
             </td>
-            <td class="p-4 sm:p-5 font-bold text-[#171717] bg-[#10b981]/5 font-mono">
+            <td class="p-3.5 sm:p-5 font-bold text-[#171717] bg-[#10b981]/5 font-mono">
               ~$130 - $160 / mo (Save 55%)
             </td>
-            <td class="p-4 sm:p-5 text-[#4d4d4d] font-mono">
+            <td class="p-3.5 sm:p-5 text-[#4d4d4d] font-mono">
               $290 - $380 / mo
             </td>
-            <td class="p-4 sm:p-5 text-[#4d4d4d] font-mono">
-              $65 - $95 / mo (+ higher vet bills)
+            <td class="p-3.5 sm:p-5 text-[#4d4d4d] font-mono">
+              $65 - $95 / mo (+ vet bills)
             </td>
           </tr>
         </tbody>
