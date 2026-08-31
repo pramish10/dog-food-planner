@@ -2,7 +2,7 @@
 import { RECIPES } from '../data/recipes';
 ---
 
-<section id="results-section" class="py-12 sm:py-20 bg-white border-b border-[#ebebeb] transition-all">
+<section id="results-section" class="py-12 sm:py-20 bg-white border-b border-[#ebebeb] transition-all hidden">
   <div class="max-w-5xl mx-auto px-3.5 sm:px-6">
     
     <!-- Results Header -->
@@ -10,13 +10,13 @@ import { RECIPES } from '../data/recipes';
       <div>
         <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full mb-2">
           <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
-          CANINE NUTRITION BLUEPRINT
+          CANINE NUTRITION BLUEPRINT GENERATED
         </div>
         <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight">
-          Personalized Plan for <span id="res-dog-name" class="text-[#0070f3]">Luna</span>
+          Personalized Nutrition Plan for <span id="res-dog-name" class="text-[#0070f3]">Lucy</span>
         </h2>
         <p class="text-xs sm:text-sm text-[#4d4d4d] mt-1" id="res-dog-subtitle">
-          Adult Female (Spayed) · 45 lbs · Standard Moderate Activity
+          Adult Female (Spayed) · 45 lbs · Balanced Maintenance
         </p>
       </div>
 
@@ -34,10 +34,10 @@ import { RECIPES } from '../data/recipes';
       </div>
     </div>
 
-    <!-- Metric Cards Grid (2x2 on Mobile, 4-col on Desktop) -->
+    <!-- Top Key Metric Cards Grid -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 mb-8 sm:mb-10">
       
-      <!-- Card 1: Calories -->
+      <!-- Card 1: Daily Target Calories -->
       <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
         <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] font-mono mb-1 sm:mb-2 uppercase">
           <span>Daily Calories</span>
@@ -51,7 +51,7 @@ import { RECIPES } from '../data/recipes';
         </div>
       </div>
 
-      <!-- Card 2: Daily Weight / Servings -->
+      <!-- Card 2: Total Daily Weight -->
       <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
         <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] font-mono mb-1 sm:mb-2 uppercase">
           <span>Daily Portion</span>
@@ -61,41 +61,41 @@ import { RECIPES } from '../data/recipes';
           728 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">grams</span>
         </div>
         <div class="text-[10px] sm:text-xs text-[#8f8f8f] mt-0.5 sm:mt-1 font-mono">
-          ≈ <span id="res-daily-cups">3.2</span> cups
+          ≈ <span id="res-daily-cups">3.2</span> measuring cups
         </div>
       </div>
 
       <!-- Card 3: Per Meal Split -->
       <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
         <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] font-mono mb-1 sm:mb-2 uppercase">
-          <span>Per Meal</span>
+          <span>Per Main Bowl</span>
           <span class="text-[#7928ca]" id="res-meals-count">2x Daily</span>
         </div>
         <div class="text-xl sm:text-3xl font-bold text-[#171717] font-mono tracking-tight" id="res-per-meal-grams">
           364 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">g/bowl</span>
         </div>
         <div class="text-[10px] sm:text-xs text-[#8f8f8f] mt-0.5 sm:mt-1 font-mono">
-          Morning & Eve
+          Morning & Evening
         </div>
       </div>
 
-      <!-- Card 4: Starch & Carb Contrast -->
+      <!-- Card 4: Treat & Snack Allowance -->
       <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
         <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] font-mono mb-1 sm:mb-2 uppercase">
-          <span>Net Carbs</span>
-          <span class="text-[#10b981] font-semibold">&lt; 3.5%</span>
+          <span>Treat Budget</span>
+          <span class="text-[#f5a623] font-semibold" id="res-treat-pct">10%</span>
         </div>
-        <div class="text-xl sm:text-3xl font-bold text-[#10b981] font-mono tracking-tight">
-          0% <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">fillers</span>
+        <div class="text-xl sm:text-3xl font-bold text-[#f5a623] font-mono tracking-tight" id="res-treat-kcal">
+          98 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">kcal/day</span>
         </div>
         <div class="text-[10px] sm:text-xs text-[#8f8f8f] mt-0.5 sm:mt-1 font-mono">
-          vs 50%+ Kibble
+          Healthy Treats/Berries
         </div>
       </div>
 
     </div>
 
-    <!-- Diet Switcher Pills (Mobile-Friendly Responsive Container) -->
+    <!-- Diet Switcher Pills -->
     <div class="overflow-x-auto pb-2 sm:pb-0 mb-6 sm:mb-8 no-scrollbar">
       <div class="flex items-center gap-1.5 sm:gap-2 p-1 bg-[#f2f2f2] rounded-lg border border-[#ebebeb] min-w-max">
         <button 
@@ -122,10 +122,31 @@ import { RECIPES } from '../data/recipes';
       </div>
     </div>
 
-    <!-- Main Recipe & Macro Grid -->
+    <!-- SECTION A: Time-Specific Daily Feeding Schedule -->
+    <div class="hairline-card p-4 sm:p-8 mb-8 sm:mb-10 bg-white">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-[#ebebeb]">
+        <div>
+          <span class="font-mono text-[10px] sm:text-xs font-bold text-[#0070f3] uppercase tracking-wider">
+            TIMED FEEDING TIMETABLE
+          </span>
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mt-0.5">
+            What to Feed <span class="res-dog-name-inline">Lucy</span> by Exact Time
+          </h3>
+        </div>
+        <span class="font-mono text-[10px] text-[#8f8f8f] bg-[#fafafa] border border-[#ebebeb] px-2 py-1 rounded">
+          Optimal Digestion
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="timed-schedule-container">
+        <!-- Dynamically rendered via JS -->
+      </div>
+    </div>
+
+    <!-- SECTION B: Itemized Daily Weigh-In Blueprint & Macros -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
       
-      <!-- Left 2 Cols: Recipe & Ingredients -->
+      <!-- Left 2 Cols: Ingredient Blueprint -->
       <div class="lg:col-span-2 space-y-5 sm:space-y-6">
         
         <div class="hairline-card p-4 sm:p-8">
@@ -142,13 +163,13 @@ import { RECIPES } from '../data/recipes';
             Gently Cooked Lean Turkey & Pumpkin Feast
           </h3>
           <p class="text-xs sm:text-sm text-[#4d4d4d] leading-relaxed mb-5 sm:mb-6" id="recipe-description">
-            Slow-simmered 93% lean ground turkey paired with antioxidant-rich pumpkin puree, steamed baby spinach, and wild Alaskan salmon oil. Formulated to exceed AAFCO Dog Food Nutrient Profiles.
+            Slow-simmered lean ground turkey paired with antioxidant-rich pumpkin puree, steamed greens, and wild Alaskan salmon oil.
           </p>
 
-          <!-- Ingredients Grams Breakdown Table -->
+          <!-- Ingredients Grams Table -->
           <div class="mb-5 sm:mb-6">
             <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
-              Daily Bowl Weigh-In Blueprint
+              Daily Weigh-In Items & Ingredients
             </h4>
             <div class="divide-y divide-[#ebebeb] border border-[#ebebeb] rounded-lg overflow-hidden" id="ingredient-rows-container">
               <!-- Dynamically populated via JS -->
@@ -234,7 +255,7 @@ import { RECIPES } from '../data/recipes';
           </div>
         </div>
 
-        <!-- Budget & Comparison Card -->
+        <!-- Budget Card -->
         <div class="hairline-card p-4 sm:p-6 bg-gradient-to-b from-white to-[#fafafa]">
           <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-3">
             Estimated Monthly Investment
@@ -246,7 +267,7 @@ import { RECIPES } from '../data/recipes';
           </div>
 
           <p class="text-xs text-[#4d4d4d] mb-4 leading-relaxed">
-            Fresh batch preparation saves up to <strong class="text-[#171717]">55% vs subscription delivery services</strong> while delivering pure human-grade nutrition.
+            Fresh batch preparation saves up to <strong class="text-[#171717]">55% vs subscription delivery brands</strong> while delivering pure human-grade nutrition.
           </p>
 
           <a 
@@ -261,6 +282,25 @@ import { RECIPES } from '../data/recipes';
 
     </div>
 
+    <!-- SECTION C: 7-Day Weekly Meal Rotation Schedule -->
+    <div class="hairline-card p-4 sm:p-8 bg-[#fafafa]">
+      <div class="mb-6">
+        <span class="font-mono text-[10px] sm:text-xs font-bold text-[#7928ca] uppercase tracking-wider">
+          WEEKLY ROTATION PROTOCOL
+        </span>
+        <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mt-0.5">
+          7-Day Variety & Nutrient Rotation Schedule
+        </h3>
+        <p class="text-xs text-[#8f8f8f] mt-1">
+          Rotating primary proteins prevents food intolerances and broadens amino acid diversity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2.5" id="weekly-days-container">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -268,22 +308,7 @@ import { RECIPES } from '../data/recipes';
   import { calculateCanineNutrition } from '../utils/nutritionEngine';
   import { RECIPES } from '../data/recipes';
 
-  let currentProfile = {
-    name: 'Luna',
-    breed: 'Mixed Breed / Mutts',
-    ageStage: 'adult',
-    gender: 'female-spayed',
-    weightLbs: 45,
-    targetGoal: 'maintain',
-    bcs: 5,
-    activityLevel: 'moderate',
-    allergies: [] as string[],
-    healthFocus: 'Longevity & Vitality',
-    dietPreference: 'fresh-cooked',
-    proteinChoice: 'Turkey'
-  };
-
-  let currentDietType = 'fresh-cooked';
+  let currentProfile: any = null;
 
   function renderPlan(profile: any) {
     const result = calculateCanineNutrition(profile);
@@ -291,9 +316,13 @@ import { RECIPES } from '../data/recipes';
     // Update Headings
     const dogNameEl = document.getElementById('res-dog-name');
     const subtitleEl = document.getElementById('res-dog-subtitle');
+    const inlines = document.querySelectorAll('.res-dog-name-inline');
+    
     if (dogNameEl) dogNameEl.textContent = result.dogName;
+    inlines.forEach((el) => { el.textContent = result.dogName; });
+
     if (subtitleEl) {
-      subtitleEl.textContent = `${profile.breed} · ${profile.weightLbs} lbs (${result.weightKg} kg) · Goal: ${profile.targetGoal.toUpperCase()}`;
+      subtitleEl.textContent = `${profile.breed} · ${Math.round(profile.weightLbs)} lbs (${result.weightKg} kg) · Goal: ${profile.targetGoal.toUpperCase()}`;
     }
 
     // Update Top Metric Cards
@@ -303,18 +332,53 @@ import { RECIPES } from '../data/recipes';
     const dailyCupsEl = document.getElementById('res-daily-cups');
     const perMealEl = document.getElementById('res-per-meal-grams');
     const mealsCountEl = document.getElementById('res-meals-count');
+    const treatPctEl = document.getElementById('res-treat-pct');
+    const treatKcalEl = document.getElementById('res-treat-kcal');
 
     if (merEl) merEl.innerHTML = `${result.merKcal} <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">kcal</span>`;
     if (rerEl) rerEl.textContent = `${result.rerKcal}`;
-    
-    let activeGrams = result.dailyGramsFresh;
-    if (profile.dietPreference === 'raw-barf') activeGrams = result.dailyGramsRaw;
-    if (profile.dietPreference === 'superfood-topper') activeGrams = result.dailyGramsTopper;
-
-    if (dailyGramsEl) dailyGramsEl.innerHTML = `${activeGrams} <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">grams</span>`;
-    if (dailyCupsEl) dailyCupsEl.textContent = `${(activeGrams / 225).toFixed(1)}`;
-    if (perMealEl) perMealEl.innerHTML = `${Math.round(activeGrams / result.mealsPerDay)} <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">g/bowl</span>`;
+    if (dailyGramsEl) dailyGramsEl.innerHTML = `${result.activeDailyGrams} <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">grams</span>`;
+    if (dailyCupsEl) dailyCupsEl.textContent = `${result.dailyCupsEst}`;
+    if (perMealEl) perMealEl.innerHTML = `${result.perMealGrams} <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">g/bowl</span>`;
     if (mealsCountEl) mealsCountEl.textContent = `${result.mealsPerDay}x Daily`;
+    if (treatPctEl) treatPctEl.textContent = `${profile.treatBudgetPct ?? 10}%`;
+    if (treatKcalEl) treatKcalEl.innerHTML = `${result.treatKcal} <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">kcal/day</span>`;
+
+    // Render Timed Schedule Slots (Morning, Afternoon, Evening)
+    const timedContainer = document.getElementById('timed-schedule-container');
+    if (timedContainer) {
+      timedContainer.innerHTML = '';
+      result.dailySchedule.forEach((slot, idx) => {
+        const slotCard = document.createElement('div');
+        slotCard.className = 'p-4 rounded-xl border border-[#ebebeb] bg-[#fafafa] flex flex-col justify-between';
+        
+        let itemsHtml = slot.items.map(item => `
+          <li class="flex items-center justify-between text-xs py-1 border-b border-[#ebebeb]/60">
+            <span class="text-[#171717] font-medium">${item.name}</span>
+            <span class="font-mono text-[11px] font-bold text-[#0070f3]">${item.amount}</span>
+          </li>
+        `).join('');
+
+        slotCard.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-[#171717] bg-[#f2f2f2] px-2 py-0.5 rounded">
+                ${slot.timeLabel}
+              </span>
+              <span class="text-[10px] font-mono text-[#8f8f8f]">${slot.portionGrams}g portion</span>
+            </div>
+            <h4 class="font-semibold text-sm text-[#171717] mb-3">${slot.slotName}</h4>
+            <ul class="space-y-1 mb-3">
+              ${itemsHtml}
+            </ul>
+          </div>
+          <p class="text-[10px] text-[#8f8f8f] italic pt-2 border-t border-[#ebebeb]">
+            ${slot.instructions}
+          </p>
+        `;
+        timedContainer.appendChild(slotCard);
+      });
+    }
 
     // Find Matching Recipe
     const recipe = RECIPES.find((r) => r.dietType === profile.dietPreference) || RECIPES[0];
@@ -333,7 +397,7 @@ import { RECIPES } from '../data/recipes';
     if (rowsContainer) {
       rowsContainer.innerHTML = '';
       recipe.ingredients.forEach((ing) => {
-        const ingGrams = Math.round((activeGrams * ing.percentage) / 100);
+        const ingGrams = Math.round((result.activeDailyGrams * ing.percentage) / 100);
         const row = document.createElement('div');
         row.className = 'p-3 sm:p-3.5 bg-white hover:bg-[#fafafa] flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 sm:gap-2 text-xs transition-colors';
         row.innerHTML = `
@@ -392,18 +456,40 @@ import { RECIPES } from '../data/recipes';
     // Monthly cost
     const monthlyCostEl = document.getElementById('res-monthly-cost');
     if (monthlyCostEl) monthlyCostEl.textContent = `$${result.costEstimate.monthlyCost}`;
+
+    // Render Weekly 7-Day Day-by-Day Rotation Cards
+    const weeklyContainer = document.getElementById('weekly-days-container');
+    if (weeklyContainer) {
+      weeklyContainer.innerHTML = '';
+      result.weeklyDayPlans.forEach((dp) => {
+        const dayCard = document.createElement('div');
+        dayCard.className = 'p-3 bg-white border border-[#ebebeb] rounded-xl flex flex-col justify-between';
+        dayCard.innerHTML = `
+          <div>
+            <span class="font-mono text-[10px] font-bold text-[#171717] bg-[#f2f2f2] px-2 py-0.5 rounded">
+              ${dp.dayName.toUpperCase()}
+            </span>
+            <h5 class="font-semibold text-xs text-[#171717] mt-2 mb-1">${dp.focus}</h5>
+          </div>
+          <div class="pt-2 border-t border-[#ebebeb] text-[10px] text-[#10b981] font-mono font-medium">
+            ✓ ${result.activeDailyGrams}g Total
+          </div>
+        `;
+        weeklyContainer.appendChild(dayCard);
+      });
+    }
   }
 
   // Listen to plan generation events
   window.addEventListener('generate-plan', (e: any) => {
     currentProfile = e.detail;
-    currentDietType = currentProfile.dietPreference;
     renderPlan(currentProfile);
   });
 
   // Diet tab switcher
   document.querySelectorAll('.diet-tab-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
+      if (!currentProfile) return;
       document.querySelectorAll('.diet-tab-btn').forEach((b) => {
         b.classList.remove('active', 'bg-white', 'text-[#171717]', 'shadow-xs');
         b.classList.add('text-[#8f8f8f]');
@@ -421,7 +507,4 @@ import { RECIPES } from '../data/recipes';
   document.getElementById('print-plan-btn')?.addEventListener('click', () => {
     window.print();
   });
-
-  // Initial render on load
-  renderPlan(currentProfile);
 </script>

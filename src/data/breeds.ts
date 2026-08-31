@@ -7,7 +7,11 @@ export interface BreedInfo {
 }
 
 export const CANINE_BREEDS: BreedInfo[] = [
-  { name: 'Mixed Breed / Mutts', category: 'Medium', avgWeightLbs: [20, 60], metabolicFactor: 1.0 },
+  { name: 'Unknown / Mixed (Toy: under 12 lbs)', category: 'Toy', avgWeightLbs: [4, 12], metabolicFactor: 1.25 },
+  { name: 'Unknown / Mixed (Small: 12–25 lbs)', category: 'Small', avgWeightLbs: [12, 25], metabolicFactor: 1.05 },
+  { name: 'Unknown / Mixed (Medium: 25–55 lbs)', category: 'Medium', avgWeightLbs: [25, 55], metabolicFactor: 1.0 },
+  { name: 'Unknown / Mixed (Large: 55–90 lbs)', category: 'Large', avgWeightLbs: [55, 90], metabolicFactor: 0.98 },
+  { name: 'Unknown / Mixed (Giant: 90+ lbs)', category: 'Giant', avgWeightLbs: [90, 160], metabolicFactor: 0.95 },
   { name: 'Labrador Retriever', category: 'Large', avgWeightLbs: [55, 80], metabolicFactor: 0.95, predispositions: ['Joint Support', 'Weight Control'] },
   { name: 'French Bulldog', category: 'Small', avgWeightLbs: [18, 28], metabolicFactor: 0.9, predispositions: ['Sensitive Digestion', 'Skin Allergies'] },
   { name: 'German Shepherd', category: 'Large', avgWeightLbs: [50, 90], metabolicFactor: 1.05, predispositions: ['Hip & Joint', 'Digestive Health'] },

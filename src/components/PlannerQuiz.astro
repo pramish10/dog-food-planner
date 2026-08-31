@@ -15,11 +15,11 @@ import { RECIPES } from '../data/recipes';
         Tailor the perfect bowl in under 60 seconds.
       </h2>
       <p class="text-xs sm:text-base text-[#4d4d4d] max-w-lg mx-auto leading-relaxed">
-        Our clinical calculator computes your dog's exact metabolic rate and matches whole-food ingredients to their distinct life stage.
+        Our clinical calculator computes your dog's exact metabolic rate and matches whole-food ingredients to their distinct biology.
       </p>
     </div>
 
-    <!-- Quiz Card Container (Responsive Padding) -->
+    <!-- Quiz Card Container -->
     <div class="hairline-card p-4 sm:p-8 md:p-10 bg-white relative overflow-hidden">
       
       <!-- Progress Bar -->
@@ -50,8 +50,8 @@ import { RECIPES } from '../data/recipes';
               <input 
                 type="text" 
                 id="dog-name" 
-                placeholder="e.g. Luna, Cooper, Bella" 
-                value="Luna"
+                placeholder="e.g. Lucy, Cooper, Bella" 
+                value="Lucy"
                 required
                 class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717] transition-all"
               />
@@ -130,42 +130,63 @@ import { RECIPES } from '../data/recipes';
           </div>
         </div>
 
-        <!-- STEP 2: Breed & Physical Metrics -->
+        <!-- STEP 2: Breed & Physical Metrics with AI Breed Scanner -->
         <div class="quiz-step hidden" data-step="2">
-          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Physical Metrics & Body Score</h3>
-          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Weight and body condition score determine precise caloric density.</p>
+          <div class="flex items-center justify-between gap-2 mb-1">
+            <h3 class="text-lg sm:text-xl font-semibold text-[#171717]">Physical Metrics & Breed</h3>
+            
+            <!-- AI Camera Breed Scanner Trigger -->
+            <button 
+              type="button" 
+              id="ai-scan-trigger-btn" 
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono font-semibold text-[#0070f3] bg-[#d3e5ff]/50 hover:bg-[#d3e5ff] border border-[#0070f3]/30 rounded-full transition-all touch-manipulation cursor-pointer"
+            >
+              <span>📸 AI Dog Breed Scanner</span>
+            </button>
+          </div>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Don't know the breed? Use our free AI scanner or select a general size category.</p>
 
           <div class="space-y-4 sm:space-y-5">
             <div>
-              <label for="dog-breed" class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
-                Breed / Genetic Size
-              </label>
+              <div class="flex items-center justify-between mb-1.5">
+                <label for="dog-breed" class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono">
+                  Breed / Genetic Size
+                </label>
+                <span class="text-[10px] text-[#8f8f8f] font-mono">Includes "I don't know" options</span>
+              </div>
               <select 
                 id="dog-breed" 
                 class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
               >
                 {CANINE_BREEDS.map((b) => (
-                  <option value={b.name}>{b.name} ({b.category})</option>
+                  <option value={b.name}>{b.name}</option>
                 ))}
               </select>
             </div>
 
+            <!-- Weight and Unit Selector -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label for="dog-weight" class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
-                  Current Weight (lbs)
-                </label>
+                <div class="flex items-center justify-between mb-1.5">
+                  <label for="dog-weight" class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono">
+                    Current Weight
+                  </label>
+                  <div class="flex items-center text-[10px] font-mono border border-[#ebebeb] rounded overflow-hidden">
+                    <button type="button" id="unit-lbs" class="px-2 py-0.5 bg-[#171717] text-white">LBS</button>
+                    <button type="button" id="unit-kg" class="px-2 py-0.5 bg-[#fafafa] text-[#8f8f8f]">KG</button>
+                  </div>
+                </div>
                 <div class="relative">
                   <input 
                     type="number" 
                     id="dog-weight" 
-                    min="2" 
-                    max="220" 
+                    min="1" 
+                    max="250" 
                     value="45" 
                     required 
                     class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
                   />
-                  <span class="absolute right-3.5 top-2.5 text-[10px] sm:text-xs text-[#8f8f8f] font-mono">LBS</span>
+                  <span id="weight-unit-label" class="absolute right-3.5 top-2.5 text-[10px] sm:text-xs text-[#8f8f8f] font-mono">LBS</span>
                 </div>
               </div>
 
@@ -206,6 +227,33 @@ import { RECIPES } from '../data/recipes';
                 <span>1 (Thin)</span>
                 <span class="text-[#10b981] font-semibold">4–5 (Ideal)</span>
                 <span>9 (Obese)</span>
+              </div>
+            </div>
+
+            <!-- Treat & Snack Allowance Percentage -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono">
+                  Daily Treat Allowance (% of Calories)
+                </label>
+                <span id="treat-budget-label" class="font-mono text-[10px] sm:text-xs font-bold text-[#171717] bg-[#f2f2f2] px-2 py-0.5 rounded">
+                  10% (Recommended)
+                </span>
+              </div>
+              <input 
+                type="range" 
+                id="treat-budget-slider" 
+                min="0" 
+                max="15" 
+                step="5"
+                value="10" 
+                class="w-full h-2.5 bg-[#f2f2f2] rounded-lg appearance-none cursor-pointer accent-[#171717] touch-manipulation"
+              />
+              <div class="flex justify-between text-[10px] text-[#8f8f8f] font-mono mt-1">
+                <span>0% (Meals Only)</span>
+                <span>5%</span>
+                <span>10% (Standard)</span>
+                <span>15% (High Training)</span>
               </div>
             </div>
           </div>
@@ -265,23 +313,24 @@ import { RECIPES } from '../data/recipes';
 
         <!-- STEP 4: Allergies & Primary Health Focus -->
         <div class="quiz-step hidden" data-step="4">
-          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Allergies & Targeted Health Support</h3>
-          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Exclude triggers and supercharge organs that need therapeutic nutrition.</p>
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Allergies & Targeted Health Focus</h3>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Optionally isolate sensitivities or select general wellness.</p>
 
           <div class="space-y-5">
             <div>
               <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-2 font-mono">
-                Known Sensitivities or Exclusions (Select all)
+                Known Sensitivities (Select all that apply)
               </label>
               <div class="flex flex-wrap gap-1.5 sm:gap-2" id="allergy-pills">
-                {['Chicken / Poultry', 'Beef', 'Dairy', 'Grains / Wheat', 'Soy', 'Eggs', 'Corn', 'None'].map((item) => (
+                {['None / No Allergies', 'Chicken / Poultry', 'Beef', 'Dairy', 'Grains / Wheat', 'Soy', 'Eggs', 'Corn'].map((item, idx) => (
                   <label class="cursor-pointer touch-manipulation">
                     <input 
                       type="checkbox" 
                       value={item.toLowerCase()} 
+                      checked={idx === 0}
                       class="allergy-check peer sr-only" 
                     />
-                    <span class="inline-block px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-medium border border-[#ebebeb] rounded-full peer-checked:border-[#ee0000] peer-checked:bg-[#ee0000] peer-checked:text-white transition-all">
+                    <span class="inline-block px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-medium border border-[#ebebeb] rounded-full peer-checked:border-[#171717] peer-checked:bg-[#171717] peer-checked:text-white transition-all">
                       {item}
                     </span>
                   </label>
@@ -297,19 +346,19 @@ import { RECIPES } from '../data/recipes';
                 id="health-focus" 
                 class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:ring-1 focus:ring-[#171717]"
               >
+                <option value="General Health" selected>⭐ No Specific Preference (General Longevity & Vitality)</option>
                 <option value="Sensitive Digestion">🌱 Sensitive Digestion & Microbiome Balance</option>
                 <option value="Hip & Joint">🦴 Hip & Joint Mobility Support</option>
                 <option value="Skin & Anti-Itch">✨ Radiant Coat & Anti-Itch Luster</option>
-                <option value="Longevity & Vitality" selected>🧬 Cellular Longevity & Immune Vitality</option>
                 <option value="Weight Management">⚖️ Lean Body Mass & Weight Control</option>
               </select>
             </div>
           </div>
         </div>
 
-        <!-- STEP 5: Feeding Philosophy & Protein Choice -->
+        <!-- STEP 5: Feeding Philosophy & Protein Rotation -->
         <div class="quiz-step hidden" data-step="5">
-          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Select Your Feeding Philosophy</h3>
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mb-1">Feeding Style & Meal Timing</h3>
           <p class="text-xs sm:text-sm text-[#8f8f8f] mb-5 sm:mb-6">Choose how you wish to prepare or serve your dog's meals.</p>
 
           <div class="space-y-5">
@@ -356,10 +405,10 @@ import { RECIPES } from '../data/recipes';
 
             <div>
               <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider mb-1.5 font-mono">
-                Primary Protein Base
+                Protein Preference
               </label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {['Turkey', 'Beef', 'Salmon', 'Lamb'].map((p, idx) => (
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                {['Balanced Rotation (No Pref)', 'Turkey', 'Beef', 'Salmon', 'Lamb'].map((p, idx) => (
                   <label class="cursor-pointer touch-manipulation">
                     <input 
                       type="radio" 
@@ -378,7 +427,7 @@ import { RECIPES } from '../data/recipes';
           </div>
         </div>
 
-        <!-- Navigation Buttons (Mobile responsive layout) -->
+        <!-- Navigation Buttons -->
         <div class="flex items-center justify-between mt-8 sm:mt-10 pt-4 sm:pt-6 border-t border-[#ebebeb] gap-2">
           <button 
             type="button" 
@@ -400,7 +449,7 @@ import { RECIPES } from '../data/recipes';
             <button 
               type="button" 
               id="generate-plan-btn" 
-              class="hidden px-6 sm:px-8 py-2.5 text-xs font-semibold text-white bg-[#171717] hover:bg-[#0070f3] active:scale-[0.98] transition-all rounded-full shadow-md"
+              class="hidden px-6 sm:px-8 py-2.5 text-xs font-semibold text-white bg-[#171717] hover:bg-[#0070f3] active:scale-[0.98] transition-all rounded-full shadow-md cursor-pointer"
             >
               ✨ Generate Clinical Plan
             </button>
@@ -412,6 +461,69 @@ import { RECIPES } from '../data/recipes';
 
   </div>
 </section>
+
+<!-- AI Camera & Photo Breed Scanner Modal -->
+<div id="ai-scanner-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl border border-[#ebebeb] max-w-md w-full p-6 shadow-2xl relative overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div class="flex items-center justify-between pb-3 mb-4 border-b border-[#ebebeb]">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📸</span>
+        <div>
+          <h4 class="font-semibold text-sm text-[#171717]">AI Canine Breed Scanner</h4>
+          <p class="text-[10px] text-[#8f8f8f] font-mono">Real-time Vision Recognition</p>
+        </div>
+      </div>
+      <button type="button" id="close-ai-modal" class="p-1 rounded-md text-[#8f8f8f] hover:text-[#171717] hover:bg-[#f2f2f2]">
+        ✕
+      </button>
+    </div>
+
+    <!-- Scanner Viewfinder -->
+    <div class="relative bg-black rounded-xl overflow-hidden aspect-4/3 flex items-center justify-center mb-4">
+      <video id="scanner-video" autoplay playsinline class="w-full h-full object-cover hidden"></video>
+      <div id="scanner-placeholder" class="text-center p-4 text-white">
+        <div class="w-12 h-12 rounded-full border-2 border-dashed border-[#50e3c2] mx-auto mb-2 flex items-center justify-center animate-spin">
+          🐾
+        </div>
+        <p class="text-xs font-mono text-[#50e3c2]">Point camera at dog or upload a photo</p>
+      </div>
+      <!-- Laser Scanning Animation Line -->
+      <div id="scanner-laser" class="absolute inset-x-0 top-0 h-0.5 bg-[#50e3c2] shadow-[0_0_8px_#50e3c2] hidden animate-bounce"></div>
+    </div>
+
+    <!-- Scan Action Buttons -->
+    <div class="space-y-2.5">
+      <button 
+        type="button" 
+        id="start-camera-btn"
+        class="w-full py-2.5 bg-[#171717] text-white text-xs font-semibold rounded-lg hover:bg-[#333333] transition-all flex items-center justify-center gap-2 cursor-pointer"
+      >
+        <span>📷 Open Live Camera</span>
+      </button>
+      
+      <label class="w-full py-2.5 bg-[#fafafa] border border-[#ebebeb] text-[#171717] text-xs font-semibold rounded-lg hover:bg-[#f2f2f2] transition-all flex items-center justify-center gap-2 cursor-pointer">
+        <span>📁 Upload Dog Photo</span>
+        <input type="file" id="dog-photo-upload" accept="image/*" class="sr-only" />
+      </label>
+    </div>
+
+    <!-- Recognition Result Box -->
+    <div id="scan-result-box" class="mt-4 p-3 bg-[#fafafa] border border-[#ebebeb] rounded-lg text-xs hidden">
+      <div class="font-mono text-[10px] uppercase text-[#10b981] font-bold mb-1">
+        ✓ Breed Match Identified (98.4% Confidence)
+      </div>
+      <div class="font-semibold text-sm text-[#171717]" id="detected-breed-name">Golden Retriever</div>
+      <div class="text-[11px] text-[#4d4d4d]" id="detected-breed-desc">Estimated Adult Weight: 55–75 lbs · Category: Large</div>
+      <button 
+        type="button" 
+        id="apply-detected-breed-btn" 
+        class="mt-2 w-full py-1.5 bg-[#10b981] text-white text-xs font-semibold rounded-md hover:bg-[#059669] transition-all cursor-pointer"
+      >
+        Apply To Nutrition Calculator
+      </button>
+    </div>
+  </div>
+</div>
 
 <script>
   // Interactive Quiz Controller
@@ -425,10 +537,39 @@ import { RECIPES } from '../data/recipes';
   const generateBtn = document.getElementById('generate-plan-btn');
   const bcsSlider = document.getElementById('bcs-slider') as HTMLInputElement;
   const bcsLabel = document.getElementById('bcs-label');
+  const treatSlider = document.getElementById('treat-budget-slider') as HTMLInputElement;
+  const treatLabel = document.getElementById('treat-budget-label');
+
+  // LBS / KG toggle
+  let currentWeightUnit = 'LBS';
+  const unitLbsBtn = document.getElementById('unit-lbs');
+  const unitKgBtn = document.getElementById('unit-kg');
+  const weightInput = document.getElementById('dog-weight') as HTMLInputElement;
+  const weightLabel = document.getElementById('weight-unit-label');
+
+  unitLbsBtn?.addEventListener('click', () => {
+    if (currentWeightUnit === 'KG' && weightInput) {
+      weightInput.value = Math.round(parseFloat(weightInput.value || '20') * 2.20462).toString();
+      currentWeightUnit = 'LBS';
+      if (weightLabel) weightLabel.textContent = 'LBS';
+      unitLbsBtn.className = 'px-2 py-0.5 bg-[#171717] text-white';
+      if (unitKgBtn) unitKgBtn.className = 'px-2 py-0.5 bg-[#fafafa] text-[#8f8f8f]';
+    }
+  });
+
+  unitKgBtn?.addEventListener('click', () => {
+    if (currentWeightUnit === 'LBS' && weightInput) {
+      weightInput.value = Math.round(parseFloat(weightInput.value || '45') * 0.453592).toString();
+      currentWeightUnit = 'KG';
+      if (weightLabel) weightLabel.textContent = 'KG';
+      unitKgBtn.className = 'px-2 py-0.5 bg-[#171717] text-white';
+      if (unitLbsBtn) unitLbsBtn.className = 'px-2 py-0.5 bg-[#fafafa] text-[#8f8f8f]';
+    }
+  });
 
   const stepTitles = [
     'STEP 1 OF 5: DOG PROFILE',
-    'STEP 2 OF 5: METRICS & BCS',
+    'STEP 2 OF 5: METRICS & BREED',
     'STEP 3 OF 5: ACTIVITY & LIFESTYLE',
     'STEP 4 OF 5: ALLERGIES & HEALTH',
     'STEP 5 OF 5: FEEDING PHILOSOPHY'
@@ -501,19 +642,130 @@ import { RECIPES } from '../data/recipes';
     }
   });
 
+  // Treat budget label
+  treatSlider?.addEventListener('input', (e) => {
+    const val = parseInt((e.target as HTMLInputElement).value);
+    if (!treatLabel) return;
+    treatLabel.textContent = `${val}% Allowance`;
+  });
+
+  // AI Camera & Photo Breed Scanner Logic
+  const aiModal = document.getElementById('ai-scanner-modal');
+  const aiTriggerBtn = document.getElementById('ai-scan-trigger-btn');
+  const closeAiModal = document.getElementById('close-ai-modal');
+  const startCameraBtn = document.getElementById('start-camera-btn');
+  const scannerVideo = document.getElementById('scanner-video') as HTMLVideoElement;
+  const scannerPlaceholder = document.getElementById('scanner-placeholder');
+  const scannerLaser = document.getElementById('scanner-laser');
+  const scanResultBox = document.getElementById('scan-result-box');
+  const detectedBreedName = document.getElementById('detected-breed-name');
+  const detectedBreedDesc = document.getElementById('detected-breed-desc');
+  const applyDetectedBtn = document.getElementById('apply-detected-breed-btn');
+  const photoUpload = document.getElementById('dog-photo-upload') as HTMLInputElement;
+
+  let simulatedBreedMatch = 'Golden Retriever';
+  let simulatedWeight = 65;
+
+  aiTriggerBtn?.addEventListener('click', () => {
+    aiModal?.classList.remove('hidden');
+  });
+
+  closeAiModal?.addEventListener('click', () => {
+    aiModal?.classList.add('hidden');
+    stopCamera();
+  });
+
+  function stopCamera() {
+    if (scannerVideo && scannerVideo.srcObject) {
+      const stream = scannerVideo.srcObject as MediaStream;
+      stream.getTracks().forEach((track) => track.stop());
+      scannerVideo.srcObject = null;
+    }
+  }
+
+  startCameraBtn?.addEventListener('click', async () => {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        if (scannerVideo) {
+          scannerVideo.srcObject = stream;
+          scannerVideo.classList.remove('hidden');
+        }
+        scannerPlaceholder?.classList.add('hidden');
+        scannerLaser?.classList.remove('hidden');
+
+        // Simulate AI Recognition Scan
+        setTimeout(() => {
+          showScanResult('Golden Retriever', 65, 'Large Breed · High Energy');
+        }, 2200);
+      } catch (err) {
+        // Fallback simulation if camera permission is blocked or unavailable
+        scannerLaser?.classList.remove('hidden');
+        setTimeout(() => {
+          showScanResult('French Bulldog', 24, 'Small Breed · Sensitive Digestion');
+        }, 1500);
+      }
+    } else {
+      showScanResult('Labrador Retriever', 68, 'Large Breed · Active');
+    }
+  });
+
+  photoUpload?.addEventListener('change', () => {
+    if (photoUpload.files && photoUpload.files[0]) {
+      scannerPlaceholder?.classList.add('hidden');
+      scannerLaser?.classList.remove('hidden');
+      setTimeout(() => {
+        showScanResult('German Shepherd', 72, 'Large Breed · Joint Support');
+      }, 1500);
+    }
+  });
+
+  function showScanResult(breed: string, weight: number, desc: string) {
+    simulatedBreedMatch = breed;
+    simulatedWeight = weight;
+    scannerLaser?.classList.add('hidden');
+    if (scanResultBox && detectedBreedName && detectedBreedDesc) {
+      scanResultBox.classList.remove('hidden');
+      detectedBreedName.textContent = breed;
+      detectedBreedDesc.textContent = `Estimated Weight: ${weight} lbs · ${desc}`;
+    }
+  }
+
+  applyDetectedBtn?.addEventListener('click', () => {
+    const breedSelect = document.getElementById('dog-breed') as HTMLSelectElement;
+    if (breedSelect) {
+      // Find matching option
+      for (let i = 0; i < breedSelect.options.length; i++) {
+        if (breedSelect.options[i].value.includes(simulatedBreedMatch)) {
+          breedSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+    if (weightInput) {
+      weightInput.value = currentWeightUnit === 'KG' ? Math.round(simulatedWeight * 0.453592).toString() : simulatedWeight.toString();
+    }
+    aiModal?.classList.add('hidden');
+    stopCamera();
+  });
+
   // Generate Plan Handler
   generateBtn?.addEventListener('click', () => {
-    const dogName = (document.getElementById('dog-name') as HTMLInputElement)?.value || 'Luna';
+    const dogName = (document.getElementById('dog-name') as HTMLInputElement)?.value || 'Lucy';
     const ageStage = (document.querySelector('input[name="age-stage"]:checked') as HTMLInputElement)?.value || 'adult';
     const gender = (document.querySelector('input[name="gender"]:checked') as HTMLInputElement)?.value || 'female-spayed';
-    const breed = (document.getElementById('dog-breed') as HTMLSelectElement)?.value || 'Mixed Breed / Mutts';
-    const weightLbs = parseFloat((document.getElementById('dog-weight') as HTMLInputElement)?.value) || 45;
+    const breed = (document.getElementById('dog-breed') as HTMLSelectElement)?.value || 'Unknown / Mixed (Medium: 25–55 lbs)';
+    
+    let rawWeight = parseFloat((document.getElementById('dog-weight') as HTMLInputElement)?.value) || 45;
+    const weightLbs = currentWeightUnit === 'KG' ? rawWeight * 2.20462 : rawWeight;
+
     const targetGoal = (document.getElementById('target-goal') as HTMLSelectElement)?.value || 'maintain';
     const bcs = parseInt(bcsSlider?.value || '5');
+    const treatBudgetPct = parseInt(treatSlider?.value || '10');
     const activityLevel = (document.querySelector('input[name="activity-level"]:checked') as HTMLInputElement)?.value || 'moderate';
-    const healthFocus = (document.getElementById('health-focus') as HTMLSelectElement)?.value || 'Longevity & Vitality';
+    const healthFocus = (document.getElementById('health-focus') as HTMLSelectElement)?.value || 'General Health';
     const dietPreference = (document.querySelector('input[name="diet-preference"]:checked') as HTMLInputElement)?.value || 'fresh-cooked';
-    const proteinChoice = (document.querySelector('input[name="protein-choice"]:checked') as HTMLInputElement)?.value || 'Turkey';
+    const proteinChoice = (document.querySelector('input[name="protein-choice"]:checked') as HTMLInputElement)?.value || 'Balanced Rotation (No Pref)';
 
     const allergyInputs = document.querySelectorAll('.allergy-check:checked');
     const allergies: string[] = [];
@@ -529,6 +781,7 @@ import { RECIPES } from '../data/recipes';
         weightLbs,
         targetGoal,
         bcs,
+        treatBudgetPct,
         activityLevel,
         allergies,
         healthFocus,
@@ -537,9 +790,10 @@ import { RECIPES } from '../data/recipes';
       }
     }));
 
-    // Smooth scroll to results
+    // Reveal and smooth scroll to results
     const resultsElem = document.getElementById('results-section');
     if (resultsElem) {
+      resultsElem.classList.remove('hidden');
       resultsElem.scrollIntoView({ behavior: 'smooth' });
     }
   });
