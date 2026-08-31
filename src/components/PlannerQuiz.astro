@@ -606,7 +606,7 @@ import { RECIPES } from '../data/recipes';
         <div class="flex items-center justify-between pb-2 border-b border-[#ebebeb] dark:border-[#262626]">
           <span class="font-mono text-[10px] uppercase text-[#10b981] font-bold flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-            Canine Genetic Identified (<span id="detected-confidence-text">98.4%</span> Match)
+            Visual breed match (<span id="detected-confidence-text">—</span> confidence)
           </span>
           <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold" id="detected-category-badge">Large Breed</span>
         </div>
@@ -886,26 +886,20 @@ import { RECIPES } from '../data/recipes';
   let animFrameId: number | null = null;
   let laserPos = 0;
   let laserDir = 1;
-  let mobileNetModel: any = null;
   let cocoSsdModel: any = null;
+  let dogBreedSession: any = null;
+  let dogBreedMetadata: any = null;
+  let onnxRuntime: any = null;
   let modelLoadPromise: Promise<void> | null = null;
 
-  // Load MobileNet Edge AI model asynchronously in background
+  // Load the lightweight object detector. The dedicated breed model loads only after a dog is confirmed.
   async function loadEdgeModel() {
-    if (mobileNetModel && cocoSsdModel) return;
+    if (cocoSsdModel) return;
     if (modelLoadPromise) return modelLoadPromise;
     modelLoadPromise = (async () => {
-      if (typeof (window as any).mobilenet === 'undefined') return;
+      if (typeof (window as any).cocoSsd === 'undefined') return;
       try {
-        const models: Promise<any>[] = [
-          (window as any).mobilenet.load({ version: 2, alpha: 1.0 })
-        ];
-        if (typeof (window as any).cocoSsd !== 'undefined') {
-          models.push((window as any).cocoSsd.load({ base: 'mobilenet_v2' }));
-        }
-        const [mobileNet, cocoSsd] = await Promise.all(models);
-        mobileNetModel = mobileNet;
-        cocoSsdModel = cocoSsd || null;
+        cocoSsdModel = await (window as any).cocoSsd.load({ base: 'mobilenet_v2' });
       } catch (e) {
         console.warn('Edge MobileNet fallback enabled:', e);
       } finally {
