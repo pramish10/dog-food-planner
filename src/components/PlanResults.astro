@@ -166,6 +166,12 @@ import { RECIPES } from '../data/recipes';
             Slow-simmered lean ground turkey paired with antioxidant-rich pumpkin puree, steamed greens, and wild Alaskan salmon oil.
           </p>
 
+          <!-- Visual recipe overview -->
+          <div class="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-4 sm:gap-5 mb-6 sm:mb-8 p-3 sm:p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e]">
+            <img id="recipe-image" src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=900&q=80" alt="A bowl of freshly prepared dog food" class="w-full h-40 sm:h-full min-h-40 object-cover rounded-lg" loading="lazy" />
+            <div class="flex flex-col justify-between py-0.5"><div><span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-[#10b981]"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>Your daily recipe</span><h4 class="text-sm sm:text-base font-semibold text-[#171717] dark:text-[#ededed] mt-2" id="recipe-image-title">Turkey & pumpkin, portioned for today</h4><p class="text-[11px] sm:text-xs leading-relaxed text-[#4d4d4d] dark:text-[#a1a1a1] mt-1.5" id="recipe-image-copy">Review the exact daily amounts below, then split them across your planned meals.</p></div><div class="flex flex-wrap gap-2 mt-4 text-[10px] font-mono"><span class="px-2 py-1 rounded-md border border-[#ebebeb] dark:border-[#2e2e2e] text-[#4d4d4d] dark:text-[#a1a1a1]">WEIGH, DON'T GUESS</span><span class="px-2 py-1 rounded-md border border-[#ebebeb] dark:border-[#2e2e2e] text-[#4d4d4d] dark:text-[#a1a1a1]">DAILY TOTAL</span></div></div>
+          </div>
+
           <!-- Ingredients Grams Table -->
           <div class="mb-5 sm:mb-6">
             <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
@@ -184,6 +190,13 @@ import { RECIPES } from '../data/recipes';
             <ol class="space-y-2 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]" id="prep-steps-container">
               <!-- Populated via JS -->
             </ol>
+          </div>
+
+          <!-- Amazon-ready product recommendations -->
+          <div class="no-print mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-[#ebebeb] dark:border-[#262626]">
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-4"><div><span class="font-mono text-[10px] sm:text-xs text-[#7928ca] dark:text-[#a35cf0] font-semibold uppercase tracking-wider">SHOP THE PLAN</span><h4 class="text-base sm:text-lg font-semibold text-[#171717] dark:text-[#ededed] mt-0.5">Suggested products for this recipe</h4></div><p class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">Links open Amazon in a new tab.</p></div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="product-recommendations-container" aria-live="polite"><!-- Dynamically populated via JS --></div>
+            <p class="mt-3 text-[10px] leading-relaxed text-[#8f8f8f] dark:text-[#737373]">As an Amazon Associate, this site may earn from qualifying purchases. Product links are suggestions, not veterinary advice.</p>
           </div>
         </div>
 
@@ -310,6 +323,35 @@ import { RECIPES } from '../data/recipes';
 
   let currentProfile: any = null;
 
+  const RECIPE_VISUALS = {
+    'fresh-cooked': { image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=900&q=80', alt: 'A bowl of freshly prepared dog food', title: 'Freshly prepared, ready to portion', copy: 'Use a kitchen scale for the daily total, then divide it evenly between the bowls in today\'s schedule.' },
+    'raw-barf': { image: 'https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=900&q=80', alt: 'A dog eating from a bowl outdoors', title: 'Raw ingredients, safely portioned', copy: 'Keep raw ingredients cold, use the weighed daily total, and follow the preparation guidance below.' },
+    'superfood-topper': { image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=80', alt: 'A happy dog waiting for a meal', title: 'A simple upgrade for every bowl', copy: 'Measure the topper first, then adjust the base food by calories as described in the preparation notes.' }
+  };
+
+  const PRODUCT_RECOMMENDATIONS = {
+    'fresh-cooked': [
+      { key: 'scale', name: 'Digital kitchen scale', detail: 'Makes every ingredient amount repeatable.', image: 'https://images.unsplash.com/photo-1586208958839-06c17cacdf08?auto=format&fit=crop&w=700&q=80', search: 'digital+kitchen+food+scale' },
+      { key: 'containers', name: 'Portion storage containers', detail: 'Prep and refrigerate daily servings with less guesswork.', image: 'https://images.unsplash.com/photo-1585238342028-4bbc6d5f7e48?auto=format&fit=crop&w=700&q=80', search: 'meal+prep+containers+with+lids' },
+      { key: 'salmon-oil', name: 'Omega-3 salmon oil', detail: 'A convenient option for the recipe\'s healthy-fat step.', image: 'https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&fit=crop&w=700&q=80', search: 'dog+salmon+oil+omega+3' }
+    ],
+    'raw-barf': [
+      { key: 'scale', name: 'Digital kitchen scale', detail: 'Portion meat, organs, and supplements accurately.', image: 'https://images.unsplash.com/photo-1586208958839-06c17cacdf08?auto=format&fit=crop&w=700&q=80', search: 'digital+kitchen+food+scale' },
+      { key: 'containers', name: 'Freezer-safe meal containers', detail: 'Keep pre-portioned meals sealed and organized.', image: 'https://images.unsplash.com/photo-1585238342028-4bbc6d5f7e48?auto=format&fit=crop&w=700&q=80', search: 'freezer+safe+meal+prep+containers' },
+      { key: 'gloves', name: 'Food-safe prep gloves', detail: 'An easy extra layer for clean raw-food preparation.', image: 'https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=700&q=80', search: 'food+safe+disposable+gloves' }
+    ],
+    'superfood-topper': [
+      { key: 'scale', name: 'Digital kitchen scale', detail: 'Helps you keep the topper amount consistent.', image: 'https://images.unsplash.com/photo-1586208958839-06c17cacdf08?auto=format&fit=crop&w=700&q=80', search: 'digital+kitchen+food+scale' },
+      { key: 'broth', name: 'Dog-safe bone broth', detail: 'Choose an onion- and garlic-free option.', image: 'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=80', search: 'dog+safe+bone+broth+no+onion+garlic' },
+      { key: 'spoon', name: 'Silicone measuring spoon', detail: 'A quick way to add small topper portions.', image: 'https://images.unsplash.com/photo-1594385208974-2c2d2a55ef81?auto=format&fit=crop&w=700&q=80', search: 'silicone+measuring+spoons' }
+    ]
+  };
+
+  function amazonProductUrl(product: { key: string; search: string; affiliateUrl?: string }) {
+    // Add an affiliateUrl value to a product above when its Amazon Associates link is ready.
+    return product.affiliateUrl || `https://www.amazon.com/s?k=${encodeURIComponent(product.search)}`;
+  }
+
   function renderPlan(profile: any) {
     const result = calculateCanineNutrition(profile);
 
@@ -392,6 +434,20 @@ import { RECIPES } from '../data/recipes';
     if (dietTagEl) dietTagEl.textContent = `FORMULATION: ${recipe.dietType.replace('-', ' ').toUpperCase()}`;
     if (recipeTitleEl) recipeTitleEl.textContent = recipe.name;
     if (recipeDescEl) recipeDescEl.textContent = recipe.description;
+
+    const visual = RECIPE_VISUALS[recipe.dietType];
+    const recipeImage = document.getElementById('recipe-image') as HTMLImageElement | null;
+    const recipeImageTitle = document.getElementById('recipe-image-title');
+    const recipeImageCopy = document.getElementById('recipe-image-copy');
+    if (recipeImage) { recipeImage.src = visual.image; recipeImage.alt = visual.alt; }
+    if (recipeImageTitle) recipeImageTitle.textContent = visual.title;
+    if (recipeImageCopy) recipeImageCopy.textContent = visual.copy;
+
+    const productsContainer = document.getElementById('product-recommendations-container');
+    const products = PRODUCT_RECOMMENDATIONS[recipe.dietType];
+    if (productsContainer) {
+      productsContainer.innerHTML = products.map((product) => `<article class="group overflow-hidden rounded-xl border border-[#ebebeb] dark:border-[#2e2e2e] bg-white dark:bg-[#141414] transition-all hover:-translate-y-0.5 hover:shadow-md"><img src="${product.image}" alt="${product.name}" class="w-full h-28 object-cover bg-[#f2f2f2]" loading="lazy" /><div class="p-3"><h5 class="text-xs font-semibold text-[#171717] dark:text-[#ededed]">${product.name}</h5><p class="mt-1 min-h-8 text-[10px] leading-relaxed text-[#8f8f8f] dark:text-[#737373]">${product.detail}</p><a href="${amazonProductUrl(product)}" data-product-key="${product.key}" target="_blank" rel="sponsored noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0070f3] dark:text-[#3291ff] hover:underline">View on Amazon <span aria-hidden="true">↗</span></a></div></article>`).join('');
+    }
 
     // Render Ingredients with exact grams
     if (rowsContainer) {
@@ -505,6 +561,9 @@ import { RECIPES } from '../data/recipes';
 
   // Print button
   document.getElementById('print-plan-btn')?.addEventListener('click', () => {
+    document.body.classList.add('printing-plan');
     window.print();
   });
+
+  window.addEventListener('afterprint', () => document.body.classList.remove('printing-plan'));
 </script>

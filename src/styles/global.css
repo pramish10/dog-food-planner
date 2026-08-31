@@ -168,10 +168,26 @@ html.dark .hairline-card-active {
 
 /* Print Specific Styles */
 @media print {
+  @page { margin: 12mm; }
+
   body {
     background-color: #ffffff !important;
     color: #000000 !important;
   }
+  /* Print only the generated plan, never the surrounding page chrome or product links. */
+  body.printing-plan * { visibility: hidden; }
+  body.printing-plan #results-section,
+  body.printing-plan #results-section * { visibility: visible; }
+  body.printing-plan #results-section {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    padding: 0 !important;
+    background: #ffffff !important;
+    border: 0 !important;
+  }
+  body.printing-plan #results-section .hairline-card,
+  body.printing-plan #results-section [class*='border'] { box-shadow: none !important; }
   .no-print {
     display: none !important;
   }
