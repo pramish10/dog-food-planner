@@ -678,6 +678,8 @@ import { RECIPES } from '../data/recipes';
 </div>
 
 <script>
+  import { CANINE_BREEDS } from '../data/breeds';
+
   // Interactive Quiz Controller
   let currentStep = 1;
   const totalSteps = 5;
@@ -944,7 +946,7 @@ import { RECIPES } from '../data/recipes';
       fatPct: 15,
       predispositions: ['Skin Allergies', 'Hip Dysplasia', 'Heart Health'],
       description: 'Sturdy symmetrical build with water-repellent dense coat and balanced athletic metabolism.',
-      aliases: ['golden retriever', 'retriever', 'golden', 'goldador', 'goldendoodle']
+      aliases: ['golden retriever', 'golden', 'goldador']
     },
     {
       name: 'French Bulldog',
@@ -959,7 +961,7 @@ import { RECIPES } from '../data/recipes';
       fatPct: 13,
       predispositions: ['Brachycephalic Airway', 'Sensitive GI Tract', 'Skin Fold Care'],
       description: 'Compact muscular frame, bat ears, short craniofacial structure, and low calorie-burn baseline.',
-      aliases: ['french bulldog', 'frenchie', 'bouledogue', 'bull dog', 'french_bulldog']
+      aliases: ['french bulldog', 'frenchie', 'bouledogue', 'french_bulldog']
     },
     {
       name: 'German Shepherd',
@@ -1004,7 +1006,7 @@ import { RECIPES } from '../data/recipes';
       fatPct: 15,
       predispositions: ['Sebaceous Adenitis', 'Bloat/GDV Risk', 'Addison Disease'],
       description: 'Refined long muzzle, elegant upright posture, hypoallergenic non-shedding coat.',
-      aliases: ['standard poodle', 'poodle', 'miniature poodle', 'toy poodle', 'caniche']
+      aliases: ['standard poodle', 'poodle', 'caniche']
     },
     {
       name: 'Pomeranian',
@@ -1019,7 +1021,7 @@ import { RECIPES } from '../data/recipes';
       fatPct: 18,
       predispositions: ['Alopecia X', 'Collapsing Trachea', 'Luxating Patella'],
       description: 'Fox-like expression, erect ears, heavily plumed tail, and rapid toy metabolic turn.',
-      aliases: ['pomeranian', 'pom', 'spitz', 'dwarf spitz']
+      aliases: ['pomeranian', 'pom', 'dwarf spitz']
     },
     {
       name: 'Siberian Husky',
@@ -1034,7 +1036,7 @@ import { RECIPES } from '../data/recipes';
       fatPct: 18,
       predispositions: ['Zinc Responsive Dermatosis', 'Corneal Clarity', 'High Endurance Burn'],
       description: 'Almond eyes, erect triangular ears, double dense arctic coat with high caloric efficiency.',
-      aliases: ['siberian husky', 'husky', 'malamute', 'eskimo dog', 'sled dog']
+      aliases: ['siberian husky', 'husky']
     },
     {
       name: 'Dachshund',
@@ -1064,7 +1066,7 @@ import { RECIPES } from '../data/recipes';
       fatPct: 19,
       predispositions: ['Collie Eye Anomaly', 'Active Joint Fatigue', 'High Metabolic Burn'],
       description: 'Semi-erect ears, intense focus gaze, athletic agile posture and rapid caloric burn.',
-      aliases: ['border collie', 'collie', 'sheepdog', 'working collie']
+      aliases: ['border collie', 'working collie']
     },
     {
       name: 'Chihuahua',
@@ -1079,7 +1081,7 @@ import { RECIPES } from '../data/recipes';
       fatPct: 18,
       predispositions: ['Hypoglycemia Risk', 'Mitral Valve Function', 'Dental Tartar'],
       description: 'Apple dome cranium, large flaring erect ears, luminous eyes, ultra-compact mass.',
-      aliases: ['chihuahua', 'toy dog', 'chi']
+      aliases: ['chihuahua']
     },
     {
       name: 'Rottweiler',
@@ -1154,7 +1156,7 @@ import { RECIPES } from '../data/recipes';
       fatPct: 13,
       predispositions: ['Obesity', 'Hypothyroidism', 'Ear Care'],
       description: 'Tricolor hound pattern, long soft ears, scent-driven muzzle posture.',
-      aliases: ['beagle', 'hound', 'english beagle']
+      aliases: ['beagle', 'english beagle']
     },
     {
       name: 'Great Dane',
@@ -1169,8 +1171,59 @@ import { RECIPES } from '../data/recipes';
       fatPct: 12,
       predispositions: ['Gastric Volvulus (Bloat)', 'Dilated Cardiomyopathy', 'Joint Cartilage Wear'],
       description: 'Massive majestic proportions, rectangular cranium, deep brisket, and gentle giant demeanor.',
-      aliases: ['great dane', 'dane', 'german mastiff', 'grand danois']
+      aliases: ['great dane', 'german mastiff', 'grand danois']
     }
+  ];
+
+  // MobileNet is trained on ImageNet names, while the planner uses its own breed catalogue.
+  // These aliases bridge the two naming systems without inventing a breed from generic visual traits.
+  const IMAGENET_BREED_ALIASES: Record<string, string[]> = {
+    'Poodle (Miniature/Toy)': ['miniature poodle', 'toy poodle'],
+    'German Shorthaired Pointer': ['german short-haired pointer', 'german shorthaired pointer'],
+    'Yorkshire Terrier': ['yorkshire terrier'],
+    'Cavalier King Charles': ['blenheim spaniel', 'king charles spaniel'],
+    'Doberman Pinscher': ['doberman', 'doberman pinscher'],
+    'Shih Tzu': ['shih-tzu', 'shih tzu'],
+    'Boston Terrier': ['boston bull', 'boston terrier'],
+    'Bernese Mountain Dog': ['bernese mountain dog'],
+    'Cane Corso': ['cane corso', 'italian mastiff'],
+    'Bichon Frise': ['bichon frise', 'bichon'],
+    'Pembroke Welsh Corgi': ['pembroke', 'welsh corgi'],
+    'Australian Shepherd': ['australian shepherd'],
+    'French Bulldog': ['french bulldog'],
+    'Golden Retriever': ['golden retriever'],
+    'German Shepherd': ['german shepherd'],
+    'Labrador Retriever': ['labrador retriever'],
+    'Siberian Husky': ['siberian husky'],
+    'Border Collie': ['border collie'],
+    'Great Dane': ['great dane'],
+    'Pomeranian': ['pomeranian'],
+    'Chihuahua': ['chihuahua'],
+    'Dachshund': ['dachshund'],
+    'Rottweiler': ['rottweiler'],
+    'Boxer': ['boxer'],
+    'Beagle': ['beagle']
+  };
+
+  const ALL_BREED_PROFILES: ExtendedBreedProfile[] = [
+    ...COMPREHENSIVE_BREED_INTEL,
+    ...CANINE_BREEDS
+      .filter((breed) => !breed.name.startsWith('Unknown / Mixed') && !COMPREHENSIVE_BREED_INTEL.some((profile) => profile.name === breed.name))
+      .map((breed) => ({
+        name: breed.name,
+        category: breed.category,
+        avgWeightLbs: breed.avgWeightLbs,
+        confidence: 0,
+        cranial: breed.cranialType || 'Not classified',
+        ear: breed.earType || 'Not classified',
+        coat: breed.coatType || 'Not classified',
+        nutrition: breed.nutritionFocus || 'Use the complete diet and portion guidance in the planner.',
+        proteinPct: breed.idealDailyProteinPct || 26,
+        fatPct: breed.idealDailyFatPct || 15,
+        predispositions: breed.predispositions || [],
+        description: `Visual match to ${breed.name}; confirm breed and size with your veterinarian or pedigree records.`,
+        aliases: [breed.name.toLowerCase(), ...(IMAGENET_BREED_ALIASES[breed.name] || [])]
+      }))
   ];
 
   aiTriggerBtn?.addEventListener('click', () => {
@@ -1406,12 +1459,12 @@ import { RECIPES } from '../data/recipes';
         const predictions = await mobileNetModel.classify(cropToDetection(visualSource, dogDetection.bbox), 5);
         for (const prediction of predictions) {
           const label = prediction.className.toLowerCase();
-          const breed = COMPREHENSIVE_BREED_INTEL
+          const breed = ALL_BREED_PROFILES
             .flatMap((candidate) => candidate.aliases
               .filter((alias) => label.includes(alias))
               .map((alias) => ({ candidate, alias })))
             .sort((a, b) => b.alias.length - a.alias.length)[0]?.candidate;
-          if (breed && prediction.probability >= 0.2) {
+          if (breed && prediction.probability >= 0.08) {
             detectedDogBreed = { ...breed, confidence: Math.round(prediction.probability * 1000) / 10 };
             break;
           }
@@ -1516,7 +1569,7 @@ import { RECIPES } from '../data/recipes';
 
       // Populate candidate probability breakdown
       if (candidatesContainer) {
-        const others = COMPREHENSIVE_BREED_INTEL.filter(c => c.name !== topMatch.name).slice(0, 2);
+        const others = ALL_BREED_PROFILES.filter(c => c.name !== topMatch.name).slice(0, 2);
         const secondConfidence = Math.round((100 - topMatch.confidence) * 0.7 * 10) / 10;
         const thirdConfidence = Math.max(0.8, Math.round((100 - topMatch.confidence - secondConfidence) * 10) / 10);
 
