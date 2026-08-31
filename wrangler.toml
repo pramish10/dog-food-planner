@@ -1,0 +1,11 @@
+name = "dog-food-planner"
+main = "worker/index.js"
+compatibility_date = "2026-08-31"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[ai]
+binding = "AI"
