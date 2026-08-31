@@ -656,8 +656,8 @@ import { RECIPES } from '../data/recipes';
         <!-- Top Probability Candidates Breakdown -->
         <div class="space-y-1.5 pt-1 border-t border-[#ebebeb] dark:border-[#262626]">
           <div class="text-[10px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] flex justify-between">
-            <span>Genetic Probability Breakdown</span>
-            <span>Confidence Index</span>
+            <span>Model’s visual matches</span>
+            <span>Confidence</span>
           </div>
           <div class="space-y-1.5" id="candidates-container">
             <!-- Rendered dynamically -->
@@ -887,21 +887,25 @@ import { RECIPES } from '../data/recipes';
   let laserPos = 0;
   let laserDir = 1;
   let cocoSsdModel: any = null;
-  let dogBreedSession: any = null;
-  let dogBreedMetadata: any = null;
-  let onnxRuntime: any = null;
+  let mobileNetModel: any = null;
   let modelLoadPromise: Promise<void> | null = null;
 
-  // Load the lightweight object detector. The dedicated breed model loads only after a dog is confirmed.
+  // Load the detector and ImageNet classifier only in the browser. Both are trained neural
+  // models, cached by the browser after first use, so no app or user download is required.
   async function loadEdgeModel() {
-    if (cocoSsdModel) return;
+    if (cocoSsdModel && mobileNetModel) return;
     if (modelLoadPromise) return modelLoadPromise;
     modelLoadPromise = (async () => {
-      if (typeof (window as any).cocoSsd === 'undefined') return;
+      if (typeof (window as any).cocoSsd === 'undefined' || typeof (window as any).mobilenet === 'undefined') return;
       try {
-        cocoSsdModel = await (window as any).cocoSsd.load({ base: 'mobilenet_v2' });
+        const [detector, classifier] = await Promise.all([
+          (window as any).cocoSsd.load({ base: 'mobilenet_v2' }),
+          (window as any).mobilenet.load({ version: 2, alpha: 1.0 })
+        ]);
+        cocoSsdModel = detector;
+        mobileNetModel = classifier;
       } catch (e) {
-        console.warn('Edge MobileNet fallback enabled:', e);
+        console.warn('Could not load browser vision models:', e);
       } finally {
         modelLoadPromise = null;
       }
@@ -1396,8 +1400,8 @@ import { RECIPES } from '../data/recipes';
     if (scannerProcessingTag) scannerProcessingTag.classList.remove('hidden');
     if (telemetryBadge) telemetryBadge.classList.remove('hidden');
 
-    // 1. Pixel Luminance & Skin Chroma Cluster Analysis via Canvas
-    let isHumanChroma = false;
+    // 1. Pixel luminance is only a photo-quality hint. Subject detection is left
+    // entirely to the neural object detector; colour heuristics misclassify dogs.
     let isLowLight = false;
     if (scannerCanvas) {
       scannerCanvas.width = 224;
@@ -1417,13 +1421,12 @@ import { RECIPES } from '../data/recipes';
           }
         }
 
-        // Biometric skin tone ratio heuristic (YCbCr / RGB human skin color distribution)
-        isHumanChroma = detectHumanSkinChromaCluster(imgData.data);
       }
     }
 
     // 2. Object detection is the safety gate. It distinguishes dog, person, cat, and other supported animals.
     let detectedDogBreed: ExtendedBreedProfile | null = null;
+    let breedCandidates: ExtendedBreedProfile[] = [];
     let dogDetection: any = null;
     let nonDogAnimal: string | null = null;
     let personDetected = false;
@@ -1458,11 +1461,11 @@ import { RECIPES } from '../data/recipes';
               .filter((alias) => label.includes(alias))
               .map((alias) => ({ candidate, alias })))
             .sort((a, b) => b.alias.length - a.alias.length)[0]?.candidate;
-          if (breed && prediction.probability >= 0.08) {
-            detectedDogBreed = { ...breed, confidence: Math.round(prediction.probability * 1000) / 10 };
-            break;
+          if (breed && prediction.probability >= 0.05 && !breedCandidates.some((candidate) => candidate.name === breed.name)) {
+            breedCandidates.push({ ...breed, confidence: Math.round(prediction.probability * 1000) / 10 });
           }
         }
+        detectedDogBreed = breedCandidates[0] || null;
       } catch (err) {
         console.warn('Breed classification error:', err);
       }
@@ -1476,14 +1479,14 @@ import { RECIPES } from '../data/recipes';
       showSubjectWarning('Dog detector unavailable', 'The on-device dog detector did not load. Check your connection and try again; no breed has been assigned.');
     } else if (!dogDetection && nonDogAnimal) {
       showSubjectWarning('Non-dog animal detected', `This photo appears to contain a ${nonDogAnimal}, not a dog. Upload a clear photo of one dog.`);
-    } else if (!dogDetection && (personDetected || isHumanChroma)) {
+    } else if (!dogDetection && personDetected) {
       showSubjectWarning('Human detected', 'This photo appears to contain a person rather than a dog. No breed has been assigned.');
     } else if (!dogDetection) {
       showSubjectWarning('Dog not detected', 'We could not confidently find a dog in this image. Use a well-lit photo that shows one dog clearly.');
     } else if (!detectedDogBreed) {
       showSubjectWarning('Dog confirmed; breed uncertain', 'A dog was detected, but the model cannot make a reliable breed match from this photo. Please choose the breed or size manually rather than receiving a guess.');
     } else {
-      renderCanineRecognitionResults(detectedDogBreed);
+      renderCanineRecognitionResults(detectedDogBreed, breedCandidates);
     }
   }
 
@@ -1538,7 +1541,7 @@ import { RECIPES } from '../data/recipes';
     }
   }
 
-  function renderCanineRecognitionResults(topMatch: ExtendedBreedProfile) {
+  function renderCanineRecognitionResults(topMatch: ExtendedBreedProfile, visualMatches: ExtendedBreedProfile[] = [topMatch]) {
     activeSelectedBreedName = topMatch.name;
     activeSelectedWeight = Math.round((topMatch.avgWeightLbs[0] + topMatch.avgWeightLbs[1]) / 2);
 
@@ -1561,45 +1564,19 @@ import { RECIPES } from '../data/recipes';
       if (detectedMacros) detectedMacros.textContent = `${topMatch.proteinPct}% Protein / ${topMatch.fatPct}% Fat`;
       if (detectedPredispositions) detectedPredispositions.textContent = `Predispositions: ${topMatch.predispositions.join(', ')}`;
 
-      // Populate candidate probability breakdown
+      // Show only labels actually returned by the classifier. Never manufacture
+      // alternative breeds or probabilities from the top score.
       if (candidatesContainer) {
-        const others = ALL_BREED_PROFILES.filter(c => c.name !== topMatch.name).slice(0, 2);
-        const secondConfidence = Math.round((100 - topMatch.confidence) * 0.7 * 10) / 10;
-        const thirdConfidence = Math.max(0.8, Math.round((100 - topMatch.confidence - secondConfidence) * 10) / 10);
-
-        candidatesContainer.innerHTML = `
-          <div class="space-y-1">
-            <div class="flex justify-between text-[11px] font-medium text-[#171717] dark:text-[#ededed]">
-              <span class="flex items-center gap-1.5">
-                <strong class="text-[#10b981]">1.</strong> ${topMatch.name} (Primary Morphology)
-              </span>
-              <span class="font-mono text-[#10b981] font-bold">${topMatch.confidence}%</span>
+        candidatesContainer.innerHTML = visualMatches.slice(0, 3).map((match, index) => `
+          <div class="space-y-1 ${index ? 'pt-1' : ''}">
+            <div class="flex justify-between text-[10px] ${index ? 'text-[#4d4d4d] dark:text-[#a1a1a1]' : 'font-medium text-[#171717] dark:text-[#ededed]'}">
+              <span>${index === 0 ? '<strong class="text-[#10b981]">1.</strong> ' : `${index + 1}. `}${match.name}</span>
+              <span class="font-mono ${index === 0 ? 'text-[#10b981] font-bold' : ''}">${match.confidence}%</span>
             </div>
             <div class="w-full bg-[#ebebeb] dark:bg-[#262626] h-1.5 rounded-full overflow-hidden">
-              <div class="bg-[#10b981] h-full rounded-full transition-all duration-700" style="width: ${topMatch.confidence}%"></div>
+              <div class="${index === 0 ? 'bg-[#10b981]' : 'bg-[#8f8f8f]'} h-full rounded-full" style="width: ${Math.min(100, match.confidence)}%"></div>
             </div>
-          </div>
-          ${others[0] ? `
-          <div class="space-y-1 pt-1">
-            <div class="flex justify-between text-[10px] text-[#4d4d4d] dark:text-[#a1a1a1]">
-              <span>2. ${others[0].name}</span>
-              <span class="font-mono">${secondConfidence}%</span>
-            </div>
-            <div class="w-full bg-[#ebebeb] dark:bg-[#262626] h-1 rounded-full overflow-hidden">
-              <div class="bg-[#8f8f8f] h-full rounded-full" style="width: ${secondConfidence * 4}%"></div>
-            </div>
-          </div>` : ''}
-          ${others[1] ? `
-          <div class="space-y-1 pt-1">
-            <div class="flex justify-between text-[10px] text-[#4d4d4d] dark:text-[#a1a1a1]">
-              <span>3. ${others[1].name}</span>
-              <span class="font-mono">${thirdConfidence}%</span>
-            </div>
-            <div class="w-full bg-[#ebebeb] dark:bg-[#262626] h-1 rounded-full overflow-hidden">
-              <div class="bg-[#8f8f8f] h-full rounded-full" style="width: ${thirdConfidence * 4}%"></div>
-            </div>
-          </div>` : ''}
-        `;
+          </div>`).join('');
       }
     }
   }
