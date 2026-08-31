@@ -82,6 +82,18 @@ const keywords = [
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+    <!-- Theme Initialization Script (Prevents flash of wrong theme) -->
+    <script is:inline>
+      (function() {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
     <!-- Structured Data Schema.org (SoftwareApplication + Organization + FAQPage) -->
     <script type="application/ld+json">
       {
@@ -145,7 +157,7 @@ const keywords = [
       }
     </script>
   </head>
-  <body class="bg-[#fafafa] text-[#4d4d4d] antialiased selection:bg-[#0070f3] selection:text-white min-h-screen flex flex-col justify-between">
+  <body class="bg-[#fafafa] dark:bg-[#0d0d0d] text-[#4d4d4d] dark:text-[#a1a1a1] antialiased selection:bg-[#0070f3] selection:text-white min-h-screen flex flex-col justify-between">
     <slot />
   </body>
 </html>

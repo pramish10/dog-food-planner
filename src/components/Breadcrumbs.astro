@@ -22,17 +22,17 @@ const breadcrumbSchema = {
 };
 ---
 
-<nav aria-label="Breadcrumb" class="py-3 px-4 sm:px-6 max-w-6xl mx-auto text-xs text-[#8f8f8f]">
+<nav aria-label="Breadcrumb" class="py-3 px-4 sm:px-6 max-w-6xl mx-auto text-xs text-[#8f8f8f] dark:text-[#737373]">
   <ol class="flex items-center flex-wrap gap-1.5 font-mono">
     {items.map((item, index) => {
       const isLast = index === items.length - 1;
       return (
         <li class="flex items-center gap-1.5">
-          {index > 0 && <span class="text-[#ebebeb] select-none">/</span>}
+          {index > 0 && <span class="text-[#ebebeb] dark:text-[#2e2e2e] select-none">/</span>}
           {isLast || !item.url ? (
-            <span class="text-[#171717] font-medium truncate max-w-[240px] sm:max-w-md">{item.name}</span>
+            <span class="text-[#171717] dark:text-[#ededed] font-medium truncate max-w-[240px] sm:max-w-md">{item.name}</span>
           ) : (
-            <a href={item.url} class="text-[#8f8f8f] hover:text-[#171717] transition-colors underline-offset-4 hover:underline">
+            <a href={item.url} class="text-[#8f8f8f] dark:text-[#737373] hover:text-[#171717] dark:hover:text-white transition-colors underline-offset-4 hover:underline">
               {item.name}
             </a>
           )}

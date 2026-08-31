@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-canvas: #fafafa;
   --color-canvas-elevated: #ffffff;
@@ -30,25 +32,44 @@
 @layer base {
   html {
     font-family: var(--font-sans);
-    background-color: var(--color-canvas);
-    color: var(--color-ink);
+    background-color: #fafafa;
+    color: #171717;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     overflow-x: hidden;
   }
 
+  html.dark {
+    background-color: #0d0d0d;
+    color: #ededed;
+  }
+
   body {
     min-height: 100vh;
-    background-color: var(--color-canvas);
-    color: var(--color-body);
+    background-color: #fafafa;
+    color: #4d4d4d;
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
   }
 
+  html.dark body {
+    background-color: #0d0d0d;
+    color: #a1a1a1;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    color: var(--color-ink);
+    color: #171717;
     font-weight: 600;
+  }
+
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4,
+  html.dark h5,
+  html.dark h6 {
+    color: #f5f5f5;
   }
 
   h1 {
@@ -100,7 +121,16 @@
   border-radius: 50%;
 }
 
-/* Hairline Card Styling from DESIGN.md */
+html.dark .mesh-gradient-bg::before {
+  background: radial-gradient(circle at 20% 30%, rgba(80, 227, 194, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 50% 20%, rgba(0, 112, 243, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 30%, rgba(121, 40, 202, 0.14) 0%, transparent 45%),
+              radial-gradient(circle at 35% 70%, rgba(255, 0, 128, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 65% 75%, rgba(249, 203, 40, 0.09) 0%, transparent 40%);
+  filter: blur(65px);
+}
+
+/* Hairline Card Styling */
 .hairline-card {
   background-color: #ffffff;
   border: 1px solid #ebebeb;
@@ -109,15 +139,31 @@
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.02);
 }
 
+html.dark .hairline-card {
+  background-color: #141414;
+  border-color: #262626;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 .hairline-card:hover {
   border-color: #d1d1d1;
   box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.03);
   transform: translateY(-1px);
 }
 
+html.dark .hairline-card:hover {
+  border-color: #404040;
+  box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.4), 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 .hairline-card-active {
   border-color: #171717 !important;
   box-shadow: 0px 0px 0px 1px #171717, 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+html.dark .hairline-card-active {
+  border-color: #ededed !important;
+  box-shadow: 0px 0px 0px 1px #ededed, 0px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Print Specific Styles */

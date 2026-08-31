@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro';
 >
   <Navbar />
   
-  <main class="min-h-screen bg-[#fafafa]">
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
     <Breadcrumbs 
       items={[
         { name: 'Home', url: '/' },
@@ -23,26 +23,26 @@ import Footer from '../components/Footer.astro';
     />
 
     <!-- Header Section -->
-    <section class="py-12 sm:py-16 bg-white border-b border-[#ebebeb]">
+    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
           <span class="text-[#0070f3]">PILLAR GUIDE</span> // CLINICAL CANINE RANKING 2026
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] tracking-tight mb-4">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
           The Best Dog Food: Veterinary Ranking & Nutritional Analysis
         </h1>
-        <p class="text-sm sm:text-base text-[#4d4d4d] max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
           How to select the healthiest, most bioavailable diet for your dog across fresh cooked meals, raw ancestral formulas, and premium dry kibble.
         </p>
       </div>
     </section>
 
     <!-- Main Content Section -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-10 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-10 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
       
       <!-- Top 5 Rankings Card -->
-      <section class="hairline-card p-6 sm:p-8 bg-white space-y-4">
-        <h2 class="text-xl sm:text-2xl font-bold text-[#171717]">
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
           What Are the Top 5 Healthiest Dog Foods in 2026?
         </h2>
         <p>
@@ -50,11 +50,11 @@ import Footer from '../components/Footer.astro';
         </p>
         
         <div class="space-y-3 mt-4">
-          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb] flex items-start gap-3">
-            <span class="w-6 h-6 rounded-full bg-[#171717] text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">1</span>
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">1</span>
             <div>
-              <h3 class="font-bold text-[#171717] text-sm">Gently Cooked Fresh Dog Food (Homemade or Human-Grade Kitchens)</h3>
-              <p class="text-xs text-[#4d4d4d] mt-1">
+              <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Gently Cooked Fresh Dog Food (Homemade or Human-Grade Kitchens)</h3>
+              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-1">
                 Cooked at 160°F to retain heat-sensitive taurine, vitamins, and natural hydration (70%+). Delivers 90%+ nutrient absorption with zero chemical BHA/BHT preservatives.
               </p>
             </div>

@@ -32,18 +32,18 @@ if (limit) {
 const faqJsonLd = generateFaqJsonLd(faqs);
 ---
 
-<section id="faq-section" class="py-16 sm:py-20 bg-white border-b border-[#ebebeb]">
+<section id="faq-section" class="py-16 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     
     <!-- Section Header -->
     <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
         <span class="text-[#0070f3]">FAQ</span> // VETERINARY CANINE Q&A
       </div>
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#171717] tracking-tight mb-3">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-3">
         {title}
       </h2>
-      <p class="text-xs sm:text-sm text-[#4d4d4d] leading-relaxed">
+      <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
         {subtitle}
       </p>
     </div>
@@ -57,9 +57,9 @@ const faqJsonLd = generateFaqJsonLd(faqs);
               type="search"
               id="faq-search-input"
               placeholder="Search 40+ dog food questions (e.g. cat food, raw diet, Blue Buffalo, allergies)..."
-              class="w-full pl-10 pr-4 py-2.5 bg-[#fafafa] border border-[#ebebeb] focus:border-[#171717] focus:bg-white rounded-xl text-xs sm:text-sm text-[#171717] outline-none transition-all placeholder:text-[#8f8f8f] shadow-2xs"
+              class="w-full pl-10 pr-4 py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] focus:border-[#171717] dark:focus:border-[#ededed] focus:bg-white dark:focus:bg-[#141414] rounded-xl text-xs sm:text-sm text-[#171717] dark:text-[#ededed] outline-none transition-all placeholder:text-[#8f8f8f] dark:placeholder:text-[#737373] shadow-2xs"
             />
-            <svg class="w-4 h-4 text-[#8f8f8f] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 text-[#8f8f8f] dark:text-[#737373] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
             </svg>
           </div>
@@ -71,7 +71,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
               <button
                 type="button"
                 data-faq-cat-filter={cat}
-                class="faq-cat-btn px-3 py-1 text-xs font-mono rounded-full border border-[#ebebeb] bg-[#fafafa] text-[#4d4d4d] hover:text-[#171717] hover:border-[#171717] transition-all cursor-pointer first:bg-[#171717] first:text-white first:border-[#171717]"
+                class="faq-cat-btn px-3 py-1 text-xs font-mono rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] bg-[#fafafa] dark:bg-[#141414] text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:border-[#171717] dark:hover:border-[#ededed] transition-all cursor-pointer first:bg-[#171717] dark:first:bg-white first:text-white dark:first:text-[#171717] first:border-[#171717] dark:first:border-white"
               >
                 {cat}
               </button>
@@ -85,7 +85,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     <div id="faq-accordion-list" class="space-y-3">
       {faqs.map((faq, index) => (
         <div 
-          class="faq-item hairline-card bg-[#fafafa] border border-[#ebebeb] rounded-xl overflow-hidden transition-all duration-200"
+          class="faq-item hairline-card bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] rounded-xl overflow-hidden transition-all duration-200"
           data-category={faq.category}
           data-question={faq.question.toLowerCase()}
           data-keywords={faq.tags.join(' ').toLowerCase()}
@@ -96,26 +96,26 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             aria-expanded="false"
             aria-controls={`faq-answer-${faq.id}`}
           >
-            <span class="font-medium text-xs sm:text-sm text-[#171717] group-hover:text-[#0070f3] transition-colors leading-snug">
+            <span class="font-medium text-xs sm:text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] transition-colors leading-snug">
               {faq.question}
             </span>
-            <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-white border border-[#ebebeb] flex items-center justify-center text-[#171717] font-mono text-xs transition-transform duration-200">
+            <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] flex items-center justify-center text-[#171717] dark:text-[#ededed] font-mono text-xs transition-transform duration-200">
               +
             </span>
           </button>
 
           <div 
             id={`faq-answer-${faq.id}`}
-            class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed border-t border-[#f0f0f0] bg-white/70"
+            class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed border-t border-[#f0f0f0] dark:border-[#262626] bg-white/70 dark:bg-[#121212]/90"
           >
-            <p class="font-medium text-[#171717] mb-2 text-xs bg-[#f8fafc] p-3 rounded-lg border border-blue-100/50">
+            <p class="font-medium text-[#171717] dark:text-[#ededed] mb-2 text-xs bg-[#f8fafc] dark:bg-[#1a1a1a] p-3 rounded-lg border border-blue-100/50 dark:border-blue-900/30">
               💡 <strong>Direct Answer:</strong> {faq.shortAnswer}
             </p>
-            <div class="prose prose-neutral max-w-none text-xs text-[#4d4d4d] space-y-2" set:html={faq.fullAnswerHtml} />
+            <div class="prose prose-neutral dark:prose-invert max-w-none text-xs text-[#4d4d4d] dark:text-[#a1a1a1] space-y-2" set:html={faq.fullAnswerHtml} />
             
-            <div class="mt-4 pt-3 border-t border-[#ebebeb] flex flex-wrap items-center justify-between gap-2 text-[11px]">
-              <span class="font-mono text-[#8f8f8f]">Category: <strong class="text-[#171717]">{faq.category}</strong></span>
-              <a href={`/faq/${faq.slug}`} class="font-mono font-semibold text-[#0070f3] hover:underline flex items-center gap-1">
+            <div class="mt-4 pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center justify-between gap-2 text-[11px]">
+              <span class="font-mono text-[#8f8f8f] dark:text-[#737373]">Category: <strong class="text-[#171717] dark:text-[#ededed]">{faq.category}</strong></span>
+              <a href={`/faq/${faq.slug}`} class="font-mono font-semibold text-[#0070f3] dark:text-[#3291ff] hover:underline flex items-center gap-1">
                 Deep Dive Guide ↗
               </a>
             </div>
@@ -125,8 +125,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     </div>
 
     <!-- No Search Results Fallback -->
-    <div id="faq-no-results" class="hidden text-center py-12 text-xs sm:text-sm text-[#8f8f8f] bg-[#fafafa] rounded-xl border border-dashed border-[#ebebeb]">
-      <p class="font-medium text-[#171717] mb-1">No matching questions found.</p>
+    <div id="faq-no-results" class="hidden text-center py-12 text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#141414] rounded-xl border border-dashed border-[#ebebeb] dark:border-[#2e2e2e]">
+      <p class="font-medium text-[#171717] dark:text-[#ededed] mb-1">No matching questions found.</p>
       <p>Try searching for words like "allergies", "puppy", "kibble", "raw", or "cat food".</p>
     </div>
 
@@ -134,7 +134,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
       <div class="mt-10 text-center">
         <a 
           href="/faq" 
-          class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#171717] text-white hover:bg-[#333333] text-xs font-semibold rounded-full transition-all shadow-sm"
+          class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-full transition-all shadow-sm"
         >
           <span>Explore All 40+ Dog Food FAQs Hub</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -215,11 +215,11 @@ const faqJsonLd = generateFaqJsonLd(faqs);
   catButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       catButtons.forEach(b => {
-        b.classList.remove('bg-[#171717]', 'text-white', 'border-[#171717]');
-        b.classList.add('bg-[#fafafa]', 'text-[#4d4d4d]', 'border-[#ebebeb]');
+        b.classList.remove('bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]', 'border-[#171717]', 'dark:border-white');
+        b.classList.add('bg-[#fafafa]', 'dark:bg-[#141414]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]', 'border-[#ebebeb]', 'dark:border-[#2e2e2e]');
       });
-      btn.classList.add('bg-[#171717]', 'text-white', 'border-[#171717]');
-      btn.classList.remove('bg-[#fafafa]', 'text-[#4d4d4d]', 'border-[#ebebeb]');
+      btn.classList.add('bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]', 'border-[#171717]', 'dark:border-white');
+      btn.classList.remove('bg-[#fafafa]', 'dark:bg-[#141414]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]', 'border-[#ebebeb]', 'dark:border-[#2e2e2e]');
 
       activeCategory = btn.getAttribute('data-faq-cat-filter') || 'All Questions';
       applyFilters();

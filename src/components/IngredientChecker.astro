@@ -2,61 +2,61 @@
 import { INGREDIENT_DATABASE } from '../data/ingredients';
 ---
 
-<section id="safety-checker" class="py-12 sm:py-20 bg-white border-b border-[#ebebeb]">
+<section id="safety-checker" class="py-12 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
   <div class="max-w-5xl mx-auto px-3.5 sm:px-6">
     
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
-        <span class="text-[#ee0000]">03</span> // SAFETY & TOXICITY LOOKUP
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
+        <span class="text-[#ee0000]">02</span> // SAFETY & TOXICITY LOOKUP
       </div>
-      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-2 sm:mb-3">
-        Canine Ingredient Safety & Toxicity Scanner
+      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2 sm:mb-3">
+        Canine Ingredient Safety & Toxicity Lookup
       </h2>
-      <p class="text-xs sm:text-base text-[#4d4d4d] leading-relaxed">
+      <p class="text-xs sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
         Search any whole food to check clinical safety, bioavailability, and dangerous household toxins before introducing it to your dog's bowl.
       </p>
     </div>
 
-    <!-- Search and Filter Bar (Mobile-optimized stack) -->
+    <!-- Search and Filter Bar -->
     <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-6 sm:mb-8">
       <div class="relative w-full sm:max-w-md">
         <input 
           type="text" 
           id="ingredient-search-input" 
           placeholder="Search food (e.g. pumpkin, salmon, xylitol...)" 
-          class="w-full pl-9 pr-4 py-2.5 text-xs bg-[#fafafa] border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all font-mono"
+          class="w-full pl-9 pr-4 py-2.5 text-xs bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] focus:bg-white dark:focus:bg-[#141414] transition-all font-mono"
         />
-        <svg class="w-4 h-4 text-[#8f8f8f] absolute left-3 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 text-[#8f8f8f] dark:text-[#737373] absolute left-3 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
         </svg>
       </div>
 
-      <!-- Filter Buttons (Horizontal wrap) -->
+      <!-- Filter Buttons -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 no-scrollbar">
-        <button type="button" data-filter="ALL" class="safety-filter-btn active shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#171717] text-white transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="ALL" class="safety-filter-btn active shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#171717] dark:bg-white text-white dark:text-[#171717] transition-all touch-manipulation cursor-pointer">
           ALL
         </button>
-        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] text-[#4d4d4d] hover:text-[#171717] transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-all touch-manipulation cursor-pointer">
           SAFE & SUPERFOODS
         </button>
-        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] text-[#4d4d4d] hover:text-[#171717] transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-all touch-manipulation cursor-pointer">
           FATAL TOXINS
         </button>
       </div>
     </div>
 
-    <!-- Ingredient Grid (1-column on mobile, 2-column on md+) -->
+    <!-- Ingredient Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4" id="ingredients-grid">
       {INGREDIENT_DATABASE.map((item) => (
         <div 
-          class="ingredient-card p-4 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa] hover:border-[#171717] transition-all flex flex-col justify-between"
+          class="ingredient-card p-4 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all flex flex-col justify-between"
           data-status={item.status}
           data-name={item.name.toLowerCase()}
         >
           <div>
             <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 mb-2">
-              <h4 class="font-semibold text-xs sm:text-sm text-[#171717]">{item.name}</h4>
+              <h4 class="font-semibold text-xs sm:text-sm text-[#171717] dark:text-[#ededed]">{item.name}</h4>
               
               {item.status === 'SAFE_AND_BENEFICIAL' && (
                 <span class="font-mono text-[9px] sm:text-[10px] font-bold text-[#10b981] bg-[#10b981]/15 px-2 py-0.5 rounded border border-[#10b981]/30 w-fit">
@@ -75,13 +75,13 @@ import { INGREDIENT_DATABASE } from '../data/ingredients';
               )}
             </div>
 
-            <p class="text-xs text-[#4d4d4d] mb-3 leading-relaxed">
+            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mb-3 leading-relaxed">
               {item.benefitsOrRisks}
             </p>
           </div>
 
-          <div class="pt-2.5 sm:pt-3 border-t border-[#ebebeb] text-[10px] sm:text-[11px] text-[#8f8f8f]">
-            <strong class="text-[#171717] font-medium">Guidance: </strong> {item.servingAdvice}
+          <div class="pt-2.5 sm:pt-3 border-t border-[#ebebeb] dark:border-[#262626] text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">
+            <strong class="text-[#171717] dark:text-[#ededed] font-medium">Guidance: </strong> {item.servingAdvice}
           </div>
         </div>
       ))}
@@ -120,11 +120,11 @@ import { INGREDIENT_DATABASE } from '../data/ingredients';
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => {
-        b.classList.remove('active', 'bg-[#171717]', 'text-white');
-        b.classList.add('bg-[#f2f2f2]', 'text-[#4d4d4d]');
+        b.classList.remove('active', 'bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]');
+        b.classList.add('bg-[#f2f2f2]', 'dark:bg-[#1a1a1a]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]');
       });
-      btn.classList.add('active', 'bg-[#171717]', 'text-white');
-      btn.classList.remove('bg-[#f2f2f2]', 'text-[#4d4d4d]');
+      btn.classList.add('active', 'bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]');
+      btn.classList.remove('bg-[#f2f2f2]', 'dark:bg-[#1a1a1a]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]');
 
       activeFilter = btn.getAttribute('data-filter') || 'ALL';
       filterCards();

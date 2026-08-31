@@ -2,20 +2,20 @@
 import { RECIPES } from '../data/recipes';
 ---
 
-<section id="results-section" class="py-12 sm:py-20 bg-white border-b border-[#ebebeb] transition-all hidden">
+<section id="results-section" class="py-12 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626] transition-all hidden">
   <div class="max-w-5xl mx-auto px-3.5 sm:px-6">
     
     <!-- Results Header -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 sm:mb-10 pb-6 border-b border-[#ebebeb]">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 sm:mb-10 pb-6 border-b border-[#ebebeb] dark:border-[#262626]">
       <div>
         <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full mb-2">
           <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
           CANINE NUTRITION BLUEPRINT GENERATED
         </div>
-        <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] tracking-tight">
-          Personalized Nutrition Plan for <span id="res-dog-name" class="text-[#0070f3]">Lucy</span>
+        <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight">
+          Personalized Nutrition Plan for <span id="res-dog-name" class="text-[#0070f3] dark:text-[#3291ff]">Lucy</span>
         </h2>
-        <p class="text-xs sm:text-sm text-[#4d4d4d] mt-1" id="res-dog-subtitle">
+        <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] mt-1" id="res-dog-subtitle">
           Adult Female (Spayed) · 45 lbs · Balanced Maintenance
         </p>
       </div>
@@ -24,7 +24,7 @@ import { RECIPES } from '../data/recipes';
       <div class="flex items-center gap-2 w-full sm:w-auto">
         <button 
           id="print-plan-btn"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#171717] bg-[#fafafa] hover:bg-[#ebebeb] border border-[#ebebeb] rounded-full transition-all shadow-2xs cursor-pointer touch-manipulation active:scale-[0.98]"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#1a1a1a] hover:bg-[#ebebeb] dark:hover:bg-[#262626] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-full transition-all shadow-2xs cursor-pointer touch-manipulation active:scale-[0.98]"
         >
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.75A2.25 2.25 0 0014.25 1.5h-4.5A2.25 2.25 0 007.5 3.75v3.456"/>
@@ -38,57 +38,57 @@ import { RECIPES } from '../data/recipes';
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 mb-8 sm:mb-10">
       
       <!-- Card 1: Daily Target Calories -->
-      <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
-        <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] font-mono mb-1 sm:mb-2 uppercase">
+      <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414]">
+        <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono mb-1 sm:mb-2 uppercase">
           <span>Daily Calories</span>
-          <span class="text-[#0070f3]">MER</span>
+          <span class="text-[#0070f3] dark:text-[#3291ff]">MER</span>
         </div>
-        <div class="text-xl sm:text-3xl font-bold text-[#171717] font-mono tracking-tight" id="res-mer-calories">
-          984 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">kcal</span>
+        <div class="text-xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] font-mono tracking-tight" id="res-mer-calories">
+          984 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">kcal</span>
         </div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] mt-0.5 sm:mt-1 font-mono">
+        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-mono">
           RER Base: <span id="res-rer-base">615</span> kcal
         </div>
       </div>
 
       <!-- Card 2: Total Daily Weight -->
-      <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
-        <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] font-mono mb-1 sm:mb-2 uppercase">
+      <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414]">
+        <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono mb-1 sm:mb-2 uppercase">
           <span>Daily Portion</span>
           <span class="text-[#10b981]">Total</span>
         </div>
-        <div class="text-xl sm:text-3xl font-bold text-[#171717] font-mono tracking-tight" id="res-daily-grams">
-          728 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">grams</span>
+        <div class="text-xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] font-mono tracking-tight" id="res-daily-grams">
+          728 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">grams</span>
         </div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] mt-0.5 sm:mt-1 font-mono">
+        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-mono">
           ≈ <span id="res-daily-cups">3.2</span> measuring cups
         </div>
       </div>
 
       <!-- Card 3: Per Meal Split -->
-      <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
-        <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] font-mono mb-1 sm:mb-2 uppercase">
+      <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414]">
+        <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono mb-1 sm:mb-2 uppercase">
           <span>Per Main Bowl</span>
-          <span class="text-[#7928ca]" id="res-meals-count">2x Daily</span>
+          <span class="text-[#7928ca] dark:text-[#a35cf0]" id="res-meals-count">2x Daily</span>
         </div>
-        <div class="text-xl sm:text-3xl font-bold text-[#171717] font-mono tracking-tight" id="res-per-meal-grams">
-          364 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">g/bowl</span>
+        <div class="text-xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] font-mono tracking-tight" id="res-per-meal-grams">
+          364 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">g/bowl</span>
         </div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] mt-0.5 sm:mt-1 font-mono">
+        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-mono">
           Morning & Evening
         </div>
       </div>
 
       <!-- Card 4: Treat & Snack Allowance -->
-      <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
-        <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] font-mono mb-1 sm:mb-2 uppercase">
+      <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414]">
+        <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono mb-1 sm:mb-2 uppercase">
           <span>Treat Budget</span>
           <span class="text-[#f5a623] font-semibold" id="res-treat-pct">10%</span>
         </div>
         <div class="text-xl sm:text-3xl font-bold text-[#f5a623] font-mono tracking-tight" id="res-treat-kcal">
-          98 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">kcal/day</span>
+          98 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">kcal/day</span>
         </div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] mt-0.5 sm:mt-1 font-mono">
+        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-mono">
           Healthy Treats/Berries
         </div>
       </div>
@@ -97,25 +97,25 @@ import { RECIPES } from '../data/recipes';
 
     <!-- Diet Switcher Pills -->
     <div class="overflow-x-auto pb-2 sm:pb-0 mb-6 sm:mb-8 no-scrollbar">
-      <div class="flex items-center gap-1.5 sm:gap-2 p-1 bg-[#f2f2f2] rounded-lg border border-[#ebebeb] min-w-max">
+      <div class="flex items-center gap-1.5 sm:gap-2 p-1 bg-[#f2f2f2] dark:bg-[#1a1a1a] rounded-lg border border-[#ebebeb] dark:border-[#2e2e2e] min-w-max">
         <button 
           type="button" 
           data-diet="fresh-cooked" 
-          class="diet-tab-btn active px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md bg-white text-[#171717] shadow-xs transition-all touch-manipulation cursor-pointer"
+          class="diet-tab-btn active px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md bg-white dark:bg-[#262626] text-[#171717] dark:text-white shadow-xs transition-all touch-manipulation cursor-pointer"
         >
           🍲 Gently Cooked Feast
         </button>
         <button 
           type="button" 
           data-diet="raw-barf" 
-          class="diet-tab-btn px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md text-[#8f8f8f] hover:text-[#171717] transition-all touch-manipulation cursor-pointer"
+          class="diet-tab-btn px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md text-[#8f8f8f] dark:text-[#737373] hover:text-[#171717] dark:hover:text-white transition-all touch-manipulation cursor-pointer"
         >
           🥩 Ancestral Raw BARF
         </button>
         <button 
           type="button" 
           data-diet="superfood-topper" 
-          class="diet-tab-btn px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md text-[#8f8f8f] hover:text-[#171717] transition-all touch-manipulation cursor-pointer"
+          class="diet-tab-btn px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md text-[#8f8f8f] dark:text-[#737373] hover:text-[#171717] dark:hover:text-white transition-all touch-manipulation cursor-pointer"
         >
           🥣 50% Superfood Topper
         </button>
@@ -123,17 +123,17 @@ import { RECIPES } from '../data/recipes';
     </div>
 
     <!-- SECTION A: Time-Specific Daily Feeding Schedule -->
-    <div class="hairline-card p-4 sm:p-8 mb-8 sm:mb-10 bg-white">
-      <div class="flex items-center justify-between mb-4 pb-3 border-b border-[#ebebeb]">
+    <div class="hairline-card p-4 sm:p-8 mb-8 sm:mb-10 bg-white dark:bg-[#141414]">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-[#ebebeb] dark:border-[#262626]">
         <div>
-          <span class="font-mono text-[10px] sm:text-xs font-bold text-[#0070f3] uppercase tracking-wider">
+          <span class="font-mono text-[10px] sm:text-xs font-bold text-[#0070f3] dark:text-[#3291ff] uppercase tracking-wider">
             TIMED FEEDING TIMETABLE
           </span>
-          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mt-0.5">
+          <h3 class="text-lg sm:text-xl font-semibold text-[#171717] dark:text-[#ededed] mt-0.5">
             What to Feed <span class="res-dog-name-inline">Lucy</span> by Exact Time
           </h3>
         </div>
-        <span class="font-mono text-[10px] text-[#8f8f8f] bg-[#fafafa] border border-[#ebebeb] px-2 py-1 rounded">
+        <span class="font-mono text-[10px] text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] px-2 py-1 rounded">
           Optimal Digestion
         </span>
       </div>
@@ -149,9 +149,9 @@ import { RECIPES } from '../data/recipes';
       <!-- Left 2 Cols: Ingredient Blueprint -->
       <div class="lg:col-span-2 space-y-5 sm:space-y-6">
         
-        <div class="hairline-card p-4 sm:p-8">
+        <div class="hairline-card p-4 sm:p-8 bg-white dark:bg-[#141414]">
           <div class="flex items-center justify-between mb-2.5 sm:mb-3">
-            <span class="font-mono text-[10px] sm:text-xs text-[#0070f3] font-semibold uppercase tracking-wider" id="recipe-diet-tag">
+            <span class="font-mono text-[10px] sm:text-xs text-[#0070f3] dark:text-[#3291ff] font-semibold uppercase tracking-wider" id="recipe-diet-tag">
               FORMULATION: FRESH GENTLY COOKED
             </span>
             <span class="font-mono text-[10px] sm:text-xs text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded">
@@ -159,29 +159,29 @@ import { RECIPES } from '../data/recipes';
             </span>
           </div>
 
-          <h3 class="text-xl sm:text-2xl font-semibold text-[#171717] mb-2" id="recipe-title">
+          <h3 class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed] mb-2" id="recipe-title">
             Gently Cooked Lean Turkey & Pumpkin Feast
           </h3>
-          <p class="text-xs sm:text-sm text-[#4d4d4d] leading-relaxed mb-5 sm:mb-6" id="recipe-description">
+          <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed mb-5 sm:mb-6" id="recipe-description">
             Slow-simmered lean ground turkey paired with antioxidant-rich pumpkin puree, steamed greens, and wild Alaskan salmon oil.
           </p>
 
           <!-- Ingredients Grams Table -->
           <div class="mb-5 sm:mb-6">
-            <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
+            <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
               Daily Weigh-In Items & Ingredients
             </h4>
-            <div class="divide-y divide-[#ebebeb] border border-[#ebebeb] rounded-lg overflow-hidden" id="ingredient-rows-container">
+            <div class="divide-y divide-[#ebebeb] dark:divide-[#262626] border border-[#ebebeb] dark:border-[#262626] rounded-lg overflow-hidden" id="ingredient-rows-container">
               <!-- Dynamically populated via JS -->
             </div>
           </div>
 
           <!-- Step-by-Step Preparation Guide -->
           <div>
-            <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
+            <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
               Veterinary Preparation Guidelines
             </h4>
-            <ol class="space-y-2 text-xs text-[#4d4d4d]" id="prep-steps-container">
+            <ol class="space-y-2 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]" id="prep-steps-container">
               <!-- Populated via JS -->
             </ol>
           </div>
@@ -193,88 +193,88 @@ import { RECIPES } from '../data/recipes';
       <div class="space-y-5 sm:space-y-6">
         
         <!-- Macro Breakdown Card -->
-        <div class="hairline-card p-4 sm:p-6">
+        <div class="hairline-card p-4 sm:p-6 bg-white dark:bg-[#141414]">
           <div class="flex items-center justify-between mb-3 sm:mb-4">
-            <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono">
+            <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
               Caloric Macro Balance
             </h4>
-            <span class="font-mono text-[10px] sm:text-[11px] text-[#8f8f8f]">Dry Matter Basis</span>
+            <span class="font-mono text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">Dry Matter Basis</span>
           </div>
 
           <div class="space-y-3 sm:space-y-4 mb-5 sm:mb-6">
             <div>
               <div class="flex justify-between text-xs font-medium mb-1">
-                <span class="text-[#171717]">Crude Protein</span>
-                <span class="font-mono text-[#0070f3]" id="macro-protein-pct">48%</span>
+                <span class="text-[#171717] dark:text-[#ededed]">Crude Protein</span>
+                <span class="font-mono text-[#0070f3] dark:text-[#3291ff]" id="macro-protein-pct">48%</span>
               </div>
-              <div class="w-full bg-[#f2f2f2] h-2 rounded-full overflow-hidden">
-                <div class="bg-[#0070f3] h-full rounded-full" id="macro-protein-bar" style="width: 48%;"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-xs font-medium mb-1">
-                <span class="text-[#171717]">Healthy Fats & Omegas</span>
-                <span class="font-mono text-[#7928ca]" id="macro-fat-pct">32%</span>
-              </div>
-              <div class="w-full bg-[#f2f2f2] h-2 rounded-full overflow-hidden">
-                <div class="bg-[#7928ca] h-full rounded-full" id="macro-fat-bar" style="width: 32%;"></div>
+              <div class="w-full bg-[#f2f2f2] dark:bg-[#262626] h-2 rounded-full overflow-hidden">
+                <div class="bg-[#0070f3] dark:bg-[#3291ff] h-full rounded-full" id="macro-protein-bar" style="width: 48%;"></div>
               </div>
             </div>
 
             <div>
               <div class="flex justify-between text-xs font-medium mb-1">
-                <span class="text-[#171717]">Soluble Fibers & Veggies</span>
+                <span class="text-[#171717] dark:text-[#ededed]">Healthy Fats & Omegas</span>
+                <span class="font-mono text-[#7928ca] dark:text-[#a35cf0]" id="macro-fat-pct">32%</span>
+              </div>
+              <div class="w-full bg-[#f2f2f2] dark:bg-[#262626] h-2 rounded-full overflow-hidden">
+                <div class="bg-[#7928ca] dark:bg-[#a35cf0] h-full rounded-full" id="macro-fat-bar" style="width: 32%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1">
+                <span class="text-[#171717] dark:text-[#ededed]">Soluble Fibers & Veggies</span>
                 <span class="font-mono text-[#10b981]" id="macro-fiber-pct">4%</span>
               </div>
-              <div class="w-full bg-[#f2f2f2] h-2 rounded-full overflow-hidden">
+              <div class="w-full bg-[#f2f2f2] dark:bg-[#262626] h-2 rounded-full overflow-hidden">
                 <div class="bg-[#10b981] h-full rounded-full" id="macro-fiber-bar" style="width: 4%;"></div>
               </div>
             </div>
 
             <div>
               <div class="flex justify-between text-xs font-medium mb-1">
-                <span class="text-[#171717]">Hydration / Moisture</span>
+                <span class="text-[#171717] dark:text-[#ededed]">Hydration / Moisture</span>
                 <span class="font-mono text-[#50e3c2]" id="macro-moisture-pct">74%</span>
               </div>
-              <div class="w-full bg-[#f2f2f2] h-2 rounded-full overflow-hidden">
+              <div class="w-full bg-[#f2f2f2] dark:bg-[#262626] h-2 rounded-full overflow-hidden">
                 <div class="bg-[#50e3c2] h-full rounded-full" id="macro-moisture-bar" style="width: 74%;"></div>
               </div>
             </div>
           </div>
 
-          <div class="p-3 bg-[#fafafa] rounded-lg border border-[#ebebeb] text-[10px] sm:text-[11px] text-[#4d4d4d] space-y-1">
+          <div class="p-3 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-lg border border-[#ebebeb] dark:border-[#2e2e2e] text-[10px] sm:text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] space-y-1">
             <div class="flex justify-between font-mono">
-              <span class="text-[#8f8f8f]">Calcium : Phosphorus</span>
-              <span class="font-semibold text-[#171717]" id="ca-phos-ratio">1.25 : 1</span>
+              <span class="text-[#8f8f8f] dark:text-[#737373]">Calcium : Phosphorus</span>
+              <span class="font-semibold text-[#171717] dark:text-[#ededed]" id="ca-phos-ratio">1.25 : 1</span>
             </div>
             <div class="flex justify-between font-mono">
-              <span class="text-[#8f8f8f]">Omega 6 : Omega 3</span>
-              <span class="font-semibold text-[#171717]">3.8 : 1 (Anti-Inflammatory)</span>
+              <span class="text-[#8f8f8f] dark:text-[#737373]">Omega 6 : Omega 3</span>
+              <span class="font-semibold text-[#171717] dark:text-[#ededed]">3.8 : 1 (Anti-Inflammatory)</span>
             </div>
           </div>
         </div>
 
         <!-- Budget Card -->
-        <div class="hairline-card p-4 sm:p-6 bg-gradient-to-b from-white to-[#fafafa]">
-          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-3">
+        <div class="hairline-card p-4 sm:p-6 bg-gradient-to-b from-white to-[#fafafa] dark:from-[#141414] dark:to-[#171717]">
+          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-3">
             Estimated Monthly Investment
           </h4>
 
           <div class="flex items-baseline gap-2 mb-2">
-            <span class="text-2xl sm:text-3xl font-bold font-mono text-[#171717]" id="res-monthly-cost">$142</span>
-            <span class="text-xs text-[#8f8f8f]">/ mo (Home Prep)</span>
+            <span class="text-2xl sm:text-3xl font-bold font-mono text-[#171717] dark:text-[#ededed]" id="res-monthly-cost">$142</span>
+            <span class="text-xs text-[#8f8f8f] dark:text-[#737373]">/ mo (Home Prep)</span>
           </div>
 
-          <p class="text-xs text-[#4d4d4d] mb-4 leading-relaxed">
-            Fresh batch preparation saves up to <strong class="text-[#171717]">55% vs subscription delivery brands</strong> while delivering pure human-grade nutrition.
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mb-4 leading-relaxed">
+            Fresh batch preparation saves up to <strong class="text-[#171717] dark:text-white">55% vs subscription delivery brands</strong> while delivering pure human-grade nutrition.
           </p>
 
           <a 
-            href="#transition-section" 
-            class="w-full inline-flex items-center justify-center text-xs font-semibold text-white bg-[#171717] hover:bg-[#333333] py-2.5 rounded-lg transition-all shadow-xs touch-manipulation"
+            href="/dog-food-recipes" 
+            class="w-full inline-flex items-center justify-center text-xs font-semibold text-white dark:text-[#171717] bg-[#171717] dark:bg-white hover:bg-[#333333] dark:hover:bg-[#e5e5e5] py-2.5 rounded-lg transition-all shadow-xs touch-manipulation"
           >
-            View 7-Day Transition Schedule →
+            Explore Homemade Recipes →
           </a>
         </div>
 
@@ -283,15 +283,15 @@ import { RECIPES } from '../data/recipes';
     </div>
 
     <!-- SECTION C: 7-Day Weekly Meal Rotation Schedule -->
-    <div class="hairline-card p-4 sm:p-8 bg-[#fafafa]">
+    <div class="hairline-card p-4 sm:p-8 bg-[#fafafa] dark:bg-[#141414]">
       <div class="mb-6">
-        <span class="font-mono text-[10px] sm:text-xs font-bold text-[#7928ca] uppercase tracking-wider">
+        <span class="font-mono text-[10px] sm:text-xs font-bold text-[#7928ca] dark:text-[#a35cf0] uppercase tracking-wider">
           WEEKLY ROTATION PROTOCOL
         </span>
-        <h3 class="text-lg sm:text-xl font-semibold text-[#171717] mt-0.5">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#171717] dark:text-[#ededed] mt-0.5">
           7-Day Variety & Nutrient Rotation Schedule
         </h3>
-        <p class="text-xs text-[#8f8f8f] mt-1">
+        <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">
           Rotating primary proteins prevents food intolerances and broadens amino acid diversity.
         </p>
       </div>
@@ -350,29 +350,29 @@ import { RECIPES } from '../data/recipes';
       timedContainer.innerHTML = '';
       result.dailySchedule.forEach((slot, idx) => {
         const slotCard = document.createElement('div');
-        slotCard.className = 'p-4 rounded-xl border border-[#ebebeb] bg-[#fafafa] flex flex-col justify-between';
+        slotCard.className = 'p-4 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a] flex flex-col justify-between';
         
         let itemsHtml = slot.items.map(item => `
-          <li class="flex items-center justify-between text-xs py-1 border-b border-[#ebebeb]/60">
-            <span class="text-[#171717] font-medium">${item.name}</span>
-            <span class="font-mono text-[11px] font-bold text-[#0070f3]">${item.amount}</span>
+          <li class="flex items-center justify-between text-xs py-1 border-b border-[#ebebeb]/60 dark:border-[#2e2e2e]">
+            <span class="text-[#171717] dark:text-[#ededed] font-medium">${item.name}</span>
+            <span class="font-mono text-[11px] font-bold text-[#0070f3] dark:text-[#3291ff]">${item.amount}</span>
           </li>
         `).join('');
 
         slotCard.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="font-mono text-xs font-bold text-[#171717] bg-[#f2f2f2] px-2 py-0.5 rounded">
+              <span class="font-mono text-xs font-bold text-[#171717] dark:text-[#ededed] bg-[#f2f2f2] dark:bg-[#262626] px-2 py-0.5 rounded">
                 ${slot.timeLabel}
               </span>
-              <span class="text-[10px] font-mono text-[#8f8f8f]">${slot.portionGrams}g portion</span>
+              <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373]">${slot.portionGrams}g portion</span>
             </div>
-            <h4 class="font-semibold text-sm text-[#171717] mb-3">${slot.slotName}</h4>
+            <h4 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] mb-3">${slot.slotName}</h4>
             <ul class="space-y-1 mb-3">
               ${itemsHtml}
             </ul>
           </div>
-          <p class="text-[10px] text-[#8f8f8f] italic pt-2 border-t border-[#ebebeb]">
+          <p class="text-[10px] text-[#8f8f8f] dark:text-[#737373] italic pt-2 border-t border-[#ebebeb] dark:border-[#262626]">
             ${slot.instructions}
           </p>
         `;
@@ -399,16 +399,16 @@ import { RECIPES } from '../data/recipes';
       recipe.ingredients.forEach((ing) => {
         const ingGrams = Math.round((result.activeDailyGrams * ing.percentage) / 100);
         const row = document.createElement('div');
-        row.className = 'p-3 sm:p-3.5 bg-white hover:bg-[#fafafa] flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 sm:gap-2 text-xs transition-colors';
+        row.className = 'p-3 sm:p-3.5 bg-white dark:bg-[#141414] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 sm:gap-2 text-xs transition-colors';
         row.innerHTML = `
           <div class="flex items-center gap-2.5">
-            <span class="font-mono text-[10px] sm:text-[11px] font-bold text-[#171717] bg-[#f2f2f2] px-2 py-0.5 rounded shrink-0">${ingGrams}g</span>
+            <span class="font-mono text-[10px] sm:text-[11px] font-bold text-[#171717] dark:text-[#ededed] bg-[#f2f2f2] dark:bg-[#262626] px-2 py-0.5 rounded shrink-0">${ingGrams}g</span>
             <div>
-              <div class="font-medium text-[#171717]">${ing.name}</div>
-              <div class="text-[10px] sm:text-[11px] text-[#8f8f8f]">${ing.purpose}</div>
+              <div class="font-medium text-[#171717] dark:text-[#ededed]">${ing.name}</div>
+              <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">${ing.purpose}</div>
             </div>
           </div>
-          <span class="font-mono text-[9px] sm:text-[10px] uppercase text-[#8f8f8f] bg-[#fafafa] border border-[#ebebeb] px-1.5 py-0.5 rounded w-fit self-start xs:self-auto">${ing.category}</span>
+          <span class="font-mono text-[9px] sm:text-[10px] uppercase text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#1f1f1f] border border-[#ebebeb] dark:border-[#2e2e2e] px-1.5 py-0.5 rounded w-fit self-start xs:self-auto">${ing.category}</span>
         `;
         rowsContainer.appendChild(row);
       });
@@ -421,8 +421,8 @@ import { RECIPES } from '../data/recipes';
         const li = document.createElement('li');
         li.className = 'flex items-start gap-2';
         li.innerHTML = `
-          <span class="font-mono font-bold text-[#171717] bg-[#f2f2f2] w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shrink-0 text-[9px] sm:text-[10px] mt-0.5">${idx + 1}</span>
-          <span class="leading-relaxed">${step}</span>
+          <span class="font-mono font-bold text-[#171717] dark:text-[#ededed] bg-[#f2f2f2] dark:bg-[#262626] w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shrink-0 text-[9px] sm:text-[10px] mt-0.5">${idx + 1}</span>
+          <span class="leading-relaxed text-[#4d4d4d] dark:text-[#a1a1a1]">${step}</span>
         `;
         prepContainer.appendChild(li);
       });
@@ -463,15 +463,15 @@ import { RECIPES } from '../data/recipes';
       weeklyContainer.innerHTML = '';
       result.weeklyDayPlans.forEach((dp) => {
         const dayCard = document.createElement('div');
-        dayCard.className = 'p-3 bg-white border border-[#ebebeb] rounded-xl flex flex-col justify-between';
+        dayCard.className = 'p-3 bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl flex flex-col justify-between';
         dayCard.innerHTML = `
           <div>
-            <span class="font-mono text-[10px] font-bold text-[#171717] bg-[#f2f2f2] px-2 py-0.5 rounded">
+            <span class="font-mono text-[10px] font-bold text-[#171717] dark:text-[#ededed] bg-[#f2f2f2] dark:bg-[#262626] px-2 py-0.5 rounded">
               ${dp.dayName.toUpperCase()}
             </span>
-            <h5 class="font-semibold text-xs text-[#171717] mt-2 mb-1">${dp.focus}</h5>
+            <h5 class="font-semibold text-xs text-[#171717] dark:text-[#ededed] mt-2 mb-1">${dp.focus}</h5>
           </div>
-          <div class="pt-2 border-t border-[#ebebeb] text-[10px] text-[#10b981] font-mono font-medium">
+          <div class="pt-2 border-t border-[#ebebeb] dark:border-[#262626] text-[10px] text-[#10b981] font-mono font-medium">
             ✓ ${result.activeDailyGrams}g Total
           </div>
         `;
@@ -491,11 +491,11 @@ import { RECIPES } from '../data/recipes';
     btn.addEventListener('click', () => {
       if (!currentProfile) return;
       document.querySelectorAll('.diet-tab-btn').forEach((b) => {
-        b.classList.remove('active', 'bg-white', 'text-[#171717]', 'shadow-xs');
-        b.classList.add('text-[#8f8f8f]');
+        b.classList.remove('active', 'bg-white', 'dark:bg-[#262626]', 'text-[#171717]', 'dark:text-white', 'shadow-xs');
+        b.classList.add('text-[#8f8f8f]', 'dark:text-[#737373]');
       });
-      btn.classList.add('active', 'bg-white', 'text-[#171717]', 'shadow-xs');
-      btn.classList.remove('text-[#8f8f8f]');
+      btn.classList.add('active', 'bg-white', 'dark:bg-[#262626]', 'text-[#171717]', 'dark:text-white', 'shadow-xs');
+      btn.classList.remove('text-[#8f8f8f]', 'dark:text-[#737373]');
 
       const diet = btn.getAttribute('data-diet') || 'fresh-cooked';
       currentProfile.dietPreference = diet as any;
