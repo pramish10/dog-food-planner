@@ -1,0 +1,234 @@
+---
+import { FAQS_DATA, FAQ_CATEGORIES, generateFaqJsonLd, type FaqItem } from '../data/faqs';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  limit?: number;
+  category?: string;
+  showCategories?: boolean;
+  showSearch?: boolean;
+  viewAllLink?: boolean;
+}
+
+const {
+  title = "Frequently Asked Questions About Dog Food & Nutrition",
+  subtitle = "Evidence-based answers to the most common canine nutrition, raw feeding, portion sizing, and pet food brand questions.",
+  limit,
+  category,
+  showCategories = true,
+  showSearch = true,
+  viewAllLink = false,
+} = Astro.props;
+
+let faqs: FaqItem[] = FAQS_DATA;
+if (category && category !== 'All Questions') {
+  faqs = faqs.filter(f => f.category === category);
+}
+if (limit) {
+  faqs = faqs.slice(0, limit);
+}
+
+const faqJsonLd = generateFaqJsonLd(faqs);
+---
+
+<section id="faq-section" class="py-16 sm:py-20 bg-white border-b border-[#ebebeb]">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+        <span class="text-[#0070f3]">FAQ</span> // VETERINARY CANINE Q&A
+      </div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#171717] tracking-tight mb-3">
+        {title}
+      </h2>
+      <p class="text-xs sm:text-sm text-[#4d4d4d] leading-relaxed">
+        {subtitle}
+      </p>
+    </div>
+
+    <!-- Live Search & Category Filter Toolbar -->
+    {(showSearch || showCategories) && (
+      <div class="mb-8 space-y-4">
+        {showSearch && (
+          <div class="relative max-w-xl mx-auto">
+            <input 
+              type="search"
+              id="faq-search-input"
+              placeholder="Search 40+ dog food questions (e.g. cat food, raw diet, Blue Buffalo, allergies)..."
+              class="w-full pl-10 pr-4 py-2.5 bg-[#fafafa] border border-[#ebebeb] focus:border-[#171717] focus:bg-white rounded-xl text-xs sm:text-sm text-[#171717] outline-none transition-all placeholder:text-[#8f8f8f] shadow-2xs"
+            />
+            <svg class="w-4 h-4 text-[#8f8f8f] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+            </svg>
+          </div>
+        )}
+
+        {showCategories && (
+          <div class="flex items-center justify-center gap-1.5 flex-wrap pt-1">
+            {FAQ_CATEGORIES.map(cat => (
+              <button
+                type="button"
+                data-faq-cat-filter={cat}
+                class="faq-cat-btn px-3 py-1 text-xs font-mono rounded-full border border-[#ebebeb] bg-[#fafafa] text-[#4d4d4d] hover:text-[#171717] hover:border-[#171717] transition-all cursor-pointer first:bg-[#171717] first:text-white first:border-[#171717]"
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    )}
+
+    <!-- FAQ Accordion List -->
+    <div id="faq-accordion-list" class="space-y-3">
+      {faqs.map((faq, index) => (
+        <div 
+          class="faq-item hairline-card bg-[#fafafa] border border-[#ebebeb] rounded-xl overflow-hidden transition-all duration-200"
+          data-category={faq.category}
+          data-question={faq.question.toLowerCase()}
+          data-keywords={faq.tags.join(' ').toLowerCase()}
+        >
+          <button 
+            type="button"
+            class="faq-toggle-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 cursor-pointer select-none group"
+            aria-expanded="false"
+            aria-controls={`faq-answer-${faq.id}`}
+          >
+            <span class="font-medium text-xs sm:text-sm text-[#171717] group-hover:text-[#0070f3] transition-colors leading-snug">
+              {faq.question}
+            </span>
+            <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-white border border-[#ebebeb] flex items-center justify-center text-[#171717] font-mono text-xs transition-transform duration-200">
+              +
+            </span>
+          </button>
+
+          <div 
+            id={`faq-answer-${faq.id}`}
+            class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed border-t border-[#f0f0f0] bg-white/70"
+          >
+            <p class="font-medium text-[#171717] mb-2 text-xs bg-[#f8fafc] p-3 rounded-lg border border-blue-100/50">
+              💡 <strong>Direct Answer:</strong> {faq.shortAnswer}
+            </p>
+            <div class="prose prose-neutral max-w-none text-xs text-[#4d4d4d] space-y-2" set:html={faq.fullAnswerHtml} />
+            
+            <div class="mt-4 pt-3 border-t border-[#ebebeb] flex flex-wrap items-center justify-between gap-2 text-[11px]">
+              <span class="font-mono text-[#8f8f8f]">Category: <strong class="text-[#171717]">{faq.category}</strong></span>
+              <a href={`/faq/${faq.slug}`} class="font-mono font-semibold text-[#0070f3] hover:underline flex items-center gap-1">
+                Deep Dive Guide ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- No Search Results Fallback -->
+    <div id="faq-no-results" class="hidden text-center py-12 text-xs sm:text-sm text-[#8f8f8f] bg-[#fafafa] rounded-xl border border-dashed border-[#ebebeb]">
+      <p class="font-medium text-[#171717] mb-1">No matching questions found.</p>
+      <p>Try searching for words like "allergies", "puppy", "kibble", "raw", or "cat food".</p>
+    </div>
+
+    {viewAllLink && (
+      <div class="mt-10 text-center">
+        <a 
+          href="/faq" 
+          class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#171717] text-white hover:bg-[#333333] text-xs font-semibold rounded-full transition-all shadow-sm"
+        >
+          <span>Explore All 40+ Dog Food FAQs Hub</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+          </svg>
+        </a>
+      </div>
+    )}
+
+  </div>
+</section>
+
+<!-- Embedded SEO JSON-LD FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<script>
+  // Interactive FAQ Accordion Logic
+  const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
+  const catButtons = document.querySelectorAll<HTMLElement>('.faq-cat-btn');
+  const searchInput = document.getElementById('faq-search-input') as HTMLInputElement | null;
+  const noResults = document.getElementById('faq-no-results');
+
+  let activeCategory = 'All Questions';
+  let searchTerm = '';
+
+  // Accordion Expand/Collapse
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-toggle-btn');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    btn?.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle current
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        content?.classList.add('hidden');
+        if (icon) icon.textContent = '+';
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        content?.classList.remove('hidden');
+        if (icon) icon.textContent = '−';
+      }
+    });
+  });
+
+  // Filter & Search Dispatcher
+  function applyFilters() {
+    let visibleCount = 0;
+
+    faqItems.forEach(item => {
+      const itemCat = item.getAttribute('data-category') || '';
+      const itemQ = item.getAttribute('data-question') || '';
+      const itemKeywords = item.getAttribute('data-keywords') || '';
+
+      const matchCategory = activeCategory === 'All Questions' || itemCat === activeCategory;
+      const matchSearch = searchTerm === '' || 
+        itemQ.includes(searchTerm) || 
+        itemKeywords.includes(searchTerm);
+
+      if (matchCategory && matchSearch) {
+        item.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+
+    if (visibleCount === 0 && noResults) {
+      noResults.classList.remove('hidden');
+    } else if (noResults) {
+      noResults.classList.add('hidden');
+    }
+  }
+
+  // Category Buttons Click
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach(b => {
+        b.classList.remove('bg-[#171717]', 'text-white', 'border-[#171717]');
+        b.classList.add('bg-[#fafafa]', 'text-[#4d4d4d]', 'border-[#ebebeb]');
+      });
+      btn.classList.add('bg-[#171717]', 'text-white', 'border-[#171717]');
+      btn.classList.remove('bg-[#fafafa]', 'text-[#4d4d4d]', 'border-[#ebebeb]');
+
+      activeCategory = btn.getAttribute('data-faq-cat-filter') || 'All Questions';
+      applyFilters();
+    });
+  });
+
+  // Search Input Event
+  searchInput?.addEventListener('input', (e) => {
+    searchTerm = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    applyFilters();
+  });
+</script>

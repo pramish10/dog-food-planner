@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FaqSection from '../components/FaqSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Dog Food Brands Review 2026: Blue Buffalo, Nutrish, Pure Balance, Ollie | DogFoodPlanner.com"
+  description="Independent analysis of popular commercial dog food brands. Review ingredient quality, recall history, and AAFCO compliance for Blue Buffalo, Nutrish, Science Diet & Ollie."
+  canonicalUrl="https://dogfoodplanner.com/dog-food-brands"
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa]">
+    <Breadcrumbs 
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Dog Food Brand Reviews & Recalls' }
+      ]}
+    />
+
+    <!-- Header Section -->
+    <section class="py-12 sm:py-16 bg-white border-b border-[#ebebeb]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#0070f3]">INDEPENDENT ANALYSIS</span> // BRAND REVIEWS & RECALL LOG
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] tracking-tight mb-4">
+          Dog Food Brand Reviews & Recall History
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] max-w-2xl mx-auto leading-relaxed">
+          Unbiased, veterinarian-informed reviews of major pet food brands, AAFCO labeling rules, and recall tracking to protect your canine companion.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Brand Breakdown -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-10 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed">
+      
+      <!-- Brand 1: Blue Buffalo -->
+      <section class="hairline-card p-6 sm:p-8 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-bold text-[#171717]">1. Blue Buffalo Dog Food Review</h2>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-full">
+            Grade: B+
+          </span>
+        </div>
+        <p>
+          <strong>Overview:</strong> Meat-first formulas avoiding corn, wheat, and soy. Features cold-formed "LifeSource Bits" containing antioxidants and vitamins.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+          <div class="p-3 bg-green-50/50 border border-green-100 rounded-lg">
+            <strong class="text-green-800 block mb-1">Pros:</strong>
+            <p class="text-xs text-green-900">Real meat is ingredient #1; wide variety of life-stage and limited-ingredient formulas; widely available on Chewy and pet stores.</p>
+          </div>
+          <div class="p-3 bg-amber-50/50 border border-amber-100 rounded-lg">
+            <strong class="text-amber-800 block mb-1">Cons & Recalls:</strong>
+            <p class="text-xs text-amber-900">High carbohydrate proportion (45-50%); past recalls regarding elevated moisture/mold and Vitamin D levels.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand 2: Rachael Ray Nutrish -->
+      <section class="hairline-card p-6 sm:p-8 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-bold text-[#171717]">2. Rachael Ray Nutrish Review</h2>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full">
+            Grade: C+ / B-
+          </span>
+        </div>
+        <p>
+          <strong>Overview:</strong> Accessible supermarket brand with real meat in select formulas, though lower-tier lines utilize corn gluten and split legumes.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+          <div class="p-3 bg-green-50/50 border border-green-100 rounded-lg">
+            <strong class="text-green-800 block mb-1">Pros:</strong>
+            <p class="text-xs text-green-900">Very budget-friendly; Dish and Peak lines offer higher whole protein inclusion.</p>
+          </div>
+          <div class="p-3 bg-amber-50/50 border border-amber-100 rounded-lg">
+            <strong class="text-amber-800 block mb-1">Cons & Recalls:</strong>
+            <p class="text-xs text-amber-900">Standard lines rely on plant-based protein boosters (pea protein, corn gluten meal); past FDA DCM inquiry inclusion.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand 3: Pure Balance -->
+      <section class="hairline-card p-6 sm:p-8 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-bold text-[#171717]">3. Pure Balance (Walmart Brand) Review</h2>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 bg-green-50 text-green-700 border border-green-200 rounded-full">
+            Grade: B (Best Budget)
+          </span>
+        </div>
+        <p>
+          <strong>Overview:</strong> Highly rated private-label brand providing premium-style meat-first recipes free from corn, wheat, and artificial colors at exceptional value.
+        </p>
+      </section>
+
+      <!-- Brand 4: Ollie & Fresh Delivery -->
+      <section class="hairline-card p-6 sm:p-8 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-bold text-[#171717]">4. Ollie & Fresh Dog Food Delivery Services</h2>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 bg-purple-50 text-purple-700 border border-purple-200 rounded-full">
+            Grade: A
+          </span>
+        </div>
+        <p>
+          <strong>Overview:</strong> Human-grade gently cooked subscription meals prepared in USDA-inspected kitchens. Outstanding digestibility and hydration, but carries a high monthly subscription cost ($200-$380+/month).
+        </p>
+      </section>
+
+      <!-- Understanding AAFCO Labeling Rules -->
+      <section class="hairline-card p-6 sm:p-8 bg-[#fafafa] space-y-3">
+        <h2 class="text-lg sm:text-xl font-bold text-[#171717]">
+          The AAFCO Naming Cheat Sheet: Don't Be Fooled by Pet Food Marketing
+        </h2>
+        <ul class="space-y-2 text-xs">
+          <li><strong>• 95% Rule:</strong> "Beef Dog Food" = 95% beef.</li>
+          <li><strong>• 25% Rule:</strong> "Beef Dinner / Recipe / Formula" = only 25% beef.</li>
+          <li><strong>• 3% Rule:</strong> "Dog Food With Beef" = only 3% beef required!</li>
+          <li><strong>• Flavor Rule:</strong> "Beef Flavored Dog Food" = 0% beef required (only flavor extracts).</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <!-- Related FAQs for Brands -->
+    <FaqSection 
+      title="Brand Reviews & Pet Food Safety FAQs"
+      subtitle="Frequently asked questions about dog food brands, lot codes, and FDA recalls."
+      category="Brand Reviews & Safety"
+      limit={6}
+      viewAllLink={true}
+    />
+
+  </main>
+
+  <Footer />
+</Layout>

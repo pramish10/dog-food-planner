@@ -9,6 +9,7 @@ import IngredientChecker from '../components/IngredientChecker.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import SeoContent from '../components/SeoContent.astro';
 import Testimonials from '../components/Testimonials.astro';
+import FaqSection from '../components/FaqSection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -24,6 +25,14 @@ import Footer from '../components/Footer.astro';
     <TransitionGuide />
     <IngredientChecker />
     <ComparisonTable />
+    <FaqSection 
+      title="Frequently Asked Questions About Dog Food & Nutrition" 
+      subtitle="Veterinary answers to top questions on dog food brands, raw BARF diets, portion sizing, and toxic foods."
+      limit={10}
+      showCategories={true}
+      showSearch={true}
+      viewAllLink={true}
+    />
     <SeoContent />
     <Testimonials />
   </main>

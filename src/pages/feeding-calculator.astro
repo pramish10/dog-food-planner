@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PlannerQuiz from '../components/PlannerQuiz.astro';
+import PlanResults from '../components/PlanResults.astro';
+import FaqSection from '../components/FaqSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Dog Food Feeding Calculator: Exact Daily Calories, Grams & Cups | DogFoodPlanner.com"
+  description="Free veterinary canine calorie & meal portion calculator. Accurately calculates RER and MER energy demands and generates custom fresh, raw, and kibble feeding plans."
+  canonicalUrl="https://dogfoodplanner.com/feeding-calculator"
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa]">
+    <Breadcrumbs 
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Feeding Calculator' }
+      ]}
+    />
+
+    <!-- Header Section -->
+    <section class="py-10 sm:py-14 bg-white border-b border-[#ebebeb]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#10b981]">100% FREE</span> // VETERINARY METABOLIC FORMULATION
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] tracking-tight mb-4">
+          Canine Calorie & Meal Portion Calculator
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] max-w-2xl mx-auto leading-relaxed">
+          Calculate your dog's exact metabolic burn (RER/MER) and generate a customized fresh, raw, or topper meal plan with complete ingredient weights.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Planner Engine -->
+    <div class="py-6">
+      <PlannerQuiz />
+      <PlanResults />
+    </div>
+
+    <!-- Feeding Math Explanation Section -->
+    <section class="py-14 sm:py-16 bg-white border-y border-[#ebebeb]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed">
+        <h2 class="text-2xl font-bold text-[#171717]">
+          How Our Veterinary Feeding Math Works
+        </h2>
+        <p>
+          Unlike generic chart estimates on commercial bags, DogFoodPlanner uses the National Research Council (NRC) formula for calculating canine energy expenditure:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+          <div class="p-5 bg-[#fafafa] rounded-xl border border-[#ebebeb] space-y-2">
+            <h3 class="font-bold text-sm text-[#171717]">1. Resting Energy Requirement (RER)</h3>
+            <p class="text-xs">
+              The baseline energy burned while at complete rest in a thermoneutral environment:
+            </p>
+            <code class="block p-3 bg-white border border-[#ebebeb] rounded-lg font-mono text-xs text-[#171717]">
+              RER (kcal/day) = 70 × (Body Weight in kg)<sup>0.75</sup>
+            </code>
+          </div>
+
+          <div class="p-5 bg-[#fafafa] rounded-xl border border-[#ebebeb] space-y-2">
+            <h3 class="font-bold text-sm text-[#171717]">2. Maintenance Energy Requirement (MER)</h3>
+            <p class="text-xs">
+              RER multiplied by your dog's life stage, reproductive status, and physical activity:
+            </p>
+            <ul class="text-xs space-y-1 font-mono text-[#171717] p-2 bg-white border border-[#ebebeb] rounded-lg">
+              <li>• Spayed/Neutered Adult: 1.6 × RER</li>
+              <li>• Intact Adult: 1.8 × RER</li>
+              <li>• Weight Loss: 1.0 - 1.2 × RER</li>
+              <li>• Puppy (&lt;4 mo): 3.0 × RER</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Relevant FAQs -->
+    <FaqSection 
+      title="Feeding Math & Portion FAQs"
+      subtitle="Answers on how much food a dog can safely eat per day and daily feeding schedules."
+      category="Feeding Math & Portions"
+      limit={6}
+      viewAllLink={true}
+    />
+
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import IngredientChecker from '../components/IngredientChecker.astro';
+import FaqSection from '../components/FaqSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Toxic Foods & Dangerous Ingredients for Dogs 2026 | DogFoodPlanner.com"
+  description="Complete canine toxicity checker and ingredient safety guide. Can dogs eat cat food, eggs, bananas, or chicken meal? Check foods instantly."
+  canonicalUrl="https://dogfoodplanner.com/toxic-foods"
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa]">
+    <Breadcrumbs 
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Toxic Foods & Ingredient Checker' }
+      ]}
+    />
+
+    <!-- Header Section -->
+    <section class="py-12 sm:py-16 bg-white border-b border-[#ebebeb]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#e11d48]">CRITICAL SAFETY</span> // CANINE INGREDIENT TOXICITY
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] tracking-tight mb-4">
+          Canine Ingredient Safety & Toxic Foods Directory
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] max-w-2xl mx-auto leading-relaxed">
+          Search over 60+ ingredients to verify if they are safe, beneficial superfoods, or potentially life-threatening toxins for dogs.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Ingredient Checker Component -->
+    <div class="py-8">
+      <IngredientChecker />
+    </div>
+
+    <!-- Lethal Foods Guide Section -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 space-y-8 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed">
+      <section class="hairline-card p-6 sm:p-8 bg-white space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#e11d48] flex items-center gap-2">
+          <span>☠️</span> The Most Dangerous Household Foods for Dogs
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 bg-red-50/50 rounded-xl border border-red-100">
+            <h3 class="font-bold text-xs text-red-900">1. Xylitol / Birch Sugar</h3>
+            <p class="text-xs text-red-800 mt-1">Causes severe, rapid insulin surge resulting in hypoglycemia and acute liver failure within 30 minutes.</p>
+          </div>
+
+          <div class="p-4 bg-red-50/50 rounded-xl border border-red-100">
+            <h3 class="font-bold text-xs text-red-900">2. Grapes, Raisins & Currants</h3>
+            <p class="text-xs text-red-800 mt-1">Contain tartaric acid compounds that cause acute, irreversible canine renal (kidney) failure.</p>
+          </div>
+
+          <div class="p-4 bg-red-50/50 rounded-xl border border-red-100">
+            <h3 class="font-bold text-xs text-red-900">3. Dark Chocolate & Cocoa</h3>
+            <p class="text-xs text-red-800 mt-1">Theobromine and caffeine cause cardiac arrhythmias, central nervous system seizures, and death.</p>
+          </div>
+
+          <div class="p-4 bg-red-50/50 rounded-xl border border-red-100">
+            <h3 class="font-bold text-xs text-red-900">4. Onions, Garlic, Leeks & Chives</h3>
+            <p class="text-xs text-red-800 mt-1">Alliums contain thiosulfates that rupture canine red blood cells causing hemolytic anemia.</p>
+          </div>
+
+          <div class="p-4 bg-red-50/50 rounded-xl border border-red-100">
+            <h3 class="font-bold text-xs text-red-900">5. Macadamia Nuts</h3>
+            <p class="text-xs text-red-800 mt-1">Unknown toxin causes severe hind-limb weakness, tremors, hyperthermia, and inability to walk.</p>
+          </div>
+
+          <div class="p-4 bg-red-50/50 rounded-xl border border-red-100">
+            <h3 class="font-bold text-xs text-red-900">6. Cooked Bones</h3>
+            <p class="text-xs text-red-800 mt-1">Cooking makes bones brittle and sharp, causing esophageal, stomach, and intestinal punctures.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Related FAQs for Ingredients & Safety -->
+    <FaqSection 
+      title="Ingredients & Safety FAQs"
+      subtitle="Frequently asked questions on cat food, human foods, eggs, fruits, and chicken meal."
+      category="Ingredients & Safety"
+      limit={8}
+      viewAllLink={true}
+    />
+
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,45 @@
+---
+interface BreadcrumbItem {
+  name: string;
+  url?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": item.name,
+    ...(item.url ? { "item": item.url.startsWith('http') ? item.url : `https://dogfoodplanner.com${item.url}` } : {})
+  }))
+};
+---
+
+<nav aria-label="Breadcrumb" class="py-3 px-4 sm:px-6 max-w-6xl mx-auto text-xs text-[#8f8f8f]">
+  <ol class="flex items-center flex-wrap gap-1.5 font-mono">
+    {items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      return (
+        <li class="flex items-center gap-1.5">
+          {index > 0 && <span class="text-[#ebebeb] select-none">/</span>}
+          {isLast || !item.url ? (
+            <span class="text-[#171717] font-medium truncate max-w-[240px] sm:max-w-md">{item.name}</span>
+          ) : (
+            <a href={item.url} class="text-[#8f8f8f] hover:text-[#171717] transition-colors underline-offset-4 hover:underline">
+              {item.name}
+            </a>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FaqSection from '../components/FaqSection.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Best Dog Food 2026: Top Dry, Fresh, Raw & Sensitive Stomach Food | DogFoodPlanner.com"
+  description="Comprehensive guide to the best dog food in 2026. Compare human-grade fresh dog food, 80-10-10 raw BARF diets, high-protein dry kibble, and specialized puppy foods."
+  canonicalUrl="https://dogfoodplanner.com/best-dog-food"
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa]">
+    <Breadcrumbs 
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Best Dog Food Guide' }
+      ]}
+    />
+
+    <!-- Header Section -->
+    <section class="py-12 sm:py-16 bg-white border-b border-[#ebebeb]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#0070f3]">PILLAR GUIDE</span> // CLINICAL CANINE RANKING 2026
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] tracking-tight mb-4">
+          The Best Dog Food: Veterinary Ranking & Nutritional Analysis
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] max-w-2xl mx-auto leading-relaxed">
+          How to select the healthiest, most bioavailable diet for your dog across fresh cooked meals, raw ancestral formulas, and premium dry kibble.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-10 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed">
+      
+      <!-- Top 5 Rankings Card -->
+      <section class="hairline-card p-6 sm:p-8 bg-white space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717]">
+          What Are the Top 5 Healthiest Dog Foods in 2026?
+        </h2>
+        <p>
+          Canine nutritional longevity research confirms that minimal heat processing and high biological moisture are the two strongest predictors of canine vitality, kidney health, and disease resistance.
+        </p>
+        
+        <div class="space-y-3 mt-4">
+          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#171717] text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">1</span>
+            <div>
+              <h3 class="font-bold text-[#171717] text-sm">Gently Cooked Fresh Dog Food (Homemade or Human-Grade Kitchens)</h3>
+              <p class="text-xs text-[#4d4d4d] mt-1">
+                Cooked at 160°F to retain heat-sensitive taurine, vitamins, and natural hydration (70%+). Delivers 90%+ nutrient absorption with zero chemical BHA/BHT preservatives.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#171717] text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">2</span>
+            <div>
+              <h3 class="font-bold text-[#171717] text-sm">Freeze-Dried / Pathogen-Controlled Raw BARF (80/10/10)</h3>
+              <p class="text-xs text-[#4d4d4d] mt-1">
+                80% muscle meat, 10% raw bone, and 10% organ meats. Retains active digestive enzymes for optimal dental plaque scraping and compact stools.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#171717] text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">3</span>
+            <div>
+              <h3 class="font-bold text-[#171717] text-sm">Traceable, Low-Glycemic Dry Kibble with Whole Meats (e.g. Open Farm, Orijen)</h3>
+              <p class="text-xs text-[#4d4d4d] mt-1">
+                Utilizes Certified Humane meats, non-GMO produce, and avoids rendered animal by-products and heavy legume fractioning.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#171717] text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">4</span>
+            <div>
+              <h3 class="font-bold text-[#171717] text-sm">Limited Ingredient Diets for Allergies (Novel Single Protein)</h3>
+              <p class="text-xs text-[#4d4d4d] mt-1">
+                Utilizes novel proteins (venison, rabbit, duck, wild salmon) with soluble pumpkin fiber to calm gastrointestinal inflammation.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb] flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#171717] text-white flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">5</span>
+            <div>
+              <h3 class="font-bold text-[#171717] text-sm">Superfood Hybrid Bowl (Kibble + 20% Fresh Toppers)</h3>
+              <p class="text-xs text-[#4d4d4d] mt-1">
+                Adding warm bone broth, pasture-raised egg yolks, and steamed greens to high-tier kibble reduces inflammatory markers by up to 90% cost-effectively.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kibble vs Fresh Comparison -->
+      <ComparisonTable />
+
+      <!-- Best Dog Food by Category -->
+      <section class="hairline-card p-6 sm:p-8 bg-white space-y-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717]">
+          Choosing the Best Food for Your Dog's Specific Life Stage & Needs
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-5 bg-[#fafafa] rounded-xl border border-[#ebebeb] space-y-2">
+            <h3 class="font-bold text-sm text-[#171717] flex items-center gap-1.5">
+              <span>🐶</span> Best Puppy Food
+            </h3>
+            <p class="text-xs text-[#4d4d4d] leading-relaxed">
+              Requires 28-32% protein, controlled 1.2:1 to 1.4:1 Calcium-to-Phosphorus ratio (especially for large breeds to prevent hip dysplasia), and DHA for neural cognitive growth.
+            </p>
+          </div>
+
+          <div class="p-5 bg-[#fafafa] rounded-xl border border-[#ebebeb] space-y-2">
+            <h3 class="font-bold text-sm text-[#171717] flex items-center gap-1.5">
+              <span>🐕</span> Best Food for Small Dogs
+            </h3>
+            <p class="text-xs text-[#4d4d4d] leading-relaxed">
+              High metabolic burn per pound demands concentrated calories, miniature bite sizes for compact jaws, and steady complex carbs to prevent hypoglycemia.
+            </p>
+          </div>
+
+          <div class="p-5 bg-[#fafafa] rounded-xl border border-[#ebebeb] space-y-2">
+            <h3 class="font-bold text-sm text-[#171717] flex items-center gap-1.5">
+              <span>🌾</span> Best Food for Sensitive Stomachs
+            </h3>
+            <p class="text-xs text-[#4d4d4d] leading-relaxed">
+              Single novel protein (turkey or lamb), zero corn/wheat/soy, enriched with pure pumpkin puree and soothing wild fish oil for gut mucosal healing.
+            </p>
+          </div>
+
+          <div class="p-5 bg-[#fafafa] rounded-xl border border-[#ebebeb] space-y-2">
+            <h3 class="font-bold text-sm text-[#171717] flex items-center gap-1.5">
+              <span>🦴</span> Best Food for Senior Dogs
+            </h3>
+            <p class="text-xs text-[#4d4d4d] leading-relaxed">
+              Higher biological protein to prevent sarcopenia (muscle wasting), lower fat to prevent pancreatitis, glucosamine/chondroitin for joints, and elevated moisture for renal support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Calculator Embed CTA -->
+      <div class="p-6 sm:p-8 bg-[#171717] text-white rounded-2xl text-center space-y-3">
+        <h3 class="text-xl font-bold text-white">
+          Calculate Your Dog's Personalized Bowl Now
+        </h3>
+        <p class="text-xs sm:text-sm text-white/80 max-w-xl mx-auto">
+          Get exact daily calories, grams, cups, and macro ratios formulated specifically for your dog's breed and weight.
+        </p>
+        <div class="pt-2">
+          <a href="/feeding-calculator" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#171717] hover:bg-[#f2f2f2] text-xs font-bold rounded-full transition-all shadow-sm">
+            Launch Veterinary Calculator →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Related FAQs for Best Dog Food -->
+    <FaqSection 
+      title="Best Dog Food FAQs"
+      subtitle="Answers to common questions about dog food selection, brands, and feeding choices."
+      category="Diet & Nutrition"
+      limit={8}
+      viewAllLink={true}
+    />
+
+  </main>
+
+  <Footer />
+</Layout>
