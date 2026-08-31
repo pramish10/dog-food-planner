@@ -1409,17 +1409,19 @@ import { RECIPES } from '../data/recipes';
     return null;
   }
 
-  async function classifyWithHostedBreedAi(source: HTMLImageElement | HTMLVideoElement, bbox: number[]) {
-    const crop = cropToDetection(source, bbox);
-    const originalWidth = crop instanceof HTMLCanvasElement ? crop.width : crop instanceof HTMLVideoElement ? crop.videoWidth : crop.naturalWidth;
-    const originalHeight = crop instanceof HTMLCanvasElement ? crop.height : crop instanceof HTMLVideoElement ? crop.videoHeight : crop.naturalHeight;
+  async function classifyWithHostedBreedAi(source: HTMLImageElement | HTMLVideoElement) {
+    // Keep the complete image for breed classification. A tight object-detection
+    // crop can cut off a dog's head or body and makes ResNet return unrelated
+    // ImageNet classes. The detector above has already confirmed a dog is present.
+    const originalWidth = source instanceof HTMLVideoElement ? source.videoWidth : source.naturalWidth;
+    const originalHeight = source instanceof HTMLVideoElement ? source.videoHeight : source.naturalHeight;
     const scale = Math.min(1, 1024 / Math.max(originalWidth, originalHeight));
     const canvas = document.createElement('canvas');
     canvas.width = Math.max(1, Math.round(originalWidth * scale));
     canvas.height = Math.max(1, Math.round(originalHeight * scale));
     const context = canvas.getContext('2d');
     if (!context) throw new Error('Could not prepare the dog photo.');
-    context.drawImage(crop, 0, 0, canvas.width, canvas.height);
+    context.drawImage(source, 0, 0, canvas.width, canvas.height);
 
     const image = canvas.toDataURL('image/jpeg', 0.88).split(',')[1];
     const response = await fetch('/api/breed', {
@@ -1437,7 +1439,6 @@ import { RECIPES } from '../data/recipes';
       .filter((profile: ExtendedBreedProfile, index: number, profiles: ExtendedBreedProfile[]) =>
         profiles.findIndex((candidate) => candidate.name === profile.name) === index
       );
-    if (!matches.length) throw new Error('No breed predictions returned');
     return matches;
   }
 
@@ -1503,8 +1504,8 @@ import { RECIPES } from '../data/recipes';
     if (dogDetection) {
       try {
         if (scanStepText) scanStepText.textContent = 'RUNNING 120-BREED DEEP-LEARNING MODEL...';
-        const hostedMatches = await classifyWithHostedBreedAi(visualSource, dogDetection.bbox);
-        detectedDogBreed = hostedMatches[0];
+        const hostedMatches = await classifyWithHostedBreedAi(visualSource);
+        detectedDogBreed = hostedMatches[0] || null;
         breedCandidates = hostedMatches;
       } catch (hostedError) {
         hostedBreedAiUnavailable = true;
