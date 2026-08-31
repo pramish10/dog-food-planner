@@ -299,6 +299,23 @@ import { RECIPES } from '../data/recipes';
     return healthMatches[0] || proteinMatches[0] || availableRecipes[0] || dietRecipes[0];
   }
 
+  const INGREDIENT_IMAGES: Record<string, string> = {
+    'Muscle Meat': 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=160&h=160&q=80',
+    'Organ': 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=160&h=160&q=80',
+    'Raw Bone': 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=160&h=160&q=80',
+    'Vegetables & Greens': 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=160&h=160&q=80',
+    'Healthy Fats & Oils': 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=160&h=160&q=80',
+    'Natural Supplements': 'https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=160&h=160&q=80'
+  };
+
+  function ingredientShoppingLinks(name: string) {
+    const query = encodeURIComponent(name);
+    return {
+      grocery: `https://www.google.com/search?tbm=shop&q=${query}`,
+      amazon: `https://www.amazon.com/s?k=${query}`
+    };
+  }
+
   function renderPlan(profile: any) {
     const result = calculateCanineNutrition(profile);
 
@@ -349,10 +366,23 @@ import { RECIPES } from '../data/recipes';
     const matchNote = document.getElementById('recipe-match-note');
     const avoidedAllergies = (profile.allergies || []).filter((allergy: string) => allergy !== 'none / no allergies');
     const selectionSummary = document.getElementById('recipe-selection-summary');
-    const preferenceText = profile.proteinChoice?.includes('No Pref') ? 'a balanced protein choice' : `${profile.proteinChoice} as the main protein`;
-    const safetyText = avoidedAllergies.length ? ` It leaves out your selected sensitivity: ${avoidedAllergies.join(', ')}.` : '';
-    const summary = `We chose this recipe for ${preferenceText} and ${profile.healthFocus || 'everyday health'}.${safetyText}`;
-    if (matchNote) matchNote.textContent = summary;
+    const dietName = recipe.dietType === 'fresh-cooked'
+      ? 'fresh-cooked meals'
+      : recipe.dietType === 'raw-barf'
+        ? 'raw BARF meals'
+        : 'a superfood topper';
+    const proteinSelected = profile.proteinChoice && !profile.proteinChoice.includes('No Pref');
+    const proteinReason = proteinSelected
+      ? `You selected ${profile.proteinChoice}, and ${recipe.name} uses ${recipe.primaryProtein.toLowerCase()} as its main protein.`
+      : `You selected a balanced protein choice, so we chose this lean ${recipe.primaryProtein.toLowerCase()} recipe as an everyday option.`;
+    const healthReason = recipe.healthFocusMatches.includes(profile.healthFocus)
+      ? `It supports your ${profile.healthFocus} focus.`
+      : `It is the closest available match for your ${profile.healthFocus || 'General Health'} focus.`;
+    const safetyReason = avoidedAllergies.length
+      ? ` It also avoids your selected sensitivity: ${avoidedAllergies.join(', ')}.`
+      : ' No ingredient sensitivities were selected.';
+    const summary = `You chose ${dietName}. ${proteinReason} ${healthReason}${safetyReason}`;
+    if (matchNote) matchNote.textContent = `${recipe.primaryProtein} recipe selected for your answers.`;
     if (selectionSummary) selectionSummary.textContent = summary;
 
     // Every bowl is derived from this exact recipe, not from a separate generic schedule.
@@ -381,17 +411,23 @@ import { RECIPES } from '../data/recipes';
       rowsContainer.innerHTML = '';
       recipe.ingredients.forEach((ing) => {
         const ingGrams = Math.round((result.activeDailyGrams * ing.percentage) / 100);
+        const buyLinks = ingredientShoppingLinks(ing.name);
         const row = document.createElement('div');
-        row.className = 'p-3 sm:p-3.5 bg-white dark:bg-[#141414] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 sm:gap-2 text-xs transition-colors';
+        row.className = 'p-3 sm:p-3.5 bg-white dark:bg-[#141414] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] flex flex-col sm:flex-row sm:items-center gap-3 text-xs transition-colors';
         row.innerHTML = `
-          <div class="flex items-center gap-2.5">
+          <img src="${INGREDIENT_IMAGES[ing.category]}" alt="${ing.name}" loading="lazy" class="w-12 h-12 rounded-md object-cover shrink-0 border border-[#ebebeb] dark:border-[#2e2e2e]" />
+          <div class="flex items-center gap-2.5 min-w-0 flex-1">
             <span class="font-mono text-[10px] sm:text-[11px] font-bold text-[#171717] dark:text-[#ededed] bg-[#f2f2f2] dark:bg-[#262626] px-2 py-0.5 rounded shrink-0">${ingGrams}g</span>
             <div>
               <div class="font-medium text-[#171717] dark:text-[#ededed]">${ing.name}</div>
               <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">${ing.purpose}</div>
             </div>
           </div>
-          <span class="font-mono text-[9px] sm:text-[10px] uppercase text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#1f1f1f] border border-[#ebebeb] dark:border-[#2e2e2e] px-1.5 py-0.5 rounded w-fit self-start xs:self-auto">${ing.category}</span>
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-1.5 sm:justify-end shrink-0">
+            <span class="font-mono text-[9px] sm:text-[10px] uppercase text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#1f1f1f] border border-[#ebebeb] dark:border-[#2e2e2e] px-1.5 py-0.5 rounded w-fit">${ing.category}</span>
+            <a href="${buyLinks.grocery}" target="_blank" rel="noopener noreferrer" class="font-medium text-[10px] text-[#0070f3] dark:text-[#3291ff] hover:underline whitespace-nowrap">Compare prices ↗</a>
+            <a href="${buyLinks.amazon}" target="_blank" rel="noopener noreferrer" class="font-medium text-[10px] text-[#0070f3] dark:text-[#3291ff] hover:underline whitespace-nowrap">Buy online ↗</a>
+          </div>
         `;
         rowsContainer.appendChild(row);
       });
