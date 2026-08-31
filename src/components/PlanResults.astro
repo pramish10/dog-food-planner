@@ -155,7 +155,7 @@ import { RECIPES } from '../data/recipes';
               FORMULATION: FRESH GENTLY COOKED
             </span>
             <span class="font-mono text-[10px] sm:text-xs text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded">
-              AAFCO Complete
+              Personalized estimate
             </span>
           </div>
 
@@ -165,6 +165,7 @@ import { RECIPES } from '../data/recipes';
           <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed mb-5 sm:mb-6" id="recipe-description">
             Slow-simmered lean ground turkey paired with antioxidant-rich pumpkin puree, steamed greens, and wild Alaskan salmon oil.
           </p>
+          <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373] -mt-3 mb-5" id="recipe-match-note" aria-live="polite"></p>
 
           <!-- Visual recipe overview -->
           <div class="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-4 sm:gap-5 mb-6 sm:mb-8 p-3 sm:p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e]">
@@ -262,27 +263,11 @@ import { RECIPES } from '../data/recipes';
           </div>
         </div>
 
-        <!-- Budget Card -->
+        <!-- Recipe selection summary -->
         <div class="hairline-card p-4 sm:p-6 bg-gradient-to-b from-white to-[#fafafa] dark:from-[#141414] dark:to-[#171717]">
-          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-3">
-            Estimated Monthly Investment
-          </h4>
-
-          <div class="flex items-baseline gap-2 mb-2">
-            <span class="text-2xl sm:text-3xl font-bold font-mono text-[#171717] dark:text-[#ededed]" id="res-monthly-cost">$142</span>
-            <span class="text-xs text-[#8f8f8f] dark:text-[#737373]">/ mo (Home Prep)</span>
-          </div>
-
-          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mb-4 leading-relaxed">
-            Fresh batch preparation saves up to <strong class="text-[#171717] dark:text-white">55% vs subscription delivery brands</strong> while delivering pure human-grade nutrition.
-          </p>
-
-          <a 
-            href="/dog-food-recipes" 
-            class="w-full inline-flex items-center justify-center text-xs font-semibold text-white dark:text-[#171717] bg-[#171717] dark:bg-white hover:bg-[#333333] dark:hover:bg-[#e5e5e5] py-2.5 rounded-lg transition-all shadow-xs touch-manipulation"
-          >
-            Explore Homemade Recipes →
-          </a>
+          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-3">Why this recipe</h4>
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed" id="recipe-selection-summary">This recipe is selected from your feeding style, protein preference, health focus, and stated sensitivities.</p>
+          <div class="mt-4 pt-4 border-t border-[#ebebeb] dark:border-[#262626] text-[10px] leading-relaxed text-[#8f8f8f] dark:text-[#737373]">Portions are educational estimates for healthy dogs. For long-term homemade feeding or a medical condition, consult a veterinarian or veterinary nutritionist.</div>
         </div>
 
       </div>
@@ -308,6 +293,35 @@ import { RECIPES } from '../data/recipes';
   const RECIPE_AFFILIATE_LINKS: Record<string, string> = {
     // 'fresh-turkey-vitality': 'https://www.amazon.com/dp/PRODUCT_ID?tag=YOUR_TAG-20',
   };
+
+  const ALLERGY_ALIASES: Record<string, string[]> = {
+    'chicken / poultry': ['chicken', 'poultry', 'turkey'],
+    beef: ['beef'],
+    dairy: ['dairy'],
+    eggs: ['egg'],
+    'grains / wheat': ['grain', 'wheat'],
+    soy: ['soy'],
+    corn: ['corn']
+  };
+
+  function selectRecipe(profile: any) {
+    const dietRecipes = RECIPES.filter((recipe) => recipe.dietType === profile.dietPreference);
+    const avoidedAllergies = (profile.allergies || []).filter((allergy: string) => allergy !== 'none / no allergies');
+    const allergySafeRecipes = dietRecipes.filter((recipe) => !recipe.ingredients.some((ingredient) =>
+      (ingredient.allergens || []).some((allergen) => avoidedAllergies.some((allergy: string) =>
+        (ALLERGY_ALIASES[allergy] || [allergy]).some((alias) => allergen.toLowerCase().includes(alias))
+      ))
+    ));
+    const availableRecipes = allergySafeRecipes.length ? allergySafeRecipes : dietRecipes;
+    const preferredProtein = profile.proteinChoice?.toLowerCase();
+    const proteinMatches = preferredProtein && !preferredProtein.includes('no pref')
+      ? availableRecipes.filter((recipe) => recipe.primaryProtein.toLowerCase() === preferredProtein)
+      : availableRecipes;
+    const healthMatches = profile.healthFocus && profile.healthFocus !== 'General Health'
+      ? proteinMatches.filter((recipe) => recipe.healthFocusMatches.includes(profile.healthFocus))
+      : proteinMatches;
+    return healthMatches[0] || proteinMatches[0] || availableRecipes[0] || dietRecipes[0];
+  }
 
   function renderPlan(profile: any) {
     const result = calculateCanineNutrition(profile);
@@ -344,7 +358,7 @@ import { RECIPES } from '../data/recipes';
     if (treatKcalEl) treatKcalEl.innerHTML = `${result.treatKcal} <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f]">kcal/day</span>`;
 
     // Find Matching Recipe
-    const recipe = RECIPES.find((r) => r.dietType === profile.dietPreference) || RECIPES[0];
+    const recipe = selectRecipe(profile);
 
     const dietTagEl = document.getElementById('recipe-diet-tag');
     const recipeTitleEl = document.getElementById('recipe-title');
@@ -355,6 +369,15 @@ import { RECIPES } from '../data/recipes';
     if (dietTagEl) dietTagEl.textContent = `FORMULATION: ${recipe.dietType.replace('-', ' ').toUpperCase()}`;
     if (recipeTitleEl) recipeTitleEl.textContent = recipe.name;
     if (recipeDescEl) recipeDescEl.textContent = recipe.description;
+
+    const matchNote = document.getElementById('recipe-match-note');
+    const avoidedAllergies = (profile.allergies || []).filter((allergy: string) => allergy !== 'none / no allergies');
+    const selectionSummary = document.getElementById('recipe-selection-summary');
+    const preferenceText = profile.proteinChoice?.includes('No Pref') ? 'a balanced protein rotation' : `${profile.proteinChoice} as the preferred protein`;
+    const safetyText = avoidedAllergies.length ? ` It avoids the selected sensitivity: ${avoidedAllergies.join(', ')}.` : '';
+    const summary = `Selected for ${preferenceText} and ${profile.healthFocus || 'general wellness'}.${safetyText}`;
+    if (matchNote) matchNote.textContent = summary;
+    if (selectionSummary) selectionSummary.textContent = summary;
 
     const visual = RECIPE_VISUALS[recipe.dietType];
     const recipeImage = document.getElementById('recipe-image') as HTMLImageElement | null;
@@ -454,10 +477,6 @@ import { RECIPES } from '../data/recipes';
     if (moistBar) moistBar.style.width = `${recipe.macroProfile.moisturePct}%`;
 
     if (caPhosEl) caPhosEl.textContent = recipe.macroProfile.caPhosphorusRatio;
-
-    // Monthly cost
-    const monthlyCostEl = document.getElementById('res-monthly-cost');
-    if (monthlyCostEl) monthlyCostEl.textContent = `$${result.costEstimate.monthlyCost}`;
 
   }
 
