@@ -13,7 +13,7 @@ import Footer from '../components/Footer.astro';
 >
   <Navbar />
   
-  <main class="min-h-screen bg-[#fafafa]">
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
     <Breadcrumbs 
       items={[
         { name: 'Home', url: '/' },
@@ -22,26 +22,26 @@ import Footer from '../components/Footer.astro';
     />
 
     <!-- Header Section -->
-    <section class="py-12 sm:py-16 bg-white border-b border-[#ebebeb]">
+    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
           <span class="text-[#0070f3]">CLINICAL DERMATOLOGY</span> // CANINE ALLERGIES & DIGESTION
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] tracking-tight mb-4">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
           Best Dog Food for Allergies & Sensitive Stomach
         </h1>
-        <p class="text-sm sm:text-base text-[#4d4d4d] max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
           How to eliminate chronic skin itching, ear infections, gas, and loose stools through novel protein elimination diets and microbiome support.
         </p>
       </div>
     </section>
 
     <!-- Main Content -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-10 text-xs sm:text-sm text-[#4d4d4d] leading-relaxed">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-10 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
       
       <!-- Top Allergens List -->
-      <section class="hairline-card p-6 sm:p-8 bg-white space-y-4">
-        <h2 class="text-xl sm:text-2xl font-bold text-[#171717]">
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
           The Top 5 Most Common Canine Food Allergens
         </h2>
         <p>
@@ -49,49 +49,49 @@ import Footer from '../components/Footer.astro';
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb]">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
             <span class="text-xl mb-1 block">🍗</span>
-            <h3 class="font-bold text-xs text-[#171717]">1. Factory Chicken (60% of cases)</h3>
-            <p class="text-xs text-[#8f8f8f] mt-1">Due to heavy overexposure across commercial pet food, chicken is the #1 canine allergen.</p>
+            <h3 class="font-bold text-xs text-[#171717] dark:text-[#ededed]">1. Factory Chicken (60% of cases)</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">Due to heavy overexposure across commercial pet food, chicken is the #1 canine allergen.</p>
           </div>
-          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb]">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
             <span class="text-xl mb-1 block">🥩</span>
-            <h3 class="font-bold text-xs text-[#171717]">2. Commercial Beef (30% of cases)</h3>
-            <p class="text-xs text-[#8f8f8f] mt-1">High-antigen meat proteins frequently cause recurrent otitis (ear infections).</p>
+            <h3 class="font-bold text-xs text-[#171717] dark:text-[#ededed]">2. Commercial Beef (30% of cases)</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">High-antigen meat proteins frequently cause recurrent otitis (ear infections).</p>
           </div>
-          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb]">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
             <span class="text-xl mb-1 block">🥛</span>
-            <h3 class="font-bold text-xs text-[#171717]">3. Dairy & Lactose</h3>
-            <p class="text-xs text-[#8f8f8f] mt-1">Adult dogs lack adequate lactase enzymes, causing bloat and diarrhea.</p>
+            <h3 class="font-bold text-xs text-[#171717] dark:text-[#ededed]">3. Dairy & Lactose</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">Adult dogs lack adequate lactase enzymes, causing bloat and diarrhea.</p>
           </div>
-          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb]">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
             <span class="text-xl mb-1 block">🌾</span>
-            <h3 class="font-bold text-xs text-[#171717]">4. Wheat Gluten</h3>
-            <p class="text-xs text-[#8f8f8f] mt-1">Common grain binder that triggers cutaneous flare-ups and paw licking.</p>
+            <h3 class="font-bold text-xs text-[#171717] dark:text-[#ededed]">4. Wheat Gluten</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">Common grain binder that triggers cutaneous flare-ups and paw licking.</p>
           </div>
-          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb]">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
             <span class="text-xl mb-1 block">🥚</span>
-            <h3 class="font-bold text-xs text-[#171717]">5. Egg Albumin</h3>
-            <p class="text-xs text-[#8f8f8f] mt-1">Some dogs develop antibodies to egg white proteins over repeated feeding.</p>
+            <h3 class="font-bold text-xs text-[#171717] dark:text-[#ededed]">5. Egg Albumin</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">Some dogs develop antibodies to egg white proteins over repeated feeding.</p>
           </div>
-          <div class="p-4 bg-[#fafafa] rounded-xl border border-[#ebebeb]">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
             <span class="text-xl mb-1 block">🫘</span>
-            <h3 class="font-bold text-xs text-[#171717]">6. Soy Protein Concentrates</h3>
-            <p class="text-xs text-[#8f8f8f] mt-1">Inexpensive filler that frequently triggers chronic flatulence and loose stools.</p>
+            <h3 class="font-bold text-xs text-[#171717] dark:text-[#ededed]">6. Soy Protein Concentrates</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">Inexpensive filler that frequently triggers chronic flatulence and loose stools.</p>
           </div>
         </div>
       </section>
 
       <!-- The 8-Week Elimination Diet Protocol -->
-      <section class="hairline-card p-6 sm:p-8 bg-white space-y-4">
-        <h2 class="text-xl sm:text-2xl font-bold text-[#171717]">
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
           The Gold Standard: 8-Week Elimination Diet Trial
         </h2>
         <p>
           Blood tests and saliva tests for dog food allergies are clinically unreliable (over 60% false positive rates). The only scientific method to diagnose food allergies is a strict <strong>Elimination Diet Trial</strong>:
         </p>
 
-        <ol class="list-decimal list-inside space-y-2 bg-[#fafafa] p-5 rounded-xl border border-[#ebebeb] text-xs font-medium text-[#171717]">
+        <ol class="list-decimal list-inside space-y-2 bg-[#fafafa] dark:bg-[#1a1a1a] p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] text-xs font-medium text-[#171717] dark:text-[#ededed]">
           <li><strong>Select ONE Novel Protein:</strong> Pick a meat your dog has never eaten before (e.g. Venison, Duck, Rabbit, or Wild Salmon).</li>
           <li><strong>Select ONE Carbohydrate / Fiber Source:</strong> Plain sweet potato or pure canned pumpkin puree.</li>
           <li><strong>Feed STRICTLY This Diet for 8 to 12 Weeks:</strong> Zero outside treats, table scraps, flavored chew toys, or flavored heartworm medications.</li>
