@@ -1,23 +1,66 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Dog Food Planner — Precision Canine Nutrition & Custom Meal Calculator",
+  description = "Veterinary-backed custom canine food planner. Calculate exact caloric needs (RER/MER), macronutrient balances, and custom fresh-cooked or raw BARF recipes tailored to your dog's breed, age, and health goals."
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="dog food planner, dog food calculator, fresh dog food recipes, raw dog food BARF calculator, canine nutrition, veterinary meal plan, puppy feeding chart" />
+    <meta name="author" content="DogFoodPlanner.com" />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dogfoodplanner.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <!-- Fonts: Geist and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Dog Food Planner",
+        "url": "https://dogfoodplanner.com",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All",
+        "description": "Veterinary canine nutrition calculator and custom whole-food meal planner for dogs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#fafafa] text-[#4d4d4d] antialiased selection:bg-[#0070f3] selection:text-white min-h-screen flex flex-col justify-between">
+    <slot />
+  </body>
+</html>

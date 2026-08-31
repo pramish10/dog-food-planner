@@ -1,11 +1,29 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import PlannerQuiz from '../components/PlannerQuiz.astro';
+import PlanResults from '../components/PlanResults.astro';
+import TransitionGuide from '../components/TransitionGuide.astro';
+import IngredientChecker from '../components/IngredientChecker.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title="Dog Food Planner — Precision Canine Nutrition & Custom Meal Calculator"
+  description="Calculate exact metabolic calories (RER/MER), macronutrient balances, and custom fresh-cooked, raw BARF, or superfood topper recipes tailored to your dog's biology."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <PlannerQuiz />
+    <PlanResults />
+    <TransitionGuide />
+    <IngredientChecker />
+    <ComparisonTable />
+    <Testimonials />
+  </main>
+  <Footer />
 </Layout>

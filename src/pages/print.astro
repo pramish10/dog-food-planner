@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Print Canine Nutrition Card — Dog Food Planner">
+  <div class="max-w-2xl mx-auto p-8 bg-white border border-[#ebebeb] my-8 rounded-xl font-sans text-black">
+    <div class="flex items-center justify-between pb-6 border-b border-black">
+      <div>
+        <h1 class="text-2xl font-bold font-mono">DOG FOOD PLANNER // MEAL CARD</h1>
+        <p class="text-xs text-gray-600">Veterinary NRC / AAFCO Macro Formulation</p>
+      </div>
+      <div class="text-right font-mono text-xs">
+        <div>dogfoodplanner.com</div>
+        <div>Date: {new Date().toLocaleDateString()}</div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 my-6 p-4 bg-gray-50 border border-gray-200 rounded-lg text-xs">
+      <div>
+        <strong>Patient / Canine:</strong> Luna (Mixed Breed)<br/>
+        <strong>Life Stage:</strong> Adult (Spayed Female)<br/>
+        <strong>Weight:</strong> 45 lbs (20.4 kg)
+      </div>
+      <div>
+        <strong>Daily Calories:</strong> 984 kcal/day (MER)<br/>
+        <strong>Daily Fresh Portion:</strong> 728 grams (≈ 3.2 cups)<br/>
+        <strong>Split:</strong> 364g per bowl (2x Daily)
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <h2 class="text-xs font-bold uppercase font-mono mb-2">Recipe: Gently Cooked Lean Turkey & Pumpkin Feast</h2>
+      <ul class="text-xs divide-y divide-gray-200 border border-gray-200 rounded">
+        <li class="p-2 flex justify-between"><span>USDA Lean Ground Turkey (93/7)</span><span class="font-mono font-bold">473g</span></li>
+        <li class="p-2 flex justify-between"><span>Organic Turkey Hearts & Gizzards</span><span class="font-mono font-bold">73g</span></li>
+        <li class="p-2 flex justify-between"><span>Pure Organic Pumpkin Puree</span><span class="font-mono font-bold">73g</span></li>
+        <li class="p-2 flex justify-between"><span>Baby Spinach & Steamed Zucchini</span><span class="font-mono font-bold">58g</span></li>
+        <li class="p-2 flex justify-between"><span>Wild Alaskan Salmon Oil</span><span class="font-mono font-bold">22g</span></li>
+        <li class="p-2 flex justify-between"><span>Eggshell Calcium & Organic Kelp Blend</span><span class="font-mono font-bold">29g</span></li>
+      </ul>
+    </div>
+
+    <div class="text-xs bg-gray-50 p-4 border border-gray-200 rounded mb-6">
+      <strong>Feeding & Storage Instructions:</strong>
+      <ol class="list-decimal list-inside mt-1 space-y-1 text-gray-700">
+        <li>Feed 364g in the morning and 364g in the evening at room temperature.</li>
+        <li>Refrigerate batch for up to 4 days or freeze in pre-portioned silicone bags for up to 3 months.</li>
+        <li>Always ensure clean filtered water is available at all times.</li>
+      </ol>
+    </div>
+
+    <div class="text-center no-print pt-4">
+      <button onclick="window.print()" class="px-6 py-2 bg-black text-white text-xs font-bold rounded-full cursor-pointer hover:bg-gray-800">
+        🖨️ Print This Meal Card
+      </button>
+    </div>
+  </div>
+</Layout>

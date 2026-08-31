@@ -1,0 +1,436 @@
+---
+import { RECIPES } from '../data/recipes';
+---
+
+<section id="results-section" class="py-16 sm:py-24 bg-white border-b border-[#ebebeb] transition-all">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    
+    <!-- Results Header -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10 pb-6 border-b border-[#ebebeb]">
+      <div>
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full mb-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+          CLINICAL NUTRITION PROFILE GENERATED
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-semibold text-[#171717] tracking-tight">
+          Personalized Plan for <span id="res-dog-name" class="text-[#0070f3]">Luna</span>
+        </h2>
+        <p class="text-sm text-[#4d4d4d] mt-1" id="res-dog-subtitle">
+          Adult Female (Spayed) · 45 lbs · Standard Moderate Activity
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2">
+        <button 
+          id="print-plan-btn"
+          class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-[#171717] bg-[#fafafa] hover:bg-[#ebebeb] border border-[#ebebeb] rounded-full transition-all shadow-2xs"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.75A2.25 2.25 0 0014.25 1.5h-4.5A2.25 2.25 0 007.5 3.75v3.456"/>
+          </svg>
+          Print Meal Card
+        </button>
+      </div>
+    </div>
+
+    <!-- Metric Cards Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 mb-10">
+      
+      <!-- Card 1: Calories -->
+      <div class="p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
+        <div class="flex items-center justify-between text-xs text-[#8f8f8f] font-mono mb-2 uppercase">
+          <span>Daily Calories</span>
+          <span class="text-[#0070f3]">MER</span>
+        </div>
+        <div class="text-3xl font-bold text-[#171717] font-mono tracking-tight" id="res-mer-calories">
+          984 <span class="text-xs font-normal text-[#8f8f8f]">kcal/day</span>
+        </div>
+        <div class="text-xs text-[#8f8f8f] mt-1 font-mono">
+          RER Base: <span id="res-rer-base">615</span> kcal
+        </div>
+      </div>
+
+      <!-- Card 2: Daily Weight / Servings -->
+      <div class="p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
+        <div class="flex items-center justify-between text-xs text-[#8f8f8f] font-mono mb-2 uppercase">
+          <span>Daily Portion</span>
+          <span class="text-[#10b981]">Total</span>
+        </div>
+        <div class="text-3xl font-bold text-[#171717] font-mono tracking-tight" id="res-daily-grams">
+          728 <span class="text-xs font-normal text-[#8f8f8f]">grams</span>
+        </div>
+        <div class="text-xs text-[#8f8f8f] mt-1 font-mono">
+          ≈ <span id="res-daily-cups">3.2</span> standard cups
+        </div>
+      </div>
+
+      <!-- Card 3: Per Meal Split -->
+      <div class="p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
+        <div class="flex items-center justify-between text-xs text-[#8f8f8f] font-mono mb-2 uppercase">
+          <span>Per Meal</span>
+          <span class="text-[#7928ca]" id="res-meals-count">2x Daily</span>
+        </div>
+        <div class="text-3xl font-bold text-[#171717] font-mono tracking-tight" id="res-per-meal-grams">
+          364 <span class="text-xs font-normal text-[#8f8f8f]">g / bowl</span>
+        </div>
+        <div class="text-xs text-[#8f8f8f] mt-1 font-mono">
+          Morning & Evening
+        </div>
+      </div>
+
+      <!-- Card 4: Starch & Carb Contrast -->
+      <div class="p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa]">
+        <div class="flex items-center justify-between text-xs text-[#8f8f8f] font-mono mb-2 uppercase">
+          <span>Net Carbs</span>
+          <span class="text-[#10b981] font-semibold">&lt; 3.5%</span>
+        </div>
+        <div class="text-3xl font-bold text-[#10b981] font-mono tracking-tight">
+          0% <span class="text-xs font-normal text-[#8f8f8f]">added fillers</span>
+        </div>
+        <div class="text-xs text-[#8f8f8f] mt-1 font-mono">
+          vs 50%+ in Dry Kibble
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Diet Switcher Pills (Geist Category Tabs) -->
+    <div class="flex items-center gap-2 p-1 bg-[#f2f2f2] rounded-lg border border-[#ebebeb] w-fit mb-8">
+      <button 
+        type="button" 
+        data-diet="fresh-cooked" 
+        class="diet-tab-btn active px-4 py-2 text-xs font-semibold rounded-md bg-white text-[#171717] shadow-xs transition-all"
+      >
+        🍲 Gently Cooked Feast
+      </button>
+      <button 
+        type="button" 
+        data-diet="raw-barf" 
+        class="diet-tab-btn px-4 py-2 text-xs font-semibold rounded-md text-[#8f8f8f] hover:text-[#171717] transition-all"
+      >
+        🥩 Ancestral Raw BARF
+      </button>
+      <button 
+        type="button" 
+        data-diet="superfood-topper" 
+        class="diet-tab-btn px-4 py-2 text-xs font-semibold rounded-md text-[#8f8f8f] hover:text-[#171717] transition-all"
+      >
+        🥣 50% Superfood Topper
+      </button>
+    </div>
+
+    <!-- Main Recipe & Macro Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+      
+      <!-- Left 2 Cols: Recipe & Ingredients -->
+      <div class="lg:col-span-2 space-y-6">
+        
+        <div class="hairline-card p-6 sm:p-8">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-mono text-xs text-[#0070f3] font-semibold uppercase tracking-wider" id="recipe-diet-tag">
+              FORMULATION: FRESH GENTLY COOKED
+            </span>
+            <span class="font-mono text-xs text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded">
+              AAFCO Complete
+            </span>
+          </div>
+
+          <h3 class="text-2xl font-semibold text-[#171717] mb-2" id="recipe-title">
+            Gently Cooked Lean Turkey & Pumpkin Feast
+          </h3>
+          <p class="text-sm text-[#4d4d4d] leading-relaxed mb-6" id="recipe-description">
+            Slow-simmered 93% lean ground turkey paired with antioxidant-rich pumpkin puree, steamed baby spinach, and wild Alaskan salmon oil. Formulated to exceed AAFCO Dog Food Nutrient Profiles.
+          </p>
+
+          <!-- Ingredients Grams Breakdown Table -->
+          <div class="mb-6">
+            <h4 class="text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-3">
+              Daily Bowl Weigh-In Blueprint
+            </h4>
+            <div class="divide-y divide-[#ebebeb] border border-[#ebebeb] rounded-lg overflow-hidden" id="ingredient-rows-container">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+          <!-- Step-by-Step Preparation Guide -->
+          <div>
+            <h4 class="text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-3">
+              Veterinary Preparation Guidelines
+            </h4>
+            <ol class="space-y-2.5 text-xs text-[#4d4d4d]" id="prep-steps-container">
+              <li class="flex items-start gap-2.5">
+                <span class="font-mono font-bold text-[#171717] bg-[#f2f2f2] w-5 h-5 rounded-full flex items-center justify-center shrink-0">1</span>
+                <span>Gently simmer ground meat and hearts in a skillet with 2 tbsp filtered water over low-medium heat until lightly cooked (160°F internal).</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="font-mono font-bold text-[#171717] bg-[#f2f2f2] w-5 h-5 rounded-full flex items-center justify-center shrink-0">2</span>
+                <span>Fold in pure organic pumpkin puree and finely chopped steamed vegetables.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="font-mono font-bold text-[#171717] bg-[#f2f2f2] w-5 h-5 rounded-full flex items-center justify-center shrink-0">3</span>
+                <span>Allow mixture to cool completely before stirring in wild salmon oil and calcium supplement to protect sensitive micronutrients.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Col: Clinical Macro Distribution & Cost -->
+      <div class="space-y-6">
+        
+        <!-- Macro Breakdown Card -->
+        <div class="hairline-card p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono">
+              Caloric Macro Balance
+            </h4>
+            <span class="font-mono text-[11px] text-[#8f8f8f]">Dry Matter Basis</span>
+          </div>
+
+          <div class="space-y-4 mb-6">
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1">
+                <span class="text-[#171717]">Crude Protein</span>
+                <span class="font-mono text-[#0070f3]" id="macro-protein-pct">48%</span>
+              </div>
+              <div class="w-full bg-[#f2f2f2] h-2 rounded-full overflow-hidden">
+                <div class="bg-[#0070f3] h-full rounded-full" id="macro-protein-bar" style="width: 48%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1">
+                <span class="text-[#171717]">Healthy Fats & Omegas</span>
+                <span class="font-mono text-[#7928ca]" id="macro-fat-pct">32%</span>
+              </div>
+              <div class="w-full bg-[#f2f2f2] h-2 rounded-full overflow-hidden">
+                <div class="bg-[#7928ca] h-full rounded-full" id="macro-fat-bar" style="width: 32%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1">
+                <span class="text-[#171717]">Soluble Fibers & Veggies</span>
+                <span class="font-mono text-[#10b981]" id="macro-fiber-pct">4%</span>
+              </div>
+              <div class="w-full bg-[#f2f2f2] h-2 rounded-full overflow-hidden">
+                <div class="bg-[#10b981] h-full rounded-full" id="macro-fiber-bar" style="width: 4%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-medium mb-1">
+                <span class="text-[#171717]">Hydration / Moisture</span>
+                <span class="font-mono text-[#50e3c2]" id="macro-moisture-pct">74%</span>
+              </div>
+              <div class="w-full bg-[#f2f2f2] h-2 rounded-full overflow-hidden">
+                <div class="bg-[#50e3c2] h-full rounded-full" id="macro-moisture-bar" style="width: 74%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-[#fafafa] rounded-lg border border-[#ebebeb] text-[11px] text-[#4d4d4d] space-y-1.5">
+            <div class="flex justify-between font-mono">
+              <span class="text-[#8f8f8f]">Calcium : Phosphorus</span>
+              <span class="font-semibold text-[#171717]" id="ca-phos-ratio">1.25 : 1</span>
+            </div>
+            <div class="flex justify-between font-mono">
+              <span class="text-[#8f8f8f]">Omega 6 : Omega 3</span>
+              <span class="font-semibold text-[#171717]">3.8 : 1 (Anti-Inflammatory)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Budget & Comparison Card -->
+        <div class="hairline-card p-6 bg-gradient-to-b from-white to-[#fafafa]">
+          <h4 class="text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-4">
+            Estimated Monthly Investment
+          </h4>
+
+          <div class="flex items-baseline gap-2 mb-3">
+            <span class="text-3xl font-bold font-mono text-[#171717]" id="res-monthly-cost">$142</span>
+            <span class="text-xs text-[#8f8f8f]">/ month (Home Batch Prep)</span>
+          </div>
+
+          <p class="text-xs text-[#4d4d4d] mb-4 leading-relaxed">
+            Fresh DIY preparation saves up to <strong class="text-[#171717]">55% compared to pre-packaged subscription brands</strong> (like Ollie or Raised Right) while delivering superior human-grade nutrition.
+          </p>
+
+          <a 
+            href="#transition-section" 
+            class="w-full inline-flex items-center justify-center text-xs font-semibold text-white bg-[#171717] hover:bg-[#333333] py-2.5 rounded-md transition-all shadow-xs"
+          >
+            View 7-Day Transition Schedule →
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { calculateCanineNutrition } from '../utils/nutritionEngine';
+  import { RECIPES } from '../data/recipes';
+
+  let currentProfile = {
+    name: 'Luna',
+    breed: 'Mixed Breed / Mutts',
+    ageStage: 'adult',
+    gender: 'female-spayed',
+    weightLbs: 45,
+    targetGoal: 'maintain',
+    bcs: 5,
+    activityLevel: 'moderate',
+    allergies: [] as string[],
+    healthFocus: 'Longevity & Vitality',
+    dietPreference: 'fresh-cooked',
+    proteinChoice: 'Turkey'
+  };
+
+  let currentDietType = 'fresh-cooked';
+
+  function renderPlan(profile: any) {
+    const result = calculateCanineNutrition(profile);
+
+    // Update Headings
+    const dogNameEl = document.getElementById('res-dog-name');
+    const subtitleEl = document.getElementById('res-dog-subtitle');
+    if (dogNameEl) dogNameEl.textContent = result.dogName;
+    if (subtitleEl) {
+      subtitleEl.textContent = `${profile.breed} · ${profile.weightLbs} lbs (${result.weightKg} kg) · Goal: ${profile.targetGoal.toUpperCase()}`;
+    }
+
+    // Update Top Metric Cards
+    const merEl = document.getElementById('res-mer-calories');
+    const rerEl = document.getElementById('res-rer-base');
+    const dailyGramsEl = document.getElementById('res-daily-grams');
+    const dailyCupsEl = document.getElementById('res-daily-cups');
+    const perMealEl = document.getElementById('res-per-meal-grams');
+    const mealsCountEl = document.getElementById('res-meals-count');
+
+    if (merEl) merEl.innerHTML = `${result.merKcal} <span class="text-xs font-normal text-[#8f8f8f]">kcal/day</span>`;
+    if (rerEl) rerEl.textContent = `${result.rerKcal}`;
+    
+    let activeGrams = result.dailyGramsFresh;
+    if (profile.dietPreference === 'raw-barf') activeGrams = result.dailyGramsRaw;
+    if (profile.dietPreference === 'superfood-topper') activeGrams = result.dailyGramsTopper;
+
+    if (dailyGramsEl) dailyGramsEl.innerHTML = `${activeGrams} <span class="text-xs font-normal text-[#8f8f8f]">grams</span>`;
+    if (dailyCupsEl) dailyCupsEl.textContent = `${(activeGrams / 225).toFixed(1)}`;
+    if (perMealEl) perMealEl.innerHTML = `${Math.round(activeGrams / result.mealsPerDay)} <span class="text-xs font-normal text-[#8f8f8f]">g / bowl</span>`;
+    if (mealsCountEl) mealsCountEl.textContent = `${result.mealsPerDay}x Daily`;
+
+    // Find Matching Recipe
+    const recipe = RECIPES.find((r) => r.dietType === profile.dietPreference) || RECIPES[0];
+
+    const dietTagEl = document.getElementById('recipe-diet-tag');
+    const recipeTitleEl = document.getElementById('recipe-title');
+    const recipeDescEl = document.getElementById('recipe-description');
+    const rowsContainer = document.getElementById('ingredient-rows-container');
+    const prepContainer = document.getElementById('prep-steps-container');
+
+    if (dietTagEl) dietTagEl.textContent = `FORMULATION: ${recipe.dietType.replace('-', ' ').toUpperCase()}`;
+    if (recipeTitleEl) recipeTitleEl.textContent = recipe.name;
+    if (recipeDescEl) recipeDescEl.textContent = recipe.description;
+
+    // Render Ingredients with exact grams
+    if (rowsContainer) {
+      rowsContainer.innerHTML = '';
+      recipe.ingredients.forEach((ing) => {
+        const ingGrams = Math.round((activeGrams * ing.percentage) / 100);
+        const row = document.createElement('div');
+        row.className = 'p-3.5 bg-white hover:bg-[#fafafa] flex items-center justify-between text-xs transition-colors';
+        row.innerHTML = `
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-[11px] font-bold text-[#171717] bg-[#f2f2f2] px-2 py-0.5 rounded">${ingGrams}g</span>
+            <div>
+              <div class="font-medium text-[#171717]">${ing.name}</div>
+              <div class="text-[11px] text-[#8f8f8f]">${ing.purpose}</div>
+            </div>
+          </div>
+          <span class="font-mono text-[10px] uppercase text-[#8f8f8f] bg-[#fafafa] border border-[#ebebeb] px-2 py-0.5 rounded">${ing.category}</span>
+        `;
+        rowsContainer.appendChild(row);
+      });
+    }
+
+    // Render Preparation Notes
+    if (prepContainer) {
+      prepContainer.innerHTML = '';
+      recipe.preparationNotes.forEach((step, idx) => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-2.5';
+        li.innerHTML = `
+          <span class="font-mono font-bold text-[#171717] bg-[#f2f2f2] w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-[10px]">${idx + 1}</span>
+          <span>${step}</span>
+        `;
+        prepContainer.appendChild(li);
+      });
+    }
+
+    // Update Macros
+    const protPctEl = document.getElementById('macro-protein-pct');
+    const protBar = document.getElementById('macro-protein-bar');
+    const fatPctEl = document.getElementById('macro-fat-pct');
+    const fatBar = document.getElementById('macro-fat-bar');
+    const fiberPctEl = document.getElementById('macro-fiber-pct');
+    const fiberBar = document.getElementById('macro-fiber-bar');
+    const moistPctEl = document.getElementById('macro-moisture-pct');
+    const moistBar = document.getElementById('macro-moisture-bar');
+    const caPhosEl = document.getElementById('ca-phos-ratio');
+
+    if (protPctEl) protPctEl.textContent = `${recipe.macroProfile.proteinPct}%`;
+    if (protBar) protBar.style.width = `${recipe.macroProfile.proteinPct}%`;
+
+    if (fatPctEl) fatPctEl.textContent = `${recipe.macroProfile.fatPct}%`;
+    if (fatBar) fatBar.style.width = `${recipe.macroProfile.fatPct}%`;
+
+    if (fiberPctEl) fiberPctEl.textContent = `${recipe.macroProfile.carbsPct}%`;
+    if (fiberBar) fiberBar.style.width = `${recipe.macroProfile.carbsPct * 4}%`;
+
+    if (moistPctEl) moistPctEl.textContent = `${recipe.macroProfile.moisturePct}%`;
+    if (moistBar) moistBar.style.width = `${recipe.macroProfile.moisturePct}%`;
+
+    if (caPhosEl) caPhosEl.textContent = recipe.macroProfile.caPhosphorusRatio;
+
+    // Monthly cost
+    const monthlyCostEl = document.getElementById('res-monthly-cost');
+    if (monthlyCostEl) monthlyCostEl.textContent = `$${result.costEstimate.monthlyCost}`;
+  }
+
+  // Listen to plan generation events
+  window.addEventListener('generate-plan', (e: any) => {
+    currentProfile = e.detail;
+    currentDietType = currentProfile.dietPreference;
+    renderPlan(currentProfile);
+  });
+
+  // Diet tab switcher
+  document.querySelectorAll('.diet-tab-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.diet-tab-btn').forEach((b) => {
+        b.classList.remove('active', 'bg-white', 'text-[#171717]', 'shadow-xs');
+        b.classList.add('text-[#8f8f8f]');
+      });
+      btn.classList.add('active', 'bg-white', 'text-[#171717]', 'shadow-xs');
+      btn.classList.remove('text-[#8f8f8f]');
+
+      const diet = btn.getAttribute('data-diet') || 'fresh-cooked';
+      currentProfile.dietPreference = diet as any;
+      renderPlan(currentProfile);
+    });
+  });
+
+  // Print button
+  document.getElementById('print-plan-btn')?.addEventListener('click', () => {
+    window.print();
+  });
+
+  // Initial render on load
+  renderPlan(currentProfile);
+</script>

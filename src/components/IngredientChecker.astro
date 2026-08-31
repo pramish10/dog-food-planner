@@ -1,0 +1,133 @@
+---
+import { INGREDIENT_DATABASE } from '../data/ingredients';
+---
+
+<section id="safety-checker" class="py-16 sm:py-24 bg-white border-b border-[#ebebeb]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#fafafa] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+        <span class="text-[#ee0000]">03</span> // SAFETY & TOXICITY LOOKUP
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-3">
+        Canine Ingredient Safety & Toxicity Scanner
+      </h2>
+      <p class="text-sm sm:text-base text-[#4d4d4d]">
+        Search any whole food to check clinical safety, bioavailability, and dangerous household toxins before introducing it to your dog's bowl.
+      </p>
+    </div>
+
+    <!-- Search and Filter Bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-8">
+      <div class="relative w-full sm:max-w-md">
+        <input 
+          type="text" 
+          id="ingredient-search-input" 
+          placeholder="Search ingredient (e.g. pumpkin, salmon, xylitol, bones...)" 
+          class="w-full pl-9 pr-4 py-2.5 text-xs bg-[#fafafa] border border-[#ebebeb] rounded-lg text-[#171717] focus:outline-none focus:border-[#171717] focus:bg-white transition-all font-mono"
+        />
+        <svg class="w-4 h-4 text-[#8f8f8f] absolute left-3 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+        </svg>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto">
+        <button type="button" data-filter="ALL" class="safety-filter-btn active px-3 py-1.5 text-xs font-mono font-medium rounded-md bg-[#171717] text-white transition-all">
+          ALL
+        </button>
+        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn px-3 py-1.5 text-xs font-mono font-medium rounded-md bg-[#f2f2f2] text-[#4d4d4d] hover:text-[#171717] transition-all">
+          SAFE & SUPERFOODS
+        </button>
+        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn px-3 py-1.5 text-xs font-mono font-medium rounded-md bg-[#f2f2f2] text-[#4d4d4d] hover:text-[#171717] transition-all">
+          FATAL TOXINS
+        </button>
+      </div>
+    </div>
+
+    <!-- Ingredient Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="ingredients-grid">
+      {INGREDIENT_DATABASE.map((item) => (
+        <div 
+          class="ingredient-card p-5 rounded-xl border border-[#ebebeb] bg-[#fafafa] hover:border-[#171717] transition-all flex flex-col justify-between"
+          data-status={item.status}
+          data-name={item.name.toLowerCase()}
+        >
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <h4 class="font-semibold text-sm text-[#171717]">{item.name}</h4>
+              
+              {item.status === 'SAFE_AND_BENEFICIAL' && (
+                <span class="font-mono text-[10px] font-bold text-[#10b981] bg-[#10b981]/15 px-2 py-0.5 rounded border border-[#10b981]/30">
+                  ✓ SAFE & NOURISHING
+                </span>
+              )}
+              {item.status === 'FEED_WITH_CAUTION' && (
+                <span class="font-mono text-[10px] font-bold text-[#f5a623] bg-[#f5a623]/15 px-2 py-0.5 rounded border border-[#f5a623]/30">
+                  ⚠ CAUTION / LIMIT
+                </span>
+              )}
+              {item.status === 'DANGEROUS_TOXIC' && (
+                <span class="font-mono text-[10px] font-bold text-[#ee0000] bg-[#ee0000]/15 px-2 py-0.5 rounded border border-[#ee0000]/30 animate-pulse">
+                  ☠ STRICTLY TOXIC
+                </span>
+              )}
+            </div>
+
+            <p class="text-xs text-[#4d4d4d] mb-3 leading-relaxed">
+              {item.benefitsOrRisks}
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#ebebeb] text-[11px] text-[#8f8f8f]">
+            <strong class="text-[#171717] font-medium">Feeding Guidance: </strong> {item.servingAdvice}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const searchInput = document.getElementById('ingredient-search-input') as HTMLInputElement;
+  const filterBtns = document.querySelectorAll('.safety-filter-btn');
+  const cards = document.querySelectorAll('.ingredient-card');
+
+  let activeFilter = 'ALL';
+
+  function filterCards() {
+    const query = searchInput?.value.toLowerCase().trim() || '';
+
+    cards.forEach((card) => {
+      const cardName = card.getAttribute('data-name') || '';
+      const cardStatus = card.getAttribute('data-status') || '';
+
+      const matchesQuery = cardName.includes(query);
+      const matchesFilter = activeFilter === 'ALL' || cardStatus === activeFilter;
+
+      if (matchesQuery && matchesFilter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  searchInput?.addEventListener('input', filterCards);
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => {
+        b.classList.remove('active', 'bg-[#171717]', 'text-white');
+        b.classList.add('bg-[#f2f2f2]', 'text-[#4d4d4d]');
+      });
+      btn.classList.add('active', 'bg-[#171717]', 'text-white');
+      btn.classList.remove('bg-[#f2f2f2]', 'text-[#4d4d4d]');
+
+      activeFilter = btn.getAttribute('data-filter') || 'ALL';
+      filterCards();
+    });
+  });
+</script>

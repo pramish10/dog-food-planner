@@ -1,0 +1,87 @@
+---
+const TRANSITION_DAYS = [
+  { day: 1, freshPct: 15, oldPct: 85, desc: 'Gentle introduction. Monitor stool consistency.' },
+  { day: 2, freshPct: 25, oldPct: 75, desc: 'Microbiome adapting to active whole-food enzymes.' },
+  { day: 3, freshPct: 40, oldPct: 60, desc: 'Energy levels stabilize. Gentle digestive motility.' },
+  { day: 4, freshPct: 50, oldPct: 50, desc: 'Halfway mark! Optimal nutrient bio-absorption.' },
+  { day: 5, freshPct: 65, oldPct: 35, desc: 'Stool volume and odor noticeably decrease.' },
+  { day: 6, freshPct: 80, oldPct: 20, desc: 'Skin hydration and coat gloss improvement begins.' },
+  { day: 7, freshPct: 100, oldPct: 0, desc: '100% Biological whole-food nutrition achieved!' }
+];
+---
+
+<section id="transition-section" class="py-16 sm:py-24 bg-[#fafafa] border-b border-[#ebebeb]">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] bg-[#ffffff] border border-[#ebebeb] px-3 py-1 rounded-full mb-3 shadow-2xs">
+        <span class="text-[#10b981]">02</span> // DIGESTIVE PROTOCOL
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-semibold text-[#171717] tracking-tight mb-3">
+        The 7-Day Gentle Transition Roadmap
+      </h2>
+      <p class="text-sm sm:text-base text-[#4d4d4d]">
+        A canine digestive tract requires 5–7 days to recalibrate stomach acid pH and gut microbiome bacteria when shifting from high-carb kibble to fresh or raw meals.
+      </p>
+    </div>
+
+    <!-- 7-Day Timeline Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-7 gap-3 mb-10">
+      {TRANSITION_DAYS.map((item) => (
+        <div class="p-4 bg-white rounded-xl border border-[#ebebeb] flex flex-col justify-between hover:border-[#171717] transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs font-bold text-[#171717] bg-[#f2f2f2] group-hover:bg-[#171717] group-hover:text-white px-2 py-0.5 rounded transition-colors">
+                DAY {item.day}
+              </span>
+            </div>
+
+            <!-- Ratio Stacked Bar -->
+            <div class="w-full bg-[#ebebeb] h-2.5 rounded-full overflow-hidden flex my-3">
+              <div class="bg-[#10b981] h-full" style={`width: ${item.freshPct}%`}></div>
+              <div class="bg-[#d1d1d1] h-full" style={`width: ${item.oldPct}%`}></div>
+            </div>
+
+            <div class="text-[11px] font-mono mb-2">
+              <span class="text-[#10b981] font-bold">{item.freshPct}% Fresh</span>
+              <span class="text-[#8f8f8f] block text-[10px]">{item.oldPct}% Old Diet</span>
+            </div>
+          </div>
+
+          <p class="text-[11px] text-[#4d4d4d] leading-snug pt-2 border-t border-[#ebebeb]">
+            {item.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Transition Pro-Tips Banner -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 p-6 bg-white rounded-xl border border-[#ebebeb]">
+      <div class="flex items-start gap-3">
+        <span class="text-xl">🥣</span>
+        <div>
+          <h4 class="text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-1">Add Pure Pumpkin</h4>
+          <p class="text-xs text-[#4d4d4d]">1 tbsp of canned organic pumpkin puree calms loose stool during the first 72 hours.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <span class="text-xl">🌡️</span>
+        <div>
+          <h4 class="text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-1">Room Temperature</h4>
+          <p class="text-xs text-[#4d4d4d]">Serve meals at room temp or warm with a splash of bone broth to release enticing aromas.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <span class="text-xl">💧</span>
+        <div>
+          <h4 class="text-xs font-semibold text-[#171717] uppercase tracking-wider font-mono mb-1">Fresh Hydration</h4>
+          <p class="text-xs text-[#4d4d4d]">Dogs naturally drink less water on fresh diets due to high biological moisture content (70%+).</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

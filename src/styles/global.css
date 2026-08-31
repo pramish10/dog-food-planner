@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #fafafa;
+  --color-canvas-elevated: #ffffff;
+  --color-ink: #171717;
+  --color-body: #4d4d4d;
+  --color-mute: #8f8f8f;
+  --color-faint: #a1a1a1;
+  --color-hairline: #ebebeb;
+  --color-hairline-soft: #f2f2f2;
+  --color-brand-blue: #0070f3;
+  --color-brand-blue-deep: #0761d1;
+  --color-brand-blue-soft: #d3e5ff;
+  --color-brand-violet: #7928ca;
+  --color-brand-cyan: #50e3c2;
+  --color-brand-pink: #ff0080;
+  --color-brand-amber: #f9cb28;
+  --color-brand-emerald: #10b981;
+
+  --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 100px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-canvas);
+    color: var(--color-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  h1 {
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    letter-spacing: -0.03em;
+  }
+
+  h3 {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Hero Multi-Stop Mesh Gradient */
+.mesh-gradient-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mesh-gradient-bg::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 480px;
+  background: radial-gradient(circle at 20% 30%, rgba(80, 227, 194, 0.22) 0%, transparent 45%),
+              radial-gradient(circle at 50% 20%, rgba(0, 112, 243, 0.20) 0%, transparent 50%),
+              radial-gradient(circle at 80% 30%, rgba(121, 40, 202, 0.18) 0%, transparent 45%),
+              radial-gradient(circle at 35% 70%, rgba(255, 0, 128, 0.12) 0%, transparent 40%),
+              radial-gradient(circle at 65% 75%, rgba(249, 203, 40, 0.15) 0%, transparent 40%);
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+/* Hairline Card Styling from DESIGN.md */
+.hairline-card {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.hairline-card:hover {
+  border-color: #d1d1d1;
+  box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.03);
+  transform: translateY(-1px);
+}
+
+.hairline-card-active {
+  border-color: #171717 !important;
+  box-shadow: 0px 0px 0px 1px #171717, 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Print Specific Styles */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
