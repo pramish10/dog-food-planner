@@ -17,7 +17,8 @@ async function identifyBreed(request, env) {
   try {
     const bytes = Uint8Array.from(atob(image), (character) => character.charCodeAt(0));
     const predictions = await env.AI.run('@cf/microsoft/resnet-50', {
-      image: bytes,
+      // Workers AI expects JSON-compatible 8-bit values, not a Uint8Array object.
+      image: [...bytes],
     });
     return json({ predictions });
   } catch (error) {
