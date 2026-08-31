@@ -24,7 +24,7 @@ import { RECIPES } from '../data/recipes';
       <div class="flex items-center gap-2 w-full sm:w-auto">
         <button 
           id="print-plan-btn"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#1a1a1a] hover:bg-[#ebebeb] dark:hover:bg-[#262626] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-full transition-all shadow-2xs cursor-pointer touch-manipulation active:scale-[0.98]"
+          class="no-print w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#1a1a1a] hover:bg-[#ebebeb] dark:hover:bg-[#262626] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-full transition-all shadow-2xs cursor-pointer touch-manipulation active:scale-[0.98]"
         >
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.75A2.25 2.25 0 0014.25 1.5h-4.5A2.25 2.25 0 007.5 3.75v3.456"/>
@@ -96,7 +96,7 @@ import { RECIPES } from '../data/recipes';
     </div>
 
     <!-- Diet Switcher Pills -->
-    <div class="overflow-x-auto pb-2 sm:pb-0 mb-6 sm:mb-8 no-scrollbar">
+    <div class="no-print overflow-x-auto pb-2 sm:pb-0 mb-6 sm:mb-8 no-scrollbar">
       <div class="flex items-center gap-1.5 sm:gap-2 p-1 bg-[#f2f2f2] dark:bg-[#1a1a1a] rounded-lg border border-[#ebebeb] dark:border-[#2e2e2e] min-w-max">
         <button 
           type="button" 
@@ -254,7 +254,8 @@ import { RECIPES } from '../data/recipes';
         <div class="hairline-card p-4 sm:p-6 bg-gradient-to-b from-white to-[#fafafa] dark:from-[#141414] dark:to-[#171717]">
           <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-3">Why this recipe</h4>
           <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed" id="recipe-selection-summary">This recipe is selected from your feeding style, protein preference, health focus, and stated sensitivities.</p>
-          <div class="mt-4 pt-4 border-t border-[#ebebeb] dark:border-[#262626] text-[10px] leading-relaxed text-[#8f8f8f] dark:text-[#737373]">This plan is a starting guide for healthy dogs. Ask your vet before feeding homemade food long term or if your dog has a health condition.</div>
+          <div class="mt-4 pt-4 border-t border-[#ebebeb] dark:border-[#262626] text-[10px] leading-relaxed text-[#8f8f8f] dark:text-[#737373]" id="recipe-method-summary">This plan is a starting guide for healthy dogs. Ask your vet before feeding homemade food long term or if your dog has a health condition.</div>
+          <p class="mt-2 text-[10px] leading-relaxed text-[#8f8f8f] dark:text-[#737373]">Evidence basis: <a href="https://www.merckvetmanual.com/management-and-nutrition/nutrition-small-animals/nutritional-requirements-of-small-animals" target="_blank" rel="noopener noreferrer" class="text-[#0070f3] dark:text-[#3291ff] hover:underline">Merck Veterinary Manual energy guidance</a> and <a href="https://wsava.org/wp-content/uploads/2021/04/Selecting-a-pet-food-for-your-pet-updated-2021_WSAVA-Global-Nutrition-Toolkit.pdf" target="_blank" rel="noopener noreferrer" class="text-[#0070f3] dark:text-[#3291ff] hover:underline">WSAVA complete-and-balanced diet guidance</a>.</p>
         </div>
 
       </div>
@@ -288,15 +289,21 @@ import { RECIPES } from '../data/recipes';
         (ALLERGY_ALIASES[allergy] || [allergy]).some((alias) => allergen.toLowerCase().includes(alias))
       ))
     ));
-    const availableRecipes = allergySafeRecipes.length ? allergySafeRecipes : dietRecipes;
+    const availableRecipes = allergySafeRecipes;
     const preferredProtein = profile.proteinChoice?.toLowerCase();
-    const proteinMatches = preferredProtein && !preferredProtein.includes('no pref')
-      ? availableRecipes.filter((recipe) => recipe.primaryProtein.toLowerCase() === preferredProtein)
-      : availableRecipes;
-    const healthMatches = profile.healthFocus && profile.healthFocus !== 'General Health'
-      ? proteinMatches.filter((recipe) => recipe.healthFocusMatches.includes(profile.healthFocus))
-      : proteinMatches;
-    return healthMatches[0] || proteinMatches[0] || availableRecipes[0] || dietRecipes[0];
+    const needsLowerEnergy = profile.targetGoal === 'lose' || profile.bcs >= 7 || profile.activityLevel === 'sedentary';
+    const needsMoreEnergy = profile.targetGoal === 'gain' || profile.bcs <= 3 || ['active', 'working'].includes(profile.activityLevel);
+    const scoredRecipes = availableRecipes.map((recipe) => {
+      let score = 0;
+      if (preferredProtein && !preferredProtein.includes('no pref') && recipe.primaryProtein.toLowerCase() === preferredProtein) score += 100;
+      if (recipe.healthFocusMatches.includes(profile.healthFocus)) score += 30;
+      if (needsLowerEnergy) score -= recipe.macroProfile.kcalPerGram * 10;
+      if (needsMoreEnergy) score += recipe.macroProfile.kcalPerGram * 10;
+      return { recipe, score };
+    }).sort((a, b) => b.score - a.score);
+
+    // Sensitivities are hard exclusions. A no-match result is handled in the caller.
+    return scoredRecipes[0]?.recipe || null;
   }
 
   const INGREDIENT_IMAGES: Record<string, string> = {
@@ -352,6 +359,11 @@ import { RECIPES } from '../data/recipes';
 
     // Find Matching Recipe
     const recipe = selectRecipe(profile);
+    if (!recipe) {
+      const selectionSummary = document.getElementById('recipe-selection-summary');
+      if (selectionSummary) selectionSummary.textContent = 'No recipe in this feeding style safely matches every selected sensitivity. Please choose another feeding style or ask your veterinarian for a formulated diet.';
+      return;
+    }
 
     const dietTagEl = document.getElementById('recipe-diet-tag');
     const recipeTitleEl = document.getElementById('recipe-title');
@@ -366,6 +378,7 @@ import { RECIPES } from '../data/recipes';
     const matchNote = document.getElementById('recipe-match-note');
     const avoidedAllergies = (profile.allergies || []).filter((allergy: string) => allergy !== 'none / no allergies');
     const selectionSummary = document.getElementById('recipe-selection-summary');
+    const methodSummary = document.getElementById('recipe-method-summary');
     const dietName = recipe.dietType === 'fresh-cooked'
       ? 'fresh-cooked meals'
       : recipe.dietType === 'raw-barf'
@@ -381,9 +394,11 @@ import { RECIPES } from '../data/recipes';
     const safetyReason = avoidedAllergies.length
       ? ` It also avoids your selected sensitivity: ${avoidedAllergies.join(', ')}.`
       : ' No ingredient sensitivities were selected.';
-    const summary = `You chose ${dietName}. ${proteinReason} ${healthReason}${safetyReason}`;
+    const energyReason = `${result.merKcal} kcal/day is a starting estimate from ${result.weightKg} kg body weight, ${profile.ageStage.replace('-', ' ')}, ${profile.activityLevel} activity, and your ${profile.targetGoal} goal.`;
+    const summary = `You chose ${dietName}. ${proteinReason} ${healthReason}${safetyReason} ${energyReason}`;
     if (matchNote) matchNote.textContent = `${recipe.primaryProtein} recipe selected for your answers.`;
     if (selectionSummary) selectionSummary.textContent = summary;
+    if (methodSummary) methodSummary.textContent = 'Recipe matching uses feeding style first, removes selected sensitivities, then ranks the remaining recipes by protein preference, health focus, and energy density. Energy is a starting estimate; use a complete and balanced recipe formulated for your dog’s life stage and review it with your veterinarian for long-term feeding.';
 
     // Every bowl is derived from this exact recipe, not from a separate generic schedule.
     const timedContainer = document.getElementById('timed-schedule-container');
@@ -425,8 +440,8 @@ import { RECIPES } from '../data/recipes';
           </div>
           <div class="flex flex-wrap sm:flex-nowrap items-center gap-1.5 sm:justify-end shrink-0">
             <span class="font-mono text-[9px] sm:text-[10px] uppercase text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#1f1f1f] border border-[#ebebeb] dark:border-[#2e2e2e] px-1.5 py-0.5 rounded w-fit">${ing.category}</span>
-            <a href="${buyLinks.grocery}" target="_blank" rel="noopener noreferrer" class="font-medium text-[10px] text-[#0070f3] dark:text-[#3291ff] hover:underline whitespace-nowrap">Compare prices ↗</a>
-            <a href="${buyLinks.amazon}" target="_blank" rel="noopener noreferrer" class="font-medium text-[10px] text-[#0070f3] dark:text-[#3291ff] hover:underline whitespace-nowrap">Buy online ↗</a>
+            <a href="${buyLinks.grocery}" target="_blank" rel="noopener noreferrer" class="no-print font-medium text-[10px] text-[#0070f3] dark:text-[#3291ff] hover:underline whitespace-nowrap">Compare prices ↗</a>
+            <a href="${buyLinks.amazon}" target="_blank" rel="noopener noreferrer" class="no-print font-medium text-[10px] text-[#0070f3] dark:text-[#3291ff] hover:underline whitespace-nowrap">Buy online ↗</a>
           </div>
         `;
         rowsContainer.appendChild(row);

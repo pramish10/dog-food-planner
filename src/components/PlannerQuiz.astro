@@ -409,7 +409,7 @@ import { RECIPES } from '../data/recipes';
               </label>
               <div class="grid grid-cols-2 sm:grid-cols-6 gap-2">
                 {['Balanced Rotation (No Pref)', 'Chicken', 'Turkey', 'Beef', 'Salmon', 'Lamb'].map((p, idx) => (
-                  <label class="cursor-pointer touch-manipulation">
+                  <label class="cursor-pointer touch-manipulation" data-protein-option={p.toLowerCase()}>
                     <input 
                       type="radio" 
                       name="protein-choice" 
@@ -691,6 +691,45 @@ import { RECIPES } from '../data/recipes';
   const bcsLabel = document.getElementById('bcs-label');
   const treatSlider = document.getElementById('treat-budget-slider') as HTMLInputElement;
   const treatLabel = document.getElementById('treat-budget-label');
+  const allergyInputs = Array.from(document.querySelectorAll('.allergy-check')) as HTMLInputElement[];
+
+  function syncProteinOptionsWithSensitivities() {
+    const chickenSensitivitySelected = allergyInputs.some((input) =>
+      input.checked && input.value === 'chicken / poultry'
+    );
+    const chickenOption = document.querySelector('[data-protein-option="chicken"]') as HTMLElement | null;
+    const chickenInput = chickenOption?.querySelector('input[name="protein-choice"]') as HTMLInputElement | null;
+
+    if (!chickenOption || !chickenInput) return;
+    chickenOption.classList.toggle('hidden', chickenSensitivitySelected);
+    chickenInput.disabled = chickenSensitivitySelected;
+
+    if (chickenSensitivitySelected && chickenInput.checked) {
+      const balancedOption = document.querySelector('input[name="protein-choice"][value="Balanced Rotation (No Pref)"]') as HTMLInputElement | null;
+      if (balancedOption) balancedOption.checked = true;
+    }
+  }
+
+  allergyInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      const noneInput = allergyInputs.find((option) => option.value === 'none / no allergies');
+      if (input === noneInput && input.checked) {
+        allergyInputs.forEach((option) => {
+          if (option !== input) option.checked = false;
+        });
+      } else if (input.checked && noneInput) {
+        noneInput.checked = false;
+      }
+
+      // Keep one explicit state selected when every sensitivity is cleared.
+      if (!allergyInputs.some((option) => option.checked) && noneInput) {
+        noneInput.checked = true;
+      }
+      syncProteinOptionsWithSensitivities();
+    });
+  });
+
+  syncProteinOptionsWithSensitivities();
 
   // LBS / KG toggle
   let currentWeightUnit = 'LBS';
