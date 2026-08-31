@@ -1394,7 +1394,10 @@ import { RECIPES } from '../data/recipes';
     return crop;
   }
 
-  function findBreedProfile(label: string, confidence: number): ExtendedBreedProfile {
+  // ResNet-50 is an ImageNet classifier, so its results can include labels such as
+  // "snail" or "screw". Never turn one of those generic labels into a dog breed.
+  // A result is only displayable when it maps to a breed in the planner catalogue.
+  function findBreedProfile(label: string, confidence: number): ExtendedBreedProfile | null {
     const normalizedLabel = label.toLowerCase();
     const knownProfile = ALL_BREED_PROFILES
       .flatMap((profile) => profile.aliases.map((alias) => ({ profile, alias })))
@@ -1403,24 +1406,7 @@ import { RECIPES } from '../data/recipes';
 
     if (knownProfile) return { ...knownProfile, confidence: Math.round(confidence * 1000) / 10 };
 
-    // The hosted model supports 120 breeds, while the nutrition catalogue has a
-    // smaller curated list. Still show the genuine breed prediction; only diet
-    // fields remain general until this breed is added to the catalogue.
-    return {
-      name: label,
-      category: 'Medium',
-      avgWeightLbs: [25, 55],
-      confidence: Math.round(confidence * 1000) / 10,
-      cranial: 'See breed profile',
-      ear: 'See breed profile',
-      coat: 'See breed profile',
-      nutrition: 'Use the calculator with your dog’s actual weight and health needs; visual breed identification is not a substitute for veterinary advice.',
-      proteinPct: 26,
-      fatPct: 15,
-      predispositions: [],
-      description: `AI visual match: ${label}. Confirm mixed-breed ancestry with a DNA test if needed.`,
-      aliases: [normalizedLabel]
-    };
+    return null;
   }
 
   async function classifyWithHostedBreedAi(source: HTMLImageElement | HTMLVideoElement, bbox: number[]) {
@@ -1447,6 +1433,7 @@ import { RECIPES } from '../data/recipes';
     const matches = result.predictions
       .filter((prediction: any) => typeof prediction?.label === 'string' && typeof prediction?.score === 'number')
       .map((prediction: any) => findBreedProfile(prediction.label, prediction.score))
+      .filter((profile): profile is ExtendedBreedProfile => profile !== null)
       .filter((profile: ExtendedBreedProfile, index: number, profiles: ExtendedBreedProfile[]) =>
         profiles.findIndex((candidate) => candidate.name === profile.name) === index
       );
