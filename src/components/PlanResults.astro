@@ -394,8 +394,12 @@ import { RECIPES } from '../data/recipes';
     const safetyReason = avoidedAllergies.length
       ? ` It also avoids your selected sensitivity: ${avoidedAllergies.join(', ')}.`
       : ' No ingredient sensitivities were selected.';
-    const energyReason = `${result.merKcal} kcal/day is a starting estimate from ${result.weightKg} kg body weight, ${profile.ageStage.replace('-', ' ')}, ${profile.activityLevel} activity, and your ${profile.targetGoal} goal.`;
-    const summary = `You chose ${dietName}. ${proteinReason} ${healthReason}${safetyReason} ${energyReason}`;
+    const ageStageLabel = ({ 'puppy-early': 'early puppy growth stage', 'puppy-late': 'late puppy growth stage', adult: 'adult life stage', senior: 'senior life stage' } as Record<string, string>)[profile.ageStage] || profile.ageStage;
+    const sensitivityReason = avoidedAllergies.length
+      ? `The recipe excludes your reported sensitivities: ${avoidedAllergies.join(', ')}.`
+      : 'No ingredient sensitivities were reported, so no ingredients needed to be excluded.';
+    const energyReason = `Your daily starting amount is ${result.merKcal} kcal, calculated from a ${result.weightKg} kg dog in the ${ageStageLabel} with ${profile.activityLevel} activity and a ${profile.targetGoal} weight goal.`;
+    const summary = `This ${dietName} recommendation was selected because you chose ${proteinSelected ? profile.proteinChoice : 'a balanced protein rotation'} and ${profile.healthFocus} as the health focus. ${proteinReason} ${healthReason} ${sensitivityReason} ${energyReason} Monitor body condition and adjust with your veterinarian as needed.`;
     if (matchNote) matchNote.textContent = `${recipe.primaryProtein} recipe selected for your answers.`;
     if (selectionSummary) selectionSummary.textContent = summary;
     if (methodSummary) methodSummary.textContent = 'Recipe matching uses feeding style first, removes selected sensitivities, then ranks the remaining recipes by protein preference, health focus, and energy density. Energy is a starting estimate; use a complete and balanced recipe formulated for your dog’s life stage and review it with your veterinarian for long-term feeding.';

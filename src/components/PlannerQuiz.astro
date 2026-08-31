@@ -520,7 +520,7 @@ import { RECIPES } from '../data/recipes';
           <span id="lighting-text">LUX: OPTIMAL (68%)</span>
         </div>
         <div id="telemetry-badge" class="hidden px-2 py-0.5 rounded bg-black/80 backdrop-blur-xs font-mono text-[9px] text-[#50e3c2] border border-[#50e3c2]/30 flex items-center gap-1.5">
-          <span>🎯 CRANIAL RATIO: <span id="cranial-ratio-val">1.34</span></span>
+          <span>🎯 SUBJECT GATE: <span id="cranial-ratio-val">VERIFYING</span></span>
         </div>
       </div>
 
@@ -586,9 +586,9 @@ import { RECIPES } from '../data/recipes';
         <div class="flex items-start gap-2.5">
           <span class="text-2xl">👤</span>
           <div>
-            <h5 class="font-bold text-xs text-rose-600 dark:text-rose-400">Human / Non-Canine Subject Detected</h5>
-            <p class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] leading-snug mt-0.5">
-              Our neural vision model extracted human biometric landmarks (bipedal facial ratios and smooth skin chroma) rather than canine snout, ear, or coat textures. Canine nutrition algorithms require your dog's physiological parameters.
+            <h5 class="font-bold text-xs text-rose-600 dark:text-rose-400" id="subject-warning-title">Dog Not Detected</h5>
+            <p class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] leading-snug mt-0.5" id="subject-warning-message">
+              Upload a clear photo containing one dog. The scanner does not identify people, cats, or other animals as dogs.
             </p>
           </div>
         </div>
@@ -885,21 +885,32 @@ import { RECIPES } from '../data/recipes';
   let laserPos = 0;
   let laserDir = 1;
   let mobileNetModel: any = null;
-  let isModelLoading = false;
+  let cocoSsdModel: any = null;
+  let modelLoadPromise: Promise<void> | null = null;
 
   // Load MobileNet Edge AI model asynchronously in background
   async function loadEdgeModel() {
-    if (mobileNetModel || isModelLoading) return;
-    if (typeof (window as any).mobilenet !== 'undefined') {
+    if (mobileNetModel && cocoSsdModel) return;
+    if (modelLoadPromise) return modelLoadPromise;
+    modelLoadPromise = (async () => {
+      if (typeof (window as any).mobilenet === 'undefined') return;
       try {
-        isModelLoading = true;
-        mobileNetModel = await (window as any).mobilenet.load({ version: 2, alpha: 1.0 });
+        const models: Promise<any>[] = [
+          (window as any).mobilenet.load({ version: 2, alpha: 1.0 })
+        ];
+        if (typeof (window as any).cocoSsd !== 'undefined') {
+          models.push((window as any).cocoSsd.load({ base: 'mobilenet_v2' }));
+        }
+        const [mobileNet, cocoSsd] = await Promise.all(models);
+        mobileNetModel = mobileNet;
+        cocoSsdModel = cocoSsd || null;
       } catch (e) {
         console.warn('Edge MobileNet fallback enabled:', e);
       } finally {
-        isModelLoading = false;
+        modelLoadPromise = null;
       }
-    }
+    })();
+    return modelLoadPromise;
   }
   loadEdgeModel();
 
@@ -1239,11 +1250,10 @@ import { RECIPES } from '../data/recipes';
         }
         processLiveVideoFrameWithAI();
       } catch (err) {
-        // Fallback demo scan if permissions blocked
-        simulateVisionPipeline(null);
+        showSubjectWarning('Camera unavailable', 'Camera access is required for a live scan. You can instead upload a clear photo containing one dog.');
       }
     } else {
-      simulateVisionPipeline(null);
+      showSubjectWarning('Camera unavailable', 'This browser cannot provide a camera feed. Upload a clear photo containing one dog instead.');
     }
   });
 
@@ -1306,12 +1316,34 @@ import { RECIPES } from '../data/recipes';
       if (scannerVideo && scannerVideo.videoWidth > 0) {
         await executeDeepVisionInference(scannerVideo, '');
       } else {
-        simulateVisionPipeline(null);
+        showSubjectWarning('Camera feed unavailable', 'We could not read a camera frame. Try again or upload a clear photo containing one dog.');
       }
     }, 2200);
   }
 
-  // Core Vision Inference: MobileNet + Biometric Chroma / Face Ratio Heuristics
+  function showSubjectWarning(title: string, message: string) {
+    const warningTitle = document.getElementById('subject-warning-title');
+    const warningMessage = document.getElementById('subject-warning-message');
+    if (warningTitle) warningTitle.textContent = title;
+    if (warningMessage) warningMessage.textContent = message;
+    humanWarningBox?.classList.remove('hidden');
+    scanResultBox?.classList.add('hidden');
+  }
+
+  function cropToDetection(source: HTMLImageElement | HTMLVideoElement, bbox: number[]) {
+    const sourceWidth = source instanceof HTMLVideoElement ? source.videoWidth : source.naturalWidth;
+    const sourceHeight = source instanceof HTMLVideoElement ? source.videoHeight : source.naturalHeight;
+    const [x, y, width, height] = bbox;
+    const crop = document.createElement('canvas');
+    crop.width = Math.max(1, Math.round(width));
+    crop.height = Math.max(1, Math.round(height));
+    const context = crop.getContext('2d');
+    if (!context || !sourceWidth || !sourceHeight) return source;
+    context.drawImage(source, x, y, width, height, 0, 0, crop.width, crop.height);
+    return crop;
+  }
+
+  // Core Vision Inference: first confirm a dog object, then classify its cropped image.
   async function executeDeepVisionInference(visualSource: HTMLImageElement | HTMLVideoElement, filename: string) {
     startLaserAnimation();
     if (scannerProcessingTag) scannerProcessingTag.classList.remove('hidden');
@@ -1343,71 +1375,68 @@ import { RECIPES } from '../data/recipes';
       }
     }
 
-    // 2. Real MobileNet Model Classification
+    // 2. Object detection is the safety gate. It distinguishes dog, person, cat, and other supported animals.
     let detectedDogBreed: ExtendedBreedProfile | null = null;
-    let isHumanDetectedByModel = false;
-    let topLabels: string[] = [];
+    let dogDetection: any = null;
+    let nonDogAnimal: string | null = null;
+    let personDetected = false;
 
     if (!mobileNetModel) {
       await loadEdgeModel();
     }
 
-    if (mobileNetModel) {
+    if (cocoSsdModel) {
       try {
-        const predictions = await mobileNetModel.classify(visualSource, 5);
-        if (predictions && predictions.length > 0) {
-          topLabels = predictions.map((p: any) => p.className.toLowerCase());
-
-          // List of human-related class names in ImageNet
-          const humanClasses = [
-            'groom', 'cloak', 'jersey', 't-shirt', 'sweatshirt', 'wig', 'sunglasses', 'sunglass',
-            'suit', 'trench coat', 'kimono', 'stethoscope', 'academic gown', 'swimming trunks',
-            'bikini', 'brassiere', 'sombrero', 'cowboy hat', 'bonnet', 'face', 'person', 'man', 'woman'
-          ];
-
-          isHumanDetectedByModel = topLabels.some(label => 
-            humanClasses.some(hc => label.includes(hc))
-          );
-
-          // Check if any prediction matches canine classes
-          for (const pred of predictions) {
-            const label = pred.className.toLowerCase();
-            for (const breed of COMPREHENSIVE_BREED_INTEL) {
-              if (breed.aliases.some(alias => label.includes(alias))) {
-                detectedDogBreed = breed;
-                detectedDogBreed.confidence = Math.min(99.2, Math.max(91.0, Math.round(pred.probability * 1000) / 10));
-                break;
-              }
-            }
-            if (detectedDogBreed) break;
-          }
-        }
+        const detections = await cocoSsdModel.detect(visualSource);
+        dogDetection = detections
+          .filter((detection: any) => detection.class === 'dog' && detection.score >= 0.6)
+          .sort((a: any, b: any) => b.score - a.score)[0] || null;
+        personDetected = detections.some((detection: any) => detection.class === 'person' && detection.score >= 0.6);
+        nonDogAnimal = detections
+          .filter((detection: any) => ['cat', 'bird', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe'].includes(detection.class) && detection.score >= 0.55)
+          .sort((a: any, b: any) => b.score - a.score)[0]?.class || null;
       } catch (err) {
-        console.warn('Edge inference error:', err);
+        console.warn('Object detection error:', err);
       }
     }
 
-    // 3. Keyword / filename check fallback
-    const humanKeywords = ['human', 'person', 'selfie', 'face', 'man', 'woman', 'girl', 'boy', 'guy', 'lady', 'me', 'portrait', 'people', 'myself'];
-    const isHumanKeyword = humanKeywords.some(k => filename.includes(k));
+    // 3. Run ImageNet classification only on the dog bounding box, never on the entire scene.
+    if (dogDetection && mobileNetModel) {
+      try {
+        const predictions = await mobileNetModel.classify(cropToDetection(visualSource, dogDetection.bbox), 5);
+        for (const prediction of predictions) {
+          const label = prediction.className.toLowerCase();
+          const breed = COMPREHENSIVE_BREED_INTEL
+            .flatMap((candidate) => candidate.aliases
+              .filter((alias) => label.includes(alias))
+              .map((alias) => ({ candidate, alias })))
+            .sort((a, b) => b.alias.length - a.alias.length)[0]?.candidate;
+          if (breed && prediction.probability >= 0.2) {
+            detectedDogBreed = { ...breed, confidence: Math.round(prediction.probability * 1000) / 10 };
+            break;
+          }
+        }
+      } catch (err) {
+        console.warn('Breed classification error:', err);
+      }
+    }
 
     cancelLaserAnimation();
     if (scannerLaser) scannerLaser.classList.add('hidden');
     if (scannerProcessingTag) scannerProcessingTag.classList.add('hidden');
 
-    // Final Decision Gate:
-    // If Edge AI detected human apparel/biometrics, or skin chroma cluster is high without canine match, or human keyword
-    if ((isHumanDetectedByModel || isHumanKeyword || (isHumanChroma && !detectedDogBreed))) {
-      if (humanWarningBox) humanWarningBox.classList.remove('hidden');
-      if (scanResultBox) scanResultBox.classList.add('hidden');
+    if (!cocoSsdModel) {
+      showSubjectWarning('Dog detector unavailable', 'The on-device dog detector did not load. Check your connection and try again; no breed has been assigned.');
+    } else if (!dogDetection && nonDogAnimal) {
+      showSubjectWarning('Non-dog animal detected', `This photo appears to contain a ${nonDogAnimal}, not a dog. Upload a clear photo of one dog.`);
+    } else if (!dogDetection && (personDetected || isHumanChroma)) {
+      showSubjectWarning('Human detected', 'This photo appears to contain a person rather than a dog. No breed has been assigned.');
+    } else if (!dogDetection) {
+      showSubjectWarning('Dog not detected', 'We could not confidently find a dog in this image. Use a well-lit photo that shows one dog clearly.');
+    } else if (!detectedDogBreed) {
+      showSubjectWarning('Dog confirmed; breed uncertain', 'A dog was detected, but the model cannot make a reliable breed match from this photo. Please choose the breed or size manually rather than receiving a guess.');
     } else {
-      // Valid Canine Subject Identified
-      let finalBreed = detectedDogBreed;
-      if (!finalBreed) {
-        // Match by filename or select closest canine profile
-        finalBreed = COMPREHENSIVE_BREED_INTEL.find(c => c.aliases.some(a => filename.includes(a))) || COMPREHENSIVE_BREED_INTEL[0];
-      }
-      renderCanineRecognitionResults(finalBreed);
+      renderCanineRecognitionResults(detectedDogBreed);
     }
   }
 
@@ -1458,20 +1487,8 @@ import { RECIPES } from '../data/recipes';
       lightingText.textContent = `LUX: OPTIMAL (${rounded}%)`;
     }
     if (cranialRatioVal) {
-      cranialRatioVal.textContent = (1.15 + (Math.random() * 0.4)).toFixed(2);
+      cranialRatioVal.textContent = 'VERIFYING';
     }
-  }
-
-  function simulateVisionPipeline(fallbackMatch: ExtendedBreedProfile | null) {
-    startLaserAnimation();
-    if (scannerProcessingTag) scannerProcessingTag.classList.remove('hidden');
-    setTimeout(() => {
-      cancelLaserAnimation();
-      if (scannerLaser) scannerLaser.classList.add('hidden');
-      if (scannerProcessingTag) scannerProcessingTag.classList.add('hidden');
-      const candidate = fallbackMatch || COMPREHENSIVE_BREED_INTEL[0];
-      renderCanineRecognitionResults(candidate);
-    }, 1800);
   }
 
   function renderCanineRecognitionResults(topMatch: ExtendedBreedProfile) {
