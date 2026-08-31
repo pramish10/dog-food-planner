@@ -82,7 +82,7 @@ const keywords = [
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Theme Initialization Script (Prevents flash of wrong theme) -->
+    <!-- Theme Initialization Script & Page Reload Handler -->
     <script is:inline>
       (function() {
         const storedTheme = localStorage.getItem('theme');
@@ -91,6 +91,18 @@ const keywords = [
         } else {
           document.documentElement.classList.remove('dark');
         }
+
+        // On page reload/refresh, redirect to the home page if not already at home
+        try {
+          const navEntries = performance.getEntriesByType('navigation');
+          const isReload = navEntries.length > 0 
+            ? (navEntries[0].type === 'reload')
+            : (performance.navigation && performance.navigation.type === 1);
+          
+          if (isReload && window.location.pathname !== '/' && window.location.pathname !== '') {
+            window.location.replace('/');
+          }
+        } catch (e) {}
       })();
     </script>
 

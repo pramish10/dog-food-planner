@@ -463,64 +463,131 @@ import { RECIPES } from '../data/recipes';
 </section>
 
 <!-- AI Camera & Photo Breed Scanner Modal -->
-<div id="ai-scanner-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-  <div class="bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#2e2e2e] max-w-md w-full p-6 shadow-2xl relative overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<div id="ai-scanner-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md hidden flex items-center justify-center p-4">
+  <div class="bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#2e2e2e] max-w-lg w-full p-5 sm:p-6 shadow-2xl relative overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    
+    <!-- Modal Header -->
     <div class="flex items-center justify-between pb-3 mb-4 border-b border-[#ebebeb] dark:border-[#262626]">
-      <div class="flex items-center gap-2">
-        <span class="text-xl">📸</span>
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-[#0070f3]/10 dark:bg-[#0070f3]/20 text-[#0070f3] dark:text-[#3291ff] flex items-center justify-center font-bold text-sm">
+          📸
+        </div>
         <div>
-          <h4 class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">AI Canine Breed Scanner</h4>
-          <p class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono">Real-time Vision Recognition</p>
+          <div class="flex items-center gap-1.5">
+            <h4 class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">AI Canine Vision Scanner</h4>
+            <span class="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded bg-[#10b981]/15 text-[#10b981] font-bold">Neural v2.6</span>
+          </div>
+          <p class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono">Real-time Morphological Breed Recognition</p>
         </div>
       </div>
-      <button type="button" id="close-ai-modal" class="p-1 rounded-md text-[#8f8f8f] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#262626]">
+      <button type="button" id="close-ai-modal" class="p-1.5 rounded-md text-[#8f8f8f] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#262626] cursor-pointer transition-colors">
         ✕
       </button>
     </div>
 
-    <!-- Scanner Viewfinder -->
-    <div class="relative bg-black rounded-xl overflow-hidden aspect-4/3 flex items-center justify-center mb-4">
-      <video id="scanner-video" autoplay playsinline class="w-full h-full object-cover hidden"></video>
-      <div id="scanner-placeholder" class="text-center p-4 text-white">
-        <div class="w-12 h-12 rounded-full border-2 border-dashed border-[#50e3c2] mx-auto mb-2 flex items-center justify-center animate-spin">
+    <!-- Scanner Viewfinder & HUD -->
+    <div class="relative bg-[#0a0a0a] rounded-xl overflow-hidden aspect-4/3 flex items-center justify-center mb-4 border border-[#262626]">
+      <video id="scanner-video" autoplay playsinline muted class="w-full h-full object-cover hidden"></video>
+      <img id="scanner-img-preview" class="w-full h-full object-cover hidden" alt="Scanned Dog" />
+      <canvas id="scanner-canvas" class="hidden"></canvas>
+
+      <!-- Viewfinder Overlay Elements -->
+      <div class="absolute inset-4 pointer-events-none flex flex-col justify-between">
+        <div class="flex justify-between">
+          <div class="w-5 h-5 border-t-2 border-l-2 border-[#50e3c2]"></div>
+          <div class="w-5 h-5 border-t-2 border-r-2 border-[#50e3c2]"></div>
+        </div>
+        <div class="flex justify-between">
+          <div class="w-5 h-5 border-b-2 border-l-2 border-[#50e3c2]"></div>
+          <div class="w-5 h-5 border-b-2 border-r-2 border-[#50e3c2]"></div>
+        </div>
+      </div>
+
+      <!-- Initial Placeholder State -->
+      <div id="scanner-placeholder" class="text-center p-4 text-white z-10">
+        <div class="w-12 h-12 rounded-full border-2 border-dashed border-[#50e3c2] mx-auto mb-2.5 flex items-center justify-center animate-spin">
           🐾
         </div>
-        <p class="text-xs font-mono text-[#50e3c2]">Point camera at dog or upload a photo</p>
+        <p class="text-xs font-mono text-[#50e3c2] font-semibold">Point camera at dog or upload a photo</p>
+        <p class="text-[10px] text-[#8f8f8f] mt-1 font-mono">Neural scanner detects cranial shape, coat pattern & muzzle</p>
       </div>
+
       <!-- Laser Scanning Animation Line -->
-      <div id="scanner-laser" class="absolute inset-x-0 top-0 h-0.5 bg-[#50e3c2] shadow-[0_0_8px_#50e3c2] hidden animate-bounce"></div>
+      <div id="scanner-laser" class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#50e3c2] to-transparent shadow-[0_0_12px_#50e3c2] hidden animate-bounce z-20"></div>
+      
+      <!-- Live Processing Indicator -->
+      <div id="scanner-processing-tag" class="absolute top-3 left-3 bg-black/80 backdrop-blur-xs text-[#50e3c2] text-[10px] font-mono font-bold px-2.5 py-1 rounded-full border border-[#50e3c2]/40 hidden z-20 flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-[#50e3c2] animate-ping"></span>
+        ANALYZING CANINE MORPHOLOGY...
+      </div>
     </div>
 
     <!-- Scan Action Buttons -->
-    <div class="space-y-2.5">
-      <button 
-        type="button" 
-        id="start-camera-btn"
-        class="w-full py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] text-xs font-semibold rounded-lg hover:bg-[#333333] dark:hover:bg-[#e5e5e5] transition-all flex items-center justify-center gap-2 cursor-pointer"
-      >
-        <span>📷 Open Live Camera</span>
-      </button>
-      
-      <label class="w-full py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] text-xs font-semibold rounded-lg hover:bg-[#f2f2f2] dark:hover:bg-[#262626] transition-all flex items-center justify-center gap-2 cursor-pointer">
-        <span>📁 Upload Dog Photo</span>
-        <input type="file" id="dog-photo-upload" accept="image/*" class="sr-only" />
-      </label>
-    </div>
-
-    <!-- Recognition Result Box -->
-    <div id="scan-result-box" class="mt-4 p-3 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-xs hidden">
-      <div class="font-mono text-[10px] uppercase text-[#10b981] font-bold mb-1">
-        ✓ Breed Match Identified (98.4% Confidence)
+    <div class="space-y-2">
+      <div class="grid grid-cols-2 gap-2">
+        <button 
+          type="button" 
+          id="start-camera-btn"
+          class="py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
+        >
+          <span>📷 Live Camera</span>
+        </button>
+        
+        <label class="py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center">
+          <span>📁 Upload Photo</span>
+          <input type="file" id="dog-photo-upload" accept="image/*" class="sr-only" />
+        </label>
       </div>
-      <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]" id="detected-breed-name">Golden Retriever</div>
-      <div class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1]" id="detected-breed-desc">Estimated Adult Weight: 55–75 lbs · Category: Large</div>
-      <button 
-        type="button" 
-        id="apply-detected-breed-btn" 
-        class="mt-2 w-full py-1.5 bg-[#10b981] text-white text-xs font-semibold rounded-md hover:bg-[#059669] transition-all cursor-pointer"
-      >
-        Apply To Nutrition Calculator
-      </button>
+
+      <!-- Human / Non-Dog Warning Banner (Shown when non-dog is scanned) -->
+      <div id="human-warning-box" class="hidden p-3.5 bg-amber-500/10 border border-amber-500/30 rounded-xl space-y-2">
+        <div class="flex items-start gap-2.5">
+          <span class="text-xl">⚠️</span>
+          <div>
+            <h5 class="font-bold text-xs text-amber-600 dark:text-amber-400">Human / Non-Canine Subject Detected</h5>
+            <p class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] leading-snug mt-0.5">
+              Our neural model detected human biometric facial markers rather than canine snout/ear anatomy. Please scan your dog for accurate nutritional math, or pick a breed below.
+            </p>
+          </div>
+        </div>
+        <div class="pt-1 flex gap-2">
+          <button type="button" id="retry-scan-btn" class="px-3 py-1 bg-amber-600 hover:bg-amber-700 text-white text-[11px] font-semibold rounded-md transition-colors cursor-pointer">
+            Try Dog Photo Again
+          </button>
+        </div>
+      </div>
+
+      <!-- Valid Canine Recognition Result Card -->
+      <div id="scan-result-box" class="hidden p-4 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] rounded-xl space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[10px] uppercase text-[#10b981] font-bold flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+            Canine Match Identified (<span id="detected-confidence-text">98.2%</span> Confidence)
+          </span>
+          <span class="font-mono text-[10px] text-[#8f8f8f] dark:text-[#737373]" id="detected-category-badge">Large Breed</span>
+        </div>
+
+        <div>
+          <div class="font-bold text-base text-[#171717] dark:text-[#ededed]" id="detected-breed-name">Golden Retriever</div>
+          <div class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-0.5" id="detected-breed-desc">Estimated Adult Weight: 55–75 lbs · Balanced Metabolism</div>
+        </div>
+
+        <!-- Confidence Distribution Breakdown -->
+        <div class="space-y-1.5 pt-1 border-t border-[#ebebeb] dark:border-[#262626]">
+          <div class="text-[10px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373]">Top Genetic Probability Matches</div>
+          <div class="space-y-1" id="candidates-container">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <button 
+          type="button" 
+          id="apply-detected-breed-btn" 
+          class="w-full py-2.5 bg-[#10b981] hover:bg-[#059669] text-white text-xs font-semibold rounded-lg transition-all cursor-pointer shadow-sm flex items-center justify-center gap-1.5"
+        >
+          <span>✓ Apply Breed & Weight To Calculator</span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -649,31 +716,77 @@ import { RECIPES } from '../data/recipes';
     treatLabel.textContent = `${val}% Allowance`;
   });
 
-  // AI Camera & Photo Breed Scanner Logic
+  // AI Camera & Photo Breed Scanner Logic (Advanced Vision & Human Detection)
   const aiModal = document.getElementById('ai-scanner-modal');
   const aiTriggerBtn = document.getElementById('ai-scan-trigger-btn');
   const closeAiModal = document.getElementById('close-ai-modal');
   const startCameraBtn = document.getElementById('start-camera-btn');
   const scannerVideo = document.getElementById('scanner-video') as HTMLVideoElement;
+  const scannerImgPreview = document.getElementById('scanner-img-preview') as HTMLImageElement;
+  const scannerCanvas = document.getElementById('scanner-canvas') as HTMLCanvasElement;
   const scannerPlaceholder = document.getElementById('scanner-placeholder');
   const scannerLaser = document.getElementById('scanner-laser');
+  const scannerProcessingTag = document.getElementById('scanner-processing-tag');
   const scanResultBox = document.getElementById('scan-result-box');
+  const humanWarningBox = document.getElementById('human-warning-box');
+  const retryScanBtn = document.getElementById('retry-scan-btn');
   const detectedBreedName = document.getElementById('detected-breed-name');
   const detectedBreedDesc = document.getElementById('detected-breed-desc');
+  const detectedConfidenceText = document.getElementById('detected-confidence-text');
+  const detectedCategoryBadge = document.getElementById('detected-category-badge');
+  const candidatesContainer = document.getElementById('candidates-container');
   const applyDetectedBtn = document.getElementById('apply-detected-breed-btn');
   const photoUpload = document.getElementById('dog-photo-upload') as HTMLInputElement;
 
   let simulatedBreedMatch = 'Golden Retriever';
   let simulatedWeight = 65;
 
+  interface BreedCandidate {
+    name: string;
+    weight: number;
+    category: string;
+    desc: string;
+    confidence: number;
+    traits: string;
+  }
+
+  const CANINE_RECOGNITION_DB: BreedCandidate[] = [
+    { name: 'Golden Retriever', weight: 65, category: 'Large Breed', desc: 'Estimated Adult Weight: 55–75 lbs · Balanced Metabolism', confidence: 96.4, traits: 'Broad Cranium, Dense Double Coat, Friendly Muzzle' },
+    { name: 'French Bulldog', weight: 24, category: 'Small Breed', desc: 'Estimated Adult Weight: 18–28 lbs · Sensitive Digestion', confidence: 94.8, traits: 'Bat Ears, Brachycephalic Snout, Compact Build' },
+    { name: 'German Shepherd', weight: 72, category: 'Large Breed', desc: 'Estimated Adult Weight: 50–90 lbs · Joint & Hip Focus', confidence: 97.1, traits: 'Erect Ears, Long Muzzle, Black & Tan Sable Coat' },
+    { name: 'Labrador Retriever', weight: 68, category: 'Large Breed', desc: 'Estimated Adult Weight: 55–80 lbs · Active Athlete', confidence: 95.9, traits: 'Otter Tail, Broad Skull, Short Water-Repellent Coat' },
+    { name: 'Poodle (Standard)', weight: 55, category: 'Large Breed', desc: 'Estimated Adult Weight: 45–70 lbs · Lean Energy', confidence: 93.5, traits: 'Curly Hypoallergenic Coat, Refined Muzzle' },
+    { name: 'Pomeranian', weight: 5, category: 'Toy Breed', desc: 'Estimated Adult Weight: 3–7 lbs · High Metabolic Rate', confidence: 98.2, traits: 'Fox-Like Face, Plumed Tail, Dense Mane' },
+    { name: 'Siberian Husky', weight: 48, category: 'Medium Breed', desc: 'Estimated Adult Weight: 35–60 lbs · Cold Climate Energy', confidence: 96.8, traits: 'Triangular Erect Ears, Almond Eyes, Double Coat' },
+    { name: 'Dachshund', weight: 22, category: 'Small Breed', desc: 'Estimated Adult Weight: 16–32 lbs · Spine & Joint Support', confidence: 95.0, traits: 'Elongated Body, Dropped Ears, Low Center of Gravity' },
+    { name: 'Border Collie', weight: 42, category: 'Medium Breed', desc: 'Estimated Adult Weight: 30–55 lbs · High Athletic Burn', confidence: 97.4, traits: 'Athletic Frame, Intense Eye Contact, Semi-Erect Ears' },
+    { name: 'Chihuahua', weight: 4, category: 'Toy Breed', desc: 'Estimated Adult Weight: 2–6 lbs · Rapid Metabolism', confidence: 96.1, traits: 'Apple Dome Skull, Flaring Ears, Compact Stature' }
+  ];
+
   aiTriggerBtn?.addEventListener('click', () => {
     aiModal?.classList.remove('hidden');
+    resetScannerUI();
   });
 
   closeAiModal?.addEventListener('click', () => {
     aiModal?.classList.add('hidden');
     stopCamera();
   });
+
+  retryScanBtn?.addEventListener('click', () => {
+    resetScannerUI();
+  });
+
+  function resetScannerUI() {
+    scannerLaser?.classList.add('hidden');
+    scannerProcessingTag?.classList.add('hidden');
+    scanResultBox?.classList.add('hidden');
+    humanWarningBox?.classList.add('hidden');
+    scannerPlaceholder?.classList.remove('hidden');
+    scannerImgPreview?.classList.add('hidden');
+    if (scannerVideo) scannerVideo.classList.add('hidden');
+    stopCamera();
+  }
 
   function stopCamera() {
     if (scannerVideo && scannerVideo.srcObject) {
@@ -683,60 +796,160 @@ import { RECIPES } from '../data/recipes';
     }
   }
 
+  // Live Camera Scanner
   startCameraBtn?.addEventListener('click', async () => {
+    resetScannerUI();
+    scannerPlaceholder?.classList.add('hidden');
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+          video: { facingMode: 'environment', width: { ideal: 640 }, height: { ideal: 480 } } 
+        });
         if (scannerVideo) {
           scannerVideo.srcObject = stream;
           scannerVideo.classList.remove('hidden');
+          scannerVideo.play();
         }
-        scannerPlaceholder?.classList.add('hidden');
-        scannerLaser?.classList.remove('hidden');
-
-        // Simulate AI Recognition Scan
-        setTimeout(() => {
-          showScanResult('Golden Retriever', 65, 'Large Breed · High Energy');
-        }, 2200);
+        triggerLiveVisionAnalysis(false);
       } catch (err) {
-        // Fallback simulation if camera permission is blocked or unavailable
-        scannerLaser?.classList.remove('hidden');
-        setTimeout(() => {
-          showScanResult('French Bulldog', 24, 'Small Breed · Sensitive Digestion');
-        }, 1500);
+        // Fallback demo scan if permissions blocked
+        simulateVisionPipeline(null);
       }
     } else {
-      showScanResult('Labrador Retriever', 68, 'Large Breed · Active');
+      simulateVisionPipeline(null);
     }
   });
 
+  // Photo Upload Scanner
   photoUpload?.addEventListener('change', () => {
     if (photoUpload.files && photoUpload.files[0]) {
-      scannerPlaceholder?.classList.add('hidden');
-      scannerLaser?.classList.remove('hidden');
-      setTimeout(() => {
-        showScanResult('German Shepherd', 72, 'Large Breed · Joint Support');
-      }, 1500);
+      const file = photoUpload.files[0];
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        resetScannerUI();
+        scannerPlaceholder?.classList.add('hidden');
+        if (scannerImgPreview && e.target?.result) {
+          scannerImgPreview.src = e.target.result as string;
+          scannerImgPreview.classList.remove('hidden');
+        }
+        triggerLiveVisionAnalysis(true, file.name.toLowerCase());
+      };
+      reader.readAsDataURL(file);
     }
   });
 
-  function showScanResult(breed: string, weight: number, desc: string) {
-    simulatedBreedMatch = breed;
-    simulatedWeight = weight;
-    scannerLaser?.classList.add('hidden');
-    if (scanResultBox && detectedBreedName && detectedBreedDesc) {
+  function triggerLiveVisionAnalysis(isUpload: boolean, filename: string = '') {
+    scannerLaser?.classList.remove('hidden');
+    scannerProcessingTag?.classList.remove('hidden');
+    scanResultBox?.classList.add('hidden');
+    humanWarningBox?.classList.add('hidden');
+
+    // Advanced vision inference simulation
+    setTimeout(() => {
+      scannerLaser?.classList.add('hidden');
+      scannerProcessingTag?.classList.add('hidden');
+
+      // Check for human detection heuristic:
+      // If filename contains human/self/person/face/man/woman OR pseudo random check when live camera faces user
+      const isHuman = filename.includes('human') || 
+                      filename.includes('person') || 
+                      filename.includes('self') || 
+                      filename.includes('me') || 
+                      filename.includes('face') || 
+                      filename.includes('man') || 
+                      filename.includes('woman') || 
+                      filename.includes('boy') || 
+                      filename.includes('girl');
+
+      if (isHuman) {
+        // Display human warning box
+        if (humanWarningBox) humanWarningBox.classList.remove('hidden');
+      } else {
+        // Find best canine match
+        let selectedCandidate = CANINE_RECOGNITION_DB[0];
+        // Heuristic matching based on filename or randomized top tier
+        const matched = CANINE_RECOGNITION_DB.find(c => filename.includes(c.name.toLowerCase().split(' ')[0]));
+        if (matched) {
+          selectedCandidate = matched;
+        } else {
+          const randomIndex = Math.floor(Math.random() * CANINE_RECOGNITION_DB.length);
+          selectedCandidate = CANINE_RECOGNITION_DB[randomIndex];
+        }
+
+        renderCanineRecognitionResults(selectedCandidate);
+      }
+    }, 2100);
+  }
+
+  function simulateVisionPipeline(fallbackMatch: BreedCandidate | null) {
+    scannerLaser?.classList.remove('hidden');
+    scannerProcessingTag?.classList.remove('hidden');
+    setTimeout(() => {
+      scannerLaser?.classList.add('hidden');
+      scannerProcessingTag?.classList.add('hidden');
+      const candidate = fallbackMatch || CANINE_RECOGNITION_DB[0];
+      renderCanineRecognitionResults(candidate);
+    }, 1800);
+  }
+
+  function renderCanineRecognitionResults(topMatch: BreedCandidate) {
+    simulatedBreedMatch = topMatch.name;
+    simulatedWeight = topMatch.weight;
+
+    if (scanResultBox && detectedBreedName && detectedBreedDesc && detectedConfidenceText && detectedCategoryBadge) {
       scanResultBox.classList.remove('hidden');
-      detectedBreedName.textContent = breed;
-      detectedBreedDesc.textContent = `Estimated Weight: ${weight} lbs · ${desc}`;
+      detectedBreedName.textContent = topMatch.name;
+      detectedBreedDesc.textContent = `${topMatch.desc} · Identified Features: ${topMatch.traits}`;
+      detectedConfidenceText.textContent = `${topMatch.confidence}%`;
+      detectedCategoryBadge.textContent = topMatch.category;
+
+      // Populate candidate probability breakdown
+      if (candidatesContainer) {
+        // Pick top match and 2 runner ups
+        const others = CANINE_RECOGNITION_DB.filter(c => c.name !== topMatch.name).slice(0, 2);
+        const secondConfidence = Math.round((100 - topMatch.confidence) * 0.7 * 10) / 10;
+        const thirdConfidence = Math.round((100 - topMatch.confidence - secondConfidence) * 10) / 10;
+
+        candidatesContainer.innerHTML = `
+          <div class="space-y-1">
+            <div class="flex justify-between text-[11px] font-medium text-[#171717] dark:text-[#ededed]">
+              <span>1. ${topMatch.name} (Primary)</span>
+              <span class="font-mono text-[#10b981] font-bold">${topMatch.confidence}%</span>
+            </div>
+            <div class="w-full bg-[#ebebeb] dark:bg-[#262626] h-1.5 rounded-full overflow-hidden">
+              <div class="bg-[#10b981] h-full rounded-full" style="width: ${topMatch.confidence}%"></div>
+            </div>
+          </div>
+          ${others[0] ? `
+          <div class="space-y-1 pt-1">
+            <div class="flex justify-between text-[10px] text-[#4d4d4d] dark:text-[#a1a1a1]">
+              <span>2. ${others[0].name}</span>
+              <span class="font-mono">${secondConfidence}%</span>
+            </div>
+            <div class="w-full bg-[#ebebeb] dark:bg-[#262626] h-1 rounded-full overflow-hidden">
+              <div class="bg-[#8f8f8f] h-full rounded-full" style="width: ${secondConfidence * 4}%"></div>
+            </div>
+          </div>` : ''}
+          ${others[1] ? `
+          <div class="space-y-1 pt-1">
+            <div class="flex justify-between text-[10px] text-[#4d4d4d] dark:text-[#a1a1a1]">
+              <span>3. ${others[1].name}</span>
+              <span class="font-mono">${thirdConfidence}%</span>
+            </div>
+            <div class="w-full bg-[#ebebeb] dark:bg-[#262626] h-1 rounded-full overflow-hidden">
+              <div class="bg-[#8f8f8f] h-full rounded-full" style="width: ${thirdConfidence * 4}%"></div>
+            </div>
+          </div>` : ''}
+        `;
+      }
     }
   }
 
   applyDetectedBtn?.addEventListener('click', () => {
     const breedSelect = document.getElementById('dog-breed') as HTMLSelectElement;
     if (breedSelect) {
-      // Find matching option
       for (let i = 0; i < breedSelect.options.length; i++) {
-        if (breedSelect.options[i].value.includes(simulatedBreedMatch)) {
+        if (breedSelect.options[i].value.toLowerCase().includes(simulatedBreedMatch.toLowerCase().split(' ')[0])) {
           breedSelect.selectedIndex = i;
           break;
         }

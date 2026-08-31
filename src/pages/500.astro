@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="500 - Server Error | DogFoodPlanner.com"
+  description="Internal server error encountered on DogFoodPlanner.com. We are currently resolving the issue."
+>
+  <Navbar />
+  
+  <main class="min-h-[80vh] flex items-center justify-center bg-[#fafafa] dark:bg-[#0d0d0d] px-4 py-16">
+    <div class="max-w-md w-full text-center hairline-card p-8 sm:p-10 bg-white dark:bg-[#141414] space-y-5">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#ee0000]/10 text-[#ee0000] text-2xl font-bold font-mono">
+        500
+      </div>
+      
+      <div class="space-y-2">
+        <h1 class="text-2xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight">
+          Internal Nutrition Error
+        </h1>
+        <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+          Something went wrong while processing your request. Our veterinary development team has been alerted.
+        </p>
+      </div>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+        <a 
+          href="/" 
+          class="w-full sm:w-auto px-5 py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-full transition-all shadow-sm"
+        >
+          ← Return to Home
+        </a>
+        <a 
+          href="/contact" 
+          class="w-full sm:w-auto px-5 py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border border-[#ebebeb] dark:border-[#2e2e2e] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-full transition-all"
+        >
+          Report Error
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

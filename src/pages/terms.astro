@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Terms & Conditions | DogFoodPlanner.com"
+  description="DogFoodPlanner.com terms and conditions of service, acceptable use, and veterinary nutritional guidance disclaimer."
+  canonicalUrl="https://dogfoodplanner.com/terms"
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs 
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Terms & Conditions' }
+      ]}
+    />
+
+    <!-- Header -->
+    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#0070f3]">LEGAL</span> // TERMS OF SERVICE
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
+          Terms & Conditions
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
+          Effective Date: January 1, 2026. Please read these terms carefully before utilizing our canine calculators and educational content.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Terms Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+      
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">1. Acceptance of Terms</h2>
+        <p>
+          By accessing and utilizing <strong>DogFoodPlanner.com</strong> (the "Site" or "Service"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any portion of these terms, please do not use the Site.
+        </p>
+      </section>
+
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">2. Veterinary & Medical Disclaimer</h2>
+        <p class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-lg border border-[#ebebeb] dark:border-[#262626]">
+          <strong>IMPORTANT NOTICE:</strong> All calculations, portion sizes, calorie metrics, macro ratios, and recipes published on DogFoodPlanner.com are intended strictly for general educational and informational purposes. 
+        </p>
+        <p>
+          They are derived from published canine nutrition standards (including NRC and AAFCO) for healthy domestic dogs. <strong>DogFoodPlanner does not provide individualized veterinary diagnosis or medical treatment.</strong> Always consult a licensed veterinarian or board-certified veterinary nutritionist (DACVIM) prior to making significant diet changes, particularly for canines suffering from kidney disease, pancreatitis, diabetes, or severe allergies.
+        </p>
+      </section>
+
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">3. Intellectual Property & Usage License</h2>
+        <p>
+          All textual guides, brand reviews, algorithms, custom UI layouts, and educational comparison charts on DogFoodPlanner.com are the proprietary property of DogFoodPlanner.com. You are granted a personal, non-commercial, revocable license to calculate and print personal dietary meal plans for your own pets.
+        </p>
+      </section>
+
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">4. Limitation of Liability</h2>
+        <p>
+          Under no circumstances shall DogFoodPlanner.com or its authors be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our feeding calculators, recipes, or AI breed scanning tools.
+        </p>
+      </section>
+
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">5. Inquiries & Updates</h2>
+        <p>
+          We reserve the right to modify these terms periodically. For legal inquiries, contact <code class="font-mono text-xs text-[#171717] dark:text-[#ededed]">legal@dogfoodplanner.com</code>.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

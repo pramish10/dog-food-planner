@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Privacy Policy | DogFoodPlanner.com"
+  description="DogFoodPlanner privacy policy. Learn how we handle your data, protect user privacy, and maintain zero tracking of your dog's personal dietary information."
+  canonicalUrl="https://dogfoodplanner.com/privacy-policy"
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs 
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Privacy Policy' }
+      ]}
+    />
+
+    <!-- Header -->
+    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#0070f3]">TRANSPARENCY</span> // DATA & PRIVACY
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
+          Privacy Policy
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
+          Last Updated: January 2026. We believe in total data privacy, zero intrusive tracking, and open access to clinical canine nutrition tools.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Policy Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+      
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">1. Overview & Commitment to Privacy</h2>
+        <p>
+          At <strong>DogFoodPlanner.com</strong> ("we", "our", or "us"), we operate on a fundamental privacy principle: you should not have to surrender your personal data or your pet's information to access scientific, veterinary-standard nutrition math. We do not require registration, paywalls, or accounts to calculate meals.
+        </p>
+      </section>
+
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">2. Information We Do Not Collect</h2>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>No Mandatory Account Creation:</strong> You do not need to provide your full name, home address, phone number, or credit card details to use any calculator or recipe builder.</li>
+          <li><strong>No Sale of Personal Data:</strong> We never sell, rent, monetize, or trade user telemetry or dog profile details to third-party pet food manufacturers or data brokers.</li>
+          <li><strong>No Server-Side Image Storage:</strong> Photos analyzed via our AI Dog Breed Scanner are processed in real-time within your browser or memory-safe ephemeral inference sessions and are never permanently stored on external database servers.</li>
+        </ul>
+      </section>
+
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">3. Local Browser Storage & Cookies</h2>
+        <p>
+          We use lightweight, client-side browser storage (<code class="font-mono text-[11px] bg-[#f2f2f2] dark:bg-[#262626] px-1 py-0.5 rounded text-[#171717] dark:text-[#ededed]">localStorage</code>) exclusively for essential user preferences:
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5">
+          <li>Saving your preferred visual color theme (Light mode or Dark mode).</li>
+          <li>Retaining your selected unit system (LBS vs. KG) during active calculation sessions.</li>
+        </ul>
+      </section>
+
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">4. Camera & Vision Scanner Permissions</h2>
+        <p>
+          When accessing the optional <strong>AI Canine Breed Scanner</strong>, your browser may request temporary camera permissions. This stream is executed strictly on the client viewport to calculate morphological dimensions. You can revoke camera permissions at any moment in your browser's site settings.
+        </p>
+      </section>
+
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">5. Contacting Our Privacy Team</h2>
+        <p>
+          If you have questions, feedback, or privacy inquiries regarding DogFoodPlanner.com, please contact our team directly via our <a href="/contact" class="text-[#0070f3] dark:text-[#3291ff] hover:underline font-medium">Contact Us page</a> or email <code class="font-mono text-xs text-[#171717] dark:text-[#ededed]">privacy@dogfoodplanner.com</code>.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
