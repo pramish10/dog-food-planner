@@ -4,59 +4,144 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
 }
 
 const {
-  title = "Dog Food Planner — Precision Canine Nutrition & Custom Meal Calculator",
-  description = "Veterinary-backed custom canine food planner. Calculate exact caloric needs (RER/MER), macronutrient balances, and custom fresh-cooked or raw BARF recipes tailored to your dog's breed, age, and health goals."
+  title = "Best Dog Food & Free Custom Meal Planner 2026 | DogFoodPlanner.com",
+  description = "Calculate the best dog food & tailored healthy dog food recipes for your puppy, adult, or senior dog. Compare fresh dog food, raw dog food, and top pet food brands with our 100% free veterinary calculator.",
+  canonicalUrl = "https://dogfoodplanner.com/",
+  ogImage = "https://dogfoodplanner.com/og-image.jpg"
 } = Astro.props;
+
+const keywords = [
+  "dog food",
+  "best dog food",
+  "pet food",
+  "fda pedigree dog food recall",
+  "blue buffalo dog food",
+  "ollie dog food",
+  "open farm dog food",
+  "science diet dog food",
+  "best dog food brands",
+  "chewy dog food",
+  "fresh dog food",
+  "dog food brands",
+  "best dog foods for sensitive stomach",
+  "puppy food",
+  "dog meal",
+  "easily digestible dog food",
+  "best brands of dog food for puppies",
+  "raw dog food",
+  "dog food delivery",
+  "best food puppies",
+  "dry puppy food",
+  "good dog food for sensitive stomach",
+  "dog food recipe",
+  "healthy dog food recipe"
+].join(", ");
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
     
-    <!-- Primary Meta Tags -->
+    <!-- Primary SEO Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content="dog food planner, dog food calculator, fresh dog food recipes, raw dog food BARF calculator, canine nutrition, veterinary meal plan, puppy feeding chart" />
-    <meta name="author" content="DogFoodPlanner.com" />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="DogFoodPlanner.com Nutrition Research Team" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dogfoodplanner.com/" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Dog Food Planner - Free Custom Dog Meal & Nutrition Calculator" />
+    <meta property="og:site_name" content="Dog Food Planner" />
+    <meta property="og:locale" content="en_US" />
 
-    <!-- Twitter -->
+    <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    <meta name="twitter:site" content="@dogfoodplanner" />
 
-    <!-- Fonts: Geist and Inter -->
+    <!-- Performance & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Structured Data Schema.org -->
+    <!-- Structured Data Schema.org (SoftwareApplication + Organization + FAQPage) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Dog Food Planner",
-        "url": "https://dogfoodplanner.com",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "All",
-        "description": "Veterinary canine nutrition calculator and custom whole-food meal planner for dogs.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://dogfoodplanner.com/#app",
+            "name": "Dog Food Planner",
+            "url": "https://dogfoodplanner.com",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "All Devices (Mobile, Tablet, Desktop)",
+            "description": "Free veterinary dog food calculator and custom canine recipe planner. Generates personalized fresh dog food, raw dog food, and puppy food meal recommendations without paid subscriptions.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0.00",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://dogfoodplanner.com/#organization",
+            "name": "Dog Food Planner",
+            "url": "https://dogfoodplanner.com",
+            "logo": "https://dogfoodplanner.com/logo.png",
+            "sameAs": [
+              "https://twitter.com/dogfoodplanner"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://dogfoodplanner.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the best dog food for dogs with sensitive stomachs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The best dog foods for sensitive stomach feature single novel protein sources (like lean turkey, salmon, or pasture-raised lamb) combined with soothing soluble fiber (such as organic pure pumpkin puree) and zero artificial binders, corn, wheat, or soy."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does fresh dog food compare to commercial dry kibble brands?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Fresh dog food contains 70-75% natural biological moisture and less than 4% carbohydrates, compared to commercial dry kibble which is extruded at high temperatures (300°F-400°F) and contains 45-60% starch and grain fillers."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is this dog food planner really 100% free with no paid subscription?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes! DogFoodPlanner.com provides completely free veterinary calculation tools, macro breakdowns, printable feeding cards, and custom dog food recipes with zero subscription fees, paywalls, or forced delivery sign-ups."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
