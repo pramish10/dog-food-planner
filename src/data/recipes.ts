@@ -10,9 +10,12 @@ export interface MealRecipe {
   id: string;
   name: string;
   dietType: 'fresh-cooked' | 'raw-barf' | 'superfood-topper';
-  primaryProtein: 'Turkey' | 'Beef' | 'Salmon' | 'Lamb' | 'Venison';
+  primaryProtein: 'Chicken' | 'Turkey' | 'Beef' | 'Salmon' | 'Lamb' | 'Venison';
   headline: string;
   description: string;
+  image: string;
+  imageAlt: string;
+  buyUrl: string;
   macroProfile: {
     proteinPct: number;
     fatPct: number;
@@ -30,12 +33,41 @@ export interface MealRecipe {
 export const RECIPES: MealRecipe[] = [
   // FRESH COOKED RECIPES
   {
+    id: 'fresh-chicken-everyday',
+    name: 'Gently Cooked Chicken, Rice & Pumpkin Bowl',
+    dietType: 'fresh-cooked',
+    primaryProtein: 'Chicken',
+    headline: 'A simple chicken meal for everyday feeding.',
+    description: 'Lean chicken, easy-to-digest rice, pumpkin, and green vegetables. Each ingredient is shown below with the amount to weigh for your dog.',
+    image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=900&q=85',
+    imageAlt: 'Fresh chicken and vegetables for a homemade dog meal',
+    buyUrl: 'https://www.amazon.com/s?k=lean+ground+chicken+pure+pumpkin+dog+food+supplement',
+    macroProfile: { proteinPct: 46, fatPct: 29, carbsPct: 5, moisturePct: 73, fiberPct: 3, caPhosphorusRatio: '1.2 : 1', kcalPerGram: 1.25 },
+    ingredients: [
+      { name: 'Lean ground chicken', category: 'Muscle Meat', percentage: 62, purpose: 'Main protein for strong muscles', allergens: ['chicken', 'poultry'] },
+      { name: 'Chicken hearts', category: 'Organ', percentage: 8, purpose: 'Adds flavour and natural nutrients', allergens: ['chicken', 'poultry'] },
+      { name: 'Cooked white rice', category: 'Vegetables & Greens', percentage: 12, purpose: 'Gentle energy for the day' },
+      { name: 'Plain pumpkin purée', category: 'Vegetables & Greens', percentage: 10, purpose: 'Gentle fibre for digestion' },
+      { name: 'Steamed zucchini', category: 'Vegetables & Greens', percentage: 4, purpose: 'Adds moisture and vegetables' },
+      { name: 'Dog-safe calcium and vitamin mix', category: 'Natural Supplements', percentage: 4, purpose: 'Helps make a homemade meal complete' }
+    ],
+    healthFocusMatches: ['Sensitive Digestion', 'General Health', 'Weight Management'],
+    preparationNotes: [
+      'Cook the chicken and hearts in a pan until there is no pink meat left.',
+      'Stir in the cooked rice, pumpkin, and finely chopped zucchini.',
+      'Let the food cool, then mix in the dog-safe calcium and vitamin mix. Weigh the daily total and split it between today’s meals.'
+    ]
+  },
+  {
     id: 'fresh-turkey-vitality',
     name: 'Gently Cooked Lean Turkey & Pumpkin Feast',
     dietType: 'fresh-cooked',
     primaryProtein: 'Turkey',
     headline: 'High-protein, easily digestible whole-food recipe ideal for sensitive stomachs & lean muscle maintenance.',
-    description: 'Slow-simmered 93% lean ground turkey paired with antioxidant-rich pumpkin puree, steamed baby spinach, and wild Alaskan salmon oil. Formulated to exceed AAFCO Dog Food Nutrient Profiles for Adult Maintenance.',
+    description: 'Lean turkey with pumpkin, spinach, zucchini, and salmon oil. Each ingredient is shown below with the amount to weigh for your dog.',
+    image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=900&q=85',
+    imageAlt: 'A bowl of freshly cooked dog food',
+    buyUrl: 'https://www.amazon.com/s?k=lean+ground+turkey+plain+pumpkin+puree+dog+food',
     macroProfile: {
       proteinPct: 48,
       fatPct: 32,
@@ -67,6 +99,9 @@ export const RECIPES: MealRecipe[] = [
     primaryProtein: 'Beef',
     headline: 'Robust nutrient-dense red meat recipe engineered for active working dogs and lean muscle growth.',
     description: 'High-energy recipe featuring 85% lean grass-fed beef, beef liver, steamed carrots, and blueberry antioxidant infusion. Naturally rich in zinc, iron, and cellular peptides.',
+    image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=85',
+    imageAlt: 'Cooked beef and vegetables',
+    buyUrl: 'https://www.amazon.com/s?k=lean+ground+beef+plain+pumpkin+puree+dog+food',
     macroProfile: {
       proteinPct: 52,
       fatPct: 36,
@@ -98,6 +133,9 @@ export const RECIPES: MealRecipe[] = [
     primaryProtein: 'Salmon',
     headline: 'Hypoallergenic, ultra-rich Omega-3 formula designed to soothe itchy skin and restore radiant coat shine.',
     description: 'Skin-soothing recipe packed with wild-caught Pacific salmon, Atlantic cod, steamed orange sweet potatoes, and organic turmeric root with black pepper extract.',
+    image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=85',
+    imageAlt: 'Fresh salmon with vegetables',
+    buyUrl: 'https://www.amazon.com/s?k=wild+salmon+sweet+potato+dog+food+ingredients',
     macroProfile: {
       proteinPct: 46,
       fatPct: 34,
@@ -130,6 +168,9 @@ export const RECIPES: MealRecipe[] = [
     primaryProtein: 'Beef',
     headline: 'Veterinary-balanced Biologically Appropriate Raw Food (BARF) formula mimicking natural canine ancestral ecology.',
     description: '70% pasture-raised muscle meat, 10% raw soft edible bone, 10% secreting organs (liver & spleen/kidney), and 10% living organic plant matter and fermented probiotics.',
+    image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=85',
+    imageAlt: 'Raw beef ingredients for a dog meal',
+    buyUrl: 'https://www.amazon.com/s?k=raw+dog+food+beef+complete',
     macroProfile: {
       proteinPct: 56,
       fatPct: 35,
@@ -161,6 +202,9 @@ export const RECIPES: MealRecipe[] = [
     primaryProtein: 'Lamb',
     headline: 'Hypoallergenic raw formula tailored for dogs with severe common poultry/beef sensitivities.',
     description: 'Pasture-grazed lamb muscle, lamb liver, edible lamb ribs, unbleached green tripe, and organic parsley antioxidant blend.',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85',
+    imageAlt: 'Fresh lamb ingredients',
+    buyUrl: 'https://www.amazon.com/s?k=raw+dog+food+lamb+complete',
     macroProfile: {
       proteinPct: 50,
       fatPct: 38,
@@ -192,6 +236,9 @@ export const RECIPES: MealRecipe[] = [
     primaryProtein: 'Salmon',
     headline: 'Budget-friendly 25%–50% nutritional upgrade that turns plain kibble into a functional longevity super-meal.',
     description: 'Concentrated slow-cooked collagen bone broth, Atlantic wild sardines, steamed pumpkin, and cold-pressed turmeric oil designed to be spooned over regular food.',
+    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85',
+    imageAlt: 'Pumpkin and fresh ingredients for a dog food topper',
+    buyUrl: 'https://www.amazon.com/s?k=plain+pumpkin+puree+sardines+in+water+dog+food',
     macroProfile: {
       proteinPct: 45,
       fatPct: 30,
