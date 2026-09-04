@@ -1,8 +1,13 @@
 ---
 import { RECIPES } from '../data/recipes';
+import { getLangFromUrl } from '../i18n/utils';
+import { PLANNER_TRANSLATIONS } from '../i18n/planner';
+
+const lang = getLangFromUrl(Astro.url);
+const p = PLANNER_TRANSLATIONS[lang] || PLANNER_TRANSLATIONS.en;
 ---
 
-<section id="results-section" class="py-12 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626] transition-all hidden">
+<section id="results-section" class="py-12 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626] transition-all hidden" data-lang={lang}>
   <div class="max-w-5xl mx-auto px-3.5 sm:px-6">
     
     <!-- Results Header -->
@@ -10,13 +15,13 @@ import { RECIPES } from '../data/recipes';
       <div>
         <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full mb-2">
           <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
-          YOUR FEEDING PLAN IS READY
+          {p.readyBadge}
         </div>
         <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight">
-          Meal plan for <span id="res-dog-name" class="text-[#0070f3] dark:text-[#3291ff]">Lucy</span>
+          {p.mealPlanFor} <span id="res-dog-name" class="text-[#0070f3] dark:text-[#3291ff]">Lucy</span>
         </h2>
         <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] mt-1" id="res-dog-subtitle">
-          A simple guide to what and how much to feed today
+          {p.planSubtitle}
         </p>
       </div>
 
@@ -29,7 +34,7 @@ import { RECIPES } from '../data/recipes';
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.75A2.25 2.25 0 0014.25 1.5h-4.5A2.25 2.25 0 007.5 3.75v3.456"/>
           </svg>
-          Print Meal Card
+          {p.printBtn}
         </button>
       </div>
     </div>
@@ -38,8 +43,8 @@ import { RECIPES } from '../data/recipes';
     <div class="mb-8 p-3.5 sm:p-4 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-start gap-3 text-xs text-[#4d4d4d] dark:text-[#cccccc] leading-relaxed">
       <span class="text-base sm:text-lg shrink-0 mt-0.5">🐾</span>
       <div>
-        <strong class="font-semibold text-amber-900 dark:text-amber-300">For General & Educational Guidance Only:</strong>
-        <span> This meal plan provides general nutritional estimates based on NRC veterinary guidelines. Dog Food Planner is not a diagnostic tool and is not a substitute for professional veterinary medical advice, diagnosis, or clinical prescription diets. Always consult your licensed veterinarian before making major changes to your dog's diet, especially for dogs with diagnosed health conditions.</span>
+        <strong class="font-semibold text-amber-900 dark:text-amber-300">{p.resultsDisclaimerTitle}</strong>
+        <span> {p.resultsDisclaimerText}</span>
       </div>
     </div>
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 mb-8 sm:mb-10">
@@ -47,56 +52,56 @@ import { RECIPES } from '../data/recipes';
       <!-- Card 1: Daily food energy -->
       <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414]">
         <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono mb-1 sm:mb-2 uppercase">
-          <span>Food energy today</span>
-          <span class="text-[#0070f3] dark:text-[#3291ff]">Guide</span>
+          <span>{p.cardEnergyTitle}</span>
+          <span class="text-[#0070f3] dark:text-[#3291ff]">{p.cardEnergyGuide}</span>
         </div>
         <div class="text-xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] font-mono tracking-tight" id="res-mer-calories">
           984 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">kcal</span>
         </div>
         <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-mono">
-          Starting guide: <span id="res-rer-base">615</span> kcal
+          {p.cardEnergyBase} <span id="res-rer-base">615</span> kcal
         </div>
       </div>
 
       <!-- Card 2: Total Daily Weight -->
       <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414]">
         <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono mb-1 sm:mb-2 uppercase">
-          <span>Daily Portion</span>
-          <span class="text-[#10b981]">Total</span>
+          <span>{p.cardPortionTitle}</span>
+          <span class="text-[#10b981]">{p.cardPortionTotal}</span>
         </div>
         <div class="text-xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] font-mono tracking-tight" id="res-daily-grams">
-          728 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">grams</span>
+          728 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">{p.cardPortionGrams}</span>
         </div>
         <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-mono">
-          ≈ <span id="res-daily-cups">3.2</span> measuring cups
+          ≈ <span id="res-daily-cups">3.2</span> {p.cardPortionCups}
         </div>
       </div>
 
       <!-- Card 3: Per Meal Split -->
       <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414]">
         <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono mb-1 sm:mb-2 uppercase">
-          <span>Per Main Bowl</span>
-          <span class="text-[#7928ca] dark:text-[#a35cf0]" id="res-meals-count">2x Daily</span>
+          <span>{p.cardPerMealTitle}</span>
+          <span class="text-[#7928ca] dark:text-[#a35cf0]" id="res-meals-count">{p.cardPerMealTimes}</span>
         </div>
         <div class="text-xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] font-mono tracking-tight" id="res-per-meal-grams">
-          364 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">g/bowl</span>
+          364 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">{p.cardPerMealBowl}</span>
         </div>
         <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-mono">
-          Morning & Evening
+          {p.cardPerMealSched}
         </div>
       </div>
 
       <!-- Card 4: Treat & Snack Allowance -->
       <div class="p-3.5 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414]">
         <div class="flex items-center justify-between text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono mb-1 sm:mb-2 uppercase">
-          <span>Treat Budget</span>
+          <span>{p.cardTreatTitle}</span>
           <span class="text-[#f5a623] font-semibold" id="res-treat-pct">10%</span>
         </div>
         <div class="text-xl sm:text-3xl font-bold text-[#f5a623] font-mono tracking-tight" id="res-treat-kcal">
-          98 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">kcal/day</span>
+          98 <span class="text-[10px] sm:text-xs font-normal text-[#8f8f8f] dark:text-[#737373]">{p.cardTreatKcalDay}</span>
         </div>
         <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-mono">
-          Healthy Treats/Berries
+          {p.cardTreatAllowance}
         </div>
       </div>
 
@@ -110,21 +115,21 @@ import { RECIPES } from '../data/recipes';
           data-diet="fresh-cooked" 
           class="diet-tab-btn active px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md bg-white dark:bg-[#262626] text-[#171717] dark:text-white shadow-xs transition-all touch-manipulation cursor-pointer"
         >
-          🍲 Gently Cooked Feast
+          🍲 {p.dietFresh}
         </button>
         <button 
           type="button" 
           data-diet="raw-barf" 
           class="diet-tab-btn px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md text-[#8f8f8f] dark:text-[#737373] hover:text-[#171717] dark:hover:text-white transition-all touch-manipulation cursor-pointer"
         >
-          🥩 Ancestral Raw BARF
+          🥩 {p.dietRaw}
         </button>
         <button 
           type="button" 
           data-diet="superfood-topper" 
           class="diet-tab-btn px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-semibold rounded-md text-[#8f8f8f] dark:text-[#737373] hover:text-[#171717] dark:hover:text-white transition-all touch-manipulation cursor-pointer"
         >
-          🥣 50% Superfood Topper
+          🥣 {p.dietTopper}
         </button>
       </div>
     </div>
@@ -134,15 +139,12 @@ import { RECIPES } from '../data/recipes';
       <div class="flex items-center justify-between mb-4 pb-3 border-b border-[#ebebeb] dark:border-[#262626]">
         <div>
           <span class="font-mono text-[10px] sm:text-xs font-bold text-[#0070f3] dark:text-[#3291ff] uppercase tracking-wider">
-            TODAY'S MEAL SCHEDULE
+            {p.todayRecipePrefix}
           </span>
           <h3 class="text-lg sm:text-xl font-semibold text-[#171717] dark:text-[#ededed] mt-0.5">
-            Exactly what goes in each bowl for <span class="res-dog-name-inline">Lucy</span>
+            {p.bowlSectionTitle} <span class="res-dog-name-inline">Lucy</span>
           </h3>
         </div>
-        <span class="font-mono text-[10px] text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] px-2 py-1 rounded">
-          Exact portions
-        </span>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="timed-schedule-container">
@@ -159,10 +161,7 @@ import { RECIPES } from '../data/recipes';
         <div class="hairline-card p-4 sm:p-8 bg-white dark:bg-[#141414]">
           <div class="flex items-center justify-between mb-2.5 sm:mb-3">
             <span class="font-mono text-[10px] sm:text-xs text-[#0070f3] dark:text-[#3291ff] font-semibold uppercase tracking-wider" id="recipe-diet-tag">
-              TODAY'S RECIPE
-            </span>
-            <span class="font-mono text-[10px] sm:text-xs text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded">
-              Personalized estimate
+              {p.todayRecipePrefix}
             </span>
           </div>
 
@@ -177,7 +176,7 @@ import { RECIPES } from '../data/recipes';
           <!-- Ingredients Grams Table -->
           <div class="mb-5 sm:mb-6">
             <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
-              What to weigh for the whole day
+              {p.ingredientsHeader}
             </h4>
             <div class="divide-y divide-[#ebebeb] dark:divide-[#262626] border border-[#ebebeb] dark:border-[#262626] rounded-lg overflow-hidden" id="ingredient-rows-container">
               <!-- Dynamically populated via JS -->
@@ -187,7 +186,7 @@ import { RECIPES } from '../data/recipes';
           <!-- Step-by-Step Preparation Guide -->
           <div>
             <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
-              Easy preparation steps
+              {p.prepStepsHeader}
             </h4>
             <ol class="space-y-2 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]" id="prep-steps-container">
               <!-- Populated via JS -->
@@ -205,9 +204,8 @@ import { RECIPES } from '../data/recipes';
         <div class="hairline-card p-4 sm:p-6 bg-white dark:bg-[#141414]">
           <div class="flex items-center justify-between mb-3 sm:mb-4">
             <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
-              What this meal includes
+              Macronutrient Target
             </h4>
-            <span class="font-mono text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">At a glance</span>
           </div>
 
           <div class="space-y-3 sm:space-y-4 mb-5 sm:mb-6">
@@ -251,18 +249,25 @@ import { RECIPES } from '../data/recipes';
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="p-3 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-lg border border-[#ebebeb] dark:border-[#2e2e2e] text-[10px] sm:text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] space-y-1">
-            <p>These figures are a quick overview, not extra steps. Follow the weighed ingredient list and preparation steps on the left.</p>
-          </div>
+        <!-- 7-Day Transition Card -->
+        <div class="hairline-card p-4 sm:p-6 bg-white dark:bg-[#141414] space-y-3">
+          <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
+            {p.transitionHeader}
+          </h4>
+          <ul class="space-y-1.5 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
+            <li class="flex items-center gap-2"><span>🟢</span> {p.transitionP1}</li>
+            <li class="flex items-center gap-2"><span>🟡</span> {p.transitionP2}</li>
+            <li class="flex items-center gap-2"><span>🟠</span> {p.transitionP3}</li>
+            <li class="flex items-center gap-2"><span>⭐</span> {p.transitionP4}</li>
+          </ul>
         </div>
 
         <!-- Recipe selection summary -->
         <div class="hairline-card p-4 sm:p-6 bg-gradient-to-b from-white to-[#fafafa] dark:from-[#141414] dark:to-[#171717]">
           <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-3">Why this recipe</h4>
           <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed" id="recipe-selection-summary">This recipe is selected from your feeding style, protein preference, health focus, and stated sensitivities.</p>
-          <div class="mt-4 pt-4 border-t border-[#ebebeb] dark:border-[#262626] text-[10px] leading-relaxed text-[#8f8f8f] dark:text-[#737373]" id="recipe-method-summary">This plan provides general educational guidance for healthy dogs. Dog Food Planner is not a diagnostic tool and does not replace professional veterinary care. Always consult your vet before feeding homemade recipes long-term.</div>
-          <p class="mt-2 text-[10px] leading-relaxed text-[#8f8f8f] dark:text-[#737373]">Evidence basis: <a href="https://www.merckvetmanual.com/management-and-nutrition/nutrition-small-animals/nutritional-requirements-of-small-animals" target="_blank" rel="noopener noreferrer" class="text-[#0070f3] dark:text-[#3291ff] hover:underline">Merck Veterinary Manual energy guidance</a> and <a href="https://wsava.org/wp-content/uploads/2021/04/Selecting-a-pet-food-for-your-pet-updated-2021_WSAVA-Global-Nutrition-Toolkit.pdf" target="_blank" rel="noopener noreferrer" class="text-[#0070f3] dark:text-[#3291ff] hover:underline">WSAVA complete-and-balanced diet guidance</a>.</p>
         </div>
 
       </div>

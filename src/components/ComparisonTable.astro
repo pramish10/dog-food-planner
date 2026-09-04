@@ -1,4 +1,9 @@
 ---
+import { getLangFromUrl } from '../i18n/utils';
+import { getPageTranslations } from '../i18n/pages';
+
+const lang = getLangFromUrl(Astro.url);
+const ct = getPageTranslations(lang).comparisonTable;
 ---
 
 <section id="science-section" class="py-12 sm:py-20 bg-[#fafafa] dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
@@ -7,19 +12,19 @@
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
       <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
-        <span class="text-[#7928ca] dark:text-[#a855f7]">04</span> // CLINICAL COMPARISON
+        <span class="text-[#7928ca] dark:text-[#a855f7]">{ct.eyebrow.split('//')[0]?.trim() || '04'}</span> // {ct.eyebrow.split('//')[1]?.trim() || 'CLINICAL COMPARISON'}
       </div>
       <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2 sm:mb-3">
-        Why Biological Whole Food Trumps Kibble
+        {ct.title}
       </h2>
       <p class="text-xs sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
-        A side-by-side analysis of biological bioavailability, processing temperatures, and financial transparency.
+        {ct.subtitle}
       </p>
     </div>
 
     <!-- Mobile Scroll Hint -->
     <div class="flex items-center justify-end md:hidden mb-2 text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373]">
-      <span>↔ Scroll table horizontally</span>
+      <span>{ct.scrollHint}</span>
     </div>
 
     <!-- Comparison Table Card (Touch friendly scroll container) -->
@@ -27,89 +32,31 @@
       <table class="w-full text-left border-collapse text-[11px] sm:text-xs min-w-[580px]">
         <thead>
           <tr class="border-b border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a]">
-            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#8f8f8f] dark:text-[#737373] font-semibold w-1/4">Nutritional Metric</th>
+            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#8f8f8f] dark:text-[#737373] font-semibold w-1/4">{ct.colMetric}</th>
             <th class="p-3.5 sm:p-5 font-mono uppercase text-[#10b981] font-bold bg-[#10b981]/5 dark:bg-[#10b981]/10 w-1/4">
-              ✨ DogFoodPlanner
+              {ct.colDfp}
             </th>
-            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#8f8f8f] dark:text-[#737373] font-semibold w-1/4">Subscriptions</th>
-            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#ee0000] dark:text-[#f87171] font-semibold w-1/4">Dry Kibble</th>
+            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#8f8f8f] dark:text-[#737373] font-semibold w-1/4">{ct.colSubs}</th>
+            <th class="p-3.5 sm:p-5 font-mono uppercase text-[#ee0000] dark:text-[#f87171] font-semibold w-1/4">{ct.colKibble}</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
-          <tr class="hover:bg-[#fafafa]/80 dark:hover:bg-[#1a1a1a] transition-colors">
-            <td class="p-3.5 sm:p-5 font-medium text-[#171717] dark:text-[#ededed]">
-              Processing Method
-            </td>
-            <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5 dark:bg-[#10b981]/10">
-              Gently Cooked (160°F) or Raw Enzymes
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#4d4d4d] dark:text-[#a1a1a1]">
-              Flash-Frozen Cooked
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#ee0000] dark:text-[#f87171]">
-              High-Heat Extrusion (400°F)
-            </td>
-          </tr>
-
-          <tr class="hover:bg-[#fafafa]/80 dark:hover:bg-[#1a1a1a] transition-colors">
-            <td class="p-3.5 sm:p-5 font-medium text-[#171717] dark:text-[#ededed]">
-              Net Carbohydrates
-            </td>
-            <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5 dark:bg-[#10b981]/10">
-              &lt; 3.5% (Vegetables only)
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#4d4d4d] dark:text-[#a1a1a1]">
-              10% – 15%
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#ee0000] dark:text-[#f87171]">
-              45% – 60% (Starch fillers)
-            </td>
-          </tr>
-
-          <tr class="hover:bg-[#fafafa]/80 dark:hover:bg-[#1a1a1a] transition-colors">
-            <td class="p-3.5 sm:p-5 font-medium text-[#171717] dark:text-[#ededed]">
-              Biological Moisture
-            </td>
-            <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5 dark:bg-[#10b981]/10">
-              70% – 75% (Essential renal hydration)
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#4d4d4d] dark:text-[#a1a1a1]">
-              70% – 75%
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#ee0000] dark:text-[#f87171]">
-              8% – 10% (Sub-clinical dehydration)
-            </td>
-          </tr>
-
-          <tr class="hover:bg-[#fafafa]/80 dark:hover:bg-[#1a1a1a] transition-colors">
-            <td class="p-3.5 sm:p-5 font-medium text-[#171717] dark:text-[#ededed]">
-              Plan Freedom
-            </td>
-            <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5 dark:bg-[#10b981]/10">
-              100% Free Recipe & Prep Control
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#4d4d4d] dark:text-[#a1a1a1]">
-              Locked to monthly billing
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#4d4d4d] dark:text-[#a1a1a1]">
-              Pet store bag sizes
-            </td>
-          </tr>
-
-          <tr class="hover:bg-[#fafafa]/80 dark:hover:bg-[#1a1a1a] transition-colors">
-            <td class="p-3.5 sm:p-5 font-medium text-[#171717] dark:text-[#ededed]">
-              Monthly Cost (45 lb dog)
-            </td>
-            <td class="p-3.5 sm:p-5 font-bold text-[#171717] dark:text-[#ededed] bg-[#10b981]/5 dark:bg-[#10b981]/10 font-mono">
-              ~$130 - $160 / mo (Save 55%)
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#4d4d4d] dark:text-[#a1a1a1] font-mono">
-              $290 - $380 / mo
-            </td>
-            <td class="p-3.5 sm:p-5 text-[#4d4d4d] dark:text-[#a1a1a1] font-mono">
-              $65 - $95 / mo (+ vet bills)
-            </td>
-          </tr>
+          {ct.rows.map(row => (
+            <tr class="hover:bg-[#fafafa]/80 dark:hover:bg-[#1a1a1a] transition-colors">
+              <td class="p-3.5 sm:p-5 font-medium text-[#171717] dark:text-[#ededed]">
+                {row.metric}
+              </td>
+              <td class="p-3.5 sm:p-5 font-semibold text-[#10b981] bg-[#10b981]/5 dark:bg-[#10b981]/10">
+                {row.dfp}
+              </td>
+              <td class="p-3.5 sm:p-5 text-[#4d4d4d] dark:text-[#a1a1a1]">
+                {row.subs}
+              </td>
+              <td class="p-3.5 sm:p-5 text-[#ee0000] dark:text-[#f87171]">
+                {row.kibble}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
