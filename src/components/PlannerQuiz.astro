@@ -2,10 +2,10 @@
 import { CANINE_BREEDS } from '../data/breeds';
 import { RECIPES } from '../data/recipes';
 import { getLangFromUrl } from '../i18n/utils';
-import { PLANNER_TRANSLATIONS } from '../i18n/planner';
+import { plannerTranslations } from '../i18n/planner';
 
 const lang = getLangFromUrl(Astro.url);
-const p = PLANNER_TRANSLATIONS[lang] || PLANNER_TRANSLATIONS.en;
+const p = plannerTranslations[lang] || plannerTranslations.en;
 ---
 
 <section id="planner-section" class="py-12 sm:py-20 bg-[#fafafa] dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]" data-lang={lang}>

@@ -116,9 +116,9 @@ const articleJsonLd = {
           {faq.question}
         </h1>
         <div class="flex items-center gap-3 text-xs text-[#8f8f8f] dark:text-[#737373] font-mono border-b border-[#ebebeb] dark:border-[#262626] pb-4">
-          <span>Reviewed by: <strong>Veterinary Canine Nutritionist</strong></span>
+          <span>{p.reviewedBy}</span>
           <span>•</span>
-          <span>Updated: {new Date().getFullYear()}</span>
+          <span>{p.updated}</span>
         </div>
       </header>
 
@@ -130,7 +130,7 @@ const articleJsonLd = {
           </div>
           <div>
             <h2 class="text-xs font-mono uppercase font-bold text-[#171717] dark:text-[#ededed] mb-1">
-              Direct Quick Answer
+              {p.directQuickAnswer}
             </h2>
             <p class="text-sm sm:text-base text-[#171717] dark:text-[#ededed] leading-relaxed font-medium">
               {faq.shortAnswer}
@@ -142,13 +142,13 @@ const articleJsonLd = {
       <!-- In-Depth Clinical Explanation -->
       <article class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] mb-10 prose prose-neutral dark:prose-invert max-w-none text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed space-y-4">
         <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] border-b border-[#ebebeb] dark:border-[#262626] pb-3 mb-4">
-          Detailed Nutritional & Clinical Analysis
+          {p.clinicalAnalysis}
         </h2>
         <div class="space-y-4" set:html={faq.fullAnswerHtml} />
 
         <!-- Tags / Topics -->
         <div class="pt-6 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center gap-1.5 not-prose">
-          <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mr-1">Topics:</span>
+          <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mr-1">{p.topics}</span>
           {faq.tags.map(tag => (
             <span class="px-2 py-0.5 text-[11px] font-mono bg-[#fafafa] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-md">
               #{tag}
@@ -161,20 +161,20 @@ const articleJsonLd = {
       <div class="p-6 sm:p-8 bg-gradient-to-br from-[#171717] to-[#333333] border border-[#2e2e2e] text-white rounded-2xl mb-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
         <div class="space-y-2 text-center sm:text-left">
           <div class="inline-flex items-center gap-1 text-[11px] font-mono text-[#10b981] uppercase tracking-wider font-semibold">
-            <span>🐾</span> Free Canine Nutrition Engine
+            {p.ctaBadge}
           </div>
           <h3 class="text-lg sm:text-xl font-bold text-white">
-            Calculate Exact Daily Calories & Meal Portions For Your Dog
+            {p.ctaTitle}
           </h3>
           <p class="text-xs text-white/80 max-w-lg">
-            Use our free veterinary calculator to determine your dog's exact metabolic burn (RER/MER) and get custom fresh or raw food recipe grams.
+            {p.ctaSubtitle}
           </p>
         </div>
         <a 
           href={translatePath('/feeding-calculator')} 
           class="shrink-0 px-6 py-3 bg-white text-[#171717] hover:bg-[#f2f2f2] text-xs font-bold rounded-full transition-all shadow-md active:scale-95"
         >
-          Calculate Portions Now →
+          {p.ctaBtn}
         </a>
       </div>
 
@@ -182,7 +182,7 @@ const articleJsonLd = {
       {finalRelated.length > 0 && (
         <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-10">
           <h3 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
-            Related Canine Nutrition Questions
+            {p.relatedTitle}
           </h3>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {finalRelated.map(related => (
@@ -199,7 +199,7 @@ const articleJsonLd = {
                   </h4>
                 </div>
                 <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] group-hover:text-[#171717] dark:group-hover:text-white transition-colors mt-2">
-                  Read Answer →
+                  {p.readAnswer}
                 </span>
               </a>
             ))}

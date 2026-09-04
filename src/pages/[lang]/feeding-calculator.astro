@@ -8,6 +8,7 @@ import FaqSection from '../../components/FaqSection.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../i18n/utils';
 import { ui, type Lang } from '../../i18n/ui';
+import { getPageTranslations } from '../../i18n/pages';
 
 export function getStaticPaths() {
   return getLangStaticPaths();
@@ -17,6 +18,7 @@ const { lang } = Astro.params as { lang: Lang };
 const currentStrings = ui[lang] || ui.en;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+const p = getPageTranslations(lang).calculator;
 ---
 
 <Layout 
@@ -38,13 +40,13 @@ const translatePath = useTranslatedPath(lang);
     <section class="py-10 sm:py-14 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
-          <span class="text-[#10b981]">100% FREE</span> // CANINE NUTRITION GUIDELINES
+          {p.eyebrow}
         </div>
 
         <!-- Educational Notice Banner -->
         <div class="max-w-xl mx-auto mb-4 px-3.5 py-1.5 rounded-full bg-blue-50/70 dark:bg-[#0070f3]/10 border border-blue-200/60 dark:border-[#0070f3]/30 text-[11px] text-[#0070f3] dark:text-[#3291ff] flex items-center justify-center gap-1.5">
-          <span class="font-bold">Notice:</span>
-          <span>For general & educational guidance only. Not a diagnostic tool or medical substitute.</span>
+          <span class="font-bold">{p.noticeTitle}</span>
+          <span>{p.noticeText}</span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
@@ -66,10 +68,10 @@ const translatePath = useTranslatedPath(lang);
     <section class="py-14 sm:py-16 bg-white dark:bg-[#0d0d0d] border-y border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
         <h2 class="text-2xl font-bold text-[#171717] dark:text-[#ededed]">
-          How Our Veterinary Feeding Math Works
+          {p.heroTitle}
         </h2>
         <p>
-          Unlike pet food manufacturers who print generalized cup charts on dry kibble bags (often overestimating calories by 20-30% to drive repeat sales), Dog Food Planner uses the gold standard <strong>National Research Council (NRC) and AAFCO metabolic formulas</strong>.
+          {p.heroSubtitle}
         </p>
         <div class="p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] font-mono text-xs">
           RER (Resting Energy Requirement) = 70 × (Body Weight in kg)<sup>0.75</sup>
@@ -79,9 +81,7 @@ const translatePath = useTranslatedPath(lang);
 
     <!-- FAQs Section -->
     <FaqSection 
-      title="Feeding Math & Portion FAQs"
-      subtitle="Frequently asked questions about dog feeding portions, cup measurements, and weight control."
-      category="General Feeding"
+      category="Feeding Math & Portions"
       limit={6}
     />
 

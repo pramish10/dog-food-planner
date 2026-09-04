@@ -1,0 +1,11 @@
+---
+import { getPageTranslations } from '../i18n/pages';
+import { getLangFromUrl } from '../i18n/utils';
+const { kind } = Astro.props as { kind: 'privacy' | 'terms' };
+const p = getPageTranslations(getLangFromUrl(Astro.url))[kind];
+---
+<div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-6 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+  <p class="font-mono text-[#8f8f8f]">{p.lastUpdated}</p>
+  <p>{p.intro}</p>
+  {p.sections.map((section) => <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{section.title}</h2><p>{section.content}</p></section>)}
+</div>

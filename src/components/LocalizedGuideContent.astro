@@ -1,0 +1,42 @@
+---
+import FaqSection from './FaqSection.astro';
+import ComparisonTable from './ComparisonTable.astro';
+import { getPageTranslations } from '../i18n/pages';
+import { getLangFromUrl } from '../i18n/utils';
+
+const { kind } = Astro.props as { kind: 'bestFood' | 'recipes' | 'toxic' | 'brands' | 'allergies' };
+const p = getPageTranslations(getLangFromUrl(Astro.url))[kind] as any;
+const faqs = {
+  bestFood: 'Diet & Nutrition', recipes: 'Diet & Nutrition', toxic: 'Ingredients & Safety', brands: 'Brand Reviews & Safety', allergies: 'Health & Allergies',
+}[kind];
+---
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+  {kind === 'bestFood' && <>
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{p.rankingsTitle}</h2>
+      <p>{p.rankingsIntro}</p>
+      <div class="space-y-3">{p.rankings.map((item: any) => <article class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]"><div class="flex justify-between gap-3"><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.rank}. {item.title}</h3><span class="font-mono text-[#0070f3]">{item.score}</span></div><p class="mt-2">{item.pros}</p><p class="mt-1 text-[#8f8f8f]">{item.cons}</p></article>)}</div>
+    </section>
+    <ComparisonTable />
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.buyerGuideTitle}</h2>{p.buyerRules.map((item: any) => <div><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.title}</h3><p>{item.desc}</p></div>)}</section>
+  </>}
+
+  {kind === 'recipes' && <>
+    <aside class="p-6 bg-[#fffbeb] dark:bg-[#291f05] border border-[#fef08a] dark:border-[#854d0e] rounded-2xl"><h2 class="font-bold text-amber-800 dark:text-amber-300">⚠️ {p.calciumWarningTitle}</h2><p class="mt-2 text-amber-900 dark:text-amber-200">{p.calciumWarningDesc}</p></aside>
+    {p.recipesList.map((recipe: any) => <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4"><span class="font-mono text-xs text-[#7928ca]">{recipe.tag}</span><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{recipe.title}</h2><p>{recipe.desc}</p><ul class="list-disc pl-5 space-y-1">{recipe.ingredients.map((ingredient: string) => <li>{ingredient}</li>)}</ul><p>{recipe.prep}</p></section>)}
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.calciumGuideTitle}</h2>{p.calciumGuideItems.map((item: any) => <div><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.title} — {item.ratio}</h3><p>{item.desc}</p></div>)}</section>
+  </>}
+
+  {kind === 'toxic' && <>
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4"><h2 class="text-xl font-bold text-[#e11d48] dark:text-[#f43f5e]">☠️ {p.dangerTitle}</h2><p>{p.dangerIntro}</p><div class="grid sm:grid-cols-2 gap-3">{p.dangerList.map((item: any) => <article class="p-4 bg-red-50/50 dark:bg-red-950/30 rounded-xl"><h3 class="font-bold text-red-900 dark:text-red-200">{item.name}</h3><p>{item.toxin}</p><p>{item.symptoms}</p><strong>{item.risk}</strong></article>)}</div></section>
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.emergencyTitle}</h2><ol class="list-decimal pl-5 mt-3 space-y-2">{p.emergencySteps.map((item: string) => <li>{item}</li>)}</ol></section>
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.safeTitle}</h2><p class="mt-2">{p.safeIntro}</p><div class="grid sm:grid-cols-2 gap-3 mt-4">{p.safeFoods.map((item: any) => <div><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.name}</h3><p>{item.benefit}</p></div>)}</div></section>
+  </>}
+
+  {kind === 'brands' && <><section class="space-y-4">{p.brandsList.map((brand: any) => <article class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]"><div class="flex justify-between gap-3"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{brand.name}</h2><span class="font-mono text-[#0070f3]">{brand.grade}</span></div><p class="mt-3">{brand.pros}</p><p class="mt-2">{brand.cons}</p><p class="mt-2 font-medium">{brand.verdict}</p></article>)}</section><section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.recallsTitle}</h2><p class="mt-2">{p.recallsDesc}</p></section><section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.methodTitle}</h2>{p.methodPillars.map((item: any) => <div class="mt-3"><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.title}</h3><p>{item.desc}</p></div>)}</section></>}
+
+  {kind === 'allergies' && <><section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.allergensTitle}</h2><p class="mt-2">{p.allergensIntro}</p>{p.allergensList.map((item: any) => <div class="mt-3"><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.name}</h3><p>{item.desc}</p></div>)}</section><section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.eliminationTitle}</h2>{p.eliminationSteps.map((item: any) => <div class="mt-4"><span class="font-mono text-[#0070f3]">{item.step}</span><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.title}</h3><p>{item.desc}</p></div>)}</section><section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.novelTitle}</h2>{p.novelProteins.map((item: any) => <div class="mt-3"><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.name}</h3><p>{item.desc}</p></div>)}</section></>}
+
+  <FaqSection category={faqs} limit={6} viewAllLink={true} />
+</div>

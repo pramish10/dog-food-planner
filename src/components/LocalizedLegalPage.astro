@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from './Navbar.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import Footer from './Footer.astro';
+import LocalizedLegalContent from './LocalizedLegalContent.astro';
+import { useTranslations, useTranslatedPath } from '../i18n/utils';
+import { ui, type Lang } from '../i18n/ui';
+import { getPageTranslations } from '../i18n/pages';
+const { lang, kind, titleKey, navKey } = Astro.props as { lang: Lang; kind: 'privacy' | 'terms'; titleKey: keyof typeof ui.en; navKey: keyof typeof ui.en };
+const strings = ui[lang] || ui.en; const t = useTranslations(lang); const path = useTranslatedPath(lang); const page = getPageTranslations(lang)[kind]; const descriptionKey = titleKey.replace('.title', '.desc') as keyof typeof ui.en;
+---
+<Layout lang={lang} title={strings[titleKey]} description={strings[descriptionKey]}><Navbar /><main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]"><Breadcrumbs items={[{ name: t('nav.brand'), url: path('/') }, { name: t(navKey) }]} /><section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]"><div class="max-w-4xl mx-auto px-4 sm:px-6 text-center"><div class="inline-flex font-mono text-xs uppercase font-medium px-3 py-1 rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] mb-3">{page.eyebrow}</div><h1 class="text-3xl sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed]">{strings[titleKey]}</h1></div></section><LocalizedLegalContent kind={kind} /></main><Footer /></Layout>
