@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../i18n/utils';
 import { ui, type Lang } from '../../i18n/ui';
+import { getPageTranslations } from '../../i18n/pages';
 
 export function getStaticPaths() {
   return getLangStaticPaths();
@@ -14,6 +15,7 @@ const { lang } = Astro.params as { lang: Lang };
 const currentStrings = ui[lang] || ui.en;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+const p = getPageTranslations(lang).about;
 ---
 
 <Layout 
@@ -35,7 +37,7 @@ const translatePath = useTranslatedPath(lang);
     <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
-          <span class="text-[#0070f3]">OUR MISSION</span> // CLINICAL CANINE NUTRITION
+          {p.missionBadge}
         </div>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
           {currentStrings['about.title']}
@@ -52,60 +54,44 @@ const translatePath = useTranslatedPath(lang);
       <!-- Mission Pillars Card -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
         <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
-          Why DogFoodPlanner Was Created
+          {p.whyTitle}
         </h2>
         <p>
-          For decades, the commercial pet food market has operated as a black box. Commercial dry kibble formulas regularly undergo ultra-high heat extrusion (exceeding 400°F), stripping out natural vitamins, oxidising essential omega fatty acids, and padding bag weight with up to 60% high-glycemic starches.
+          {p.whyP1}
         </p>
         <p>
-          Meanwhile, fresh-food subscription startups charge upwards of $300 to $450 per month for basic lean meats and vegetables. <strong>DogFoodPlanner bridges this gap.</strong> We provide the exact mathematical algorithms used by clinical canine nutritionists so dog parents can prepare balanced fresh meals, raw BARF ratios, or superfood toppers cost-effectively at home.
+          {p.whyP2}
         </p>
       </section>
 
       <!-- Methodology Card -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-6">
         <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
-          Our Nutritional Methodology
+          {p.methodTitle}
         </h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-1.5">
-            <div class="font-mono text-xs font-bold text-[#0070f3] dark:text-[#3291ff]">01 // NRC FORMULAS</div>
-            <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Resting Metabolic Math</h3>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
-              Calculates exact Resting Energy Requirement (RER) based on exponential body mass (<code class="font-mono text-[10px]">70 × (kg)^0.75</code>) instead of rough weight-range averages.
-            </p>
-          </div>
-
-          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-1.5">
-            <div class="font-mono text-xs font-bold text-[#7928ca] dark:text-[#a35cf0]">02 // AAFCO STANDARDS</div>
-            <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Bioavailable Micronutrients</h3>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
-              Every formulation balances calcium-to-phosphorus ratios (1.2:1 to 1.4:1), EPA/DHA ratios, and essential taurine pathways.
-            </p>
-          </div>
-
-          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-1.5">
-            <div class="font-mono text-xs font-bold text-[#10b981]">03 // ZERO PAYWALLS</div>
-            <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Open & Independent</h3>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
-              We do not accept sponsored brand placements or conceal recipe grams behind forced credit card subscriptions.
-            </p>
-          </div>
+          {p.pillars.map((pillar, index) => (
+            <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-1.5">
+              <div class="font-mono text-xs font-bold text-[#0070f3] dark:text-[#3291ff]">{pillar.tag}</div>
+              <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">{pillar.title}</h3>
+              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">{pillar.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       <!-- Clinical Disclaimer & Commitment -->
       <div class="p-6 sm:p-8 bg-[#171717] dark:bg-[#1a1a1a] text-white rounded-2xl text-center space-y-4">
         <h3 class="text-xl font-bold text-white dark:text-[#ededed]">
-          Ready to Calculate Your Dog's Nutritional Needs?
+          {p.ctaTitle}
         </h3>
         <p class="text-xs sm:text-sm text-white/80 dark:text-[#a1a1a1] max-w-xl mx-auto">
-          Try our interactive calculator, explore our canine allergy guides, and view our veterinary food reviews.
+          {p.ctaDesc}
         </p>
         <div>
           <a href={translatePath('/#planner-section')} class="inline-flex items-center gap-2 px-6 py-2.5 bg-white dark:bg-[#ededed] text-[#171717] hover:bg-[#f2f2f2] text-xs font-bold rounded-full transition-all shadow-sm">
-            Launch Free Nutrition Calculator →
+            {p.ctaBtn}
           </a>
         </div>
       </div>

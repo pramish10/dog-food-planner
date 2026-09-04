@@ -3,9 +3,11 @@ import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import Footer from '../../../components/Footer.astro';
-import { FAQS_DATA, getFaqBySlug } from '../../../data/faqs';
+import { FAQS_DATA } from '../../../data/faqs';
 import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
+import { getLocalizedFaq, getLocalizedFaqs } from '../../../i18n/faqs';
+import { getPageTranslations } from '../../../i18n/pages';
 
 export function getStaticPaths() {
   const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
@@ -22,7 +24,8 @@ interface Props {
   lang: Lang;
 }
 
-const { faq, lang } = Astro.props;
+const { faq: baseFaq, lang } = Astro.props;
+const faq = getLocalizedFaq(baseFaq.slug, lang)!;
 
 if (!faq) {
   return Astro.redirect(`/${lang}/faq`);
@@ -31,16 +34,17 @@ if (!faq) {
 const currentStrings = ui[lang] || ui.en;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+const p = getPageTranslations(lang).faqSingle;
 
 // Find related FAQs
 const relatedFaqs = (faq.relatedSlugs || [])
-  .map(slug => getFaqBySlug(slug))
+  .map(slug => getLocalizedFaq(slug, lang))
   .filter((f): f is NonNullable<typeof f> => f !== undefined)
   .slice(0, 3);
 
 // Fallback related if none explicitly defined
-const fallbackRelated = FAQS_DATA
-  .filter(f => f.category === faq.category && f.id !== faq.id)
+const fallbackRelated = getLocalizedFaqs(lang)
+  .filter(f => f.categoryKey === faq.categoryKey && f.id !== faq.id)
   .slice(0, 3);
 
 const finalRelated = relatedFaqs.length > 0 ? relatedFaqs : fallbackRelated;

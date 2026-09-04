@@ -1,5 +1,7 @@
 ---
-import { FAQS_DATA, FAQ_CATEGORIES, generateFaqJsonLd, type FaqItem } from '../data/faqs';
+import { generateFaqJsonLd } from '../data/faqs';
+import { getLocalizedFaqs, FAQ_CATEGORY_TRANSLATIONS } from '../i18n/faqs';
+import { getPageTranslations } from '../i18n/pages';
 import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 
 interface Props {
@@ -14,10 +16,12 @@ interface Props {
 
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
+const pageStrings = getPageTranslations(lang).faqPage;
+const categoryStrings = FAQ_CATEGORY_TRANSLATIONS[lang];
 
 const {
-  title = "Frequently Asked Questions About Dog Food & Nutrition",
-  subtitle = "Evidence-based answers to the most common canine nutrition, raw feeding, portion sizing, and pet food brand questions.",
+  title = pageStrings.badge,
+  subtitle = pageStrings.exploreHubsSubtitle,
   limit,
   category,
   showCategories = true,
@@ -25,9 +29,9 @@ const {
   viewAllLink = false,
 } = Astro.props;
 
-let faqs: FaqItem[] = FAQS_DATA;
+let faqs = getLocalizedFaqs(lang);
 if (category && category !== 'All Questions') {
-  faqs = faqs.filter(f => f.category === category);
+  faqs = faqs.filter(f => f.categoryKey === category);
 }
 if (limit) {
   faqs = faqs.slice(0, limit);
@@ -42,7 +46,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     <!-- Section Header -->
     <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
       <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
-        <span class="text-[#0070f3]">FAQ</span> // VETERINARY CANINE Q&A
+        <span class="text-[#0070f3]">FAQ</span> // {pageStrings.badge}
       </div>
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-3">
         {title}
@@ -60,7 +64,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             <input 
               type="search"
               id="faq-search-input"
-              placeholder="Search 40+ dog food questions (e.g. cat food, raw diet, Blue Buffalo, allergies)..."
+              placeholder={pageStrings.badge}
               class="w-full pl-10 pr-4 py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] focus:border-[#171717] dark:focus:border-[#ededed] focus:bg-white dark:focus:bg-[#141414] rounded-xl text-xs sm:text-sm text-[#171717] dark:text-[#ededed] outline-none transition-all placeholder:text-[#8f8f8f] dark:placeholder:text-[#737373] shadow-2xs"
             />
             <svg class="w-4 h-4 text-[#8f8f8f] dark:text-[#737373] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -71,13 +75,13 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 
         {showCategories && (
           <div class="flex items-center justify-center gap-1.5 flex-wrap pt-1">
-            {FAQ_CATEGORIES.map(cat => (
+            {Object.keys(categoryStrings).map(cat => (
               <button
                 type="button"
                 data-faq-cat-filter={cat}
                 class="faq-cat-btn px-3 py-1 text-xs font-mono rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] bg-[#fafafa] dark:bg-[#141414] text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:border-[#171717] dark:hover:border-[#ededed] transition-all cursor-pointer first:bg-[#171717] dark:first:bg-white first:text-white dark:first:text-[#171717] first:border-[#171717] dark:first:border-white"
               >
-                {cat}
+                {categoryStrings[cat] || cat}
               </button>
             ))}
           </div>
@@ -90,7 +94,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
       {faqs.map((faq, index) => (
         <div 
           class="faq-item hairline-card bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] rounded-xl overflow-hidden transition-all duration-200"
-          data-category={faq.category}
+          data-category={faq.categoryKey}
           data-question={faq.question.toLowerCase()}
           data-keywords={faq.tags.join(' ').toLowerCase()}
         >
@@ -113,14 +117,14 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed border-t border-[#f0f0f0] dark:border-[#262626] bg-white/70 dark:bg-[#121212]/90"
           >
             <p class="font-medium text-[#171717] dark:text-[#ededed] mb-2 text-xs bg-[#f8fafc] dark:bg-[#1a1a1a] p-3 rounded-lg border border-blue-100/50 dark:border-blue-900/30">
-              💡 <strong>Direct Answer:</strong> {faq.shortAnswer}
+              💡 <strong>{getPageTranslations(lang).faqSingle.directQuickAnswer}:</strong> {faq.shortAnswer}
             </p>
             <div class="prose prose-neutral dark:prose-invert max-w-none text-xs text-[#4d4d4d] dark:text-[#a1a1a1] space-y-2" set:html={faq.fullAnswerHtml} />
             
             <div class="mt-4 pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center justify-between gap-2 text-[11px]">
-              <span class="font-mono text-[#8f8f8f] dark:text-[#737373]">Category: <strong class="text-[#171717] dark:text-[#ededed]">{faq.category}</strong></span>
+              <span class="font-mono text-[#8f8f8f] dark:text-[#737373]">{faq.category}</span>
               <a href={translatePath(`/faq/${faq.slug}`)} class="font-mono font-semibold text-[#0070f3] dark:text-[#3291ff] hover:underline flex items-center gap-1">
-                Deep Dive Guide ↗
+                {getPageTranslations(lang).faqSingle.readAnswer}
               </a>
             </div>
           </div>
@@ -130,8 +134,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 
     <!-- No Search Results Fallback -->
     <div id="faq-no-results" class="hidden text-center py-12 text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#141414] rounded-xl border border-dashed border-[#ebebeb] dark:border-[#2e2e2e]">
-      <p class="font-medium text-[#171717] dark:text-[#ededed] mb-1">No matching questions found.</p>
-      <p>Try searching for words like "allergies", "puppy", "kibble", "raw", or "cat food".</p>
+      <p class="font-medium text-[#171717] dark:text-[#ededed] mb-1">{pageStrings.exploreHubsTitle}</p>
+      <p>{pageStrings.exploreHubsSubtitle}</p>
     </div>
 
     {viewAllLink && (
@@ -140,7 +144,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
           href={translatePath('/faq')} 
           class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-full transition-all shadow-sm"
         >
-          <span>Explore All 40+ Dog Food FAQs Hub</span>
+          <span>{pageStrings.badge}</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
           </svg>

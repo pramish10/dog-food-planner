@@ -7,6 +7,8 @@ import Footer from '../../../components/Footer.astro';
 import { FAQ_CATEGORIES } from '../../../data/faqs';
 import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
+import { getPageTranslations } from '../../../i18n/pages';
+import { FAQ_CATEGORY_TRANSLATIONS } from '../../../i18n/faqs';
 
 export function getStaticPaths() {
   return getLangStaticPaths();
@@ -16,6 +18,8 @@ const { lang } = Astro.params as { lang: Lang };
 const currentStrings = ui[lang] || ui.en;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+const p = getPageTranslations(lang).faqPage;
+const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
 ---
 
 <Layout 
@@ -37,7 +41,7 @@ const translatePath = useTranslatedPath(lang);
     <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
-          <span class="text-[#10b981]">●</span> KNOWLEDGE BASE // 40+ VERIFIED CANINE ANSWERS
+          <span class="text-[#10b981]">●</span> {p.badge}
         </div>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
           {currentStrings['faqs.title']}
@@ -53,7 +57,7 @@ const translatePath = useTranslatedPath(lang);
               href="#faq-section" 
               class="px-3 py-1.5 text-xs font-mono bg-[#fafafa] dark:bg-[#141414] text-[#171717] dark:text-[#ededed] hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg transition-colors"
             >
-              # {category}
+              # {categories[category] || category}
             </a>
           ))}
         </div>
@@ -63,7 +67,7 @@ const translatePath = useTranslatedPath(lang);
     <!-- Master FAQ Section with Search, Tabs, and JSON-LD -->
     <FaqSection 
       title={currentStrings['faqs.title']}
-      subtitle="Filter by category or type in any keyword to instantly access complete clinical answers."
+      subtitle={p.exploreHubsSubtitle}
       showCategories={true}
       showSearch={true}
     />
@@ -73,10 +77,10 @@ const translatePath = useTranslatedPath(lang);
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-xl mx-auto mb-10">
           <h2 class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2">
-            Explore Dedicated Canine Nutrition Hubs
+            {p.exploreHubsTitle}
           </h2>
           <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373]">
-            Deep-dive into specialized guides created for dog parents seeking optimal health.
+            {p.exploreHubsSubtitle}
           </p>
         </div>
 
@@ -87,7 +91,7 @@ const translatePath = useTranslatedPath(lang);
               {t('nav.bestDogFood')} →
             </h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
-              Comparison of fresh, raw, high-protein kibble, and specialized formulas for small and sensitive dogs.
+              {p.cardBestFood}
             </p>
           </a>
 
@@ -97,7 +101,7 @@ const translatePath = useTranslatedPath(lang);
               {t('nav.calculator')} →
             </h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
-              Scientific RER and MER calorie calculator delivering exact gram and cup meal portions.
+              {p.cardCalc}
             </p>
           </a>
 
@@ -107,7 +111,7 @@ const translatePath = useTranslatedPath(lang);
               {t('nav.recipes')} →
             </h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
-              Balanced gently cooked and 80-10-10 raw BARF recipes with essential calcium balancing.
+              {p.cardRecipes}
             </p>
           </a>
 
@@ -117,7 +121,7 @@ const translatePath = useTranslatedPath(lang);
               {t('nav.allergies')} →
             </h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
-              Novel protein selection, elimination diets, and soothing gut microbiome protocols.
+              {p.cardAllergies}
             </p>
           </a>
 
@@ -127,7 +131,7 @@ const translatePath = useTranslatedPath(lang);
               {t('nav.toxicFoods')} →
             </h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
-              Complete index of dangerous human foods, safe fruits, vegetables, and chemical additives.
+              {p.cardToxic}
             </p>
           </a>
 
@@ -137,7 +141,7 @@ const translatePath = useTranslatedPath(lang);
               {t('nav.brands')} →
             </h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
-              Unbiased reviews for Blue Buffalo, Nutrish, Pure Balance, Ollie, and Open Farm.
+              {p.cardBrands}
             </p>
           </a>
         </div>
