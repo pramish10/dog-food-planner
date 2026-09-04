@@ -1,5 +1,6 @@
 ---
 import LanguagePicker from './LanguagePicker.astro';
+import Logo from './Logo.astro';
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -15,9 +16,7 @@ const translatePath = useTranslatedPath(lang);
       <!-- Brand Col -->
       <div class="sm:col-span-2 lg:col-span-1 space-y-2.5">
         <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-md bg-[#171717] dark:bg-white flex items-center justify-center text-white dark:text-[#171717] font-mono font-bold text-xs">
-            🐾
-          </div>
+          <Logo class="w-7 h-7" />
           <span class="font-semibold text-sm text-[#171717] dark:text-[#ededed] tracking-tight">{t('nav.brand')}</span>
         </div>
         <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
