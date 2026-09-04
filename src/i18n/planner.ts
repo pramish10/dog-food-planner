@@ -159,7 +159,7 @@ export interface PlannerTranslations {
 
 export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   en: {
-    badge: '01 // FREE CANINE NUTRITION CALCULATOR',
+    badge: 'FREE CANINE NUTRITION CALCULATOR',
     title: 'Tailor the perfect bowl in under 60 seconds.',
     subtitle: "Our easy calculator estimates your dog's exact daily calorie needs and matches fresh, wholesome ingredients to their lifestyle.",
     disclaimerTitle: 'General Purpose & Educational Guidance:',
@@ -303,7 +303,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   },
 
   es: {
-    badge: '01 // CALCULADORA VETERINARIA GRATIS',
+    badge: 'CALCULADORA VETERINARIA GRATIS',
     title: 'Diseña la ración perfecta en menos de 60 segundos.',
     subtitle: 'Nuestra calculadora calcula las necesidades calóricas exactas de tu perro y selecciona ingredientes frescos según su edad y estilo de vida.',
     disclaimerTitle: 'Guía Educativa y General:',
@@ -447,7 +447,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   },
 
   ja: {
-    badge: '01 // 愛犬の給餌量無料計算ツール',
+    badge: '愛犬の給餌量無料計算ツール',
     title: '愛犬に最適な給餌量を60秒で算出。',
     subtitle: '体重・年齢・運動量から科学的に必要カロリー（RER/MER）を計算し、安心・安全な食材プランを提案します。',
     disclaimerTitle: '一般的な教育・情報提供ガイドライン:',
@@ -591,7 +591,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   },
 
   fr: {
-    badge: '01 // CALCULATEUR NUTRITIONNEL VÉTÉRINAIRE GRATUIT',
+    badge: 'CALCULATEUR NUTRITIONNEL VÉTÉRINAIRE GRATUIT',
     title: 'La gamelle idéale pour votre chien en moins de 60 secondes.',
     subtitle: 'Notre calculateur scientifique détermine le besoin calorique exact (BEE/RER) et sélectionne des aliments frais adaptés à son profil.',
     disclaimerTitle: 'Avertissement Médical et Éducatif :',
@@ -735,7 +735,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   },
 
   de: {
-    badge: '01 // KOSTENLOSER VETERINÄR-FUTTERRECHNER',
+    badge: 'KOSTENLOSER VETERINÄR-FUTTERRECHNER',
     title: 'Der ideale Napf für Ihren Hund in unter 60 Sekunden.',
     subtitle: 'Unser Futterrechner ermittelt den exakten Kalorienbedarf (RER/MER) und stellt frische, artgerechte Zutaten zusammen.',
     disclaimerTitle: 'Allgemeiner Hinweis & Tierärztlicher Haftungsausschluss:',
@@ -879,7 +879,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   },
 
   pt: {
-    badge: '01 // CALCULADORA NUTRICIONAL VETERINÁRIA GRATUITA',
+    badge: 'CALCULADORA NUTRICIONAL VETERINÁRIA GRATUITA',
     title: 'A porção ideal para seu cão em menos de 60 segundos.',
     subtitle: 'Nossa calculadora calcula o gasto calórico exato (RER/MER) e seleciona ingredientes naturais sob medida para o estilo de vida do seu cão.',
     disclaimerTitle: 'Aviso Educativo e Veterinário:',
@@ -1023,7 +1023,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   },
 
   ko: {
-    badge: '01 // 수의학 기반 반려견 맞춤 사료량 무료 계산기',
+    badge: '수의학 기반 반려견 맞춤 사료량 무료 계산기',
     title: '60초 만에 완성하는 우리 아이 맞춤 식단.',
     subtitle: '체중, 연령, 활동량에 따른 일일 필수 칼로리(RER/MER)를 정밀 계산하여 건강한 식단을 처방합니다.',
     disclaimerTitle: '일반 안내 및 수의학적 고지:',
@@ -1167,7 +1167,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   },
 
   it: {
-    badge: '01 // CALCOLATORE NUTRIZIONALE VETERINARIO GRATUITO',
+    badge: 'CALCOLATORE NUTRIZIONALE VETERINARIO GRATUITO',
     title: 'La ciotola perfetta per il tuo cane in meno di 60 secondi.',
     subtitle: 'Il nostro strumento calcola l\'esatto fabbisogno calorico (RER/MER) e abbina alimenti freschi e nutrienti alle esigenze del tuo cane.',
     disclaimerTitle: 'Avvertenza Informativa e Veterinaria:',

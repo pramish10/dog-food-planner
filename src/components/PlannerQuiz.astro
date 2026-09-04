@@ -1056,6 +1056,17 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     aliases: string[];
   }
 
+  interface HostedBreedPrediction {
+    label: string;
+    score: number;
+  }
+
+  function isHostedBreedPrediction(value: unknown): value is HostedBreedPrediction {
+    return typeof value === 'object' && value !== null &&
+      typeof (value as HostedBreedPrediction).label === 'string' &&
+      typeof (value as HostedBreedPrediction).score === 'number';
+  }
+
   const COMPREHENSIVE_BREED_INTEL: ExtendedBreedProfile[] = [
     {
       name: 'Golden Retriever',
@@ -1657,11 +1668,11 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       body: JSON.stringify({ image })
     });
     if (!response.ok) throw new Error('Hosted breed AI unavailable');
-    const result = await response.json();
+    const result: { predictions?: unknown } = await response.json();
     if (!Array.isArray(result.predictions)) throw new Error('Invalid breed AI response');
-    const matches = result.predictions
-      .filter((prediction: any) => typeof prediction?.label === 'string' && typeof prediction?.score === 'number')
-      .map((prediction: any) => findBreedProfile(prediction.label, prediction.score))
+    const matches = (result.predictions as unknown[])
+      .filter(isHostedBreedPrediction)
+      .map((prediction) => findBreedProfile(prediction.label, prediction.score))
       .filter((profile): profile is ExtendedBreedProfile => profile !== null)
       .filter((profile: ExtendedBreedProfile, index: number, profiles: ExtendedBreedProfile[]) =>
         profiles.findIndex((candidate) => candidate.name === profile.name) === index
