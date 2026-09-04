@@ -168,6 +168,28 @@ const faqJsonLd = generateFaqJsonLd(faqs);
   let activeCategory = 'All Questions';
   let searchTerm = '';
 
+  function setActiveCategory(category: string) {
+    activeCategory = Array.from(catButtons).some(
+      button => button.getAttribute('data-faq-cat-filter') === category,
+    ) ? category : 'All Questions';
+
+    catButtons.forEach(button => {
+      const isActive = button.getAttribute('data-faq-cat-filter') === activeCategory;
+      button.classList.toggle('bg-[#171717]', isActive);
+      button.classList.toggle('dark:bg-white', isActive);
+      button.classList.toggle('text-white', isActive);
+      button.classList.toggle('dark:text-[#171717]', isActive);
+      button.classList.toggle('border-[#171717]', isActive);
+      button.classList.toggle('dark:border-white', isActive);
+      button.classList.toggle('bg-[#fafafa]', !isActive);
+      button.classList.toggle('dark:bg-[#141414]', !isActive);
+      button.classList.toggle('text-[#4d4d4d]', !isActive);
+      button.classList.toggle('dark:text-[#a1a1a1]', !isActive);
+      button.classList.toggle('border-[#ebebeb]', !isActive);
+      button.classList.toggle('dark:border-[#2e2e2e]', !isActive);
+    });
+  }
+
   // Accordion Expand/Collapse
   faqItems.forEach(item => {
     const btn = item.querySelector('.faq-toggle-btn');
@@ -222,15 +244,16 @@ const faqJsonLd = generateFaqJsonLd(faqs);
   // Category Buttons Click
   catButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      catButtons.forEach(b => {
-        b.classList.remove('bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]', 'border-[#171717]', 'dark:border-white');
-        b.classList.add('bg-[#fafafa]', 'dark:bg-[#141414]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]', 'border-[#ebebeb]', 'dark:border-[#2e2e2e]');
-      });
-      btn.classList.add('bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]', 'border-[#171717]', 'dark:border-white');
-      btn.classList.remove('bg-[#fafafa]', 'dark:bg-[#141414]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]', 'border-[#ebebeb]', 'dark:border-[#2e2e2e]');
-
-      activeCategory = btn.getAttribute('data-faq-cat-filter') || 'All Questions';
+      setActiveCategory(btn.getAttribute('data-faq-cat-filter') || 'All Questions');
       applyFilters();
+
+      const url = new URL(window.location.href);
+      if (activeCategory === 'All Questions') {
+        url.searchParams.delete('category');
+      } else {
+        url.searchParams.set('category', activeCategory);
+      }
+      window.history.replaceState(null, '', url);
     });
   });
 
@@ -239,4 +262,12 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     searchTerm = (e.target as HTMLInputElement).value.toLowerCase().trim();
     applyFilters();
   });
+
+  // Topic badges link here with a category query parameter. Apply it after the
+  // page renders so the selected tab and the visible answers stay in sync.
+  const requestedCategory = new URLSearchParams(window.location.search).get('category');
+  if (requestedCategory) {
+    setActiveCategory(requestedCategory);
+    applyFilters();
+  }
 </script>

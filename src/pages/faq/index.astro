@@ -39,7 +39,7 @@ import { FAQ_CATEGORIES } from '../../data/faqs';
         <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
           {FAQ_CATEGORIES.slice(1).map(category => (
             <a 
-              href={`#faq-section`} 
+              href={`/faq?category=${encodeURIComponent(category)}#faq-section`}
               class="px-3 py-1.5 text-xs font-mono bg-[#fafafa] dark:bg-[#141414] text-[#171717] dark:text-[#ededed] hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg transition-colors"
             >
               # {category}
