@@ -918,7 +918,9 @@ export function getFaqsByCategory(category: string): FaqItem[] {
   return FAQS_DATA.filter(f => f.category === category);
 }
 
-export function generateFaqJsonLd(faqs: FaqItem[]) {
+export function generateFaqJsonLd(
+  faqs: Pick<FaqItem, 'question' | 'shortAnswer' | 'fullAnswerHtml'>[],
+) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
