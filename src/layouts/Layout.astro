@@ -1,62 +1,59 @@
 ---
 import '../styles/global.css';
+import { getLangFromUrl, cleanPathname, getAbsoluteLocalizedUrl } from '../i18n/utils';
+import { localesMap, ui, defaultLang, type Lang } from '../i18n/ui';
 
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  lang?: Lang;
 }
 
+const lang: Lang = Astro.props.lang || getLangFromUrl(Astro.url);
+const cleanPath = cleanPathname(Astro.url.pathname);
+
+const currentLocaleData = localesMap[lang] || localesMap[defaultLang];
+const defaultStrings = ui[lang] || ui[defaultLang];
+
 const {
-  title = "Best Dog Food & Free Custom Meal Planner 2026 | DogFoodPlanner.com",
-  description = "Calculate the best dog food & tailored healthy dog food recipes for your puppy, adult, or senior dog. Compare fresh dog food, raw dog food, and top pet food brands with our 100% free veterinary calculator.",
-  canonicalUrl = "https://dogfoodplanner.com/",
+  title = defaultStrings['meta.title'],
+  description = defaultStrings['meta.description'],
+  keywords = defaultStrings['meta.keywords'],
+  canonicalUrl = getAbsoluteLocalizedUrl(cleanPath, lang),
   ogImage = "https://dogfoodplanner.com/og-image.jpg"
 } = Astro.props;
-
-const keywords = [
-  "dog food",
-  "best dog food",
-  "pet food",
-  "fda pedigree dog food recall",
-  "blue buffalo dog food",
-  "ollie dog food",
-  "open farm dog food",
-  "science diet dog food",
-  "best dog food brands",
-  "chewy dog food",
-  "fresh dog food",
-  "dog food brands",
-  "best dog foods for sensitive stomach",
-  "puppy food",
-  "dog meal",
-  "easily digestible dog food",
-  "best brands of dog food for puppies",
-  "raw dog food",
-  "dog food delivery",
-  "best food puppies",
-  "dry puppy food",
-  "good dog food for sensitive stomach",
-  "dog food recipe",
-  "healthy dog food recipe"
-].join(", ");
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang} dir={currentLocaleData.dir}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalUrl} />
     
+    <!-- Multilingual Hreflang SEO Markup -->
+    <link rel="alternate" hreflang="x-default" href={getAbsoluteLocalizedUrl(cleanPath, 'en')} />
+    <link rel="alternate" hreflang="en" href={getAbsoluteLocalizedUrl(cleanPath, 'en')} />
+    <link rel="alternate" hreflang="es" href={getAbsoluteLocalizedUrl(cleanPath, 'es')} />
+    <link rel="alternate" hreflang="ja" href={getAbsoluteLocalizedUrl(cleanPath, 'ja')} />
+    <link rel="alternate" hreflang="fr" href={getAbsoluteLocalizedUrl(cleanPath, 'fr')} />
+    <link rel="alternate" hreflang="de" href={getAbsoluteLocalizedUrl(cleanPath, 'de')} />
+    <link rel="alternate" hreflang="pt" href={getAbsoluteLocalizedUrl(cleanPath, 'pt')} />
+    <link rel="alternate" hreflang="ko" href={getAbsoluteLocalizedUrl(cleanPath, 'ko')} />
+    <link rel="alternate" hreflang="it" href={getAbsoluteLocalizedUrl(cleanPath, 'it')} />
+
     <!-- Primary SEO Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="author" content="DogFoodPlanner.com Nutrition Research Team" />
     
     <!-- Browser-based deep-learning models. They are fetched on demand by the scanner; visitors never install anything. -->
@@ -72,7 +69,10 @@ const keywords = [
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:alt" content="Dog Food Planner - Free Custom Dog Meal & Nutrition Calculator" />
     <meta property="og:site_name" content="Dog Food Planner" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={currentLocaleData.ogLocale} />
+    {Object.values(localesMap).filter(l => l.code !== lang).map(l => (
+      <meta property="og:locale:alternate" content={l.ogLocale} />
+    ))}
 
     <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image" />

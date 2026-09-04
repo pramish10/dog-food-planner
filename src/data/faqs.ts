@@ -2,7 +2,7 @@ export interface FaqItem {
   id: string;
   slug: string;
   question: string;
-  category: 'Diet & Nutrition' | 'Health & Allergies' | 'Feeding Math & Portions' | 'Ingredients & Safety' | 'Brand Reviews & Safety';
+  category: 'Diet & Nutrition' | 'Health & Allergies' | 'Feeding Math & Portions' | 'Ingredients & Safety' | 'Brand Reviews & Safety' | 'Glossary & Terms';
   shortAnswer: string;
   fullAnswerHtml: string;
   relatedSlugs?: string[];
@@ -785,6 +785,117 @@ export const FAQS_DATA: FaqItem[] = [
     `,
     tags: ['dry food only', 'kibble', 'hydration', 'kidney health'],
     relatedSlugs: ['should-i-feed-my-dog-wet-or-dry-food', 'what-is-the-best-dry-dog-food', 'why-is-my-dog-not-eating-his-food-but-will-eat-treats']
+  },
+  {
+    id: 'what-does-spayed-neutered-intact-gender-mean-for-dogs',
+    slug: 'what-does-spayed-neutered-intact-gender-mean-for-dogs',
+    question: 'What does Gender & Spay / Neuter Status mean (Female Fixed/Spayed, Female Not Fixed/Intact, Male Fixed/Neutered, Male Not Fixed/Intact), and why does it matter?',
+    category: 'Glossary & Terms',
+    shortAnswer: 'Fixed (spayed or neutered) dogs burn about 10% fewer resting calories due to the reduction of gonadal reproductive hormones. Knowing your dog\'s reproductive status allows us to adjust daily calorie and portion sizes so your dog maintains a lean, healthy weight without gaining excess body fat.',
+    fullAnswerHtml: `
+      <p>In canine clinical nutrition, reproductive status is one of the most critical variables when calculating daily portion sizes and caloric needs.</p>
+      
+      <h4>Why This Matters for Your Dog's Bowl:</h4>
+      <p><strong>Fixed dogs burn about 10% fewer resting calories</strong> than biologically intact dogs. When a dog is spayed or neutered, gonadal hormone production (estrogen in females, testosterone in males) stops. Because these hormones naturally stimulate metabolic activity, physical restlessness, and roaming behavior, removing them reduces your dog's Resting Energy Requirement (RER). If you feed a fixed dog the same caloric portion as an intact dog, the surplus energy is stored directly as adipose fat, increasing the risk of obesity, arthritis, and diabetes.</p>
+
+      <h4>Definitions of Each Reproductive Status:</h4>
+      <ul>
+        <li>
+          <strong>Female (Fixed) — Spayed:</strong> 
+          A female dog that has undergone surgical ovariohysterectomy (removal of ovaries and uterus) or ovariectomy (removal of ovaries). Without circulating estrogens and progestins, her metabolic baseline slows by approximately 10% to 15%. Spayed adult females require a lower maintenance multiplier (<code>1.6 × RER</code>) with carefully measured portion sizes and higher dietary fiber to promote satiety.
+        </li>
+        <li>
+          <strong>Female (Not Fixed) — Intact / Breeding:</strong> 
+          A female dog with active, intact reproductive organs. Intact females experience hormonal estrus (heat) cycles roughly twice a year, during which metabolic demands fluctuate. If pregnant (gestating) or nursing (lactating), her caloric requirements multiply dramatically—often needing <code>2.0× to 3.5× RER</code> and elevated calcium/phosphorus to sustain fetal growth and milk production.
+        </li>
+        <li>
+          <strong>Male (Fixed) — Neutered:</strong> 
+          A male dog that has undergone surgical orchiectomy (castration to remove testicles). The loss of endogenous testosterone lowers roaming drive and basal energy expenditure by roughly 10% to 12%. Neutered males typically require <code>1.6 × RER</code> to maintain ideal body condition and prevent sluggish weight accumulation.
+        </li>
+        <li>
+          <strong>Male (Not Fixed) — Intact / Breeding:</strong> 
+          A male dog that retains intact testicles. Circulating testosterone promotes denser lean skeletal muscle mass and higher basal metabolic rate. Intact adult males burn more calories throughout the day (maintenance factor: <code>1.8 × RER</code>) and require higher daily caloric density than their neutered counterparts.
+        </li>
+      </ul>
+
+      <h4>Clinical Feeding Math Comparison:</h4>
+      <p>For a 50 lb (22.7 kg) adult canine with a baseline Resting Energy Requirement (RER) of 728 kcal/day:</p>
+      <ul>
+        <li><strong>Fixed Adult (Spayed / Neutered):</strong> <code>728 × 1.6 = 1,165 calories/day</code></li>
+        <li><strong>Intact Adult (Unaltered):</strong> <code>728 × 1.8 = 1,310 calories/day</code> (+145 calories/day difference!)</li>
+      </ul>
+      <p>That 145 kcal daily difference equates to roughly 15 lbs of unwanted fat accumulation over the course of a single year if not adjusted. Use our <a href="/#planner-quiz" class="text-blue-600 dark:text-blue-400 font-semibold underline">Canine Meal Planner</a> to calibrate your dog's exact bowl size.</p>
+    `,
+    tags: ['spayed', 'neutered', 'intact', 'gender', 'calories', 'RER', 'metabolism', 'weight gain', 'glossary'],
+    relatedSlugs: ['how-much-food-should-i-feed-my-dog', 'what-is-the-best-food-routine-for-dogs', 'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb']
+  },
+  {
+    id: 'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb',
+    slug: 'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb',
+    question: 'What do dog food and nutrition terms mean? (RER, MER, BCS, DMB, Bioavailability, Cranial Types)',
+    category: 'Glossary & Terms',
+    shortAnswer: 'Canine nutrition relies on scientific terminology: RER is resting calories, MER is daily maintenance calories, BCS evaluates body fat (1-9 scale), DMB calculates nutrients without water, and cranial morphology categorizes skull shape for chewing mechanics and bloat risk.',
+    fullAnswerHtml: `
+      <p>Navigating pet food bags and veterinary feeding guidelines often involves technical acronyms. Here is the clinical glossary explaining every major canine nutritional term in plain language:</p>
+
+      <h4>Energy & Portion Calculations:</h4>
+      <ul>
+        <li><strong>RER (Resting Energy Requirement):</strong> The foundational calories an animal burns simply staying alive at rest in a comfortable room (respiration, circulation, cellular repair). Calculated as: <code>RER (kcal/day) = 70 × (Body Weight in kg)^0.75</code>.</li>
+        <li><strong>MER / DER (Maintenance / Daily Energy Requirement):</strong> The total daily calories your dog needs, calculated by multiplying RER by their lifestyle factor (e.g., puppyhood, senior, neutered status, working drive).</li>
+        <li><strong>DMB (Dry Matter Basis):</strong> Nutrient percentages calculated after removing 100% of moisture. Canned food looks low in protein (e.g. 10%) on the label only because it is 78% water; on a Dry Matter Basis, that same canned food is actually 45% protein! DMB is the only reliable way to compare wet food to dry kibble.</li>
+      </ul>
+
+      <h4>Physical Health & Body Assessment:</h4>
+      <ul>
+        <li><strong>BCS (Body Condition Score):</strong> A clinical 1-to-9 grading system used by veterinarians instead of simple scale weight. A score of 4 to 5 is ideal (ribs easily felt under a light blanket of skin, noticeable waist when viewed from above, clear abdominal tuck from the side). A score of 6-7 is overweight, while 8-9 indicates canine obesity.</li>
+        <li><strong>Cranial Conformation Types:</strong> Skull and facial structure:
+          <ul>
+            <li><em>Brachycephalic:</em> Short, flat-faced skull (French Bulldogs, Pugs, Boxers). Prone to aerophagia (swallowing air while eating), heat stress, and dental crowding; benefit from shallow, tilted bowls and wave-shaped kibbles.</li>
+            <li><em>Mesocephalic:</em> Medium skull proportions (Golden Retrievers, Beagles, Labradors). Balanced chewing mechanics and standard jaw bite.</li>
+            <li><em>Dolichocephalic:</em> Long, slender skull and muzzle (Greyhounds, Dobermans, Collies). Higher jaw leverage; prone to deep-chest gastric dilation (bloat).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>Dietary Categories & Feeding Philosophies:</h4>
+      <ul>
+        <li><strong>Bioavailability:</strong> The proportion of a nutrient or protein that enters canine circulation and is actively absorbed by the body rather than passing out as stool waste. Fresh whole meats have 85-92% bioavailability, compared to 60-70% for plant protein isolates.</li>
+        <li><strong>Novel Protein:</strong> A meat source your dog has never consumed before (such as venison, rabbit, duck, or kangaroo). Used in elimination food trials to identify and soothe food sensitivities.</li>
+        <li><strong>BARF (Biologically Appropriate Raw Food / Bones and Raw Food):</strong> A raw feeding model consisting of 70% muscle meat, 10% raw bone, 10% organ meats (5% liver), 7% vegetables, 2% fruit, and 1% seed/oil supplements.</li>
+        <li><strong>PMR (Prey Model Raw):</strong> An ancestral raw model strictly mimicking whole prey: 80% muscle meat, 10% edible bone, 5% liver, and 5% other secreting organs, with zero plant matter.</li>
+        <li><strong>AAFCO & NRC:</strong> Regulatory bodies establishing nutritional benchmarks. The National Research Council (NRC) publishes peer-reviewed nutrient requirements, while AAFCO sets commercial pet food labeling standards.</li>
+      </ul>
+    `,
+    tags: ['glossary', 'definitions', 'RER', 'MER', 'BCS', 'DMB', 'cranial', 'bioavailability', 'BARF'],
+    relatedSlugs: ['how-much-food-should-i-feed-my-dog', 'what-does-spayed-neutered-intact-gender-mean-for-dogs', 'what-are-dog-food-planner-website-terms-and-disclaimers']
+  },
+  {
+    id: 'what-are-dog-food-planner-website-terms-and-disclaimers',
+    slug: 'what-are-dog-food-planner-website-terms-and-disclaimers',
+    question: 'What do DogFoodPlanner.com\'s website terms, veterinary disclaimers, and privacy policies mean?',
+    category: 'Glossary & Terms',
+    shortAnswer: 'Our website terms establish that DogFoodPlanner provides educational canine nutritional calculations based on published NRC/AAFCO formulas, not veterinary medical diagnosis. All calculators, breed scanner tools, and recipes are free for personal, non-commercial pet care.',
+    fullAnswerHtml: `
+      <p>To maintain complete transparency with pet parents, here is an easy-to-understand explanation of <strong>DogFoodPlanner.com's Terms & Conditions</strong> and website policies:</p>
+
+      <h4>1. Educational Guidance vs. Veterinary Prescription:</h4>
+      <p>All algorithms, calorie recommendations, macronutrient ratios, and recipes generated on DogFoodPlanner.com are formulated using peer-reviewed canine physiological standards (AAFCO and NRC). However, <strong>every dog is an individual with unique metabolic and medical characteristics</strong>.</p>
+      <p>Our tools are educational planning guides. They do not replace hands-on veterinary medicine. If your dog suffers from chronic conditions such as chronic renal failure, acute pancreatitis, endocrine disorders (diabetes/Cushing\'s), or severe cardiac disease, always consult your veterinarian or a board-certified veterinary nutritionist (DACVIM) before transitioning diets.</p>
+
+      <h4>2. Safe Edge AI Breed Scanning & Image Privacy:</h4>
+      <p>Our AI Dog Breed & Morphological Scanner operates with strict privacy protections. Video frames from your camera are evaluated in real-time within your browser or over secure edge endpoints. We do not store, catalog, or sell your dog photos or camera footage to third-party data brokers or advertisers.</p>
+
+      <h4>3. Algorithmic Independence & Product Review Neutrality:</h4>
+      <p>Our brand reviews and feeding formulas are driven by objective canine nutritional science—evaluating named meat proteins, carbohydrate percentages, moisture levels, and historical safety recalls. We do not accept paid manufacturer sponsorships to rank low-grade kibbles favorably.</p>
+
+      <h4>4. Free Personal License:</h4>
+      <p>Pet owners are granted a 100% free, non-commercial license to formulate, save, print, and share personalized meal plans and toxic food charts for their own household pets. Commercial reproduction, automated data scraping, or re-selling our algorithmic output is prohibited under Section 3 of our <a href="/terms" class="text-blue-600 dark:text-blue-400 font-semibold underline">Terms & Conditions</a>.</p>
+
+      <h4>5. The 2-to-3 Week Weight Check Rule:</h4>
+      <p>Because baseline formulas predict average requirements, we advise all dog owners to weigh their dog every 14 to 21 days after adjusting meals. If your dog gains unwanted fat or loses lean mass, adjust the daily portion up or down by 5% to 10% until steady maintenance weight is reached.</p>
+    `,
+    tags: ['website terms', 'disclaimer', 'privacy', 'veterinary guidance', 'legal', 'license'],
+    relatedSlugs: ['what-does-spayed-neutered-intact-gender-mean-for-dogs', 'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb', 'how-much-food-should-i-feed-my-dog']
   }
 ];
 
@@ -794,7 +905,8 @@ export const FAQ_CATEGORIES = [
   'Health & Allergies',
   'Feeding Math & Portions',
   'Ingredients & Safety',
-  'Brand Reviews & Safety'
+  'Brand Reviews & Safety',
+  'Glossary & Terms'
 ] as const;
 
 export function getFaqBySlug(slug: string): FaqItem | undefined {

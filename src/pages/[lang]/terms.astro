@@ -1,22 +1,33 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Footer from '../../components/Footer.astro';
+import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../i18n/utils';
+import { ui, type Lang } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const currentStrings = ui[lang] || ui.en;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <Layout 
-  title="Terms & Conditions | DogFoodPlanner.com"
-  description="DogFoodPlanner.com terms and conditions of service, acceptable use, and veterinary nutritional guidance disclaimer."
-  canonicalUrl="https://dogfoodplanner.com/terms"
+  lang={lang}
+  title={currentStrings['terms.title']}
+  description={currentStrings['terms.desc']}
 >
   <Navbar />
   
   <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
     <Breadcrumbs 
       items={[
-        { name: 'Home', url: '/' },
-        { name: 'Terms & Conditions' }
+        { name: t('nav.brand'), url: translatePath('/') },
+        { name: currentStrings['terms.title'].split('|')[0].trim() || 'Terms & Conditions' }
       ]}
     />
 
@@ -27,10 +38,10 @@ import Footer from '../components/Footer.astro';
           <span class="text-[#0070f3]">LEGAL</span> // TERMS OF SERVICE
         </div>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
-          Terms & Conditions
+          {currentStrings['terms.title'].split('|')[0].trim()}
         </h1>
         <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
-          Effective Date: January 1, 2026. Please read these terms carefully before utilizing our canine calculators and educational content.
+          {currentStrings['terms.desc']}
         </p>
       </div>
     </section>
@@ -76,7 +87,7 @@ import Footer from '../components/Footer.astro';
         </p>
         <div class="pt-2">
           <a 
-            href="/faq/what-are-dog-food-planner-website-terms-and-disclaimers" 
+            href={translatePath('/faq/what-are-dog-food-planner-website-terms-and-disclaimers')} 
             class="inline-flex items-center gap-2 px-4 py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] hover:bg-[#ebebeb] dark:hover:bg-[#262626] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] font-semibold text-xs rounded-xl transition-all shadow-2xs"
           >
             <span>📖 Read Website Terms & Legal FAQ</span>

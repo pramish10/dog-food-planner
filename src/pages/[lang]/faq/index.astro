@@ -1,0 +1,150 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import FaqSection from '../../../components/FaqSection.astro';
+import Footer from '../../../components/Footer.astro';
+import { FAQ_CATEGORIES } from '../../../data/faqs';
+import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../../i18n/utils';
+import { ui, type Lang } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const currentStrings = ui[lang] || ui.en;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<Layout 
+  lang={lang}
+  title={currentStrings['faqs.title']}
+  description={currentStrings['faqs.desc']}
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs 
+      items={[
+        { name: t('nav.brand'), url: translatePath('/') },
+        { name: t('nav.faqs') }
+      ]}
+    />
+
+    <!-- Hero Header -->
+    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#10b981]">●</span> KNOWLEDGE BASE // 40+ VERIFIED CANINE ANSWERS
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
+          {currentStrings['faqs.title']}
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
+          {currentStrings['faqs.desc']}
+        </p>
+
+        <!-- Topic Badges -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
+          {FAQ_CATEGORIES.slice(1).map(category => (
+            <a 
+              href="#faq-section" 
+              class="px-3 py-1.5 text-xs font-mono bg-[#fafafa] dark:bg-[#141414] text-[#171717] dark:text-[#ededed] hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg transition-colors"
+            >
+              # {category}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Master FAQ Section with Search, Tabs, and JSON-LD -->
+    <FaqSection 
+      title={currentStrings['faqs.title']}
+      subtitle="Filter by category or type in any keyword to instantly access complete clinical answers."
+      showCategories={true}
+      showSearch={true}
+    />
+
+    <!-- Quick Navigation to Specialized Nutrition Hubs -->
+    <section class="py-14 sm:py-16 bg-[#fafafa] dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <h2 class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2">
+            Explore Dedicated Canine Nutrition Hubs
+          </h2>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373]">
+            Deep-dive into specialized guides created for dog parents seeking optimal health.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href={translatePath('/best-dog-food')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
+            <span class="text-2xl mb-2 block">🏆</span>
+            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+              {t('nav.bestDogFood')} →
+            </h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+              Comparison of fresh, raw, high-protein kibble, and specialized formulas for small and sensitive dogs.
+            </p>
+          </a>
+
+          <a href={translatePath('/feeding-calculator')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
+            <span class="text-2xl mb-2 block">🧮</span>
+            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+              {t('nav.calculator')} →
+            </h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+              Scientific RER and MER calorie calculator delivering exact gram and cup meal portions.
+            </p>
+          </a>
+
+          <a href={translatePath('/dog-food-recipes')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
+            <span class="text-2xl mb-2 block">🍲</span>
+            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+              {t('nav.recipes')} →
+            </h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+              Balanced gently cooked and 80-10-10 raw BARF recipes with essential calcium balancing.
+            </p>
+          </a>
+
+          <a href={translatePath('/dog-food-allergies')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
+            <span class="text-2xl mb-2 block">🛡️</span>
+            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+              {t('nav.allergies')} →
+            </h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+              Novel protein selection, elimination diets, and soothing gut microbiome protocols.
+            </p>
+          </a>
+
+          <a href={translatePath('/toxic-foods')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
+            <span class="text-2xl mb-2 block">⚠️</span>
+            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+              {t('nav.toxicFoods')} →
+            </h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+              Complete index of dangerous human foods, safe fruits, vegetables, and chemical additives.
+            </p>
+          </a>
+
+          <a href={translatePath('/dog-food-brands')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
+            <span class="text-2xl mb-2 block">⭐</span>
+            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+              {t('nav.brands')} →
+            </h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+              Unbiased reviews for Blue Buffalo, Nutrish, Pure Balance, Ollie, and Open Farm.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

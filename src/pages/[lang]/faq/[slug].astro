@@ -1,0 +1,224 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Footer from '../../../components/Footer.astro';
+import { FAQS_DATA, getFaqBySlug } from '../../../data/faqs';
+import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
+import { ui, type Lang } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
+  return targetLangs.flatMap(lang => 
+    FAQS_DATA.map(faq => ({
+      params: { lang, slug: faq.slug },
+      props: { faq, lang }
+    }))
+  );
+}
+
+interface Props {
+  faq: (typeof FAQS_DATA)[number];
+  lang: Lang;
+}
+
+const { faq, lang } = Astro.props;
+
+if (!faq) {
+  return Astro.redirect(`/${lang}/faq`);
+}
+
+const currentStrings = ui[lang] || ui.en;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+// Find related FAQs
+const relatedFaqs = (faq.relatedSlugs || [])
+  .map(slug => getFaqBySlug(slug))
+  .filter((f): f is NonNullable<typeof f> => f !== undefined)
+  .slice(0, 3);
+
+// Fallback related if none explicitly defined
+const fallbackRelated = FAQS_DATA
+  .filter(f => f.category === faq.category && f.id !== faq.id)
+  .slice(0, 3);
+
+const finalRelated = relatedFaqs.length > 0 ? relatedFaqs : fallbackRelated;
+
+// Single FAQ Schema.org JSON-LD
+const singleFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": `${faq.shortAnswer} ${faq.fullAnswerHtml.replace(/<[^>]*>?/gm, ' ').replace(/\s+/g, ' ').trim()}`
+      }
+    }
+  ]
+};
+
+// Article Schema for rich results
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": faq.question,
+  "description": faq.shortAnswer,
+  "author": {
+    "@type": "Organization",
+    "name": "Dog Food Planner Nutrition Team",
+    "url": "https://dogfoodplanner.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dog Food Planner",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dogfoodplanner.com/logo.png"
+    }
+  },
+  "mainEntityOfPage": `https://dogfoodplanner.com/${lang}/faq/${faq.slug}`
+};
+---
+
+<Layout 
+  lang={lang}
+  title={`${faq.question} | DogFoodPlanner.com`}
+  description={faq.shortAnswer}
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs 
+      items={[
+        { name: t('nav.brand'), url: translatePath('/') },
+        { name: t('nav.faqs'), url: translatePath('/faq') },
+        { name: faq.question }
+      ]}
+    />
+
+    <!-- Article & Q&A Container -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      
+      <!-- Article Header -->
+      <header class="mb-8">
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-3 py-1 rounded-full mb-3">
+          <span>{faq.category}</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 leading-tight">
+          {faq.question}
+        </h1>
+        <div class="flex items-center gap-3 text-xs text-[#8f8f8f] dark:text-[#737373] font-mono border-b border-[#ebebeb] dark:border-[#262626] pb-4">
+          <span>Reviewed by: <strong>Veterinary Canine Nutritionist</strong></span>
+          <span>•</span>
+          <span>Updated: {new Date().getFullYear()}</span>
+        </div>
+      </header>
+
+      <!-- Highlighted Direct Answer Callout -->
+      <div class="p-5 sm:p-6 bg-white dark:bg-[#141414] rounded-2xl border-2 border-[#171717] dark:border-[#ededed] shadow-sm mb-8">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+            ✓
+          </div>
+          <div>
+            <h2 class="text-xs font-mono uppercase font-bold text-[#171717] dark:text-[#ededed] mb-1">
+              Direct Quick Answer
+            </h2>
+            <p class="text-sm sm:text-base text-[#171717] dark:text-[#ededed] leading-relaxed font-medium">
+              {faq.shortAnswer}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- In-Depth Clinical Explanation -->
+      <article class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] mb-10 prose prose-neutral dark:prose-invert max-w-none text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed space-y-4">
+        <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] border-b border-[#ebebeb] dark:border-[#262626] pb-3 mb-4">
+          Detailed Nutritional & Clinical Analysis
+        </h2>
+        <div class="space-y-4" set:html={faq.fullAnswerHtml} />
+
+        <!-- Tags / Topics -->
+        <div class="pt-6 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center gap-1.5 not-prose">
+          <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mr-1">Topics:</span>
+          {faq.tags.map(tag => (
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-[#fafafa] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-md">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      </article>
+
+      <!-- Interactive Calculator Call-to-Action -->
+      <div class="p-6 sm:p-8 bg-gradient-to-br from-[#171717] to-[#333333] border border-[#2e2e2e] text-white rounded-2xl mb-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+        <div class="space-y-2 text-center sm:text-left">
+          <div class="inline-flex items-center gap-1 text-[11px] font-mono text-[#10b981] uppercase tracking-wider font-semibold">
+            <span>🐾</span> Free Canine Nutrition Engine
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white">
+            Calculate Exact Daily Calories & Meal Portions For Your Dog
+          </h3>
+          <p class="text-xs text-white/80 max-w-lg">
+            Use our free veterinary calculator to determine your dog's exact metabolic burn (RER/MER) and get custom fresh or raw food recipe grams.
+          </p>
+        </div>
+        <a 
+          href={translatePath('/feeding-calculator')} 
+          class="shrink-0 px-6 py-3 bg-white text-[#171717] hover:bg-[#f2f2f2] text-xs font-bold rounded-full transition-all shadow-md active:scale-95"
+        >
+          Calculate Portions Now →
+        </a>
+      </div>
+
+      <!-- Related Questions Section -->
+      {finalRelated.length > 0 && (
+        <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-10">
+          <h3 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
+            Related Canine Nutrition Questions
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {finalRelated.map(related => (
+              <a 
+                href={translatePath(`/faq/${related.slug}`)} 
+                class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <span class="text-[10px] font-mono text-[#0070f3] dark:text-[#3291ff] uppercase font-semibold mb-1 block">
+                    {related.category}
+                  </span>
+                  <h4 class="font-medium text-xs text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] transition-colors leading-snug line-clamp-3 mb-2">
+                    {related.question}
+                  </h4>
+                </div>
+                <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] group-hover:text-[#171717] dark:group-hover:text-white transition-colors mt-2">
+                  Read Answer →
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Back to FAQ Directory -->
+      <div class="mt-10 text-center">
+        <a 
+          href={translatePath('/faq')} 
+          class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
+        >
+          ← Back to All 40+ Dog Food FAQs
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<!-- JSON-LD FAQPage & Article Schemas -->
+<script type="application/ld+json" set:html={JSON.stringify(singleFaqJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />

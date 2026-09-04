@@ -1,28 +1,38 @@
 ---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <section class="relative pt-10 pb-14 sm:pt-20 sm:pb-24 mesh-gradient-bg border-b border-[#ebebeb] dark:border-[#262626] overflow-hidden">
   <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
     
-    <!-- Technical Eyebrow (Geist Mono from DESIGN.md) -->
-    <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] shadow-xs mb-6 max-w-full overflow-hidden">
+    <!-- Technical Eyebrow -->
+    <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] shadow-xs mb-4 max-w-full overflow-hidden">
       <span class="w-2 h-2 rounded-full bg-[#10b981] shrink-0 animate-pulse"></span>
       <span class="font-mono text-[10px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider truncate">
-        VETERINARY RER/MER NUTRITION ENGINE
+        {t('hero.badge')}
       </span>
       <span class="text-[#ebebeb] dark:text-[#333333] hidden xs:inline">|</span>
-      <span class="font-mono text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] hidden xs:inline">AAFCO & NRC</span>
+      <span class="font-mono text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] hidden xs:inline">{t('hero.standards')}</span>
+    </div>
+
+    <!-- Educational Purpose Notice Banner -->
+    <div class="max-w-2xl mx-auto mb-5 px-3.5 py-1.5 rounded-full bg-blue-50/70 dark:bg-[#0070f3]/10 border border-blue-200/60 dark:border-[#0070f3]/30 text-[11px] text-[#0070f3] dark:text-[#3291ff] flex items-center justify-center gap-1.5">
+      <span class="font-bold">{t('hero.noticeTitle')}</span>
+      <span>{t('hero.noticeText')}</span>
     </div>
 
     <!-- Hero Display Title -->
     <h1 class="text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight leading-[1.12] sm:leading-[1.08] max-w-4xl mx-auto mb-4 sm:mb-6">
-      Precision nutrition formulated for your dog's <span class="bg-gradient-to-r from-[#0070f3] via-[#7928ca] to-[#ff0080] bg-clip-text text-transparent">exact biology.</span>
+      {t('hero.title1')} <span class="bg-gradient-to-r from-[#0070f3] via-[#7928ca] to-[#ff0080] bg-clip-text text-transparent">{t('hero.titleHighlight')}</span> {t('hero.title2')}
     </h1>
 
     <!-- Subtitle / Body -->
     <p class="text-xs sm:text-lg text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal">
-      Move beyond generic mass-market kibble. Calculate exact metabolic calories and tailored 
-      <strong class="text-[#171717] dark:text-white font-medium">Fresh-Cooked</strong>, <strong class="text-[#171717] dark:text-white font-medium">Raw BARF</strong>, or <strong class="text-[#171717] dark:text-white font-medium">Superfood Topper</strong> recipes tailored to your dog's breed and lifestyle.
+      {t('hero.subtitle')}
     </p>
 
     <!-- Marketing CTA Button Pill -->
@@ -31,37 +41,37 @@
         href="#planner-section" 
         class="w-full sm:w-auto inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] hover:bg-[#2b2b2b] dark:hover:bg-[#e5e5e5] active:scale-[0.98] transition-all px-7 py-3 rounded-full shadow-md hover:shadow-lg"
       >
-        <span>Build Your Dog's Custom Plan</span>
+        <span>{t('hero.ctaCalculate')}</span>
         <svg class="w-3.5 h-3.5 ml-2 text-[#50e3c2] dark:text-[#0070f3]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
         </svg>
       </a>
       
       <a 
-        href="/best-dog-food" 
+        href={translatePath('/best-dog-food')} 
         class="w-full sm:w-auto inline-flex items-center justify-center text-xs sm:text-sm font-semibold text-[#171717] dark:text-[#ededed] bg-white dark:bg-[#171717] hover:bg-[#f2f2f2] dark:hover:bg-[#222222] border border-[#ebebeb] dark:border-[#2e2e2e] active:scale-[0.98] transition-all px-6 py-3 rounded-full shadow-xs"
       >
-        <span>Explore Best Dog Foods</span>
+        <span>{t('hero.ctaCompare')}</span>
       </a>
     </div>
 
     <!-- Key Scientific Value Metrics Strip -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3.5 max-w-4xl mx-auto pt-4 sm:pt-6 border-t border-[#ebebeb]/80 dark:border-[#262626]">
       <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#141414]/90 backdrop-blur-xs rounded-xl border border-[#ebebeb] dark:border-[#262626] text-left">
-        <div class="font-mono text-lg sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">70 × kg<sup class="text-[10px]">0.75</sup></div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans">Resting Metabolic Math</div>
+        <div class="font-mono text-lg sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{t('hero.metric1Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans">{t('hero.metric1Label')}</div>
       </div>
       <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#141414]/90 backdrop-blur-xs rounded-xl border border-[#ebebeb] dark:border-[#262626] text-left">
-        <div class="font-mono text-lg sm:text-2xl font-bold text-[#0070f3] dark:text-[#3291ff]">3 Diets</div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans">Cooked, Raw, Topper</div>
+        <div class="font-mono text-lg sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{t('hero.metric2Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans">{t('hero.metric2Label')}</div>
       </div>
       <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#141414]/90 backdrop-blur-xs rounded-xl border border-[#ebebeb] dark:border-[#262626] text-left">
-        <div class="font-mono text-lg sm:text-2xl font-bold text-[#10b981] dark:text-[#10b981]">&lt; 3%</div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans">Low-Carb Starch Cap</div>
+        <div class="font-mono text-lg sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{t('hero.metric3Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans">{t('hero.metric3Label')}</div>
       </div>
       <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#141414]/90 backdrop-blur-xs rounded-xl border border-[#ebebeb] dark:border-[#262626] text-left">
-        <div class="font-mono text-lg sm:text-2xl font-bold text-[#7928ca] dark:text-[#a35cf0]">100%</div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans">Free & Transparent</div>
+        <div class="font-mono text-lg sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{t('hero.metric4Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans">{t('hero.metric4Label')}</div>
       </div>
     </div>
 

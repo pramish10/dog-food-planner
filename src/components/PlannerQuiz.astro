@@ -15,8 +15,17 @@ import { RECIPES } from '../data/recipes';
         Tailor the perfect bowl in under 60 seconds.
       </h2>
       <p class="text-xs sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-lg mx-auto leading-relaxed">
-        Our clinical calculator computes your dog's exact metabolic rate and matches whole-food ingredients to their distinct biology.
+        Our easy calculator estimates your dog's exact daily calorie needs and matches fresh, wholesome ingredients to their lifestyle.
       </p>
+    </div>
+
+    <!-- General Purpose & Educational Disclaimer Banner -->
+    <div class="mb-6 sm:mb-8 p-3.5 sm:p-4 rounded-xl bg-amber-500/10 border border-amber-500/25 flex items-start gap-3 text-xs text-[#4d4d4d] dark:text-[#cccccc] leading-relaxed max-w-4xl mx-auto shadow-2xs">
+      <span class="text-base shrink-0 mt-0.5">🐾</span>
+      <div>
+        <strong class="font-semibold text-amber-900 dark:text-amber-300">General Purpose & Educational Guidance:</strong>
+        <span> This tool is provided for general educational purposes only. It is not a diagnostic tool and is not a substitute for professional veterinary advice, diagnosis, or treatment. Always consult your licensed veterinarian before making major changes to your dog's diet, especially for dogs with specific medical conditions.</span>
+      </div>
     </div>
 
     <!-- Quiz Card Container -->
@@ -66,7 +75,7 @@ import { RECIPES } from '../data/recipes';
                   <input type="radio" name="age-stage" value="puppy-early" class="peer sr-only" />
                   <div class="p-2.5 sm:p-3 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white transition-all h-full flex flex-col justify-center bg-white dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] peer-checked:!text-white dark:peer-checked:!text-[#171717] group">
                     <div class="font-semibold text-xs text-inherit">Puppy (2–4 mo)</div>
-                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">3.0x Burn</div>
+                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Growth Fuel</div>
                   </div>
                 </label>
 
@@ -74,7 +83,7 @@ import { RECIPES } from '../data/recipes';
                   <input type="radio" name="age-stage" value="puppy-late" class="peer sr-only" />
                   <div class="p-2.5 sm:p-3 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white transition-all h-full flex flex-col justify-center bg-white dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] peer-checked:!text-white dark:peer-checked:!text-[#171717] group">
                     <div class="font-semibold text-xs text-inherit">Puppy (4–12 mo)</div>
-                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">2.0x Burn</div>
+                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Active Growth</div>
                   </div>
                 </label>
 
@@ -82,7 +91,7 @@ import { RECIPES } from '../data/recipes';
                   <input type="radio" name="age-stage" value="adult" checked class="peer sr-only" />
                   <div class="p-2.5 sm:p-3 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white transition-all h-full flex flex-col justify-center bg-white dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] peer-checked:!text-white dark:peer-checked:!text-[#171717] group">
                     <div class="font-semibold text-xs text-inherit">Adult (1–7 yrs)</div>
-                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Standard</div>
+                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Maintenance</div>
                   </div>
                 </label>
 
@@ -90,39 +99,83 @@ import { RECIPES } from '../data/recipes';
                   <input type="radio" name="age-stage" value="senior" class="peer sr-only" />
                   <div class="p-2.5 sm:p-3 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white transition-all h-full flex flex-col justify-center bg-white dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] peer-checked:!text-white dark:peer-checked:!text-[#171717] group">
                     <div class="font-semibold text-xs text-inherit">Senior (7+ yrs)</div>
-                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Joint Focus</div>
+                    <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Joint & Heart</div>
                   </div>
                 </label>
               </div>
             </div>
 
             <div>
-              <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider mb-1.5 font-mono">
-                Gender & Reproductive Status
-              </label>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
+                  Gender & Spay / Neuter Status
+                </label>
+                <button 
+                  type="button" 
+                  id="gender-info-toggle-btn"
+                  class="text-[10px] font-mono text-[#0070f3] dark:text-[#3291ff] hover:underline inline-flex items-center gap-1 cursor-pointer touch-manipulation"
+                  aria-expanded="false"
+                >
+                  <span>ℹ️ Status Meanings</span>
+                </button>
+              </div>
+              <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373] mb-2 leading-relaxed">
+                Why this matters: Fixed dogs burn about 10% fewer resting calories. Knowing this helps us adjust portion sizes so your dog doesn't gain excess weight.
+              </p>
+
+              <!-- Expandable Status Meanings Guide -->
+              <div id="gender-info-panel" class="hidden mb-3 p-3 bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-[11px] space-y-2">
+                <div class="font-semibold text-xs text-[#171717] dark:text-[#ededed] flex items-center justify-between">
+                  <span>Why Reproductive Status Matters:</span>
+                  <a href="/faq/what-does-spayed-neutered-intact-gender-mean-for-dogs" target="_blank" class="text-[10px] text-[#0070f3] dark:text-[#3291ff] hover:underline font-mono">Full Clinical FAQ →</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                  <div class="p-2 bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] rounded-lg">
+                    <div class="font-semibold text-[#171717] dark:text-[#ededed]">Female (Fixed) — Spayed</div>
+                    <div class="text-[#737373] dark:text-[#a1a1a1] mt-0.5">Surgically altered (ovaries removed). Metabolic rate drops ~10%; portion sizes are calibrated to prevent excess weight gain.</div>
+                  </div>
+                  <div class="p-2 bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] rounded-lg">
+                    <div class="font-semibold text-[#171717] dark:text-[#ededed]">Female (Not Fixed) — Intact / Breeding</div>
+                    <div class="text-[#737373] dark:text-[#a1a1a1] mt-0.5">Unaltered female with hormonal heat cycles. Needs higher calories during estrus and up to 2×–3.5× baseline when nursing.</div>
+                  </div>
+                  <div class="p-2 bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] rounded-lg">
+                    <div class="font-semibold text-[#171717] dark:text-[#ededed]">Male (Fixed) — Neutered</div>
+                    <div class="text-[#737373] dark:text-[#a1a1a1] mt-0.5">Surgically altered (castration). Reduced testosterone lowers resting caloric burn by ~10–12%, requiring controlled caloric density.</div>
+                  </div>
+                  <div class="p-2 bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] rounded-lg">
+                    <div class="font-semibold text-[#171717] dark:text-[#ededed]">Male (Not Fixed) — Intact / Breeding</div>
+                    <div class="text-[#737373] dark:text-[#a1a1a1] mt-0.5">Unaltered male. Natural testosterone maintains higher lean muscle mass and resting energy burn (factor: 1.8 × RER vs 1.6 for neutered).</div>
+                  </div>
+                </div>
+              </div>
+
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
                 <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="gender" value="female-spayed" checked class="peer sr-only" />
-                  <div class="p-2.5 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white peer-checked:!text-white dark:peer-checked:!text-[#171717] text-[#171717] dark:text-[#ededed] transition-all bg-white dark:bg-[#1a1a1a]">
-                    Female (Spayed)
+                  <div class="p-2.5 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white peer-checked:!text-white dark:peer-checked:!text-[#171717] text-[#171717] dark:text-[#ededed] transition-all bg-white dark:bg-[#1a1a1a]">
+                    <div class="font-semibold text-xs text-inherit">Female (Fixed)</div>
+                    <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Spayed</div>
                   </div>
                 </label>
                 <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="gender" value="female-intact" class="peer sr-only" />
-                  <div class="p-2.5 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white peer-checked:!text-white dark:peer-checked:!text-[#171717] text-[#171717] dark:text-[#ededed] transition-all bg-white dark:bg-[#1a1a1a]">
-                    Female (Intact)
+                  <div class="p-2.5 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white peer-checked:!text-white dark:peer-checked:!text-[#171717] text-[#171717] dark:text-[#ededed] transition-all bg-white dark:bg-[#1a1a1a]">
+                    <div class="font-semibold text-xs text-inherit">Female (Not Fixed)</div>
+                    <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Intact / Breeding</div>
                   </div>
                 </label>
                 <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="gender" value="male-neutered" class="peer sr-only" />
-                  <div class="p-2.5 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white peer-checked:!text-white dark:peer-checked:!text-[#171717] text-[#171717] dark:text-[#ededed] transition-all bg-white dark:bg-[#1a1a1a]">
-                    Male (Neutered)
+                  <div class="p-2.5 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white peer-checked:!text-white dark:peer-checked:!text-[#171717] text-[#171717] dark:text-[#ededed] transition-all bg-white dark:bg-[#1a1a1a]">
+                    <div class="font-semibold text-xs text-inherit">Male (Fixed)</div>
+                    <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Neutered</div>
                   </div>
                 </label>
                 <label class="cursor-pointer touch-manipulation">
                   <input type="radio" name="gender" value="male-intact" class="peer sr-only" />
-                  <div class="p-2.5 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center text-xs font-medium peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white peer-checked:!text-white dark:peer-checked:!text-[#171717] text-[#171717] dark:text-[#ededed] transition-all bg-white dark:bg-[#1a1a1a]">
-                    Male (Intact)
+                  <div class="p-2.5 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-center peer-checked:border-[#171717] dark:peer-checked:border-white peer-checked:bg-[#171717] dark:peer-checked:bg-white peer-checked:!text-white dark:peer-checked:!text-[#171717] text-[#171717] dark:text-[#ededed] transition-all bg-white dark:bg-[#1a1a1a]">
+                    <div class="font-semibold text-xs text-inherit">Male (Not Fixed)</div>
+                    <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] peer-checked:!text-white/80 dark:peer-checked:!text-[#171717]/80">Intact / Breeding</div>
                   </div>
                 </label>
               </div>
@@ -132,16 +185,17 @@ import { RECIPES } from '../data/recipes';
 
         <!-- STEP 2: Breed & Physical Metrics with AI Breed Scanner -->
         <div class="quiz-step hidden" data-step="2">
-          <div class="flex items-center justify-between gap-2 mb-1">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
             <h3 class="text-lg sm:text-xl font-semibold text-[#171717] dark:text-[#ededed]">Physical Metrics & Breed</h3>
             
             <!-- AI Camera Breed Scanner Trigger -->
             <button 
               type="button" 
               id="ai-scan-trigger-btn" 
-              class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono font-semibold text-[#0070f3] bg-[#d3e5ff]/50 dark:bg-[#0070f3]/20 hover:bg-[#d3e5ff] dark:hover:bg-[#0070f3]/30 border border-[#0070f3]/30 rounded-full transition-all touch-manipulation cursor-pointer"
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono font-semibold text-[#0070f3] dark:text-[#3291ff] bg-[#d3e5ff]/50 dark:bg-[#0070f3]/20 hover:bg-[#d3e5ff] dark:hover:bg-[#0070f3]/30 border border-[#0070f3]/30 rounded-full transition-all touch-manipulation cursor-pointer shadow-2xs"
             >
               <span>📸 AI Dog Breed Scanner</span>
+              <span class="text-[9px] uppercase px-1.5 py-0.2 rounded-full bg-[#0070f3] text-white font-bold">BETA</span>
             </button>
           </div>
           <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mb-5 sm:mb-6">Don't know the breed? Use our free AI scanner or select a general size category.</p>
@@ -205,41 +259,80 @@ import { RECIPES } from '../data/recipes';
               </div>
             </div>
 
-            <!-- Body Condition Score 1-9 Visual Selector -->
-            <div>
-              <div class="flex items-center justify-between mb-1.5">
-                <label class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
-                  Body Condition Score (BCS 1–9)
-                </label>
-                <span id="bcs-label" class="font-mono text-[10px] sm:text-xs font-bold text-[#0070f3] bg-[#d3e5ff]/40 dark:bg-[#0070f3]/20 px-2 py-0.5 rounded">
-                  BCS 5/9: Ideal Weight
+            <!-- Body Condition Score 1-9 & Body Shape Selector -->
+            <div class="space-y-2 p-3 sm:p-3.5 bg-[#fafafa] dark:bg-[#161616] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+              <div class="flex items-center justify-between">
+                <div>
+                  <label class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
+                    Body Shape & Condition
+                  </label>
+                  <p class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">
+                    Why body shape matters: Two dogs weighing 50 lbs can have very different builds. Body shape helps tailor daily calories so your dog stays in healthy shape.
+                  </p>
+                </div>
+                <span id="bcs-label" class="shrink-0 font-mono text-[10px] sm:text-xs font-bold text-[#10b981] bg-[#10b981]/15 px-2 py-0.5 rounded">
+                  Ideal Build (BCS 5/9)
                 </span>
               </div>
-              <input 
-                type="range" 
-                id="bcs-slider" 
-                min="1" 
-                max="9" 
-                value="5" 
-                class="w-full h-2.5 bg-[#f2f2f2] dark:bg-[#262626] rounded-lg appearance-none cursor-pointer accent-[#171717] dark:accent-white touch-manipulation"
-              />
-              <div class="flex justify-between text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] font-mono mt-1">
-                <span>1 (Thin)</span>
-                <span class="text-[#10b981] font-semibold">4–5 (Ideal)</span>
-                <span>9 (Obese)</span>
+
+              <!-- Quick Presets -->
+              <div class="grid grid-cols-3 gap-1.5 pt-1">
+                <button type="button" class="bcs-preset-btn px-2 py-1.5 rounded-lg text-center border border-[#ebebeb] dark:border-[#2e2e2e] bg-white dark:bg-[#1f1f1f] hover:border-[#171717] dark:hover:border-white transition-all text-left cursor-pointer" data-bcs="3">
+                  <div class="text-[11px] font-semibold text-[#171717] dark:text-white flex items-center gap-1">🏃 Slim / Lean</div>
+                  <div class="text-[9px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">Ribs easily felt</div>
+                </button>
+                <button type="button" class="bcs-preset-btn px-2 py-1.5 rounded-lg text-center border-2 border-[#10b981] bg-[#10b981]/10 text-left cursor-pointer" data-bcs="5">
+                  <div class="text-[11px] font-semibold text-[#171717] dark:text-white flex items-center gap-1">🐕 Ideal / Fit</div>
+                  <div class="text-[9px] text-[#10b981] font-medium mt-0.5">Balanced waist</div>
+                </button>
+                <button type="button" class="bcs-preset-btn px-2 py-1.5 rounded-lg text-center border border-[#ebebeb] dark:border-[#2e2e2e] bg-white dark:bg-[#1f1f1f] hover:border-[#171717] dark:hover:border-white transition-all text-left cursor-pointer" data-bcs="7">
+                  <div class="text-[11px] font-semibold text-[#171717] dark:text-white flex items-center gap-1">🛋️ Chubby / Heavy</div>
+                  <div class="text-[9px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">Ribs hidden by fat</div>
+                </button>
+              </div>
+
+              <!-- Fine-tuning Slider -->
+              <div class="pt-1">
+                <input 
+                  type="range" 
+                  id="bcs-slider" 
+                  min="1" 
+                  max="9" 
+                  value="5" 
+                  class="w-full h-2 bg-[#e5e5e5] dark:bg-[#2a2a2a] rounded-lg appearance-none cursor-pointer accent-[#171717] dark:accent-white touch-manipulation"
+                />
+                <div class="flex justify-between text-[9px] text-[#8f8f8f] dark:text-[#737373] font-mono mt-0.5">
+                  <span>1 (Underweight)</span>
+                  <span class="text-[#10b981] font-semibold">4–5 (Ideal Build)</span>
+                  <span>9 (Overweight)</span>
+                </div>
               </div>
             </div>
 
             <!-- Treat & Snack Allowance Percentage -->
-            <div>
-              <div class="flex items-center justify-between mb-1.5">
-                <label class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
-                  Daily Treat Allowance (% of Calories)
-                </label>
-                <span id="treat-budget-label" class="font-mono text-[10px] sm:text-xs font-bold text-[#171717] dark:text-[#ededed] bg-[#f2f2f2] dark:bg-[#262626] px-2 py-0.5 rounded">
-                  10% (Recommended)
+            <div class="space-y-2 p-3 sm:p-3.5 bg-[#fafafa] dark:bg-[#161616] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+              <div class="flex items-center justify-between">
+                <div>
+                  <label class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
+                    Daily Treats & Snacks Budget
+                  </label>
+                  <p class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">
+                    What this means: Vets advise keeping treats, chews, and snacks under 10% of daily calories so meals provide complete, balanced nutrition.
+                  </p>
+                </div>
+                <span id="treat-budget-label" class="shrink-0 font-mono text-[10px] sm:text-xs font-bold text-[#171717] dark:text-[#ededed] bg-white dark:bg-[#262626] border border-[#ebebeb] dark:border-[#333] px-2 py-0.5 rounded">
+                  10% (Vet Recommended)
                 </span>
               </div>
+
+              <!-- Quick treat budget buttons -->
+              <div class="grid grid-cols-4 gap-1 pt-1">
+                <button type="button" class="treat-preset-btn px-2 py-1 rounded-md text-[10px] font-mono border border-[#ebebeb] dark:border-[#2e2e2e] bg-white dark:bg-[#1f1f1f] text-center hover:border-[#171717] dark:hover:border-white transition-all cursor-pointer" data-treat="0">0% None</button>
+                <button type="button" class="treat-preset-btn px-2 py-1 rounded-md text-[10px] font-mono border border-[#ebebeb] dark:border-[#2e2e2e] bg-white dark:bg-[#1f1f1f] text-center hover:border-[#171717] dark:hover:border-white transition-all cursor-pointer" data-treat="5">5% Light</button>
+                <button type="button" class="treat-preset-btn px-2 py-1 rounded-md text-[10px] font-mono border-2 border-[#171717] dark:border-white bg-[#171717] text-white dark:bg-white dark:text-[#171717] font-semibold text-center cursor-pointer" data-treat="10">10% Standard</button>
+                <button type="button" class="treat-preset-btn px-2 py-1 rounded-md text-[10px] font-mono border border-[#ebebeb] dark:border-[#2e2e2e] bg-white dark:bg-[#1f1f1f] text-center hover:border-[#171717] dark:hover:border-white transition-all cursor-pointer" data-treat="15">15% Training</button>
+              </div>
+
               <input 
                 type="range" 
                 id="treat-budget-slider" 
@@ -247,14 +340,8 @@ import { RECIPES } from '../data/recipes';
                 max="15" 
                 step="5" 
                 value="10" 
-                class="w-full h-2.5 bg-[#f2f2f2] dark:bg-[#262626] rounded-lg appearance-none cursor-pointer accent-[#171717] dark:accent-white touch-manipulation"
+                class="w-full h-2 bg-[#e5e5e5] dark:bg-[#2a2a2a] rounded-lg appearance-none cursor-pointer accent-[#171717] dark:accent-white touch-manipulation"
               />
-              <div class="flex justify-between text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono mt-1">
-                <span>0% (Meals Only)</span>
-                <span>5%</span>
-                <span>10% (Standard)</span>
-                <span>15% (High Training)</span>
-              </div>
             </div>
           </div>
         </div>
@@ -451,7 +538,7 @@ import { RECIPES } from '../data/recipes';
               id="generate-plan-btn" 
               class="hidden px-6 sm:px-8 py-2.5 text-xs font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] hover:bg-[#0070f3] dark:hover:bg-[#3291ff] dark:hover:text-white active:scale-[0.98] transition-all rounded-full shadow-md cursor-pointer"
             >
-              ✨ Generate Clinical Plan
+              ✨ Generate Custom Meal Plan
             </button>
           </div>
         </div>
@@ -462,22 +549,22 @@ import { RECIPES } from '../data/recipes';
   </div>
 </section>
 
-<!-- AI Camera & Photo Breed Scanner Modal -->
+<!-- AI Camera & Photo Breed Scanner Modal (BETA) -->
 <div id="ai-scanner-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
-  <div class="bg-white dark:bg-[#121212] rounded-2xl border border-[#ebebeb] dark:border-[#262626] max-w-xl w-full p-4 sm:p-6 shadow-2xl relative overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-200">
+  <div class="bg-white dark:bg-[#121212] rounded-2xl border border-[#ebebeb] dark:border-[#262626] max-w-lg w-full p-4 sm:p-5 shadow-2xl relative overflow-hidden my-auto animate-in fade-in zoom-in-95 duration-200">
     
     <!-- Modal Header -->
-    <div class="flex items-center justify-between pb-3.5 mb-3.5 border-b border-[#ebebeb] dark:border-[#262626]">
+    <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0070f3]/20 to-[#50e3c2]/20 text-[#0070f3] dark:text-[#3291ff] flex items-center justify-center font-bold text-base shadow-xs">
-          🔬
+        <div class="w-9 h-9 rounded-xl bg-[#10b981]/15 text-[#10b981] flex items-center justify-center font-bold text-base">
+          📸
         </div>
         <div>
-          <div class="flex items-center gap-1.5 flex-wrap">
-            <h4 class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">AI Canine Multi-Spectrum Vision Scanner</h4>
-            <span class="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded-full bg-[#10b981]/15 text-[#10b981] font-bold border border-[#10b981]/30">Neural Vision v4.0</span>
+          <div class="flex items-center gap-2">
+            <h4 class="font-semibold text-sm sm:text-base text-[#171717] dark:text-[#ededed]">AI Dog Breed Scanner</h4>
+            <span class="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded-full bg-[#0070f3] text-white font-bold tracking-wider">BETA</span>
           </div>
-          <p class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono">Real-time Morphological Telemetry & Environmental Diagnostics</p>
+          <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">Live camera or photo scan to detect breed and adult weight</p>
         </div>
       </div>
       <button type="button" id="close-ai-modal" class="p-2 rounded-lg text-[#8f8f8f] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#262626] cursor-pointer transition-colors" aria-label="Close Scanner">
@@ -485,181 +572,178 @@ import { RECIPES } from '../data/recipes';
       </button>
     </div>
 
-    <!-- Scanner Viewfinder & HUD -->
-    <div class="relative bg-[#070707] rounded-xl overflow-hidden aspect-4/3 flex items-center justify-center mb-3.5 border border-[#262626] shadow-inner">
+    <!-- Scanner Viewfinder -->
+    <div class="relative bg-[#0a0a0a] rounded-xl overflow-hidden aspect-4/3 flex items-center justify-center mb-3 border border-[#262626] shadow-inner">
       <video id="scanner-video" autoplay playsinline muted class="w-full h-full object-cover hidden"></video>
-      <img id="scanner-img-preview" class="w-full h-full object-cover hidden" alt="Scanned Subject" />
+      <img id="scanner-img-preview" class="w-full h-full object-cover hidden" alt="Scanned Dog" />
       <canvas id="scanner-canvas" class="hidden"></canvas>
 
-      <!-- HUD Crosshair & Targeting Reticle -->
-      <div class="absolute inset-3 sm:inset-4 pointer-events-none flex flex-col justify-between z-20">
-        <div class="flex justify-between">
-          <div class="w-6 h-6 border-t-2 border-l-2 border-[#50e3c2] rounded-tl-sm"></div>
-          <div class="w-6 h-6 border-t-2 border-r-2 border-[#50e3c2] rounded-tr-sm"></div>
+      <!-- Viewfinder Overlay Elements -->
+      <div class="absolute inset-3 pointer-events-none flex flex-col justify-between z-20">
+        <!-- Top Status & Camera Flip Overlay -->
+        <div class="flex items-center justify-between pointer-events-auto">
+          <div class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-xs font-mono text-[9px] text-[#ededed] flex items-center gap-1.5 border border-white/10">
+            <span id="camera-status-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="camera-status-text">Camera Active</span>
+          </div>
+
+          <button 
+            type="button" 
+            id="flip-camera-btn" 
+            class="px-2.5 py-1 rounded-full bg-black/70 hover:bg-black/90 backdrop-blur-xs font-mono text-[10px] text-white flex items-center gap-1 border border-white/20 transition-all cursor-pointer touch-manipulation"
+            title="Switch front/back camera"
+          >
+            <span>🔄 Switch Camera</span>
+          </button>
         </div>
 
-        <!-- Center Target Reticle with Live Metrics -->
-        <div class="self-center flex flex-col items-center">
-          <div class="w-20 h-20 sm:w-28 sm:h-28 rounded-full border border-dashed border-[#50e3c2]/40 flex items-center justify-center relative animate-pulse">
-            <div class="w-1.5 h-1.5 bg-[#50e3c2] rounded-full"></div>
-            <div class="absolute inset-x-0 h-px bg-[#50e3c2]/30"></div>
-            <div class="absolute inset-y-0 w-px bg-[#50e3c2]/30"></div>
+        <!-- Center Target Reticle -->
+        <div class="self-center flex flex-col items-center pointer-events-none">
+          <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl border-2 border-dashed border-white/40 flex items-center justify-center relative">
+            <span class="text-xs text-white/70 font-medium px-2 py-0.5 bg-black/50 rounded-md">Point at Dog</span>
           </div>
         </div>
 
-        <div class="flex justify-between">
-          <div class="w-6 h-6 border-b-2 border-l-2 border-[#50e3c2] rounded-bl-sm"></div>
-          <div class="w-6 h-6 border-b-2 border-r-2 border-[#50e3c2] rounded-br-sm"></div>
+        <!-- Live Auto-Scan Status HUD -->
+        <div id="auto-scan-hud" class="self-center pointer-events-none text-center px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-emerald-500/40 text-[10px] sm:text-[11px] font-mono text-emerald-300 flex items-center gap-1.5 shadow-lg transition-all">
+          <span id="auto-scan-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span id="auto-scan-hud-text">⚡ Auto-Scan: Point at dog to scan</span>
+        </div>
+
+        <div class="text-center text-[10px] text-white/60 font-mono pointer-events-none">
+          Auto-identifies dog in frame or tap Snap below
         </div>
       </div>
 
-      <!-- Real-time HUD Diagnostics Badge Top-Left -->
-      <div class="absolute top-2.5 left-2.5 z-30 flex flex-col gap-1 pointer-events-none">
-        <div id="lighting-badge" class="px-2 py-0.5 rounded bg-black/80 backdrop-blur-xs font-mono text-[9px] text-[#ededed] border border-white/10 flex items-center gap-1.5">
-          <span id="lighting-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span id="lighting-text">LUX: OPTIMAL (68%)</span>
-        </div>
-        <div id="telemetry-badge" class="hidden px-2 py-0.5 rounded bg-black/80 backdrop-blur-xs font-mono text-[9px] text-[#50e3c2] border border-[#50e3c2]/30 flex items-center gap-1.5">
-          <span>🎯 SUBJECT GATE: <span id="cranial-ratio-val">VERIFYING</span></span>
-        </div>
-      </div>
-
-      <!-- Real-time Status Badge Top-Right -->
-      <div class="absolute top-2.5 right-2.5 z-30 pointer-events-none">
-        <div class="px-2 py-0.5 rounded bg-black/80 backdrop-blur-xs font-mono text-[9px] text-[#8f8f8f] border border-white/10 flex items-center gap-1">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#0070f3] animate-ping"></span>
-          <span>ISO 400 · AI SENSOR ACTIVE</span>
-        </div>
-      </div>
-
-      <!-- Initial Placeholder State -->
+      <!-- Initial Loading / Placeholder State -->
       <div id="scanner-placeholder" class="text-center p-4 text-white z-10">
-        <div class="w-14 h-14 rounded-full border-2 border-dashed border-[#50e3c2] mx-auto mb-3 flex items-center justify-center text-xl bg-[#50e3c2]/10 animate-pulse">
+        <div class="w-12 h-12 rounded-full border-2 border-dashed border-[#10b981] mx-auto mb-2.5 flex items-center justify-center text-xl bg-[#10b981]/10 animate-pulse">
           🐾
         </div>
-        <p class="text-xs font-mono text-[#50e3c2] font-bold tracking-wide">Ready for Dog Scan or Photo</p>
-        <p class="text-[10px] text-[#8f8f8f] mt-1 font-mono max-w-xs mx-auto">Neural sensors inspect cranial shape, muzzle index, ear topology, and skin/coat chroma in real-time</p>
+        <p class="text-xs font-semibold text-white">Starting Live Camera...</p>
+        <p class="text-[10px] text-[#8f8f8f] mt-0.5">Please allow camera permissions if prompted</p>
       </div>
 
-      <!-- High-Tech Multi-Band Scanning Laser -->
-      <div id="scanner-laser" class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-transparent via-[#50e3c2] to-transparent shadow-[0_0_16px_#50e3c2] hidden z-20 transition-all duration-75"></div>
+      <!-- Scanner Animation Line -->
+      <div id="scanner-laser" class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#10b981] to-transparent shadow-[0_0_12px_#10b981] hidden z-20 transition-all duration-75"></div>
       
-      <!-- Live Processing Indicator -->
-      <div id="scanner-processing-tag" class="absolute bottom-3 inset-x-3 bg-black/85 backdrop-blur-md text-[#50e3c2] text-[10px] font-mono font-bold px-3 py-1.5 rounded-lg border border-[#50e3c2]/40 hidden z-20 flex items-center justify-between">
+      <!-- Processing Toast -->
+      <div id="scanner-processing-tag" class="absolute bottom-2.5 inset-x-2.5 bg-black/85 backdrop-blur-md text-[#10b981] text-[10px] font-mono font-bold px-3 py-1.5 rounded-lg border border-[#10b981]/40 hidden z-30 flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-[#50e3c2] animate-ping"></span>
-          <span id="scan-step-text">ANALYZING FACIAL SNOUT & MORPHOLOGY...</span>
+          <span class="w-2 h-2 rounded-full bg-[#10b981] animate-ping"></span>
+          <span id="scan-step-text">IDENTIFYING DOG BREED...</span>
         </div>
-        <span class="text-[9px] text-[#8f8f8f]">120 FPS</span>
       </div>
     </div>
 
-    <!-- Scan Action Buttons -->
-    <div class="space-y-3">
-      <div class="grid grid-cols-2 gap-2 sm:gap-2.5">
+    <!-- Scanner Action Controls -->
+    <div class="space-y-2.5">
+      <!-- Main Snap & Identify Button -->
+      <button 
+        type="button" 
+        id="snap-scan-btn"
+        class="w-full py-2.5 bg-[#10b981] hover:bg-[#059669] text-white text-xs sm:text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md touch-manipulation active:scale-[0.99]"
+      >
+        <span>📸 Snap & Identify Dog</span>
+        <span class="text-[10px] opacity-80 font-normal hidden sm:inline">(or holds still to auto-scan)</span>
+      </button>
+
+      <!-- Secondary Controls: Switch Camera & Upload Photo -->
+      <div class="grid grid-cols-2 gap-2">
         <button 
           type="button" 
-          id="start-camera-btn"
-          class="py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm touch-manipulation"
+          id="flip-camera-btn-alt"
+          class="py-2 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer touch-manipulation"
         >
-          <span>📷 Live Camera</span>
+          <span>🔄 Switch Camera</span>
         </button>
         
-        <label class="py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer text-center touch-manipulation">
-          <span>📁 Upload Dog Photo</span>
+        <label class="py-2 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center touch-manipulation">
+          <span>📁 Upload Photo</span>
           <input type="file" id="dog-photo-upload" accept="image/*" class="sr-only" />
         </label>
       </div>
 
-      <!-- Low-Light Condition Alert Notice (Dynamic) -->
-      <div id="low-light-warning-box" class="hidden p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl space-y-1">
-        <div class="flex items-center gap-2 text-amber-600 dark:text-amber-400 text-xs font-bold font-mono">
-          <span>💡 Low Light Condition Detected</span>
-        </div>
-        <p class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] leading-snug">
-          The scene luminance is too dim (<span id="lux-pct-text">15%</span>). For maximum morphological breed precision, please move to a well-lit area or use room lighting.
-        </p>
+      <!-- Hidden elements for script compatibility -->
+      <div id="lighting-badge" class="hidden">
+        <span id="lighting-dot"></span>
+        <span id="lighting-text"></span>
       </div>
+      <div id="telemetry-badge" class="hidden">
+        <span id="cranial-ratio-val"></span>
+      </div>
+      <div id="low-light-warning-box" class="hidden p-2.5 bg-amber-500/10 border border-amber-500/30 rounded-lg text-[11px] text-amber-700 dark:text-amber-300">
+        💡 Lighting is low (<span id="lux-pct-text"></span>). A well-lit photo gives the most accurate breed identification.
+      </div>
+      <button type="button" id="start-camera-btn" class="hidden"></button>
 
-      <!-- Human / Non-Dog Warning Banner (Advanced Detection) -->
-      <div id="human-warning-box" class="hidden p-3.5 bg-rose-500/10 border border-rose-500/30 rounded-xl space-y-2">
+      <!-- Non-Dog Warning Banner -->
+      <div id="human-warning-box" class="hidden p-3 bg-rose-500/10 border border-rose-500/30 rounded-xl space-y-2">
         <div class="flex items-start gap-2.5">
-          <span class="text-2xl">👤</span>
+          <span class="text-xl">🐾</span>
           <div>
             <h5 class="font-bold text-xs text-rose-600 dark:text-rose-400" id="subject-warning-title">Dog Not Detected</h5>
             <p class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] leading-snug mt-0.5" id="subject-warning-message">
-              Upload a clear photo containing one dog. The scanner does not identify people, cats, or other animals as dogs.
+              Please point your camera at a dog or upload a clear photo containing one dog.
             </p>
           </div>
         </div>
-        <div class="pt-1 flex gap-2">
-          <button type="button" id="retry-scan-btn" class="px-3.5 py-1.5 bg-rose-600 hover:bg-rose-700 text-white text-[11px] font-semibold rounded-lg transition-colors cursor-pointer shadow-xs">
-            Scan Dog Photo Again
+        <div class="pt-0.5 flex gap-2">
+          <button type="button" id="retry-scan-btn" class="px-3 py-1 bg-rose-600 hover:bg-rose-700 text-white text-[11px] font-semibold rounded-lg transition-colors cursor-pointer shadow-xs">
+            Try Again
           </button>
         </div>
       </div>
 
-      <!-- Valid Canine Recognition Result Card (Rich Intelligence Dashboard) -->
-      <div id="scan-result-box" class="hidden p-4 bg-[#fafafa] dark:bg-[#181818] border border-[#ebebeb] dark:border-[#262626] rounded-xl space-y-3.5">
+      <!-- Canine Recognition Result Card -->
+      <div id="scan-result-box" class="hidden p-3.5 sm:p-4 bg-[#fafafa] dark:bg-[#181818] border border-[#ebebeb] dark:border-[#262626] rounded-xl space-y-3">
         
-        <!-- Header match & confidence -->
+        <!-- Header match & category -->
         <div class="flex items-center justify-between pb-2 border-b border-[#ebebeb] dark:border-[#262626]">
-          <span class="font-mono text-[10px] uppercase text-[#10b981] font-bold flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-            Visual breed match (<span id="detected-confidence-text">—</span> confidence)
+          <span class="text-[11px] text-[#10b981] font-bold flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+            Breed Match (<span id="detected-confidence-text">—</span> match)
           </span>
-          <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold" id="detected-category-badge">Large Breed</span>
+          <span class="text-[10px] px-2 py-0.5 rounded bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold" id="detected-category-badge">Large Breed</span>
         </div>
 
-        <!-- Breed title & core description -->
+        <!-- Breed title & adult weight -->
         <div>
           <div class="flex items-baseline justify-between gap-2">
-            <div class="font-bold text-lg text-[#171717] dark:text-[#ededed]" id="detected-breed-name">Golden Retriever</div>
-            <span class="font-mono text-[10px] text-[#0070f3] dark:text-[#3291ff]" id="detected-weight-range">Est: 55–75 lbs</span>
+            <div class="font-bold text-base sm:text-lg text-[#171717] dark:text-[#ededed]" id="detected-breed-name">Golden Retriever</div>
+            <span class="text-xs font-semibold text-[#0070f3] dark:text-[#3291ff]" id="detected-weight-range">Est: 55–75 lbs</span>
           </div>
           <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-1 leading-relaxed" id="detected-breed-desc">
-            Morphology indicates balanced metabolic rate with high water-repellent dense coat.
+            Active and athletic dog with high daily energy and moderate grooming needs.
           </p>
         </div>
 
-        <!-- Morphological Diagnostics Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[10px] font-mono">
-          <div class="p-2 bg-white dark:bg-[#121212] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg">
-            <div class="text-[#8f8f8f] dark:text-[#737373]">CRANIAL TYPE</div>
-            <div class="font-semibold text-[#171717] dark:text-[#ededed] mt-0.5" id="diag-cranial">Mesocephalic</div>
-          </div>
-          <div class="p-2 bg-white dark:bg-[#121212] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg">
-            <div class="text-[#8f8f8f] dark:text-[#737373]">EAR TOPOLOGY</div>
-            <div class="font-semibold text-[#171717] dark:text-[#ededed] mt-0.5" id="diag-ear">Drop / Folded</div>
-          </div>
-          <div class="p-2 bg-white dark:bg-[#121212] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg col-span-2 sm:col-span-1">
-            <div class="text-[#8f8f8f] dark:text-[#737373]">COAT TEXTURE</div>
-            <div class="font-semibold text-[#171717] dark:text-[#ededed] mt-0.5" id="diag-coat">Double / Dense</div>
-          </div>
+        <!-- Hidden diagnostics for script compat -->
+        <div class="hidden">
+          <span id="diag-cranial"></span>
+          <span id="diag-ear"></span>
+          <span id="diag-coat"></span>
+          <span id="detected-macros"></span>
+          <span id="detected-predispositions"></span>
         </div>
 
-        <!-- Breed Health Predispositions & Nutrition Advice -->
-        <div class="p-2.5 bg-blue-50/50 dark:bg-[#0070f3]/10 border border-blue-100 dark:border-[#0070f3]/20 rounded-lg space-y-1.5">
-          <div class="flex items-center gap-1 text-[10px] font-mono uppercase text-[#0070f3] dark:text-[#3291ff] font-bold">
-            <span>🥗 Clinical Nutrition Guidance:</span>
+        <!-- Breed Nutrition Tip -->
+        <div class="p-2.5 bg-blue-50/60 dark:bg-[#0070f3]/10 border border-blue-100 dark:border-[#0070f3]/20 rounded-lg space-y-1">
+          <div class="flex items-center gap-1 text-[11px] font-semibold text-[#0070f3] dark:text-[#3291ff]">
+            <span>💡 Nutrition & Feeding Guidance:</span>
           </div>
           <p class="text-[11px] text-[#333333] dark:text-[#cccccc] leading-snug" id="detected-nutrition-focus">
-            EPA/DHA omega fatty acids for coat barrier defense and taurine for cardiac contractility.
+            Balanced protein and joint-support nutrients help maintain healthy weight and active vitality.
           </p>
-          <div class="flex items-center gap-2 pt-1 font-mono text-[9px] text-[#666666] dark:text-[#888888]">
-            <span>Macros: <strong id="detected-macros" class="text-[#171717] dark:text-white">28% Protein / 15% Fat</strong></span>
-            <span>•</span>
-            <span id="detected-predispositions">Predispositions: Skin Allergies, Hip Care</span>
-          </div>
         </div>
 
-        <!-- Top Probability Candidates Breakdown -->
+        <!-- Visual Match Candidates -->
         <div class="space-y-1.5 pt-1 border-t border-[#ebebeb] dark:border-[#262626]">
-          <div class="text-[10px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] flex justify-between">
-            <span>Model’s visual matches</span>
+          <div class="text-[10px] uppercase text-[#8f8f8f] dark:text-[#737373] font-mono flex justify-between">
+            <span>Possible breed matches</span>
             <span>Confidence</span>
           </div>
-          <div class="space-y-1.5" id="candidates-container">
+          <div class="space-y-1" id="candidates-container">
             <!-- Rendered dynamically -->
           </div>
         </div>
@@ -668,9 +752,9 @@ import { RECIPES } from '../data/recipes';
         <button 
           type="button" 
           id="apply-detected-breed-btn" 
-          class="w-full py-2.5 bg-[#10b981] hover:bg-[#059669] text-white text-xs font-semibold rounded-lg transition-all cursor-pointer shadow-sm flex items-center justify-center gap-1.5 touch-manipulation"
+          class="w-full py-2.5 sm:py-3 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333] dark:hover:bg-[#e5e5e5] text-xs sm:text-sm font-bold rounded-xl transition-all cursor-pointer shadow-md flex items-center justify-center gap-1.5 touch-manipulation"
         >
-          <span>✓ Apply Breed, Weight & Nutritional Profile To Calculator</span>
+          <span>✓ Apply Breed & Weight to Food Planner</span>
         </button>
       </div>
     </div>
@@ -819,36 +903,101 @@ import { RECIPES } from '../data/recipes';
     }
   });
 
-  // Body condition score dynamic label
-  bcsSlider?.addEventListener('input', (e) => {
-    const val = parseInt((e.target as HTMLInputElement).value);
-    if (!bcsLabel) return;
-    if (val <= 3) {
-      bcsLabel.textContent = `BCS ${val}/9: Underweight`;
-      bcsLabel.className = 'font-mono text-[10px] sm:text-xs font-bold text-[#ee0000] bg-[#ee0000]/10 px-2 py-0.5 rounded';
-    } else if (val <= 5) {
-      bcsLabel.textContent = `BCS ${val}/9: Ideal Weight`;
-      bcsLabel.className = 'font-mono text-[10px] sm:text-xs font-bold text-[#10b981] bg-[#10b981]/10 px-2 py-0.5 rounded';
-    } else {
-      bcsLabel.textContent = `BCS ${val}/9: Overweight`;
-      bcsLabel.className = 'font-mono text-[10px] sm:text-xs font-bold text-[#f5a623] bg-[#f5a623]/10 px-2 py-0.5 rounded';
+  // Body condition score dynamic label & presets
+  const bcsPresetBtns = Array.from(document.querySelectorAll('.bcs-preset-btn')) as HTMLButtonElement[];
+  function updateBcsUI(val: number) {
+    if (bcsLabel) {
+      if (val <= 3) {
+        bcsLabel.textContent = `Slim Build (BCS ${val}/9)`;
+        bcsLabel.className = 'shrink-0 font-mono text-[10px] sm:text-xs font-bold text-[#f5a623] bg-[#f5a623]/15 px-2 py-0.5 rounded';
+      } else if (val <= 5) {
+        bcsLabel.textContent = `Ideal Build (BCS ${val}/9)`;
+        bcsLabel.className = 'shrink-0 font-mono text-[10px] sm:text-xs font-bold text-[#10b981] bg-[#10b981]/15 px-2 py-0.5 rounded';
+      } else {
+        bcsLabel.textContent = `Heavy Build (BCS ${val}/9)`;
+        bcsLabel.className = 'shrink-0 font-mono text-[10px] sm:text-xs font-bold text-[#ee0000] bg-[#ee0000]/15 px-2 py-0.5 rounded';
+      }
     }
+    bcsPresetBtns.forEach((btn) => {
+      const bcs = parseInt(btn.getAttribute('data-bcs') || '0');
+      const isMatch = (bcs === 3 && val <= 3) || (bcs === 5 && (val === 4 || val === 5)) || (bcs === 7 && val >= 6);
+      if (isMatch) {
+        btn.className = 'bcs-preset-btn px-2 py-1.5 rounded-lg text-center border-2 border-[#10b981] bg-[#10b981]/10 text-left cursor-pointer';
+      } else {
+        btn.className = 'bcs-preset-btn px-2 py-1.5 rounded-lg text-center border border-[#ebebeb] dark:border-[#2e2e2e] bg-white dark:bg-[#1f1f1f] hover:border-[#171717] dark:hover:border-white transition-all text-left cursor-pointer';
+      }
+    });
+  }
+
+  bcsPresetBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const bcsVal = parseInt(btn.getAttribute('data-bcs') || '5');
+      if (bcsSlider) {
+        bcsSlider.value = bcsVal.toString();
+        updateBcsUI(bcsVal);
+      }
+    });
   });
 
-  // Treat budget label
+  bcsSlider?.addEventListener('input', (e) => {
+    const val = parseInt((e.target as HTMLInputElement).value);
+    updateBcsUI(val);
+  });
+
+  // Treat budget label & presets
+  const treatPresetBtns = Array.from(document.querySelectorAll('.treat-preset-btn')) as HTMLButtonElement[];
+  function updateTreatUI(val: number) {
+    if (treatLabel) {
+      if (val === 0) treatLabel.textContent = '0% (Meals Only)';
+      else if (val <= 5) treatLabel.textContent = '5% (Light Treats)';
+      else if (val <= 10) treatLabel.textContent = '10% (Vet Recommended)';
+      else treatLabel.textContent = '15% (High Training)';
+    }
+    treatPresetBtns.forEach((btn) => {
+      const t = parseInt(btn.getAttribute('data-treat') || '-1');
+      if (t === val) {
+        btn.className = 'treat-preset-btn px-2 py-1 rounded-md text-[10px] font-mono border-2 border-[#171717] dark:border-white bg-[#171717] text-white dark:bg-white dark:text-[#171717] font-semibold text-center cursor-pointer';
+      } else {
+        btn.className = 'treat-preset-btn px-2 py-1 rounded-md text-[10px] font-mono border border-[#ebebeb] dark:border-[#2e2e2e] bg-white dark:bg-[#1f1f1f] text-center hover:border-[#171717] dark:hover:border-white transition-all cursor-pointer';
+      }
+    });
+  }
+
+  treatPresetBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const treatVal = parseInt(btn.getAttribute('data-treat') || '10');
+      if (treatSlider) {
+        treatSlider.value = treatVal.toString();
+        updateTreatUI(treatVal);
+      }
+    });
+  });
+
   treatSlider?.addEventListener('input', (e) => {
     const val = parseInt((e.target as HTMLInputElement).value);
-    if (!treatLabel) return;
-    treatLabel.textContent = `${val}% Allowance`;
+    updateTreatUI(val);
+  });
+
+  // Gender & Spay/Neuter Status Info Guide Toggle
+  const genderInfoToggleBtn = document.getElementById('gender-info-toggle-btn');
+  const genderInfoPanel = document.getElementById('gender-info-panel');
+  genderInfoToggleBtn?.addEventListener('click', () => {
+    const isHidden = genderInfoPanel?.classList.toggle('hidden');
+    genderInfoToggleBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
   });
 
   // =========================================================================
-  // ADVANCED AI VISION BREED SCANNER & MORPHOLOGICAL ENGINE (EDGE AI + NEURAL)
+  // AI DOG BREED SCANNER (BETA) WITH AUTO-CAMERA & SWITCHING
   // =========================================================================
   const aiModal = document.getElementById('ai-scanner-modal');
   const aiTriggerBtn = document.getElementById('ai-scan-trigger-btn');
   const closeAiModal = document.getElementById('close-ai-modal');
   const startCameraBtn = document.getElementById('start-camera-btn');
+  const snapScanBtn = document.getElementById('snap-scan-btn');
+  const flipCameraBtn = document.getElementById('flip-camera-btn');
+  const flipCameraBtnAlt = document.getElementById('flip-camera-btn-alt');
+  const cameraStatusDot = document.getElementById('camera-status-dot');
+  const cameraStatusText = document.getElementById('camera-status-text');
   const scannerVideo = document.getElementById('scanner-video') as HTMLVideoElement;
   const scannerImgPreview = document.getElementById('scanner-img-preview') as HTMLImageElement;
   const scannerCanvas = document.getElementById('scanner-canvas') as HTMLCanvasElement;
@@ -881,6 +1030,8 @@ import { RECIPES } from '../data/recipes';
   const applyDetectedBtn = document.getElementById('apply-detected-breed-btn');
   const photoUpload = document.getElementById('dog-photo-upload') as HTMLInputElement;
 
+  let currentFacingMode: 'environment' | 'user' = 'environment';
+
   let activeSelectedBreedName = 'Golden Retriever';
   let activeSelectedWeight = 65;
   let animFrameId: number | null = null;
@@ -889,6 +1040,10 @@ import { RECIPES } from '../data/recipes';
   let cocoSsdModel: any = null;
   let mobileNetModel: any = null;
   let modelLoadPromise: Promise<void> | null = null;
+  let autoScanIntervalId: any = null;
+  let isAutoScanning = false;
+  let isInferring = false;
+  let autoScanDogHits = 0;
 
   // Load the detector and ImageNet classifier only in the browser. Both are trained neural
   // models, cached by the browser after first use, so no app or user download is required.
@@ -1224,10 +1379,142 @@ import { RECIPES } from '../data/recipes';
       }))
   ];
 
-  aiTriggerBtn?.addEventListener('click', () => {
+  function updateAutoScanHud(text: string, mode: 'active' | 'detecting' | 'warning' | 'loading' = 'active') {
+    const hud = document.getElementById('auto-scan-hud');
+    const hudText = document.getElementById('auto-scan-hud-text');
+    const hudDot = document.getElementById('auto-scan-dot');
+    if (!hud || !hudText) return;
+
+    hudText.textContent = text;
+    if (mode === 'detecting') {
+      hud.className = 'self-center pointer-events-none text-center px-3 py-1 rounded-full bg-emerald-900/90 backdrop-blur-md border border-emerald-400 text-[10px] sm:text-[11px] font-mono text-emerald-200 flex items-center gap-1.5 shadow-lg ring-2 ring-emerald-500/50 animate-pulse';
+      if (hudDot) hudDot.className = 'w-2 h-2 rounded-full bg-emerald-300 animate-ping';
+    } else if (mode === 'warning') {
+      hud.className = 'self-center pointer-events-none text-center px-3 py-1 rounded-full bg-amber-950/85 backdrop-blur-md border border-amber-400 text-[10px] sm:text-[11px] font-mono text-amber-200 flex items-center gap-1.5 shadow-lg';
+      if (hudDot) hudDot.className = 'w-2 h-2 rounded-full bg-amber-400';
+    } else if (mode === 'loading') {
+      hud.className = 'self-center pointer-events-none text-center px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-blue-500/40 text-[10px] sm:text-[11px] font-mono text-blue-300 flex items-center gap-1.5 shadow-lg';
+      if (hudDot) hudDot.className = 'w-2 h-2 rounded-full bg-blue-400 animate-pulse';
+    } else {
+      hud.className = 'self-center pointer-events-none text-center px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-emerald-500/40 text-[10px] sm:text-[11px] font-mono text-emerald-300 flex items-center gap-1.5 shadow-lg';
+      if (hudDot) hudDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+    }
+  }
+
+  function startAutoScanner() {
+    stopAutoScanner();
+    isAutoScanning = true;
+    autoScanDogHits = 0;
+    updateAutoScanHud('⚡ Auto-Scan: Point at dog to scan', 'active');
+
+    autoScanIntervalId = setInterval(async () => {
+      if (!isAutoScanning || isInferring) return;
+      if (!scannerVideo || scannerVideo.paused || scannerVideo.videoWidth === 0) return;
+
+      if (!cocoSsdModel) {
+        updateAutoScanHud('⏳ Loading Neural Vision Engine...', 'loading');
+        await loadEdgeModel();
+        return;
+      }
+
+      try {
+        const detections = await cocoSsdModel.detect(scannerVideo);
+        if (!isAutoScanning || isInferring) return;
+
+        const dogMatch = detections.find((d: any) => d.class === 'dog' && d.score >= 0.55);
+        const personMatch = detections.find((d: any) => d.class === 'person' && d.score >= 0.60);
+        const animalMatch = detections.find((d: any) => 
+          ['cat', 'bird', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe'].includes(d.class) && d.score >= 0.55
+        );
+
+        if (dogMatch) {
+          autoScanDogHits++;
+          updateAutoScanHud(`🐕 Dog In Frame (${Math.round(dogMatch.score * 100)}%)! Identifying...`, 'detecting');
+          stopAutoScanner();
+          await executeDeepVisionInference(scannerVideo, '');
+        } else if (animalMatch) {
+          autoScanDogHits = 0;
+          updateAutoScanHud(`🐾 ${animalMatch.class.toUpperCase()} in frame — point at dog`, 'warning');
+        } else if (personMatch) {
+          autoScanDogHits = 0;
+          updateAutoScanHud('👤 Person in frame — point at dog', 'warning');
+        } else {
+          autoScanDogHits = 0;
+          updateAutoScanHud('⚡ Auto-Scan: Point at dog to scan', 'active');
+        }
+      } catch (e) {
+        console.warn('Auto-scan frame error:', e);
+      }
+    }, 600);
+  }
+
+  function stopAutoScanner() {
+    isAutoScanning = false;
+    if (autoScanIntervalId) {
+      clearInterval(autoScanIntervalId);
+      autoScanIntervalId = null;
+    }
+  }
+
+  async function startCamera(facing: 'environment' | 'user' = currentFacingMode) {
+    resetScannerUI();
+    scannerPlaceholder?.classList.remove('hidden');
+    if (scannerVideo) scannerVideo.classList.add('hidden');
+    if (cameraStatusText) cameraStatusText.textContent = 'Starting Camera...';
+
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+          video: { facingMode: facing, width: { ideal: 640 }, height: { ideal: 480 } } 
+        });
+        if (scannerVideo) {
+          scannerVideo.srcObject = stream;
+          scannerVideo.classList.remove('hidden');
+          await scannerVideo.play();
+        }
+        scannerPlaceholder?.classList.add('hidden');
+        if (cameraStatusText) cameraStatusText.textContent = facing === 'environment' ? 'Rear Camera' : 'Front Camera';
+        if (cameraStatusDot) cameraStatusDot.className = 'w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse';
+        startAutoScanner();
+      } catch (err) {
+        console.warn('Camera error:', err);
+        scannerPlaceholder?.classList.add('hidden');
+        if (cameraStatusText) cameraStatusText.textContent = 'Camera Blocked';
+        if (cameraStatusDot) cameraStatusDot.className = 'w-1.5 h-1.5 rounded-full bg-amber-400';
+        showSubjectWarning('Camera unavailable', 'Camera access is required for a live scan. You can grant camera permissions or upload a dog photo.');
+      }
+    } else {
+      scannerPlaceholder?.classList.add('hidden');
+      showSubjectWarning('Camera unavailable', 'This device/browser does not support direct camera capture. Please upload a dog photo instead.');
+    }
+  }
+
+  // Automatically open camera immediately on click from PC & Mobile
+  aiTriggerBtn?.addEventListener('click', async () => {
     aiModal?.classList.remove('hidden');
     loadEdgeModel();
-    resetScannerUI();
+    await startCamera(currentFacingMode);
+  });
+
+  // Switch / Flip camera on mobile or PC
+  flipCameraBtn?.addEventListener('click', async () => {
+    currentFacingMode = currentFacingMode === 'environment' ? 'user' : 'environment';
+    await startCamera(currentFacingMode);
+  });
+
+  flipCameraBtnAlt?.addEventListener('click', async () => {
+    currentFacingMode = currentFacingMode === 'environment' ? 'user' : 'environment';
+    await startCamera(currentFacingMode);
+  });
+
+  // Snap & Identify button (manual capture or fallback)
+  snapScanBtn?.addEventListener('click', async () => {
+    stopAutoScanner();
+    if (scannerVideo && scannerVideo.srcObject && scannerVideo.videoWidth > 0) {
+      await executeDeepVisionInference(scannerVideo, '');
+    } else {
+      await startCamera(currentFacingMode);
+    }
   });
 
   closeAiModal?.addEventListener('click', () => {
@@ -1236,11 +1523,12 @@ import { RECIPES } from '../data/recipes';
     cancelLaserAnimation();
   });
 
-  retryScanBtn?.addEventListener('click', () => {
-    resetScannerUI();
+  retryScanBtn?.addEventListener('click', async () => {
+    await startCamera(currentFacingMode);
   });
 
   function resetScannerUI() {
+    stopAutoScanner();
     scannerLaser?.classList.add('hidden');
     scannerProcessingTag?.classList.add('hidden');
     scanResultBox?.classList.add('hidden');
@@ -1255,6 +1543,7 @@ import { RECIPES } from '../data/recipes';
   }
 
   function stopCamera() {
+    stopAutoScanner();
     if (scannerVideo && scannerVideo.srcObject) {
       const stream = scannerVideo.srcObject as MediaStream;
       stream.getTracks().forEach((track) => track.stop());
@@ -1285,27 +1574,9 @@ import { RECIPES } from '../data/recipes';
     }
   }
 
-  // Live Camera Scanner
+  // Backup trigger for startCameraBtn if present
   startCameraBtn?.addEventListener('click', async () => {
-    resetScannerUI();
-    scannerPlaceholder?.classList.add('hidden');
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ 
-          video: { facingMode: 'environment', width: { ideal: 640 }, height: { ideal: 480 } } 
-        });
-        if (scannerVideo) {
-          scannerVideo.srcObject = stream;
-          scannerVideo.classList.remove('hidden');
-          await scannerVideo.play();
-        }
-        processLiveVideoFrameWithAI();
-      } catch (err) {
-        showSubjectWarning('Camera unavailable', 'Camera access is required for a live scan. You can instead upload a clear photo containing one dog.');
-      }
-    } else {
-      showSubjectWarning('Camera unavailable', 'This browser cannot provide a camera feed. Upload a clear photo containing one dog instead.');
-    }
+    await startCamera(currentFacingMode);
   });
 
   // Photo Upload Scanner
@@ -1444,112 +1715,119 @@ import { RECIPES } from '../data/recipes';
 
   // Core Vision Inference: first confirm a dog object, then classify its cropped image.
   async function executeDeepVisionInference(visualSource: HTMLImageElement | HTMLVideoElement, filename: string) {
+    if (isInferring) return;
+    isInferring = true;
+    stopAutoScanner();
     startLaserAnimation();
     if (scannerProcessingTag) scannerProcessingTag.classList.remove('hidden');
     if (telemetryBadge) telemetryBadge.classList.remove('hidden');
 
-    // 1. Pixel luminance is only a photo-quality hint. Subject detection is left
-    // entirely to the neural object detector; colour heuristics misclassify dogs.
-    let isLowLight = false;
-    if (scannerCanvas) {
-      scannerCanvas.width = 224;
-      scannerCanvas.height = 224;
-      const ctx = scannerCanvas.getContext('2d', { willReadFrequently: true });
-      if (ctx) {
-        ctx.drawImage(visualSource, 0, 0, 224, 224);
-        const imgData = ctx.getImageData(0, 0, 224, 224);
-        const luminance = calculateAverageLuminance(imgData.data);
-        updateLightingIndicator(luminance);
+    try {
+      // 1. Pixel luminance is only a photo-quality hint. Subject detection is left
+      // entirely to the neural object detector; colour heuristics misclassify dogs.
+      let isLowLight = false;
+      if (scannerCanvas) {
+        scannerCanvas.width = 224;
+        scannerCanvas.height = 224;
+        const ctx = scannerCanvas.getContext('2d', { willReadFrequently: true });
+        if (ctx) {
+          ctx.drawImage(visualSource, 0, 0, 224, 224);
+          const imgData = ctx.getImageData(0, 0, 224, 224);
+          const luminance = calculateAverageLuminance(imgData.data);
+          updateLightingIndicator(luminance);
 
-        if (luminance < 35) {
-          isLowLight = true;
-          if (lowLightWarningBox && luxPctText) {
-            luxPctText.textContent = `${Math.round(luminance)}%`;
-            lowLightWarningBox.classList.remove('hidden');
-          }
-        }
-
-      }
-    }
-
-    // 2. Object detection is the safety gate. It distinguishes dog, person, cat, and other supported animals.
-    let detectedDogBreed: ExtendedBreedProfile | null = null;
-    let breedCandidates: ExtendedBreedProfile[] = [];
-    let dogDetection: any = null;
-    let nonDogAnimal: string | null = null;
-    let personDetected = false;
-    let hostedBreedAiUnavailable = false;
-
-    if (!mobileNetModel) {
-      await loadEdgeModel();
-    }
-
-    if (cocoSsdModel) {
-      try {
-        const detections = await cocoSsdModel.detect(visualSource);
-        dogDetection = detections
-          .filter((detection: any) => detection.class === 'dog' && detection.score >= 0.6)
-          .sort((a: any, b: any) => b.score - a.score)[0] || null;
-        personDetected = detections.some((detection: any) => detection.class === 'person' && detection.score >= 0.6);
-        nonDogAnimal = detections
-          .filter((detection: any) => ['cat', 'bird', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe'].includes(detection.class) && detection.score >= 0.55)
-          .sort((a: any, b: any) => b.score - a.score)[0]?.class || null;
-      } catch (err) {
-        console.warn('Object detection error:', err);
-      }
-    }
-
-    // 3. Use the hosted 120-breed classifier on the cropped dog. The local
-    // MobileNet model is only a resilient fallback for offline/unconfigured deployments.
-    if (dogDetection) {
-      try {
-        if (scanStepText) scanStepText.textContent = 'RUNNING 120-BREED DEEP-LEARNING MODEL...';
-        const hostedMatches = await classifyWithHostedBreedAi(visualSource);
-        detectedDogBreed = hostedMatches[0] || null;
-        breedCandidates = hostedMatches;
-      } catch (hostedError) {
-        hostedBreedAiUnavailable = true;
-        console.warn('Hosted breed AI unavailable; trying on-device fallback:', hostedError);
-        if (mobileNetModel) {
-          try {
-            const predictions = await mobileNetModel.classify(cropToDetection(visualSource, dogDetection.bbox), 5);
-            for (const prediction of predictions) {
-              const label = prediction.className.toLowerCase();
-              const breed = ALL_BREED_PROFILES
-                .flatMap((candidate) => candidate.aliases
-                  .filter((alias) => label.includes(alias))
-                  .map((alias) => ({ candidate, alias })))
-                .sort((a, b) => b.alias.length - a.alias.length)[0]?.candidate;
-              if (breed && prediction.probability >= 0.05 && !breedCandidates.some((candidate) => candidate.name === breed.name)) {
-                breedCandidates.push({ ...breed, confidence: Math.round(prediction.probability * 1000) / 10 });
-              }
+          if (luminance < 35) {
+            isLowLight = true;
+            if (lowLightWarningBox && luxPctText) {
+              luxPctText.textContent = `${Math.round(luminance)}%`;
+              lowLightWarningBox.classList.remove('hidden');
             }
-            detectedDogBreed = breedCandidates[0] || null;
-          } catch (fallbackError) {
-            console.warn('On-device breed classification error:', fallbackError);
+          }
+
+        }
+      }
+
+      // 2. Object detection is the safety gate. It distinguishes dog, person, cat, and other supported animals.
+      let detectedDogBreed: ExtendedBreedProfile | null = null;
+      let breedCandidates: ExtendedBreedProfile[] = [];
+      let dogDetection: any = null;
+      let nonDogAnimal: string | null = null;
+      let personDetected = false;
+      let hostedBreedAiUnavailable = false;
+
+      if (!mobileNetModel) {
+        await loadEdgeModel();
+      }
+
+      if (cocoSsdModel) {
+        try {
+          const detections = await cocoSsdModel.detect(visualSource);
+          dogDetection = detections
+            .filter((detection: any) => detection.class === 'dog' && detection.score >= 0.6)
+            .sort((a: any, b: any) => b.score - a.score)[0] || null;
+          personDetected = detections.some((detection: any) => detection.class === 'person' && detection.score >= 0.6);
+          nonDogAnimal = detections
+            .filter((detection: any) => ['cat', 'bird', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe'].includes(detection.class) && detection.score >= 0.55)
+            .sort((a: any, b: any) => b.score - a.score)[0]?.class || null;
+        } catch (err) {
+          console.warn('Object detection error:', err);
+        }
+      }
+
+      // 3. Use the hosted 120-breed classifier on the cropped dog. The local
+      // MobileNet model is only a resilient fallback for offline/unconfigured deployments.
+      if (dogDetection) {
+        try {
+          if (scanStepText) scanStepText.textContent = 'RUNNING 120-BREED DEEP-LEARNING MODEL...';
+          const hostedMatches = await classifyWithHostedBreedAi(visualSource);
+          detectedDogBreed = hostedMatches[0] || null;
+          breedCandidates = hostedMatches;
+        } catch (hostedError) {
+          hostedBreedAiUnavailable = true;
+          console.warn('Hosted breed AI unavailable; trying on-device fallback:', hostedError);
+          if (mobileNetModel) {
+            try {
+              const predictions = await mobileNetModel.classify(cropToDetection(visualSource, dogDetection.bbox), 5);
+              for (const prediction of predictions) {
+                const label = prediction.className.toLowerCase();
+                const breed = ALL_BREED_PROFILES
+                  .flatMap((candidate) => candidate.aliases
+                    .filter((alias) => label.includes(alias))
+                    .map((alias) => ({ candidate, alias })))
+                  .sort((a, b) => b.alias.length - a.alias.length)[0]?.candidate;
+                if (breed && prediction.probability >= 0.05 && !breedCandidates.some((candidate) => candidate.name === breed.name)) {
+                  breedCandidates.push({ ...breed, confidence: Math.round(prediction.probability * 1000) / 10 });
+                }
+              }
+              detectedDogBreed = breedCandidates[0] || null;
+            } catch (fallbackError) {
+              console.warn('On-device breed classification error:', fallbackError);
+            }
           }
         }
       }
-    }
 
-    cancelLaserAnimation();
-    if (scannerLaser) scannerLaser.classList.add('hidden');
-    if (scannerProcessingTag) scannerProcessingTag.classList.add('hidden');
+      cancelLaserAnimation();
+      if (scannerLaser) scannerLaser.classList.add('hidden');
+      if (scannerProcessingTag) scannerProcessingTag.classList.add('hidden');
 
-    if (!cocoSsdModel) {
-      showSubjectWarning('Dog detector unavailable', 'The on-device dog detector did not load. Check your connection and try again; no breed has been assigned.');
-    } else if (!dogDetection && nonDogAnimal) {
-      showSubjectWarning('Non-dog animal detected', `This photo appears to contain a ${nonDogAnimal}, not a dog. Upload a clear photo of one dog.`);
-    } else if (!dogDetection && personDetected) {
-      showSubjectWarning('Human detected', 'This photo appears to contain a person rather than a dog. No breed has been assigned.');
-    } else if (!dogDetection) {
-      showSubjectWarning('Dog not detected', 'We could not confidently find a dog in this image. Use a well-lit photo that shows one dog clearly.');
-    } else if (!detectedDogBreed && hostedBreedAiUnavailable) {
-      showSubjectWarning('Breed AI temporarily unavailable', 'Your dog was detected, but the hosted 120-breed model is unavailable right now. Please try again in a moment.');
-    } else if (!detectedDogBreed) {
-      showSubjectWarning('Dog confirmed; breed uncertain', 'A dog was detected, but the model cannot make a reliable breed match from this photo. Please choose the breed or size manually rather than receiving a guess.');
-    } else {
-      renderCanineRecognitionResults(detectedDogBreed, breedCandidates);
+      if (!cocoSsdModel) {
+        showSubjectWarning('Dog detector unavailable', 'The on-device dog detector did not load. Check your connection and try again; no breed has been assigned.');
+      } else if (!dogDetection && nonDogAnimal) {
+        showSubjectWarning('Non-dog animal detected', `This photo appears to contain a ${nonDogAnimal}, not a dog. Upload a clear photo of one dog.`);
+      } else if (!dogDetection && personDetected) {
+        showSubjectWarning('Human detected', 'This photo appears to contain a person rather than a dog. No breed has been assigned.');
+      } else if (!dogDetection) {
+        showSubjectWarning('Dog not detected', 'We could not confidently find a dog in this image. Use a well-lit photo that shows one dog clearly.');
+      } else if (!detectedDogBreed && hostedBreedAiUnavailable) {
+        showSubjectWarning('Breed AI temporarily unavailable', 'Your dog was detected, but the hosted 120-breed model is unavailable right now. Please try again in a moment.');
+      } else if (!detectedDogBreed) {
+        showSubjectWarning('Dog confirmed; breed uncertain', 'A dog was detected, but the model cannot make a reliable breed match from this photo. Please choose the breed or size manually rather than receiving a guess.');
+      } else {
+        renderCanineRecognitionResults(detectedDogBreed, breedCandidates);
+      }
+    } finally {
+      isInferring = false;
     }
   }
 

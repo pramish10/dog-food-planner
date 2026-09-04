@@ -1,0 +1,137 @@
+---
+import { languages, type Lang } from '../i18n/ui';
+import { getLangFromUrl, getLocalizedPath, cleanPathname } from '../i18n/utils';
+
+interface Props {
+  variant?: 'navbar' | 'footer' | 'compact';
+  class?: string;
+}
+
+const { variant = 'navbar', class: className = '' } = Astro.props;
+const currentLang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+const cleanPath = cleanPathname(currentPath);
+
+const languageList = Object.entries(languages) as [Lang, string][];
+---
+
+{variant === 'compact' || variant === 'footer' ? (
+  <div class:list={["flex flex-wrap items-center gap-1.5 text-xs", className]}>
+    <span class="text-[#8f8f8f] dark:text-[#737373] text-[11px] font-mono mr-1">Language:</span>
+    {languageList.map(([langCode, langName]) => {
+      const isCurrent = langCode === currentLang;
+      const targetUrl = getLocalizedPath(cleanPath, langCode);
+      return (
+        <a
+          href={targetUrl}
+          class:list={[
+            "px-2 py-1 rounded text-[11px] transition-all font-medium",
+            isCurrent
+              ? "bg-[#171717] text-white dark:bg-white dark:text-[#171717] font-semibold"
+              : "text-[#666666] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1f1f1f]"
+          ]}
+          aria-current={isCurrent ? 'page' : undefined}
+          title={langName}
+        >
+          {langName}
+        </a>
+      );
+    })}
+  </div>
+) : (
+  <div class:list={["relative inline-block text-left language-picker-dropdown", className]}>
+    <!-- Dropdown Trigger Button -->
+    <button
+      type="button"
+      id="lang-picker-btn"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Select website language"
+      class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white bg-[#fafafa] dark:bg-[#121212] hover:bg-[#f2f2f2] dark:hover:bg-[#1f1f1f] rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] transition-all cursor-pointer shadow-2xs"
+    >
+      <!-- Globe Icon -->
+      <svg class="w-3.5 h-3.5 text-[#666666] dark:text-[#888888]" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+      <span class="text-[11px] font-mono font-semibold uppercase">{currentLang}</span>
+      <!-- Chevron Down -->
+      <svg class="w-3 h-3 text-[#8f8f8f] transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+
+    <!-- Dropdown Panel -->
+    <div
+      id="lang-picker-menu"
+      class="hidden absolute right-0 mt-1.5 w-44 rounded-xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] shadow-xl py-1.5 z-50 transition-all focus:outline-none backdrop-blur-md"
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="lang-picker-btn"
+    >
+      <div class="px-3 py-1.5 border-b border-[#ebebeb] dark:border-[#262626] text-[10px] font-mono text-[#8f8f8f] uppercase tracking-wider">
+        Select Language
+      </div>
+      <div class="max-h-64 overflow-y-auto py-1">
+        {languageList.map(([langCode, langName]) => {
+          const isCurrent = langCode === currentLang;
+          const targetUrl = getLocalizedPath(cleanPath, langCode);
+          return (
+            <a
+              href={targetUrl}
+              role="menuitem"
+              class:list={[
+                "flex items-center justify-between px-3 py-2 text-xs font-medium transition-colors",
+                isCurrent
+                  ? "bg-[#f2f2f2] dark:bg-[#222222] text-[#171717] dark:text-white font-semibold"
+                  : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] hover:text-[#171717] dark:hover:text-white"
+              ]}
+              aria-current={isCurrent ? 'page' : undefined}
+            >
+              <span>{langName}</span>
+              {isCurrent && (
+                <svg class="w-3.5 h-3.5 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              )}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+)}
+
+<script is:inline>
+  function setupLanguagePicker() {
+    const btn = document.getElementById('lang-picker-btn');
+    const menu = document.getElementById('lang-picker-menu');
+    if (!btn || !menu) return;
+
+    function toggleMenu(e) {
+      e?.stopPropagation();
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function closeMenu(e) {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    btn.addEventListener('click', toggleMenu);
+    document.addEventListener('click', closeMenu);
+  }
+
+  setupLanguagePicker();
+  document.addEventListener('astro:page-load', setupLanguagePicker);
+</script>

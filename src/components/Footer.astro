@@ -1,4 +1,10 @@
 ---
+import LanguagePicker from './LanguagePicker.astro';
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <footer class="bg-[#fafafa] dark:bg-[#0d0d0d] border-t border-[#ebebeb] dark:border-[#262626] pt-12 pb-10 sm:pt-16 sm:pb-12 text-[#4d4d4d] dark:text-[#a1a1a1] transition-colors">
@@ -12,10 +18,10 @@
           <div class="w-7 h-7 rounded-md bg-[#171717] dark:bg-white flex items-center justify-center text-white dark:text-[#171717] font-mono font-bold text-xs">
             🐾
           </div>
-          <span class="font-semibold text-sm text-[#171717] dark:text-[#ededed] tracking-tight">DogFoodPlanner</span>
+          <span class="font-semibold text-sm text-[#171717] dark:text-[#ededed] tracking-tight">{t('nav.brand')}</span>
         </div>
         <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
-          Open, scientific canine nutrition algorithms empowering dog parents with whole-food fresh, raw, and topper meal plans.
+          {t('footer.about')}
         </p>
         <div class="font-mono text-[10px] text-[#8f8f8f] dark:text-[#737373]">
           domain: dogfoodplanner.com
@@ -25,50 +31,55 @@
       <!-- Column 1 -->
       <div>
         <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
-          Diets & Planning
+          {t('footer.col1Title')}
         </h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="/#planner-section" class="hover:text-[#171717] dark:hover:text-white transition-colors">Veterinary Calculator</a></li>
-          <li><a href="/best-dog-food" class="hover:text-[#171717] dark:hover:text-white transition-colors">Best Dog Food 2026</a></li>
-          <li><a href="/dog-food-recipes" class="hover:text-[#171717] dark:hover:text-white transition-colors">Homemade & Raw BARF</a></li>
-          <li><a href="/dog-food-allergies" class="hover:text-[#171717] dark:hover:text-white transition-colors">Sensitive Stomach Diets</a></li>
+          <li><a href={translatePath('/#planner-section')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkPlanner')}</a></li>
+          <li><a href={translatePath('/best-dog-food')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkBestFood')}</a></li>
+          <li><a href={translatePath('/dog-food-recipes')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkRecipes')}</a></li>
+          <li><a href={translatePath('/dog-food-allergies')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkAllergies')}</a></li>
         </ul>
       </div>
 
       <!-- Column 2 -->
       <div>
         <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
-          Clinical Resources
+          {t('footer.col2Title')}
         </h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="/toxic-foods" class="hover:text-[#171717] dark:hover:text-white transition-colors">Ingredient Safety & Toxicity</a></li>
-          <li><a href="/dog-food-brands" class="hover:text-[#171717] dark:hover:text-white transition-colors">Brand Reviews & Recalls</a></li>
-          <li><a href="/faq" class="hover:text-[#171717] dark:hover:text-white transition-colors">40+ Dog Food FAQs Hub</a></li>
-          <li><a href="/feeding-calculator" class="hover:text-[#171717] dark:hover:text-white transition-colors">Portion & Energy Math</a></li>
+          <li><a href={translatePath('/toxic-foods')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkToxic')}</a></li>
+          <li><a href={translatePath('/dog-food-brands')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkBrands')}</a></li>
+          <li><a href={translatePath('/faq')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkFaqs')}</a></li>
+          <li><a href={translatePath('/feeding-calculator')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkPortions')}</a></li>
         </ul>
       </div>
 
       <!-- Column 3 -->
       <div>
         <h4 class="text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-2.5 sm:mb-3">
-          Company & Legal
+          {t('footer.col3Title')}
         </h4>
         <ul class="space-y-2 text-xs">
-          <li><a href="/about" class="hover:text-[#171717] dark:hover:text-white transition-colors">About Us</a></li>
-          <li><a href="/contact" class="hover:text-[#171717] dark:hover:text-white transition-colors">Contact Us</a></li>
-          <li><a href="/privacy-policy" class="hover:text-[#171717] dark:hover:text-white transition-colors">Privacy Policy</a></li>
-          <li><a href="/terms" class="hover:text-[#171717] dark:hover:text-white transition-colors">Terms & Conditions</a></li>
+          <li><a href={translatePath('/about')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkAbout')}</a></li>
+          <li><a href={translatePath('/contact')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkContact')}</a></li>
+          <li><a href={translatePath('/privacy-policy')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkPrivacy')}</a></li>
+          <li><a href={translatePath('/terms')} class="hover:text-[#171717] dark:hover:text-white transition-colors">{t('footer.linkTerms')}</a></li>
         </ul>
       </div>
 
     </div>
 
-    <!-- Bottom Legal & Medical Disclaimer -->
-    <div class="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">
-      <p class="max-w-2xl leading-relaxed text-center sm:text-left">
-        <strong>Veterinary Disclaimer:</strong> DogFoodPlanner calculations are formulated in accordance with standard NRC (National Research Council) and AAFCO canine nutrient guidelines for educational purposes. For dogs with specific diagnosed medical conditions (e.g. chronic kidney disease or severe pancreatitis), consult your veterinarian.
+    <!-- Multi-language selection row -->
+    <div class="py-6 border-b border-[#ebebeb] dark:border-[#262626]">
+      <LanguagePicker variant="footer" />
+    </div>
+
+    <!-- Bottom Legal & Veterinary Disclaimer -->
+    <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">
+      <p class="max-w-3xl leading-relaxed text-center md:text-left">
+        <strong class="text-[#171717] dark:text-[#ededed]">{t('common.notice')}:</strong> {t('footer.disclaimer')}
       </p>
-      <div class="font-mono text-center sm:text-right shrink-0">
+      <div class="font-mono text-center md:text-right shrink-0">
         © {new Date().getFullYear()} DogFoodPlanner. All rights reserved.
       </div>
     </div>

@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Footer from '../../components/Footer.astro';
+import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../i18n/utils';
+import { ui, type Lang } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const currentStrings = ui[lang] || ui.en;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<Layout 
+  lang={lang}
+  title={currentStrings['contact.title']}
+  description={currentStrings['contact.desc']}
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs 
+      items={[
+        { name: t('nav.brand'), url: translatePath('/') },
+        { name: currentStrings['contact.title'].split('|')[0].trim() || 'Contact Us' }
+      ]}
+    />
+
+    <!-- Header -->
+    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#0070f3]">SUPPORT & FEEDBACK</span> // DIRECT INQUIRIES
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
+          {currentStrings['contact.title'].split('|')[0].trim()}
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
+          {currentStrings['contact.desc']}
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Contact Area -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Contact Information Cards (1 Col) -->
+        <div class="space-y-4">
+          <div class="hairline-card p-5 bg-white dark:bg-[#141414] space-y-2">
+            <div class="text-lg">📧</div>
+            <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Email Inquiries</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">General questions & feedback:</p>
+            <a href="mailto:hello@dogfoodplanner.com" class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff] hover:underline block">hello@dogfoodplanner.com</a>
+          </div>
+
+          <div class="hairline-card p-5 bg-white dark:bg-[#141414] space-y-2">
+            <div class="text-lg">🐾</div>
+            <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Nutrition Research</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Veterinary formula inquiries:</p>
+            <a href="mailto:hello@dogfoodplanner.com" class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff] hover:underline block">hello@dogfoodplanner.com</a>
+          </div>
+
+          <div class="hairline-card p-5 bg-white dark:bg-[#141414] space-y-2">
+            <div class="text-lg">🛡️</div>
+            <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Privacy & Terms</h3>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Data protection questions:</p>
+            <a href="mailto:hello@dogfoodplanner.com" class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff] hover:underline block">hello@dogfoodplanner.com</a>
+          </div>
+        </div>
+
+        <!-- Contact Form (2 Cols) -->
+        <div class="md:col-span-2">
+          <div class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]">
+            <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed] mb-1">
+              Send a Message
+            </h2>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mb-6">
+              Our nutrition team typically reviews and replies to all messages within 24–48 business hours.
+            </p>
+
+            <form id="contact-form" onsubmit="return false;" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contact-name" class="block text-xs font-mono uppercase font-semibold text-[#171717] dark:text-[#ededed] mb-1.5">
+                    Your Name
+                  </label>
+                  <input 
+                    type="text" 
+                    id="contact-name" 
+                    required 
+                    placeholder="e.g. Sarah Jenkins"
+                    class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] transition-all"
+                  />
+                </div>
+                <div>
+                  <label for="contact-email" class="block text-xs font-mono uppercase font-semibold text-[#171717] dark:text-[#ededed] mb-1.5">
+                    Your Email
+                  </label>
+                  <input 
+                    type="email" 
+                    id="contact-email" 
+                    required 
+                    placeholder="sarah@example.com"
+                    class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] transition-all"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="contact-subject" class="block text-xs font-mono uppercase font-semibold text-[#171717] dark:text-[#ededed] mb-1.5">
+                  Subject / Topic
+                </label>
+                <select 
+                  id="contact-subject"
+                  class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed]"
+                >
+                  <option value="calculator">Canine Nutrition Calculator Feedback</option>
+                  <option value="breed-scanner">AI Dog Breed Scanner Question / Accuracy</option>
+                  <option value="recipe">Homemade Recipe & Macro Suggestion</option>
+                  <option value="brand">Pet Food Brand Review / Recall Update</option>
+                  <option value="other">General Inquiries & Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="contact-message" class="block text-xs font-mono uppercase font-semibold text-[#171717] dark:text-[#ededed] mb-1.5">
+                  Your Message
+                </label>
+                <textarea 
+                  id="contact-message" 
+                  rows="5" 
+                  required 
+                  placeholder="Tell us how we can help you and your dog..."
+                  class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <div id="contact-success-msg" class="hidden p-3.5 bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] text-xs rounded-lg font-mono leading-relaxed">
+                ✓ Opening your email client to send to <strong class="underline">hello@dogfoodplanner.com</strong>. You can also write to us directly anytime.
+              </div>
+
+              <div class="flex items-center gap-3">
+                <button 
+                  type="submit" 
+                  id="submit-contact-btn"
+                  class="w-full sm:w-auto px-6 py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-full transition-all cursor-pointer shadow-sm"
+                >
+                  Send Message via Email →
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const successMsg = document.getElementById('contact-success-msg');
+  const submitBtn = document.getElementById('submit-contact-btn');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = (document.getElementById('contact-name') as HTMLInputElement)?.value || '';
+    const email = (document.getElementById('contact-email') as HTMLInputElement)?.value || '';
+    const subjectSelect = (document.getElementById('contact-subject') as HTMLSelectElement);
+    const subjectText = subjectSelect?.options[subjectSelect.selectedIndex]?.text || 'Contact Inquiry';
+    const message = (document.getElementById('contact-message') as HTMLTextAreaElement)?.value || '';
+
+    const mailSubject = encodeURIComponent(`[DogFoodPlanner Contact] ${subjectText} - from ${name}`);
+    const mailBody = encodeURIComponent(`Sender Name: ${name}\nSender Email: ${email}\nTopic: ${subjectText}\n\nMessage:\n${message}\n\n--- Sent from DogFoodPlanner.com Contact Form ---`);
+    
+    const mailtoUrl = `mailto:hello@dogfoodplanner.com?subject=${mailSubject}&body=${mailBody}`;
+
+    if (submitBtn) {
+      submitBtn.textContent = 'Opening Email...';
+    }
+
+    if (successMsg) {
+      successMsg.classList.remove('hidden');
+    }
+
+    // Launch email client
+    window.location.href = mailtoUrl;
+
+    setTimeout(() => {
+      if (submitBtn) submitBtn.textContent = 'Message Prepared ✓';
+      form.reset();
+    }, 1200);
+  });
+</script>

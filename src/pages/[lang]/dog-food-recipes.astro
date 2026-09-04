@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FaqSection from '../../components/FaqSection.astro';
+import Footer from '../../components/Footer.astro';
+import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../i18n/utils';
+import { ui, type Lang } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const currentStrings = ui[lang] || ui.en;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<Layout 
+  lang={lang}
+  title={currentStrings['recipes.title']}
+  description={currentStrings['recipes.desc']}
+>
+  <Navbar />
+  
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs 
+      items={[
+        { name: t('nav.brand'), url: translatePath('/') },
+        { name: t('nav.recipes') }
+      ]}
+    />
+
+    <!-- Header Section -->
+    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
+          <span class="text-[#7928ca] dark:text-[#a855f7]">RECIPE ARCHIVE</span> // NRC & AAFCO NUTRITION BLUEPRINTS
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
+          {currentStrings['recipes.title']}
+        </h1>
+        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
+          {currentStrings['recipes.desc']}
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content Body -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-10 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+      
+      <!-- Critical Warning on Calcium -->
+      <div class="p-6 bg-[#fffbeb] dark:bg-[#291f05] border border-[#fef08a] dark:border-[#854d0e] rounded-2xl space-y-2">
+        <div class="flex items-center gap-2 text-amber-800 dark:text-amber-300 font-bold text-sm">
+          <span>⚠️</span> The #1 Rule of Homemade Dog Food: Calcium Balancing
+        </div>
+        <p class="text-xs text-amber-900 dark:text-amber-200 leading-relaxed">
+          Muscle meat is naturally very high in phosphorus and low in calcium (1:20 ratio). Feeding plain chicken, beef, and rice without added calcium will cause severe metabolic bone disease and bone demineralization within months. Always add <strong>1/2 teaspoon of pure powdered eggshell</strong> (or veterinary bone meal) per pound of boneless meat to achieve the essential <strong>1.2:1 Calcium-to-Phosphorus ratio</strong>.
+        </p>
+      </div>
+
+      <!-- Recipe 1: Gently Cooked Turkey & Pumpkin -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            Recipe 1: Gently Cooked Turkey & Prebiotic Pumpkin (Sensitive Stomach Friendly)
+          </h2>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 bg-green-50 dark:bg-green-950/60 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800/60 rounded-full">
+            Gently Cooked
+          </span>
+        </div>
+        <p>
+          Ideal for dogs with sensitive digestion, loose stools, or poultry food allergies to factory chicken.
+        </p>
+
+        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2 font-mono text-xs text-[#171717] dark:text-[#ededed]">
+          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span>• USDA Ground Turkey (93/7)</span>
+            <span class="font-bold">65% (approx. 2 lbs)</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span>• Turkey or Beef Hearts (Natural Taurine)</span>
+            <span class="font-bold">10% (approx. 5 oz)</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span>• Pure Canned Pumpkin Puree (Digestive Fiber)</span>
+            <span class="font-bold">10% (approx. 5 oz)</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span>• Steamed Baby Spinach & Finely Diced Zucchini</span>
+            <span class="font-bold">10% (approx. 5 oz)</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span>• Wild Alaskan Salmon Oil (EPA/DHA)</span>
+            <span class="font-bold">2% (1.5 tbsp)</span>
+          </div>
+          <div class="flex justify-between py-1">
+            <span>• Clean Eggshell Powder (Elemental Calcium)</span>
+            <span class="font-bold">3% (1 full tsp)</span>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-xs uppercase tracking-wider font-mono">Preparation Instructions:</h3>
+          <ol class="list-decimal list-inside space-y-1 text-xs">
+            <li>Gently sauté the ground turkey and hearts in a pan on medium-low heat until lightly browned (keep meat tender, approx. 160°F).</li>
+            <li>Steam the spinach and zucchini for 3 minutes, then puree in a blender with the canned pumpkin.</li>
+            <li>Mix the vegetables and meats together, allow to cool completely to room temperature.</li>
+            <li>Stir in the eggshell powder and salmon oil (never heat salmon oil).</li>
+            <li>Portion into airtight meal containers and freeze up to 3 months.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Recipe 2: The 80-10-10 Raw BARF Blueprint -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            Recipe 2: Ancestral 80-10-10 Raw BARF Bowl
+          </h2>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-800/60 rounded-full">
+            Raw BARF
+          </span>
+        </div>
+        <p>
+          Formulated according to the Prey Model Raw standard for peak dental scraping, low stool volume, and athletic lean muscle tone.
+        </p>
+
+        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2 font-mono text-xs text-[#171717] dark:text-[#ededed]">
+          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span>• 80% Muscle Meat (Beef chunks, chicken hearts, tongue)</span>
+            <span class="font-bold">800 grams</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span>• 10% Raw Edible Bone (Chicken necks, wings, duck feet)</span>
+            <span class="font-bold">100 grams</span>
+          </div>
+          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+            <span>• 5% Liver (Beef or Lamb Liver - Vitamin A)</span>
+            <span class="font-bold">50 grams</span>
+          </div>
+          <div class="flex justify-between py-1">
+            <span>• 5% Other Secreting Organ (Kidney, Spleen, or Pancreas)</span>
+            <span class="font-bold">50 grams</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Custom Portion CTA -->
+      <div class="p-6 sm:p-8 bg-[#171717] dark:bg-[#141414] border border-[#2e2e2e] text-white rounded-2xl text-center space-y-3 shadow-sm">
+        <h3 class="text-xl font-bold text-white dark:text-[#ededed]">
+          Convert Recipes Into Exact Grams for Your Dog's Weight
+        </h3>
+        <p class="text-xs sm:text-sm text-white/80 dark:text-[#a1a1a1] max-w-xl mx-auto">
+          Our free calculator automatically calculates the exact daily gram weights for each ingredient based on your dog's age and activity level.
+        </p>
+        <div class="pt-2">
+          <a href={translatePath('/feeding-calculator')} class="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-[#171717] hover:bg-[#f2f2f2] text-xs font-bold rounded-full transition-colors shadow-sm">
+            {t('nav.calculator')} →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Related FAQs for Homemade Recipes -->
+    <FaqSection 
+      title="Homemade Dog Food & Recipe FAQs"
+      subtitle="Frequently asked questions about cooking for dogs, 80-10-10 rules, and safety."
+      category="Diet & Nutrition"
+      limit={6}
+      viewAllLink={true}
+    />
+
+  </main>
+
+  <Footer />
+</Layout>
