@@ -7,6 +7,7 @@ import Footer from '../../../components/Footer.astro';
 import { CANINE_BREEDS, type BreedInfo } from '../../../data/breeds';
 import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
+import { getPageTranslations } from '../../../i18n/pages';
 
 export function getStaticPaths() {
   const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
@@ -36,6 +37,9 @@ if (!breed) {
 
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
+const p = getPageTranslations(lang).breeds;
+const interpolate = (value: string, variables: Record<string, string | number>) =>
+  value.replace(/\{(\w+)\}/g, (_, key) => String(variables[key] ?? `{${key}}`));
 
 // Calorie & Portion Math for this breed
 const avgWeight = (breed.avgWeightLbs[0] + breed.avgWeightLbs[1]) / 2;
@@ -83,8 +87,8 @@ const pageDesc = (descMap[lang] || descMap.en)(breed.name, dailyCalories, breed.
     <Breadcrumbs 
       items={[
         { name: t('nav.brand'), url: translatePath('/') },
-        { name: 'Breeds Guide', url: translatePath('/#planner-section') },
-        { name: `${breed.name} Guide` }
+        { name: p.eyebrow, url: translatePath('/#planner-section') },
+        { name: breed.name }
       ]}
     />
 
@@ -92,7 +96,7 @@ const pageDesc = (descMap[lang] || descMap.en)(breed.name, dailyCalories, breed.
     <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
-          <span class="text-[#0070f3] dark:text-[#3291ff]">🐾</span> BREED NUTRITION // {breed.category.toUpperCase()} CANINE
+          <span class="text-[#0070f3] dark:text-[#3291ff]">🐾</span> {p.eyebrow}
         </div>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
           {pageTitle}
@@ -109,38 +113,38 @@ const pageDesc = (descMap[lang] || descMap.en)(breed.name, dailyCalories, breed.
       <!-- Metrics Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div class="hairline-card p-4 bg-white dark:bg-[#141414] text-center">
-          <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373] uppercase block mb-1">Target Weight</span>
+          <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373] uppercase block mb-1">{p.targetWeight}</span>
           <span class="text-lg sm:text-xl font-bold font-mono text-[#171717] dark:text-[#ededed]">{breed.avgWeightLbs[0]} - {breed.avgWeightLbs[1]} lbs</span>
         </div>
 
         <div class="hairline-card p-4 bg-white dark:bg-[#141414] text-center">
-          <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373] uppercase block mb-1">Daily Calories</span>
+          <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373] uppercase block mb-1">{p.dailyCalories}</span>
           <span class="text-lg sm:text-xl font-bold font-mono text-[#0070f3] dark:text-[#3291ff]">~{dailyCalories} kcal</span>
         </div>
 
         <div class="hairline-card p-4 bg-white dark:bg-[#141414] text-center">
-          <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373] uppercase block mb-1">Fresh Food Daily</span>
-          <span class="text-lg sm:text-xl font-bold font-mono text-[#10b981]">{freshFoodCups} cups <span class="text-xs text-[#8f8f8f] dark:text-[#737373]">({freshFoodGramsDaily}g)</span></span>
+          <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373] uppercase block mb-1">{p.freshDaily}</span>
+          <span class="text-lg sm:text-xl font-bold font-mono text-[#10b981]">{freshFoodCups} {p.cups} <span class="text-xs text-[#8f8f8f] dark:text-[#737373]">({freshFoodGramsDaily}g)</span></span>
         </div>
 
         <div class="hairline-card p-4 bg-white dark:bg-[#141414] text-center">
-          <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373] uppercase block mb-1">Kibble Daily</span>
-          <span class="text-lg sm:text-xl font-bold font-mono text-[#7928ca] dark:text-[#a855f7]">{kibbleCups} cups</span>
+          <span class="text-[10px] font-mono text-[#8f8f8f] dark:text-[#737373] uppercase block mb-1">{p.kibbleDaily}</span>
+          <span class="text-lg sm:text-xl font-bold font-mono text-[#7928ca] dark:text-[#a855f7]">{kibbleCups} {p.cups}</span>
         </div>
       </div>
 
       <!-- Specific Breed Nutrition Tips -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
         <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
-          Nutritional Requirements for {breed.name}s
+          {interpolate(p.reqsTitle, { name: breed.name })}
         </h2>
         <p>
-          As a <strong>{breed.category}</strong> dog with an average weight of {breed.avgWeightLbs[0]}–{breed.avgWeightLbs[1]} lbs, the {breed.name} requires a tailored nutrient ratio:
+          {interpolate(p.reqsIntro, { category: breed.category, w0: breed.avgWeightLbs[0], w1: breed.avgWeightLbs[1], name: breed.name })}
         </p>
 
         {breed.predispositions && breed.predispositions.length > 0 && (
           <div class="pt-2">
-            <h3 class="text-xs font-mono uppercase font-bold text-[#171717] dark:text-[#ededed] mb-2">Key Health & Dietary Predispositions:</h3>
+            <h3 class="text-xs font-mono uppercase font-bold text-[#171717] dark:text-[#ededed] mb-2">{p.predispositionsTitle}</h3>
             <div class="flex flex-wrap gap-2">
               {breed.predispositions.map(p => (
                 <span class="px-3 py-1 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg font-mono text-xs font-semibold text-[#171717] dark:text-[#ededed]">
@@ -152,9 +156,9 @@ const pageDesc = (descMap[lang] || descMap.en)(breed.name, dailyCalories, breed.
         )}
 
         <div class="space-y-3 pt-4 border-t border-[#ebebeb] dark:border-[#262626]">
-          <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Feeding Routine Recommendation:</h3>
+          <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{p.feedingRoutineTitle}</h3>
           <p class="text-xs">
-            Feed your adult {breed.name} <strong>twice daily</strong> (50% in the morning and 50% in the evening). Always ensure clean filtered water is available. If feeding dry kibble, rehydrate with warm bone broth or water to support kidney longevity.
+            {interpolate(p.feedingRoutineDesc, { name: breed.name })}
           </p>
         </div>
       </section>
@@ -162,14 +166,14 @@ const pageDesc = (descMap[lang] || descMap.en)(breed.name, dailyCalories, breed.
       <!-- Interactive Calculator Embed CTA -->
       <div class="p-6 sm:p-8 bg-[#171717] dark:bg-[#141414] border border-[#2e2e2e] text-white rounded-2xl text-center space-y-3 shadow-sm">
         <h3 class="text-xl font-bold text-white dark:text-[#ededed]">
-          Customize Your {breed.name}'s Exact Meal Plan
+          {interpolate(p.ctaTitle, { name: breed.name })}
         </h3>
         <p class="text-xs sm:text-sm text-white/80 dark:text-[#a1a1a1] max-w-xl mx-auto">
-          Adjust for your dog's exact age (puppy, adult, senior), exact weight, activity level, and body condition score with our free calculator.
+          {p.ctaSubtitle}
         </p>
         <div class="pt-2">
           <a href={translatePath('/feeding-calculator')} class="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-[#171717] text-xs font-bold rounded-full hover:bg-[#f2f2f2] transition-colors shadow-sm">
-            Launch {breed.name} Calculator →
+            {interpolate(p.ctaBtn, { name: breed.name })}
           </a>
         </div>
       </div>
@@ -178,8 +182,8 @@ const pageDesc = (descMap[lang] || descMap.en)(breed.name, dailyCalories, breed.
 
     <!-- Related FAQs -->
     <FaqSection 
-      title={`Common Feeding FAQs for ${breed.name}s`}
-      subtitle={`Answers to portion questions, feeding frequency, and best foods.`}
+      title={interpolate(p.faqTitle, { name: breed.name })}
+      subtitle={p.faqSubtitle}
       limit={5}
       viewAllLink={true}
     />

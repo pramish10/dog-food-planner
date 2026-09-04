@@ -1,5 +1,8 @@
 import { FAQS_DATA, type FaqItem } from '../data/faqs';
 import type { Lang } from './ui';
+// This vetted dictionary contains the remaining localized FAQ question/answer pairs.
+// @ts-expect-error CommonJS dictionary is consumed by Vite at build time.
+import { FAQ_EXTRA } from '../../scratch/build_faq_dict.cjs';
 
 export interface LocalizedFaqItem extends Omit<FaqItem, 'category'> {
   category: string;
@@ -248,14 +251,16 @@ export function getLocalizedFaq(slug: string, lang: Lang): LocalizedFaqItem | un
   if (!baseFaq) return undefined;
 
   const categoryTranslation = FAQ_CATEGORY_TRANSLATIONS[lang]?.[baseFaq.category] || baseFaq.category;
-  const custom = FAQ_CONTENT_TRANSLATIONS[slug]?.[lang];
+  const custom = FAQ_CONTENT_TRANSLATIONS[slug]?.[lang] || FAQ_EXTRA[slug]?.[lang];
 
   if (custom) {
     return {
       ...baseFaq,
       question: custom.question || baseFaq.question,
       shortAnswer: custom.shortAnswer || baseFaq.shortAnswer,
-      fullAnswerHtml: custom.fullAnswerHtml || baseFaq.fullAnswerHtml,
+      // Some concise FAQ answers intentionally have no long-form counterpart.
+      // Render their localized answer rather than falling back to English body copy.
+      fullAnswerHtml: custom.fullAnswerHtml || `<p>${custom.shortAnswer}</p>`,
       category: categoryTranslation,
       categoryKey: baseFaq.category,
     };

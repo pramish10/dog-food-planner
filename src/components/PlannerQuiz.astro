@@ -242,9 +242,9 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
                     max="250" 
                     value="45" 
                     required 
-                    class="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] focus:ring-1 focus:ring-[#171717]"
+                    class="w-full px-3.5 pr-16 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] focus:ring-1 focus:ring-[#171717]"
                   />
-                  <span id="weight-unit-label" class="absolute right-3.5 top-2.5 text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono">LBS</span>
+                  <span id="weight-unit-label" class="absolute right-4 top-2.5 text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] font-mono">LBS</span>
                 </div>
               </div>
 
@@ -569,7 +569,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
             <h4 class="font-semibold text-sm sm:text-base text-[#171717] dark:text-[#ededed]">AI Dog Breed Scanner</h4>
             <span class="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded-full bg-[#0070f3] text-white font-bold tracking-wider">BETA</span>
           </div>
-          <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">Live camera or photo scan to detect breed and adult weight</p>
+          <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">Live camera or photo scan to detect breed</p>
         </div>
       </div>
       <button type="button" id="close-ai-modal" class="p-2 rounded-lg text-[#8f8f8f] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#262626] cursor-pointer transition-colors" aria-label="Close Scanner">
@@ -585,21 +585,12 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
       <!-- Viewfinder Overlay Elements -->
       <div class="absolute inset-3 pointer-events-none flex flex-col justify-between z-20">
-        <!-- Top Status & Camera Flip Overlay -->
-        <div class="flex items-center justify-between pointer-events-auto">
+        <!-- Top status -->
+        <div class="flex items-center pointer-events-auto">
           <div class="px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-xs font-mono text-[9px] text-[#ededed] flex items-center gap-1.5 border border-white/10">
             <span id="camera-status-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span id="camera-status-text">Camera Active</span>
           </div>
-
-          <button 
-            type="button" 
-            id="flip-camera-btn" 
-            class="px-2.5 py-1 rounded-full bg-black/70 hover:bg-black/90 backdrop-blur-xs font-mono text-[10px] text-white flex items-center gap-1 border border-white/20 transition-all cursor-pointer touch-manipulation"
-            title="Switch front/back camera"
-          >
-            <span>🔄 Switch Camera</span>
-          </button>
         </div>
 
         <!-- Center Target Reticle -->
@@ -616,7 +607,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
         </div>
 
         <div class="text-center text-[10px] text-white/60 font-mono pointer-events-none">
-          Auto-identifies dog in frame or tap Snap below
+          Automatically identifies a dog in frame
         </div>
       </div>
 
@@ -641,24 +632,13 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       </div>
     </div>
 
-    <!-- Scanner Action Controls -->
     <div class="space-y-2.5">
-      <!-- Main Snap & Identify Button -->
-      <button 
-        type="button" 
-        id="snap-scan-btn"
-        class="w-full py-2.5 bg-[#10b981] hover:bg-[#059669] text-white text-xs sm:text-sm font-semibold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md touch-manipulation active:scale-[0.99]"
-      >
-        <span>📸 Snap & Identify Dog</span>
-        <span class="text-[10px] opacity-80 font-normal hidden sm:inline">(or holds still to auto-scan)</span>
-      </button>
-
-      <!-- Secondary Controls: Switch Camera & Upload Photo -->
-      <div class="grid grid-cols-2 gap-2">
+      <!-- Camera switching is available only on phones and tablets. -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
         <button 
           type="button" 
           id="flip-camera-btn-alt"
-          class="py-2 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer touch-manipulation"
+          class="py-2 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-lg transition-all flex lg:hidden items-center justify-center gap-1.5 cursor-pointer touch-manipulation"
         >
           <span>🔄 Switch Camera</span>
         </button>
@@ -712,11 +692,10 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
           <span class="text-[10px] px-2 py-0.5 rounded bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold" id="detected-category-badge">Large Breed</span>
         </div>
 
-        <!-- Breed title & adult weight -->
+        <!-- Breed title -->
         <div>
-          <div class="flex items-baseline justify-between gap-2">
+          <div>
             <div class="font-bold text-base sm:text-lg text-[#171717] dark:text-[#ededed]" id="detected-breed-name">Golden Retriever</div>
-            <span class="text-xs font-semibold text-[#0070f3] dark:text-[#3291ff]" id="detected-weight-range">Est: 55–75 lbs</span>
           </div>
           <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-1 leading-relaxed" id="detected-breed-desc">
             Active and athletic dog with high daily energy and moderate grooming needs.
@@ -998,8 +977,6 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
   const aiTriggerBtn = document.getElementById('ai-scan-trigger-btn');
   const closeAiModal = document.getElementById('close-ai-modal');
   const startCameraBtn = document.getElementById('start-camera-btn');
-  const snapScanBtn = document.getElementById('snap-scan-btn');
-  const flipCameraBtn = document.getElementById('flip-camera-btn');
   const flipCameraBtnAlt = document.getElementById('flip-camera-btn-alt');
   const cameraStatusDot = document.getElementById('camera-status-dot');
   const cameraStatusText = document.getElementById('camera-status-text');
@@ -1024,7 +1001,6 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
   const detectedBreedDesc = document.getElementById('detected-breed-desc');
   const detectedConfidenceText = document.getElementById('detected-confidence-text');
   const detectedCategoryBadge = document.getElementById('detected-category-badge');
-  const detectedWeightRange = document.getElementById('detected-weight-range');
   const detectedNutritionFocus = document.getElementById('detected-nutrition-focus');
   const detectedMacros = document.getElementById('detected-macros');
   const detectedPredispositions = document.getElementById('detected-predispositions');
@@ -1038,7 +1014,6 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
   let currentFacingMode: 'environment' | 'user' = 'environment';
 
   let activeSelectedBreedName = 'Golden Retriever';
-  let activeSelectedWeight = 65;
   let animFrameId: number | null = null;
   let laserPos = 0;
   let laserDir = 1;
@@ -1501,25 +1476,10 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     await startCamera(currentFacingMode);
   });
 
-  // Switch / Flip camera on mobile or PC
-  flipCameraBtn?.addEventListener('click', async () => {
-    currentFacingMode = currentFacingMode === 'environment' ? 'user' : 'environment';
-    await startCamera(currentFacingMode);
-  });
-
+  // Switch / flip cameras on phones and tablets.
   flipCameraBtnAlt?.addEventListener('click', async () => {
     currentFacingMode = currentFacingMode === 'environment' ? 'user' : 'environment';
     await startCamera(currentFacingMode);
-  });
-
-  // Snap & Identify button (manual capture or fallback)
-  snapScanBtn?.addEventListener('click', async () => {
-    stopAutoScanner();
-    if (scannerVideo && scannerVideo.srcObject && scannerVideo.videoWidth > 0) {
-      await executeDeepVisionInference(scannerVideo, '');
-    } else {
-      await startCamera(currentFacingMode);
-    }
   });
 
   closeAiModal?.addEventListener('click', () => {
@@ -1889,7 +1849,6 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
   function renderCanineRecognitionResults(topMatch: ExtendedBreedProfile, visualMatches: ExtendedBreedProfile[] = [topMatch]) {
     activeSelectedBreedName = topMatch.name;
-    activeSelectedWeight = Math.round((topMatch.avgWeightLbs[0] + topMatch.avgWeightLbs[1]) / 2);
 
     if (scanResultBox && detectedBreedName && detectedBreedDesc && detectedConfidenceText && detectedCategoryBadge) {
       scanResultBox.classList.remove('hidden');
@@ -1900,9 +1859,6 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       detectedConfidenceText.textContent = `${topMatch.confidence}%`;
       detectedCategoryBadge.textContent = `${topMatch.category} Breed`;
       
-      if (detectedWeightRange) {
-        detectedWeightRange.textContent = `Adult: ${topMatch.avgWeightLbs[0]}–${topMatch.avgWeightLbs[1]} lbs`;
-      }
       if (diagCranial) diagCranial.textContent = topMatch.cranial;
       if (diagEar) diagEar.textContent = topMatch.ear;
       if (diagCoat) diagCoat.textContent = topMatch.coat;
@@ -1938,14 +1894,6 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
           breedSelect.dispatchEvent(new Event('change'));
           break;
         }
-      }
-    }
-
-    if (weightInput) {
-      if (currentWeightUnit === 'KG') {
-        weightInput.value = Math.round(activeSelectedWeight * 0.453592).toString();
-      } else {
-        weightInput.value = activeSelectedWeight.toString();
       }
     }
 
