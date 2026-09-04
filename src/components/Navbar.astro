@@ -19,17 +19,17 @@ const isAllergiesActive = cleanPath.startsWith('/dog-food-allergies');
 const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
 ---
 
-<header class="sticky top-0 z-50 bg-[#fafafa]/95 dark:bg-[#0d0d0d]/95 backdrop-blur-md border-b border-[#ebebeb] dark:border-[#262626] transition-colors">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+<header class="sticky top-0 z-50 bg-[#fafafa]/95 dark:bg-[#0d0d0d]/95 backdrop-blur-md border-b border-[#ebebeb] dark:border-[#262626] transition-colors pt-[env(safe-area-inset-top)]">
+  <div class="max-w-6xl mx-auto w-full pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3">
     <!-- Brand Logo -->
-    <a href={translatePath('/')} class="flex items-center gap-2 group shrink-0">
+    <a href={translatePath('/')} class="flex items-center gap-2 group min-w-0 flex-1 lg:flex-none">
       <Logo class="w-8 h-8 shadow-sm group-hover:scale-105 transition-transform" />
-      <div class="flex flex-col">
-        <div class="flex items-center gap-1.5">
-          <span class="font-semibold text-sm sm:text-base text-[#171717] dark:text-[#ededed] tracking-tight">{t('nav.brand')}</span>
-          <span class="font-mono text-[9px] sm:text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#4d4d4d] dark:text-[#a1a1a1] border border-[#ebebeb] dark:border-[#2e2e2e]">{t('nav.badge')}</span>
+      <div class="flex flex-col min-w-0 justify-center leading-none">
+        <div class="flex items-center gap-1.5 min-w-0">
+          <span class="font-semibold text-sm sm:text-base text-[#171717] dark:text-[#ededed] tracking-tight whitespace-nowrap">{t('nav.brand')}</span>
+          <span class="inline-flex font-mono text-[9px] sm:text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#4d4d4d] dark:text-[#a1a1a1] border border-[#ebebeb] dark:border-[#2e2e2e] shrink-0">{t('nav.badge')}</span>
         </div>
-        <span class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono -mt-0.5 hidden sm:block">{t('nav.subbrand')}</span>
+        <span class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono mt-0.5 hidden sm:block">{t('nav.subbrand')}</span>
       </div>
     </a>
 
@@ -108,17 +108,19 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     </nav>
 
     <!-- Header Actions: Language Switcher, Theme Toggle, CTA & Mobile Menu Button -->
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-1 sm:gap-2 shrink-0">
       
-      <!-- Multi-language Switcher -->
-      <LanguagePicker variant="navbar" />
+      <!-- Multi-language Switcher (desktop only; compact picker lives in the mobile menu) -->
+      <div class="hidden lg:block">
+        <LanguagePicker variant="navbar" />
+      </div>
 
       <!-- Light / Dark Mode Toggle Button -->
       <button 
         type="button" 
         id="theme-toggle-btn"
         aria-label="Toggle light and dark mode"
-        class="theme-toggle p-2 text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] transition-all cursor-pointer shadow-2xs"
+        class="theme-toggle inline-flex items-center justify-center size-10 sm:size-9 p-2 text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] transition-all cursor-pointer shadow-2xs"
       >
         <!-- Sun Icon (shown in dark mode) -->
         <svg class="theme-sun-icon w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -131,8 +133,8 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
         </svg>
       </button>
 
-      <!-- Plan Bowl CTA -->
-      <a href={translatePath('/#planner-section')} class="inline-flex items-center justify-center text-xs font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] active:scale-[0.98] transition-all px-3.5 sm:px-4 py-2 rounded-full shadow-sm">
+      <!-- Plan Bowl CTA (hidden on small screens so the menu button stays visible) -->
+      <a href={translatePath('/#planner-section')} class="hidden md:inline-flex items-center justify-center text-xs font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] active:scale-[0.98] transition-all px-3.5 sm:px-4 py-2 rounded-full shadow-sm">
         <span>{t('nav.planBowl')}</span>
         <svg class="w-3 h-3 ml-1 sm:inline-block text-[#50e3c2] dark:text-[#0070f3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
@@ -144,7 +146,9 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
         type="button" 
         id="mobile-menu-toggle"
         aria-label="Toggle navigation menu"
-        class="lg:hidden p-2 text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1f1f1f] rounded-md transition-colors border border-[#ebebeb] dark:border-[#2e2e2e]"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="lg:hidden inline-flex items-center justify-center size-10 p-2 text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1f1f1f] rounded-md transition-colors border border-[#ebebeb] dark:border-[#2e2e2e]"
       >
         <svg id="hamburger-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
@@ -157,11 +161,20 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
   </div>
 
   <!-- Mobile Dropdown Navigation Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#121212] px-4 py-4 space-y-1.5 shadow-lg">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#121212] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-4 py-3 space-y-1 shadow-lg max-h-[min(80vh,32rem)] overflow-y-auto">
+    <a 
+      href={translatePath('/#planner-section')} 
+      class="mobile-nav-link md:hidden flex items-center justify-center gap-1.5 mx-1 mb-2 px-3 py-2.5 text-xs font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] rounded-full"
+    >
+      {t('nav.planBowl')}
+      <svg class="w-3 h-3 text-[#50e3c2] dark:text-[#0070f3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+      </svg>
+    </a>
     <a 
       href={translatePath('/#planner-section')} 
       class:list={[
-        "mobile-nav-link block px-3 py-2 text-xs rounded-md transition-colors",
+        "mobile-nav-link block px-3 py-2.5 text-sm rounded-md transition-colors",
         cleanPath === '/' || isCalculatorActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
@@ -172,7 +185,7 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     <a 
       href={translatePath('/best-dog-food')} 
       class:list={[
-        "mobile-nav-link block px-3 py-2 text-xs rounded-md transition-colors",
+        "mobile-nav-link block px-3 py-2.5 text-sm rounded-md transition-colors",
         isBestFoodActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
@@ -183,7 +196,7 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     <a 
       href={translatePath('/dog-food-recipes')} 
       class:list={[
-        "mobile-nav-link block px-3 py-2 text-xs rounded-md transition-colors",
+        "mobile-nav-link block px-3 py-2.5 text-sm rounded-md transition-colors",
         isRecipesActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
@@ -194,7 +207,7 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     <a 
       href={translatePath('/dog-food-allergies')} 
       class:list={[
-        "mobile-nav-link block px-3 py-2 text-xs rounded-md transition-colors",
+        "mobile-nav-link block px-3 py-2.5 text-sm rounded-md transition-colors",
         isAllergiesActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
@@ -205,7 +218,7 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     <a 
       href={translatePath('/toxic-foods')} 
       class:list={[
-        "mobile-nav-link block px-3 py-2 text-xs rounded-md transition-colors",
+        "mobile-nav-link block px-3 py-2.5 text-sm rounded-md transition-colors",
         isToxicFoodsActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
@@ -216,7 +229,7 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     <a 
       href={translatePath('/dog-food-brands')} 
       class:list={[
-        "mobile-nav-link block px-3 py-2 text-xs rounded-md transition-colors",
+        "mobile-nav-link block px-3 py-2.5 text-sm rounded-md transition-colors",
         isBrandsActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
@@ -227,7 +240,7 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     <a 
       href={translatePath('/faq')} 
       class:list={[
-        "mobile-nav-link block px-3 py-2 text-xs rounded-md transition-colors",
+        "mobile-nav-link block px-3 py-2.5 text-sm rounded-md transition-colors",
         isFaqActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
@@ -259,10 +272,12 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
         menu?.classList.remove('hidden');
         hamburger?.classList.add('hidden');
         close?.classList.remove('hidden');
+        toggleBtn?.setAttribute('aria-expanded', 'true');
       } else {
         menu?.classList.add('hidden');
         hamburger?.classList.remove('hidden');
         close?.classList.add('hidden');
+        toggleBtn?.setAttribute('aria-expanded', 'false');
       }
     });
 
@@ -271,6 +286,7 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
         menu?.classList.add('hidden');
         hamburger?.classList.remove('hidden');
         close?.classList.add('hidden');
+        toggleBtn?.setAttribute('aria-expanded', 'false');
       });
     });
 

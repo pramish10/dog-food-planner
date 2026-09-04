@@ -3,6 +3,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --breakpoint-xs: 24rem;
+
   --color-canvas: #fafafa;
   --color-canvas-elevated: #ffffff;
   --color-ink: #171717;

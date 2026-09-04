@@ -40,7 +40,7 @@ if (limit) {
 const faqJsonLd = generateFaqJsonLd(faqs);
 ---
 
-<section id="faq-section" class="py-16 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+<section id="faq-section" class="py-12 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     
     <!-- Section Header -->
@@ -101,7 +101,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
         >
           <button 
             type="button"
-            class="faq-toggle-btn w-full px-5 py-4 text-left flex items-center justify-between gap-4 cursor-pointer select-none group"
+            class="faq-toggle-btn w-full px-4 sm:px-5 py-3.5 sm:py-4 text-left flex items-center justify-between gap-3 sm:gap-4 cursor-pointer select-none group"
             aria-expanded="false"
             aria-controls={`faq-answer-${faq.id}`}
           >
@@ -115,7 +115,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 
           <div 
             id={`faq-answer-${faq.id}`}
-            class="faq-content hidden px-5 pb-5 pt-1 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed border-t border-[#f0f0f0] dark:border-[#262626] bg-white/70 dark:bg-[#121212]/90"
+            class="faq-content hidden px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed border-t border-[#f0f0f0] dark:border-[#262626] bg-white/70 dark:bg-[#121212]/90"
           >
             <p class="font-medium text-[#171717] dark:text-[#ededed] mb-2 text-xs bg-[#f8fafc] dark:bg-[#1a1a1a] p-3 rounded-lg border border-blue-100/50 dark:border-blue-900/30">
               💡 <strong>{getPageTranslations(lang).faqSingle.directQuickAnswer}:</strong> {faq.shortAnswer}
