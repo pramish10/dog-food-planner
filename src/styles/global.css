@@ -39,7 +39,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   html.dark {
@@ -51,8 +51,13 @@
     min-height: 100vh;
     background-color: #fafafa;
     color: #4d4d4d;
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  main {
+    min-width: 0;
+    width: 100%;
   }
 
   html.dark body {
@@ -149,13 +154,22 @@ html.dark .hairline-card {
 
 .hairline-card:hover {
   border-color: #d1d1d1;
-  box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.03);
-  transform: translateY(-1px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hairline-card:hover {
+    box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.03);
+    transform: translateY(-1px);
+  }
+
+  html.dark .hairline-card:hover {
+    border-color: #404040;
+    box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.4), 0px 1px 3px rgba(0, 0, 0, 0.2);
+  }
 }
 
 html.dark .hairline-card:hover {
   border-color: #404040;
-  box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.4), 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .hairline-card-active {
