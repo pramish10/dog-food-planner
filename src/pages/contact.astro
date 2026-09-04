@@ -45,21 +45,21 @@ import Footer from '../components/Footer.astro';
             <div class="text-lg">📧</div>
             <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Email Inquiries</h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">General questions & feedback:</p>
-            <p class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff]">hello@dogfoodplanner.com</p>
+            <a href="mailto:hello@dogfoodplanner.com" class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff] hover:underline block">hello@dogfoodplanner.com</a>
           </div>
 
           <div class="hairline-card p-5 bg-white dark:bg-[#141414] space-y-2">
             <div class="text-lg">🐾</div>
             <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Nutrition Research</h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Veterinary formula inquiries:</p>
-            <p class="font-mono text-xs text-[#10b981]">clinical@dogfoodplanner.com</p>
+            <a href="mailto:hello@dogfoodplanner.com" class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff] hover:underline block">hello@dogfoodplanner.com</a>
           </div>
 
           <div class="hairline-card p-5 bg-white dark:bg-[#141414] space-y-2">
             <div class="text-lg">🛡️</div>
             <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Privacy & Terms</h3>
             <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Data protection questions:</p>
-            <p class="font-mono text-xs text-[#7928ca] dark:text-[#a35cf0]">privacy@dogfoodplanner.com</p>
+            <a href="mailto:hello@dogfoodplanner.com" class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff] hover:underline block">hello@dogfoodplanner.com</a>
           </div>
         </div>
 
@@ -130,17 +130,19 @@ import Footer from '../components/Footer.astro';
                 ></textarea>
               </div>
 
-              <div id="contact-success-msg" class="hidden p-3 bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] text-xs rounded-lg font-mono">
-                ✓ Thank you! Your message has been received. Our team will get back to you shortly.
+              <div id="contact-success-msg" class="hidden p-3.5 bg-[#10b981]/10 border border-[#10b981]/30 text-[#10b981] text-xs rounded-lg font-mono leading-relaxed">
+                ✓ Opening your email client to send to <strong class="underline">hello@dogfoodplanner.com</strong>. You can also write to us directly anytime.
               </div>
 
-              <button 
-                type="submit" 
-                id="submit-contact-btn"
-                class="w-full sm:w-auto px-6 py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-full transition-all cursor-pointer shadow-sm"
-              >
-                Send Message →
-              </button>
+              <div class="flex items-center gap-3">
+                <button 
+                  type="submit" 
+                  id="submit-contact-btn"
+                  class="w-full sm:w-auto px-6 py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-full transition-all cursor-pointer shadow-sm"
+                >
+                  Send Message via Email →
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -159,13 +161,32 @@ import Footer from '../components/Footer.astro';
 
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
+    
+    const name = (document.getElementById('contact-name') as HTMLInputElement)?.value || '';
+    const email = (document.getElementById('contact-email') as HTMLInputElement)?.value || '';
+    const subjectSelect = (document.getElementById('contact-subject') as HTMLSelectElement);
+    const subjectText = subjectSelect?.options[subjectSelect.selectedIndex]?.text || 'Contact Inquiry';
+    const message = (document.getElementById('contact-message') as HTMLTextAreaElement)?.value || '';
+
+    const mailSubject = encodeURIComponent(`[DogFoodPlanner Contact] ${subjectText} - from ${name}`);
+    const mailBody = encodeURIComponent(`Sender Name: ${name}\nSender Email: ${email}\nTopic: ${subjectText}\n\nMessage:\n${message}\n\n--- Sent from DogFoodPlanner.com Contact Form ---`);
+    
+    const mailtoUrl = `mailto:hello@dogfoodplanner.com?subject=${mailSubject}&body=${mailBody}`;
+
     if (submitBtn) {
-      submitBtn.textContent = 'Sending...';
-      setTimeout(() => {
-        if (successMsg) successMsg.classList.remove('hidden');
-        if (submitBtn) submitBtn.textContent = 'Message Sent ✓';
-        form.reset();
-      }, 700);
+      submitBtn.textContent = 'Opening Email...';
     }
+
+    if (successMsg) {
+      successMsg.classList.remove('hidden');
+    }
+
+    // Launch email client
+    window.location.href = mailtoUrl;
+
+    setTimeout(() => {
+      if (submitBtn) submitBtn.textContent = 'Message Prepared ✓';
+      form.reset();
+    }, 1200);
   });
 </script>
