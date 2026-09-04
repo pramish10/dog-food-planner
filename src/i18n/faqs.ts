@@ -1,8 +1,6 @@
 import { FAQS_DATA, type FaqItem } from '../data/faqs';
 import type { Lang } from './ui';
-// This vetted dictionary contains the remaining localized FAQ question/answer pairs.
-// @ts-expect-error CommonJS dictionary is consumed by Vite at build time.
-import { FAQ_EXTRA } from '../../scratch/build_faq_dict.cjs';
+import { FAQ_EXTRA } from './faq-extra';
 
 export interface LocalizedFaqItem extends Omit<FaqItem, 'category'> {
   category: string;
