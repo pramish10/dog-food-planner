@@ -74,10 +74,9 @@ const translatePath = useTranslatedPath(lang);
       <LanguagePicker variant="footer" />
     </div>
 
-    <!-- Bottom Legal & Veterinary Disclaimer -->
     <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">
       <p class="max-w-3xl leading-relaxed text-center md:text-left">
-        <strong class="text-[#171717] dark:text-[#ededed]">{t('common.notice')}:</strong> {t('footer.disclaimer')}
+        {t('footer.disclaimer')}
       </p>
       <div class="font-mono text-center md:text-right shrink-0">
         © {new Date().getFullYear()} DogFoodPlanner. All rights reserved.

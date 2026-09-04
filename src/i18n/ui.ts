@@ -106,7 +106,7 @@ export const ui = {
     'footer.linkContact': 'Contact Us',
     'footer.linkPrivacy': 'Privacy Policy',
     'footer.linkTerms': 'Terms & Conditions',
-    'footer.disclaimer': 'Dog Food Planner is an educational tool providing general canine nutritional guidelines based on NRC and AAFCO standards. Dog Food Planner is not a diagnostic tool and is not a substitute for professional veterinary medical advice, diagnosis, or treatment. Always consult a licensed veterinarian for specific medical conditions, illness, or diet changes.',
+    'footer.disclaimer': 'Educational nutrition estimates only — not veterinary advice. See Terms.',
 
     // Common
     'common.home': 'Home',
@@ -198,7 +198,7 @@ export const ui = {
     'footer.linkContact': 'Contacto',
     'footer.linkPrivacy': 'Política de Privacidad',
     'footer.linkTerms': 'Términos y Condiciones',
-    'footer.disclaimer': 'Dog Food Planner es una herramienta educativa basada en los estándares de NRC y AAFCO. No es una herramienta diagnóstica ni sustituye el asesoramiento veterinario profesional. Consulta siempre a tu veterinario colegiado ante cualquier duda de salud o cambio brusco en la dieta de tu perro.',
+    'footer.disclaimer': 'Estimaciones educativas — no sustituyen consejo veterinario. Ver Términos.',
 
     // Common
     'common.home': 'Inicio',
@@ -290,7 +290,7 @@ export const ui = {
     'footer.linkContact': 'お問い合わせ',
     'footer.linkPrivacy': 'プライバシーポリシー',
     'footer.linkTerms': '利用規約・免責事項',
-    'footer.disclaimer': 'DogFoodPlannerはNRCおよびAAFCO基準に基づく一般的な犬の栄養ガイドを提供する教育ツールです。医療診断ツールではなく、獣医師の診断・治療に代わるものではありません。愛犬の健康管理や食事の変更については必ず獣医師にご相談ください。',
+    'footer.disclaimer': '教育目的の栄養目安です。獣医師の助言に代わるものではありません。利用規約をご覧ください。',
 
     // Common
     'common.home': 'ホーム',
@@ -382,7 +382,7 @@ export const ui = {
     'footer.linkContact': 'Contactez-Nous',
     'footer.linkPrivacy': 'Politique de Confidentialité',
     'footer.linkTerms': 'Conditions d’Utilisation',
-    'footer.disclaimer': 'Dog Food Planner est un outil pédagogique basé sur les recommandations nutritionnelles du NRC et de l\'AAFCO. Il ne constitue pas un outil de diagnostic et ne remplace pas une consultation vétérinaire qualifiée.',
+    'footer.disclaimer': 'Estimations éducatives uniquement — ne remplacent pas un avis vétérinaire. Voir les Conditions.',
 
     // Common
     'common.home': 'Accueil',
@@ -474,7 +474,7 @@ export const ui = {
     'footer.linkContact': 'Kontakt',
     'footer.linkPrivacy': 'Datenschutzerklärung',
     'footer.linkTerms': 'Nutzungsbedingungen',
-    'footer.disclaimer': 'Dog Food Planner ist ein Bildungstool basierend auf NRC- und AAFCO-Richtlinien. Es dient nicht als Diagnosewerkzeug und ersetzt keinesfalls eine professionelle tierärztliche Behandlung.',
+    'footer.disclaimer': 'Nur Schätzwerte zu Bildungszwecken — kein Ersatz für tierärztlichen Rat. Siehe Nutzungsbedingungen.',
 
     // Common
     'common.home': 'Startseite',
@@ -566,7 +566,7 @@ export const ui = {
     'footer.linkContact': 'Fale Conosco',
     'footer.linkPrivacy': 'Política de Privacidade',
     'footer.linkTerms': 'Termos de Uso',
-    'footer.disclaimer': 'O Dog Food Planner é uma ferramenta educacional baseada nas normas do NRC e AAFCO. Não serve como ferramenta de diagnóstico nem substitui a consulta médica veterinária.',
+    'footer.disclaimer': 'Estimativas educativas — não substituem aconselhamento veterinário. Ver Termos.',
 
     // Common
     'common.home': 'Início',
@@ -658,7 +658,7 @@ export const ui = {
     'footer.linkContact': '문의하기',
     'footer.linkPrivacy': '개인정보 처리방침',
     'footer.linkTerms': '이용약관',
-    'footer.disclaimer': 'DogFoodPlanner는 NRC 및 AAFCO 가이드라인을 바탕으로 한 일반 반려견 영양 교육 도구입니다. 본 서비스는 질병의 진단용이 아니며 수의사의 전문적인 진료를 대신할 수 없습니다.',
+    'footer.disclaimer': '교육용 영양 추정치이며 수의사 진료를 대신하지 않습니다. 이용약관을 참고하세요.',
 
     // Common
     'common.home': '홈',
@@ -750,7 +750,7 @@ export const ui = {
     'footer.linkContact': 'Contatti',
     'footer.linkPrivacy': 'Informativa Privacy',
     'footer.linkTerms': 'Termini e Condizioni',
-    'footer.disclaimer': 'Dog Food Planner è uno strumento divulgativo basato sugli standard NRC e AAFCO. Non costituisce strumento diagnostico né sostituisce le visite mediche veterinarie.',
+    'footer.disclaimer': 'Stime educative — non sostituiscono il parere veterinario. Vedi i Termini.',
 
     // Common
     'common.home': 'Home',
