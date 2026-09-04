@@ -79,7 +79,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
               <button
                 type="button"
                 data-faq-cat-filter={cat}
-                class="faq-cat-btn px-3 py-1 text-xs font-mono rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] bg-[#fafafa] dark:bg-[#141414] text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:border-[#171717] dark:hover:border-[#ededed] transition-all cursor-pointer first:bg-[#171717] dark:first:bg-white first:text-white dark:first:text-[#171717] first:border-[#171717] dark:first:border-white"
+                aria-pressed="false"
+                class="faq-cat-btn px-3 py-1 text-xs font-mono rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] bg-[#fafafa] dark:bg-[#141414] text-[#4d4d4d] dark:text-[#a1a1a1] transition-all cursor-pointer"
               >
                 {categoryStrings[cat] || cat}
               </button>
@@ -155,6 +156,32 @@ const faqJsonLd = generateFaqJsonLd(faqs);
   </div>
 </section>
 
+<style>
+  .faq-cat-btn:hover {
+    color: #171717;
+    border-color: #171717;
+  }
+
+  :global(.dark) .faq-cat-btn:hover {
+    color: #ededed;
+    border-color: #ededed;
+  }
+
+  .faq-cat-btn.is-active,
+  .faq-cat-btn.is-active:hover {
+    background-color: #171717 !important;
+    border-color: #171717 !important;
+    color: #fff !important;
+  }
+
+  :global(.dark) .faq-cat-btn.is-active,
+  :global(.dark) .faq-cat-btn.is-active:hover {
+    background-color: #fff !important;
+    border-color: #fff !important;
+    color: #171717 !important;
+  }
+</style>
+
 <!-- Embedded SEO JSON-LD FAQPage Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 
@@ -175,18 +202,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 
     catButtons.forEach(button => {
       const isActive = button.getAttribute('data-faq-cat-filter') === activeCategory;
-      button.classList.toggle('bg-[#171717]', isActive);
-      button.classList.toggle('dark:bg-white', isActive);
-      button.classList.toggle('text-white', isActive);
-      button.classList.toggle('dark:text-[#171717]', isActive);
-      button.classList.toggle('border-[#171717]', isActive);
-      button.classList.toggle('dark:border-white', isActive);
-      button.classList.toggle('bg-[#fafafa]', !isActive);
-      button.classList.toggle('dark:bg-[#141414]', !isActive);
-      button.classList.toggle('text-[#4d4d4d]', !isActive);
-      button.classList.toggle('dark:text-[#a1a1a1]', !isActive);
-      button.classList.toggle('border-[#ebebeb]', !isActive);
-      button.classList.toggle('dark:border-[#2e2e2e]', !isActive);
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', String(isActive));
     });
   }
 
@@ -266,8 +283,6 @@ const faqJsonLd = generateFaqJsonLd(faqs);
   // Topic badges link here with a category query parameter. Apply it after the
   // page renders so the selected tab and the visible answers stay in sync.
   const requestedCategory = new URLSearchParams(window.location.search).get('category');
-  if (requestedCategory) {
-    setActiveCategory(requestedCategory);
-    applyFilters();
-  }
+  setActiveCategory(requestedCategory || 'All Questions');
+  applyFilters();
 </script>
