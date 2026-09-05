@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Footer from '../../components/Footer.astro';
 import { FAQS_DATA, getFaqBySlug } from '../../data/faqs';
+import { findAffiliateContext } from '../../data/affiliates';
 
 export function getStaticPaths() {
   return FAQS_DATA.map(faq => ({
@@ -17,6 +18,9 @@ const { faq } = Astro.props;
 if (!faq) {
   return Astro.redirect('/faq');
 }
+
+const faqBlob = `${faq.question} ${faq.shortAnswer} ${faq.tags.join(' ')}`;
+const affiliateCtx = findAffiliateContext(faqBlob);
 
 // Find related FAQs
 const relatedFaqs = (faq.relatedSlugs || [])
@@ -138,6 +142,53 @@ const articleJsonLd = {
           ))}
         </div>
       </article>
+
+      {affiliateCtx && (
+        <aside class="mb-10 p-5 sm:p-6 rounded-2xl border-2 border-dashed border-[#0070f3]/40 dark:border-[#3291ff]/40 bg-gradient-to-br from-[#0070f3]/5 via-white to-transparent dark:from-[#3291ff]/10 dark:via-[#141414] dark:to-transparent shadow-xs">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            <div class="flex-1 space-y-2">
+              <div class="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase font-semibold tracking-wider text-[#0070f3] dark:text-[#3291ff]">
+                <span>🛒</span> Recommended Product
+              </div>
+              {affiliateCtx.type === 'brand' ? (
+                <>
+                  <h3 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] leading-snug">
+                    {affiliateCtx.brand} — Pick Up the Formula We Analyzed
+                  </h3>
+                  <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                    This is the primary {affiliateCtx.brand} recipe referenced in our veterinary review above.
+                    Directly sourced from verified sellers with confirmed stock levels.
+                  </p>
+                  <p class="text-[11px] font-mono text-[#0070f3]/80 dark:text-[#3291ff]/80 mt-1 line-clamp-2">
+                    {affiliateCtx.product.name}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h3 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] leading-snug">
+                    Buy {affiliateCtx.name} — Verified Product Link
+                  </h3>
+                  <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                    Vet-recommended source of {affiliateCtx.name} with the same purity, dosage, and
+                    form we reference throughout the canine nutritional guidelines.
+                  </p>
+                </>
+              )}
+            </div>
+            <a
+              href={affiliateCtx.type === 'brand' ? affiliateCtx.product.url : affiliateCtx.url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 px-5 py-3 bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 touch-manipulation"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+              Buy Now →
+            </a>
+          </div>
+        </aside>
+      )}
 
       <!-- Interactive Calculator Call-to-Action -->
       <div class="p-6 sm:p-8 bg-gradient-to-br from-[#171717] to-[#333333] border border-[#2e2e2e] text-white rounded-2xl mb-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">

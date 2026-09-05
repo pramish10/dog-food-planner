@@ -590,3 +590,93 @@ export const BRAND_AFFILIATE_MAP: Record<string, string[]> = {
     'fromm-large-breed-adult-gold-15lb',
   ],
 };
+
+/**
+ * Normalize a string for fuzzy matching (lowercase, punctuation stripped, collapse spaces).
+ */
+function normalize(s: string): string {
+  return s.toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Returns the primary (first) affiliate product for a brand, if any are mapped.
+ */
+export function getPrimaryBrandProduct(brandName: string): AffiliateProduct | null {
+  const keys = BRAND_AFFILIATE_MAP[brandName];
+  if (!keys || keys.length === 0) return null;
+  const key = keys[0];
+  return AFFILIATE_PRODUCTS[key] || null;
+}
+
+/**
+ * Scans arbitrary text (question, tags, answer body, or ingredient names) for known
+ * brand names and returns the first brand + primary product that matches.
+ */
+export function findBrandMatchInText(text: string): { brand: string; product: AffiliateProduct } | null {
+  if (!text) return null;
+  const haystack = ' ' + normalize(text) + ' ';
+  for (const brand of Object.keys(BRAND_AFFILIATE_MAP)) {
+    const brandNorm = normalize(brand);
+    if (!brandNorm) continue;
+    // Match whole words to avoid false positives (e.g. "Pure" inside "Purina")
+    const regex = new RegExp(`(^|[^a-z0-9])${brandNorm.replace(/ /g, '[^a-z0-9]+')}([^a-z0-9]|$)`);
+    if (regex.test(haystack)) {
+      const product = getPrimaryBrandProduct(brand);
+      if (product) return { brand, product };
+    }
+  }
+  return null;
+}
+
+/**
+ * Lookup an ingredient affiliate URL supporting fuzzy matches against
+ * INGREDIENT_AFFILIATE_MAP keys. Handles keywords like "pumpkin", "salmon oil", etc.
+ */
+export function findIngredientAffiliate(text: string): { name: string; url: string } | null {
+  if (!text) return null;
+  const exact = INGREDIENT_AFFILIATE_MAP[text.trim()];
+  if (exact) return { name: text.trim(), url: exact };
+  const haystack = normalize(text);
+  let best: { score: number; name: string; url: string } | null = null;
+  for (const [key, url] of Object.entries(INGREDIENT_AFFILIATE_MAP)) {
+    if (!url) continue;
+    const keyNorm = normalize(key);
+    if (!keyNorm) continue;
+    // Exact substring both directions
+    if (haystack.includes(keyNorm) || keyNorm.includes(haystack)) {
+      const score = Math.min(keyNorm.length, haystack.length);
+      if (!best || score > best.score) best = { score, name: key, url };
+      continue;
+    }
+    // At least 2 overlapping keywords
+    const hTokens = new Set(haystack.split(' ').filter(t => t.length >= 3));
+    const kTokens = keyNorm.split(' ').filter(t => t.length >= 3);
+    const overlap = kTokens.filter(t => hTokens.has(t)).length;
+    if (overlap >= 2) {
+      const score = overlap * 10;
+      if (!best || score > best.score) best = { score, name: key, url };
+    }
+  }
+  return best ? { name: best.name, url: best.url } : null;
+}
+
+/**
+ * Highest-level "find something to promote" helper.
+ * Scans arbitrary text for brand references first (they have richer product metadata),
+ * then falls back to ingredient keywords.
+ */
+export function findAffiliateContext(text: string):
+  | { type: 'brand'; brand: string; product: AffiliateProduct }
+  | { type: 'ingredient'; name: string; url: string }
+  | null
+{
+  if (!text) return null;
+  const brandHit = findBrandMatchInText(text);
+  if (brandHit) return { type: 'brand', brand: brandHit.brand, product: brandHit.product };
+  const ingHit = findIngredientAffiliate(text);
+  if (ingHit) return { type: 'ingredient', name: ingHit.name, url: ingHit.url };
+  return null;
+}

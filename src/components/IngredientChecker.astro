@@ -1,10 +1,17 @@
 ---
 import { getLangFromUrl } from '../i18n/utils';
 import { getLocalizedIngredients, INGREDIENT_UI } from '../i18n/ingredients';
+import { findIngredientAffiliate } from '../data/affiliates';
 
 const lang = getLangFromUrl(Astro.url);
 const uiText = INGREDIENT_UI[lang] || INGREDIENT_UI.en;
-const ingredients = getLocalizedIngredients(lang);
+const ingredients = getLocalizedIngredients(lang).map((item) => {
+  const match = findIngredientAffiliate(item.name);
+  return {
+    ...item,
+    affiliate: item.status !== 'DANGEROUS_TOXIC' && match ? match : null,
+  };
+});
 ---
 
 <section id="safety-checker" class="py-10 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
@@ -85,8 +92,24 @@ const ingredients = getLocalizedIngredients(lang);
             </p>
           </div>
 
-          <div class="pt-2.5 sm:pt-3 border-t border-[#ebebeb] dark:border-[#262626] text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">
-            <strong class="text-[#171717] dark:text-[#ededed] font-medium">{uiText.servingTitle} </strong> {item.servingAdvice}
+          <div class="pt-2.5 sm:pt-3 border-t border-[#ebebeb] dark:border-[#262626] space-y-2">
+            <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">
+              <strong class="text-[#171717] dark:text-[#ededed] font-medium">{uiText.servingTitle} </strong> {item.servingAdvice}
+            </div>
+
+            {item.affiliate && (
+              <a
+                href={item.affiliate.url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-semibold transition-all shadow-xs active:scale-[0.98] touch-manipulation cursor-pointer"
+              >
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                <span>Buy Now</span>
+              </a>
+            )}
           </div>
         </div>
       ))}
