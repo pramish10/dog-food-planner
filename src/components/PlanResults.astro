@@ -276,6 +276,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 <script>
   import { calculateCanineNutrition } from '../utils/nutritionEngine';
   import { RECIPES } from '../data/recipes';
+  import { INGREDIENT_AFFILIATE_MAP } from '../data/affiliates';
 
   let currentProfile: any = null;
 
@@ -324,10 +325,13 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
   };
 
   function ingredientShoppingLinks(name: string) {
+    const affiliateUrl = INGREDIENT_AFFILIATE_MAP[name];
     const query = encodeURIComponent(name);
     return {
-      grocery: `https://www.google.com/search?tbm=shop&q=${query}`,
-      amazon: `https://www.amazon.com/s?k=${query}`
+      amazon: affiliateUrl && affiliateUrl.length > 0
+        ? affiliateUrl
+        : `https://www.amazon.com/s?k=${query}`,
+      isAffiliate: !!(affiliateUrl && affiliateUrl.length > 0),
     };
   }
 
@@ -452,9 +456,11 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
           </div>
           <div class="flex items-center gap-2 sm:justify-end shrink-0">
             <span class="font-mono text-[9px] sm:text-[10px] uppercase text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#1f1f1f] border border-[#ebebeb] dark:border-[#2e2e2e] px-2 py-0.5 rounded hidden xs:inline-block">${ing.category}</span>
-            <a href="${buyLinks.amazon}" target="_blank" rel="noopener noreferrer" class="no-print inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#ebebeb] text-[11px] font-semibold transition-all shadow-xs active:scale-95 touch-manipulation">
+            <a href="${buyLinks.amazon}" target="_blank" rel="noopener noreferrer${buyLinks.isAffiliate ? ' nofollow' : ''}" class="no-print inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] text-white text-[11px] font-semibold transition-all shadow-xs active:scale-95 touch-manipulation">
+              <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
               <span>Buy Now</span>
-              <span class="text-xs">🛒</span>
             </a>
           </div>
         `;

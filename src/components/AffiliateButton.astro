@@ -1,0 +1,43 @@
+---
+/**
+ * AffiliateButton — renders a compact "Buy Now" button.
+ *
+ * Props:
+ *   url      — affiliate link (required)
+ *   label    — override button text (default: "Buy Now")
+ *   size     — 'sm' | 'md' (default: 'sm')
+ *   class    — extra Tailwind classes passed from parent
+ */
+interface Props {
+  url: string;
+  label?: string;
+  size?: 'sm' | 'md';
+  class?: string;
+}
+
+const {
+  url,
+  label = 'Buy Now',
+  size = 'sm',
+  class: extraClass = '',
+} = Astro.props;
+
+const sizeClasses = size === 'md'
+  ? 'text-xs px-4 py-2 gap-2'
+  : 'text-[11px] px-3 py-1.5 gap-1.5';
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer nofollow"
+  class={`inline-flex items-center justify-center font-semibold rounded-lg transition-all active:scale-95 touch-manipulation
+    bg-[#0070f3] hover:bg-[#005ac2] text-white shadow-sm
+    ${sizeClasses} ${extraClass}`}
+  aria-label={label}
+>
+  <svg class="shrink-0 w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+  </svg>
+  <span>{label}</span>
+</a>

@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FaqSection from '../components/FaqSection.astro';
 import Footer from '../components/Footer.astro';
+import AffiliateButton from '../components/AffiliateButton.astro';
+import { AFFILIATE_PRODUCTS } from '../data/affiliates';
 ---
 
 <Layout 
@@ -41,7 +43,7 @@ import Footer from '../components/Footer.astro';
       
       <!-- Brand 1: Blue Buffalo -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between flex-wrap gap-2">
           <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">1. Blue Buffalo Dog Food Review</h2>
           <span class="text-xs font-mono font-bold px-2.5 py-1 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-800/60 rounded-full">
             Grade: B+
@@ -60,11 +62,16 @@ import Footer from '../components/Footer.astro';
             <p class="text-xs text-amber-900 dark:text-amber-200">High carbohydrate proportion (45-50%); past recalls regarding elevated moisture/mold and Vitamin D levels.</p>
           </div>
         </div>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <AffiliateButton url={AFFILIATE_PRODUCTS['blue-buffalo-wilderness-chicken-24lb'].url} label="Wilderness Chicken 24lb" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['blue-buffalo-wilderness-salmon-24lb'].url} label="Wilderness Salmon 24lb" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['blue-buffalo-wilderness-chicken-4lb'].url} label="Wilderness Chicken 4.5lb" />
+        </div>
       </section>
 
       <!-- Brand 2: Rachael Ray Nutrish -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between flex-wrap gap-2">
           <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">2. Rachael Ray Nutrish Review</h2>
           <span class="text-xs font-mono font-bold px-2.5 py-1 bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800/60 rounded-full">
             Grade: C+ / B-
@@ -83,11 +90,15 @@ import Footer from '../components/Footer.astro';
             <p class="text-xs text-amber-900 dark:text-amber-200">Standard lines rely on plant-based protein boosters (pea protein, corn gluten meal); past FDA DCM inquiry inclusion.</p>
           </div>
         </div>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <AffiliateButton url={AFFILIATE_PRODUCTS['nutrish-peak-variety-pack-wet'].url} label="Nutrish Peak Variety Pack" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['nutrish-beef-pea-brown-rice-28lb'].url} label="Nutrish Beef & Brown Rice 28lb" />
+        </div>
       </section>
 
       <!-- Brand 3: Pure Balance -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between flex-wrap gap-2">
           <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">3. Pure Balance (Walmart Brand) Review</h2>
           <span class="text-xs font-mono font-bold px-2.5 py-1 bg-green-50 dark:bg-green-950/60 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800/60 rounded-full">
             Grade: B (Best Budget)
@@ -96,11 +107,14 @@ import Footer from '../components/Footer.astro';
         <p>
           <strong>Overview:</strong> Highly rated private-label brand providing premium-style meat-first recipes free from corn, wheat, and artificial colors at exceptional value.
         </p>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <AffiliateButton url={AFFILIATE_PRODUCTS['victor-chicken-brown-rice-5lb'].url} label="Shop Similar Budget Pick" />
+        </div>
       </section>
 
       <!-- Brand 4: Ollie & Fresh Delivery -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between flex-wrap gap-2">
           <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">4. Ollie & Fresh Dog Food Delivery Services</h2>
           <span class="text-xs font-mono font-bold px-2.5 py-1 bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-800/60 rounded-full">
             Grade: A
@@ -109,6 +123,11 @@ import Footer from '../components/Footer.astro';
         <p>
           <strong>Overview:</strong> Human-grade gently cooked subscription meals prepared in USDA-inspected kitchens. Outstanding digestibility and hydration, but carries a high monthly subscription cost ($200-$380+/month).
         </p>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <AffiliateButton url={AFFILIATE_PRODUCTS['ollie-chicken-apple-jerky-treats'].url} label="Ollie Chicken & Apple Treats" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['justfoodfordogs-chicken-white-rice'].url} label="JustFoodForDogs Chicken & Rice" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['ziwi-peak-beef-chicken-bundle'].url} label="ZIWI Peak Air-Dried Bundle" />
+        </div>
       </section>
 
       <!-- Understanding AAFCO Labeling Rules -->
@@ -122,6 +141,145 @@ import Footer from '../components/Footer.astro';
           <li><strong>• 3% Rule:</strong> "Dog Food With Beef" = only 3% beef required!</li>
           <li><strong>• Flavor Rule:</strong> "Beef Flavored Dog Food" = 0% beef required (only flavor extracts).</li>
         </ul>
+      </section>
+
+      <!-- Premium Dry Kibble Brands -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <div class="flex items-center gap-2">
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">Premium Kibble: Orijen, Acana & Open Farm</h2>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 bg-green-50 dark:bg-green-950/60 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800/60 rounded-full">Grade: A / A-</span>
+        </div>
+        <p>Top-tier dry kibble brands using 85–90% animal inclusions, freeze-dried raw coatings, and 100% traceable humane proteins. Best choice among commercial kibble options.</p>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Orijen</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['orijen-original-grain-free-23lb'].url} label="Original Grain-Free 23.5lb" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['orijen-amazing-grains-original-30lb'].url} label="Amazing Grains 30lb" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['orijen-small-breed-4lb'].url} label="Small Breed 4lb" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Acana</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['acana-wild-atlantic-25lb'].url} label="Wild Atlantic 25lb" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['acana-appalachian-ranch-25lb'].url} label="Appalachian Ranch 25lb" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['acana-meadowland-4lb'].url} label="Meadowland 4.5lb" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Open Farm RawMix</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['open-farm-rawmix-front-range-20lb'].url} label="Front Range Grain-Free 20lb" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['open-farm-rawmix-open-prairie-20lb'].url} label="Open Prairie Ancient Grains 20lb" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['open-farm-rawmix-wild-ocean-20lb'].url} label="Wild Ocean Grain-Free 20lb" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Fromm Family</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['fromm-adult-gold-15lb'].url} label="Adult Gold Chicken 15lb" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['fromm-large-breed-adult-gold-15lb'].url} label="Large Breed Adult Gold 15lb" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Stella & Chewy's SuperBlends</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['stella-chewys-superblends-chicken-duck'].url} label="SuperBlends Chicken & Duck 3.25lb×2" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Raw / Freeze-Dried Brands -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <div class="flex items-center gap-2">
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">Raw & Freeze-Dried: Stella & Chewy's and Primal</h2>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-400 border border-purple-200 dark:border-purple-800/60 rounded-full">Grade: A</span>
+        </div>
+        <p>95% meat, organs, and bone freeze-dried to retain live enzymes. HPP pathogen safety. Ideal as a complete meal or a kibble topper.</p>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Stella & Chewy's Freeze-Dried</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['stella-chewys-freeze-dried-chicken-14oz'].url} label="Chicken Patties 14oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['stella-chewys-freeze-dried-red-meat-14oz'].url} label="Red Meat Patties 14oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['stella-chewys-freeze-dried-chicken-5oz'].url} label="Chicken Patties 5.5oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['stella-chewys-freeze-dried-variety-5pack'].url} label="Variety Pack 5×15oz" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Primal Pet Foods</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['primal-pronto-beef-16oz'].url} label="Pronto Beef Nuggets 16oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['primal-pronto-chicken-16oz'].url} label="Pronto Chicken Nuggets 16oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['primal-freeze-dried-chicken-5oz'].url} label="Freeze-Dried Chicken 5.5oz" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Veterinary Prescription Brands -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">Veterinary Prescription Diets</h2>
+        <p>For clinically diagnosed conditions only. Requires veterinary prescription. Hill's, Royal Canin, and Purina Pro Plan are the three most prescribed therapeutic diet lines.</p>
+        <div class="flex flex-wrap gap-2">
+          <AffiliateButton url={AFFILIATE_PRODUCTS['hills-science-diet-large-breed-35lb'].url} label="Hill's Science Diet Large Breed 35lb" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['hills-science-diet-small-bites'].url} label="Hill's Science Diet Small Bites" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['royal-canin-vet-hydrolyzed-protein-25lb'].url} label="Royal Canin Hydrolyzed Protein 25lb" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['purina-pro-plan-vet-ha-hydrolyzed-16lb'].url} label="Purina Pro Plan HA Hydrolyzed 16.5lb" />
+          <AffiliateButton url={AFFILIATE_PRODUCTS['purina-pro-plan-vet-nf-kidney-25lb'].url} label="Purina Pro Plan NF Kidney 25lb" />
+        </div>
+      </section>
+
+      <!-- Recommended Supplements -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">Recommended Supplements & Toppers</h2>
+        <p>These are the core supplements referenced throughout our homemade recipe guides, FAQ answers, and feeding calculator results.</p>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Omega-3 Salmon Oil</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['zesty-paws-salmon-oil-16oz'].url} label="Zesty Paws Salmon Oil 16oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['zesty-paws-salmon-oil-8oz'].url} label="Zesty Paws Salmon Oil 8.5oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['grizzly-salmon-oil-16oz'].url} label="Grizzly Salmon Oil 16oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['nordic-naturals-omega3-pet-16oz'].url} label="Nordic Naturals Omega-3 Pet" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Calcium (Eggshell Powder)</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['eggshell-powder-8oz'].url} label="Eggshell Powder 8oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['eggshell-powder-12oz'].url} label="Eggshell Powder 12oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['prymal-pets-eggshell-calcium-12oz'].url} label="Prymal Pets Eggshell Calcium" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['pets-friend-eggshellent-calcium-6oz'].url} label="Pet's Friend Eggshellent 6oz" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Bone Broth Toppers</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['brutus-broth-chicken-liquid-6pack'].url} label="Brutus Broth Chicken 6-Pack" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['brutus-broth-beef-liquid-2pack'].url} label="Brutus Broth Beef 2-Pack" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['honest-kitchen-bone-broth-variety-3pack'].url} label="Honest Kitchen Broth Variety 3-Pack" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['honest-kitchen-turkey-salmon-broth-12pack'].url} label="Honest Kitchen Turkey Salmon 12-Pack" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Anti-Inflammatory & Sea Supplements</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['bragg-acv-32oz'].url} label="Bragg Apple Cider Vinegar 32oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['zesty-paws-liver-turmeric-2pack'].url} label="Zesty Paws Turmeric & Liver Support" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['raw-paws-organic-kelp-8oz'].url} label="Raw Paws Organic Kelp 8oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['super-snouts-green-lipped-mussel-5oz'].url} label="Super Snouts Green-Lipped Mussel" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['antinol-plus-green-lipped-mussel-60gels'].url} label="Antinol Plus Mobility 60 Soft Gels" />
+          </div>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#171717] dark:text-[#ededed] mb-2">Whole Food Meal Ingredients</p>
+          <div class="flex flex-wrap gap-2">
+            <AffiliateButton url={AFFILIATE_PRODUCTS['wild-planet-sardines-no-salt-12pack'].url} label="Wild Planet Sardines 12-Pack" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['libbys-pure-pumpkin-15oz'].url} label="Libby's Pure Pumpkin 15oz" />
+            <AffiliateButton url={AFFILIATE_PRODUCTS['libbys-pure-pumpkin-15oz-5pack'].url} label="Libby's Pure Pumpkin 5-Pack" />
+          </div>
+        </div>
+        <p class="text-[10px] text-[#8f8f8f] dark:text-[#737373] pt-2">
+          As an Amazon Associate, DogFoodPlanner.com earns from qualifying purchases. This does not affect our editorial ratings or recommendations.
+        </p>
       </section>
 
     </div>
