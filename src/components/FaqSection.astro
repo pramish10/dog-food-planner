@@ -43,9 +43,7 @@ let faqs = getLocalizedFaqs(lang).map(faq => {
 if (category && category !== 'All Questions') {
   faqs = faqs.filter(f => f.categoryKey === category);
 }
-if (limit) {
-  faqs = faqs.slice(0, limit);
-}
+const displayLimit = limit || 0;
 
 const faqJsonLd = generateFaqJsonLd(faqs);
 ---
@@ -101,7 +99,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     )}
 
     <!-- FAQ Accordion List -->
-    <div id="faq-accordion-list" class="space-y-3">
+    <div id="faq-accordion-list" class="space-y-3" data-faq-limit={displayLimit}>
       {faqs.map((faq, index) => (
         <div 
           class="faq-item hairline-card bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] rounded-xl overflow-hidden transition-all duration-200"
@@ -223,10 +221,12 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 
 <script>
   // Interactive FAQ Accordion Logic
+  const accordionList = document.getElementById('faq-accordion-list');
   const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
   const catButtons = document.querySelectorAll<HTMLElement>('.faq-cat-btn');
   const searchInput = document.getElementById('faq-search-input') as HTMLInputElement | null;
   const noResults = document.getElementById('faq-no-results');
+  const faqLimit = parseInt(accordionList?.getAttribute('data-faq-limit') || '0', 10);
 
   let activeCategory = 'All Questions';
   let searchTerm = '';
@@ -268,6 +268,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
   // Filter & Search Dispatcher
   function applyFilters() {
     let visibleCount = 0;
+    // Only apply the limit when showing "All Questions" with no search query
+    const shouldApplyLimit = faqLimit > 0 && activeCategory === 'All Questions' && searchTerm === '';
 
     faqItems.forEach(item => {
       const itemCat = item.getAttribute('data-category') || '';
@@ -280,14 +282,22 @@ const faqJsonLd = generateFaqJsonLd(faqs);
         itemKeywords.includes(searchTerm);
 
       if (matchCategory && matchSearch) {
-        item.classList.remove('hidden');
         visibleCount++;
+        // When limit is active, hide items beyond the limit
+        if (shouldApplyLimit && visibleCount > faqLimit) {
+          item.classList.add('hidden');
+        } else {
+          item.classList.remove('hidden');
+        }
       } else {
         item.classList.add('hidden');
       }
     });
 
-    if (visibleCount === 0 && noResults) {
+    // Adjust visibleCount for the no-results check
+    const actualVisible = shouldApplyLimit ? Math.min(visibleCount, faqLimit) : visibleCount;
+
+    if (actualVisible === 0 && noResults) {
       noResults.classList.remove('hidden');
     } else if (noResults) {
       noResults.classList.add('hidden');
