@@ -13,7 +13,7 @@ const ingredients = getLocalizedIngredients(lang);
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
       <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
-        <span class="text-[#ee0000]">02</span> // {uiText.eyebrow}
+        {uiText.eyebrow}
       </div>
       <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2 sm:mb-3">
         {uiText.title}
@@ -39,13 +39,13 @@ const ingredients = getLocalizedIngredients(lang);
 
       <!-- Filter Buttons -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 no-scrollbar">
-        <button type="button" data-filter="ALL" class="safety-filter-btn active shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#171717] dark:bg-white text-white dark:text-[#171717] transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="ALL" class="safety-filter-btn active shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] hover:text-white dark:hover:text-[#171717] transition-all touch-manipulation cursor-pointer">
           {uiText.filterAll}
         </button>
-        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#ebebeb] dark:hover:bg-[#262626] hover:text-[#171717] dark:hover:text-[#ededed] transition-all touch-manipulation cursor-pointer">
           {uiText.filterSafe}
         </button>
-        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#ebebeb] dark:hover:bg-[#262626] hover:text-[#171717] dark:hover:text-[#ededed] transition-all touch-manipulation cursor-pointer">
           {uiText.filterToxic}
         </button>
       </div>
@@ -125,11 +125,11 @@ const ingredients = getLocalizedIngredients(lang);
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => {
-        b.classList.remove('active', 'bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]');
-        b.classList.add('bg-[#f2f2f2]', 'dark:bg-[#1a1a1a]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]');
+        b.classList.remove('active', 'bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]', 'hover:bg-[#333333]', 'dark:hover:bg-[#e5e5e5]', 'hover:text-white', 'dark:hover:text-[#171717]');
+        b.classList.add('bg-[#f2f2f2]', 'dark:bg-[#1a1a1a]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]', 'hover:bg-[#ebebeb]', 'dark:hover:bg-[#262626]', 'hover:text-[#171717]', 'dark:hover:text-[#ededed]');
       });
-      btn.classList.add('active', 'bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]');
-      btn.classList.remove('bg-[#f2f2f2]', 'dark:bg-[#1a1a1a]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]');
+      btn.classList.add('active', 'bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]', 'hover:bg-[#333333]', 'dark:hover:bg-[#e5e5e5]', 'hover:text-white', 'dark:hover:text-[#171717]');
+      btn.classList.remove('bg-[#f2f2f2]', 'dark:bg-[#1a1a1a]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]', 'hover:bg-[#ebebeb]', 'dark:hover:bg-[#262626]', 'hover:text-[#171717]', 'dark:hover:text-[#ededed]');
 
       activeFilter = btn.getAttribute('data-filter') || 'ALL';
       filterCards();

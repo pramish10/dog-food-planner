@@ -42,13 +42,13 @@ export const PAGE_TRANSLATIONS = {
         "icon": "🐾",
         "title": "Nutrition Research",
         "desc": "Veterinary formula inquiries:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "research@dogfoodplanner.com"
       },
       {
         "icon": "🛡️",
         "title": "Technical & Data",
         "desc": "Bug reports & calculator queries:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "legal@dogfoodplanner.com"
       }
     ],
     "formTitle": "Send Our Canine Nutrition Team a Message",
@@ -599,13 +599,13 @@ export const PAGE_TRANSLATIONS = {
         "icon": "🐾",
         "title": "Investigación Nutricional",
         "desc": "Fórmulas y consultas veterinarias:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "research@dogfoodplanner.com"
       },
       {
         "icon": "🛡️",
         "title": "Soporte Técnico",
         "desc": "Errores y sugerencias de la web:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "legal@dogfoodplanner.com"
       }
     ],
     "formTitle": "Envía un Mensaje a Nuestro Equipo de Nutrición Canina",
@@ -1156,13 +1156,13 @@ export const PAGE_TRANSLATIONS = {
         "icon": "🐾",
         "title": "栄養学・計算式に関する質問",
         "desc": "獣医師監修フォーミュラについて：",
-        "email": "hello@dogfoodplanner.com"
+        "email": "research@dogfoodplanner.com"
       },
       {
         "icon": "🛡️",
         "title": "技術サポート・不具合報告",
         "desc": "計算機の不具合・表示エラー：",
-        "email": "hello@dogfoodplanner.com"
+        "email": "legal@dogfoodplanner.com"
       }
     ],
     "formTitle": "犬の栄養学専門チームへメッセージを送信",
@@ -1713,13 +1713,13 @@ export const PAGE_TRANSLATIONS = {
         "icon": "🐾",
         "title": "Recherche Nutritionnelle",
         "desc": "Formules et questions vétérinaires :",
-        "email": "hello@dogfoodplanner.com"
+        "email": "research@dogfoodplanner.com"
       },
       {
         "icon": "🛡️",
         "title": "Support Technique",
         "desc": "Signalement de bugs et calculs :",
-        "email": "hello@dogfoodplanner.com"
+        "email": "legal@dogfoodplanner.com"
       }
     ],
     "formTitle": "Envoyez un Message à Notre Équipe Vétérinaire",
@@ -2270,13 +2270,13 @@ export const PAGE_TRANSLATIONS = {
         "icon": "🐾",
         "title": "Ernährungsberatung",
         "desc": "Fragen zu NRC-Formeln und Rezepten:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "research@dogfoodplanner.com"
       },
       {
         "icon": "🛡️",
         "title": "Technischer Support",
         "desc": "Fehlerberichte und Anregungen:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "legal@dogfoodplanner.com"
       }
     ],
     "formTitle": "Nachricht an unser tierärztliches Ernährungsteam senden",
@@ -2827,13 +2827,13 @@ export const PAGE_TRANSLATIONS = {
         "icon": "🐾",
         "title": "Pesquisa Nutricional",
         "desc": "Dúvidas sobre fórmulas veterinárias:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "research@dogfoodplanner.com"
       },
       {
         "icon": "🛡️",
         "title": "Suporte Técnico",
         "desc": "Erros e sugestões do site:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "legal@dogfoodplanner.com"
       }
     ],
     "formTitle": "Envie uma Mensagem à Nossa Equipe de Nutrição Canina",
@@ -3384,13 +3384,13 @@ export const PAGE_TRANSLATIONS = {
         "icon": "🐾",
         "title": "수의 영양학 연구",
         "desc": "NRC 계산식 및 영양 기준 문의:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "research@dogfoodplanner.com"
       },
       {
         "icon": "🛡️",
         "title": "기술 지원 & 오류 제보",
         "desc": "계산기 버그 및 웹사이트 오류:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "legal@dogfoodplanner.com"
       }
     ],
     "formTitle": "반려견 영양 전문 연구팀에게 문의하기",
@@ -3941,13 +3941,13 @@ export const PAGE_TRANSLATIONS = {
         "icon": "🐾",
         "title": "Ricerca Nutrizionale",
         "desc": "Quesiti su formule e ricette:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "research@dogfoodplanner.com"
       },
       {
         "icon": "🛡️",
         "title": "Supporto Tecnico",
         "desc": "Segnalazione bug e calcoli:",
-        "email": "hello@dogfoodplanner.com"
+        "email": "legal@dogfoodplanner.com"
       }
     ],
     "formTitle": "Invia un Messaggio al Nostro Team Nutrizionale Veterinario",
