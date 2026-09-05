@@ -461,6 +461,13 @@ export const AFFILIATE_PRODUCTS: Record<string, AffiliateProduct> = {
     url: 'https://amzn.to/4AgiqlF',
     category: 'fresh-cooked',
   },
+
+  // ── GOAT MILK & FERMENTS ───────────────────────────────────────────────────
+  'native-pet-goat-milk-pumpkin-bundle': {
+    name: 'Native Pet Pup-Kin Spice Latte Bundle - Goat Milk for Dogs and Pumpkin for Dogs - Two Dog Food Topper Powders in One!',
+    url: 'https://amzn.to/3UA8cvX',
+    category: 'whole-food',
+  },
 };
 
 /**
@@ -486,7 +493,7 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Slow-Simmered Grass-Fed Collagen Bone Broth': 'https://amzn.to/4zZ68xK',
   'Golden Turmeric & Black Pepper Micro-Emulsion': 'https://amzn.to/46JlM2I',
   'Unfiltered Raw Apple Cider Vinegar (with Mother)': 'https://amzn.to/46Jlx7O',
-  'Green Tripe & Fermented Kefir / Raw Goat Milk': 'https://amzn.to/4zZ68xK',
+  'Green Tripe & Fermented Kefir / Raw Goat Milk': 'https://amzn.to/3UA8cvX',
   'Pure Organic Pumpkin Puree': 'https://amzn.to/3UFE0PZ',
   'Organic Pumpkin Puree & Steamed Spinach': 'https://amzn.to/3UFE0PZ',
   'Plain pumpkin purée': 'https://amzn.to/3UFE0PZ',
@@ -495,6 +502,53 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Virgin Coconut Oil & Golden Turmeric': 'https://amzn.to/46JlM2I',
   'Dog-safe calcium and vitamin mix': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice
   'Veterinary Bone Meal & Sea Salt': 'https://amzn.to/4haNVWy',
+  // ── Additional Ingredient Mappings for IngredientChecker ──────────────────
+  'Pumpkin (Pure Puree)': 'https://amzn.to/3UFE0PZ',
+  'Pumpkin': 'https://amzn.to/3UFE0PZ',
+  'Pure Pumpkin': 'https://amzn.to/3UFE0PZ',
+  'Canned Pumpkin': 'https://amzn.to/3UFE0PZ',
+  'Wild Alaskan Salmon': 'https://amzn.to/4ymLrtY',
+  'Salmon': 'https://amzn.to/4ymLrtY',
+  'Wild Blueberries': 'https://amzn.to/4xadv2C',
+  'Blueberries': 'https://amzn.to/4xadv2C',
+  'Raw Unbleached Green Tripe': 'https://amzn.to/3SrLyW0',
+  'Green Tripe': 'https://amzn.to/3SrLyW0',
+  'Tripe': 'https://amzn.to/3SrLyW0',
+  'Collagen Bone Broth': 'https://amzn.to/4zZ68xK',
+  'Bone Broth': 'https://amzn.to/4zZ68xK',
+  'Organic Steamed Zucchini': 'https://amzn.to/4xPVcB1',
+  'Zucchini': 'https://amzn.to/4xPVcB1',
+  'Raw Goat Milk / Kefir': 'https://amzn.to/3UA8cvX',
+  'Goat Milk': 'https://amzn.to/3UA8cvX',
+  'Kefir': 'https://amzn.to/3UA8cvX',
+  'Raw Goat Milk': 'https://amzn.to/3UA8cvX',
+  'Spinach': 'https://amzn.to/4yqDq7u',
+  'Kale': 'https://amzn.to/4qSOd7C',
+  'Carrots': 'https://amzn.to/4gWqwad',
+  'Sweet Potato': 'https://amzn.to/4xYpMst',
+  'Sweet Potatoes': 'https://amzn.to/4xYpMst',
+  'Organic Sweet Potato': 'https://amzn.to/4xYpMst',
+  'Apple Cider Vinegar': 'https://amzn.to/46Jlx7O',
+  'ACV': 'https://amzn.to/46Jlx7O',
+  'Turmeric': 'https://amzn.to/46JlM2I',
+  'Flaxseed Oil': 'https://amzn.to/4xg6A8d',
+  'Flax Oil': 'https://amzn.to/4xg6A8d',
+  'Sardines': 'https://amzn.to/4xg3W2h',
+  'Canned Sardines': 'https://amzn.to/4xg3W2h',
+  'Eggshell Calcium': 'https://amzn.to/4haNVWy',
+  'Calcium Supplement': 'https://amzn.to/4haNVWy',
+  'Kelp': 'https://amzn.to/3UsBTPA',
+  'Organic Kelp': 'https://amzn.to/3UsBTPA',
+  'Sea Kelp': 'https://amzn.to/3UsBTPA',
+  'Green Lipped Mussel': 'https://amzn.to/4d082US',
+  'Mussel': 'https://amzn.to/4d082US',
+  'Liver': 'https://amzn.to/3UryAbr',
+  'Beef Liver': 'https://amzn.to/3UryAbr',
+  'Chicken Hearts': 'https://amzn.to/4ctpLUu',
+  'Beef Heart': 'https://amzn.to/3Sz0bqy',
+  'Beef Kidney': 'https://amzn.to/4zVmeIy',
+  'Organ Meats': 'https://amzn.to/3UryAbr',
+  'Organ Meat': 'https://amzn.to/3UryAbr',
   // ── Fresh-Cooked: Chicken ────────────────────────────────────────────────
   'Lean ground chicken': 'https://amzn.to/4xEuafH',           // Stella & Chewy's Freeze-Dried Chicken Meal Mixers 1oz
   'Chicken hearts': 'https://amzn.to/4ctpLUu',                // Vital Essentials Freeze-Dried Chicken Hearts 3.75oz
@@ -541,6 +595,10 @@ export const BRAND_AFFILIATE_MAP: Record<string, string[]> = {
     'nutrish-peak-variety-pack-wet',
     'nutrish-beef-pea-brown-rice-28lb',
   ],
+  'Nutrish': [
+    'nutrish-peak-variety-pack-wet',
+    'nutrish-beef-pea-brown-rice-28lb',
+  ],
   'Pure Balance': [
     'victor-chicken-brown-rice-5lb',
   ],
@@ -564,11 +622,19 @@ export const BRAND_AFFILIATE_MAP: Record<string, string[]> = {
     'stella-chewys-freeze-dried-chicken-14oz',
     'stella-chewys-freeze-dried-red-meat-14oz',
   ],
+  'Stella and Chewy\'s': [
+    'stella-chewys-freeze-dried-chicken-14oz',
+    'stella-chewys-freeze-dried-red-meat-14oz',
+  ],
   'Primal': [
     'primal-pronto-beef-16oz',
     'primal-pronto-chicken-16oz',
   ],
   'Hill\'s': [
+    'hills-science-diet-large-breed-35lb',
+    'hills-science-diet-small-bites',
+  ],
+  'Hills': [
     'hills-science-diet-large-breed-35lb',
     'hills-science-diet-small-bites',
   ],
@@ -579,15 +645,28 @@ export const BRAND_AFFILIATE_MAP: Record<string, string[]> = {
     'purina-pro-plan-vet-ha-hydrolyzed-16lb',
     'purina-pro-plan-vet-nf-kidney-25lb',
   ],
+  'Purina': [
+    'purina-pro-plan-vet-ha-hydrolyzed-16lb',
+    'purina-pro-plan-vet-nf-kidney-25lb',
+  ],
   'JustFoodForDogs': [
+    'justfoodfordogs-chicken-white-rice',
+  ],
+  'Just Food For Dogs': [
     'justfoodfordogs-chicken-white-rice',
   ],
   'ZIWI': [
     'ziwi-peak-beef-chicken-bundle',
   ],
+  'Ziwi': [
+    'ziwi-peak-beef-chicken-bundle',
+  ],
   'Fromm': [
     'fromm-adult-gold-15lb',
     'fromm-large-breed-adult-gold-15lb',
+  ],
+  'Victor': [
+    'victor-chicken-brown-rice-5lb',
   ],
 };
 
