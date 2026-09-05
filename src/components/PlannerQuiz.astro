@@ -106,13 +106,13 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
                 <label class="block text-[11px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono">
                   {p.genderLabel}
                 </label>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   id="gender-info-toggle-btn"
                   class="text-[10px] font-mono text-[#0070f3] dark:text-[#3291ff] hover:underline inline-flex items-center gap-1 cursor-pointer touch-manipulation"
                   aria-expanded="false"
                 >
-                  <span>ℹ️ {p.statusMeaningsBtn}</span>
+                  <span>{p.statusMeaningsBtn}</span>
                 </button>
               </div>
               <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373] mb-2 leading-relaxed">
@@ -185,12 +185,12 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
             <h3 class="text-lg sm:text-xl font-semibold text-[#171717] dark:text-[#ededed]">{p.step2Title}</h3>
             
             <!-- AI Camera Breed Scanner Trigger -->
-            <button 
-              type="button" 
-              id="ai-scan-trigger-btn" 
+            <button
+              type="button"
+              id="ai-scan-trigger-btn"
               class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-mono font-semibold text-[#0070f3] dark:text-[#3291ff] bg-[#d3e5ff]/50 dark:bg-[#0070f3]/20 hover:bg-[#d3e5ff] dark:hover:bg-[#0070f3]/30 border border-[#0070f3]/30 rounded-full transition-all touch-manipulation cursor-pointer shadow-2xs"
             >
-              <span>📸 {p.aiScanBtn}</span>
+              <span>{p.aiScanBtn}</span>
               <span class="text-[9px] uppercase px-1.5 py-0.2 rounded-full bg-[#0070f3] text-white font-bold">BETA</span>
             </button>
           </div>
@@ -553,7 +553,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     <div class="flex items-center justify-between pb-3 mb-3 border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="flex items-center gap-2.5">
         <div class="w-9 h-9 rounded-xl bg-[#10b981]/15 text-[#10b981] flex items-center justify-center font-bold text-base">
-          📸
+          🐾
         </div>
         <div>
           <div class="flex items-center gap-2">
@@ -571,6 +571,11 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     <!-- Scanner Viewfinder -->
     <div class="relative bg-[#0a0a0a] rounded-xl overflow-hidden aspect-4/3 flex items-center justify-center mb-3 border border-[#262626] shadow-inner">
       <video id="scanner-video" autoplay playsinline muted class="w-full h-full object-cover hidden"></video>
+      <style>
+        #scanner-video.facing-user {
+          transform: scaleX(-1);
+        }
+      </style>
       <img id="scanner-img-preview" class="w-full h-full object-cover hidden" alt="Scanned Dog" />
       <canvas id="scanner-canvas" class="hidden"></canvas>
 
@@ -631,11 +636,11 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
           id="flip-camera-btn-alt"
           class="py-2 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-lg transition-all flex lg:hidden items-center justify-center gap-1.5 cursor-pointer touch-manipulation"
         >
-          <span>🔄 Switch Camera</span>
+          <span>Switch Camera</span>
         </button>
         
         <label class="py-2 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#262626] text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center touch-manipulation">
-          <span>📁 Upload Photo</span>
+          <span>Upload Photo</span>
           <input type="file" id="dog-photo-upload" accept="image/*" class="sr-only" />
         </label>
       </div>
@@ -1446,12 +1451,18 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ 
-          video: { facingMode: facing, width: { ideal: 640 }, height: { ideal: 480 } } 
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: facing, width: { ideal: 640 }, height: { ideal: 480 } }
         });
         if (scannerVideo) {
           scannerVideo.srcObject = stream;
           scannerVideo.classList.remove('hidden');
+          // Handle camera mirroring: front camera should be mirrored, rear camera should not
+          if (facing === 'user') {
+            scannerVideo.classList.add('facing-user');
+          } else {
+            scannerVideo.classList.remove('facing-user');
+          }
           await scannerVideo.play();
         }
         scannerPlaceholder?.classList.add('hidden');
