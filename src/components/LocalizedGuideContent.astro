@@ -3,12 +3,27 @@ import FaqSection from './FaqSection.astro';
 import ComparisonTable from './ComparisonTable.astro';
 import { getPageTranslations } from '../i18n/pages';
 import { getLangFromUrl } from '../i18n/utils';
+import { findAffiliateContext } from '../data/affiliates';
 
 const { kind } = Astro.props as { kind: 'bestFood' | 'recipes' | 'toxic' | 'brands' | 'allergies' };
 const p = getPageTranslations(getLangFromUrl(Astro.url))[kind] as any;
 const faqs = {
   bestFood: 'Diet & Nutrition', recipes: 'Diet & Nutrition', toxic: 'Ingredients & Safety', brands: 'Brand Reviews & Safety', allergies: 'Health & Allergies',
 }[kind];
+
+// Function to find affiliate products for recipe ingredients
+function getRecipeAffiliates(ingredients: string[]) {
+  const affiliateMap = new Map<string, { name: string; url: string }>();
+  
+  ingredients.forEach(ingredient => {
+    const affiliate = findAffiliateContext(ingredient);
+    if (affiliate && affiliate.type === 'ingredient') {
+      affiliateMap.set(affiliate.name, { name: affiliate.name, url: affiliate.url });
+    }
+  });
+  
+  return Array.from(affiliateMap.values()).slice(0, 3); // Limit to 3 recommendations per recipe
+}
 ---
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
@@ -24,7 +39,46 @@ const faqs = {
 
   {kind === 'recipes' && <>
     <aside class="p-6 bg-[#fffbeb] dark:bg-[#291f05] border border-[#fef08a] dark:border-[#854d0e] rounded-2xl"><h2 class="font-bold text-amber-800 dark:text-amber-300">⚠️ {p.calciumWarningTitle}</h2><p class="mt-2 text-amber-900 dark:text-amber-200">{p.calciumWarningDesc}</p></aside>
-    {p.recipesList.map((recipe: any) => <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4"><span class="font-mono text-xs text-[#7928ca]">{recipe.tag}</span><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{recipe.title}</h2><p>{recipe.desc}</p><ul class="list-disc pl-5 space-y-1">{recipe.ingredients.map((ingredient: string) => <li>{ingredient}</li>)}</ul><p>{recipe.prep}</p></section>)}
+    {p.recipesList.map((recipe: any) => {
+      const recipeAffiliates = getRecipeAffiliates(recipe.ingredients);
+      return <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <span class="font-mono text-xs text-[#7928ca]">{recipe.tag}</span>
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{recipe.title}</h2>
+        <p>{recipe.desc}</p>
+        <ul class="list-disc pl-5 space-y-1">{recipe.ingredients.map((ingredient: string) => <li>{ingredient}</li>)}</ul>
+        <p>{recipe.prep}</p>
+        {recipeAffiliates.length > 0 && (
+          <div class="mt-4 pt-4 border-t border-[#ebebeb] dark:border-[#262626]">
+            <h3 class="text-sm font-bold text-[#171717] dark:text-[#ededed] mb-3">🛒 Recommended Products for This Recipe</h3>
+            <div class="space-y-2">
+              {recipeAffiliates.map((affiliate: any) => (
+                <a
+                  href={affiliate.url}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  class="inline-flex items-center justify-between gap-3 w-full px-4 py-3 rounded-xl border border-[#0070f3]/20 dark:border-[#3291ff]/25 bg-gradient-to-r from-[#0070f3]/5 via-white to-transparent dark:from-[#3291ff]/10 dark:via-[#141414]"
+                >
+                  <div class="flex-1 min-w-0">
+                    <div class="text-[10px] font-mono uppercase font-bold tracking-wider text-[#0070f3] dark:text-[#3291ff] mb-0.5">
+                      Vitamins & Supplements
+                    </div>
+                    <div class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] truncate">
+                      {affiliate.name}
+                    </div>
+                  </div>
+                  <span class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    Buy Now
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+    })}
     <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.calciumGuideTitle}</h2>{p.calciumGuideItems.map((item: any) => <div><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.title} — {item.ratio}</h3><p>{item.desc}</p></div>)}</section>
   </>}
 

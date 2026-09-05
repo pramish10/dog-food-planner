@@ -5,6 +5,16 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FaqSection from '../components/FaqSection.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import Footer from '../components/Footer.astro';
+import { findAffiliateContext } from '../data/affiliates';
+
+// Find relevant affiliate products for best dog food guide
+const bestFoodAffiliates = [
+  findAffiliateContext("Orijen"),
+  findAffiliateContext("Acana"),
+  findAffiliateContext("Open Farm"),
+  findAffiliateContext("bone broth"),
+  findAffiliateContext("fresh cooked"),
+].filter(Boolean).slice(0, 4);
 ---
 
 <Layout 
@@ -164,6 +174,43 @@ import Footer from '../components/Footer.astro';
           </a>
         </div>
       </div>
+
+      <!-- Recommended Products for Best Dog Food -->
+      {bestFoodAffiliates.length > 0 && (
+        <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+            🛒 Recommended Premium Dog Foods
+          </h2>
+          <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+            These are some of the highest-quality dog foods that meet our nutritional criteria for whole ingredients and minimal processing.
+          </p>
+          <div class="space-y-3">
+            {bestFoodAffiliates.map((affiliate: any) => (
+              <a
+                href={affiliate.type === 'brand' ? affiliate.product.url : affiliate.url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="inline-flex items-center justify-between gap-3 w-full px-4 py-3 rounded-xl border border-[#0070f3]/20 dark:border-[#3291ff]/25 bg-gradient-to-r from-[#0070f3]/5 via-white to-transparent dark:from-[#3291ff]/10 dark:via-[#141414]"
+              >
+                <div class="flex-1 min-w-0">
+                  <div class="text-[10px] font-mono uppercase font-bold tracking-wider text-[#0070f3] dark:text-[#3291ff] mb-0.5">
+                    🛒 Recommended — {affiliate.type === 'brand' ? affiliate.brand : affiliate.name}
+                  </div>
+                  <div class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] truncate">
+                    {affiliate.type === 'brand' ? affiliate.product.name : affiliate.name}
+                  </div>
+                </div>
+                <span class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                  Buy Now
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
     </div>
 

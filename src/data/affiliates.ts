@@ -500,7 +500,30 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Pureed Organic Leafy Greens & Cranberries': 'https://amzn.to/4xg3W2h',
   'Cold-Pressed Virgin Flaxseed Oil': 'https://amzn.to/4xg6A8d', // NOW Foods Organic Flax Seed Oil 24oz (fixed from salmon oil mismatch)
   'Virgin Coconut Oil & Golden Turmeric': 'https://amzn.to/46JlM2I',
-  'Dog-safe calcium and vitamin mix': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice
+  'Vitamins & Supplements': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice
+  'Dog-safe calcium and vitamin mix': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice (legacy support)
+  'calcium and vitamin mix': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice (alternative support)
+  'nutrient blend': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice (alternative support)
+  // ── Recipe-specific ingredient mappings ─────────────────────────────────────
+  'Lean ground chicken': 'https://amzn.to/4xEuafH', // Stella & Chewy's Freeze-Dried Chicken Meal Mixers
+  'Chicken hearts': 'https://amzn.to/4ctpLUu', // Vital Essentials Freeze-Dried Chicken Hearts
+  'Cooked white rice': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend (with rice)
+  'Plain pumpkin purée': 'https://amzn.to/3UFE0PZ', // Libby's Pure Pumpkin
+  'Steamed zucchini': 'https://amzn.to/4xPVcB1', // Fresh Green Zucchini
+  'USDA Lean Ground Turkey (93/7)': 'https://amzn.to/3ThvqGK', // Whole Paws Turkey Feast
+  'Organic Turkey Hearts & Gizzards': 'https://amzn.to/3SUnT0v', // smallbatch Freeze-Dried Turkey
+  'Baby Spinach & Steamed Zucchini': 'https://amzn.to/4yqDq7u', // Organicgirl Baby Spinach
+  'Grass-Fed Ground Beef (85/15)': 'https://amzn.to/4AgiqlF', // Old Mill Ground Beef
+  'Pasture-Raised Beef Liver': 'https://amzn.to/3UryAbr', // Ancestral Supplements Beef Liver
+  'Steamed Sweet Carrots & Kale': 'https://amzn.to/4gWqwad', // 365 Organic Shredded Carrots
+  'Wild Blueberries (Antioxidant Boost)': 'https://amzn.to/4xadv2C', // Icelandic+ Cod & Blueberry Sticks
+  'Wild-Caught Pacific Salmon & Cod Fillets': 'https://amzn.to/4ymLrtY', // Stella & Chewy's Surf 'N Turf
+  'Organic Steamed Sweet Potato': 'https://amzn.to/4xYpMst', // Crumps' Naturals Sweet Potato
+  'Finely Shredded Green Zucchini': 'https://amzn.to/4ijNt9D', // Weis Quality Zucchini Squash
+  'Slow-Simmered Grass-Fed Collagen Bone Broth': 'https://amzn.to/4zZ68xK', // Honest Kitchen Bone Broth
+  'Wild Canned Sardines in Water (No Salt)': 'https://amzn.to/4xg3W2h', // Wild Planet Sardines
+  'Golden Turmeric & Black Pepper Micro-Emulsion': 'https://amzn.to/46JlM2I', // Zesty Paws Liver Support
+  'Unfiltered Raw Apple Cider Vinegar (with Mother)': 'https://amzn.to/46Jlx7O', // Bragg ACV
   'Veterinary Bone Meal & Sea Salt': 'https://amzn.to/4haNVWy',
   // ── Additional Ingredient Mappings for IngredientChecker ──────────────────
   'Pumpkin (Pure Puree)': 'https://amzn.to/3UFE0PZ',

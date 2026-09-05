@@ -43,7 +43,7 @@ export const RECIPES: MealRecipe[] = [
       { name: 'Cooked white rice', category: 'Vegetables & Greens', percentage: 12, purpose: 'Gentle energy for the day' },
       { name: 'Plain pumpkin purée', category: 'Vegetables & Greens', percentage: 10, purpose: 'Gentle fibre for digestion' },
       { name: 'Steamed zucchini', category: 'Vegetables & Greens', percentage: 4, purpose: 'Adds moisture and vegetables' },
-      { name: 'Dog-safe calcium and vitamin mix', category: 'Natural Supplements', percentage: 4, purpose: 'Helps make a homemade meal complete' }
+      { name: 'Vitamins & Supplements', category: 'Natural Supplements', percentage: 4, purpose: 'Helps make a homemade meal complete' }
     ],
     healthFocusMatches: ['Sensitive Digestion', 'General Health', 'Weight Management'],
     preparationNotes: [

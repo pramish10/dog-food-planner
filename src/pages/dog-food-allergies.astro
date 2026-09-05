@@ -4,6 +4,15 @@ import Navbar from '../components/Navbar.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FaqSection from '../components/FaqSection.astro';
 import Footer from '../components/Footer.astro';
+import { findAffiliateContext } from '../data/affiliates';
+
+// Find relevant affiliate products for allergies page
+const allergyAffiliates = [
+  findAffiliateContext("limited ingredient diet novel protein"),
+  findAffiliateContext("pumpkin puree"),
+  findAffiliateContext("wild alaskan salmon oil"),
+  findAffiliateContext("turkey"),
+].filter(Boolean).slice(0, 3);
 ---
 
 <Layout 
@@ -98,6 +107,43 @@ import Footer from '../components/Footer.astro';
           <li><strong>The Challenge Phase:</strong> If itching and diarrhea resolve, re-introduce ONE old ingredient (e.g. chicken) for 7 days. If symptoms return, allergy is confirmed!</li>
         </ol>
       </section>
+
+      <!-- Recommended Products for Allergies -->
+      {allergyAffiliates.length > 0 && (
+        <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+            🛒 Recommended Products for Sensitive Stomachs & Allergies
+          </h2>
+          <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+            These products are specifically selected to support dogs with food sensitivities and elimination diet trials.
+          </p>
+          <div class="space-y-3">
+            {allergyAffiliates.map((affiliate: any) => (
+              <a
+                href={affiliate.type === 'brand' ? affiliate.product.url : affiliate.url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                class="inline-flex items-center justify-between gap-3 w-full px-4 py-3 rounded-xl border border-[#0070f3]/20 dark:border-[#3291ff]/25 bg-gradient-to-r from-[#0070f3]/5 via-white to-transparent dark:from-[#3291ff]/10 dark:via-[#141414]"
+              >
+                <div class="flex-1 min-w-0">
+                  <div class="text-[10px] font-mono uppercase font-bold tracking-wider text-[#0070f3] dark:text-[#3291ff] mb-0.5">
+                    🛒 Recommended — {affiliate.type === 'brand' ? affiliate.brand : affiliate.name}
+                  </div>
+                  <div class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] truncate">
+                    {affiliate.type === 'brand' ? affiliate.product.name : affiliate.name}
+                  </div>
+                </div>
+                <span class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                  Buy Now
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
     </div>
 
