@@ -324,6 +324,143 @@ export const AFFILIATE_PRODUCTS: Record<string, AffiliateProduct> = {
     url: 'https://amzn.to/4xINd8W',
     category: 'whole-food',
   },
+  'fresh-zucchini': {
+    name: 'Fresh Green Zucchini',
+    url: 'https://amzn.to/4xPVcB1',
+    category: 'whole-food',
+  },
+  'organicgirl-baby-spinach-5oz': {
+    name: 'Organicgirl Baby Spinach 5oz',
+    url: 'https://amzn.to/4yqDq7u',
+    category: 'whole-food',
+  },
+  '365-organic-shredded-carrots-10oz': {
+    name: '365 by Whole Foods Market Organic Shredded Carrots 10oz',
+    url: 'https://amzn.to/4gWqwad',
+    category: 'whole-food',
+  },
+  'organic-dino-kale': {
+    name: 'Organic Dino Kale',
+    url: 'https://amzn.to/4qSOd7C',
+    category: 'whole-food',
+  },
+  'crumps-naturals-sweet-potato-11oz-2pack': {
+    name: 'Crumps\' Naturals Sweet Potato for Pets 11.6oz (Pack of 2)',
+    url: 'https://amzn.to/4xYpMst',
+    category: 'whole-food',
+  },
+  'weis-zucchini-squash': {
+    name: 'Weis Quality Zucchini Squash (finely shred yourself)',
+    url: 'https://amzn.to/4ijNt9D',
+    category: 'whole-food',
+  },
+  'icelandic-cod-blueberry-sticks-2oz-2pack': {
+    name: 'Icelandic+ Combo Sticks Cod & Blueberry 2oz (Pack of 2)',
+    url: 'https://amzn.to/4xadv2C',
+    category: 'whole-food',
+  },
+  'pumpkin-green-bean-dog-treats': {
+    name: 'Pumpkin & Green Bean Dog Treat – 100% Natural Single Ingredient',
+    url: 'https://amzn.to/3SUqibx',
+    category: 'whole-food',
+  },
+
+  // ── FLAXSEED OIL ─────────────────────────────────────────────────────────
+  'now-foods-flaxseed-oil-24oz': {
+    name: 'NOW Foods Certified Organic Flax Seed Oil Liquid Cold-Pressed 24oz',
+    url: 'https://amzn.to/4xg6A8d',
+    category: 'omega-supplement',
+  },
+
+  // ── FREEZE-DRIED MEAL MIXERS & TOPPERS ───────────────────────────────────
+  'stella-chewys-chicken-meal-mixers-1oz': {
+    name: 'Stella & Chewy\'s Freeze-Dried Raw Chicken Meal Mixers 1oz',
+    url: 'https://amzn.to/4xEuafH',
+    category: 'raw-freeze-dried',
+  },
+  'stella-chewys-beef-meal-mixers-1oz': {
+    name: 'Stella & Chewy\'s Freeze-Dried Raw Beef Meal Mixers (Grass-Fed) 1oz',
+    url: 'https://amzn.to/4gyO85G',
+    category: 'raw-freeze-dried',
+  },
+  'stella-chewys-lamb-meal-mixers-35oz-2pack': {
+    name: 'Stella & Chewy\'s Freeze-Dried Raw Lamb Meal Mixers 35oz (Pack of 2)',
+    url: 'https://amzn.to/46MbZsE',
+    category: 'raw-freeze-dried',
+  },
+  'stella-chewys-surf-n-turf-salmon-beef-25oz-2pack': {
+    name: 'Stella & Chewy\'s Freeze-Dried Raw Surf \'N Turf Salmon & Beef 25oz (Pack of 2)',
+    url: 'https://amzn.to/4ymLrtY',
+    category: 'raw-freeze-dried',
+  },
+  'stella-chewys-lamb-wild-weenies-3oz': {
+    name: 'Stella & Chewy\'s Freeze-Dried Raw Wild Weenies Grass-Fed Lamb 3.25oz',
+    url: 'https://amzn.to/4xELsJL',
+    category: 'raw-freeze-dried',
+  },
+  'smallbatch-freeze-dried-turkey-7oz-2pack': {
+    name: 'smallbatch Pets Freeze-Dried Raw Dog Food Turkey Recipe 7oz Small Bites (Pack of 2)',
+    url: 'https://amzn.to/3SUnT0v',
+    category: 'raw-freeze-dried',
+  },
+  'k9-natural-freeze-dried-lamb-green-tripe': {
+    name: 'K9 Natural Grain-Free Freeze-Dried Dog Food Supplement Booster Lamb Green Tripe',
+    url: 'https://amzn.to/3SrLyW0',
+    category: 'raw-freeze-dried',
+  },
+
+  // ── ORGAN MEAT TREATS & SUPPLEMENTS ─────────────────────────────────────
+  'vital-essentials-freeze-dried-chicken-hearts-3oz': {
+    name: 'Vital Essentials Freeze Dried Raw Chicken Hearts Dog Treats 3.75oz',
+    url: 'https://amzn.to/4ctpLUu',
+    category: 'whole-food',
+  },
+  'get-joy-freeze-dried-beef-heart-4oz-3pack': {
+    name: 'Get Joy Freeze Dried 100% Beef Heart Dog Treats 4oz (Pack of 3)',
+    url: 'https://amzn.to/3Sz0bqy',
+    category: 'whole-food',
+  },
+  'get-joy-freeze-dried-beef-kidney-4oz-3pack': {
+    name: 'Get Joy Freeze Dried 100% Beef Kidney Dog Treats 4oz (Pack of 3)',
+    url: 'https://amzn.to/4zVmeIy',
+    category: 'whole-food',
+  },
+  'purebites-lamb-freeze-dried-3oz': {
+    name: 'PureBites Lamb Single Ingredient Freeze Dried Dog Treats 3.35oz',
+    url: 'https://amzn.to/4yhHI0B',
+    category: 'raw-freeze-dried',
+  },
+  'ancestral-supplements-beef-liver-180ct': {
+    name: 'Ancestral Supplements Grass-Fed Beef Liver Capsules 180ct',
+    url: 'https://amzn.to/3UryAbr',
+    category: 'whole-food',
+  },
+  'ancestral-supplements-beef-liver-bone-marrow-180ct': {
+    name: 'Ancestral Supplements Grass-Fed Beef Liver & Bone Marrow Capsules 180ct',
+    url: 'https://amzn.to/3SOsrFu',
+    category: 'whole-food',
+  },
+
+  // ── VITAMIN BLENDS ────────────────────────────────────────────────────────
+  'justfoodfordogs-nutrient-blend-chicken-rice-2pack': {
+    name: 'JustFoodForDogs Nutrient Blend Chicken & Rice DIY 4.55oz (Pack of 2)',
+    url: 'https://amzn.to/3SrJddG',
+    category: 'fresh-cooked',
+  },
+
+  // ── WET / FRESH FOOD ─────────────────────────────────────────────────────
+  'whole-paws-turkey-sweet-potato-13oz-3pack': {
+    name: 'Whole Paws Grain-Free Wet Dog Food Turkey Feast with Sweet Potato & Cranberries 13.2oz (Pack of 3)',
+    url: 'https://amzn.to/3ThvqGK',
+    category: 'fresh-cooked',
+  },
+
+  // ── FRESH MEAT ────────────────────────────────────────────────────────────
+  'old-mill-85-15-ground-beef-10pack': {
+    name: 'Old Mill & Company Pasture Raised 85/15 USDA Ground Beef (Pack of 10)',
+    url: 'https://amzn.to/4AgiqlF',
+    category: 'fresh-cooked',
+  },
 };
 
 /**
@@ -354,33 +491,40 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Organic Pumpkin Puree & Steamed Spinach': 'https://amzn.to/3UFE0PZ',
   'Plain pumpkin purée': 'https://amzn.to/3UFE0PZ',
   'Pureed Organic Leafy Greens & Cranberries': 'https://amzn.to/4xg3W2h',
-  'Cold-Pressed Virgin Flaxseed Oil': 'https://amzn.to/46HCJdW',
+  'Cold-Pressed Virgin Flaxseed Oil': 'https://amzn.to/4xg6A8d', // NOW Foods Organic Flax Seed Oil 24oz (fixed from salmon oil mismatch)
   'Virgin Coconut Oil & Golden Turmeric': 'https://amzn.to/46JlM2I',
-  'Dog-safe calcium and vitamin mix': 'https://amzn.to/4haNVWy',
+  'Dog-safe calcium and vitamin mix': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice
   'Veterinary Bone Meal & Sea Salt': 'https://amzn.to/4haNVWy',
-  'Lean ground chicken': '',
-  'Chicken hearts': '',
-  'Cooked white rice': '',
-  'Steamed zucchini': '',
-  'USDA Lean Ground Turkey (93/7)': '',
-  'Organic Turkey Hearts & Gizzards': '',
-  'Baby Spinach & Steamed Zucchini': '',
-  'Grass-Fed Ground Beef (85/15)': '',
-  'Pasture-Raised Beef Liver': '',
-  'Steamed Sweet Carrots & Kale': '',
-  'Wild Blueberries (Antioxidant Boost)': '',
-  'Wild-Caught Pacific Salmon & Cod Fillets': '',
-  'Organic Steamed Sweet Potato': '',
-  'Finely Shredded Green Zucchini': '',
-  'Raw Grass-Fed Beef Chuck & Heart': '',
-  'Ground Soft Beef Rib Bone / Chicken Frames': '',
-  'Beef Liver (Secreting Organ 1)': '',
-  'Beef Kidney or Spleen (Secreting Organ 2)': '',
-  'Pasture Lamb Shoulder & Heart': '',
-  'Ground Lamb Rib Bone': '',
-  'Lamb Liver & Kidney': '',
-  'Raw Unbleached Green Tripe': '',
-  'Pureed Zucchini, Celery & Pumpkin Seeds': '',
+  // ── Fresh-Cooked: Chicken ────────────────────────────────────────────────
+  'Lean ground chicken': 'https://amzn.to/4xEuafH',           // Stella & Chewy's Freeze-Dried Chicken Meal Mixers 1oz
+  'Chicken hearts': 'https://amzn.to/4ctpLUu',                // Vital Essentials Freeze-Dried Chicken Hearts 3.75oz
+  'Cooked white rice': 'https://amzn.to/3SrJddG',             // JustFoodForDogs Nutrient Blend Chicken & Rice
+  'Steamed zucchini': 'https://amzn.to/4xPVcB1',              // Fresh Green Zucchini
+  // ── Fresh-Cooked: Turkey ────────────────────────────────────────────────
+  'USDA Lean Ground Turkey (93/7)': 'https://amzn.to/3ThvqGK',         // Whole Paws Turkey Feast wet food
+  'Organic Turkey Hearts & Gizzards': 'https://amzn.to/3SUnT0v',       // smallbatch Freeze-Dried Turkey 7oz ×2
+  'Baby Spinach & Steamed Zucchini': 'https://amzn.to/4yqDq7u',        // Organicgirl Baby Spinach 5oz
+  // ── Fresh-Cooked: Beef ──────────────────────────────────────────────────
+  'Grass-Fed Ground Beef (85/15)': 'https://amzn.to/4AgiqlF',          // Old Mill 85/15 Ground Beef ×10
+  'Pasture-Raised Beef Liver': 'https://amzn.to/3UryAbr',              // Ancestral Supplements Beef Liver 180ct
+  'Steamed Sweet Carrots & Kale': 'https://amzn.to/4gWqwad',           // 365 Organic Shredded Carrots 10oz
+  'Wild Blueberries (Antioxidant Boost)': 'https://amzn.to/4xadv2C',   // Icelandic+ Cod & Blueberry Sticks ×2
+  // ── Fresh-Cooked: Salmon ────────────────────────────────────────────────
+  'Wild-Caught Pacific Salmon & Cod Fillets': 'https://amzn.to/4ymLrtY',  // Stella & Chewy's Surf 'N Turf Salmon & Beef 25oz ×2
+  'Organic Steamed Sweet Potato': 'https://amzn.to/4xYpMst',              // Crumps' Naturals Sweet Potato 11.6oz ×2
+  'Finely Shredded Green Zucchini': 'https://amzn.to/4ijNt9D',            // Weis Quality Zucchini Squash
+  // ── Raw BARF: Beef ──────────────────────────────────────────────────────
+  'Raw Grass-Fed Beef Chuck & Heart': 'https://amzn.to/3Sz0bqy',          // Get Joy Freeze-Dried Beef Heart 4oz ×3
+  'Ground Soft Beef Rib Bone / Chicken Frames': 'https://amzn.to/4gyO85G',// Stella & Chewy's Beef Meal Mixers (w/ bone) 1oz
+  'Beef Liver (Secreting Organ 1)': 'https://amzn.to/3SOsrFu',            // Ancestral Beef Liver & Bone Marrow 180ct
+  'Beef Kidney or Spleen (Secreting Organ 2)': 'https://amzn.to/4zVmeIy', // Get Joy Freeze-Dried Beef Kidney 4oz ×3
+  // ── Raw BARF: Lamb ──────────────────────────────────────────────────────
+  'Pasture Lamb Shoulder & Heart': 'https://amzn.to/4xELsJL',    // Stella & Chewy's Lamb Wild Weenies 3.25oz
+  'Ground Lamb Rib Bone': 'https://amzn.to/46MbZsE',             // Stella & Chewy's Lamb Meal Mixers (w/ bone) 35oz ×2
+  'Lamb Liver & Kidney': 'https://amzn.to/4yhHI0B',              // PureBites Lamb Freeze-Dried 3.35oz
+  'Raw Unbleached Green Tripe': 'https://amzn.to/3SrLyW0',       // K9 Natural Lamb Green Tripe Freeze-Dried Booster
+  // ── Superfood Topper ────────────────────────────────────────────────────
+  'Pureed Zucchini, Celery & Pumpkin Seeds': 'https://amzn.to/3SUqibx', // Pumpkin & Green Bean Natural Dog Treats
 };
 
 /**
