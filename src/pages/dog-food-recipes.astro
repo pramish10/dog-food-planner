@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FaqSection from '../components/FaqSection.astro';
 import Footer from '../components/Footer.astro';
+import AffiliateButton from '../components/AffiliateButton.astro';
+import { INGREDIENT_AFFILIATE_MAP } from '../data/affiliates';
 ---
 
 <Layout 
@@ -64,29 +66,47 @@ import Footer from '../components/Footer.astro';
         </p>
 
         <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2 font-mono text-xs text-[#171717] dark:text-[#ededed]">
-          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex justify-between items-center py-1 border-b border-[#ebebeb] dark:border-[#262626]">
             <span>• USDA Ground Turkey (93/7)</span>
-            <span class="font-bold">65% (approx. 2 lbs)</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">65% (approx. 2 lbs)</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['USDA Ground Turkey (93/7)'] || 'https://amzn.to/3ThvqGK'} label="Buy Now" size="sm" />
+            </div>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex justify-between items-center py-1 border-b border-[#ebebeb] dark:border-[#262626]">
             <span>• Turkey or Beef Hearts (Natural Taurine)</span>
-            <span class="font-bold">10% (approx. 5 oz)</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">10% (approx. 5 oz)</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['Turkey or Beef Hearts'] || 'https://amzn.to/4ctpLUu'} label="Buy Now" size="sm" />
+            </div>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex justify-between items-center py-1 border-b border-[#ebebeb] dark:border-[#262626]">
             <span>• Pure Canned Pumpkin Puree (Digestive Fiber)</span>
-            <span class="font-bold">10% (approx. 5 oz)</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">10% (approx. 5 oz)</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['Pure Canned Pumpkin Puree'] || 'https://amzn.to/3UFE0PZ'} label="Buy Now" size="sm" />
+            </div>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex justify-between items-center py-1 border-b border-[#ebebeb] dark:border-[#262626]">
             <span>• Steamed Baby Spinach & Finely Diced Zucchini</span>
-            <span class="font-bold">10% (approx. 5 oz)</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">10% (approx. 5 oz)</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['Baby Spinach & Steamed Zucchini'] || 'https://amzn.to/4yqDq7u'} label="Buy Now" size="sm" />
+            </div>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex justify-between items-center py-1 border-b border-[#ebebeb] dark:border-[#262626]">
             <span>• Wild Alaskan Salmon Oil (EPA/DHA)</span>
-            <span class="font-bold">2% (1.5 tbsp)</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">2% (1.5 tbsp)</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['Wild Alaskan Salmon Oil'] || 'https://amzn.to/46HCJdW'} label="Buy Now" size="sm" />
+            </div>
           </div>
-          <div class="flex justify-between py-1">
+          <div class="flex justify-between items-center py-1">
             <span>• Clean Eggshell Powder (Elemental Calcium)</span>
-            <span class="font-bold">3% (1 full tsp)</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">3% (1 full tsp)</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['Clean Eggshell Powder'] || 'https://amzn.to/4gRALwj'} label="Buy Now" size="sm" />
+            </div>
           </div>
         </div>
 
@@ -117,21 +137,33 @@ import Footer from '../components/Footer.astro';
         </p>
 
         <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2 font-mono text-xs text-[#171717] dark:text-[#ededed]">
-          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex justify-between items-center py-1 border-b border-[#ebebeb] dark:border-[#262626]">
             <span>• 80% Muscle Meat (Beef chunks, chicken hearts, tongue)</span>
-            <span class="font-bold">800 grams</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">800 grams</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['80% Muscle Meat'] || 'https://amzn.to/3Sz0bqy'} label="Buy Now" size="sm" />
+            </div>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex justify-between items-center py-1 border-b border-[#ebebeb] dark:border-[#262626]">
             <span>• 10% Raw Edible Bone (Chicken necks, wings, duck feet)</span>
-            <span class="font-bold">100 grams</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">100 grams</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['Raw Edible Bone'] || 'https://amzn.to/4gyO85G'} label="Buy Now" size="sm" />
+            </div>
           </div>
-          <div class="flex justify-between py-1 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex justify-between items-center py-1 border-b border-[#ebebeb] dark:border-[#262626]">
             <span>• 5% Liver (Beef or Lamb Liver - Vitamin A)</span>
-            <span class="font-bold">50 grams</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">50 grams</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['Beef Liver'] || 'https://amzn.to/3UryAbr'} label="Buy Now" size="sm" />
+            </div>
           </div>
-          <div class="flex justify-between py-1">
+          <div class="flex justify-between items-center py-1">
             <span>• 5% Other Secreting Organ (Kidney, Spleen, or Pancreas)</span>
-            <span class="font-bold">50 grams</span>
+            <div class="flex items-center gap-3">
+              <span class="font-bold">50 grams</span>
+              <AffiliateButton url={INGREDIENT_AFFILIATE_MAP['Other Secreting Organ'] || 'https://amzn.to/4zVmeIy'} label="Buy Now" size="sm" />
+            </div>
           </div>
         </div>
       </section>

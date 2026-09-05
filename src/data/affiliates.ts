@@ -236,6 +236,11 @@ export const AFFILIATE_PRODUCTS: Record<string, AffiliateProduct> = {
     url: 'https://amzn.to/4ha48v4',
     category: 'calcium-supplement',
   },
+  'animal-essentials-sea-cal-12oz': {
+    name: 'Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder for Dogs with Magnesium, Joint Supplement for Dogs & Cats for Healthy Bones & Teeth, Joint Health, Vegan Icelandic Seaweed Calcium - 12 oz',
+    url: 'https://amzn.to/4gRALwj',
+    category: 'calcium-supplement',
+  },
 
   // ── BONE BROTH ───────────────────────────────────────────────────────────
   'brutus-broth-chicken-liquid-6pack': {
@@ -447,6 +452,11 @@ export const AFFILIATE_PRODUCTS: Record<string, AffiliateProduct> = {
     url: 'https://amzn.to/3SrJddG',
     category: 'fresh-cooked',
   },
+  'animal-essentials-sea-cal-12oz': {
+    name: 'Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder for Dogs with Magnesium, Joint Supplement for Dogs & Cats for Healthy Bones & Teeth, Joint Health, Vegan Icelandic Seaweed Calcium - 12 oz',
+    url: 'https://amzn.to/4gRALwj',
+    category: 'calcium-supplement',
+  },
 
   // ── WET / FRESH FOOD ─────────────────────────────────────────────────────
   'whole-paws-turkey-sweet-potato-13oz-3pack': {
@@ -487,8 +497,8 @@ export function getAffiliatesByBrand(brand: string): AffiliateProduct[] {
  */
 export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Wild Alaskan Salmon Oil': 'https://amzn.to/46HCJdW',
-  'Eggshell Calcium & Organic Kelp Blend': 'https://amzn.to/4haNVWy',
-  'Ground Seaweed Calcium & Brewer\'s Yeast': 'https://amzn.to/3UsBTPA',
+  'Eggshell Calcium & Organic Kelp Blend': 'https://amzn.to/4gRALwj',
+  'Ground Seaweed Calcium & Brewer\'s Yeast': 'https://amzn.to/4gRALwj',
   'Wild Canned Sardines in Water (No Salt)': 'https://amzn.to/4xg3W2h',
   'Slow-Simmered Grass-Fed Collagen Bone Broth': 'https://amzn.to/4zZ68xK',
   'Golden Turmeric & Black Pepper Micro-Emulsion': 'https://amzn.to/46JlM2I',
@@ -500,10 +510,10 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Pureed Organic Leafy Greens & Cranberries': 'https://amzn.to/4xg3W2h',
   'Cold-Pressed Virgin Flaxseed Oil': 'https://amzn.to/4xg6A8d', // NOW Foods Organic Flax Seed Oil 24oz (fixed from salmon oil mismatch)
   'Virgin Coconut Oil & Golden Turmeric': 'https://amzn.to/46JlM2I',
-  'Vitamins & Supplements': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice
-  'Dog-safe calcium and vitamin mix': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice (legacy support)
-  'calcium and vitamin mix': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice (alternative support)
-  'nutrient blend': 'https://amzn.to/3SrJddG', // JustFoodForDogs Nutrient Blend Chicken & Rice (alternative support)
+  'Vitamins & Supplements': 'https://amzn.to/4gRALwj', // Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder
+  'Dog-safe calcium and vitamin mix': 'https://amzn.to/4gRALwj', // Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder (legacy support)
+  'calcium and vitamin mix': 'https://amzn.to/4gRALwj', // Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder (alternative support)
+  'nutrient blend': 'https://amzn.to/4gRALwj', // Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder (alternative support)
   // ── Recipe-specific ingredient mappings ─────────────────────────────────────
   'Lean ground chicken': 'https://amzn.to/4xEuafH', // Stella & Chewy's Freeze-Dried Chicken Meal Mixers
   'Chicken hearts': 'https://amzn.to/4ctpLUu', // Vital Essentials Freeze-Dried Chicken Hearts
@@ -524,7 +534,7 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Wild Canned Sardines in Water (No Salt)': 'https://amzn.to/4xg3W2h', // Wild Planet Sardines
   'Golden Turmeric & Black Pepper Micro-Emulsion': 'https://amzn.to/46JlM2I', // Zesty Paws Liver Support
   'Unfiltered Raw Apple Cider Vinegar (with Mother)': 'https://amzn.to/46Jlx7O', // Bragg ACV
-  'Veterinary Bone Meal & Sea Salt': 'https://amzn.to/4haNVWy',
+  'Veterinary Bone Meal & Sea Salt': 'https://amzn.to/4gRALwj',
   // ── Additional Ingredient Mappings for IngredientChecker ──────────────────
   'Pumpkin (Pure Puree)': 'https://amzn.to/3UFE0PZ',
   'Pumpkin': 'https://amzn.to/3UFE0PZ',
@@ -558,8 +568,9 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Flax Oil': 'https://amzn.to/4xg6A8d',
   'Sardines': 'https://amzn.to/4xg3W2h',
   'Canned Sardines': 'https://amzn.to/4xg3W2h',
-  'Eggshell Calcium': 'https://amzn.to/4haNVWy',
-  'Calcium Supplement': 'https://amzn.to/4haNVWy',
+  'Eggshell Calcium': 'https://amzn.to/4gRALwj',
+  'Calcium Supplement': 'https://amzn.to/4gRALwj',
+  'Clean Eggshell Powder': 'https://amzn.to/4gRALwj',
   'Kelp': 'https://amzn.to/3UsBTPA',
   'Organic Kelp': 'https://amzn.to/3UsBTPA',
   'Sea Kelp': 'https://amzn.to/3UsBTPA',
@@ -572,11 +583,18 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Beef Kidney': 'https://amzn.to/4zVmeIy',
   'Organ Meats': 'https://amzn.to/3UryAbr',
   'Organ Meat': 'https://amzn.to/3UryAbr',
+  '80% Muscle Meat': 'https://amzn.to/3Sz0bqy',
+  'Turkey or Beef Hearts': 'https://amzn.to/4ctpLUu',
+  'Pure Canned Pumpkin Puree': 'https://amzn.to/3UFE0PZ',
+  'Steamed Baby Spinach & Finely Diced Zucchini': 'https://amzn.to/4yqDq7u',
+  'Raw Edible Bone': 'https://amzn.to/4gyO85G',
+  'Other Secreting Organ': 'https://amzn.to/4zVmeIy',
   // ── Fresh-Cooked: Chicken ────────────────────────────────────────────────
   'Lean ground chicken': 'https://amzn.to/4xEuafH',           // Stella & Chewy's Freeze-Dried Chicken Meal Mixers 1oz
   'Chicken hearts': 'https://amzn.to/4ctpLUu',                // Vital Essentials Freeze-Dried Chicken Hearts 3.75oz
   'Cooked white rice': 'https://amzn.to/3SrJddG',             // JustFoodForDogs Nutrient Blend Chicken & Rice
   'Steamed zucchini': 'https://amzn.to/4xPVcB1',              // Fresh Green Zucchini
+  'USDA Ground Turkey (93/7)': 'https://amzn.to/3ThvqGK',    // Whole Paws Turkey Feast wet food
   // ── Fresh-Cooked: Turkey ────────────────────────────────────────────────
   'USDA Lean Ground Turkey (93/7)': 'https://amzn.to/3ThvqGK',         // Whole Paws Turkey Feast wet food
   'Organic Turkey Hearts & Gizzards': 'https://amzn.to/3SUnT0v',       // smallbatch Freeze-Dried Turkey 7oz ×2
