@@ -1,4 +1,4 @@
-// Comprehensive FAQ translations for all 45 questions across es, ja, fr, de, pt, ko, it
+﻿// Comprehensive FAQ translations for all 45 questions across es, ja, fr, de, pt, ko, it
 export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortAnswer: string; fullAnswerHtml?: string }>> = {
   'how-much-food-should-i-feed-my-dog': {
     es: {
@@ -11,7 +11,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'Quelle quantité de nourriture dois-je donner à mon chien par jour ?',
-      shortAnswer: 'La ration exacte dépend du poids corporel, de l’activité et de la silhouette (BCS). En règle générale, un chien adulte consomme 2% à 3% de son poids en ration ménagère fraîche par jour, ou entre 1/2 et 3 tasses de croquettes selon sa dépense énergétique (RER/MER).'
+      shortAnswer: 'La ration exacte dépend du poids corporel, de l\'activité et de la silhouette (BCS). En règle générale, un chien adulte consomme 2% à 3% de son poids en ration ménagère fraîche par jour, ou entre 1/2 et 3 tasses de croquettes selon sa dépense énergétique (RER/MER).'
     },
     de: {
       question: 'Wie viel Futter sollte ich meinem Hund pro Tag füttern?',
@@ -27,7 +27,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     it: {
       question: 'Quanto cibo devo dare al mio cane al giorno?',
-      shortAnswer: 'La quantità esatta dipende dal peso, dall’attività e dalla forma fisica (BCS). In media, un cane adulto consuma tra il 2% e il 3% del proprio peso corporeo in cibo fresco naturale, oppure da mezza a 3 tazze di crocchette bilanciate secondo il fabbisogno RER/MER.'
+      shortAnswer: 'La quantità esatta dipende dal peso, dall\'attività e dalla forma fisica (BCS). In media, un cane adulto consuma tra il 2% e il 3% del proprio peso corporeo in cibo fresco naturale, oppure da mezza a 3 tazze di crocchette bilanciate secondo il fabbisogno RER/MER.'
     }
   },
 
@@ -42,7 +42,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'Comment préparer de la nourriture maison équilibrée pour son chien ?',
-      shortAnswer: 'Suivez la règle 60-20-20 : 60% de viande musculaire maigre, 20% d’abats et acides gras oméga-3, et 20% de légumes cuits digestes (courge, courgettes). L’ajout de calcium (1/2 c. à café de coquille d’œuf broyée par 450 g de viande) est indispensable pour éviter la décalcification.'
+      shortAnswer: 'Suivez la règle 60-20-20 : 60% de viande musculaire maigre, 20% d\'abats et acides gras oméga-3, et 20% de légumes cuits digestes (courge, courgettes). L\'ajout de calcium (1/2 c. à café de coquille d\'œuf broyée par 450 g de viande) est indispensable pour éviter la décalcification.'
     },
     de: {
       question: 'Wie kocht man gesundes Hundefutter selbst?',
@@ -58,7 +58,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     it: {
       question: 'Come preparare cibo casalingo sano per il cane?',
-      shortAnswer: 'Segui la proporzione 60-20-20: 60% carne muscolare magra, 20% frattaglie e grassi sani (cuori, olio di salmone) e 20% verdure cotte (zucca, zucchine). È obbligatorio aggiungere calcio (1/2 cucchiaino di guscio d’uovo in polvere per 450 g di carne).'
+      shortAnswer: 'Segui la proporzione 60-20-20: 60% carne muscolare magra, 20% frattaglie e grassi sani (cuori, olio di salmone) e 20% verdure cotte (zucca, zucchine). È obbligatorio aggiungere calcio (1/2 cucchiaino di guscio d\'uovo in polvere per 450 g di carne).'
     }
   },
 
@@ -73,7 +73,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'La marque Rachael Ray Nutrish est-elle recommandée pour les chiens ?',
-      shortAnswer: 'Nutrish est une marque de supermarché économique. Les gammes Dish et Peak offrent un apport convenable en viandes entières, mais les gammes d’entrée de gamme contiennent trop de protéines végétales isolées. Note vétérinaire : C+ / B-.'
+      shortAnswer: 'Nutrish est une marque de supermarché économique. Les gammes Dish et Peak offrent un apport convenable en viandes entières, mais les gammes d\'entrée de gamme contiennent trop de protéines végétales isolées. Note vétérinaire : C+ / B-.'
     },
     de: {
       question: 'Ist Rachael Ray Nutrish ein gutes Hundefutter?',
@@ -104,7 +104,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'Combien de temps dure la digestion chez le chien ?',
-      shortAnswer: 'La digestion prend environ 6 à 10 heures pour une ration fraîche ou crue BARF, et de 10 à 14 heures pour des croquettes sèches industrielles. L’estomac du chien produit un suc très acide pour dégrader les viandes rapidement.'
+      shortAnswer: 'La digestion prend environ 6 à 10 heures pour une ration fraîche ou crue BARF, et de 10 à 14 heures pour des croquettes sèches industrielles. L\'estomac du chien produit un suc très acide pour dégrader les viandes rapidement.'
     },
     de: {
       question: 'Wie lange braucht ein Hund, um Futter zu verdauen?',
@@ -120,7 +120,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     it: {
       question: 'Quanto tempo impiega un cane a digerire il cibo?',
-      shortAnswer: 'La digestione completa richiede da 6 a 10 ore per cibo fresco o crudo BARF, e da 10 a 14 ore per le crocchette secche industriali. L’apparato digerente canino è corto e molto acido per digerire rapidamente le proteine.'
+      shortAnswer: 'La digestione completa richiede da 6 a 10 ore per cibo fresco o crudo BARF, e da 10 a 14 ore per le crocchette secche industriali. L\'apparato digerente canino è corto e molto acido per digerire rapidamente le proteine.'
     }
   },
 
@@ -166,7 +166,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'Les humains peuvent-ils manger de la nourriture pour chien ?',
-      shortAnswer: 'Une bouchée accidentelle n’est pas mortelle, mais les humains ne doivent pas consommer d’aliments pour animaux. Les croquettes contiennent des sous-produits non certifiés consommation humaine et peuvent héberger des bactéries comme la Salmonelle.'
+      shortAnswer: 'Une bouchée accidentelle n\'est pas mortelle, mais les humains ne doivent pas consommer d\'aliments pour animaux. Les croquettes contiennent des sous-produits non certifiés consommation humaine et peuvent héberger des bactéries comme la Salmonelle.'
     },
     de: {
       question: 'Können Menschen Hundefutter essen?',
@@ -196,8 +196,8 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
       shortAnswer: '良質なチキンミールとは、新鮮な鶏肉から水分と脂肪分を高温高圧で加熱脱水し、約65％の濃縮タンパク質粉末にしたものです。水分が70％を占める生チキンと比べ、重量あたりのタンパク質濃度が高いのが特徴です。'
     },
     fr: {
-      question: 'Qu’est-ce que la farine de poulet dans les croquettes ?',
-      shortAnswer: 'Une farine de poulet de qualité est une viande de volaille déshydratée et concentrée par cuisson thermique, titrant à environ 65% de protéines digestes, contrairement au poulet frais qui contient 70% d’eau lors de la pesée initiale.'
+      question: 'Qu\'est-ce que la farine de poulet dans les croquettes ?',
+      shortAnswer: 'Une farine de poulet de qualité est une viande de volaille déshydratée et concentrée par cuisson thermique, titrant à environ 65% de protéines digestes, contrairement au poulet frais qui contient 70% d\'eau lors de la pesée initiale.'
     },
     de: {
       question: 'Was bedeutet Hühnermehl (Chicken Meal) im Hundefutter?',
@@ -208,11 +208,11 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
       shortAnswer: 'Uma boa farinha de frango é carne desidratada e cozida sob pressão, resultando em um pó com cerca de 65% de proteína concentrada, ao contrário do frango fresco in natura que contém 70% de água no momento da formulação.'
     },
     ko: {
-      question: '강아지 사료 성분표의 ‘치킨 밀(닭고기 분말)’이란 무엇인가요?',
+      question: '강아지 사료 성분표의 \'치킨 밀(닭고기 분말)\'이란 무엇인가요?',
       shortAnswer: '품질 좋은 치킨 밀은 닭고기에서 수분과 기름을 고열 조리로 제거한 농축 건조 단백질 분말(단백질 함량 약 65%)입니다. 70%가 수분인 생닭육에 비해 순수 단백질 밀도가 높습니다.'
     },
     it: {
-      question: 'Cos’è la farina di pollo nel cibo per cani?',
+      question: 'Cos\'è la farina di pollo nel cibo per cani?',
       shortAnswer: 'La farina di pollo di qualità è carne di pollo essiccata e concentrata con una quota proteica del 65%, a differenza della carne fresca che contiene il 70% di acqua al momento della pesatura iniziale.'
     }
   },
@@ -227,8 +227,8 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
       shortAnswer: 'BARF食とは、野生の肉食獣の獲物比率を再現した食事法です。筋肉肉・心臓80％、生の可食肉骨10％（天然カルシウム源）、分泌内臓10％（肝臓5％＋腎臓・脾臓5％）で構成されます。'
     },
     fr: {
-      question: 'Qu’est-ce que le régime cru BARF pour chien ?',
-      shortAnswer: 'Le régime BARF reproduit le modèle ancestral de la proie : 80% de viande musculaire et cœur, 10% d’os charnus crus comestibles (source naturelle de calcium) et 10% d’abats sécréteurs (foie, rate, reins).'
+      question: 'Qu\'est-ce que le régime cru BARF pour chien ?',
+      shortAnswer: 'Le régime BARF reproduit le modèle ancestral de la proie : 80% de viande musculaire et cœur, 10% d\'os charnus crus comestibles (source naturelle de calcium) et 10% d\'abats sécréteurs (foie, rate, reins).'
     },
     de: {
       question: 'Was ist die Rohfütterung beim Hund (BARF-Diät)?',
@@ -243,7 +243,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
       shortAnswer: 'BARF는 야생 육식동물의 먹이 비율을 과학적으로 재현한 생식 식단입니다. 살코기 및 심장 80%, 씹어 먹을 수 있는 생뼈 10%(천연 칼슘원), 분비 내장 기관 10%(간 5% + 콩팥/비장 5%)로 구성됩니다.'
     },
     it: {
-      question: 'Cos’è la dieta cruda per cani (Dieta BARF)?',
+      question: 'Cos\'è la dieta cruda per cani (Dieta BARF)?',
       shortAnswer: 'La dieta BARF riproduce il modello della preda ancestrale: 80% polpa muscolare e cuore, 10% ossa polpose crude commestibili (fonte di calcio) e 10% frattaglie secretrici (fegato, milza e rene).'
     }
   },
@@ -259,7 +259,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'Quelle est la meilleure alimentation pour un chien allergique ?',
-      shortAnswer: 'Le meilleur choix est un aliment à ingrédients limités basé sur une seule protéine nouvelle jamais consommée (cerf, lapin, canard), sans poulet ni céréales inflammatoires, ou une ration ménagère d’éviction sur 8 semaines.'
+      shortAnswer: 'Le meilleur choix est un aliment à ingrédients limités basé sur une seule protéine nouvelle jamais consommée (cerf, lapin, canard), sans poulet ni céréales inflammatoires, ou une ration ménagère d\'éviction sur 8 semaines.'
     },
     de: {
       question: 'Was ist das beste Futter für Hunde mit Allergien und Juckreiz?',
@@ -275,7 +275,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     it: {
       question: 'Qual è il miglior cibo per cani con allergie e dermatite?',
-      shortAnswer: 'La scelta d’elezione è una ricetta a ingredienti limitati con una singola proteina novità mai consumata (cervo, coniglio, anatra), senza pollo né glutine, guidata da una dieta ad esclusione di 8 settimane.'
+      shortAnswer: 'La scelta d\'elezione è una ricetta a ingredienti limitati con una singola proteina novità mai consumata (cervo, coniglio, anatra), senza pollo né glutine, guidata da una dieta ad esclusione di 8 settimane.'
     }
   },
 
@@ -320,8 +320,8 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
       shortAnswer: '自然界の被捕食動物の体を模した生食の黄金比率です。80％の筋肉肉と心臓、10％の生の可食骨（カルシウム源）、10％の内臓（5％の肝臓＋5％の腎臓や脾臓）で完璧な栄養バランスを保ちます。'
     },
     fr: {
-      question: 'Qu’est-ce que la règle 80-10-10 dans l’alimentation pour chien ?',
-      shortAnswer: 'C’est le standard de la ration crue BARF modélisé sur une proie complète : 80% de viande musculaire et cœur, 10% d’os charnus crus comestibles (calcium) et 10% d’abats (5% de foie et 5% d’autres organes sécréteurs).'
+      question: 'Qu\'est-ce que la règle 80-10-10 dans l\'alimentation pour chien ?',
+      shortAnswer: 'C\'est le standard de la ration crue BARF modélisé sur une proie complète : 80% de viande musculaire et cœur, 10% d\'os charnus crus comestibles (calcium) et 10% d\'abats (5% de foie et 5% d\'autres organes sécréteurs).'
     },
     de: {
       question: 'Was ist die 80-10-10-Regel bei der Fütterung?',
@@ -332,11 +332,11 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
       shortAnswer: 'É a proporção ouro da dieta crua BARF inspirada na presa inteira: 80% de carne muscular e coração, 10% de ossos carnudos crus (fonte essencial de cálcio) e 10% de vísceras (5% de fígado e 5% de baço/rim).'
     },
     ko: {
-      question: '강아지 식단에서 ‘80-10-10 법칙’이란 무엇인가요?',
+      question: '강아지 식단에서 \'80-10-10 법칙\'이란 무엇인가요?',
       shortAnswer: '자연 상태의 온전한 초식동물 먹이 비율을 재현한 생식 기준입니다. 살코기 및 심장 80%, 생뼈 10%(필수 칼슘과 인 공급), 내장 10%(간 5% + 신장/비장 5%)로 배합합니다.'
     },
     it: {
-      question: 'Cos’è la regola 80-10-10 per il cibo dei cani?',
+      question: 'Cos\'è la regola 80-10-10 per il cibo dei cani?',
       shortAnswer: 'È il pilastro della dieta cruda BARF basato sulla preda intera: 80% carne muscolare e cuore, 10% ossa polpose crude (calcio) e 10% organi (5% fegato e 5% altri organi secretori).'
     }
   },
@@ -383,7 +383,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'Vaut-il mieux donner des croquettes ou de la pâtée humide à son chien ?',
-      shortAnswer: 'La nourriture humide ou fraîche est supérieure pour la santé rénale car elle apporte plus de 70% d’eau naturelle. Si vous optez pour les croquettes, réhydratez-les systématiquement avec de l’eau tiède ou un bouillon d’os.'
+      shortAnswer: 'La nourriture humide ou fraîche est supérieure pour la santé rénale car elle apporte plus de 70% d\'eau naturelle. Si vous optez pour les croquettes, réhydratez-les systématiquement avec de l\'eau tiède ou un bouillon d\'os.'
     },
     de: {
       question: 'Sollte man Hunden Nassfutter oder Trockenfutter geben?',
@@ -414,7 +414,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'Un chien peut-il vivre uniquement de croquettes sèches toute sa vie ?',
-      shortAnswer: 'Oui, un chien peut survivre avec des croquettes complètes homologuées, mais cela majore le risque de déshydratation chronique et d’insuffisance rénale tardive. Remplacer 20% de la ration par des ingrédients frais améliore nettement sa longévité.'
+      shortAnswer: 'Oui, un chien peut survivre avec des croquettes complètes homologuées, mais cela majore le risque de déshydratation chronique et d\'insuffisance rénale tardive. Remplacer 20% de la ration par des ingrédients frais améliore nettement sa longévité.'
     },
     de: {
       question: 'Kann ein Hund ausschließlich von Trockenfutter leben?',
@@ -445,7 +445,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     fr: {
       question: 'Les chiens peuvent-ils manger des œufs ?',
-      shortAnswer: 'Oui, l’œuf est l’un des meilleurs superaliments pour chien. Il offre des protéines à la valeur biologique maximale, de la choline, de la vitamine A et du fer. Donnez-le de préférence poché ou mollet 2 à 3 fois par semaine.'
+      shortAnswer: 'Oui, l\'œuf est l\'un des meilleurs superaliments pour chien. Il offre des protéines à la valeur biologique maximale, de la choline, de la vitamine A et du fer. Donnez-le de préférence poché ou mollet 2 à 3 fois par semaine.'
     },
     de: {
       question: 'Dürfen Hunde Eier fressen?',
@@ -461,7 +461,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     it: {
       question: 'I cani possono mangiare le uova?',
-      shortAnswer: 'Sì, l’uovo è un superalimento d’eccellenza per i cani. Fornisce proteine ad altissimo valore biologico, colina, ferro e vitamina A. Si consiglia di somministrarlo leggermente cotto (in camicia o alla coque) 2-3 volte a settimana.'
+      shortAnswer: 'Sì, l\'uovo è un superalimento d\'eccellenza per i cani. Fornisce proteine ad altissimo valore biologico, colina, ferro e vitamina A. Si consiglia di somministrarlo leggermente cotto (in camicia o alla coque) 2-3 volte a settimana.'
     }
   },
 
@@ -492,7 +492,7 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     },
     it: {
       question: 'Qual è la miglior verdura per cani?',
-      shortAnswer: 'La zucca cotta è la verdura per eccellenza grazie alle fibre solubili che calmano l’intestino. Seguono zucchine al vapore, carote e spinaci per il loro apporto di vitamine e antiossidanti.'
+      shortAnswer: 'La zucca cotta è la verdura per eccellenza grazie alle fibre solubili che calmano l\'intestino. Seguono zucchine al vapore, carote e spinaci per il loro apporto di vitamine e antiossidanti.'
     }
   },
 
@@ -524,6 +524,752 @@ export const FAQ_EXTRA: Record<string, Record<string, { question: string; shortA
     it: {
       question: 'La banana fa bene ai cani?',
       shortAnswer: 'Sì, a piccole dosi. La banana contiene potassio, vitamina B6 e fibre prebiotiche. Dato il contenuto zuccherino, va offerta a rondelle sottili come premio saltuario.'
+    }
+  },
+
+  // ── NEW TRANSLATIONS ──────────────────────────────────────────────────────
+
+  'what-is-the-best-dog-food-to-feed-your-dog': {
+    es: {
+      question: '¿Cuál es la mejor comida para darle a tu perro a diario?',
+      shortAnswer: 'La mejor alimentación diaria es una dieta de alimentos integrales frescos o un pienso de alta calidad mejorado con toppings frescos (huevo, verduras de hoja verde, calabaza, aceite de salmón) formulado para la etapa vital y el gasto calórico exactos de tu perro.'
+    },
+    ja: {
+      question: '愛犬に毎日与えるのに最適なドッグフードは何ですか？',
+      shortAnswer: '最も理想的な毎日の食事は、フレッシュな全食品食またはスーパープレミアムキブルにトッピング（卵・葉物野菜・カボチャ・サーモンオイル）を加え、愛犬の年齢・体重・活動量に合わせたカロリーで管理することです。'
+    },
+    fr: {
+      question: 'Quelle est la meilleure nourriture à donner à son chien au quotidien ?',
+      shortAnswer: 'La meilleure alimentation quotidienne est une ration fraîche à base d\'aliments entiers, ou des croquettes premium enrichies de suppléments frais (œuf, légumes verts, courge, huile de saumon), formulées selon le stade de vie et la dépense calorique du chien.'
+    },
+    de: {
+      question: 'Was ist das beste Futter, das man seinem Hund täglich geben kann?',
+      shortAnswer: 'Die beste tägliche Ernährung ist eine Frischkost aus ganzen Lebensmitteln oder ein Premium-Trockenfutter, ergänzt durch frische Toppers (Ei, Blattgemüse, Kürbis, Lachsöl), das exakt auf Alter, Gewicht und Kalorienverbrauch des Hundes abgestimmt ist.'
+    },
+    pt: {
+      question: 'Qual é a melhor comida para dar ao seu cachorro diariamente?',
+      shortAnswer: 'A melhor alimentação diária é uma dieta de alimentos frescos integrais ou ração premium complementada com toppings naturais (ovo, vegetais folhosos, abóbora, óleo de salmão), formulada conforme o estágio de vida e o gasto calórico do cão.'
+    },
+    ko: {
+      question: '강아지에게 매일 먹이기 가장 좋은 사료는 무엇인가요?',
+      shortAnswer: '가장 이상적인 일상 식단은 신선한 자연 화식이나 고품질 건식 사료에 토핑(달걀, 잎채소, 단호박, 연어 오일)을 추가하고, 반려견의 연령·체중·활동량에 맞는 칼로리로 관리하는 것입니다.'
+    },
+    it: {
+      question: 'Qual è il miglior cibo da dare al cane ogni giorno?',
+      shortAnswer: 'L\'alimentazione quotidiana ideale è una dieta a base di cibi freschi integrali o crocchette premium arricchite con topping naturali (uovo, verdure a foglia, zucca, olio di salmone), formulata per lo stadio di vita e il fabbisogno calorico del cane.'
+    }
+  },
+
+  'whats-the-best-dog-food-brand': {
+    es: {
+      question: '¿Cuál es la mejor marca de comida para perros?',
+      shortAnswer: 'Las marcas líderes en 2026 son Open Farm, The Farmer\'s Dog, Ollie, Orijen, Stella & Chewy\'s y JustFoodForDogs, reconocidas por ingredientes de calidad humana, trazabilidad ética y formulación veterinaria contrastada.'
+    },
+    ja: {
+      question: '最も優れたドッグフードブランドはどこですか？',
+      shortAnswer: '2026年のトップブランドは、Open Farm、The Farmer\'s Dog、Ollie、Orijen、Stella & Chewy\'s、JustFoodForDogsで、ヒューマングレード原料の透明性、倫理的調達、獣医師による処方で高評価を受けています。'
+    },
+    fr: {
+      question: 'Quelle est la meilleure marque d\'aliment pour chien ?',
+      shortAnswer: 'Les marques de référence en 2026 sont Open Farm, The Farmer\'s Dog, Ollie, Orijen, Stella & Chewy\'s et JustFoodForDogs, reconnues pour la qualité humaine de leurs ingrédients, leur traçabilité éthique et leurs formules vétérinaires éprouvées.'
+    },
+    de: {
+      question: 'Was ist die beste Hundefuttermarke?',
+      shortAnswer: 'Die führenden Marken 2026 sind Open Farm, The Farmer\'s Dog, Ollie, Orijen, Stella & Chewy\'s und JustFoodForDogs – ausgezeichnet für Humanqualitätszutaten, ethische Lieferketten und tierärztlich geprüfte Rezepturen.'
+    },
+    pt: {
+      question: 'Qual é a melhor marca de ração para cachorro?',
+      shortAnswer: 'As marcas de destaque em 2026 são Open Farm, The Farmer\'s Dog, Ollie, Orijen, Stella & Chewy\'s e JustFoodForDogs, reconhecidas por ingredientes de qualidade humana, rastreabilidade ética e formulação veterinária testada.'
+    },
+    ko: {
+      question: '가장 좋은 강아지 사료 브랜드는 어디인가요?',
+      shortAnswer: '2026년 기준 최고의 브랜드는 Open Farm, The Farmer\'s Dog, Ollie, Orijen, Stella & Chewy\'s, JustFoodForDogs입니다. 인간 등급 원료의 투명성, 윤리적 원산지 추적, 수의학적 검증 처방으로 최고 평가를 받습니다.'
+    },
+    it: {
+      question: 'Qual è il miglior brand di cibo per cani?',
+      shortAnswer: 'I marchi leader nel 2026 sono Open Farm, The Farmer\'s Dog, Ollie, Orijen, Stella & Chewy\'s e JustFoodForDogs, apprezzati per ingredienti di qualità umana, filiera etica tracciabile e formulazioni veterinarie validate.'
+    }
+  },
+
+  'what-is-the-1-best-dog-food': {
+    es: {
+      question: '¿Cuál es la mejor comida para perros del mundo?',
+      shortAnswer: 'Por consenso veterinario, la #1 es comida fresca casera cocinada suavemente con ingredientes de calidad humana, formulada según estándares NRC/AAFCO completos con carnes reales, órganos, verduras y calcio natural equilibrado.'
+    },
+    ja: {
+      question: '世界で最も優れたドッグフードは何ですか？',
+      shortAnswer: '獣医師の臨床コンセンサスでは、NRC/AAFCO基準を満たすヒューマングレードの低温調理フレッシュフードが第1位です。実際の肉・内臓・野菜・天然カルシウムを使用した手作り食が最高レベルとされています。'
+    },
+    fr: {
+      question: 'Quel est le meilleur aliment pour chien au monde ?',
+      shortAnswer: 'Par consensus vétérinaire, la première place revient à une alimentation fraîche maison, cuite à basse température avec des ingrédients de qualité humaine, formulée selon les standards NRC/AAFCO avec viandes, abats, légumes et calcium naturel équilibré.'
+    },
+    de: {
+      question: 'Was ist das weltweit beste Hundefutter?',
+      shortAnswer: 'Nach veterinärmedizinischem Konsens belegt frisch zubereitetes, schonend gegartes Frischfutter aus Humanqualitätszutaten den ersten Platz – formuliert nach vollständigen NRC/AAFCO-Standards mit echtem Fleisch, Innereien, Gemüse und natürlichem Kalzium.'
+    },
+    pt: {
+      question: 'Qual é o melhor alimento para cães do mundo?',
+      shortAnswer: 'Por consenso veterinário clínico, o número 1 é a comida fresca casera, cozida suavemente com ingredientes de qualidade humana, formulada segundo padrões NRC/AAFCO completos com carnes reais, vísceras, vegetais e cálcio natural equilibrado.'
+    },
+    ko: {
+      question: '세계에서 가장 좋은 강아지 사료는 무엇인가요?',
+      shortAnswer: '수의학 임상 전문가들의 합의에 따르면, 인간 등급의 신선한 재료로 저온 조리하고 NRC/AAFCO 완전 영양 기준을 충족하는 자연 화식이 1위입니다. 실제 육류, 내장, 채소, 천연 칼슘으로 구성됩니다.'
+    },
+    it: {
+      question: 'Qual è il miglior cibo per cani al mondo?',
+      shortAnswer: 'Per consenso veterinario, il primo posto spetta al cibo fresco preparato in casa, cotto a bassa temperatura con ingredienti di qualità umana, formulato secondo gli standard NRC/AAFCO con carni vere, frattaglie, verdure e calcio naturale equilibrato.'
+    }
+  },
+
+  'what-is-the-best-dog-food-for-small-dogs': {
+    es: {
+      question: '¿Cuál es la mejor comida para perros pequeños?',
+      shortAnswer: 'La mejor comida para razas pequeñas debe tener alta densidad calórica (su metabolismo es más rápido por kilo), croquetas de tamaño mini o carne troceada, soporte dental extra y grasas estables para prevenir hipoglucemia en razas toy.'
+    },
+    ja: {
+      question: '小型犬に最適なドッグフードは何ですか？',
+      shortAnswer: '小型犬は体重1kgあたりの基礎代謝が大型犬より高いため、高カロリー密度・ミニサイズキブルまたは細かくほぐした生肉・歯周病ケア成分・低血糖予防のための安定した脂質を含むフードが最適です。'
+    },
+    fr: {
+      question: 'Quel est le meilleur aliment pour les petits chiens ?',
+      shortAnswer: 'L\'aliment idéal pour les petites races doit être hautement calorique (leur métabolisme est plus rapide au kilo), proposer des mini-croquettes ou de la viande émincée, apporter un soutien dentaire renforcé et des graisses stables pour prévenir l\'hypoglycémie des races toy.'
+    },
+    de: {
+      question: 'Was ist das beste Futter für kleine Hunde?',
+      shortAnswer: 'Kleinhunde haben einen höheren Grundumsatz pro Kilogramm Körpergewicht und benötigen deshalb kalorienreiches Mini-Trockenfutter oder klein geschnittenes Frischfleisch, zusätzliche Zahnpflege-Unterstützung und stabile Fette zur Hypoglykämie-Vorbeugung.'
+    },
+    pt: {
+      question: 'Qual é a melhor ração para cães pequenos?',
+      shortAnswer: 'O alimento ideal para raças pequenas deve ter alta densidade calórica (seu metabolismo é mais acelerado por quilo), grânulos mini ou carne picada, suporte extra para saúde dental e gorduras estáveis para prevenir hipoglicemia nas raças toy.'
+    },
+    ko: {
+      question: '소형견에게 가장 좋은 사료는 무엇인가요?',
+      shortAnswer: '소형견은 체중 kg당 기초대사량이 대형견보다 높아 고칼로리 밀도의 미니 사료 또는 잘게 썬 신선 육류, 치주 건강 지원 성분, 그리고 토이 견종의 저혈당 예방을 위한 안정적인 지방 성분이 필요합니다.'
+    },
+    it: {
+      question: 'Qual è il miglior cibo per cani di piccola taglia?',
+      shortAnswer: 'Il cibo ideale per le razze piccole deve avere alta densità calorica (il loro metabolismo è più rapido per kg), crocchette mini o carne sminuzzata, supporto dentale potenziato e grassi stabili per prevenire l\'ipoglicemia nelle razze toy.'
+    }
+  },
+
+  'what-is-a-good-meal-plan-for-a-dog': {
+    es: {
+      question: '¿Cuál es un buen plan de comidas para un perro?',
+      shortAnswer: 'Un buen plan consiste en dos comidas al día con 10-12 horas de diferencia: 65% proteína limpia, 15% grasas saludables, 10% fibra digestible y antioxidantes, más calcio esencial, vitaminas y minerales. Varía las proteínas semanalmente para aportar un espectro completo de nutrientes.'
+    },
+    ja: {
+      question: '犬に最適な食事プランとはどのようなものですか？',
+      shortAnswer: '理想的な食事プランは1日2食、10〜12時間間隔で、タンパク質65%、健康的な脂質15%、消化性食物繊維と抗酸化成分10%、カルシウム・ビタミン・ミネラルを含む構成です。週ごとにタンパク質を変えることで完全な栄養素スペクトルが確保できます。'
+    },
+    fr: {
+      question: 'Quel est un bon plan de repas pour un chien ?',
+      shortAnswer: 'Un bon plan comprend deux repas par jour espacés de 10 à 12 heures : 65% de protéines maigres, 15% de graisses saines, 10% de fibres digestibles et d\'antioxydants, plus calcium, vitamines et minéraux essentiels. Faites varier les protéines chaque semaine pour un spectre nutritionnel complet.'
+    },
+    de: {
+      question: 'Was ist ein guter Mahlzeitenplan für einen Hund?',
+      shortAnswer: 'Ein optimaler Plan besteht aus zwei Mahlzeiten täglich im Abstand von 10 bis 12 Stunden: 65% mageres Eiweiß, 15% gesunde Fette, 10% verdauliche Ballaststoffe und Antioxidantien sowie Kalzium, Vitamine und Mineralien. Wöchentlicher Proteinwechsel sichert ein vollständiges Nährstoffspektrum.'
+    },
+    pt: {
+      question: 'Qual é um bom plano de refeições para um cachorro?',
+      shortAnswer: 'Um bom plano consiste em duas refeições diárias com 10 a 12 horas de intervalo: 65% proteína magra, 15% gorduras saudáveis, 10% fibras digestivas e antioxidantes, mais cálcio, vitaminas e minerais essenciais. Rotacione as proteínas semanalmente para cobertura nutricional completa.'
+    },
+    ko: {
+      question: '강아지에게 좋은 식사 계획은 어떻게 세우나요?',
+      shortAnswer: '이상적인 식사 계획은 하루 2회, 10~12시간 간격으로 살코기 단백질 65%, 건강한 지방 15%, 소화성 섬유질과 항산화 성분 10%, 칼슘·비타민·미네랄을 포함하는 것입니다. 매주 단백질 원료를 교체하여 완전한 영양 스펙트럼을 확보하세요.'
+    },
+    it: {
+      question: 'Qual è un buon piano alimentare per un cane?',
+      shortAnswer: 'Un buon piano prevede due pasti al giorno a distanza di 10-12 ore: 65% di proteine magre, 15% di grassi sani, 10% di fibre digestibili e antiossidanti, più calcio, vitamine e minerali essenziali. Ruotare le proteine ogni settimana garantisce uno spettro nutrizionale completo.'
+    }
+  },
+
+  'what-is-the-best-food-routine-for-dogs': {
+    es: {
+      question: '¿Cuál es la mejor rutina de alimentación para perros?',
+      shortAnswer: 'La mejor rutina es dos comidas al día en horario fijo (mañana y tarde), con la comida disponible 15-20 minutos y sin ejercicio intenso 60 minutos antes ni 90 minutos después de comer para prevenir el síndrome de dilatación-vólvulo gástrico (GDV).'
+    },
+    ja: {
+      question: '犬にとって最適な給餌ルーティンはどのようなものですか？',
+      shortAnswer: '最良のルーティンは朝夕の決まった時間に1日2食で、食器を20分で片付ける15分ルールを守ること。また胃拡張捻転症候群（GDV）予防のため食前60分・食後90分は激しい運動を避けることが重要です。'
+    },
+    fr: {
+      question: 'Quelle est la meilleure routine alimentaire pour un chien ?',
+      shortAnswer: 'La meilleure routine est deux repas quotidiens à heure fixe (matin et soir), gamelle disponible 15 à 20 minutes, et sans exercice intense 60 minutes avant ou 90 minutes après le repas, pour prévenir la dilatation-torsion gastrique (GDV).'
+    },
+    de: {
+      question: 'Was ist die beste Fütterungsroutine für Hunde?',
+      shortAnswer: 'Die beste Routine sind zwei tägliche Mahlzeiten zu festen Zeiten (morgens und abends), Napf 15 bis 20 Minuten stehen lassen und kein intensiver Auslauf 60 Minuten vor oder 90 Minuten nach dem Füttern, um Magenüberblähung (GDV) zu vermeiden.'
+    },
+    pt: {
+      question: 'Qual é a melhor rotina alimentar para cães?',
+      shortAnswer: 'A melhor rotina é duas refeições diárias em horários fixos (manhã e tarde), tigela disponível por 15 a 20 minutos e sem exercícios intensos 60 minutos antes ou 90 minutos após a refeição, para prevenir a síndrome de dilatação-vólvulo gástrico (GDV).'
+    },
+    ko: {
+      question: '강아지에게 가장 좋은 식사 루틴은 무엇인가요?',
+      shortAnswer: '가장 좋은 루틴은 아침·저녁 일정한 시간에 하루 2회 식사이며, 밥그릇은 15~20분 후 치웁니다. 위염전 증후군(GDV) 예방을 위해 식사 전 60분, 식사 후 90분 동안 격렬한 운동을 삼가야 합니다.'
+    },
+    it: {
+      question: 'Qual è la migliore routine alimentare per i cani?',
+      shortAnswer: 'La migliore routine prevede due pasti fissi al giorno (mattina e sera), ciotola disponibile per 15-20 minuti e nessun esercizio intenso per 60 minuti prima o 90 minuti dopo il pasto, per prevenire la dilatazione-torsione gastrica (GDV).'
+    }
+  },
+
+  'what-is-the-80-20-rule-for-dog-food': {
+    es: {
+      question: '¿Qué es la regla 80/20 en la alimentación canina?',
+      shortAnswer: 'La regla 80/20 puede referirse a: 1) una dieta BARF con 80% de ingredientes animales y 20% de materia vegetal; o 2) la estrategia de añadir un 20% de alimentos frescos al pienso seco, que según estudios de la Universidad de Purdue reduce hasta un 90% los marcadores inflamatorios y oncológicos caninos.'
+    },
+    ja: {
+      question: '犬の食事における「80/20ルール」とはどういう意味ですか？',
+      shortAnswer: '80/20ルールには2つの意味があります。①BARF食では動物性成分80%と植物性成分20%の配合比を示します。②またパデュー大学の研究では、乾燥キブルの20%を新鮮な野菜と肉に置き換えるだけで、犬の癌・慢性炎症マーカーが最大90%改善されることが示されています。'
+    },
+    fr: {
+      question: 'Qu\'est-ce que la règle des 80/20 en alimentation canine ?',
+      shortAnswer: 'La règle 80/20 désigne : 1) une ration BARF composée à 80% d\'ingrédients animaux et 20% de végétaux ; ou 2) la stratégie de remplacer 20% des croquettes par des aliments frais, qui selon une étude de l\'Université Purdue réduit jusqu\'à 90% les marqueurs inflammatoires et cancéreux chez le chien.'
+    },
+    de: {
+      question: 'Was bedeutet die 80/20-Regel beim Hundefutter?',
+      shortAnswer: 'Die 80/20-Regel bezeichnet: 1) eine BARF-Ration aus 80% tierischen Zutaten und 20% pflanzlichen Bestandteilen; oder 2) die Strategie, 20% des Trockenfutters durch frische Zutaten zu ersetzen, was laut einer Purdue-Studie Entzündungs- und Krebsmarker beim Hund um bis zu 90% senkt.'
+    },
+    pt: {
+      question: 'O que é a regra 80/20 na alimentação canina?',
+      shortAnswer: 'A regra 80/20 pode significar: 1) uma dieta BARF com 80% de ingredientes animais e 20% de matéria vegetal; ou 2) a estratégia de substituir 20% da ração seca por alimentos frescos, que segundo pesquisa da Universidade Purdue reduz em até 90% os marcadores inflamatórios e oncológicos nos cães.'
+    },
+    ko: {
+      question: '강아지 사료에서 \'80/20 법칙\'이란 무엇인가요?',
+      shortAnswer: '80/20 법칙은 두 가지 의미를 가집니다. ①BARF 식단에서 동물성 성분 80% + 식물성 성분 20%의 배합 비율을 말합니다. ②또는 퍼듀 대학 연구에 따르면, 건식 사료의 20%를 신선한 채소·육류로 교체하는 것만으로도 강아지의 암과 만성염증 지표가 최대 90% 개선되었습니다.'
+    },
+    it: {
+      question: 'Cos\'è la regola dell\'80/20 per il cibo dei cani?',
+      shortAnswer: 'La regola 80/20 può riferirsi a: 1) una dieta BARF composta all\'80% da ingredienti animali e al 20% da materia vegetale; oppure 2) la strategia di sostituire il 20% delle crocchette con alimenti freschi, che secondo uno studio della Purdue University riduce fino al 90% i marcatori infiammatori e oncologici nel cane.'
+    }
+  },
+
+  'what-is-the-95-rule-in-dog-food': {
+    es: {
+      question: '¿Qué es la regla del 95% en el etiquetado de comida para perros?',
+      shortAnswer: 'La regla del 95% de AAFCO establece que si el nombre del producto dice "Comida de Ternera para Perros", el 95% del peso total (sin contar el agua añadida) debe ser ternera. La regla del 25% aplica para "Con Ternera" y la del 3% para "Con sabor a Ternera".'
+    },
+    ja: {
+      question: 'ドッグフードラベルの「95%ルール」とは何ですか？',
+      shortAnswer: 'AAFCOの95%ルールでは、「ビーフ犬用フード」のように商品名に肉名が入る場合、その肉が添加水を除いた総重量の95%を占める必要があります。「ビーフディナー」は25%、「ビーフ入り」は3%、「ビーフ風味」は実際のビーフ不要というルールもあります。'
+    },
+    fr: {
+      question: 'Qu\'est-ce que la règle des 95% dans l\'étiquetage de la nourriture pour chien ?',
+      shortAnswer: 'La règle des 95% de l\'AAFCO stipule que si le nom d\'un produit est « Aliment au Bœuf pour Chien », 95% du poids total (hors eau ajoutée) doit être du bœuf. La règle des 25% s\'applique aux « Dîner/Recette », celle des 3% à « Avec Bœuf », et « Arôme Bœuf » ne requiert aucune teneur réelle.'
+    },
+    de: {
+      question: 'Was ist die 95-%-Regel bei der Kennzeichnung von Hundefutter?',
+      shortAnswer: 'Die AAFCO-95-%-Regel besagt: Heißt ein Produkt „Rindfleisch-Hundefutter", müssen 95% des Gesamtgewichts (ohne zugesetztes Wasser) Rindfleisch sein. Für „Rindfleisch-Menü" gilt 25%, für „Mit Rindfleisch" 3%, und „Rindfleisch-Aroma" erfordert null Prozent echtes Fleisch.'
+    },
+    pt: {
+      question: 'O que é a regra dos 95% na rotulagem de ração para cães?',
+      shortAnswer: 'A regra dos 95% da AAFCO determina que se o nome do produto diz "Ração de Carne Bovina para Cão", 95% do peso total (sem a água adicionada) deve ser carne bovina. A regra dos 25% vale para "Receita/Prato", a dos 3% para "Com Carne" e "Sabor Carne" não exige nenhuma porcentagem real.'
+    },
+    ko: {
+      question: '강아지 사료 라벨링의 \'95% 법칙\'이란 무엇인가요?',
+      shortAnswer: 'AAFCO 95% 규정에 따르면 제품명이 "소고기 개 사료"인 경우 첨가수를 제외한 총 중량의 95%가 소고기여야 합니다. "소고기 디너/레시피"는 25%, "소고기 함유"는 3%, "소고기 맛"은 실제 소고기 성분이 전혀 없어도 됩니다.'
+    },
+    it: {
+      question: 'Cos\'è la regola del 95% nell\'etichettatura del cibo per cani?',
+      shortAnswer: 'La regola AAFCO del 95% stabilisce che se il nome del prodotto è "Cibo al Manzo per Cani", il 95% del peso totale (esclusa l\'acqua aggiunta) deve essere manzo. La regola del 25% vale per "Ricetta/Menù", quella del 3% per "Con Manzo", mentre "Aroma Manzo" non richiede alcun contenuto reale.'
+    }
+  },
+
+  'how-much-food-can-a-dog-eat-per-day': {
+    es: {
+      question: '¿Cuánta comida puede comer un perro al día de forma segura?',
+      shortAnswer: 'Un perro debe consumir entre el 2% y el 4% de su peso corporal al día en comida fresca, o entre 1 y 4 tazas de pienso seco según el tamaño (ej. 1/2 taza para 4,5 kg y 3-4 tazas para 32 kg). Superar el gasto metabólico causa dilatación gástrica y obesidad.'
+    },
+    ja: {
+      question: '犬が1日に安全に食べられる量はどれくらいですか？',
+      shortAnswer: '犬の1日の安全な摂取量は、フレッシュフードで体重の2〜4%、ドライキブルでは犬の体重によって1〜4カップが目安です（4.5kgなら約1/2カップ、32kgなら3〜4カップ）。代謝需要を超えた過食は胃拡張と肥満の原因になります。'
+    },
+    fr: {
+      question: 'Quelle quantité maximale de nourriture un chien peut-il manger par jour sans risque ?',
+      shortAnswer: 'Un chien doit consommer entre 2% et 4% de son poids en ration fraîche quotidienne, ou 1 à 4 tasses de croquettes selon la taille (ex. : 1/2 tasse pour 4,5 kg, 3-4 tasses pour 32 kg). Dépasser les besoins métaboliques provoque dilatation gastrique et obésité.'
+    },
+    de: {
+      question: 'Wie viel Futter kann ein Hund pro Tag sicher fressen?',
+      shortAnswer: 'Ein Hund sollte täglich 2 bis 4% seines Körpergewichts an Frischfutter verzehren oder je nach Größe 1 bis 4 Tassen Trockenfutter (z. B. 1/2 Tasse bei 4,5 kg, 3–4 Tassen bei 32 kg). Die Überschreitung des metabolischen Bedarfs führt zu Magenüberblähung und Adipositas.'
+    },
+    pt: {
+      question: 'Quanto de comida um cachorro pode comer por dia com segurança?',
+      shortAnswer: 'Um cão deve consumir entre 2% e 4% do seu peso corporal diariamente em alimentação fresca, ou 1 a 4 xícaras de ração seca conforme o porte (ex.: 1/2 xícara para 4,5 kg e 3-4 xícaras para 32 kg). Exceder o gasto metabólico causa dilatação gástrica e obesidade.'
+    },
+    ko: {
+      question: '강아지가 하루에 안전하게 먹을 수 있는 양은 얼마인가요?',
+      shortAnswer: '강아지는 하루에 자연식 기준 체중의 2~4%, 건식 사료는 체중에 따라 1~4컵이 적정량입니다(예: 4.5kg는 약 반 컵, 32kg는 3~4컵). 대사 요구량을 초과하면 위 팽창과 비만으로 이어집니다.'
+    },
+    it: {
+      question: 'Quanta quantità di cibo può mangiare un cane al giorno in modo sicuro?',
+      shortAnswer: 'Un cane dovrebbe consumare tra il 2% e il 4% del suo peso corporeo in cibo fresco ogni giorno, oppure da 1 a 4 tazze di crocchette a seconda della taglia (es.: 1/2 tazza per 4,5 kg, 3-4 tazze per 32 kg). Superare il fabbisogno metabolico causa dilatazione gastrica e obesità.'
+    }
+  },
+
+  'what-to-feed-a-dog-daily': {
+    es: {
+      question: '¿Qué darle de comer a un perro a diario para una salud óptima?',
+      shortAnswer: 'La alimentación diaria debe incluir carnes magras (pollo, pavo, ternera, cordero), vísceras (hígado), grasas saludables (aceite de pescado salvaje), fibra suave (calabaza, verduras de hoja verde) y el calcio y minerales esenciales necesarios.'
+    },
+    ja: {
+      question: '最適な健康を維持するために犬に毎日与えるべき食事は何ですか？',
+      shortAnswer: '毎日の食事には、赤身の良質な肉類（鶏・七面鳥・牛・羊）、内臓肉（肝臓）、健康的な脂質（野生のフィッシュオイル）、消化しやすい食物繊維（カボチャ・葉物野菜）、そして不可欠なカルシウムとミネラルを含めることが推奨されます。'
+    },
+    fr: {
+      question: 'Que donner à manger à un chien chaque jour pour une santé optimale ?',
+      shortAnswer: 'L\'alimentation quotidienne doit inclure des viandes maigres (poulet, dinde, bœuf, agneau), des abats (foie), des graisses saines (huile de poisson sauvage), des fibres digestibles (courge, légumes à feuilles vertes) et le calcium et minéraux essentiels.'
+    },
+    de: {
+      question: 'Was sollte man einem Hund täglich für optimale Gesundheit geben?',
+      shortAnswer: 'Die tägliche Ernährung sollte mageres Fleisch (Huhn, Pute, Rind, Lamm), Innereien (Leber), gesunde Fette (Wildlachsöl), verdauliche Ballaststoffe (Kürbis, Blattgemüse) sowie essenzielles Kalzium und Mineralien enthalten.'
+    },
+    pt: {
+      question: 'O que dar de comer para um cachorro todos os dias para saúde ideal?',
+      shortAnswer: 'A alimentação diária deve incluir carnes magras (frango, peru, carne bovina, cordeiro), vísceras (fígado), gorduras saudáveis (óleo de peixe selvagem), fibras suaves (abóbora, verduras de folha) e o cálcio e minerais essenciais.'
+    },
+    ko: {
+      question: '최적의 건강을 위해 강아지에게 매일 무엇을 먹여야 하나요?',
+      shortAnswer: '매일 식단에는 살코기(닭·칠면조·소·양), 내장육(간), 건강한 지방(야생 어유), 소화하기 좋은 섬유질(단호박·잎채소), 그리고 필수 칼슘과 미네랄이 포함되어야 합니다.'
+    },
+    it: {
+      question: 'Cosa dare da mangiare a un cane ogni giorno per una salute ottimale?',
+      shortAnswer: 'L\'alimentazione quotidiana deve includere carni magre (pollo, tacchino, manzo, agnello), frattaglie (fegato), grassi sani (olio di pesce selvatico), fibre digestibili (zucca, verdure a foglia) e il calcio e i minerali essenziali.'
+    }
+  },
+
+  'how-many-hours-should-my-dog-eat': {
+    es: {
+      question: '¿Con cuántas horas de diferencia debe comer mi perro?',
+      shortAnswer: 'Los perros adultos deben comer dos veces al día con aproximadamente 10 a 12 horas de intervalo (p.ej. 7:00 y 18:00). Los cachorros menores de 6 meses necesitan tres comidas al día cada 6-8 horas para mantener el crecimiento metabólico y prevenir la hipoglucemia.'
+    },
+    ja: {
+      question: '犬の食事は何時間おきに与えるべきですか？',
+      shortAnswer: '成犬は1日2回、約10〜12時間間隔で給餌するのが理想です（例：午前7時と午後6時）。生後6ヶ月未満の子犬は代謝成長を維持し低血糖を防ぐため、6〜8時間おきに1日3回の給餌が必要です。'
+    },
+    fr: {
+      question: 'Combien d\'heures doivent s\'écouler entre les repas de mon chien ?',
+      shortAnswer: 'Les chiens adultes doivent manger deux fois par jour avec environ 10 à 12 heures d\'intervalle (par exemple 7h00 et 18h00). Les chiots de moins de 6 mois ont besoin de trois repas par jour, toutes les 6 à 8 heures, pour maintenir leur croissance métabolique et prévenir l\'hypoglycémie.'
+    },
+    de: {
+      question: 'Wie viele Stunden Abstand sollten zwischen den Mahlzeiten meines Hundes liegen?',
+      shortAnswer: 'Ausgewachsene Hunde sollten zweimal täglich im Abstand von etwa 10 bis 12 Stunden gefüttert werden (z. B. 7:00 und 18:00 Uhr). Welpen unter 6 Monaten benötigen drei Mahlzeiten täglich im 6- bis 8-Stunden-Rhythmus, um Wachstum und Blutzucker stabil zu halten.'
+    },
+    pt: {
+      question: 'Com quantas horas de intervalo meu cachorro deve se alimentar?',
+      shortAnswer: 'Cães adultos devem comer duas vezes ao dia com aproximadamente 10 a 12 horas de intervalo (ex.: 7h00 e 18h00). Filhotes com menos de 6 meses precisam de três refeições diárias a cada 6-8 horas para sustentar o crescimento metabólico e prevenir hipoglicemia.'
+    },
+    ko: {
+      question: '강아지 식사 간격은 몇 시간이 적절한가요?',
+      shortAnswer: '성견은 하루 2회, 약 10~12시간 간격으로 식사하는 것이 이상적입니다(예: 오전 7시와 오후 6시). 생후 6개월 미만의 강아지는 대사 성장을 유지하고 저혈당을 예방하기 위해 6~8시간 간격으로 하루 3회 식사가 필요합니다.'
+    },
+    it: {
+      question: 'Con quante ore di intervallo dovrebbe mangiare il mio cane?',
+      shortAnswer: 'I cani adulti dovrebbero mangiare due volte al giorno con circa 10-12 ore di intervallo (es. 7:00 e 18:00). I cuccioli sotto i 6 mesi necessitano di tre pasti al giorno ogni 6-8 ore per sostenere la crescita metabolica e prevenire l\'ipoglicemia.'
+    }
+  },
+
+  'what-is-a-perfect-meal-for-a-dog': {
+    es: {
+      question: '¿Cuál es la comida perfecta para un perro?',
+      shortAnswer: 'Una comida perfecta contiene 60-70% de carne magra, 10% de vísceras (hígado y corazón), 15% de verduras ricas en fibra (calabaza ecológica y brócoli al vapor), 2% de aceite de salmón salvaje y una proporción de calcio/fósforo equilibrada con cáscara de huevo molida.'
+    },
+    ja: {
+      question: '犬にとって「完璧な食事」とはどのようなものですか？',
+      shortAnswer: '完璧な食事は、良質なタンパク質60〜70%（鶏・牛・鮭）、内臓5%（牛レバー）＋心臓5%（タウリン・CoQ10）、消化性野菜15%（有機カボチャ＋ブロッコリー蒸し）、野生のサーモンオイル2%（EPA/DHA）、そして卵殻パウダーによる天然カルシウム補給で構成されます。'
+    },
+    fr: {
+      question: 'Qu\'est-ce qu\'un repas parfait pour un chien ?',
+      shortAnswer: 'Un repas parfait contient 60-70% de viande maigre, 10% d\'abats (foie et cœur), 15% de légumes riches en fibres (courge bio et brocoli vapeur), 2% d\'huile de saumon sauvage et un ratio calcium/phosphore équilibré grâce à de la coquille d\'œuf finement broyée.'
+    },
+    de: {
+      question: 'Was ist eine perfekte Mahlzeit für einen Hund?',
+      shortAnswer: 'Eine perfekte Mahlzeit enthält 60–70% mageres Fleisch, 10% Innereien (Leber und Herz), 15% ballaststoffreiches Gemüse (Bio-Kürbis und gedünsteten Brokkoli), 2% Wildlachsöl und ein ausgewogenes Kalzium-Phosphor-Verhältnis durch fein gemahlenes Eierschalenpulver.'
+    },
+    pt: {
+      question: 'Qual é a refeição perfeita para um cachorro?',
+      shortAnswer: 'Uma refeição perfeita contém 60-70% de carne magra, 10% de vísceras (fígado e coração), 15% de vegetais ricos em fibras (abóbora orgânica e brócolis no vapor), 2% de óleo de salmão selvagem e proporção cálcio/fósforo equilibrada com casca de ovo moída.'
+    },
+    ko: {
+      question: '강아지를 위한 완벽한 식사 구성은 무엇인가요?',
+      shortAnswer: '완벽한 식사는 살코기 60~70%(닭·소·연어), 내장 10%(소 간 5% + 심장 5%), 섬유질 채소 15%(유기농 단호박 + 브로콜리 찜), 야생 연어 오일 2%, 그리고 난각가루를 통한 칼슘과 인 1.2:1 균형으로 구성됩니다.'
+    },
+    it: {
+      question: 'Cos\'è un pasto perfetto per un cane?',
+      shortAnswer: 'Un pasto perfetto contiene 60-70% di carne magra, 10% di frattaglie (fegato e cuore), 15% di verdure ricche di fibre (zucca bio e broccoli al vapore), 2% di olio di salmone selvatico e un rapporto calcio/fosforo equilibrato con guscio d\'uovo macinato finemente.'
+    }
+  },
+
+  'is-homemade-dog-food-healthy': {
+    es: {
+      question: '¿Es saludable la comida casera para perros?',
+      shortAnswer: 'La comida casera es extraordinariamente saludable —mejora el pelaje, la energía y la digestión— SOLO cuando está formulada según los estándares nutricionales NRC/AAFCO. Las dietas caseras desequilibradas (como pollo y arroz sin más) causan graves deficiencias de calcio, zinc y vitaminas.'
+    },
+    ja: {
+      question: '手作りドッグフードは犬の健康に本当に良いのですか？',
+      shortAnswer: 'NRC/AAFCO基準に基づいて正しく作られた手作り食は、被毛・エネルギー・消化を驚くほど改善します。しかし、UCデービス校の研究では市販のレシピの95%以上がカルシウム・亜鉛・ビタミンDに欠乏していることが判明しており、バランスが取れていない場合は重大な栄養欠乏を招きます。'
+    },
+    fr: {
+      question: 'La nourriture faite maison est-elle saine pour les chiens ?',
+      shortAnswer: 'La nourriture maison est extraordinairement saine — elle améliore le pelage, l\'énergie et la digestion — UNIQUEMENT lorsqu\'elle est formulée selon les normes NRC/AAFCO. Les régimes maison déséquilibrés (comme poulet et riz sans suppléments) provoquent de graves carences en calcium, zinc et vitamines.'
+    },
+    de: {
+      question: 'Ist selbst gekochtes Hundefutter gesund für Hunde?',
+      shortAnswer: 'Hausgemachtes Hundefutter ist außerordentlich gesund — es verbessert Fell, Energie und Verdauung — NUR wenn es nach NRC/AAFCO-Ernährungsstandards formuliert ist. Unausgewogene Heimrezepte (wie Hühnchen und Reis ohne Ergänzungen) verursachen schwere Kalzium-, Zink- und Vitaminmängel.'
+    },
+    pt: {
+      question: 'A comida caseira é saudável para cachorros?',
+      shortAnswer: 'A comida caseira é extraordinariamente saudável — melhora pelagem, energia e digestão — SOMENTE quando formulada segundo os padrões nutricionais NRC/AAFCO. Dietas caseiras desequilibradas (como frango e arroz sem suplementos) causam sérias deficiências de cálcio, zinco e vitaminas.'
+    },
+    ko: {
+      question: '강아지에게 수제 자연식이 건강에 좋은가요?',
+      shortAnswer: 'NRC/AAFCO 영양 기준에 맞게 올바르게 만든 자연식은 털 상태, 에너지, 소화를 극적으로 개선합니다. 단, UC Davis 연구에 따르면 인터넷에 유통되는 수제 레시피의 95% 이상이 칼슘·아연·비타민D가 결핍되어 있어, 균형을 맞추지 않으면 심각한 영양 결핍을 초래합니다.'
+    },
+    it: {
+      question: 'Il cibo fatto in casa è sano per i cani?',
+      shortAnswer: 'Il cibo casalingo è straordinariamente salutare — migliora il pelo, l\'energia e la digestione — SOLO quando formulato secondo gli standard nutrizionali NRC/AAFCO. Diete casalinghe sbilanciate (come pollo e riso senza integratori) causano gravi carenze di calcio, zinco e vitamine.'
+    }
+  },
+
+  'is-2-meals-a-day-enough-for-a-dog': {
+    es: {
+      question: '¿Es suficiente con 2 comidas al día para un perro?',
+      shortAnswer: 'Sí, 2 comidas al día es el estándar veterinario de oro para casi todos los perros adultos. Previene la acumulación de ácido gástrico, mantiene la energía estable y reduce significativamente el riesgo de síndrome de dilatación-vólvulo gástrico (GDV) en comparación con una sola comida al día.'
+    },
+    ja: {
+      question: '犬に1日2回の食事は十分ですか？',
+      shortAnswer: 'はい、成犬のほぼすべてにとって1日2食が獣医学的なゴールドスタンダードです。朝夕2食を守ることで胃酸の蓄積を防ぎ、エネルギーを安定させ、1日1食と比べて胃拡張捻転症候群（GDV）のリスクを大幅に低下させます。'
+    },
+    fr: {
+      question: '2 repas par jour sont-ils suffisants pour un chien ?',
+      shortAnswer: 'Oui, 2 repas par jour est la référence vétérinaire pour presque tous les chiens adultes. Cela prévient l\'accumulation d\'acide gastrique, maintient un niveau d\'énergie stable et réduit considérablement le risque de dilatation-torsion gastrique (GDV) par rapport à un seul repas quotidien.'
+    },
+    de: {
+      question: 'Sind 2 Mahlzeiten am Tag für einen Hund ausreichend?',
+      shortAnswer: 'Ja, zweimal täglich füttern ist der veterinärmedizinische Goldstandard für fast alle ausgewachsenen Hunde. Es verhindert Magensäureansammlungen, stabilisiert den Energiehaushalt und senkt das Risiko einer lebensbedrohlichen Magenüberblähung (GDV) im Vergleich zur Einmal-täglich-Fütterung erheblich.'
+    },
+    pt: {
+      question: '2 refeições por dia são suficientes para um cachorro?',
+      shortAnswer: 'Sim, 2 refeições por dia é o padrão veterinário de excelência para quase todos os cães adultos. Previne o acúmulo de ácido gástrico, mantém a energia estável e reduz significativamente o risco de síndrome de dilatação-vólvulo gástrico (GDV) em comparação com uma única refeição diária.'
+    },
+    ko: {
+      question: '강아지에게 하루 2끼 식사는 충분한가요?',
+      shortAnswer: '네, 성견 대부분에게 하루 2회 식사는 수의학적 황금 기준입니다. 위산 축적을 예방하고 에너지를 안정적으로 유지하며, 하루 1회 대량 급식에 비해 위염전(GDV) 위험을 크게 낮춥니다.'
+    },
+    it: {
+      question: '2 pasti al giorno sono sufficienti per un cane?',
+      shortAnswer: 'Sì, 2 pasti al giorno è lo standard veterinario di riferimento per quasi tutti i cani adulti. Previene l\'accumulo di acido gastrico, mantiene stabile il livello energetico e riduce significativamente il rischio di dilatazione-torsione gastrica (GDV) rispetto all\'unico pasto giornaliero.'
+    }
+  },
+
+  'what-should-top-3-ingredients-be-in-dog-food': {
+    es: {
+      question: '¿Cuáles deben ser los 3 primeros ingredientes en una comida para perros?',
+      shortAnswer: 'Los 3 primeros ingredientes de calidad deben ser: 1) una proteína animal completa específica (ej. "Pollo deshuesado", "Ternera"), 2) una harina o víscera proteica nombrada (ej. "Harina de pavo", "Hígado de ternera") y 3) un carbohidrato de bajo índice glucémico (batata, avena, calabaza).'
+    },
+    ja: {
+      question: 'ドッグフードの上位3つの原材料は何であるべきですか？',
+      shortAnswer: '品質の高いフードの上位3原材料は：1）具体的に記名された動物性タンパク質（例：「骨なしチキン」「牛肉」）、2）記名された濃縮タンパク質ミールまたは内臓（例：「チキンミール」「牛レバー」）、3）低GI炭水化物または野菜（さつまいも・オーツ麦・カボチャ）です。'
+    },
+    fr: {
+      question: 'Quels doivent être les 3 premiers ingrédients d\'un aliment pour chien ?',
+      shortAnswer: 'Les 3 premiers ingrédients de qualité doivent être : 1) une protéine animale entière nommée (ex. « Poulet désossé », « Bœuf »), 2) une farine protéique ou un abat nommé (ex. « Farine de dinde », « Foie de bœuf ») et 3) un glucide à faible index glycémique (patate douce, avoine, courge).'
+    },
+    de: {
+      question: 'Was sollten die drei Hauptzutaten im Hundefutter sein?',
+      shortAnswer: 'Qualitativ hochwertige erste drei Zutaten sind: 1) ein genau benanntes tierisches Vollprotein (z. B. „Entbeintes Hühnchen", „Rindfleisch"), 2) ein benanntes Proteinmehl oder ein Organ (z. B. „Putenmehl", „Rinderleber") und 3) ein blutzuckerstabilisierendes Kohlenhydrat (Süßkartoffel, Hafer, Kürbis).'
+    },
+    pt: {
+      question: 'Quais devem ser os 3 primeiros ingredientes de uma ração para cães?',
+      shortAnswer: 'Os 3 primeiros ingredientes de qualidade devem ser: 1) uma proteína animal inteira nomeada especificamente (ex. "Frango desossado", "Carne bovina"), 2) uma farinha proteica ou víscera nomeada (ex. "Farinha de peru", "Fígado bovino") e 3) um carboidrato de baixo índice glicêmico (batata-doce, aveia, abóbora).'
+    },
+    ko: {
+      question: '강아지 사료의 상위 3가지 원료는 무엇이어야 하나요?',
+      shortAnswer: '고품질 사료의 상위 3원료는: 1) 구체적으로 명시된 완전 동물성 단백질(예: "뼈를 바른 닭고기", "소고기"), 2) 명시된 단백질 분말 또는 내장(예: "칠면조 분말", "소 간"), 3) 저혈당 지수 탄수화물(고구마, 귀리, 단호박)이어야 합니다.'
+    },
+    it: {
+      question: 'Quali dovrebbero essere i 3 ingredienti principali in un cibo per cani?',
+      shortAnswer: 'I primi 3 ingredienti di qualità devono essere: 1) una proteina animale intera nominata specificamente (es. "Pollo disossato", "Manzo"), 2) una farina proteica o frattaglie nominate (es. "Farina di tacchino", "Fegato di manzo") e 3) un carboidrato a basso indice glicemico (patata dolce, avena, zucca).'
+    }
+  },
+
+  'what-is-the-7-7-7-rule-for-dogs': {
+    es: {
+      question: '¿Qué es la regla 7-7-7 para perros y el protocolo de transición de 7 días?',
+      shortAnswer: 'La regla 7-7-7 describe los hitos de adaptación de un perro adoptado (7 días para descomprimirse, 7 semanas para aprender rutinas, 7 meses para sentirse en casa). En nutrición, la regla de los 7 días es el protocolo veterinario para cambiar de alimento sin diarrea: 25%-50%-75%-100% de comida nueva en días sucesivos.'
+    },
+    ja: {
+      question: '犬の「7-7-7ルール」と7日間移行プロトコルとは何ですか？',
+      shortAnswer: '7-7-7ルールは新しく迎えた犬の適応マイルストーンを示します（7日間でストレス解消、7週間でルーティン習得、7ヶ月で完全に信頼関係確立）。栄養学では7日間移行プロトコルとして、新しいフードへの切り替えを25%→50%→75%→100%と段階的に行うことで下痢を防ぎます。'
+    },
+    fr: {
+      question: 'Qu\'est-ce que la règle 7-7-7 pour les chiens et le protocole de transition de 7 jours ?',
+      shortAnswer: 'La règle 7-7-7 décrit les étapes d\'adaptation d\'un chien nouvellement adopté (7 jours pour décompresser, 7 semaines pour apprendre les routines, 7 mois pour se sentir chez lui). En nutrition, la règle des 7 jours est le protocole pour changer d\'aliment sans diarrhée : 25%-50%-75%-100% progressivement.'
+    },
+    de: {
+      question: 'Was ist die 7-7-7-Regel für Hunde und das 7-Tage-Umstellungsprotokoll?',
+      shortAnswer: 'Die 7-7-7-Regel beschreibt Meilensteine bei der Eingewöhnung eines adoptierten Hundes (7 Tage Dekompression, 7 Wochen Routinelernen, 7 Monate vollständige Bindung). In der Ernährung beschreibt das 7-Tage-Protokoll die schrittweise Futterumstellung ohne Durchfall: 25% → 50% → 75% → 100% neues Futter.'
+    },
+    pt: {
+      question: 'O que é a regra 7-7-7 para cães e o protocolo de transição de 7 dias?',
+      shortAnswer: 'A regra 7-7-7 descreve marcos de adaptação de um cão adotado (7 dias para se descomprimir, 7 semanas para aprender rotinas, 7 meses para se sentir em casa). Em nutrição, a regra dos 7 dias é o protocolo para trocar de ração sem diarreia: 25%-50%-75%-100% em dias sucessivos.'
+    },
+    ko: {
+      question: '강아지의 \'7-7-7 법칙\'과 7일 식단 전환 프로토콜이란 무엇인가요?',
+      shortAnswer: '7-7-7 법칙은 입양된 강아지의 적응 이정표를 설명합니다(7일: 스트레스 해소, 7주: 루틴 학습, 7개월: 완전한 신뢰). 영양학에서는 설사 없이 새 사료로 전환하는 7일 프로토콜(25%→50%→75%→100%)을 의미합니다.'
+    },
+    it: {
+      question: 'Cos\'è la regola 7-7-7 per i cani e il protocollo di transizione di 7 giorni?',
+      shortAnswer: 'La regola 7-7-7 descrive le tappe di adattamento di un cane adottato (7 giorni per decomprimersi, 7 settimane per imparare le routine, 7 mesi per sentirsi a casa). In nutrizione, la regola dei 7 giorni è il protocollo per cambiare alimento senza diarrea: 25%-50%-75%-100% progressivamente.'
+    }
+  },
+
+  'what-are-the-top-5-healthiest-dog-food': {
+    es: {
+      question: '¿Cuáles son las 5 comidas para perros más saludables?',
+      shortAnswer: 'Las 5 mejores en 2026: 1) Comida fresca casera y equilibrada, 2) The Farmer\'s Dog / JustFoodForDogs, 3) Stella & Chewy\'s Freeze-Dried Raw, 4) Open Farm RawMix / Gently Cooked y 5) Orijen/Acana pienso alto en proteínas.'
+    },
+    ja: {
+      question: '最も健康的なドッグフードトップ5は何ですか？',
+      shortAnswer: '2026年のトップ5：1）自家製バランス手作り食、2）The Farmer\'s Dog / JustFoodForDogs、3）Stella & Chewy\'sフリーズドライ生食、4）Open Farm RawMix / Gently Cooked、5）Orijen / Acana 高タンパクドライキブル。'
+    },
+    fr: {
+      question: 'Quels sont les 5 aliments les plus sains pour les chiens ?',
+      shortAnswer: 'Le top 5 en 2026 : 1) Alimentation fraîche maison équilibrée, 2) The Farmer\'s Dog / JustFoodForDogs, 3) Stella & Chewy\'s Freeze-Dried Raw, 4) Open Farm RawMix / Gently Cooked et 5) Croquettes Orijen/Acana riches en protéines.'
+    },
+    de: {
+      question: 'Was sind die 5 gesündesten Hundefutter?',
+      shortAnswer: 'Top 5 in 2026: 1) Selbst zubereitetes ausgewogenes Frischfutter, 2) The Farmer\'s Dog / JustFoodForDogs, 3) Stella & Chewy\'s Freeze-Dried Raw, 4) Open Farm RawMix / Gently Cooked und 5) Orijen / Acana High-Protein-Trockenfutter.'
+    },
+    pt: {
+      question: 'Quais são os 5 alimentos mais saudáveis para cães?',
+      shortAnswer: 'Top 5 em 2026: 1) Comida fresca caseira equilibrada, 2) The Farmer\'s Dog / JustFoodForDogs, 3) Stella & Chewy\'s Freeze-Dried Raw, 4) Open Farm RawMix / Gently Cooked e 5) Crocchette Orijen/Acana ricas em proteínas.'
+    },
+    ko: {
+      question: '가장 건강한 강아지 사료 TOP 5는 무엇인가요?',
+      shortAnswer: '2026년 TOP 5: 1) 균형 잡힌 자가 제조 자연 화식, 2) The Farmer\'s Dog / JustFoodForDogs, 3) Stella & Chewy\'s 동결건조 생식, 4) Open Farm RawMix / Gently Cooked, 5) Orijen / Acana 고단백 건식 사료.'
+    },
+    it: {
+      question: 'Quali sono i 5 cibi più sani per i cani?',
+      shortAnswer: 'Top 5 nel 2026: 1) Cibo fresco casalingo equilibrato, 2) The Farmer\'s Dog / JustFoodForDogs, 3) Stella & Chewy\'s Freeze-Dried Raw, 4) Open Farm RawMix / Gently Cooked e 5) Crocchette Orijen/Acana ad alto contenuto proteico.'
+    }
+  },
+
+  'what-ingredient-to-avoid-in-dog-food': {
+    es: {
+      question: '¿Qué ingredientes hay que evitar en la comida para perros?',
+      shortAnswer: 'Evita BHA, BHT, etoxiquina, colorantes artificiales (Rojo 40, Amarillo 5), "subproductos cárnicos" genéricos, propilenglicol, jarabe de maíz con alto contenido en sodio y exceso de legumbres (guisantes/lentejas) vinculado a la miocardiopatía dilatada (DCM).'
+    },
+    ja: {
+      question: 'ドッグフードで避けるべき成分は何ですか？',
+      shortAnswer: 'BHA、BHT、エトキシキン、人工着色料（赤色40号、黄色5号）、「肉副産物」などの不特定原材料、プロピレングリコール、高ナトリウムのコーンシロップ、そして拡張型心筋症（DCM）と関連するマメ科植物（エンドウ豆・レンズ豆）の過剰使用を避けてください。'
+    },
+    fr: {
+      question: 'Quels ingrédients faut-il éviter dans les aliments pour chiens ?',
+      shortAnswer: 'Évitez BHA, BHT, éthoxyquine, colorants artificiels (Rouge 40, Jaune 5), "sous-produits carnés" génériques, propylène glycol, sirop de maïs riche en sodium et excès de légumineuses (pois/lentilles) associé à la cardiomyopathie dilatée (CMD).'
+    },
+    de: {
+      question: 'Welche Zutaten sollte man in Hundefutter meiden?',
+      shortAnswer: 'Meiden Sie BHA, BHT, Ethoxyquin, künstliche Farbstoffe (Rot 40, Gelb 5), generische „Fleisch-Nebenprodukte", Propylenglykol, zuckerreichen Maissirup und übermäßige Hülsenfrüchte (Erbsen/Linsen), die mit der dilatativen Kardiomyopathie (DCM) in Verbindung gebracht werden.'
+    },
+    pt: {
+      question: 'Quais ingredientes devem ser evitados na ração para cães?',
+      shortAnswer: 'Evite BHA, BHT, etoxiquina, corantes artificiais (Vermelho 40, Amarelo 5), "subprodutos de carne" genéricos, propilenoglicol, xarope de milho rico em sódio e excesso de leguminosas (ervilhas/lentilhas) relacionado à cardiomiopatia dilatada (DCM).'
+    },
+    ko: {
+      question: '강아지 사료에서 피해야 할 성분은 무엇인가요?',
+      shortAnswer: 'BHA, BHT, 에톡시퀸, 인공 색소(적색 40호, 황색 5호), 불특정 "육류 부산물", 프로필렌글리콜, 고나트륨 옥수수 시럽, 그리고 확장성 심근증(DCM)과 연관된 콩류(완두콩/렌틸콩) 과다 사용은 반드시 피해야 합니다.'
+    },
+    it: {
+      question: 'Quali ingredienti bisogna evitare nel cibo per cani?',
+      shortAnswer: 'Evita BHA, BHT, etossichina, coloranti artificiali (Rosso 40, Giallo 5), "sottoprodotti di carne" generici, glicole propilenico, sciroppo di mais ad alto contenuto di sodio e un eccesso di leguminose (piselli/lenticchie) associato alla cardiomiopatia dilatata (CMD).'
+    }
+  },
+
+  'what-is-the-dog-food-code-for': {
+    es: {
+      question: '¿Para qué sirve el código/lote de la comida para perros?',
+      shortAnswer: 'El código alfanumérico impreso en el saco es el número de lote de producción, el identificador de la planta y la fecha de caducidad. Es imprescindible para rastrear alertas de la FDA y verificar la frescura del producto.'
+    },
+    ja: {
+      question: 'ドッグフードのロットコード（製造番号）は何のためにありますか？',
+      shortAnswer: 'ペットフード袋に印字された英数字コードは、製造施設・生産ライン・製造日時・賞味期限を特定するためのバッチ番号です。FDAのリコール発生時に汚染ロットを特定する際に使用され、未開封フードの鮮度確認にも役立ちます。'
+    },
+    fr: {
+      question: 'À quoi sert le code/numéro de lot de la nourriture pour chien ?',
+      shortAnswer: 'Le code alphanumérique imprimé sur le sac est le numéro de lot de production, l\'identifiant de l\'usine et la date de péremption. Il est indispensable pour suivre les alertes de rappel FDA et vérifier la fraîcheur du produit.'
+    },
+    de: {
+      question: 'Wofür ist der Code / die Chargennummer auf Hundefutter?',
+      shortAnswer: 'Der auf der Verpackung aufgedruckte alphanumerische Code enthält Produktionsstapel-Nummer, Werksidentifikator und Mindesthaltbarkeitsdatum. Er ist unverzichtbar für die Rückverfolgung von FDA-Rückrufen und die Überprüfung der Produktfrische.'
+    },
+    pt: {
+      question: 'Para que serve o código/lote da ração para cães?',
+      shortAnswer: 'O código alfanumérico impresso na embalagem é o número do lote de produção, o identificador da fábrica e a data de validade. É indispensável para rastrear alertas de recall da FDA e verificar a frescura do produto.'
+    },
+    ko: {
+      question: '강아지 사료에 찍힌 제조번호(로트 코드)는 무슨 용도인가요?',
+      shortAnswer: '포장지에 인쇄된 영숫자 코드는 생산 배치 번호, 제조 공장 식별자, 유통기한 정보를 담고 있습니다. FDA 리콜 발생 시 오염 배치를 즉시 특정하고, 제품 신선도를 확인하는 데 필수입니다.'
+    },
+    it: {
+      question: 'A cosa serve il codice/lotto del cibo per cani?',
+      shortAnswer: 'Il codice alfanumerico stampato sulla confezione riporta il numero del lotto di produzione, l\'identificativo dello stabilimento e la data di scadenza. È indispensabile per tracciare i richiami FDA e verificare la freschezza del prodotto.'
+    }
+  },
+
+  'what-is-the-best-diet-for-dogs': {
+    es: {
+      question: '¿Cuál es la mejor dieta general para perros?',
+      shortAnswer: 'La mejor dieta canina es rica en humedad, alta en proteínas de origen animal con alimentos integrales (cocinados suavemente o crudos balanceados), con carne real, nutrición de órganos, calcio biodisponible, omega-3 marinos y antioxidantes vegetales.'
+    },
+    ja: {
+      question: '犬にとって最適な総合的な食事とは何ですか？',
+      shortAnswer: '科学研究が一貫して示す通り、高水分で高タンパクの全食品食（低温調理またはバランスの取れた生食）が最適です。本物の肉・内臓・生体利用可能なカルシウム・海洋オメガ3・植物性抗酸化成分で構成されます。'
+    },
+    fr: {
+      question: 'Quel est le meilleur régime alimentaire global pour les chiens ?',
+      shortAnswer: 'La meilleure alimentation canine est riche en humidité, à haute teneur en protéines animales et composée d\'aliments entiers (cuits à basse température ou crus et équilibrés), avec de la vraie viande, des abats, du calcium biodisponible, des oméga-3 marins et des antioxydants végétaux.'
+    },
+    de: {
+      question: 'Was ist die beste Gesamternährung für Hunde?',
+      shortAnswer: 'Die beste Hundeernährung ist feuchtigkeitsreich, proteinreich und besteht aus ganzen Lebensmitteln (schonend gegart oder ausgewogen roh): echtes Fleisch, Innereien, bioverfügbares Kalzium, marine Omega-3-Fettsäuren und pflanzliche Antioxidantien.'
+    },
+    pt: {
+      question: 'Qual é a melhor dieta geral para cães?',
+      shortAnswer: 'A melhor dieta canina é rica em umidade, com alta proteína de origem animal e alimentos integrais (cozidos suavemente ou crus e equilibrados), com carne real, nutrição de vísceras, cálcio biodisponível, ômega-3 marinhos e antioxidantes vegetais.'
+    },
+    ko: {
+      question: '강아지에게 가장 좋은 전반적인 식단은 무엇인가요?',
+      shortAnswer: '과학 연구가 일관되게 보여주는 최적의 식단은 수분이 풍부하고 고단백의 자연 식품식(저온 조리 또는 균형 잡힌 생식)입니다. 실제 육류, 내장 영양, 생체이용 가능한 칼슘, 해양 오메가-3, 식물성 항산화 성분으로 구성됩니다.'
+    },
+    it: {
+      question: 'Qual è la migliore dieta complessiva per i cani?',
+      shortAnswer: 'La migliore alimentazione canina è ricca di umidità, ad alto contenuto proteico animale e a base di alimenti integrali (cotti a bassa temperatura o crudi e bilanciati), con carne vera, frattaglie, calcio biodisponibile, omega-3 marini e antiossidanti vegetali.'
+    }
+  },
+
+  'what-is-the-best-natural-dog-food': {
+    es: {
+      question: '¿Cuál es la mejor comida natural para perros?',
+      shortAnswer: 'La mejor comida natural es comida fresca cocinada suavemente de calidad humana certificada USDA, o comida liofilizada cruda que utiliza ingredientes integrales no transgénicos sin potenciadores de sabor sintéticos, rellenos ni conservantes artificiales.'
+    },
+    ja: {
+      question: '最も優れた自然派ドッグフードとは何ですか？',
+      shortAnswer: 'USDA認定のヒューマングレードで低温調理されたフレッシュフード、または非GMO全食材を使用し合成香料・充填剤・人工保存料ゼロのフリーズドライ生食が最高水準の自然派フードです。'
+    },
+    fr: {
+      question: 'Quel est le meilleur aliment naturel pour chien ?',
+      shortAnswer: 'Le meilleur aliment naturel est une nourriture fraîche cuite à basse température de qualité humaine certifiée USDA, ou un aliment cru lyophilisé utilisant des ingrédients entiers non-OGM sans exhausteurs de goût synthétiques, charges ni conservateurs artificiels.'
+    },
+    de: {
+      question: 'Was ist das beste natürliche Hundefutter?',
+      shortAnswer: 'Das beste natürliche Hundefutter ist USDA-zertifiziertes, schonend gegartes Frischfutter in Humanqualität oder gefriergetrocknetes Rohfutter aus nicht-GVO-Vollzutaten, ohne synthetische Geschmacksverstärker, Füllstoffe oder künstliche Konservierungsmittel.'
+    },
+    pt: {
+      question: 'Qual é a melhor comida natural para cães?',
+      shortAnswer: 'O melhor alimento natural é comida fresca cozida suavemente de qualidade humana certificada USDA, ou alimento cru liofilizado que utiliza ingredientes integrais não transgênicos sem realçadores de sabor sintéticos, cargas artificiais ou conservantes.'
+    },
+    ko: {
+      question: '강아지에게 가장 좋은 자연 식품은 무엇인가요?',
+      shortAnswer: 'USDA 인증 인간 등급의 저온 조리 신선 식품, 또는 합성 향미증진제·충전재·인공 보존제 없이 Non-GMO 전성분을 사용한 동결건조 생식이 최고 수준의 자연 식품입니다.'
+    },
+    it: {
+      question: 'Qual è il miglior cibo naturale per cani?',
+      shortAnswer: 'Il miglior cibo naturale è un alimento fresco cotto delicatamente di qualità umana certificata USDA, oppure un cibo crudo liofilizzato a base di ingredienti integrali non-OGM, senza esaltatori di sapidità sintetici, riempitivi o conservanti artificiali.'
+    }
+  },
+
+  'what-does-spayed-neutered-intact-gender-mean-for-dogs': {
+    es: {
+      question: '¿Qué significa el estado reproductivo (castrado/esterilizado/entero) en los perros y por qué importa?',
+      shortAnswer: 'Los perros castrados o esterilizados queman aproximadamente un 10% menos de calorías en reposo debido a la reducción de hormonas gonadales reproductivas. Conocer el estado reproductivo de tu perro permite ajustar las porciones diarias para que mantenga un peso saludable sin acumular grasa corporal.'
+    },
+    ja: {
+      question: '犬の「去勢・避妊・未手術」とはどういう意味で、なぜ重要ですか？',
+      shortAnswer: '去勢・避妊された犬は性腺ホルモンが減少するため、安静時カロリー消費が約10%低下します。繁殖状態を把握することで、過剰な体脂肪蓄積なく理想体重を維持するために正確な日量と分量を調整できます。'
+    },
+    fr: {
+      question: 'Que signifie le statut reproducteur (castré/stérilisé/entier) chez le chien et pourquoi est-ce important ?',
+      shortAnswer: 'Les chiens castrés ou stérilisés brûlent environ 10% de calories au repos en moins, en raison de la réduction des hormones reproductives gonadales. Connaître le statut reproducteur de votre chien permet d\'ajuster les portions quotidiennes pour maintenir un poids sain sans accumulation de graisse.'
+    },
+    de: {
+      question: 'Was bedeutet der Fortpflanzungsstatus (kastriert/sterilisiert/intakt) beim Hund und warum ist er wichtig?',
+      shortAnswer: 'Kastrierte Hunde verbrennen in Ruhe etwa 10% weniger Kalorien, da die Gonadengeschlechtshormone wegfallen. Die Kenntnis des Fortpflanzungsstatus ermöglicht eine genaue Anpassung der Tagesportionen, damit der Hund ein gesundes Gewicht ohne übermäßige Körperfettansammlung hält.'
+    },
+    pt: {
+      question: 'O que significa o estado reprodutivo (castrado/esterilizado/inteiro) nos cães e por que importa?',
+      shortAnswer: 'Cães castrados ou esterilizados queimam cerca de 10% menos calorias em repouso devido à redução dos hormônios gonadais reprodutivos. Conhecer o estado reprodutivo do seu cão permite ajustar as porções diárias para que ele mantenha um peso saudável sem acumular gordura corporal.'
+    },
+    ko: {
+      question: '강아지의 중성화 여부(중성화 수컷/중성화 암컷/미중성화)가 무엇을 의미하고 왜 중요한가요?',
+      shortAnswer: '중성화된 강아지는 생식 성호르몬이 감소하여 안정 시 칼로리 소모가 약 10% 줄어듭니다. 중성화 여부를 파악하면 과도한 체지방 축적 없이 건강 체중을 유지하도록 하루 식사량과 칼로리를 정확히 조정할 수 있습니다.'
+    },
+    it: {
+      question: 'Cosa significa lo stato riproduttivo (castrato/sterilizzato/integro) nei cani e perché è importante?',
+      shortAnswer: 'I cani castrati o sterilizzati bruciano circa il 10% in meno di calorie a riposo, a causa della riduzione degli ormoni riproduttivi gonadici. Conoscere lo stato riproduttivo del tuo cane permette di regolare le porzioni giornaliere affinché mantenga un peso sano senza accumulare grasso.'
+    }
+  },
+
+  'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb': {
+    es: {
+      question: '¿Qué significan los términos nutricionales de la comida para perros? (RER, MER, BCS, DMB, Biodisponibilidad, Tipos craneales)',
+      shortAnswer: 'RER = Requerimiento de Energía en Reposo (70 × kg^0,75). MER = Requerimiento de Energía de Mantenimiento (RER × multiplicador de estilo de vida). BCS = Puntuación de Condición Corporal (escala de 1-9). DMB = Base de Materia Seca. Biodisponibilidad = porcentaje de un nutriente que el organismo absorbe y utiliza realmente.'
+    },
+    ja: {
+      question: 'ドッグフードの栄養用語の意味は？（RER、MER、BCS、DMB、生体利用能、頭蓋タイプ）',
+      shortAnswer: 'RER＝安静時エネルギー要求量（70×kg^0.75）。MER＝維持エネルギー要求量（RER×ライフスタイル係数）。BCS＝ボディコンディションスコア（1〜9スケール）。DMB＝乾物換算。生体利用能＝身体が実際に吸収・利用できる栄養素の割合。'
+    },
+    fr: {
+      question: 'Que signifient les termes nutritionnels de l\'alimentation canine ? (RER, MER, BCS, DMB, Biodisponibilité, Types crâniens)',
+      shortAnswer: 'RER = Besoins énergétiques au repos (70 × kg^0,75). MER = Besoins d\'entretien énergétique (RER × multiplicateur de mode de vie). BCS = Score de condition corporelle (échelle 1-9). DMB = Base de matière sèche. Biodisponibilité = pourcentage d\'un nutriment réellement absorbé et utilisé par l\'organisme.'
+    },
+    de: {
+      question: 'Was bedeuten die Ernährungsbegriffe beim Hundefutter? (RER, MER, BCS, DMB, Bioverfügbarkeit, Schädeltypen)',
+      shortAnswer: 'RER = Ruhenergiebedarf (70 × kg^0,75). MER = Erhaltungsenergiebedarf (RER × Lebensweise-Multiplikator). BCS = Körperkonditionsindex (Skala 1–9). DMB = Trockenmassebasis. Bioverfügbarkeit = Prozentsatz eines Nährstoffs, den der Körper tatsächlich absorbiert und nutzt.'
+    },
+    pt: {
+      question: 'O que significam os termos nutricionais da ração para cães? (RER, MER, BCS, DMB, Biodisponibilidade, Tipos cranianos)',
+      shortAnswer: 'RER = Requisito de Energia em Repouso (70 × kg^0,75). MER = Requisito de Energia de Manutenção (RER × multiplicador de estilo de vida). BCS = Escore de Condição Corporal (escala 1-9). DMB = Base de Matéria Seca. Biodisponibilidade = percentagem de um nutriente que o organismo absorve e utiliza de facto.'
+    },
+    ko: {
+      question: '강아지 사료의 영양 전문 용어는 무엇을 의미하나요? (RER, MER, BCS, DMB, 생체이용률, 두개골 유형)',
+      shortAnswer: 'RER = 안정 시 에너지 요구량(70×kg^0.75). MER = 유지 에너지 요구량(RER×생활 방식 계수). BCS = 신체충실지수(1~9 척도). DMB = 건물 기준. 생체이용률 = 실제로 신체가 흡수·활용할 수 있는 영양소의 비율.'
+    },
+    it: {
+      question: 'Cosa significano i termini nutrizionali del cibo per cani? (RER, MER, BCS, DMB, Biodisponibilità, Tipi cranici)',
+      shortAnswer: 'RER = Fabbisogno Energetico a Riposo (70 × kg^0,75). MER = Fabbisogno Energetico di Mantenimento (RER × moltiplicatore stile di vita). BCS = Indice di Condizione Corporea (scala 1-9). DMB = Base Sostanza Secca. Biodisponibilità = percentuale di un nutriente effettivamente assorbita e utilizzata dall\'organismo.'
+    }
+  },
+
+  'what-are-dog-food-planner-website-terms-and-disclaimers': {
+    es: {
+      question: '¿Qué significan los términos legales, avisos veterinarios y política de privacidad de DogFoodPlanner.com?',
+      shortAnswer: 'DogFoodPlanner.com ofrece estimaciones nutricionales educativas de código abierto, no asesoramiento veterinario médico. Todos los cálculos están basados en estándares NRC/AAFCO. Nuestros términos detallan las limitaciones algorítmicas y nuestra política de privacidad garantiza cero cookies de rastreo y procesamiento de datos solo del lado del cliente.'
+    },
+    ja: {
+      question: 'DogFoodPlanner.comの利用規約・獣医師免責事項・プライバシーポリシーはどういう意味ですか？',
+      shortAnswer: 'DogFoodPlanner.comはNRC/AAFCO標準に基づくオープンソースの教育的栄養推定値を提供するものであり、獣医師の医学的アドバイスの代替ではありません。利用規約はアルゴリズムの制限を明示し、プライバシーポリシーはトラッキングCookieゼロ・クライアントサイド処理のみを保証します。'
+    },
+    fr: {
+      question: 'Que signifient les conditions d\'utilisation, les avertissements vétérinaires et la politique de confidentialité de DogFoodPlanner.com ?',
+      shortAnswer: 'DogFoodPlanner.com fournit des estimations nutritionnelles éducatives open-source, et non des conseils médicaux vétérinaires. Tous les calculs sont fondés sur les normes NRC/AAFCO. Nos conditions détaillent les limites algorithmiques et notre politique de confidentialité garantit zéro cookie de traçage et un traitement côté client uniquement.'
+    },
+    de: {
+      question: 'Was bedeuten die Nutzungsbedingungen, der tierärztliche Haftungsausschluss und die Datenschutzrichtlinie von DogFoodPlanner.com?',
+      shortAnswer: 'DogFoodPlanner.com stellt Open-Source-Bildungsschätzungen zur Tierernährung bereit, keine tierärztliche medizinische Beratung. Alle Berechnungen basieren auf NRC/AAFCO-Standards. Unsere Nutzungsbedingungen erläutern algorithmische Grenzen, und unsere Datenschutzrichtlinie garantiert null Tracking-Cookies und rein clientseitige Verarbeitung.'
+    },
+    pt: {
+      question: 'O que significam os termos legais, isenções veterinárias e política de privacidade do DogFoodPlanner.com?',
+      shortAnswer: 'O DogFoodPlanner.com fornece estimativas nutricionais educativas de código aberto, não aconselhamento médico veterinário. Todos os cálculos são baseados nos padrões NRC/AAFCO. Nossos termos detalham as limitações algorítmicas e nossa política de privacidade garante zero cookies de rastreamento e processamento apenas do lado do cliente.'
+    },
+    ko: {
+      question: 'DogFoodPlanner.com의 이용약관, 수의학 면책 조항, 개인정보 보호정책은 무엇을 의미하나요?',
+      shortAnswer: 'DogFoodPlanner.com은 NRC/AAFCO 기준에 기반한 오픈소스 교육용 영양 추정치를 제공하며, 수의사의 의학적 조언을 대체하지 않습니다. 이용약관은 알고리즘의 한계를 명시하고, 개인정보 보호정책은 추적 쿠키 없음과 클라이언트 측 처리만을 보장합니다.'
+    },
+    it: {
+      question: 'Cosa significano i termini di servizio, le avvertenze veterinarie e la privacy policy di DogFoodPlanner.com?',
+      shortAnswer: 'DogFoodPlanner.com fornisce stime nutrizionali educative open-source, non consulenze mediche veterinarie. Tutti i calcoli si basano sugli standard NRC/AAFCO. I nostri termini descrivono i limiti algoritmici e la nostra privacy policy garantisce zero cookie di tracciamento e solo elaborazione lato client.'
     }
   }
 };

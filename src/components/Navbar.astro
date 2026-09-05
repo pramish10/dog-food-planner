@@ -17,138 +17,131 @@ const isBrandsActive = cleanPath.startsWith('/dog-food-brands');
 const isFaqActive = cleanPath.startsWith('/faq');
 const isAllergiesActive = cleanPath.startsWith('/dog-food-allergies');
 const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
+const isHomeActive = cleanPath === '/';
 ---
 
 <header class="sticky top-0 z-50 bg-[#fafafa]/95 dark:bg-[#0d0d0d]/95 backdrop-blur-md border-b border-[#ebebeb] dark:border-[#262626] transition-colors pt-[env(safe-area-inset-top)]">
-  <div class="max-w-6xl mx-auto w-full min-w-0 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-6 h-14 sm:h-16 flex items-center gap-2 sm:gap-3">
+
+  <!-- ── Main row ─────────────────────────────────────────────────── -->
+  <div class="max-w-6xl mx-auto w-full min-w-0 pl-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))] sm:px-6 h-12 sm:h-14 lg:h-16 flex items-center gap-2 sm:gap-3">
+
     <!-- Brand Logo -->
-    <a href={translatePath('/')} class="flex items-center gap-2 group min-w-0 flex-1 overflow-hidden lg:flex-none">
-      <Logo class="size-7 sm:size-8 shadow-sm group-hover:scale-105 transition-transform" />
+    <a href={translatePath('/')} class="flex items-center gap-1.5 sm:gap-2 group shrink-0">
+      <Logo class="size-6 sm:size-7 lg:size-8 shadow-sm group-hover:scale-105 transition-transform" />
       <div class="flex flex-col min-w-0 justify-center leading-none">
-        <div class="flex items-center gap-1.5 min-w-0">
-          <span class="font-semibold text-[13px] sm:text-base text-[#171717] dark:text-[#ededed] tracking-tight truncate">{t('nav.brand')}</span>
+        <div class="flex items-center gap-1 min-w-0">
+          <!-- On mobile: show a compact "DFP" abbreviation; sm+ show full brand name -->
+          <span class="font-semibold text-[11px] xs:text-[12px] sm:text-[13px] lg:text-base text-[#171717] dark:text-[#ededed] tracking-tight whitespace-nowrap">
+            <span class="inline sm:hidden">DFP</span>
+            <span class="hidden sm:inline">{t('nav.brand')}</span>
+          </span>
           <span class="hidden sm:inline-flex font-mono text-[9px] sm:text-[10px] uppercase font-semibold px-1.5 py-0.5 rounded bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#4d4d4d] dark:text-[#a1a1a1] border border-[#ebebeb] dark:border-[#2e2e2e] shrink-0">{t('nav.badge')}</span>
         </div>
         <span class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono mt-0.5 hidden md:block truncate">{t('nav.subbrand')}</span>
       </div>
     </a>
 
-    <!-- Desktop Nav Links with persistent active tab background in light and dark mode -->
-    <nav class="hidden lg:flex items-center gap-1">
-      <!-- Best Dog Food Tab -->
-      <a 
-        href={translatePath('/best-dog-food')} 
+    <!-- Desktop Nav Links (lg+) -->
+    <nav class="hidden lg:flex items-center gap-1 ml-2">
+      <a
+        href={translatePath('/best-dog-food')}
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150",
-          isBestFoodActive 
-            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs" 
+          isBestFoodActive
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs"
             : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] font-medium"
         ]}
         aria-current={isBestFoodActive ? 'page' : undefined}
-      >
-        {t('nav.bestDogFood')}
-      </a>
+      >{t('nav.bestDogFood')}</a>
 
-      <!-- Homemade Recipes Tab -->
-      <a 
-        href={translatePath('/dog-food-recipes')} 
+      <a
+        href={translatePath('/dog-food-recipes')}
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150",
-          isRecipesActive 
-            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs" 
+          isRecipesActive
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs"
             : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] font-medium"
         ]}
         aria-current={isRecipesActive ? 'page' : undefined}
-      >
-        {t('nav.recipes')}
-      </a>
+      >{t('nav.recipes')}</a>
 
-      <!-- Toxic Foods Tab -->
-      <a 
-        href={translatePath('/toxic-foods')} 
+      <a
+        href={translatePath('/toxic-foods')}
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150",
-          isToxicFoodsActive 
-            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs" 
+          isToxicFoodsActive
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs"
             : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] font-medium"
         ]}
         aria-current={isToxicFoodsActive ? 'page' : undefined}
-      >
-        {t('nav.toxicFoods')}
-      </a>
+      >{t('nav.toxicFoods')}</a>
 
-      <!-- Brand Reviews Tab -->
-      <a 
-        href={translatePath('/dog-food-brands')} 
+      <a
+        href={translatePath('/dog-food-brands')}
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150",
-          isBrandsActive 
-            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs" 
+          isBrandsActive
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs"
             : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] font-medium"
         ]}
         aria-current={isBrandsActive ? 'page' : undefined}
-      >
-        {t('nav.brands')}
-      </a>
+      >{t('nav.brands')}</a>
 
-      <!-- FAQs Tab -->
-      <a 
-        href={translatePath('/faq')} 
+      <a
+        href={translatePath('/faq')}
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150 flex items-center gap-1",
-          isFaqActive 
-            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs" 
+          isFaqActive
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-white font-semibold shadow-2xs"
             : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] font-medium"
         ]}
         aria-current={isFaqActive ? 'page' : undefined}
       >
         <span>{t('nav.faqs')}</span>
-        <span class="px-1.5 py-0.2 bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 rounded text-[10px] font-mono font-bold">40+</span>
+        <span class="px-1.5 bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 rounded text-[10px] font-mono font-bold">40+</span>
       </a>
     </nav>
 
-    <!-- Header Actions: Language Switcher, Theme Toggle, CTA & Mobile Menu Button -->
-    <div class="flex items-center gap-1.5 sm:gap-2 shrink-0 ml-auto">
-      
-      <!-- Multi-language Switcher (desktop only; compact picker lives in the mobile menu) -->
+    <!-- Right-side actions -->
+    <div class="flex items-center gap-1 sm:gap-1.5 lg:gap-2 shrink-0 ml-auto">
+
+      <!-- Language Switcher — desktop only -->
       <div class="hidden lg:block">
         <LanguagePicker variant="navbar" />
       </div>
 
-      <!-- Light / Dark Mode Toggle Button -->
-      <button 
-        type="button" 
+      <!-- Theme Toggle -->
+      <button
+        type="button"
         id="theme-toggle-btn"
         aria-label="Toggle light and dark mode"
-        class="theme-toggle inline-flex items-center justify-center size-9 sm:size-9 p-2 text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] transition-all cursor-pointer shadow-2xs"
+        class="theme-toggle inline-flex items-center justify-center size-8 sm:size-9 p-1.5 text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] transition-all cursor-pointer shadow-2xs"
       >
-        <!-- Sun Icon (shown in dark mode) -->
-        <svg class="theme-sun-icon w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="theme-sun-icon w-3.5 h-3.5 sm:w-4 sm:h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="4"></circle>
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
         </svg>
-        <!-- Moon Icon (shown in light mode) -->
-        <svg class="theme-moon-icon w-4 h-4 block dark:hidden text-[#171717]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="theme-moon-icon w-3.5 h-3.5 sm:w-4 sm:h-4 block dark:hidden text-[#171717]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
         </svg>
       </button>
 
-      <!-- Plan Bowl CTA (hidden on small screens so the menu button stays visible) -->
-      <a href={translatePath('/#planner-section')} class="hidden md:inline-flex items-center justify-center text-xs font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] active:scale-[0.98] transition-all px-3.5 sm:px-4 py-2 rounded-full shadow-sm">
+      <!-- Plan Bowl CTA — md+ only -->
+      <a href={translatePath('/#planner-section')} class="hidden md:inline-flex items-center justify-center text-xs font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] active:scale-[0.98] transition-all px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm whitespace-nowrap">
         <span>{t('nav.planBowl')}</span>
-        <svg class="w-3 h-3 ml-1 sm:inline-block text-[#50e3c2] dark:text-[#0070f3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="w-3 h-3 ml-1 text-[#50e3c2] dark:text-[#0070f3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
         </svg>
       </a>
 
-      <!-- Mobile Hamburger Button -->
-      <button 
-        type="button" 
+      <!-- Hamburger — below lg -->
+      <button
+        type="button"
         id="mobile-menu-toggle"
         aria-label="Toggle navigation menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        class="lg:hidden inline-flex items-center justify-center size-9 sm:size-10 p-2 text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1f1f1f] rounded-md transition-colors border border-[#ebebeb] dark:border-[#2e2e2e]"
+        class="lg:hidden inline-flex items-center justify-center size-8 sm:size-9 p-1.5 text-[#171717] dark:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1f1f1f] rounded-md transition-colors border border-[#ebebeb] dark:border-[#2e2e2e]"
       >
         <svg id="hamburger-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
@@ -160,142 +153,217 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     </div>
   </div>
 
-  <!-- Mobile Dropdown Navigation Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#121212] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-4 py-3 space-y-1 shadow-lg max-h-[min(calc(100dvh-3.5rem),32rem)] overflow-y-auto overscroll-contain pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-    <a 
-      href={translatePath('/#planner-section')} 
-      class="mobile-nav-link md:hidden flex items-center justify-center gap-1.5 mx-0 mb-2 min-h-11 px-3 py-2.5 text-sm font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] rounded-full"
+  <!-- ── Mobile quick-nav strip (visible on < lg, hidden when menu is open) ── -->
+  <div id="mobile-quicknav" class="lg:hidden border-t border-[#ebebeb] dark:border-[#262626] bg-[#fafafa]/95 dark:bg-[#0d0d0d]/95">
+    <div class="flex overflow-x-auto scrollbar-hide gap-1 pl-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))] py-1.5" style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;">
+      <a
+        href={translatePath('/#planner-section')}
+        class:list={[
+          "quicknav-link flex-none text-[11px] font-semibold px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150 scroll-snap-align-start",
+          isHomeActive || isCalculatorActive
+            ? "bg-[#171717] dark:bg-white text-white dark:text-[#171717]"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
+        ]}
+      >🐕 {t('nav.calculator')}</a>
+
+      <a
+        href={translatePath('/best-dog-food')}
+        class:list={[
+          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
+          isBestFoodActive
+            ? "bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
+        ]}
+        aria-current={isBestFoodActive ? 'page' : undefined}
+      >🏆 {t('nav.bestDogFood')}</a>
+
+      <a
+        href={translatePath('/dog-food-recipes')}
+        class:list={[
+          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
+          isRecipesActive
+            ? "bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
+        ]}
+        aria-current={isRecipesActive ? 'page' : undefined}
+      >🍲 {t('nav.recipes')}</a>
+
+      <a
+        href={translatePath('/dog-food-allergies')}
+        class:list={[
+          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
+          isAllergiesActive
+            ? "bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
+        ]}
+        aria-current={isAllergiesActive ? 'page' : undefined}
+      >🛡️ {t('nav.allergies')}</a>
+
+      <a
+        href={translatePath('/toxic-foods')}
+        class:list={[
+          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
+          isToxicFoodsActive
+            ? "bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
+        ]}
+        aria-current={isToxicFoodsActive ? 'page' : undefined}
+      >☠ {t('nav.toxicFoods')}</a>
+
+      <a
+        href={translatePath('/dog-food-brands')}
+        class:list={[
+          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
+          isBrandsActive
+            ? "bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
+        ]}
+        aria-current={isBrandsActive ? 'page' : undefined}
+      >⭐ {t('nav.brands')}</a>
+
+      <a
+        href={translatePath('/faq')}
+        class:list={[
+          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150 flex items-center gap-1",
+          isFaqActive
+            ? "bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
+        ]}
+        aria-current={isFaqActive ? 'page' : undefined}
+      >❓ {t('nav.faqs')} <span class="px-1 bg-blue-100 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 rounded text-[9px] font-mono font-bold">40+</span></a>
+    </div>
+  </div>
+
+  <!-- ── Mobile full-menu dropdown ──────────────────────────────────── -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#121212] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] py-3 space-y-1 shadow-lg max-h-[min(calc(100dvh-6rem),32rem)] overflow-y-auto overscroll-contain pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+    <!-- Plan Bowl CTA -->
+    <a
+      href={translatePath('/#planner-section')}
+      class="mobile-nav-link flex items-center justify-center gap-1.5 mb-2 min-h-11 px-3 py-2.5 text-sm font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] rounded-full"
     >
       {t('nav.planBowl')}
       <svg class="w-3 h-3 text-[#50e3c2] dark:text-[#0070f3]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
       </svg>
     </a>
-    <a 
-      href={translatePath('/#planner-section')} 
+
+    <a
+      href={translatePath('/#planner-section')}
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-md transition-colors",
-        cleanPath === '/' || isCalculatorActive
+        isHomeActive || isCalculatorActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
       ]}
-    >
-      🐕 {t('nav.calculator')}
-    </a>
-    <a 
-      href={translatePath('/best-dog-food')} 
+    >🐕 {t('nav.calculator')}</a>
+
+    <a
+      href={translatePath('/best-dog-food')}
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-md transition-colors",
         isBestFoodActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
       ]}
-    >
-      🏆 {t('nav.bestDogFood')}
-    </a>
-    <a 
-      href={translatePath('/dog-food-recipes')} 
+    >🏆 {t('nav.bestDogFood')}</a>
+
+    <a
+      href={translatePath('/dog-food-recipes')}
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-md transition-colors",
         isRecipesActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
       ]}
-    >
-      🍲 {t('nav.recipes')}
-    </a>
-    <a 
-      href={translatePath('/dog-food-allergies')} 
+    >🍲 {t('nav.recipes')}</a>
+
+    <a
+      href={translatePath('/dog-food-allergies')}
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-md transition-colors",
         isAllergiesActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
       ]}
-    >
-      🛡️ {t('nav.allergies')}
-    </a>
-    <a 
-      href={translatePath('/toxic-foods')} 
+    >🛡️ {t('nav.allergies')}</a>
+
+    <a
+      href={translatePath('/toxic-foods')}
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-md transition-colors",
         isToxicFoodsActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
       ]}
-    >
-      ☠ {t('nav.toxicFoods')}
-    </a>
-    <a 
-      href={translatePath('/dog-food-brands')} 
+    >☠ {t('nav.toxicFoods')}</a>
+
+    <a
+      href={translatePath('/dog-food-brands')}
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-md transition-colors",
         isBrandsActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
       ]}
-    >
-      ⭐ {t('nav.brands')}
-    </a>
-    <a 
-      href={translatePath('/faq')} 
+    >⭐ {t('nav.brands')}</a>
+
+    <a
+      href={translatePath('/faq')}
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-md transition-colors",
         isFaqActive
           ? "bg-[#f2f2f2] dark:bg-[#1f1f1f] text-[#171717] dark:text-white font-semibold"
           : "font-medium text-[#171717] dark:text-[#ededed] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]"
       ]}
-    >
-      ❓ {t('nav.faqs')} Hub
-    </a>
+    >❓ {t('nav.faqs')} Hub</a>
 
-    <!-- Mobile Language Switcher Row -->
+    <!-- Mobile Language Switcher -->
     <div class="pt-3 border-t border-[#ebebeb] dark:border-[#262626]">
       <LanguagePicker variant="compact" />
     </div>
   </div>
+
 </header>
 
 <script is:inline>
-  // Setup theme toggle & mobile menu
   function setupNavbar() {
-    // Mobile menu toggle
     const toggleBtn = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('mobile-menu');
+    const quicknav = document.getElementById('mobile-quicknav');
     const hamburger = document.getElementById('hamburger-icon');
     const close = document.getElementById('close-icon');
     const navLinks = document.querySelectorAll('.mobile-nav-link');
 
+    function openMenu() {
+      menu?.classList.remove('hidden');
+      quicknav?.classList.add('hidden');
+      hamburger?.classList.add('hidden');
+      close?.classList.remove('hidden');
+      toggleBtn?.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMenu() {
+      menu?.classList.add('hidden');
+      quicknav?.classList.remove('hidden');
+      hamburger?.classList.remove('hidden');
+      close?.classList.add('hidden');
+      toggleBtn?.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
+    }
+
     toggleBtn?.addEventListener('click', () => {
-      const isHidden = menu?.classList.contains('hidden');
-      if (isHidden) {
-        menu?.classList.remove('hidden');
-        hamburger?.classList.add('hidden');
-        close?.classList.remove('hidden');
-        toggleBtn?.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('overflow-hidden');
-      } else {
-        menu?.classList.add('hidden');
-        hamburger?.classList.remove('hidden');
-        close?.classList.add('hidden');
-        toggleBtn?.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('overflow-hidden');
-      }
+      menu?.classList.contains('hidden') ? openMenu() : closeMenu();
     });
 
-    navLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        menu?.classList.add('hidden');
-        hamburger?.classList.remove('hidden');
-        close?.classList.add('hidden');
-        toggleBtn?.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('overflow-hidden');
-      });
-    });
+    navLinks.forEach((link) => link.addEventListener('click', closeMenu));
 
-    // Dark / Light Mode Toggle Buttons
-    const themeButtons = document.querySelectorAll('.theme-toggle');
-    themeButtons.forEach((btn) => {
+    // Scroll active quicknav pill into view on page load
+    const activeQuickLink = document.querySelector('.quicknav-link[aria-current="page"]');
+    activeQuickLink?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'instant' });
+
+    // Theme toggle
+    document.querySelectorAll('.theme-toggle').forEach((btn) => {
       btn.addEventListener('click', () => {
         const isDark = document.documentElement.classList.contains('dark');
         if (isDark) {
@@ -309,7 +377,17 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
     });
   }
 
-  // Run on initial load and View Transitions
   setupNavbar();
   document.addEventListener('astro:page-load', setupNavbar);
 </script>
+
+<style>
+  /* Hide scrollbar on quick-nav strip while keeping scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
