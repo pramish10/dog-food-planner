@@ -7,69 +7,69 @@ const lang = getLangFromUrl(Astro.url);
 const p = plannerTranslations[lang] || plannerTranslations.en;
 ---
 
-<section id="results-section" class="hidden py-8 sm:py-14 bg-[#fafafa] dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]" data-lang={lang}>
+<section id="results-section" class="hidden py-8 sm:py-14 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0e0cc] dark:border-[#2a1f14]" data-lang={lang}>
   <div class="max-w-xl mx-auto px-4 sm:px-6">
 
     <!-- Results Header -->
     <div class="mb-5">
-      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase font-semibold text-[#10b981] bg-[#10b981]/10 px-3 py-1 rounded-full mb-3">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse"></span>
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase font-semibold text-[#16a34a] bg-[#22c55e]/10 px-3 py-1 rounded-full mb-3">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse"></span>
         {p.readyBadge}
       </div>
-      <h2 class="text-2xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight">
-        {p.mealPlanFor} <span id="res-dog-name" class="text-[#0070f3] dark:text-[#3291ff]">Buddy</span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight">
+        {p.mealPlanFor} <span id="res-dog-name" class="text-[#c47a2b] dark:text-[#e8a44a]">Buddy</span>
       </h2>
-      <p id="res-summary" class="text-sm text-[#4d4d4d] dark:text-[#a1a1a1] mt-1.5 leading-relaxed"></p>
+      <p id="res-summary" class="text-sm text-[#6b4226] dark:text-[#c4956a] mt-1.5 leading-relaxed"></p>
     </div>
 
     <!-- 3 Key Stat Cards -->
     <div class="grid grid-cols-3 gap-2.5 mb-5">
-      <div class="p-3.5 rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#141414] text-center">
-        <div class="text-[10px] font-mono font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase mb-1">{p.cardEnergyTitle}</div>
-        <div class="text-xl font-bold text-[#171717] dark:text-[#ededed] font-mono" id="res-mer-calories">—</div>
-        <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono">kcal/day</div>
+      <div class="p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
+        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardEnergyTitle}</div>
+        <div class="text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-mer-calories">—</div>
+        <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono">kcal/day</div>
       </div>
-      <div class="p-3.5 rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#141414] text-center">
-        <div class="text-[10px] font-mono font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase mb-1">{p.cardPortionTitle}</div>
-        <div class="text-xl font-bold text-[#171717] dark:text-[#ededed] font-mono" id="res-daily-grams">—</div>
-        <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono">g/day</div>
+      <div class="p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
+        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardPortionTitle}</div>
+        <div class="text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-daily-grams">—</div>
+        <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono">g/day</div>
       </div>
-      <div class="p-3.5 rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#141414] text-center">
-        <div class="text-[10px] font-mono font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase mb-1">{p.cardPerMealTitle}</div>
-        <div class="text-xl font-bold text-[#171717] dark:text-[#ededed] font-mono" id="res-per-meal-grams">—</div>
-        <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] font-mono" id="res-meals-label">—x/day</div>
+      <div class="p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
+        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardPerMealTitle}</div>
+        <div class="text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-per-meal-grams">—</div>
+        <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono" id="res-meals-label">—x/day</div>
       </div>
     </div>
 
     <!-- Feeding Schedule -->
-    <div class="mb-5 bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] rounded-2xl p-4 sm:p-5">
-      <h3 class="text-xs font-bold text-[#171717] dark:text-[#ededed] mb-3 uppercase tracking-wider font-mono">{p.bowlSectionTitle} <span class="res-dog-name-inline text-[#0070f3] dark:text-[#3291ff]">Buddy</span></h3>
+    <div class="mb-5 bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
+      <h3 class="text-xs font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-3 uppercase tracking-wider font-mono">{p.bowlSectionTitle} <span class="res-dog-name-inline text-[#c47a2b] dark:text-[#e8a44a]">Buddy</span></h3>
       <div id="feeding-schedule-container" class="space-y-2">
         <!-- Populated by JS -->
       </div>
-      <div class="mt-3 pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex items-center justify-between text-xs text-[#8f8f8f] dark:text-[#737373]">
+      <div class="mt-3 pt-3 border-t border-[#f0d5a8] dark:border-[#3a2510] flex items-center justify-between text-xs text-[#92400e] dark:text-[#c4956a]">
         <span>{p.cardTreatTitle}:</span>
-        <span class="font-mono font-semibold text-[#f5a623]"><span id="res-treat-kcal">—</span> kcal/day</span>
+        <span class="font-mono font-semibold text-[#c47a2b]"><span id="res-treat-kcal">—</span> kcal/day</span>
       </div>
     </div>
 
     <!-- Breed Note -->
-    <div id="breed-note-card" class="mb-5 p-4 rounded-2xl border border-[#f5a623]/30 bg-[#f5a623]/5 dark:bg-[#f5a623]/10 flex gap-3">
+    <div id="breed-note-card" class="mb-5 p-4 rounded-2xl border border-[#c47a2b]/30 bg-[#c47a2b]/5 dark:bg-[#c47a2b]/10 flex gap-3">
       <span class="text-lg shrink-0">🐾</span>
-      <p id="breed-note-text" class="text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed"></p>
+      <p id="breed-note-text" class="text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed"></p>
     </div>
 
     <!-- Health Tips -->
-    <div id="health-advice-card" class="mb-5 bg-white dark:bg-[#141414] border border-[#0070f3]/20 rounded-2xl p-4 sm:p-5">
+    <div id="health-advice-card" class="mb-5 bg-white dark:bg-[#1c1208] border border-[#c47a2b]/20 rounded-2xl p-4 sm:p-5">
       <div class="flex items-center gap-2 mb-3">
         <span class="text-lg" id="health-advice-icon">⭐</span>
-        <h3 id="health-advice-title" class="text-sm font-bold text-[#171717] dark:text-[#ededed]">Health Tips</h3>
+        <h3 id="health-advice-title" class="text-sm font-bold text-[#1c0f00] dark:text-[#fde8c8]">Health Tips</h3>
       </div>
       <ul id="health-tips-list" class="space-y-2 mb-4">
         <!-- Populated by JS -->
       </ul>
       <div>
-        <div class="text-[10px] font-mono font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-2">{p.keyNutrientsTitle}</div>
+        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.keyNutrientsTitle}</div>
         <div id="key-nutrients-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <!-- Populated by JS -->
         </div>
@@ -77,17 +77,17 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     </div>
 
     <!-- Diet Tabs -->
-    <div class="flex gap-1.5 mb-3 p-1 bg-[#f2f2f2] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#2e2e2e]">
-      <button type="button" data-diet="fresh-cooked" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-[#262626] text-[#171717] dark:text-white shadow-sm transition-all cursor-pointer">🍲 {p.dietFresh}</button>
-      <button type="button" data-diet="raw-barf" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg text-[#8f8f8f] dark:text-[#737373] hover:text-[#171717] dark:hover:text-white transition-all cursor-pointer">🥩 {p.dietRaw}</button>
-      <button type="button" data-diet="superfood-topper" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg text-[#8f8f8f] dark:text-[#737373] hover:text-[#171717] dark:hover:text-white transition-all cursor-pointer">🥣 {p.dietTopper}</button>
+    <div class="flex gap-1.5 mb-3 p-1 bg-[#fdf3e7] dark:bg-[#1c1208] rounded-xl border border-[#f0d5a8] dark:border-[#3a2510]">
+      <button type="button" data-diet="fresh-cooked" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-[#2a1a08] text-[#1c0f00] dark:text-[#fde8c8] shadow-sm transition-all cursor-pointer">🍲 {p.dietFresh}</button>
+      <button type="button" data-diet="raw-barf" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer">🥩 {p.dietRaw}</button>
+      <button type="button" data-diet="superfood-topper" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer">🥣 {p.dietTopper}</button>
     </div>
 
     <!-- Recipe Card -->
-    <div class="mb-5 bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] rounded-2xl p-4 sm:p-5">
-      <div class="text-[10px] font-mono font-semibold text-[#0070f3] dark:text-[#3291ff] uppercase tracking-wider mb-1" id="recipe-diet-tag">{p.todayRecipePrefix}</div>
-      <h3 class="text-base font-bold text-[#171717] dark:text-[#ededed] mb-1" id="recipe-title">—</h3>
-      <p class="text-sm text-[#4d4d4d] dark:text-[#a1a1a1] mb-4 leading-relaxed" id="recipe-description">—</p>
+    <div class="mb-5 bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
+      <div class="text-[10px] font-mono font-semibold text-[#c47a2b] dark:text-[#e8a44a] uppercase tracking-wider mb-1" id="recipe-diet-tag">{p.todayRecipePrefix}</div>
+      <h3 class="text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-1" id="recipe-title">—</h3>
+      <p class="text-sm text-[#6b4226] dark:text-[#c4956a] mb-4 leading-relaxed" id="recipe-description">—</p>
 
       <div id="no-recipe-warning" class="hidden mb-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-sm text-amber-800 dark:text-amber-200">
         {p.noRecipeMatch}
@@ -95,35 +95,35 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
       <!-- Ingredients -->
       <div class="mb-4">
-        <div class="text-[10px] font-mono font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-2">{p.ingredientsHeader}</div>
-        <div id="ingredient-rows-container" class="divide-y divide-[#ebebeb] dark:divide-[#262626] border border-[#ebebeb] dark:border-[#262626] rounded-xl overflow-hidden">
+        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.ingredientsHeader}</div>
+        <div id="ingredient-rows-container" class="divide-y divide-[#f0d5a8] dark:divide-[#3a2510] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl overflow-hidden">
           <!-- Populated by JS -->
         </div>
       </div>
 
       <!-- Prep Steps -->
       <div>
-        <div class="text-[10px] font-mono font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-2">{p.prepStepsHeader}</div>
-        <ol id="prep-steps-container" class="space-y-2 text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.prepStepsHeader}</div>
+        <ol id="prep-steps-container" class="space-y-2 text-sm text-[#6b4226] dark:text-[#c4956a]">
           <!-- Populated by JS -->
         </ol>
       </div>
     </div>
 
     <!-- 7-Day Transition -->
-    <div class="mb-5 bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] rounded-2xl p-4 sm:p-5">
-      <h4 class="text-xs font-bold text-[#171717] dark:text-[#ededed] uppercase tracking-wider font-mono mb-3">{p.transitionHeader}</h4>
+    <div class="mb-5 bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
+      <h4 class="text-xs font-bold text-[#1c0f00] dark:text-[#fde8c8] uppercase tracking-wider font-mono mb-3">{p.transitionHeader}</h4>
       <div class="space-y-2">
-        <div class="flex items-center gap-3 text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+        <div class="flex items-center gap-3 text-sm text-[#6b4226] dark:text-[#c4956a]">
           <span class="w-2 h-2 rounded-full bg-[#10b981] shrink-0"></span>{p.transitionP1}
         </div>
-        <div class="flex items-center gap-3 text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+        <div class="flex items-center gap-3 text-sm text-[#6b4226] dark:text-[#c4956a]">
           <span class="w-2 h-2 rounded-full bg-[#f5a623] shrink-0"></span>{p.transitionP2}
         </div>
-        <div class="flex items-center gap-3 text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+        <div class="flex items-center gap-3 text-sm text-[#6b4226] dark:text-[#c4956a]">
           <span class="w-2 h-2 rounded-full bg-[#f97316] shrink-0"></span>{p.transitionP3}
         </div>
-        <div class="flex items-center gap-3 text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+        <div class="flex items-center gap-3 text-sm text-[#6b4226] dark:text-[#c4956a]">
           <span class="w-2 h-2 rounded-full bg-[#0070f3] shrink-0"></span>{p.transitionP4}
         </div>
       </div>
@@ -131,9 +131,9 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
     <!-- Disclaimer + Start Over -->
     <div class="text-center">
-      <p class="text-[11px] text-[#a1a1a1] dark:text-[#737373] mb-4">{p.resultsDisclaimerText}</p>
+      <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mb-4">{p.resultsDisclaimerText}</p>
       <button id="start-over-btn" type="button"
-        class="px-6 py-2.5 text-sm font-semibold text-[#8f8f8f] dark:text-[#737373] border border-[#ebebeb] dark:border-[#262626] rounded-xl hover:text-[#171717] dark:hover:text-white hover:border-[#171717] dark:hover:border-white transition-all cursor-pointer touch-manipulation">
+        class="px-6 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation">
         ← {p.prevBtn}
       </button>
     </div>
@@ -216,14 +216,14 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
     const schedContainer = document.getElementById('feeding-schedule-container') as HTMLElement;
     schedContainer.innerHTML = result.dailySchedule.map((slot: any) => `
-      <div class="flex items-center justify-between p-3 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+      <div class="flex items-center justify-between p-3 rounded-xl bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510]">
         <div>
-          <div class="text-xs font-mono font-semibold text-[#0070f3] dark:text-[#3291ff]">${slot.timeLabel}</div>
-          <div class="text-sm font-semibold text-[#171717] dark:text-[#ededed]">${slot.slotName}</div>
+          <div class="text-xs font-mono font-semibold text-[#c47a2b] dark:text-[#e8a44a]">${slot.timeLabel}</div>
+          <div class="text-sm font-semibold text-[#1c0f00] dark:text-[#fde8c8]">${slot.slotName}</div>
         </div>
         <div class="text-right">
-          <div class="text-lg font-bold text-[#171717] dark:text-[#ededed] font-mono">${slot.portionGrams}g</div>
-          <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373] font-mono">≈ ${slot.portionCups} cups</div>
+          <div class="text-lg font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${slot.portionGrams}g</div>
+          <div class="text-[11px] text-[#92400e] dark:text-[#c4956a] font-mono">≈ ${slot.portionCups} cups</div>
         </div>
       </div>
     `).join('');
@@ -241,18 +241,18 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     if (titleEl) titleEl.textContent = advice.title;
     if (tipsList) {
       tipsList.innerHTML = advice.tips.map((tip: string) => `
-        <li class="flex items-start gap-2 text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
-          <span class="text-[#0070f3] dark:text-[#3291ff] mt-0.5 shrink-0 font-bold">✓</span>
+        <li class="flex items-start gap-2 text-sm text-[#6b4226] dark:text-[#c4956a]">
+          <span class="text-[#c47a2b] dark:text-[#e8a44a] mt-0.5 shrink-0 font-bold">✓</span>
           <span>${tip}</span>
         </li>
       `).join('');
     }
     if (nutrientsGrid) {
       nutrientsGrid.innerHTML = advice.keyNutrients.map((n: any) => `
-        <div class="p-3 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
-          <div class="text-xs font-bold text-[#171717] dark:text-[#ededed] mb-0.5">${n.name}</div>
-          <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373] mb-1">${n.reason}</div>
-          <div class="text-[11px] text-[#0070f3] dark:text-[#3291ff] font-mono">${n.foods.join(' · ')}</div>
+        <div class="p-3 rounded-xl bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510]">
+          <div class="text-xs font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-0.5">${n.name}</div>
+          <div class="text-[11px] text-[#92400e] dark:text-[#c4956a] mb-1">${n.reason}</div>
+          <div class="text-[11px] text-[#c47a2b] dark:text-[#e8a44a] font-mono">${n.foods.join(' · ')}</div>
         </div>
       `).join('');
     }
@@ -269,12 +269,12 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       ingContainer.innerHTML = recipe.ingredients.map((ing: any) => {
         const grams = Math.round((ing.percentage / 100) * result.activeDailyGrams);
         return `
-          <div class="flex items-center justify-between px-4 py-3 bg-white dark:bg-[#141414] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] transition-colors">
+          <div class="flex items-center justify-between px-4 py-3 bg-white dark:bg-[#1c1208] hover:bg-[#fdf8f3] dark:hover:bg-[#2a1a08] transition-colors">
             <div>
-              <div class="text-sm font-medium text-[#171717] dark:text-[#ededed]">${ing.name}</div>
-              <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">${ing.purpose}</div>
+              <div class="text-sm font-medium text-[#1c0f00] dark:text-[#fde8c8]">${ing.name}</div>
+              <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">${ing.purpose}</div>
             </div>
-            <div class="text-sm font-bold text-[#171717] dark:text-[#ededed] font-mono ml-4 shrink-0">${grams}g</div>
+            <div class="text-sm font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono ml-4 shrink-0">${grams}g</div>
           </div>
         `;
       }).join('');
@@ -282,8 +282,8 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       const prepContainer = document.getElementById('prep-steps-container') as HTMLElement;
       prepContainer.innerHTML = recipe.preparationNotes.map((step: string, i: number) => `
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-[#0070f3]/10 text-[#0070f3] dark:text-[#3291ff] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
-          <span>${step}</span>
+          <span class="w-5 h-5 rounded-full bg-[#c47a2b]/10 text-[#c47a2b] dark:text-[#e8a44a] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
+          <span class="text-[#6b4226] dark:text-[#c4956a]">${step}</span>
         </li>
       `).join('');
     }
@@ -292,12 +292,12 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       const btnDiet = (btn as HTMLElement).dataset.diet;
       const isActive = btnDiet === diet;
       btn.classList.toggle('bg-white', isActive);
-      btn.classList.toggle('dark:bg-[#262626]', isActive);
-      btn.classList.toggle('text-[#171717]', isActive);
-      btn.classList.toggle('dark:text-white', isActive);
+      btn.classList.toggle('dark:bg-[#2a1a08]', isActive);
+      btn.classList.toggle('text-[#1c0f00]', isActive);
+      btn.classList.toggle('dark:text-[#fde8c8]', isActive);
       btn.classList.toggle('shadow-sm', isActive);
-      btn.classList.toggle('text-[#8f8f8f]', !isActive);
-      btn.classList.toggle('dark:text-[#737373]', !isActive);
+      btn.classList.toggle('text-[#92400e]', !isActive);
+      btn.classList.toggle('dark:text-[#c4956a]', !isActive);
     });
   }
 

@@ -8,35 +8,35 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 const TOTAL_STEPS = 4;
 ---
 
-<section id="planner-section" class="py-8 sm:py-14 bg-[#fafafa] dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]" data-lang={lang}>
+<section id="planner-section" class="py-8 sm:py-14 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0e0cc] dark:border-[#2a1f14]" data-lang={lang}>
   <div class="max-w-xl mx-auto px-4 sm:px-6">
 
     <!-- Header -->
     <div class="text-center mb-6 sm:mb-8">
-      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase font-semibold text-[#0070f3] bg-[#0070f3]/10 px-3 py-1 rounded-full mb-3">
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase font-semibold text-[#c47a2b] bg-[#c47a2b]/10 px-3 py-1 rounded-full mb-3">
         {p.badge}
       </div>
-      <h2 class="text-2xl sm:text-3xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-2">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-2">
         {p.title}
       </h2>
-      <p class="text-sm text-[#8f8f8f] dark:text-[#737373] max-w-sm mx-auto">
+      <p class="text-sm text-[#92400e] dark:text-[#c4956a] max-w-sm mx-auto">
         {p.subtitle}
       </p>
     </div>
 
     <!-- Quiz Card -->
-    <div class="bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] rounded-2xl shadow-sm overflow-hidden">
+    <div class="bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl shadow-sm overflow-hidden">
 
       <!-- Progress Bar -->
       <div class="px-5 sm:px-7 pt-5 pb-0">
         <div class="flex items-center justify-between mb-2">
-          <span id="step-label" class="text-[11px] font-semibold text-[#8f8f8f] dark:text-[#737373] font-mono uppercase tracking-wider">
+          <span id="step-label" class="text-[11px] font-semibold text-[#92400e] dark:text-[#c4956a] font-mono uppercase tracking-wider">
             {p.stepPrefix} 1 {p.ofStep}
           </span>
-          <span id="step-title-badge" class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed]">{p.step1Title}</span>
+          <span id="step-title-badge" class="text-[11px] font-semibold text-[#1c0f00] dark:text-[#fde8c8]">{p.step1Title}</span>
         </div>
-        <div class="w-full bg-[#f2f2f2] dark:bg-[#262626] h-1 rounded-full overflow-hidden">
-          <div id="quiz-progress-bar" class="bg-[#0070f3] h-full rounded-full transition-all duration-500 ease-out" style="width: 25%"></div>
+        <div class="w-full bg-[#fdf3e7] dark:bg-[#2a1a08] h-1 rounded-full overflow-hidden">
+          <div id="quiz-progress-bar" class="h-full rounded-full transition-all duration-500 ease-out" style="width: 25%; background: linear-gradient(90deg, #c47a2b, #e8a44a)"></div>
         </div>
       </div>
 
@@ -44,46 +44,50 @@ const TOTAL_STEPS = 4;
 
         <!-- STEP 1: Dog Basics -->
         <div class="quiz-step" data-step="1">
-          <h3 class="text-base font-bold text-[#171717] dark:text-[#ededed] mb-4">{p.step1Title}</h3>
+          <h3 class="text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-4">{p.step1Title}</h3>
 
           <div class="space-y-4">
             <!-- Name -->
             <div>
-              <label for="dog-name" class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.nameLabel}</label>
+              <label for="dog-name" class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.nameLabel}</label>
               <input type="text" id="dog-name" placeholder={p.namePlaceholder} value="Buddy" autocomplete="off"
-                class="w-full px-4 py-3 text-sm bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#0070f3] focus:ring-2 focus:ring-[#0070f3]/20 transition-all" />
+                class="w-full px-4 py-3 text-sm bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] focus:ring-2 focus:ring-[#c47a2b]/20 transition-all" />
             </div>
 
             <!-- Life Stage -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.ageLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.ageLabel}</label>
               <div class="grid grid-cols-2 gap-2">
                 <label class="cursor-pointer">
                   <input type="radio" name="age-stage" value="puppy-early" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.puppyEarly}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.puppyEarlySub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
+                    <div class="text-2xl mb-0.5">🍼</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.puppyEarly}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.puppyEarlySub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="age-stage" value="puppy-late" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.puppyLate}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.puppyLateSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
+                    <div class="text-2xl mb-0.5">🐕</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.puppyLate}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.puppyLateSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="age-stage" value="adult" checked class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.adult}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.adultSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
+                    <div class="text-2xl mb-0.5">🦮</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.adult}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.adultSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="age-stage" value="senior" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.senior}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.seniorSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
+                    <div class="text-2xl mb-0.5">🐾</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.senior}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.seniorSub}</div>
                   </div>
                 </label>
               </div>
@@ -91,34 +95,38 @@ const TOTAL_STEPS = 4;
 
             <!-- Gender -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.genderLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.genderLabel}</label>
               <div class="grid grid-cols-2 gap-2">
                 <label class="cursor-pointer">
                   <input type="radio" name="gender" value="female-spayed" checked class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.femaleSpayed}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.femaleSpayedSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
+                    <div class="text-2xl mb-0.5">♀️</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.femaleSpayed}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.femaleSpayedSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="gender" value="female-intact" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.femaleIntact}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.femaleIntactSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
+                    <div class="text-2xl mb-0.5">🌸</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.femaleIntact}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.femaleIntactSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="gender" value="male-neutered" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.maleNeutered}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.maleNeuteredSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
+                    <div class="text-2xl mb-0.5">♂️</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.maleNeutered}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.maleNeuteredSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="gender" value="male-intact" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.maleIntact}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.maleIntactSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
+                    <div class="text-2xl mb-0.5">💪</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.maleIntact}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.maleIntactSub}</div>
                   </div>
                 </label>
               </div>
@@ -128,14 +136,14 @@ const TOTAL_STEPS = 4;
 
         <!-- STEP 2: Size & Weight -->
         <div class="quiz-step hidden" data-step="2">
-          <h3 class="text-base font-bold text-[#171717] dark:text-[#ededed] mb-4">{p.step2Title}</h3>
+          <h3 class="text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-4">{p.step2Title}</h3>
 
           <div class="space-y-4">
             <!-- Breed -->
             <div>
-              <label for="dog-breed" class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.breedLabel}</label>
+              <label for="dog-breed" class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.breedLabel}</label>
               <select id="dog-breed"
-                class="w-full px-4 py-3 text-sm bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#0070f3] focus:ring-2 focus:ring-[#0070f3]/20">
+                class="w-full px-4 py-3 text-sm bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] focus:ring-2 focus:ring-[#c47a2b]/20">
                 {CANINE_BREEDS.map((b) => (
                   <option value={b.name}>{b.name}</option>
                 ))}
@@ -145,49 +153,53 @@ const TOTAL_STEPS = 4;
             <!-- Weight -->
             <div>
               <div class="flex items-center justify-between mb-1.5">
-                <label for="dog-weight" class="text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider font-mono">{p.weightLabel}</label>
-                <div class="flex items-center text-xs font-mono border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg overflow-hidden">
-                  <button type="button" id="unit-lbs" class="px-3 py-1.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold transition-colors cursor-pointer">LBS</button>
-                  <button type="button" id="unit-kg" class="px-3 py-1.5 bg-white dark:bg-[#1a1a1a] text-[#8f8f8f] dark:text-[#737373] transition-colors cursor-pointer">KG</button>
+                <label for="dog-weight" class="text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider font-mono">{p.weightLabel}</label>
+                <div class="flex items-center text-xs font-mono border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg overflow-hidden">
+                  <button type="button" id="unit-lbs" class="px-3 py-1.5 bg-[#c47a2b] text-white font-semibold transition-colors cursor-pointer">LBS</button>
+                  <button type="button" id="unit-kg" class="px-3 py-1.5 bg-white dark:bg-[#1c1208] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer">KG</button>
                 </div>
               </div>
               <div class="relative">
                 <input type="number" id="dog-weight" min="1" max="250" value="45"
-                  class="w-full px-4 pr-16 py-3 text-sm bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#0070f3] focus:ring-2 focus:ring-[#0070f3]/20" />
-                <span id="weight-unit-label" class="absolute right-4 top-3.5 text-xs text-[#8f8f8f] dark:text-[#737373] font-mono font-semibold">LBS</span>
+                  class="w-full px-4 pr-16 py-3 text-sm bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] focus:ring-2 focus:ring-[#c47a2b]/20" />
+                <span id="weight-unit-label" class="absolute right-4 top-3.5 text-xs text-[#92400e] dark:text-[#c4956a] font-mono font-semibold">LBS</span>
               </div>
             </div>
 
             <!-- Body Condition -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.bcsLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.bcsLabel}</label>
               <div class="grid grid-cols-2 gap-2">
                 <label class="cursor-pointer">
                   <input type="radio" name="bcs" value="2" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center px-3">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.bcsUnderweight}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.bcsUnderweightDesc}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center px-3">
+                    <div class="text-2xl mb-0.5">🦴</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.bcsUnderweight}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.bcsUnderweightDesc}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="bcs" value="5" checked class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center px-3">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.bcsIdeal}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.bcsIdealDesc}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center px-3">
+                    <div class="text-2xl mb-0.5">✅</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.bcsIdeal}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.bcsIdealDesc}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="bcs" value="7" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center px-3">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.bcsOverweight}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.bcsOverweightDesc}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center px-3">
+                    <div class="text-2xl mb-0.5">🍩</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.bcsOverweight}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.bcsOverweightDesc}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="bcs" value="9" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center px-3">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.bcsObese}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.bcsObeseDesc}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center px-3">
+                    <div class="text-2xl mb-0.5">⚠️</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.bcsObese}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.bcsObeseDesc}</div>
                   </div>
                 </label>
               </div>
@@ -195,27 +207,27 @@ const TOTAL_STEPS = 4;
 
             <!-- Weight Goal -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.weightGoalLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.weightGoalLabel}</label>
               <div class="grid grid-cols-3 gap-2">
                 <label class="cursor-pointer">
                   <input type="radio" name="weight-goal" value="maintain" checked class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
                     <div class="text-lg mb-0.5">⚖️</div>
-                    <div class="font-semibold text-xs text-[#171717] dark:text-[#ededed]">{p.goalMaintain}</div>
+                    <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{p.goalMaintain}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="weight-goal" value="lose" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
                     <div class="text-lg mb-0.5">📉</div>
-                    <div class="font-semibold text-xs text-[#171717] dark:text-[#ededed]">{p.goalLose}</div>
+                    <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{p.goalLose}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="weight-goal" value="gain" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-center peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center">
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center">
                     <div class="text-lg mb-0.5">💪</div>
-                    <div class="font-semibold text-xs text-[#171717] dark:text-[#ededed]">{p.goalGain}</div>
+                    <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{p.goalGain}</div>
                   </div>
                 </label>
               </div>
@@ -225,39 +237,43 @@ const TOTAL_STEPS = 4;
 
         <!-- STEP 3: Activity & Diet -->
         <div class="quiz-step hidden" data-step="3">
-          <h3 class="text-base font-bold text-[#171717] dark:text-[#ededed] mb-4">{p.step3Title}</h3>
+          <h3 class="text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-4">{p.step3Title}</h3>
 
           <div class="space-y-4">
             <!-- Activity Level -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.activityLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.activityLabel}</label>
               <div class="grid grid-cols-2 gap-2">
                 <label class="cursor-pointer">
                   <input type="radio" name="activity" value="sedentary" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center px-3">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.activityLow}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.activityLowSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center px-3">
+                    <div class="text-2xl mb-0.5">🛋️</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.activityLow}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.activityLowSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="activity" value="moderate" checked class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center px-3">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.activityMod}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.activityModSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center px-3">
+                    <div class="text-2xl mb-0.5">🚶</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.activityMod}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.activityModSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="activity" value="active" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center px-3">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.activityHigh}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.activityHighSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center px-3">
+                    <div class="text-2xl mb-0.5">🏃</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.activityHigh}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.activityHighSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="activity" value="working" class="peer sr-only" />
-                  <div class="p-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] min-h-[52px] flex flex-col justify-center px-3">
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.activityWorking}</div>
-                    <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.activityWorkingSub}</div>
+                  <div class="p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] min-h-[72px] flex flex-col justify-center px-3">
+                    <div class="text-2xl mb-0.5">🐕‍🦺</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.activityWorking}</div>
+                    <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.activityWorkingSub}</div>
                   </div>
                 </label>
               </div>
@@ -265,35 +281,35 @@ const TOTAL_STEPS = 4;
 
             <!-- Diet Preference -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.dietLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.dietLabel}</label>
               <div class="grid grid-cols-1 gap-2">
                 <label class="cursor-pointer">
                   <input type="radio" name="diet" value="fresh-cooked" checked class="peer sr-only" />
-                  <div class="px-4 py-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] flex items-center gap-3">
+                  <div class="px-4 py-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex items-center gap-3">
                     <span class="text-xl shrink-0">🍲</span>
                     <div>
-                      <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.dietFresh}</div>
-                      <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.dietFreshSub}</div>
+                      <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.dietFresh}</div>
+                      <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.dietFreshSub}</div>
                     </div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="diet" value="raw-barf" class="peer sr-only" />
-                  <div class="px-4 py-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] flex items-center gap-3">
+                  <div class="px-4 py-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex items-center gap-3">
                     <span class="text-xl shrink-0">🥩</span>
                     <div>
-                      <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.dietRaw}</div>
-                      <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.dietRawSub}</div>
+                      <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.dietRaw}</div>
+                      <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.dietRawSub}</div>
                     </div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="diet" value="superfood-topper" class="peer sr-only" />
-                  <div class="px-4 py-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] flex items-center gap-3">
+                  <div class="px-4 py-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex items-center gap-3">
                     <span class="text-xl shrink-0">🥣</span>
                     <div>
-                      <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.dietTopper}</div>
-                      <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.dietTopperSub}</div>
+                      <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.dietTopper}</div>
+                      <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">{p.dietTopperSub}</div>
                     </div>
                   </div>
                 </label>
@@ -304,46 +320,46 @@ const TOTAL_STEPS = 4;
 
         <!-- STEP 4: Health & Allergies -->
         <div class="quiz-step hidden" data-step="4">
-          <h3 class="text-base font-bold text-[#171717] dark:text-[#ededed] mb-4">{p.step4Title}</h3>
+          <h3 class="text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-4">{p.step4Title}</h3>
 
           <div class="space-y-4">
             <!-- Health Focus -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.healthFocusLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.healthFocusLabel}</label>
               <div class="grid grid-cols-1 gap-2">
                 <label class="cursor-pointer">
                   <input type="radio" name="health-focus" value="General Longevity & Health" checked class="peer sr-only" />
-                  <div class="px-4 py-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] flex items-center gap-3">
+                  <div class="px-4 py-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex items-center gap-3">
                     <span class="text-lg shrink-0">⭐</span>
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.focusGeneral}</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.focusGeneral}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="health-focus" value="Joints & Mobility Support" class="peer sr-only" />
-                  <div class="px-4 py-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] flex items-center gap-3">
+                  <div class="px-4 py-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex items-center gap-3">
                     <span class="text-lg shrink-0">🦴</span>
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.focusJoints}</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.focusJoints}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="health-focus" value="Skin & Shiny Coat Vitality" class="peer sr-only" />
-                  <div class="px-4 py-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] flex items-center gap-3">
+                  <div class="px-4 py-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex items-center gap-3">
                     <span class="text-lg shrink-0">✨</span>
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.focusCoat}</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.focusCoat}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="health-focus" value="Sensitive Digestion & Gut Health" class="peer sr-only" />
-                  <div class="px-4 py-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] flex items-center gap-3">
+                  <div class="px-4 py-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex items-center gap-3">
                     <span class="text-lg shrink-0">🌿</span>
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.focusDigestion}</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.focusDigestion}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
                   <input type="radio" name="health-focus" value="Metabolic Weight Management" class="peer sr-only" />
-                  <div class="px-4 py-3 border-2 border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl peer-checked:border-[#0070f3] peer-checked:bg-[#0070f3]/5 transition-all bg-white dark:bg-[#1a1a1a] flex items-center gap-3">
+                  <div class="px-4 py-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex items-center gap-3">
                     <span class="text-lg shrink-0">⚖️</span>
-                    <div class="font-semibold text-sm text-[#171717] dark:text-[#ededed]">{p.focusWeight}</div>
+                    <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.focusWeight}</div>
                   </div>
                 </label>
               </div>
@@ -351,7 +367,7 @@ const TOTAL_STEPS = 4;
 
             <!-- Allergies -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.allergiesLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.allergiesLabel}</label>
               <div class="grid grid-cols-2 gap-2">
                 {[
                   { value: 'none / no allergies', label: p.allergyNone },
@@ -362,9 +378,9 @@ const TOTAL_STEPS = 4;
                   { value: 'soy', label: p.allergySoy },
                   { value: 'eggs', label: p.allergyEggs },
                 ].map(a => (
-                  <label class="cursor-pointer flex items-center gap-2.5 p-3 border border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl bg-white dark:bg-[#1a1a1a] has-[:checked]:border-[#0070f3] has-[:checked]:bg-[#0070f3]/5 transition-all">
-                    <input type="checkbox" name="allergy" value={a.value} class="w-4 h-4 rounded accent-[#0070f3] shrink-0" />
-                    <span class="text-sm text-[#171717] dark:text-[#ededed] font-medium">{a.label}</span>
+                  <label class="cursor-pointer flex items-center gap-2.5 p-3 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl bg-white dark:bg-[#1c1208] has-[:checked]:border-[#c47a2b] has-[:checked]:bg-[#c47a2b]/8 transition-all">
+                    <input type="checkbox" name="allergy" value={a.value} class="w-4 h-4 rounded accent-[#c47a2b] shrink-0" />
+                    <span class="text-sm text-[#1c0f00] dark:text-[#fde8c8] font-medium">{a.label}</span>
                   </label>
                 ))}
               </div>
@@ -372,9 +388,9 @@ const TOTAL_STEPS = 4;
 
             <!-- Protein Preference -->
             <div>
-              <label class="block text-xs font-semibold text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-1.5 font-mono">{p.proteinLabel}</label>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.proteinLabel}</label>
               <select id="protein-choice"
-                class="w-full px-4 py-3 text-sm bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-xl text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#0070f3] focus:ring-2 focus:ring-[#0070f3]/20">
+                class="w-full px-4 py-3 text-sm bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] focus:ring-2 focus:ring-[#c47a2b]/20">
                 <option value="auto">{p.proteinRotation}</option>
                 <option value="chicken">{p.proteinChicken}</option>
                 <option value="beef">{p.proteinBeef}</option>
@@ -387,18 +403,18 @@ const TOTAL_STEPS = 4;
         </div>
 
         <!-- Navigation Buttons -->
-        <div class="flex items-center justify-between mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626]">
+        <div class="flex items-center justify-between mt-6 pt-5 border-t border-[#f0d5a8] dark:border-[#3a2510]">
           <button type="button" id="prev-btn"
-            class="hidden px-5 py-2.5 text-sm font-semibold text-[#8f8f8f] dark:text-[#737373] border border-[#ebebeb] dark:border-[#262626] rounded-xl hover:text-[#171717] dark:hover:text-white hover:border-[#171717] dark:hover:border-white transition-all cursor-pointer touch-manipulation">
+            class="hidden px-5 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation">
             ← {p.prevBtn}
           </button>
           <div id="prev-placeholder"></div>
           <button type="button" id="next-btn"
-            class="px-6 py-2.5 text-sm font-semibold bg-[#171717] dark:bg-white text-white dark:text-[#171717] rounded-xl hover:bg-[#0070f3] dark:hover:bg-[#0070f3] dark:hover:text-white transition-all cursor-pointer touch-manipulation">
+            class="px-6 py-2.5 text-sm font-semibold bg-[#c47a2b] hover:bg-[#a8651f] text-white rounded-xl transition-all cursor-pointer touch-manipulation">
             {p.nextBtn} →
           </button>
           <button type="submit" id="submit-btn"
-            class="hidden px-6 py-2.5 text-sm font-semibold bg-[#0070f3] text-white rounded-xl hover:bg-[#0761d1] transition-all cursor-pointer touch-manipulation">
+            class="hidden px-6 py-2.5 text-sm font-semibold bg-[#c47a2b] hover:bg-[#a8651f] text-white rounded-xl transition-all cursor-pointer touch-manipulation">
             {p.submitBtn}
           </button>
         </div>
@@ -407,7 +423,7 @@ const TOTAL_STEPS = 4;
     </div>
 
     <!-- Disclaimer -->
-    <p class="text-center text-[11px] text-[#a1a1a1] dark:text-[#737373] mt-4 px-4">
+    <p class="text-center text-[11px] text-[#92400e] dark:text-[#c4956a] mt-4 px-4">
       {p.disclaimerText}
     </p>
 

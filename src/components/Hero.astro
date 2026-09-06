@@ -6,68 +6,84 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<section class="relative pt-6 pb-8 sm:pt-20 sm:pb-24 mesh-gradient-bg border-b border-[#ebebeb] dark:border-[#262626] overflow-hidden">
-  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center min-w-0">
-    
-    <!-- Technical Eyebrow -->
-    <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] shadow-xs mb-4 max-w-[calc(100%-0.5rem)]">
-      <span class="w-2 h-2 rounded-full bg-[#10b981] shrink-0 animate-pulse"></span>
-      <span class="font-mono text-[10px] sm:text-xs font-semibold text-[#171717] dark:text-[#ededed] uppercase tracking-wider truncate">
-        {t('hero.badge')}
-      </span>
-      <span class="text-[#ebebeb] dark:text-[#333333] hidden sm:inline">|</span>
-      <span class="font-mono text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] hidden sm:inline">{t('hero.standards')}</span>
+<section class="relative pt-8 pb-10 sm:pt-16 sm:pb-20 border-b border-[#f0e0cc] dark:border-[#2a1f14] overflow-hidden hero-warm-bg">
+  <!-- Warm radial glow blobs -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-[600px] h-[340px] rounded-full opacity-60"
+      style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.18) 0%, rgba(255,200,100,0.10) 40%, transparent 70%); filter: blur(40px);"></div>
+    <div class="absolute top-10 right-0 w-48 h-48 rounded-full opacity-40"
+      style="background: radial-gradient(circle, rgba(234,179,8,0.15) 0%, transparent 70%); filter: blur(30px);"></div>
+    <div class="absolute bottom-0 left-0 w-40 h-40 rounded-full opacity-30"
+      style="background: radial-gradient(circle, rgba(196,122,43,0.12) 0%, transparent 70%); filter: blur(25px);"></div>
+  </div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center min-w-0">
+
+    <!-- Friendly badge -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] shadow-sm mb-5">
+      <span class="w-2 h-2 rounded-full bg-[#22c55e] shrink-0 animate-pulse"></span>
+      <span class="text-[11px] font-bold text-[#92400e] dark:text-[#d97706] uppercase tracking-wider">Free · No Sign-Up · Vet-Informed</span>
     </div>
 
-    <!-- Hero Display Title -->
-    <h1 class="text-[1.65rem] xs:text-[2.15rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight leading-[1.18] sm:leading-[1.08] max-w-4xl mx-auto mb-3 sm:mb-6 text-balance px-0.5">
-      {t('hero.title1')} <span class="bg-gradient-to-r from-[#0070f3] via-[#7928ca] to-[#ff0080] bg-clip-text text-transparent">{t('hero.titleHighlight')}</span> {t('hero.title2')}
+    <!-- Big friendly headline -->
+    <h1 class="text-[2rem] xs:text-[2.4rem] sm:text-5xl md:text-6xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight leading-[1.12] max-w-2xl mx-auto mb-4 sm:mb-5 text-balance px-0.5">
+      What should <span class="text-[#c47a2b] dark:text-[#f59e0b]">your dog</span><br class="hidden sm:block" /> eat today? 🐶
     </h1>
 
-    <!-- Subtitle / Body -->
-    <p class="text-sm sm:text-lg text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto mb-6 sm:mb-10 leading-relaxed font-normal text-pretty px-0.5">
-      {t('hero.subtitle')}
+    <!-- Simple, warm subtitle -->
+    <p class="text-sm sm:text-lg text-[#6b4226] dark:text-[#c4956a] max-w-xl mx-auto mb-7 sm:mb-10 leading-relaxed font-normal text-pretty px-0.5">
+      Answer 4 quick questions and get a personalised daily meal plan — with exact portions, a feeding schedule, and a recipe tailored to your dog.
     </p>
 
-    <!-- Marketing CTA Button Pill -->
-    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-3 mb-8 sm:mb-14 w-full sm:w-auto">
-      <a 
-        href="#planner-section" 
-        class="w-full sm:w-auto inline-flex items-center justify-center min-h-11 text-sm font-semibold text-white bg-[#171717] dark:bg-white dark:text-[#171717] hover:bg-[#2b2b2b] dark:hover:bg-[#e5e5e5] active:scale-[0.98] transition-all px-6 py-3 rounded-full shadow-md hover:shadow-lg"
+    <!-- Primary CTA — warm amber -->
+    <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-10 sm:mb-14 w-full sm:w-auto">
+      <a
+        href="#planner-section"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 text-sm sm:text-base font-bold text-white rounded-full px-7 py-3.5 transition-all active:scale-[0.97] shadow-lg hover:shadow-xl"
+        style="background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%); box-shadow: 0 6px 20px rgba(196,122,43,0.38);"
       >
-        <span>{t('hero.ctaCalculate')}</span>
-        <svg class="w-3.5 h-3.5 ml-2 text-[#50e3c2] dark:text-[#0070f3]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <span>Build My Dog's Plan</span>
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
         </svg>
       </a>
-      
-      <a 
-        href={translatePath('/best-dog-food')} 
-        class="w-full sm:w-auto inline-flex items-center justify-center min-h-11 text-sm font-semibold text-[#171717] dark:text-[#ededed] bg-white dark:bg-[#171717] hover:bg-[#f2f2f2] dark:hover:bg-[#222222] border border-[#ebebeb] dark:border-[#2e2e2e] active:scale-[0.98] transition-all px-6 py-3 rounded-full shadow-xs"
+
+      <a
+        href={translatePath('/best-dog-food')}
+        class="w-full sm:w-auto inline-flex items-center justify-center min-h-12 text-sm font-semibold text-[#6b4226] dark:text-[#d4a574] bg-white dark:bg-[#1c1208] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] active:scale-[0.97] transition-all px-6 py-3.5 rounded-full"
       >
-        <span>{t('hero.ctaCompare')}</span>
+        Compare Top Brands
       </a>
     </div>
 
-    <!-- Key Scientific Value Metrics Strip -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3.5 max-w-4xl mx-auto pt-4 sm:pt-6 border-t border-[#ebebeb]/80 dark:border-[#262626]">
-      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#141414]/90 backdrop-blur-xs rounded-xl border border-[#ebebeb] dark:border-[#262626] text-left min-w-0">
-        <div class="font-mono text-base sm:text-2xl font-bold text-[#171717] dark:text-[#ededed] break-words">{t('hero.metric1Value')}</div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans leading-snug">{t('hero.metric1Label')}</div>
+    <!-- Trust metrics strip — warm style -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 max-w-2xl mx-auto pt-5 sm:pt-6 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]">
+      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">200+</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">Dog breeds covered</div>
       </div>
-      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#141414]/90 backdrop-blur-xs rounded-xl border border-[#ebebeb] dark:border-[#262626] text-left min-w-0">
-        <div class="font-mono text-base sm:text-2xl font-bold text-[#171717] dark:text-[#ededed] break-words">{t('hero.metric2Value')}</div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans leading-snug">{t('hero.metric2Label')}</div>
+      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">AAFCO</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">Nutrition standards</div>
       </div>
-      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#141414]/90 backdrop-blur-xs rounded-xl border border-[#ebebeb] dark:border-[#262626] text-left min-w-0">
-        <div class="font-mono text-base sm:text-2xl font-bold text-[#171717] dark:text-[#ededed] break-words">{t('hero.metric3Value')}</div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans leading-snug">{t('hero.metric3Label')}</div>
+      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">3</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">Diet types supported</div>
       </div>
-      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#141414]/90 backdrop-blur-xs rounded-xl border border-[#ebebeb] dark:border-[#262626] text-left min-w-0">
-        <div class="font-mono text-base sm:text-2xl font-bold text-[#171717] dark:text-[#ededed] break-words">{t('hero.metric4Value')}</div>
-        <div class="text-[10px] sm:text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 sm:mt-1 font-sans leading-snug">{t('hero.metric4Label')}</div>
+      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">Free</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">Always & forever</div>
       </div>
     </div>
 
   </div>
 </section>
+
+<style>
+  .hero-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 50%, #fff0e6 100%);
+  }
+  html.dark .hero-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 50%, #1a0e04 100%);
+  }
+</style>
