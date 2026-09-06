@@ -6,20 +6,29 @@ import PlannerQuiz from '../components/PlannerQuiz.astro';
 import PlanResults from '../components/PlanResults.astro';
 import FaqSection from '../components/FaqSection.astro';
 import Footer from '../components/Footer.astro';
+import { useTranslations, useTranslatedPath } from '../i18n/utils';
+import { ui } from '../i18n/ui';
+import { getPageTranslations } from '../i18n/pages';
+
+const lang = 'en';
+const currentStrings = ui[lang];
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const p = getPageTranslations(lang).calculator;
 ---
 
 <Layout 
-  title="Dog Food Feeding Calculator: Exact Daily Calories, Grams & Cups | DogFoodPlanner.com"
-  description="Free veterinary canine calorie & meal portion calculator. Accurately calculates RER and MER energy demands and generates custom fresh, raw, and kibble feeding plans."
-  canonicalUrl="https://dogfoodplanner.com/feeding-calculator"
+  lang={lang}
+  title={currentStrings['calculator.title']}
+  description={currentStrings['calculator.desc']}
 >
   <Navbar />
   
   <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
     <Breadcrumbs 
       items={[
-        { name: 'Home', url: '/' },
-        { name: 'Feeding Calculator' }
+        { name: t('nav.brand'), url: translatePath('/') },
+        { name: t('nav.calculator') }
       ]}
     />
 
@@ -27,14 +36,14 @@ import Footer from '../components/Footer.astro';
     <section class="py-10 sm:py-14 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
-          <span class="text-[#10b981]">100% FREE</span> // CANINE NUTRITION GUIDELINES
+          {p.eyebrow}
         </div>
 
         <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 text-balance leading-tight">
-          Canine Calorie & Meal Portion Calculator
+          {currentStrings['calculator.title']}
         </h1>
         <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
-          Calculate your dog's daily calorie targets and generate customized fresh, raw, or topper meal plans with clear ingredient measurements.
+          {currentStrings['calculator.desc']}
         </p>
       </div>
     </section>
@@ -49,77 +58,24 @@ import Footer from '../components/Footer.astro';
     <section class="py-14 sm:py-16 bg-white dark:bg-[#0d0d0d] border-y border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
         <h2 class="text-2xl font-bold text-[#171717] dark:text-[#ededed]">
-          How Our Veterinary Feeding Math Works
+          {p.heroTitle}
         </h2>
         <p>
-          Unlike generic chart estimates on commercial bags, DogFoodPlanner uses the National Research Council (NRC) formula for calculating canine energy expenditure:
+          {p.heroSubtitle}
         </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <div class="p-5 bg-[#fafafa] dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2">
-            <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">1. Resting Energy Requirement (RER)</h3>
-            <p class="text-xs">
-              The baseline energy burned while at complete rest in a thermoneutral environment:
-            </p>
-            <code class="block p-3 bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg font-mono text-xs text-[#171717] dark:text-[#ededed]">
-              RER (kcal/day) = 70 × (Body Weight in kg)<sup>0.75</sup>
-            </code>
-          </div>
-
-          <div class="p-5 bg-[#fafafa] dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2">
-            <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">2. Maintenance Energy Requirement (MER)</h3>
-            <p class="text-xs">
-              RER multiplied by your dog's life stage, reproductive status, and physical activity:
-            </p>
-            <ul class="text-xs space-y-1 font-mono text-[#171717] dark:text-[#ededed] p-2 bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg">
-              <li>• Spayed/Neutered Adult: 1.6 × RER</li>
-              <li>• Intact Adult: 1.8 × RER</li>
-              <li>• Weight Loss: 1.0 - 1.2 × RER</li>
-              <li>• Puppy (&lt;4 mo): 3.0 × RER</li>
-            </ul>
-          </div>
+        <div class="p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] font-mono text-xs">
+          RER (Resting Energy Requirement) = 70 × (Body Weight in kg)<sup>0.75</sup>
         </div>
       </div>
     </section>
 
-    <!-- Core supplements every calculator result recommends -->
-    <section class="py-10 bg-[#fafafa] dark:bg-[#0d0d0d] border-t border-[#ebebeb] dark:border-[#262626]">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-4">
-        <h2 class="text-lg font-bold text-[#171717] dark:text-[#ededed]">
-          The Two Supplements Every Homemade Plan Requires
-        </h2>
-        <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
-          Regardless of which meal plan the calculator generates, these two supplements are always needed to balance a homemade diet.
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <a href="https://amzn.to/4haNVWy" target="_blank" rel="noopener noreferrer nofollow" class="flex items-start gap-3 p-4 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#141414] hover:border-[#0070f3]/40 dark:hover:border-[#3291ff]/40 transition-colors">
-            <span class="text-xl shrink-0">🥚</span>
-            <div>
-              <div class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed]">U.S.A. Eggshell Powder, 8oz — Calcium Supplement</div>
-              <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5 leading-relaxed">Required to balance the Ca:P ratio in all boneless meat recipes. Add ½ tsp per pound of meat.</div>
-            </div>
-          </a>
-          <a href="https://amzn.to/46HCJdW" target="_blank" rel="noopener noreferrer nofollow" class="flex items-start gap-3 p-4 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#141414] hover:border-[#0070f3]/40 dark:hover:border-[#3291ff]/40 transition-colors">
-            <span class="text-xl shrink-0">🐟</span>
-            <div>
-              <div class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed]">Zesty Paws Wild Alaskan Salmon Oil, 16oz — Omega-3</div>
-              <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5 leading-relaxed">EPA/DHA supplement for all fresh and raw plans. Add 1 tsp per 20 lbs of body weight daily.</div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Relevant FAQs -->
+    <!-- FAQs Section -->
     <FaqSection 
-      title="Feeding Math & Portion FAQs" 
-      subtitle="Answers on how much food a dog can safely eat per day and daily feeding schedules."
       category="Feeding Math & Portions"
       limit={6}
-      viewAllLink={true}
     />
 
   </main>
-
+  
   <Footer />
 </Layout>
