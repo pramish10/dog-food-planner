@@ -8,80 +8,94 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<footer class="border-t border-[#ebebeb] dark:border-[#262626] pt-10 pb-8 sm:pt-16 sm:pb-12 transition-colors bg-[#fafafa] dark:bg-[#0d0d0d]">
+<footer class="border-t border-[#f0d5a8] dark:border-[#3a2510] pt-10 pb-8 sm:pt-16 sm:pb-12 transition-colors footer-warm-bg">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
-    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-[#ebebeb] dark:border-[#262626]">
+    <!-- Top warm glow accent -->
+    <div class="relative mb-10 sm:mb-12">
+      <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-96 h-24 rounded-full opacity-30 pointer-events-none" style="background: radial-gradient(ellipse, rgba(196,122,43,0.25) 0%, transparent 70%); filter: blur(30px);"></div>
+    </div>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pb-10 sm:pb-12 border-b border-[#f0d5a8]/60 dark:border-[#3a2510]">
       
       <!-- Brand Col -->
       <div class="col-span-2 sm:col-span-2 lg:col-span-1 space-y-3">
         <div class="flex items-center gap-2">
           <Logo class="size-7" />
-          <span class="font-semibold text-sm text-[#171717] dark:text-[#ededed] tracking-tight">{t('nav.brand')}</span>
+          <span class="font-bold text-sm text-[#1c0f00] dark:text-[#fde8c8] tracking-tight">{t('nav.brand')}</span>
         </div>
-        <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed max-w-xs">
+        <p class="text-xs text-[#6b4226] dark:text-[#c4956a] leading-relaxed max-w-xs">
           {t('footer.about')}
         </p>
-        <!-- Mini CTA — black pill -->
-        <a href={translatePath('/#planner-section')} class="inline-flex items-center gap-1.5 text-xs font-medium text-white dark:text-[#171717] bg-[#171717] dark:bg-white hover:bg-[#333] dark:hover:bg-[#e5e5e5] px-3.5 py-1.5 rounded-full transition-all active:scale-[0.97]">
+        <!-- Mini CTA -->
+        <a href={translatePath('/#planner-section')} class="inline-flex items-center gap-1.5 text-xs font-bold text-white px-3.5 py-1.5 rounded-full transition-all active:scale-[0.97]" style="background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%); box-shadow: 0 3px 10px rgba(196,122,43,0.3);">
           🐕 {t('nav.planBowl')}
         </a>
       </div>
 
       <!-- Column 1 -->
       <div>
-        <h4 class="font-mono text-[11px] sm:text-xs font-medium text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-3">
+        <h4 class="text-[11px] sm:text-xs font-bold text-[#92400e] dark:text-[#d97706] uppercase tracking-wider font-mono mb-3">
           {t('footer.col1Title')}
         </h4>
         <ul class="space-y-2 text-xs">
-          <li><a href={translatePath('/#planner-section')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkPlanner')}</a></li>
-          <li><a href={translatePath('/best-dog-food')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkBestFood')}</a></li>
-          <li><a href={translatePath('/dog-food-recipes')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkRecipes')}</a></li>
-          <li><a href={translatePath('/dog-food-allergies')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkAllergies')}</a></li>
+          <li><a href={translatePath('/#planner-section')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkPlanner')}</a></li>
+          <li><a href={translatePath('/best-dog-food')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkBestFood')}</a></li>
+          <li><a href={translatePath('/dog-food-recipes')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkRecipes')}</a></li>
+          <li><a href={translatePath('/dog-food-allergies')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkAllergies')}</a></li>
         </ul>
       </div>
 
       <!-- Column 2 -->
       <div>
-        <h4 class="font-mono text-[11px] sm:text-xs font-medium text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-3">
+        <h4 class="text-[11px] sm:text-xs font-bold text-[#92400e] dark:text-[#d97706] uppercase tracking-wider font-mono mb-3">
           {t('footer.col2Title')}
         </h4>
         <ul class="space-y-2 text-xs">
-          <li><a href={translatePath('/toxic-foods')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkToxic')}</a></li>
-          <li><a href={translatePath('/dog-food-brands')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkBrands')}</a></li>
-          <li><a href={translatePath('/faq')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkFaqs')}</a></li>
-          <li><a href={translatePath('/feeding-calculator')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkPortions')}</a></li>
+          <li><a href={translatePath('/toxic-foods')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkToxic')}</a></li>
+          <li><a href={translatePath('/dog-food-brands')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkBrands')}</a></li>
+          <li><a href={translatePath('/faq')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkFaqs')}</a></li>
+          <li><a href={translatePath('/feeding-calculator')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkPortions')}</a></li>
         </ul>
       </div>
 
       <!-- Column 3 -->
       <div>
-        <h4 class="font-mono text-[11px] sm:text-xs font-medium text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider mb-3">
+        <h4 class="text-[11px] sm:text-xs font-bold text-[#92400e] dark:text-[#d97706] uppercase tracking-wider font-mono mb-3">
           {t('footer.col3Title')}
         </h4>
         <ul class="space-y-2 text-xs">
-          <li><a href={translatePath('/about')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkAbout')}</a></li>
-          <li><a href={translatePath('/contact')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkContact')}</a></li>
-          <li><a href={translatePath('/privacy-policy')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkPrivacy')}</a></li>
-          <li><a href={translatePath('/terms')} class="text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] transition-colors">{t('footer.linkTerms')}</a></li>
+          <li><a href={translatePath('/about')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkAbout')}</a></li>
+          <li><a href={translatePath('/contact')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkContact')}</a></li>
+          <li><a href={translatePath('/privacy-policy')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkPrivacy')}</a></li>
+          <li><a href={translatePath('/terms')} class="text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] transition-colors">{t('footer.linkTerms')}</a></li>
         </ul>
       </div>
 
     </div>
 
     <!-- Multi-language selection row -->
-    <div class="py-6 border-b border-[#ebebeb] dark:border-[#262626]">
+    <div class="py-6 border-b border-[#f0d5a8]/60 dark:border-[#3a2510]">
       <LanguagePicker variant="footer" />
     </div>
 
-    <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">
+    <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] sm:text-[11px] text-[#a16207] dark:text-[#92400e]">
       <p class="max-w-3xl leading-relaxed text-center md:text-left">
         {t('footer.disclaimer')}
       </p>
-      <div class="font-mono text-center md:text-right shrink-0 text-[#4d4d4d] dark:text-[#a1a1a1]">
+      <div class="font-mono text-center md:text-right shrink-0 text-[#6b4226] dark:text-[#c4956a]">
         © {new Date().getFullYear()} DogFoodPlanner
       </div>
     </div>
 
   </div>
 </footer>
+
+<style>
+  .footer-warm-bg {
+    background: linear-gradient(180deg, #fff8f0 0%, #fef3e2 100%);
+  }
+  html.dark .footer-warm-bg {
+    background: linear-gradient(180deg, #150d04 0%, #1c1005 100%);
+  }
+</style>

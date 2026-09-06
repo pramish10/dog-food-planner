@@ -1,4 +1,4 @@
----
+﻿---
 import { CANINE_BREEDS } from '../data/breeds';
 import { getLangFromUrl } from '../i18n/utils';
 import { plannerTranslations } from '../i18n/planner';
@@ -8,7 +8,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 const TOTAL_STEPS = 4;
 ---
 
-<section id="planner-section" class="py-6 sm:py-10 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0e0cc] dark:border-[#2a1f14]" data-lang={lang}>
+<section id="planner-section" class="py-6 sm:py-10 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0d5a8] dark:border-[#3a2510]" data-lang={lang}>
   <div class="max-w-xl mx-auto px-4 sm:px-6">
 
     <!-- Header -->
@@ -402,16 +402,16 @@ const TOTAL_STEPS = 4;
         <!-- Navigation Buttons -->
         <div class="flex items-center justify-between mt-4 pt-4 border-t border-[#f0d5a8] dark:border-[#3a2510]">
           <button type="button" id="prev-btn"
-            class="hidden px-5 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation">
+            class="hidden px-5 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#1c0f00] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation">
             {p.prevBtn}
           </button>
           <div id="prev-placeholder"></div>
           <button type="button" id="next-btn"
-            class="px-6 py-2.5 text-sm font-semibold bg-[#c47a2b] hover:bg-[#a8651f] text-white rounded-xl transition-all cursor-pointer touch-manipulation">
+            class="px-6 py-2.5 text-sm font-semibold bg-[#c47a2b] hover:bg-[#b8691f] text-white rounded-xl transition-all cursor-pointer touch-manipulation">
             {p.nextBtn}
           </button>
           <button type="submit" id="submit-btn"
-            class="hidden px-6 py-2.5 text-sm font-semibold bg-[#c47a2b] hover:bg-[#a8651f] text-white rounded-xl transition-all cursor-pointer touch-manipulation">
+            class="hidden px-6 py-2.5 text-sm font-semibold bg-[#c47a2b] hover:bg-[#b8691f] text-white rounded-xl transition-all cursor-pointer touch-manipulation">
             {p.submitBtn}
           </button>
         </div>
@@ -512,9 +512,10 @@ const TOTAL_STEPS = 4;
     }
     currentWeightKg = false;
     weightUnit = 'lbs';
-    (document.getElementById('unit-lbs') as HTMLElement).className = 'px-3 py-1.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold transition-colors cursor-pointer font-mono text-xs';
-    (document.getElementById('unit-kg') as HTMLElement).className = 'px-3 py-1.5 bg-white dark:bg-[#1a1a1a] text-[#8f8f8f] dark:text-[#737373] transition-colors cursor-pointer font-mono text-xs';
+    (document.getElementById('unit-lbs') as HTMLElement).className = 'px-3 py-1.5 bg-[#c47a2b] dark:bg-white text-white dark:text-[#1c0f00] font-semibold transition-colors cursor-pointer font-mono text-xs';
+    (document.getElementById('unit-kg') as HTMLElement).className = 'px-3 py-1.5 bg-white dark:bg-[#2a1a08] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer font-mono text-xs';
     (document.getElementById('weight-unit-label') as HTMLElement).textContent = 'LBS';
+
   });
 
   document.getElementById('unit-kg')?.addEventListener('click', () => {
@@ -526,9 +527,10 @@ const TOTAL_STEPS = 4;
     }
     currentWeightKg = true;
     weightUnit = 'kg';
-    (document.getElementById('unit-kg') as HTMLElement).className = 'px-3 py-1.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] font-semibold transition-colors cursor-pointer font-mono text-xs';
-    (document.getElementById('unit-lbs') as HTMLElement).className = 'px-3 py-1.5 bg-white dark:bg-[#1a1a1a] text-[#8f8f8f] dark:text-[#737373] transition-colors cursor-pointer font-mono text-xs';
+    (document.getElementById('unit-kg') as HTMLElement).className = 'px-3 py-1.5 bg-[#c47a2b] dark:bg-white text-white dark:text-[#1c0f00] font-semibold transition-colors cursor-pointer font-mono text-xs';
+    (document.getElementById('unit-lbs') as HTMLElement).className = 'px-3 py-1.5 bg-white dark:bg-[#2a1a08] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer font-mono text-xs';
     (document.getElementById('weight-unit-label') as HTMLElement).textContent = 'KG';
+
   });
 
   // Form submit

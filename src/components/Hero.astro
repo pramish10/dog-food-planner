@@ -6,31 +6,41 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<section class="relative pt-10 pb-12 sm:pt-20 sm:pb-24 border-b border-[#ebebeb] dark:border-[#262626] overflow-hidden mesh-gradient-bg bg-[#fafafa] dark:bg-[#0d0d0d]">
+<section class="relative pt-8 pb-10 sm:pt-16 sm:pb-20 border-b border-[#f0e0cc] dark:border-[#2a1f14] overflow-hidden hero-warm-bg">
+  <!-- Warm radial glow blobs -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-[600px] h-[340px] rounded-full opacity-60"
+      style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.18) 0%, rgba(255,200,100,0.10) 40%, transparent 70%); filter: blur(40px);"></div>
+    <div class="absolute top-10 right-0 w-48 h-48 rounded-full opacity-40"
+      style="background: radial-gradient(circle, rgba(234,179,8,0.15) 0%, transparent 70%); filter: blur(30px);"></div>
+    <div class="absolute bottom-0 left-0 w-40 h-40 rounded-full opacity-30"
+      style="background: radial-gradient(circle, rgba(196,122,43,0.12) 0%, transparent 70%); filter: blur(25px);"></div>
+  </div>
 
   <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center min-w-0">
 
-    <!-- Mono eyebrow badge -->
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] shadow-[0px_1px_1px_rgba(0,0,0,0.04)] mb-6">
-      <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] shrink-0 animate-pulse"></span>
-      <span class="font-mono text-[11px] font-medium text-[#8f8f8f] dark:text-[#737373] uppercase tracking-wider">{t('hero.badge')}</span>
+    <!-- Friendly badge -->
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] shadow-sm mb-5">
+      <span class="w-2 h-2 rounded-full bg-[#22c55e] shrink-0 animate-pulse"></span>
+      <span class="text-[11px] font-bold text-[#92400e] dark:text-[#d97706] uppercase tracking-wider">{t('hero.badge')}</span>
     </div>
 
-    <!-- display-xl headline: 48px / 600 / -2.4px -->
-    <h1 class="text-[2rem] xs:text-[2.4rem] sm:text-[3rem] font-semibold text-[#171717] dark:text-[#ededed] leading-[1] tracking-[-0.05em] sm:tracking-[-0.05em] max-w-2xl mx-auto mb-5 text-balance px-0.5">
-      {t('hero.title1')} <span class="text-[#171717] dark:text-[#ededed]">{t('hero.titleHighlight')}</span><br class="hidden sm:block" /> {t('hero.title2')}
+    <!-- Big friendly headline -->
+    <h1 class="text-[2rem] xs:text-[2.4rem] sm:text-5xl md:text-6xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight leading-[1.12] max-w-2xl mx-auto mb-4 sm:mb-5 text-balance px-0.5">
+      {t('hero.title1')} <span class="text-[#c47a2b] dark:text-[#f59e0b]">{t('hero.titleHighlight')}</span><br class="hidden sm:block" /> {t('hero.title2')}
     </h1>
 
-    <!-- body-lg subtitle -->
-    <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal text-pretty px-0.5">
+    <!-- Simple, warm subtitle -->
+    <p class="text-sm sm:text-lg text-[#6b4226] dark:text-[#c4956a] max-w-xl mx-auto mb-7 sm:mb-10 leading-relaxed font-normal text-pretty px-0.5">
       {t('hero.subtitle')}
     </p>
 
-    <!-- CTAs: black pill primary + ghost pill secondary -->
+    <!-- Primary CTA — warm amber -->
     <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-10 sm:mb-14 w-full sm:w-auto">
       <a
         href="#planner-section"
-        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[44px] text-base font-medium text-white dark:text-[#171717] bg-[#171717] dark:bg-white hover:bg-[#333] dark:hover:bg-[#e5e5e5] rounded-full px-7 py-0 transition-all active:scale-[0.97]"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 text-sm sm:text-base font-bold text-white rounded-full px-7 py-3.5 transition-all active:scale-[0.97] shadow-lg hover:shadow-xl"
+        style="background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%); box-shadow: 0 6px 20px rgba(196,122,43,0.38);"
       >
         <span>{t('hero.ctaCalculate')}</span>
         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -40,31 +50,40 @@ const translatePath = useTranslatedPath(lang);
 
       <a
         href={translatePath('/dog-food-brands')}
-        class="w-full sm:w-auto inline-flex items-center justify-center min-h-[44px] text-base font-medium text-[#171717] dark:text-[#ededed] bg-white dark:bg-[#141414] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] active:scale-[0.97] transition-all px-7 py-0 rounded-full"
+        class="w-full sm:w-auto inline-flex items-center justify-center min-h-12 text-sm font-semibold text-[#6b4226] dark:text-[#d4a574] bg-white dark:bg-[#1c1208] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] active:scale-[0.97] transition-all px-6 py-3.5 rounded-full"
       >
         {t('hero.ctaCompare')}
       </a>
     </div>
 
-    <!-- Trust metrics strip — hairline cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 max-w-2xl mx-auto pt-5 sm:pt-6 border-t border-[#ebebeb] dark:border-[#262626]">
-      <div class="p-3 sm:p-4 bg-white dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] shadow-[0px_1px_1px_rgba(0,0,0,0.04)] text-center">
-        <div class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed]">{t('hero.metric1Value')}</div>
-        <div class="font-mono text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] mt-1 leading-snug">{t('hero.metric1Label')}</div>
+    <!-- Trust metrics strip — warm style -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 max-w-2xl mx-auto pt-5 sm:pt-6 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]">
+      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">{t('hero.metric1Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">{t('hero.metric1Label')}</div>
       </div>
-      <div class="p-3 sm:p-4 bg-white dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] shadow-[0px_1px_1px_rgba(0,0,0,0.04)] text-center">
-        <div class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed]">{t('hero.metric2Value')}</div>
-        <div class="font-mono text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] mt-1 leading-snug">{t('hero.metric2Label')}</div>
+      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">{t('hero.metric2Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">{t('hero.metric2Label')}</div>
       </div>
-      <div class="p-3 sm:p-4 bg-white dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] shadow-[0px_1px_1px_rgba(0,0,0,0.04)] text-center">
-        <div class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed]">{t('hero.metric3Value')}</div>
-        <div class="font-mono text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] mt-1 leading-snug">{t('hero.metric3Label')}</div>
+      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">{t('hero.metric3Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">{t('hero.metric3Label')}</div>
       </div>
-      <div class="p-3 sm:p-4 bg-white dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] shadow-[0px_1px_1px_rgba(0,0,0,0.04)] text-center">
-        <div class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed]">{t('hero.metric4Value')}</div>
-        <div class="font-mono text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] mt-1 leading-snug">{t('hero.metric4Label')}</div>
+      <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">{t('hero.metric4Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">{t('hero.metric4Label')}</div>
       </div>
     </div>
 
   </div>
 </section>
+
+<style>
+  .hero-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 50%, #fff0e6 100%);
+  }
+  html.dark .hero-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 50%, #1a0e04 100%);
+  }
+</style>
