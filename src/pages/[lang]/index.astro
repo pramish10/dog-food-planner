@@ -4,8 +4,6 @@ import Navbar from '../../components/Navbar.astro';
 import Hero from '../../components/Hero.astro';
 import PlannerQuiz from '../../components/PlannerQuiz.astro';
 import PlanResults from '../../components/PlanResults.astro';
-import IngredientChecker from '../../components/IngredientChecker.astro';
-import FaqSection from '../../components/FaqSection.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangStaticPaths } from '../../i18n/utils';
 import { ui, type Lang } from '../../i18n/ui';
@@ -29,15 +27,6 @@ const currentStrings = ui[lang] || ui.en;
     <Hero />
     <PlannerQuiz />
     <PlanResults />
-    <IngredientChecker />
-    <FaqSection 
-      title={currentStrings['nav.faqs']} 
-      subtitle="Quick veterinary answers to top questions on portion sizing, canine diets, and toxic foods."
-      limit={8}
-      showCategories={true}
-      showSearch={true}
-      viewAllLink={true}
-    />
   </main>
   <Footer />
 </Layout>

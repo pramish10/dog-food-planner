@@ -60,11 +60,10 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
       </div>
     </section>
 
-    <!-- Master FAQ Section with Search, Tabs, and JSON-LD -->
+    <!-- Master FAQ Section with Search and JSON-LD -->
     <FaqSection 
       title={currentStrings['faqs.title']}
       subtitle={p.exploreHubsSubtitle}
-      showCategories={true}
       showSearch={true}
     />
 
@@ -82,7 +81,6 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <a href={translatePath('/best-dog-food')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <span class="text-2xl mb-2 block">🏆</span>
             <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
               {t('nav.bestDogFood')} →
             </h3>
@@ -92,7 +90,6 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
           </a>
 
           <a href={translatePath('/feeding-calculator')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <span class="text-2xl mb-2 block">🧮</span>
             <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
               {t('nav.calculator')} →
             </h3>
@@ -102,7 +99,6 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
           </a>
 
           <a href={translatePath('/dog-food-recipes')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <span class="text-2xl mb-2 block">🍲</span>
             <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
               {t('nav.recipes')} →
             </h3>
@@ -112,7 +108,6 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
           </a>
 
           <a href={translatePath('/dog-food-allergies')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <span class="text-2xl mb-2 block">🛡️</span>
             <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
               {t('nav.allergies')} →
             </h3>
@@ -122,7 +117,6 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
           </a>
 
           <a href={translatePath('/toxic-foods')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <span class="text-2xl mb-2 block">⚠️</span>
             <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
               {t('nav.toxicFoods')} →
             </h3>
@@ -132,7 +126,6 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
           </a>
 
           <a href={translatePath('/dog-food-brands')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <span class="text-2xl mb-2 block">⭐</span>
             <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
               {t('nav.brands')} →
             </h3>

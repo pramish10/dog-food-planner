@@ -1,6 +1,6 @@
 ---
 import { generateFaqJsonLd } from '../data/faqs';
-import { getLocalizedFaqs, FAQ_CATEGORY_TRANSLATIONS } from '../i18n/faqs';
+import { getLocalizedFaqs } from '../i18n/faqs';
 import { getPageTranslations } from '../i18n/pages';
 import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 
@@ -9,7 +9,6 @@ interface Props {
   subtitle?: string;
   limit?: number;
   category?: string;
-  showCategories?: boolean;
   showSearch?: boolean;
   viewAllLink?: boolean;
 }
@@ -17,14 +16,12 @@ interface Props {
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
 const pageStrings = getPageTranslations(lang).faqPage;
-const categoryStrings = FAQ_CATEGORY_TRANSLATIONS[lang];
 
 const {
   title = pageStrings.badge,
   subtitle = pageStrings.exploreHubsSubtitle,
   limit,
   category,
-  showCategories = true,
   showSearch = true,
   viewAllLink = false,
 } = Astro.props;
@@ -54,37 +51,20 @@ const faqJsonLd = generateFaqJsonLd(faqs);
       </p>
     </div>
 
-    <!-- Live Search & Category Filter Toolbar -->
-    {(showSearch || showCategories) && (
-      <div class="mb-8 space-y-4">
-        {showSearch && (
-          <div class="relative max-w-xl mx-auto">
-            <input 
-              type="search"
-              id="faq-search-input"
-              placeholder={pageStrings.badge}
-              class="w-full pl-10 pr-4 py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] focus:border-[#171717] dark:focus:border-[#ededed] focus:bg-white dark:focus:bg-[#141414] rounded-xl text-xs sm:text-sm text-[#171717] dark:text-[#ededed] outline-none transition-all placeholder:text-[#8f8f8f] dark:placeholder:text-[#737373] shadow-2xs"
-            />
-            <svg class="w-4 h-4 text-[#8f8f8f] dark:text-[#737373] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
-            </svg>
-          </div>
-        )}
-
-        {showCategories && (
-          <div class="flex items-center justify-center gap-1.5 flex-wrap pt-1">
-            {Object.keys(categoryStrings).map(cat => (
-              <button
-                type="button"
-                data-faq-cat-filter={cat}
-                aria-pressed="false"
-                class="faq-cat-btn px-3 py-2 min-h-9 text-xs font-mono rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] bg-[#fafafa] dark:bg-[#141414] text-[#4d4d4d] dark:text-[#a1a1a1] transition-all cursor-pointer"
-              >
-                {categoryStrings[cat] || cat}
-              </button>
-            ))}
-          </div>
-        )}
+    <!-- Live Search Toolbar -->
+    {showSearch && (
+      <div class="mb-8">
+        <div class="relative max-w-xl mx-auto">
+          <input 
+            type="search"
+            id="faq-search-input"
+            placeholder={pageStrings.badge}
+            class="w-full pl-10 pr-4 py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] focus:border-[#171717] dark:focus:border-[#ededed] focus:bg-white dark:focus:bg-[#141414] rounded-xl text-xs sm:text-sm text-[#171717] dark:text-[#ededed] outline-none transition-all placeholder:text-[#8f8f8f] dark:placeholder:text-[#737373] shadow-2xs"
+          />
+          <svg class="w-4 h-4 text-[#8f8f8f] dark:text-[#737373] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+          </svg>
+        </div>
       </div>
     )}
 
@@ -159,32 +139,6 @@ const faqJsonLd = generateFaqJsonLd(faqs);
   </div>
 </section>
 
-<style>
-  .faq-cat-btn:hover {
-    color: #171717;
-    border-color: #171717;
-  }
-
-  :global(.dark) .faq-cat-btn:hover {
-    color: #ededed;
-    border-color: #ededed;
-  }
-
-  .faq-cat-btn.is-active,
-  .faq-cat-btn.is-active:hover {
-    background-color: #171717 !important;
-    border-color: #171717 !important;
-    color: #fff !important;
-  }
-
-  :global(.dark) .faq-cat-btn.is-active,
-  :global(.dark) .faq-cat-btn.is-active:hover {
-    background-color: #fff !important;
-    border-color: #fff !important;
-    color: #171717 !important;
-  }
-</style>
-
 <!-- Embedded SEO JSON-LD FAQPage Schema -->
 <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 
@@ -192,25 +146,11 @@ const faqJsonLd = generateFaqJsonLd(faqs);
   // Interactive FAQ Accordion Logic
   const accordionList = document.getElementById('faq-accordion-list');
   const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
-  const catButtons = document.querySelectorAll<HTMLElement>('.faq-cat-btn');
   const searchInput = document.getElementById('faq-search-input') as HTMLInputElement | null;
   const noResults = document.getElementById('faq-no-results');
   const faqLimit = parseInt(accordionList?.getAttribute('data-faq-limit') || '0', 10);
 
-  let activeCategory = 'All Questions';
   let searchTerm = '';
-
-  function setActiveCategory(category: string) {
-    activeCategory = Array.from(catButtons).some(
-      button => button.getAttribute('data-faq-cat-filter') === category,
-    ) ? category : 'All Questions';
-
-    catButtons.forEach(button => {
-      const isActive = button.getAttribute('data-faq-cat-filter') === activeCategory;
-      button.classList.toggle('is-active', isActive);
-      button.setAttribute('aria-pressed', String(isActive));
-    });
-  }
 
   // Accordion Expand/Collapse
   faqItems.forEach(item => {
@@ -234,25 +174,21 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     });
   });
 
-  // Filter & Search Dispatcher
+  // Filter by search term only
   function applyFilters() {
     let visibleCount = 0;
-    // Only apply the limit when showing "All Questions" with no search query
-    const shouldApplyLimit = faqLimit > 0 && activeCategory === 'All Questions' && searchTerm === '';
+    const shouldApplyLimit = faqLimit > 0 && searchTerm === '';
 
     faqItems.forEach(item => {
-      const itemCat = item.getAttribute('data-category') || '';
       const itemQ = item.getAttribute('data-question') || '';
       const itemKeywords = item.getAttribute('data-keywords') || '';
 
-      const matchCategory = activeCategory === 'All Questions' || itemCat === activeCategory;
       const matchSearch = searchTerm === '' || 
         itemQ.includes(searchTerm) || 
         itemKeywords.includes(searchTerm);
 
-      if (matchCategory && matchSearch) {
+      if (matchSearch) {
         visibleCount++;
-        // When limit is active, hide items beyond the limit
         if (shouldApplyLimit && visibleCount > faqLimit) {
           item.classList.add('hidden');
         } else {
@@ -263,7 +199,6 @@ const faqJsonLd = generateFaqJsonLd(faqs);
       }
     });
 
-    // Adjust visibleCount for the no-results check
     const actualVisible = shouldApplyLimit ? Math.min(visibleCount, faqLimit) : visibleCount;
 
     if (actualVisible === 0 && noResults) {
@@ -273,31 +208,11 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     }
   }
 
-  // Category Buttons Click
-  catButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      setActiveCategory(btn.getAttribute('data-faq-cat-filter') || 'All Questions');
-      applyFilters();
-
-      const url = new URL(window.location.href);
-      if (activeCategory === 'All Questions') {
-        url.searchParams.delete('category');
-      } else {
-        url.searchParams.set('category', activeCategory);
-      }
-      window.history.replaceState(null, '', url);
-    });
-  });
-
   // Search Input Event
   searchInput?.addEventListener('input', (e) => {
     searchTerm = (e.target as HTMLInputElement).value.toLowerCase().trim();
     applyFilters();
   });
 
-  // Topic badges link here with a category query parameter. Apply it after the
-  // page renders so the selected tab and the visible answers stay in sync.
-  const requestedCategory = new URLSearchParams(window.location.search).get('category');
-  setActiveCategory(requestedCategory || 'All Questions');
   applyFilters();
 </script>
