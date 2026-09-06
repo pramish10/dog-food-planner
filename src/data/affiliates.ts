@@ -530,10 +530,6 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Wild-Caught Pacific Salmon & Cod Fillets': 'https://amzn.to/4ymLrtY', // Stella & Chewy's Surf 'N Turf
   'Organic Steamed Sweet Potato': 'https://amzn.to/4xYpMst', // Crumps' Naturals Sweet Potato
   'Finely Shredded Green Zucchini': 'https://amzn.to/4ijNt9D', // Weis Quality Zucchini Squash
-  'Slow-Simmered Grass-Fed Collagen Bone Broth': 'https://amzn.to/4zZ68xK', // Honest Kitchen Bone Broth
-  'Wild Canned Sardines in Water (No Salt)': 'https://amzn.to/4xg3W2h', // Wild Planet Sardines
-  'Golden Turmeric & Black Pepper Micro-Emulsion': 'https://amzn.to/46JlM2I', // Zesty Paws Liver Support
-  'Unfiltered Raw Apple Cider Vinegar (with Mother)': 'https://amzn.to/46Jlx7O', // Bragg ACV
   'Veterinary Bone Meal & Sea Salt': 'https://amzn.to/4gRALwj',
   // ── Additional Ingredient Mappings for IngredientChecker ──────────────────
   'Pumpkin (Pure Puree)': 'https://amzn.to/3UFE0PZ',
@@ -569,7 +565,6 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Sardines': 'https://amzn.to/4xg3W2h',
   'Canned Sardines': 'https://amzn.to/4xg3W2h',
   'Eggshell Calcium': 'https://amzn.to/4gRALwj',
-  'Calcium Supplement': 'https://amzn.to/4gRALwj',
   'Clean Eggshell Powder': 'https://amzn.to/4gRALwj',
   'Kelp': 'https://amzn.to/3UsBTPA',
   'Organic Kelp': 'https://amzn.to/3UsBTPA',
@@ -590,24 +585,7 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Raw Edible Bone': 'https://amzn.to/4gyO85G',
   'Other Secreting Organ': 'https://amzn.to/4zVmeIy',
   // ── Fresh-Cooked: Chicken ────────────────────────────────────────────────
-  'Lean ground chicken': 'https://amzn.to/4xEuafH',           // Stella & Chewy's Freeze-Dried Chicken Meal Mixers 1oz
-  'Chicken hearts': 'https://amzn.to/4ctpLUu',                // Vital Essentials Freeze-Dried Chicken Hearts 3.75oz
-  'Cooked white rice': 'https://amzn.to/3SrJddG',             // JustFoodForDogs Nutrient Blend Chicken & Rice
-  'Steamed zucchini': 'https://amzn.to/4xPVcB1',              // Fresh Green Zucchini
   'USDA Ground Turkey (93/7)': 'https://amzn.to/3ThvqGK',    // Whole Paws Turkey Feast wet food
-  // ── Fresh-Cooked: Turkey ────────────────────────────────────────────────
-  'USDA Lean Ground Turkey (93/7)': 'https://amzn.to/3ThvqGK',         // Whole Paws Turkey Feast wet food
-  'Organic Turkey Hearts & Gizzards': 'https://amzn.to/3SUnT0v',       // smallbatch Freeze-Dried Turkey 7oz ×2
-  'Baby Spinach & Steamed Zucchini': 'https://amzn.to/4yqDq7u',        // Organicgirl Baby Spinach 5oz
-  // ── Fresh-Cooked: Beef ──────────────────────────────────────────────────
-  'Grass-Fed Ground Beef (85/15)': 'https://amzn.to/4AgiqlF',          // Old Mill 85/15 Ground Beef ×10
-  'Pasture-Raised Beef Liver': 'https://amzn.to/3UryAbr',              // Ancestral Supplements Beef Liver 180ct
-  'Steamed Sweet Carrots & Kale': 'https://amzn.to/4gWqwad',           // 365 Organic Shredded Carrots 10oz
-  'Wild Blueberries (Antioxidant Boost)': 'https://amzn.to/4xadv2C',   // Icelandic+ Cod & Blueberry Sticks ×2
-  // ── Fresh-Cooked: Salmon ────────────────────────────────────────────────
-  'Wild-Caught Pacific Salmon & Cod Fillets': 'https://amzn.to/4ymLrtY',  // Stella & Chewy's Surf 'N Turf Salmon & Beef 25oz ×2
-  'Organic Steamed Sweet Potato': 'https://amzn.to/4xYpMst',              // Crumps' Naturals Sweet Potato 11.6oz ×2
-  'Finely Shredded Green Zucchini': 'https://amzn.to/4ijNt9D',            // Weis Quality Zucchini Squash
   // ── Raw BARF: Beef ──────────────────────────────────────────────────────
   'Raw Grass-Fed Beef Chuck & Heart': 'https://amzn.to/3Sz0bqy',          // Get Joy Freeze-Dried Beef Heart 4oz ×3
   'Ground Soft Beef Rib Bone / Chicken Frames': 'https://amzn.to/4gyO85G',// Stella & Chewy's Beef Meal Mixers (w/ bone) 1oz
@@ -617,7 +595,6 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Pasture Lamb Shoulder & Heart': 'https://amzn.to/4xELsJL',    // Stella & Chewy's Lamb Wild Weenies 3.25oz
   'Ground Lamb Rib Bone': 'https://amzn.to/46MbZsE',             // Stella & Chewy's Lamb Meal Mixers (w/ bone) 35oz ×2
   'Lamb Liver & Kidney': 'https://amzn.to/4yhHI0B',              // PureBites Lamb Freeze-Dried 3.35oz
-  'Raw Unbleached Green Tripe': 'https://amzn.to/3SrLyW0',       // K9 Natural Lamb Green Tripe Freeze-Dried Booster
   // ── Superfood Topper ────────────────────────────────────────────────────
   'Pureed Zucchini, Celery & Pumpkin Seeds': 'https://amzn.to/3SUqibx', // Pumpkin & Green Bean Natural Dog Treats
 };
