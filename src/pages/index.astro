@@ -4,60 +4,33 @@ import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import PlannerQuiz from '../components/PlannerQuiz.astro';
 import PlanResults from '../components/PlanResults.astro';
+import IngredientChecker from '../components/IngredientChecker.astro';
+import FaqSection from '../components/FaqSection.astro';
 import Footer from '../components/Footer.astro';
+import { ui } from '../i18n/ui';
+
+const currentStrings = ui['en'];
 ---
 
 <Layout 
-  title="Best Dog Food & Free Custom Meal Planner 2026 | DogFoodPlanner.com"
-  description="Calculate the best dog food, fresh dog food recipes, and raw BARF formulas tailored for your puppy, adult, or sensitive stomach dog. 100% free veterinary canine nutrition tool."
+  title={currentStrings['meta.title']}
+  description={currentStrings['meta.description']}
+  keywords={currentStrings['meta.keywords']}
 >
   <Navbar />
   <main>
     <Hero />
     <PlannerQuiz />
     <PlanResults />
-
-    <section class="py-10 sm:py-14 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-8">
-          <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
-            QUICK PATHS
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2">
-            Explore one topic at a time
-          </h2>
-          <p class="text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
-            The calculator stays front and center here. Deeper guides, ingredient safety, brand reviews, and the full FAQ library each live on their own page.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3.5">
-          <a href="/toxic-foods" class="group rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414] p-5 hover:border-[#171717] dark:hover:border-[#ededed] transition-all">
-            <div class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-2">Safety checker</div>
-            <h3 class="text-base font-semibold text-[#171717] dark:text-[#ededed] mb-2">Toxic foods database</h3>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Search dangerous ingredients and safer alternatives without adding more scroll to the homepage.</p>
-          </a>
-
-          <a href="/dog-food-brands" class="group rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414] p-5 hover:border-[#171717] dark:hover:border-[#ededed] transition-all">
-            <div class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-2">Reviews</div>
-            <h3 class="text-base font-semibold text-[#171717] dark:text-[#ededed] mb-2">Brand comparisons</h3>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Read recall notes, pros and cons, and product picks in a dedicated review hub.</p>
-          </a>
-
-          <a href="/best-dog-food" class="group rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414] p-5 hover:border-[#171717] dark:hover:border-[#ededed] transition-all">
-            <div class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-2">Guides</div>
-            <h3 class="text-base font-semibold text-[#171717] dark:text-[#ededed] mb-2">Best dog food guide</h3>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Jump straight to buying guidance instead of scanning through mixed-purpose homepage sections.</p>
-          </a>
-
-          <a href="/faq" class="group rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414] p-5 hover:border-[#171717] dark:hover:border-[#ededed] transition-all">
-            <div class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-2">Help library</div>
-            <h3 class="text-base font-semibold text-[#171717] dark:text-[#ededed] mb-2">40+ dog food FAQs</h3>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Browse the full question library on its own page with search and category filters.</p>
-          </a>
-        </div>
-      </div>
-    </section>
+    <IngredientChecker />
+    <FaqSection 
+      title={currentStrings['nav.faqs']} 
+      subtitle="Quick veterinary answers to top questions on portion sizing, canine diets, and toxic foods."
+      limit={8}
+      showCategories={true}
+      showSearch={true}
+      viewAllLink={true}
+    />
   </main>
   <Footer />
 </Layout>

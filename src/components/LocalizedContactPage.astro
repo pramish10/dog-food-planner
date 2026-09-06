@@ -55,9 +55,9 @@ const { lang } = Astro.props as { lang: Lang }; const strings = ui[lang] || ui.e
             </label>
 
             <div id="locale-contact-success" class="hidden p-3.5 bg-[#10b981]/10 border border-[#10b981]/30 rounded-lg text-[11px] leading-relaxed">
-              <div class="font-semibold text-[#10b981] mb-1">✓ Message prepared — sending to hello@dogfoodplanner.com</div>
+              <div class="font-semibold text-[#10b981] mb-1">{p.successTitle}</div>
               <div class="text-[#4d4d4d] dark:text-[#a1a1a1]">
-                Your email client should open with a pre-drafted message addressed to <a href="mailto:hello@dogfoodplanner.com?subject=DogFoodPlanner%20Contact%20Inquiry" class="underline text-[#0070f3] dark:text-[#3291ff] font-mono">hello@dogfoodplanner.com</a>. Just hit <strong>Send</strong> in your email app and it will arrive in our inbox.
+                {p.successDesc} <a href="mailto:hello@dogfoodplanner.com?subject=DogFoodPlanner%20Contact%20Inquiry" class="underline text-[#0070f3] dark:text-[#3291ff] font-mono">hello@dogfoodplanner.com</a>
               </div>
             </div>
 

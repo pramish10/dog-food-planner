@@ -38,12 +38,12 @@ export const RECIPES: MealRecipe[] = [
     description: 'Lean chicken, easy-to-digest rice, pumpkin, and green vegetables. Each ingredient is shown below with the amount to weigh for your dog.',
     macroProfile: { proteinPct: 46, fatPct: 29, carbsPct: 5, moisturePct: 73, fiberPct: 3, caPhosphorusRatio: '1.2 : 1', kcalPerGram: 1.25 },
     ingredients: [
-      { name: 'Lean ground chicken', category: 'Muscle Meat', percentage: 62, purpose: 'Main protein for strong muscles', allergens: ['chicken', 'poultry'] },
-      { name: 'Chicken hearts', category: 'Organ', percentage: 8, purpose: 'Adds flavour and natural nutrients', allergens: ['chicken', 'poultry'] },
-      { name: 'Cooked white rice', category: 'Vegetables & Greens', percentage: 12, purpose: 'Gentle energy for the day' },
+      { name: 'Lean ground chicken', category: 'Muscle Meat', percentage: 62, purpose: 'Fresh lean protein base — high-quality amino acids for muscle maintenance', allergens: ['chicken', 'poultry'] },
+      { name: 'Chicken hearts', category: 'Organ', percentage: 8, purpose: 'Natural taurine, CoQ10 & B12 — use freeze-dried chicken hearts as a convenient source', allergens: ['chicken', 'poultry'] },
+      { name: 'Cooked white rice', category: 'Vegetables & Greens', percentage: 12, purpose: 'Easy-digest carbohydrate base — gentle on the stomach, low-residue energy source' },
       { name: 'Plain pumpkin purée', category: 'Vegetables & Greens', percentage: 10, purpose: 'Gentle fibre for digestion' },
-      { name: 'Steamed zucchini', category: 'Vegetables & Greens', percentage: 4, purpose: 'Adds moisture and vegetables' },
-      { name: 'Vitamins & Supplements', category: 'Natural Supplements', percentage: 4, purpose: 'Helps make a homemade meal complete' }
+      { name: 'Steamed zucchini', category: 'Vegetables & Greens', percentage: 4, purpose: 'Low-calorie hydration & potassium — adds moisture and phytonutrients' },
+      { name: 'Vitamins & Supplements', category: 'Natural Supplements', percentage: 4, purpose: 'Just Food for Dogs Nutrient Blend — vitamins, minerals & multivitamin mix formulated for homemade chicken & rice meals' }
     ],
     healthFocusMatches: ['Sensitive Digestion', 'General Health', 'Weight Management'],
     preparationNotes: [
@@ -74,7 +74,7 @@ export const RECIPES: MealRecipe[] = [
       { name: 'Pure Organic Pumpkin Puree', category: 'Vegetables & Greens', percentage: 10, purpose: 'Soluble fiber soothing the GI tract & microbiome' },
       { name: 'Baby Spinach & Steamed Zucchini', category: 'Vegetables & Greens', percentage: 8, purpose: 'Folate, lutein, and magnesium' },
       { name: 'Wild Alaskan Salmon Oil', category: 'Healthy Fats & Oils', percentage: 3, purpose: 'DHA/EPA Omega-3s for anti-inflammatory skin & joints' },
-      { name: 'Eggshell Calcium & Organic Kelp Blend', category: 'Natural Supplements', percentage: 4, purpose: 'Bioavailable calcium, iodine, and trace minerals' }
+      { name: 'Eggshell Calcium & Organic Kelp Blend', category: 'Natural Supplements', percentage: 4, purpose: 'Eggshell calcium powder for bone strength — provides bioavailable calcium & phosphorus balance' }
     ],
     healthFocusMatches: ['Sensitive Digestion', 'Weight Management', 'Longevity & Vitality'],
     preparationNotes: [
@@ -101,11 +101,11 @@ export const RECIPES: MealRecipe[] = [
     },
     ingredients: [
       { name: 'Grass-Fed Ground Beef (85/15)', category: 'Muscle Meat', percentage: 65, purpose: 'High amino acid spectrum, iron & L-carnitine', allergens: ['beef'] },
-      { name: 'Pasture-Raised Beef Liver', category: 'Organ', percentage: 8, purpose: 'Nature’s multivitamin: Vitamin A, copper, B12', allergens: ['beef'] },
+      { name: 'Pasture-Raised Beef Liver', category: 'Organ', percentage: 8, purpose: 'Organ meat — Vitamin A, copper & B12; freeze-dried beef liver capsules are a convenient alternative', allergens: ['beef'] },
       { name: 'Steamed Sweet Carrots & Kale', category: 'Vegetables & Greens', percentage: 12, purpose: 'Beta-carotene for eye and cellular health' },
-      { name: 'Wild Blueberries (Antioxidant Boost)', category: 'Vegetables & Greens', percentage: 5, purpose: 'Anthocyanins to combat oxidative stress' },
+      { name: 'Wild Blueberries (Antioxidant Boost)', category: 'Vegetables & Greens', percentage: 5, purpose: 'Anthocyanins to combat oxidative stress — Icelandic+ Cod & Blueberry sticks are a dog-safe blueberry treat option' },
       { name: 'Cold-Pressed Virgin Flaxseed Oil', category: 'Healthy Fats & Oils', percentage: 4, purpose: 'Alpha-linolenic acid (ALA) for cell membranes' },
-      { name: 'Veterinary Bone Meal & Sea Salt', category: 'Natural Supplements', percentage: 6, purpose: 'Balanced phosphorus-to-calcium ratio' }
+      { name: 'Veterinary Bone Meal & Sea Salt', category: 'Natural Supplements', percentage: 6, purpose: 'Seaweed calcium & mineral balance — Animal Essentials Sea-Cal provides natural calcium & magnesium for bones' }
     ],
     healthFocusMatches: ['Hip & Joint', 'Active Energy', 'Lean Muscle'],
     preparationNotes: [
@@ -131,10 +131,10 @@ export const RECIPES: MealRecipe[] = [
       kcalPerGram: 1.32
     },
     ingredients: [
-      { name: 'Wild-Caught Pacific Salmon & Cod Fillets', category: 'Muscle Meat', percentage: 70, purpose: 'Pure marine EPA & DHA fatty acids, novel protein', allergens: ['salmon', 'fish'] },
+      { name: 'Wild-Caught Pacific Salmon & Cod Fillets', category: 'Muscle Meat', percentage: 70, purpose: 'Primary protein & omega-3 source — marine EPA & DHA; Stella & Chewy\'s Surf \'N Turf is a freeze-dried salmon alternative', allergens: ['salmon', 'fish'] },
       { name: 'Organic Steamed Sweet Potato', category: 'Vegetables & Greens', percentage: 14, purpose: 'Gentle dietary fiber and potassium' },
       { name: 'Finely Shredded Green Zucchini', category: 'Vegetables & Greens', percentage: 8, purpose: 'Hydration and phytonutrients' },
-      { name: 'Virgin Coconut Oil & Golden Turmeric', category: 'Healthy Fats & Oils', percentage: 4, purpose: 'Lauric acid & curcumin to neutralize dermal inflammation' },
+      { name: 'Virgin Coconut Oil & Golden Turmeric', category: 'Healthy Fats & Oils', percentage: 4, purpose: 'Curcumin anti-inflammatory & skin-soothing fatty acids — Zesty Paws Turmeric Curcumin supplement is a convenient option' },
       { name: 'Ground Seaweed Calcium & Brewer’s Yeast', category: 'Natural Supplements', percentage: 4, purpose: 'Natural B-complex and bone mineral support' }
     ],
     healthFocusMatches: ['Skin & Anti-Itch', 'Allergy Relief', 'Heart Health'],
@@ -165,7 +165,7 @@ export const RECIPES: MealRecipe[] = [
     ingredients: [
       { name: 'Raw Grass-Fed Beef Chuck & Heart', category: 'Muscle Meat', percentage: 65, purpose: 'Dense amino acids, zinc, iron & carnosine', allergens: ['beef'] },
       { name: 'Ground Soft Beef Rib Bone / Chicken Frames', category: 'Raw Bone', percentage: 10, purpose: 'Bio-available raw bone calcium and glucosamine', allergens: ['beef', 'bone'] },
-      { name: 'Beef Liver (Secreting Organ 1)', category: 'Organ', percentage: 5, purpose: 'Critical Vitamin A and copper', allergens: ['beef'] },
+      { name: 'Beef Liver (Secreting Organ 1)', category: 'Organ', percentage: 5, purpose: 'Vitamin A, copper & B12 — use fresh or freeze-dried beef liver; Ancestral Supplements Beef Liver capsules are a convenient alternative', allergens: ['beef'] },
       { name: 'Beef Kidney or Spleen (Secreting Organ 2)', category: 'Organ', percentage: 5, purpose: 'Selenium, B-vitamins, and metabolic enzymes', allergens: ['beef'] },
       { name: 'Pureed Organic Leafy Greens & Cranberries', category: 'Vegetables & Greens', percentage: 10, purpose: 'Cellular enzymes, polyphenols, and urinary health' },
       { name: 'Green Tripe & Fermented Kefir / Raw Goat Milk', category: 'Natural Supplements', percentage: 5, purpose: 'Natural living digestive enzymes and probiotics', allergens: ['dairy'] }
@@ -229,7 +229,7 @@ export const RECIPES: MealRecipe[] = [
       { name: 'Wild Canned Sardines in Water (No Salt)', category: 'Muscle Meat', percentage: 30, purpose: 'Omega-3 (EPA/DHA), CoQ10, and vitamin D', allergens: ['fish'] },
       { name: 'Organic Pumpkin Puree & Steamed Spinach', category: 'Vegetables & Greens', percentage: 20, purpose: 'Prebiotic fibers fueling healthy gut flora' },
       { name: 'Unfiltered Raw Apple Cider Vinegar (with Mother)', category: 'Natural Supplements', percentage: 5, purpose: 'Digestive pH balance & enzyme activation' },
-      { name: 'Golden Turmeric & Black Pepper Micro-Emulsion', category: 'Natural Supplements', percentage: 5, purpose: 'Powerful natural joint anti-inflammatory' }
+      { name: 'Golden Turmeric & Black Pepper Micro-Emulsion', category: 'Natural Supplements', percentage: 5, purpose: 'Curcumin joint anti-inflammatory & liver support — Zesty Paws Turmeric Curcumin soft chews are a ready-made option' }
     ],
     healthFocusMatches: ['Hip & Joint', 'Sensitive Digestion', 'Budget-Conscious Longevity'],
     preparationNotes: [

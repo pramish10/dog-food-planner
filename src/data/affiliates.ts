@@ -448,7 +448,7 @@ export const AFFILIATE_PRODUCTS: Record<string, AffiliateProduct> = {
 
   // ── VITAMIN BLENDS ────────────────────────────────────────────────────────
   'justfoodfordogs-nutrient-blend-chicken-rice-2pack': {
-    name: 'Just Food for Dogs Nutrient Blend, Chicken & Rice, DIY Fresh Pet Meals, 4.55oz (Pack of 2)',
+    name: 'Just Food for Dogs Nutrient Blend, Vitamins & Supplements for Homemade Dog Food, Chicken & Rice, DIY Fresh Pet Meals & Toppers, Human Grade Quality, Dog Vitamins & Multivitamin Additive, 4.55oz, (Pack of 2)',
     url: 'https://amzn.to/3SrJddG',
     category: 'fresh-cooked',
   },
@@ -507,13 +507,13 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Pure Organic Pumpkin Puree': 'https://amzn.to/3UFE0PZ',
   'Organic Pumpkin Puree & Steamed Spinach': 'https://amzn.to/3UFE0PZ',
   'Plain pumpkin purée': 'https://amzn.to/3UFE0PZ',
-  'Pureed Organic Leafy Greens & Cranberries': 'https://amzn.to/4xg3W2h',
+  'Pureed Organic Leafy Greens & Cranberries': 'https://amzn.to/3SUqibx', // Pumpkin & Green Bean Dog Treat — closest whole-food greens product
   'Cold-Pressed Virgin Flaxseed Oil': 'https://amzn.to/4xg6A8d', // NOW Foods Organic Flax Seed Oil 24oz (fixed from salmon oil mismatch)
   'Virgin Coconut Oil & Golden Turmeric': 'https://amzn.to/46JlM2I',
-  'Vitamins & Supplements': 'https://amzn.to/3SrJddG', // Just Food For Dogs Nutrient Blend
-  'Dog-safe calcium and vitamin mix': 'https://amzn.to/3SrJddG', // Just Food For Dogs Nutrient Blend (legacy support)
-  'calcium and vitamin mix': 'https://amzn.to/3SrJddG', // Just Food For Dogs Nutrient Blend (alternative support)
-  'nutrient blend': 'https://amzn.to/3SrJddG', // Just Food For Dogs Nutrient Blend (alternative support)
+  'Vitamins & Supplements': 'https://amzn.to/3SrJddG', // Just Food for Dogs Nutrient Blend, Vitamins & Supplements for Homemade Dog Food, Chicken & Rice, 4.55oz (Pack of 2)
+  'Dog-safe calcium and vitamin mix': 'https://amzn.to/3SrJddG', // Just Food for Dogs Nutrient Blend (legacy support)
+  'calcium and vitamin mix': 'https://amzn.to/3SrJddG', // Just Food for Dogs Nutrient Blend (alternative support)
+  'nutrient blend': 'https://amzn.to/3SrJddG', // Just Food for Dogs Nutrient Blend (alternative support)
   // ── Recipe-specific ingredient mappings ─────────────────────────────────────
   'Lean ground chicken': 'https://amzn.to/4xEuafH', // Stella & Chewy's Freeze-Dried Chicken Meal Mixers
   'Chicken hearts': 'https://amzn.to/4ctpLUu', // Vital Essentials Freeze-Dried Chicken Hearts
@@ -526,7 +526,7 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Grass-Fed Ground Beef (85/15)': 'https://amzn.to/4AgiqlF', // Old Mill Ground Beef
   'Pasture-Raised Beef Liver': 'https://amzn.to/3UryAbr', // Ancestral Supplements Beef Liver
   'Steamed Sweet Carrots & Kale': 'https://amzn.to/4gWqwad', // 365 Organic Shredded Carrots
-  'Wild Blueberries (Antioxidant Boost)': 'https://amzn.to/4yh4yFF', // Wild Planet Sardines single can (closer whole-food fit than fish treats)
+  'Wild Blueberries (Antioxidant Boost)': 'https://amzn.to/4xadv2C', // Icelandic+ Cod & Blueberry Sticks — closest blueberry-containing dog product
   'Wild-Caught Pacific Salmon & Cod Fillets': 'https://amzn.to/4ymLrtY', // Stella & Chewy's Surf 'N Turf
   'Organic Steamed Sweet Potato': 'https://amzn.to/4xYpMst', // Crumps' Naturals Sweet Potato
   'Finely Shredded Green Zucchini': 'https://amzn.to/4ijNt9D', // Weis Quality Zucchini Squash

@@ -28,13 +28,13 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       <!-- Action Buttons -->
       <div class="flex items-center gap-2 w-full sm:w-auto">
         <button 
-          id="print-plan-btn"
-          class="no-print w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#1a1a1a] hover:bg-[#ebebeb] dark:hover:bg-[#262626] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-full transition-all shadow-2xs cursor-pointer touch-manipulation active:scale-[0.98]"
+          id="download-pdf-btn"
+          class="no-print w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-white bg-[#0070f3] hover:bg-[#005ac2] border border-[#0070f3] hover:border-[#005ac2] rounded-full transition-all shadow-2xs cursor-pointer touch-manipulation active:scale-[0.98]"
         >
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.75A2.25 2.25 0 0014.25 1.5h-4.5A2.25 2.25 0 007.5 3.75v3.456"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
           </svg>
-          {p.printBtn}
+          Download PDF
         </button>
       </div>
     </div>
@@ -100,6 +100,28 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
         </div>
       </div>
 
+    </div>
+
+    <!-- Personalized Advice Panel -->
+    <div id="personalized-advice-panel" class="mb-8 sm:mb-10 p-5 sm:p-6 rounded-2xl border border-[#0070f3]/20 bg-gradient-to-br from-[#f0f7ff] to-[#fafafa] dark:from-[#0070f3]/10 dark:to-[#141414] dark:border-[#0070f3]/20">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-lg">🎯</span>
+        <h3 class="text-sm sm:text-base font-bold text-[#171717] dark:text-[#ededed]">Personalized Advice for <span class="res-dog-name-inline text-[#0070f3] dark:text-[#3291ff]">Lucy</span></h3>
+      </div>
+      <div id="advice-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <!-- Dynamically populated via JS -->
+      </div>
+    </div>
+
+    <!-- Breed Insights Panel -->
+    <div id="breed-insights-panel" class="mb-8 sm:mb-10 p-5 sm:p-6 rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#141414]">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-lg">🐾</span>
+        <h3 class="text-sm sm:text-base font-bold text-[#171717] dark:text-[#ededed]">Breed-Specific Nutrition Insights</h3>
+      </div>
+      <div id="breed-insights-content" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <!-- Dynamically populated via JS -->
+      </div>
     </div>
 
     <!-- Diet Switcher Pills -->
@@ -270,6 +292,17 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
     </div>
 
+    <!-- Health Focus Deep Dive -->
+    <div id="health-focus-tips" class="mt-8 sm:mt-10 p-5 sm:p-6 rounded-2xl border border-[#ebebeb] dark:border-[#262626] bg-white dark:bg-[#141414]">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-lg" id="health-focus-icon">⭐</span>
+        <h3 class="text-sm sm:text-base font-bold text-[#171717] dark:text-[#ededed]">Your <span id="health-focus-label">General Health</span> Nutrition Guide</h3>
+      </div>
+      <div id="health-focus-content" class="space-y-3">
+        <!-- Dynamically populated via JS -->
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -345,6 +378,273 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
         : `https://www.amazon.com/s?k=${query}`,
       isAffiliate: !!(affiliateUrl && affiliateUrl.length > 0),
     };
+  }
+
+  function renderPersonalizedAdvice(profile: any, result: any, recipe: any) {
+    const grid = document.getElementById('advice-cards-grid');
+    if (!grid) return;
+
+    const cards: Array<{ icon: string; title: string; body: string; color: string }> = [];
+
+    // Age-stage advice
+    const ageAdvice: Record<string, { icon: string; title: string; body: string }> = {
+      'puppy-early': {
+        icon: '🐣',
+        title: 'Early Puppy (2–4 months)',
+        body: `${result.dogName} needs 3 meals/day with 28–32% protein and DHA for brain development. Calcium:Phosphorus ratio must be 1.2:1 to 1.4:1 — avoid over-supplementing calcium which causes skeletal deformities in large breeds.`
+      },
+      'puppy-late': {
+        icon: '🐕',
+        title: 'Growing Puppy (4–12 months)',
+        body: `${result.dogName} is in peak growth. Protein should be 26–30% of diet. Transition to 2 meals/day around 6 months. Avoid high-fat diets that accelerate bone growth too fast in large breeds.`
+      },
+      'adult': {
+        icon: '🦮',
+        title: 'Adult Maintenance',
+        body: `${result.dogName} needs consistent daily calories to maintain lean muscle. Spayed/neutered dogs need 20–30% fewer calories than intact dogs. Monitor body condition score monthly — ribs should be easily felt but not visible.`
+      },
+      'senior': {
+        icon: '🦴',
+        title: 'Senior Nutrition',
+        body: `${result.dogName} needs higher-quality protein (not less) to prevent muscle wasting (sarcopenia). Reduce fat by 10–15%, increase moisture content, and add glucosamine/chondroitin. Kidney function monitoring is critical — avoid excess phosphorus.`
+      }
+    };
+    const ageCard = ageAdvice[profile.ageStage];
+    if (ageCard) cards.push({ ...ageCard, color: '#0070f3' });
+
+    // BCS advice
+    if (profile.bcs <= 3) {
+      cards.push({
+        icon: '⚠️',
+        title: 'Underweight Alert',
+        body: `BCS ${profile.bcs}/9 indicates ${result.dogName} is underweight. Increase daily calories by 20% using energy-dense proteins like beef and salmon. Add healthy fats (salmon oil, flaxseed oil). Rule out parasites, dental pain, or illness with your vet.`,
+        color: '#f59e0b'
+      });
+    } else if (profile.bcs >= 7) {
+      cards.push({
+        icon: '⚖️',
+        title: 'Weight Management Priority',
+        body: `BCS ${profile.bcs}/9 means ${result.dogName} is overweight. We've reduced calories by 20%. Feed measured portions only — no free feeding. Replace high-calorie treats with raw carrots, cucumber, or blueberries. Increase daily walks by 15 minutes.`,
+        color: '#e11d48'
+      });
+    }
+
+    // Activity advice
+    const activityAdvice: Record<string, { icon: string; title: string; body: string }> = {
+      sedentary: {
+        icon: '🛋️',
+        title: 'Low Activity — Calorie Watch',
+        body: `Sedentary dogs burn 15% fewer calories. Avoid high-fat recipes and limit treats strictly to 5% of daily intake. Prioritize lean proteins (turkey, chicken breast) and high-fiber vegetables to maintain satiety without excess calories.`
+      },
+      working: {
+        icon: '🏔️',
+        title: 'Working Dog — High Energy Needs',
+        body: `Working dogs need 55% more calories than resting. Prioritize fat-dense proteins (beef, salmon) for sustained energy. Feed 3x daily if possible. Add electrolytes via bone broth on heavy work days. Monitor hydration closely.`
+      },
+      active: {
+        icon: '⚡',
+        title: 'Active Dog — Performance Nutrition',
+        body: `Active dogs need 25% more calories with emphasis on quality protein for muscle repair. Feed the larger meal 2 hours after exercise, not before. Add wild salmon oil for joint lubrication and anti-inflammatory recovery.`
+      }
+    };
+    const actCard = activityAdvice[profile.activityLevel];
+    if (actCard) cards.push({ ...actCard, color: '#7928ca' });
+
+    // Allergy advice
+    const avoidedAllergies = (profile.allergies || []).filter((a: string) => a !== 'none / no allergies');
+    if (avoidedAllergies.length > 0) {
+      const allergyTips: Record<string, string> = {
+        'chicken / poultry': 'Replace with novel proteins: lamb, venison, rabbit, or wild-caught fish. Avoid all poultry by-products and "meat meal" on labels.',
+        beef: 'Use lamb, turkey, or salmon as alternatives. Check for hidden beef in "meat broth" or "natural flavors" on commercial labels.',
+        dairy: 'Avoid cheese, yogurt, and whey. Goat milk is often tolerated better than cow dairy due to smaller fat globules.',
+        'grains / wheat': 'Use grain-free recipes with sweet potato, pumpkin, or zucchini as carb sources. Oats are often tolerated even in grain-sensitive dogs.',
+        soy: 'Avoid soy lecithin and soy protein isolate in commercial foods. Soy is a common hidden ingredient in budget kibbles.',
+        eggs: 'Eggs are a common allergen — avoid all egg-containing treats and baked dog foods. Duck eggs are sometimes tolerated.',
+        corn: 'Corn is a common filler with low bioavailability. Replace with sweet potato or pumpkin for digestible carbohydrates.'
+      };
+      const tipLines = avoidedAllergies.map((a: string) => allergyTips[a] || `Avoid ${a} in all forms.`).join(' ');
+      cards.push({
+        icon: '🚫',
+        title: `Sensitivity Management: ${avoidedAllergies.join(', ')}`,
+        body: tipLines,
+        color: '#e11d48'
+      });
+    }
+
+    // Diet type advice
+    const dietAdvice: Record<string, { icon: string; title: string; body: string }> = {
+      'fresh-cooked': {
+        icon: '🍲',
+        title: 'Fresh Cooked — Key Rules',
+        body: 'Cook proteins to 160°F internal temperature. Never add onions, garlic, or xylitol. Always add a complete vitamin/mineral supplement (like Just Food for Dogs Nutrient Blend) — homemade food alone is nutritionally incomplete without it.'
+      },
+      'raw-barf': {
+        icon: '🥩',
+        title: 'Raw BARF — Safety Protocol',
+        body: 'Freeze raw meat at -4°F for 3+ weeks before feeding to eliminate parasites. Follow 80/10/10 ratio: 80% muscle meat, 10% raw edible bone, 10% organs. Wash all bowls and surfaces with hot soapy water after every meal.'
+      },
+      'superfood-topper': {
+        icon: '🥣',
+        title: 'Topper Strategy',
+        body: 'Reduce kibble portion by 25–30% when adding toppers to avoid overfeeding. Warm bone broth toppers to 100°F to release aroma and improve palatability. Rotate toppers weekly to prevent food boredom and broaden nutrient spectrum.'
+      }
+    };
+    const dietCard = dietAdvice[profile.dietPreference];
+    if (dietCard) cards.push({ ...dietCard, color: '#10b981' });
+
+    grid.innerHTML = cards.map(card => `
+      <div class="p-4 rounded-xl border border-[${card.color}]/20 bg-white dark:bg-[#1a1a1a]" style="border-left: 3px solid ${card.color}">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-base">${card.icon}</span>
+          <span class="text-xs font-bold text-[#171717] dark:text-[#ededed]">${card.title}</span>
+        </div>
+        <p class="text-[11px] sm:text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">${card.body}</p>
+      </div>
+    `).join('');
+  }
+
+  function renderBreedInsights(profile: any) {
+    const container = document.getElementById('breed-insights-content');
+    if (!container) return;
+
+    const breedName = profile.breed || '';
+    const isLarge = breedName.toLowerCase().includes('large') || breedName.toLowerCase().includes('giant') ||
+      ['german shepherd', 'labrador', 'golden retriever', 'rottweiler', 'great dane', 'saint bernard', 'mastiff', 'husky', 'malamute', 'bernese'].some(b => breedName.toLowerCase().includes(b));
+    const isToy = breedName.toLowerCase().includes('toy') || breedName.toLowerCase().includes('chihuahua') ||
+      ['chihuahua', 'pomeranian', 'yorkshire', 'maltese', 'shih tzu', 'pekingese'].some(b => breedName.toLowerCase().includes(b));
+    const isBrachy = ['bulldog', 'pug', 'boston terrier', 'french bulldog', 'boxer', 'shih tzu', 'pekingese', 'cavalier'].some(b => breedName.toLowerCase().includes(b));
+    const isHighEnergy = ['border collie', 'husky', 'malamute', 'jack russell', 'dalmatian', 'vizsla', 'weimaraner', 'pointer', 'setter', 'springer'].some(b => breedName.toLowerCase().includes(b));
+    const isHerding = ['border collie', 'australian shepherd', 'german shepherd', 'corgi', 'sheltie', 'collie'].some(b => breedName.toLowerCase().includes(b));
+
+    const insights: Array<{ icon: string; label: string; value: string; note: string }> = [];
+
+    if (isToy) {
+      insights.push({ icon: '⚡', label: 'Metabolism', value: 'Very Fast', note: 'Toy breeds burn calories 25% faster per kg. Feed 3x daily to prevent hypoglycemia. Use calorie-dense small bites.' });
+    } else if (isLarge) {
+      insights.push({ icon: '🦴', label: 'Joint Health', value: 'Priority', note: 'Large breeds are prone to hip dysplasia and elbow dysplasia. Add glucosamine (500mg/day) and chondroitin. Avoid rapid weight gain in puppies.' });
+    } else {
+      insights.push({ icon: '⚖️', label: 'Metabolism', value: 'Moderate', note: 'Medium breeds have balanced metabolic needs. 2 meals/day is ideal. Monitor weight monthly with rib-check test.' });
+    }
+
+    if (isBrachy) {
+      insights.push({ icon: '😮‍💨', label: 'Brachycephalic', value: 'Special Needs', note: 'Flat-faced breeds have smaller airways — avoid obesity strictly as extra weight worsens breathing. Feed from elevated bowls to reduce air swallowing and bloat risk.' });
+    } else if (isHighEnergy) {
+      insights.push({ icon: '🏃', label: 'Energy Level', value: 'High Performance', note: 'This breed needs 25–40% more calories on active days. Prioritize complex carbs (sweet potato, oats) for sustained energy. Replenish electrolytes with bone broth after intense exercise.' });
+    } else if (isHerding) {
+      insights.push({ icon: '🧠', label: 'Herding Breed', value: 'Brain + Body', note: 'Herding breeds need mental stimulation alongside nutrition. DHA-rich foods (salmon, sardines) support cognitive function. High protein (28%+) maintains lean muscle for agility.' });
+    } else {
+      insights.push({ icon: '🐾', label: 'Breed Type', value: 'Standard', note: 'Follow standard NRC guidelines for this breed size. Rotate proteins every 4–6 weeks to prevent food sensitivities from developing.' });
+    }
+
+    // Always add a dental insight
+    insights.push({ icon: '🦷', label: 'Dental Health', value: 'Daily Care', note: 'Raw meaty bones (under supervision) and freeze-dried treats help reduce plaque. Avoid sticky soft treats. Brush teeth 3x/week with dog-safe toothpaste. Dental disease affects 80% of dogs by age 3.' });
+
+    container.innerHTML = insights.map(ins => `
+      <div class="p-4 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a]">
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="text-base">${ins.icon}</span>
+          <div>
+            <div class="text-[10px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373]">${ins.label}</div>
+            <div class="text-xs font-bold text-[#171717] dark:text-[#ededed]">${ins.value}</div>
+          </div>
+        </div>
+        <p class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">${ins.note}</p>
+      </div>
+    `).join('');
+  }
+
+  function renderHealthFocusTips(profile: any) {
+    const container = document.getElementById('health-focus-content');
+    const iconEl = document.getElementById('health-focus-icon');
+    const labelEl = document.getElementById('health-focus-label');
+    if (!container) return;
+
+    const tips: Record<string, { icon: string; sections: Array<{ title: string; items: string[] }> }> = {
+      'General Health': {
+        icon: '⭐',
+        sections: [
+          { title: '✅ Best Foods to Include', items: ['Lean proteins: chicken, turkey, salmon (rotate weekly)', 'Pumpkin puree (2 tbsp/day) for gut health', 'Wild sardines in water (2x/week) for omega-3s', 'Steamed broccoli, carrots, zucchini (10% of diet)', 'Bone broth as a daily hydration topper'] },
+          { title: '🚫 Foods to Avoid', items: ['Onions, garlic, leeks (toxic — cause hemolytic anemia)', 'Grapes, raisins (cause acute kidney failure)', 'Xylitol in any form (causes liver failure within 30 min)', 'Cooked bones (splinter and puncture intestines)', 'Processed deli meats (high sodium, nitrates)'] },
+          { title: '💊 Key Supplements', items: ['Omega-3 fish oil: 20mg EPA+DHA per kg body weight/day', 'Probiotic: 1–5 billion CFU/day for gut microbiome', 'Vitamin E: 1–2 IU/kg/day as antioxidant support'] }
+        ]
+      },
+      'Sensitive Digestion': {
+        icon: '🌱',
+        sections: [
+          { title: '✅ Gut-Healing Foods', items: ['Plain pumpkin puree (3–4 tbsp/day) — soluble fiber soothes IBS', 'Bone broth (1/4 cup/day) — seals leaky gut with collagen', 'Plain cooked white rice — low-residue, easy to digest', 'Boiled chicken breast — single protein, minimal fat', 'Slippery elm bark powder (1/4 tsp/day) — coats gut lining'] },
+          { title: '🚫 Trigger Foods to Eliminate', items: ['High-fat foods (>18% fat) — trigger pancreatitis flares', 'Dairy products — most dogs lack lactase enzyme', 'Corn, soy, wheat — common gut irritants', 'Artificial preservatives (BHA, BHT, ethoxyquin)', 'Raw food during active flares — cook everything thoroughly'] },
+          { title: '🔄 Transition Protocol', items: ['Switch foods over 14 days minimum (not 7)', 'Start with 90% old food / 10% new food for 3 days', 'Add 1 tsp plain pumpkin to every meal during transition', 'If loose stools appear, slow down the transition by 3 more days'] }
+        ]
+      },
+      'Hip & Joint': {
+        icon: '🦴',
+        sections: [
+          { title: '✅ Joint-Supporting Foods', items: ['Wild salmon (2x/week) — EPA/DHA reduces joint inflammation by 40%', 'Bone broth with glucosamine (1/4 cup/day)', 'Green-lipped mussel powder (1/4 tsp/day) — natural NSAID alternative', 'Turmeric + black pepper (1/8 tsp/day) — curcumin blocks COX-2 enzymes', 'Sardines in water (1 can/week) — natural chondroitin source'] },
+          { title: '⚖️ Weight is the #1 Factor', items: ['Every extra pound adds 4 lbs of pressure on hip joints', 'Reduce calories by 10% if BCS is above 5/9', 'Replace calorie-dense treats with raw carrots or cucumber', 'Weigh your dog monthly — even 1 lb matters for joint health'] },
+          { title: '💊 Evidence-Based Supplements', items: ['Glucosamine HCl: 20mg/kg/day (not sulfate — HCl has better bioavailability)', 'Chondroitin sulfate: 15mg/kg/day', 'Omega-3 (EPA+DHA): 40mg/kg/day for anti-inflammatory effect', 'Vitamin C: 10mg/kg/day — collagen synthesis cofactor'] }
+        ]
+      },
+      'Skin & Anti-Itch': {
+        icon: '✨',
+        sections: [
+          { title: '✅ Skin-Healing Foods', items: ['Wild salmon or sardines (3x/week) — EPA reduces skin inflammation', 'Coconut oil (1 tsp/day for small dogs, 1 tbsp for large) — lauric acid', 'Pumpkin seeds (1 tsp ground/day) — zinc for skin barrier repair', 'Blueberries (5–10/day) — anthocyanins reduce histamine response', 'Goat milk (2 tbsp/day) — probiotics reduce allergic skin reactions'] },
+          { title: '🔍 Identify the Root Cause', items: ['Environmental allergies: worse in spring/fall, affects paws and face', 'Food allergies: year-round, affects ears, paws, groin, armpits', 'Elimination diet: feed single novel protein for 8–12 weeks minimum', 'Most common food allergens: beef (34%), dairy (17%), chicken (15%)', 'Flea allergy: single flea bite causes reaction — check base of tail'] },
+          { title: '💊 Skin Supplement Stack', items: ['Omega-3 (EPA+DHA): 40–80mg/kg/day — most evidence-backed skin supplement', 'Quercetin: 5–10mg/kg twice daily — natural antihistamine', 'Vitamin E: 400 IU/day for medium dogs — skin barrier support', 'Probiotics: Lactobacillus rhamnosus reduces atopic dermatitis severity'] }
+        ]
+      },
+      'Weight Management': {
+        icon: '⚖️',
+        sections: [
+          { title: '✅ Low-Calorie Filling Foods', items: ['Steamed green beans (replace 25% of kibble volume — only 31 kcal/cup)', 'Raw carrots as treats (25 kcal each vs 50+ kcal for commercial treats)', 'Plain pumpkin puree (adds bulk, only 49 kcal/cup)', 'Cucumber slices (16 kcal/cup — 95% water, very filling)', 'Lean turkey breast (lowest fat protein at 1.5g fat/100g)'] },
+          { title: '📏 Portion Control Rules', items: ['Weigh food on a kitchen scale — cups are inaccurate by up to 30%', 'Feed 2x daily on a strict schedule — no free feeding', 'All treats count toward daily calorie budget (max 10%)', 'Reduce daily calories by 20% for weight loss — never more than 25%', 'Expect 1–2% body weight loss per week as safe rate'] },
+          { title: '🏃 Exercise + Nutrition', items: ['30 min brisk walk/day burns ~150 kcal for a 30 lb dog', 'Swimming is ideal for overweight dogs — zero joint impact', 'Mental enrichment (puzzle feeders) burns calories without joint stress', 'Recheck weight every 2 weeks and adjust portions accordingly'] }
+        ]
+      },
+      'Longevity & Vitality': {
+        icon: '🌟',
+        sections: [
+          { title: '✅ Longevity Superfoods', items: ['Wild blueberries (5–10/day) — highest antioxidant density of any fruit', 'Sardines in water (2x/week) — CoQ10 supports mitochondrial function', 'Bone broth (daily) — collagen, glycine, and proline for cellular repair', 'Turmeric + black pepper (1/8 tsp/day) — NF-kB pathway inhibitor', 'Fermented goat milk (2 tbsp/day) — microbiome diversity extends lifespan'] },
+          { title: '🔬 Anti-Aging Nutrition Science', items: ['Caloric restriction (10–15% below maintenance) extends lifespan in dogs', 'High-moisture diets reduce kidney stress — aim for 70%+ moisture', 'Protein quality matters more than quantity — choose human-grade sources', 'Intermittent fasting (16:8) shows promise for canine longevity in studies', 'Avoid ultra-processed kibble as primary diet — linked to shorter lifespan'] },
+          { title: '💊 Longevity Supplement Protocol', items: ['Omega-3 (EPA+DHA): 20mg/kg/day — reduces systemic inflammation', 'Vitamin D3: 10–20 IU/kg/day — immune modulation and cancer prevention', 'Coenzyme Q10: 1mg/kg/day — mitochondrial energy and heart health', 'Resveratrol: 1mg/kg/day — activates SIRT1 longevity pathway'] }
+        ]
+      },
+      'Allergy Relief': {
+        icon: '🌿',
+        sections: [
+          { title: '✅ Hypoallergenic Protein Sources', items: ['Venison — rarely causes reactions, excellent novel protein', 'Rabbit — very low allergenicity, high digestibility', 'Duck — good alternative to chicken for poultry-sensitive dogs', 'Wild-caught salmon — omega-3s reduce allergic inflammation', 'Kangaroo — ultra-novel protein, virtually zero cross-reactivity'] },
+          { title: '🔬 Elimination Diet Protocol', items: ['Feed ONLY one novel protein + one novel carb for 8–12 weeks', 'No treats, flavored medications, or flavored toothpaste during trial', 'After 8 weeks, reintroduce one food at a time every 2 weeks', 'Keep a food diary — note skin, stool, and energy changes', 'Hydrolyzed protein diets (Royal Canin HP) are the gold standard for diagnosis'] },
+          { title: '💊 Anti-Allergy Supplements', items: ['Quercetin: 5–10mg/kg twice daily — inhibits histamine release', 'Omega-3 (EPA+DHA): 40–80mg/kg/day — reduces IgE-mediated reactions', 'Probiotics: Lactobacillus acidophilus + Bifidobacterium — gut-immune axis', 'Colostrum: 1/4 tsp/day — modulates immune overreaction'] }
+        ]
+      },
+      'Lean Muscle': {
+        icon: '💪',
+        sections: [
+          { title: '✅ Muscle-Building Foods', items: ['Lean beef (93/7) — highest leucine content for muscle protein synthesis', 'Chicken breast — 31g protein per 100g, low fat', 'Eggs (cooked) — complete amino acid profile, high bioavailability', 'Beef heart — natural creatine source for muscle energy', 'Cottage cheese (plain) — casein protein for overnight muscle repair'] },
+          { title: '⏰ Timing Matters', items: ['Feed largest protein meal within 2 hours AFTER exercise', 'Never feed a large meal before intense exercise (bloat risk)', 'Spread protein across 2–3 meals for better amino acid utilization', 'Add bone broth post-exercise for electrolyte replenishment'] },
+          { title: '💊 Performance Supplements', items: ['Creatine monohydrate: 0.1g/kg/day — increases muscle phosphocreatine stores', 'L-Carnitine: 50mg/kg/day — transports fatty acids into mitochondria', 'Omega-3 (EPA+DHA): 20mg/kg/day — reduces exercise-induced inflammation', 'Vitamin E: 2 IU/kg/day — protects muscle cells from oxidative damage'] }
+        ]
+      }
+    };
+
+    const focusKey = profile.healthFocus || 'General Health';
+    const focusData = tips[focusKey] || tips['General Health'];
+
+    if (iconEl) iconEl.textContent = focusData.icon;
+    if (labelEl) labelEl.textContent = focusKey;
+
+    container.innerHTML = focusData.sections.map(section => `
+      <div class="p-4 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a]">
+        <h4 class="text-xs font-bold text-[#171717] dark:text-[#ededed] mb-2.5">${section.title}</h4>
+        <ul class="space-y-1.5">
+          ${section.items.map(item => `
+            <li class="flex items-start gap-2 text-[11px] sm:text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+              <span class="text-[#0070f3] dark:text-[#3291ff] shrink-0 mt-0.5">→</span>
+              <span>${item}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+    `).join('');
   }
 
   function renderPlan(profile: any) {
@@ -525,6 +825,9 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
     if (caPhosEl) caPhosEl.textContent = recipe.macroProfile.caPhosphorusRatio;
 
+    renderPersonalizedAdvice(profile, result, recipe);
+    renderBreedInsights(profile);
+    renderHealthFocusTips(profile);
   }
 
   // Listen to plan generation events
@@ -550,8 +853,8 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     });
   });
 
-  // Print button
-  document.getElementById('print-plan-btn')?.addEventListener('click', () => {
+  // Download PDF button — triggers browser Save as PDF dialog
+  document.getElementById('download-pdf-btn')?.addEventListener('click', () => {
     document.body.classList.add('printing-plan');
     window.print();
   });

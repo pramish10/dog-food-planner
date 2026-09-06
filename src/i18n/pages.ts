@@ -70,7 +70,9 @@ export const PAGE_TRANSLATIONS = {
     "notice": "Veterinary Emergency Notice: If your pet is exhibiting acute symptoms of poisoning or severe distress, contact your emergency veterinarian or the ASPCA Poison Control hotline immediately.",
     "faqTitle": "Looking for fast answers?",
     "faqDesc": "Check our comprehensive 40+ veterinary FAQ knowledge base covering picky eating, raw diets, cat food, and commercial dog food brands.",
-    "faqBtn": "Browse All FAQs →"
+    "faqBtn": "Browse All FAQs →",
+    "successTitle": "✓ Message prepared — sending to hello@dogfoodplanner.com",
+    "successDesc": "Your email client should open with a pre-drafted message addressed to hello@dogfoodplanner.com. Just hit Send in your email app and it will arrive in our inbox."
   },
   "privacy": {
     "eyebrow": "LEGAL // DATA PROTECTION & PRIVACY",
@@ -627,7 +629,9 @@ export const PAGE_TRANSLATIONS = {
     "notice": "Aviso de Emergencia Veterinaria: Si tu mascota presenta síntomas agudos de envenenamiento o malestar grave, acude inmediatamente a un hospital veterinario de urgencias.",
     "faqTitle": "¿Buscas respuestas rápidas?",
     "faqDesc": "Consulta nuestra base de conocimiento con más de 40 preguntas veterinarias sobre inapetencia, dieta BARF, comida de gato y marcas comerciales.",
-    "faqBtn": "Ver Todas las Preguntas Frecuentes →"
+    "faqBtn": "Ver Todas las Preguntas Frecuentes →",
+    "successTitle": "✓ Mensaje preparado — enviando a hello@dogfoodplanner.com",
+    "successDesc": "Tu cliente de correo debería abrirse con un mensaje predactado dirigido a hello@dogfoodplanner.com. Solo pulsa Enviar en tu app de correo y llegará a nuestra bandeja de entrada."
   },
   "privacy": {
     "eyebrow": "LEGAL // PROTECCIÓN DE DATOS Y PRIVACIDAD",
@@ -1184,7 +1188,9 @@ export const PAGE_TRANSLATIONS = {
     "notice": "獣医師救急に関するご注意：愛犬が誤飲・中毒症状や急性疾患を起こしている場合は、直ちにお近くの夜間救急動物病院へご連絡ください。",
     "faqTitle": "よくある質問をご確認ください",
     "faqDesc": "偏食・食べムラ対策、生食BARF、キャットフードの危険性、市販ドッグフードの評価など、40件以上の専門Q&Aをご用意しています。",
-    "faqBtn": "すべてのFAQを見る →"
+    "faqBtn": "すべてのFAQを見る →",
+    "successTitle": "✓ メッセージを準備しました — hello@dogfoodplanner.com に送信中",
+    "successDesc": "メールアプリが開き、hello@dogfoodplanner.com 宛の下書きメッセージが表示されます。メールアプリで「送信」を押すだけで届きます。"
   },
   "privacy": {
     "eyebrow": "利用規約・プライバシー // 個人情報保護方針",
@@ -1741,7 +1747,9 @@ export const PAGE_TRANSLATIONS = {
     "notice": "Urgence Vétérinaire : Si votre animal présente des symptômes aigus d’intoxication ou de détresse sévère, contactez sans attendre une clinique vétérinaire d’urgence.",
     "faqTitle": "Vous cherchez une réponse rapide ?",
     "faqDesc": "Consultez notre base de connaissances de plus de 40 réponses vétérinaires sur le manque d’appétit, le BARF, la nourriture pour chat et les marques de croquettes.",
-    "faqBtn": "Consulter Toute la FAQ →"
+    "faqBtn": "Consulter Toute la FAQ →",
+    "successTitle": "✓ Message préparé — envoi à hello@dogfoodplanner.com",
+    "successDesc": "Votre client de messagerie devrait s'ouvrir avec un message pré-rédigé adressé à hello@dogfoodplanner.com. Cliquez simplement sur Envoyer dans votre application mail et il arrivera dans notre boîte de réception."
   },
   "privacy": {
     "eyebrow": "MENTIONS LÉGALES // POLITIQUE DE CONFIDENTIALITÉ",
@@ -2298,7 +2306,9 @@ export const PAGE_TRANSLATIONS = {
     "notice": "Tierärztlicher Notfall-Hinweis: Bei akuten Vergiftungssymptomen oder schwerer Atemnot wenden Sie sich bitte sofort an Ihre örtliche Tiernotklinik.",
     "faqTitle": "Suchen Sie schnelle Antworten?",
     "faqDesc": "Besuchen Sie unsere Wissensdatenbank mit über 40 tierärztlichen Antworten zu Futtermäkeligkeit, BARF, Katzenfutter und Trockenfutter-Marken.",
-    "faqBtn": "Alle FAQs ansehen →"
+    "faqBtn": "Alle FAQs ansehen →",
+    "successTitle": "✓ Nachricht vorbereitet — wird an hello@dogfoodplanner.com gesendet",
+    "successDesc": "Ihr E-Mail-Programm sollte sich mit einer vorbereiteten Nachricht an hello@dogfoodplanner.com öffnen. Klicken Sie einfach auf Senden in Ihrer Mail-App und sie wird in unserem Posteingang ankommen."
   },
   "privacy": {
     "eyebrow": "RECHTLICHES // DATENSCHUTZERKLÄRUNG",
@@ -2855,7 +2865,9 @@ export const PAGE_TRANSLATIONS = {
     "notice": "Aviso de Emergência Veterinária: Se o seu cão apresentar sintomas agudos de envenenamento ou mal-estar grave, procure imediatamente um hospital veterinário 24 horas.",
     "faqTitle": "Procurando respostas rápidas?",
     "faqDesc": "Acesse nossa base com mais de 40 perguntas veterinárias sobre perda de apetite, dieta BARF, ração de gatos e marcas comerciais.",
-    "faqBtn": "Ver Todas as Perguntas Frequentes →"
+    "faqBtn": "Ver Todas as Perguntas Frequentes →",
+    "successTitle": "✓ Mensagem preparada — enviando para hello@dogfoodplanner.com",
+    "successDesc": "Seu cliente de e-mail deve abrir com uma mensagem pré-redigida endereçada a hello@dogfoodplanner.com. Basta clicar em Enviar no seu aplicativo de e-mail e ela chegará à nossa caixa de entrada."
   },
   "privacy": {
     "eyebrow": "LEGAL // POLÍTICA DE PRIVACIDADE",
@@ -3412,7 +3424,9 @@ export const PAGE_TRANSLATIONS = {
     "notice": "수의학 응급 안내: 반려견이 급성 중독 증상이나 호흡 곤란 등 위급한 상태를 보인다면 즉시 24시간 동물 응급센터를 방문하십시오.",
     "faqTitle": "빠른 답변을 찾고 계신가요?",
     "faqDesc": "편식, 생식 BARF 식단, 고양이 사료 섭취 위험, 브랜드 평가 등 40여 개 이상의 검증된 수의학 Q&A를 확인해 보세요.",
-    "faqBtn": "모든 FAQ 둘러보기 →"
+    "faqBtn": "모든 FAQ 둘러보기 →",
+    "successTitle": "✓ 메시지 준비 완료 — hello@dogfoodplanner.com으로 전송 중",
+    "successDesc": "이메일 앱이 hello@dogfoodplanner.com 수신인으로 작성된 메시지와 함께 열립니다. 이메일 앱에서 보내기를 누르면 저희 수신함에 도착합니다."
   },
   "privacy": {
     "eyebrow": "개인정보 처리방침 // 데이터 보호 정책",
@@ -3969,7 +3983,9 @@ export const PAGE_TRANSLATIONS = {
     "notice": "Avviso di Emergenza Veterinaria: Se il tuo cane manifesta sintomi acuti di avvelenamento o sofferenza severa, contatta immediatamente il pronto soccorso veterinario più vicino.",
     "faqTitle": "Cerchi risposte immediate?",
     "faqDesc": "Consulta la nostra raccolta di oltre 40 risposte veterinarie su inappetenza, dieta BARF, cibo per gatti e marche industriali.",
-    "faqBtn": "Consulta Tutte le FAQ →"
+    "faqBtn": "Consulta Tutte le FAQ →",
+    "successTitle": "✓ Messaggio preparato — invio a hello@dogfoodplanner.com",
+    "successDesc": "Il tuo client di posta dovrebbe aprirsi con un messaggio pre-compilato indirizzato a hello@dogfoodplanner.com. Premi semplicemente Invia nella tua app di posta e arriverà nella nostra casella di posta."
   },
   "privacy": {
     "eyebrow": "INFORMATIVA SULLA PRIVACY // PROTEZIONE DATI",
