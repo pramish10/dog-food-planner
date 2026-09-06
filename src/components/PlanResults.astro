@@ -160,6 +160,11 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
             </span>
           </div>
 
+          <!-- Recipe Hero Image -->
+          <div id="recipe-hero-image-container" class="mb-4 rounded-xl overflow-hidden h-40 sm:h-48 bg-[#f2f2f2] dark:bg-[#1a1a1a]">
+            <img id="recipe-hero-img" src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=800&h=400&q=80" alt="Recipe" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+
           <h3 class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed] mb-2" id="recipe-title">
             Gently Cooked Lean Turkey & Pumpkin Feast
           </h3>
@@ -315,13 +320,25 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     return scoredRecipes[0]?.recipe || null;
   }
 
+  // Hero image per recipe — shown at the top of the recipe card
+  const RECIPE_HERO_IMAGES: Record<string, string> = {
+    'fresh-chicken-everyday': 'https://images.unsplash.com/photo-1598103442097-8b74394b95c3?auto=format&fit=crop&w=800&h=400&q=80', // cooked chicken bowl
+    'fresh-turkey-vitality': 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=800&h=400&q=80', // turkey meal
+    'fresh-beef-power': 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&h=400&q=80', // ground beef
+    'fresh-salmon-dermacare': 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&h=400&q=80', // salmon fillet
+    'raw-barf-complete-beef': 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&h=400&q=80', // raw beef
+    'raw-barf-lamb-hypoallergenic': 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800&h=400&q=80', // lamb
+    'topper-gut-joint-shield': 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&h=400&q=80', // bone broth / soup
+  };
+
+  // Per-ingredient-category images (used for ingredient row thumbnails)
   const INGREDIENT_IMAGES: Record<string, string> = {
-    'Muscle Meat': 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=160&h=160&q=80',
-    'Organ': 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=160&h=160&q=80',
-    'Raw Bone': 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=160&h=160&q=80',
-    'Vegetables & Greens': 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=160&h=160&q=80',
-    'Healthy Fats & Oils': 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=160&h=160&q=80',
-    'Natural Supplements': 'https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=160&h=160&q=80'
+    'Muscle Meat': 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=160&h=160&q=80', // raw meat
+    'Organ': 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=160&h=160&q=80', // organ meat
+    'Raw Bone': 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=160&h=160&q=80', // bone
+    'Vegetables & Greens': 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=160&h=160&q=80', // vegetables
+    'Healthy Fats & Oils': 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=160&h=160&q=80', // oil
+    'Natural Supplements': 'https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=160&h=160&q=80', // supplements
   };
 
   function ingredientShoppingLinks(name: string) {
@@ -386,6 +403,12 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     if (dietTagEl) dietTagEl.textContent = `TODAY'S RECIPE: ${recipe.dietType.replace('-', ' ')}`;
     if (recipeTitleEl) recipeTitleEl.textContent = recipe.name;
     if (recipeDescEl) recipeDescEl.textContent = recipe.description;
+
+    const heroImg = document.getElementById('recipe-hero-img') as HTMLImageElement | null;
+    if (heroImg && recipe) {
+      heroImg.src = RECIPE_HERO_IMAGES[recipe.id] || 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=800&h=400&q=80';
+      heroImg.alt = recipe.name;
+    }
 
     const matchNote = document.getElementById('recipe-match-note');
     const avoidedAllergies = (profile.allergies || []).filter((allergy: string) => allergy !== 'none / no allergies');

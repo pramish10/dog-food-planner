@@ -3,7 +3,7 @@ import { generateFaqJsonLd } from '../data/faqs';
 import { getLocalizedFaqs, FAQ_CATEGORY_TRANSLATIONS } from '../i18n/faqs';
 import { getPageTranslations } from '../i18n/pages';
 import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
-import { findAffiliateContext } from '../data/affiliates';
+import { findFaqAffiliate } from '../data/affiliates';
 
 interface Props {
   title?: string;
@@ -31,7 +31,7 @@ const {
 } = Astro.props;
 
 let faqs = getLocalizedFaqs(lang).map(faq => {
-  const ctx = findAffiliateContext(`${faq.question} ${faq.shortAnswer} ${faq.tags.join(' ')}`);
+  const ctx = findFaqAffiliate(`${faq.question} ${faq.shortAnswer} ${faq.tags.join(' ')}`);
   const affiliate = ctx ? {
     type: ctx.type,
     label: ctx.type === 'brand' ? ctx.brand : ctx.name,
