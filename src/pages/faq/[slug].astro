@@ -5,6 +5,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Footer from '../../components/Footer.astro';
 import { FAQS_DATA, getFaqBySlug } from '../../data/faqs';
 import { findBrandMatchInText } from '../../data/affiliates';
+import AffiliateButton from '../../components/AffiliateButton.astro';
 
 export function getStaticPaths() {
   return FAQS_DATA.map(faq => ({
@@ -19,10 +20,129 @@ if (!faq) {
   return Astro.redirect('/faq');
 }
 
+// ─── Curated product placements ───────────────────────────────────────────────
+// Only shown on FAQs where a product directly solves the question being asked.
+// Knowledge is the priority — products appear only when they are the natural
+// next step after reading the answer (e.g. "how to make homemade food" → calcium).
+// Most FAQs (digestion time, definitions, safety info) show NO product at all.
+
+type FaqProduct = { label: string; note: string; url: string };
+
+const FAQ_PRODUCTS: Record<string, FaqProduct> = {
+
+  // ── ACTIONABLE: product is the direct next step after reading the answer ──
+
+  // "What is the #1 best dog food?" → answer says fresh cooked is #1 → JustFoodForDogs is that product
+  'what-is-the-1-best-dog-food': {
+    label: 'JustFoodForDogs Pantry Fresh – Chicken & White Rice (Pack of 24)',
+    note: 'Human-grade, gently cooked in a USDA-inspected kitchen — the category ranked #1 in the longevity research above.',
+    url: 'https://amzn.to/4x9327I',
+  },
+
+  // "How to make homemade dog food?" → calcium is the #1 missing nutrient in any boneless recipe
+  'how-to-make-homemade-dog-food': {
+    label: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement',
+    note: 'Add ½ tsp per pound of boneless meat to hit the 1.2:1 Ca:P ratio — the most critical step described above.',
+    url: 'https://amzn.to/4haNVWy',
+  },
+
+  // "Is homemade dog food healthy?" → answer warns calcium deficiency is the main risk → eggshell powder is the fix
+  'is-homemade-dog-food-healthy': {
+    label: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement',
+    note: 'The calcium supplement referenced above — prevents the bone demineralization risk of unsupplemented homemade diets.',
+    url: 'https://amzn.to/4haNVWy',
+  },
+
+  // "What is a raw food diet (BARF)?" → freeze-dried is the safest, most accessible entry point
+  'raw-food-diet-for-dogs': {
+    label: "Stella & Chewy's Freeze-Dried Raw Dinner Patties – Variety Pack (5 Proteins)",
+    note: 'HPP pathogen-controlled freeze-dried raw — the safest way to start BARF without sourcing and handling raw meat yourself.',
+    url: 'https://amzn.to/4gCgdJp',
+  },
+
+  // "What is the 80-10-10 rule?" → answer explains organs are 10% → organ meat product is exactly what's needed
+  'what-is-the-80-10-10-rule-for-dog-food': {
+    label: "Stella & Chewy's Freeze-Dried Raw Beef Meal Mixers – 95% Grass-Fed Beef, Organs & Bone, 1oz",
+    note: 'Contains the muscle meat, organ, and raw bone ratio the 80/10/10 rule describes — use as a complete meal or topper.',
+    url: 'https://amzn.to/4gyO85G',
+  },
+
+  // "Best dog food for allergies?" → vet hydrolyzed diet is the clinical gold standard named in the answer
+  'what-is-the-best-dog-food-for-allergies': {
+    label: 'Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb',
+    note: 'Vet-grade hydrolyzed protein — the elimination diet option described in step 2 of the protocol above.',
+    url: 'https://amzn.to/4ykV9Nk',
+  },
+
+  // "Dog not eating food but eats treats?" → bone broth topper is the exact fix the answer recommends
+  'why-is-my-dog-not-eating-his-food-but-will-eat-treats': {
+    label: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz',
+    note: 'Warm bone broth over kibble is the first step the answer recommends — adds aroma and moisture without rewarding refusal.',
+    url: 'https://amzn.to/4zSd7Zb',
+  },
+
+  // "Best dry dog food?" → Orijen is the top brand explicitly named in the answer
+  'what-is-the-best-dry-dog-food': {
+    label: 'ORIJEN Grain-Free WHOLEPREY Dry Dog Food Original Recipe, 23.5lb',
+    note: 'The top-rated traceable kibble named in the answer — 85%+ animal inclusions, baked not extruded, no rendered by-products.',
+    url: 'https://amzn.to/4xF5aFr',
+  },
+
+  // "Best dog food to feed daily?" → salmon oil is the omega-3 topper named in the Hybrid Bowl answer
+  'what-is-the-best-dog-food-to-feed-your-dog': {
+    label: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz',
+    note: 'The EPA/DHA omega-3 oil referenced in the Hybrid Bowl formula above — add 1 tsp per 20 lbs of body weight daily.',
+    url: 'https://amzn.to/46HCJdW',
+  },
+
+  // "Can dogs live on dry food only?" → answer says add bone broth for hydration — that's the actionable step
+  'can-dogs-live-on-dry-food-only': {
+    label: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz',
+    note: 'The answer recommends rehydrating kibble with warm bone broth to protect kidney function — this is that product.',
+    url: 'https://amzn.to/4zSd7Zb',
+  },
+
+  // "What is the best natural dog food?" → answer recommends air-dried as the closest to natural → ZIWI Peak
+  'what-is-the-best-natural-dog-food': {
+    label: 'ZIWI Peak Air-Dried Dog Food – Beef (16oz) + Chicken (16oz) Bundle',
+    note: 'Air-dried at low temperature to preserve natural enzymes — the minimally processed format the answer describes.',
+    url: 'https://amzn.to/4gRp8FA',
+  },
+
+  // "What are the top 5 healthiest dog foods?" → answer ranks fresh cooked #1 → JustFoodForDogs
+  'what-are-the-top-5-healthiest-dog-food': {
+    label: 'JustFoodForDogs Pantry Fresh – Chicken & White Rice (Pack of 24)',
+    note: 'Human-grade gently cooked — the #1 ranked category in the list above, made in a USDA-inspected kitchen.',
+    url: 'https://amzn.to/4x9327I',
+  },
+
+  // "What is the best diet for dogs?" → answer recommends salmon oil as the essential omega-3 supplement
+  'what-is-the-best-diet-for-dogs': {
+    label: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz',
+    note: 'The omega-3 supplement the answer recommends adding to any diet — EPA/DHA for coat, joints, and inflammation.',
+    url: 'https://amzn.to/46HCJdW',
+  },
+
+  // "Should I feed wet or dry food?" → answer recommends bone broth to rehydrate dry kibble
+  'should-i-feed-my-dog-wet-or-dry-food': {
+    label: 'The Honest Kitchen Bone Broth Pour Overs – Variety Pack of 3, 5.5oz',
+    note: 'The answer recommends adding moisture to dry kibble — these pour-over broths are the easiest way to do that.',
+    url: 'https://amzn.to/4zZ68xK',
+  },
+};
+
+// Brand-review FAQs: show the brand's own product (existing logic)
 const faqBlob = `${faq.question} ${faq.shortAnswer} ${faq.tags.join(' ')}`;
-const affiliateCtx = faq.category === 'Brand Reviews & Safety'
+const brandCtx = faq.category === 'Brand Reviews & Safety'
   ? findBrandMatchInText(faqBlob)
   : null;
+
+// Curated product for this specific FAQ (null for most FAQs)
+const curatedProduct: FaqProduct | null = FAQ_PRODUCTS[faq.slug] ?? null;
+
+// Resolved product — single source used in the template (curated takes priority over brand)
+const resolvedProduct: FaqProduct | null = curatedProduct
+  ?? (brandCtx ? { label: brandCtx.product.name, note: `${brandCtx.brand} — the product reviewed and referenced above.`, url: brandCtx.product.url } : null);
 
 // Find related FAQs
 const relatedFaqs = (faq.relatedSlugs || [])
@@ -134,6 +254,18 @@ const articleJsonLd = {
         </h2>
         <div class="space-y-4" set:html={faq.fullAnswerHtml} />
 
+        {/* Product — lives inside the article card, flush with the answer above it */}
+        {resolvedProduct && (
+          <div class="not-prose mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] flex items-start justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">Referenced in this answer</p>
+              <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">{resolvedProduct.label}</p>
+              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">{resolvedProduct.note}</p>
+            </div>
+            <AffiliateButton url={resolvedProduct.url} label="Buy Now" size="sm" class="shrink-0 mt-1" />
+          </div>
+        )}
+
         <!-- Tags / Topics -->
         <div class="pt-6 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center gap-1.5 not-prose">
           <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mr-1">Topics:</span>
@@ -144,38 +276,6 @@ const articleJsonLd = {
           ))}
         </div>
       </article>
-
-      {affiliateCtx && (
-        <aside class="mb-10 p-5 sm:p-6 rounded-2xl border-2 border-dashed border-[#0070f3]/40 dark:border-[#3291ff]/40 bg-gradient-to-br from-[#0070f3]/5 via-white to-transparent dark:from-[#3291ff]/10 dark:via-[#141414] dark:to-transparent shadow-xs">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-            <div class="flex-1 space-y-2">
-              <div class="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase font-semibold tracking-wider text-[#0070f3] dark:text-[#3291ff]">
-                <span>🛒</span> Brand-related pick
-              </div>
-              <h3 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] leading-snug">
-                {affiliateCtx.brand} — Example product readers may want to compare
-              </h3>
-              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
-                We only show product links on brand-review FAQs so the educational answers stay separate from general nutrition guidance.
-              </p>
-              <p class="text-[11px] font-mono text-[#0070f3]/80 dark:text-[#3291ff]/80 mt-1 line-clamp-2">
-                {affiliateCtx.product.name}
-              </p>
-            </div>
-            <a
-              href={affiliateCtx.product.url}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 px-5 py-3 bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 touch-manipulation"
-            >
-              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-              </svg>
-              View product
-            </a>
-          </div>
-        </aside>
-      )}
 
       <!-- Interactive Calculator Call-to-Action -->
       <div class="p-6 sm:p-8 bg-gradient-to-br from-[#171717] to-[#333333] border border-[#2e2e2e] text-white rounded-2xl mb-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">

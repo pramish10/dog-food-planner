@@ -4,15 +4,35 @@ import Navbar from '../components/Navbar.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FaqSection from '../components/FaqSection.astro';
 import Footer from '../components/Footer.astro';
-import { findAffiliateContext } from '../data/affiliates';
-
-// Find relevant affiliate products for allergies page
-const allergyAffiliates = [
-  findAffiliateContext("limited ingredient diet novel protein"),
-  findAffiliateContext("pumpkin puree"),
-  findAffiliateContext("wild alaskan salmon oil"),
-  findAffiliateContext("turkey"),
-].filter(Boolean).slice(0, 3);
+import AffiliateButton from '../components/AffiliateButton.astro';
+// Context-matched products for the allergies page
+// Each product is chosen to directly support the content around it:
+// - Vet hydrolyzed diet for the elimination trial protocol
+// - Purina HA as the second vet-grade single-protein option
+// - Salmon oil for gut mucosal healing (EPA/DHA anti-inflammatory)
+// - Libby's pumpkin as the soluble fiber carb source for the elimination diet
+const allergyProducts = [
+  {
+    label: 'Royal Canin Veterinary Hydrolyzed Protein Adult, 25.3lb',
+    note: 'Vet-grade single hydrolyzed protein — ideal for 8-week elimination trial',
+    url: 'https://amzn.to/4ykV9Nk',
+  },
+  {
+    label: 'Purina Pro Plan Vet Diets HA Hydrolyzed, 16.5lb',
+    note: 'Second vet-grade option — hydrolyzed soy protein, zero common allergens',
+    url: 'https://amzn.to/4iOBEIw',
+  },
+  {
+    label: "Zesty Paws Wild Alaskan Salmon Oil, 16oz",
+    note: 'EPA/DHA omega-3 — reduces skin inflammation and supports gut mucosal healing',
+    url: 'https://amzn.to/46HCJdW',
+  },
+  {
+    label: "Libby's 100% Pure Canned Pumpkin, 15oz",
+    note: 'Soluble prebiotic fiber — the recommended carb source during elimination trials',
+    url: 'https://amzn.to/3UFE0PZ',
+  },
+];
 ---
 
 <Layout 
@@ -101,49 +121,33 @@ const allergyAffiliates = [
         </p>
 
         <ol class="list-decimal list-inside space-y-2 bg-[#fafafa] dark:bg-[#1a1a1a] p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] text-xs font-medium text-[#171717] dark:text-[#ededed]">
-          <li><strong>Select ONE Novel Protein:</strong> Pick a meat your dog has never eaten before (e.g. Venison, Duck, Rabbit, or Wild Salmon).</li>
-          <li><strong>Select ONE Carbohydrate / Fiber Source:</strong> Plain sweet potato or pure canned pumpkin puree.</li>
+          <li><strong>Select ONE Novel Protein:</strong> Pick a meat your dog has never eaten before (e.g. Venison, Duck, Rabbit, or Wild Salmon). Or use a <a href="https://amzn.to/4ykV9Nk" target="_blank" rel="noopener noreferrer nofollow" class="text-[#0070f3] dark:text-[#3291ff] hover:underline">vet hydrolyzed protein diet</a> for the strictest elimination.</li>
+          <li><strong>Select ONE Carbohydrate / Fiber Source:</strong> Plain sweet potato or <a href="https://amzn.to/3UFE0PZ" target="_blank" rel="noopener noreferrer nofollow" class="text-[#0070f3] dark:text-[#3291ff] hover:underline">pure canned pumpkin puree</a>.</li>
           <li><strong>Feed STRICTLY This Diet for 8 to 12 Weeks:</strong> Zero outside treats, table scraps, flavored chew toys, or flavored heartworm medications.</li>
           <li><strong>The Challenge Phase:</strong> If itching and diarrhea resolve, re-introduce ONE old ingredient (e.g. chicken) for 7 days. If symptoms return, allergy is confirmed!</li>
         </ol>
       </section>
 
-      <!-- Recommended Products for Allergies -->
-      {allergyAffiliates.length > 0 && (
-        <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
-          <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
-            🛒 Recommended Products for Sensitive Stomachs & Allergies
-          </h2>
-          <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
-            These products are specifically selected to support dogs with food sensitivities and elimination diet trials.
-          </p>
-          <div class="space-y-3">
-            {allergyAffiliates.map((affiliate: any) => (
-              <a
-                href={affiliate.type === 'brand' ? affiliate.product.url : affiliate.url}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                class="inline-flex items-center justify-between gap-3 w-full px-4 py-3 rounded-xl border border-[#0070f3]/20 dark:border-[#3291ff]/25 bg-gradient-to-r from-[#0070f3]/5 via-white to-transparent dark:from-[#3291ff]/10 dark:via-[#141414]"
-              >
-                <div class="flex-1 min-w-0">
-                  <div class="text-[10px] font-mono uppercase font-bold tracking-wider text-[#0070f3] dark:text-[#3291ff] mb-0.5">
-                    🛒 Recommended — {affiliate.type === 'brand' ? affiliate.brand : affiliate.name}
-                  </div>
-                  <div class="text-[11px] text-[#4d4d4d] dark:text-[#a1a1a1] truncate">
-                    {affiliate.type === 'brand' ? affiliate.product.name : affiliate.name}
-                  </div>
-                </div>
-                <span class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                  </svg>
-                  Buy Now
-                </span>
-              </a>
-            ))}
-          </div>
-        </section>
-      )}
+      <!-- Recommended Products for Allergies — each matched to the content above -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+          Products Referenced in This Guide
+        </h2>
+        <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+          Each product below is directly referenced in the protocols above.
+        </p>
+        <div class="space-y-3">
+          {allergyProducts.map((p) => (
+            <div class="flex items-start justify-between gap-3 w-full px-4 py-3 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a]">
+              <div class="flex-1 min-w-0">
+                <div class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed] leading-snug">{p.label}</div>
+                <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">{p.note}</div>
+              </div>
+              <AffiliateButton url={p.url} label="Buy Now" size="sm" class="shrink-0 mt-0.5" />
+            </div>
+          ))}
+        </div>
+      </section>
 
     </div>
 

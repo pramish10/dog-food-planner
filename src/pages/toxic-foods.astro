@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import IngredientChecker from '../components/IngredientChecker.astro';
 import FaqSection from '../components/FaqSection.astro';
 import Footer from '../components/Footer.astro';
+import AffiliateButton from '../components/AffiliateButton.astro';
 ---
 
 <Layout 
@@ -78,6 +79,52 @@ import Footer from '../components/Footer.astro';
           <div class="p-4 bg-red-50/50 dark:bg-red-950/30 rounded-xl border border-red-100 dark:border-red-900/40">
             <h3 class="font-bold text-xs text-red-900 dark:text-red-200">6. Cooked Bones</h3>
             <p class="text-xs text-red-800 dark:text-red-300 mt-1">Cooking makes bones brittle and sharp, causing esophageal, stomach, and intestinal punctures.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Safe Superfood Alternatives — directly contrasting the toxic list above -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 pb-10">
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed] flex items-center gap-2">
+          <span>✅</span> Safe Superfoods to Use Instead
+        </h2>
+        <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+          These are the dog-safe whole foods referenced throughout our guides — each one a healthy alternative to the toxic items above.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="flex items-start gap-3 p-3 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a]">
+            <span class="text-lg shrink-0">🎃</span>
+            <div class="flex-1 min-w-0">
+              <div class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed]">Libby's 100% Pure Canned Pumpkin, 15oz</div>
+              <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">Safe fiber source — soothes diarrhea & constipation. Use instead of onion-based table scraps.</div>
+              <AffiliateButton url="https://amzn.to/3UFE0PZ" label="Buy Now" size="sm" class="mt-2" />
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a]">
+            <span class="text-lg shrink-0">🐟</span>
+            <div class="flex-1 min-w-0">
+              <div class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed]">Wild Planet Wild Sardines in Water, No Salt (12-pack)</div>
+              <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">Safe omega-3 whole food — use instead of chocolate or macadamia nut treats.</div>
+              <AffiliateButton url="https://amzn.to/4xg3W2h" label="Buy Now" size="sm" class="mt-2" />
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a]">
+            <span class="text-lg shrink-0">🫙</span>
+            <div class="flex-1 min-w-0">
+              <div class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed]">Zesty Paws Wild Alaskan Salmon Oil, 16oz</div>
+              <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">Safe anti-inflammatory oil — replaces grapes/raisins as a coat & joint health topper.</div>
+              <AffiliateButton url="https://amzn.to/46HCJdW" label="Buy Now" size="sm" class="mt-2" />
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#1a1a1a]">
+            <span class="text-lg shrink-0">🍲</span>
+            <div class="flex-1 min-w-0">
+              <div class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed]">Brutus Broth Chicken Bone Broth – Hip & Joint Topper</div>
+              <div class="text-[10px] text-[#8f8f8f] dark:text-[#737373] mt-0.5">Safe hydrating topper — use instead of xylitol-containing peanut butters or flavored treats.</div>
+              <AffiliateButton url="https://amzn.to/4zSd7Zb" label="Buy Now" size="sm" class="mt-2" />
+            </div>
           </div>
         </div>
       </section>
