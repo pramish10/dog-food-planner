@@ -214,3 +214,239 @@ html.dark .hairline-card-active {
     display: block !important;
   }
 }
+
+/* ============================================
+   MOBILE-FIRST IMPROVEMENTS
+   ============================================ */
+
+/* Prevent horizontal overflow on all screens */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Better touch targets for all interactive elements */
+button, [role="button"], label[for], input[type="radio"] + div, input[type="checkbox"] + div {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Minimum tap target size (WCAG 2.5.5) */
+button:not(.diet-tab-btn), 
+.quiz-step label > div {
+  min-height: 44px;
+}
+
+/* Smooth scroll for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Better input styling on mobile */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font-size: 16px; /* Prevents iOS zoom on focus */
+  border-radius: 12px;
+}
+
+/* Fix select arrow on mobile */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238f8f8f' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px !important;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #0070f3;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Fluid typography scale */
+@media (max-width: 640px) {
+  h1 { font-size: clamp(1.5rem, 6vw, 2.25rem); }
+  h2 { font-size: clamp(1.25rem, 5vw, 1.875rem); }
+  h3 { font-size: clamp(1rem, 4vw, 1.25rem); }
+}
+
+/* Better card spacing on mobile */
+@media (max-width: 640px) {
+  .hairline-card {
+    border-radius: 16px;
+  }
+  
+  /* Ensure quiz step cards don't overflow */
+  #planner-section,
+  #results-section {
+    overflow-x: hidden;
+  }
+  
+  /* Better grid on very small screens */
+  .grid-cols-2 {
+    gap: 8px;
+  }
+}
+
+/* Sticky bottom navigation feel for quiz buttons */
+@media (max-width: 640px) {
+  #dog-planner-form .flex.items-center.justify-between.mt-8 {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 12px 0 8px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 1px solid #ebebeb;
+    z-index: 10;
+  }
+  
+  html.dark #dog-planner-form .flex.items-center.justify-between.mt-8 {
+    background: #141414;
+    border-top-color: #262626;
+  }
+}
+
+/* Smooth transitions for quiz steps */
+.quiz-step {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Better scrolling on iOS */
+.overflow-x-auto,
+.no-scrollbar {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Results section smooth reveal */
+#results-section:not(.hidden) {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Better pill/tag wrapping on mobile */
+.flex.flex-wrap {
+  gap: 8px;
+}
+
+/* Ensure radio/checkbox labels are full-width on mobile for easier tapping */
+@media (max-width: 480px) {
+  .grid.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Loading state for submit button */
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Better number input on mobile */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ============================================
+   QUIZ STEP ANIMATIONS
+   ============================================ */
+
+/* Ensure quiz steps animate in cleanly */
+.quiz-step:not(.hidden) {
+  animation: stepFadeIn 0.25s ease-out;
+}
+
+@keyframes stepFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Better checkbox styling on mobile */
+input[type="checkbox"] {
+  cursor: pointer;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+/* Ensure has-[:checked] works for allergy checkboxes */
+label:has(input[type="checkbox"]:checked) {
+  border-color: #0070f3 !important;
+  background-color: rgba(0, 112, 243, 0.05) !important;
+}
+
+/* Better select on all platforms */
+select {
+  cursor: pointer;
+}
+
+/* Prevent iOS zoom on select */
+select {
+  font-size: 16px;
+}
+
+/* Stat cards on very small screens */
+@media (max-width: 380px) {
+  .grid.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  
+  #results-section .grid.grid-cols-3 .text-xl {
+    font-size: 1rem;
+  }
+}
+
+/* Diet tab buttons - prevent text overflow on small screens */
+.diet-tab-btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* Smooth show/hide for results section */
+#results-section:not(.hidden) {
+  animation: slideUp 0.35s ease-out;
+}

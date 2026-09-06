@@ -8,7 +8,29 @@ import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
 import { getLocalizedFaq, getLocalizedFaqs } from '../../../i18n/faqs';
 import { getPageTranslations } from '../../../i18n/pages';
-import { findAffiliateContext } from '../../../data/affiliates';
+import { findBrandMatchInText } from '../../../data/affiliates';
+import AffiliateButton from '../../../components/AffiliateButton.astro';
+
+// Curated product placements — identical to the English /faq/[slug].astro map.
+// Products are only shown when they are the direct next step after reading the answer.
+// Most FAQs (safety info, definitions, digestion time) show NO product at all.
+type FaqProduct = { label: string; note: string; url: string };
+const FAQ_PRODUCTS: Record<string, FaqProduct> = {
+  'what-is-the-1-best-dog-food': { label: 'JustFoodForDogs Pantry Fresh – Chicken & White Rice (Pack of 24)', note: 'Human-grade, gently cooked in a USDA-inspected kitchen — the category ranked #1 in the longevity research above.', url: 'https://amzn.to/4x9327I' },
+  'how-to-make-homemade-dog-food': { label: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement', note: 'Add ½ tsp per pound of boneless meat to hit the 1.2:1 Ca:P ratio — the most critical step described above.', url: 'https://amzn.to/4haNVWy' },
+  'is-homemade-dog-food-healthy': { label: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement', note: 'The calcium supplement referenced above — prevents the bone demineralization risk of unsupplemented homemade diets.', url: 'https://amzn.to/4haNVWy' },
+  'raw-food-diet-for-dogs': { label: "Stella & Chewy's Freeze-Dried Raw Dinner Patties – Variety Pack (5 Proteins)", note: 'HPP pathogen-controlled freeze-dried raw — the safest way to start BARF without sourcing and handling raw meat yourself.', url: 'https://amzn.to/4gCgdJp' },
+  'what-is-the-80-10-10-rule-for-dog-food': { label: "Stella & Chewy's Freeze-Dried Raw Beef Meal Mixers – 95% Grass-Fed Beef, Organs & Bone, 1oz", note: 'Contains the muscle meat, organ, and raw bone ratio the 80/10/10 rule describes — use as a complete meal or topper.', url: 'https://amzn.to/4gyO85G' },
+  'what-is-the-best-dog-food-for-allergies': { label: 'Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb', note: 'Vet-grade hydrolyzed protein — the elimination diet option described in step 2 of the protocol above.', url: 'https://amzn.to/4ykV9Nk' },
+  'why-is-my-dog-not-eating-his-food-but-will-eat-treats': { label: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz', note: 'Warm bone broth over kibble is the first step the answer recommends — adds aroma and moisture without rewarding refusal.', url: 'https://amzn.to/4zSd7Zb' },
+  'what-is-the-best-dry-dog-food': { label: 'ORIJEN Grain-Free WHOLEPREY Dry Dog Food Original Recipe, 23.5lb', note: 'The top-rated traceable kibble named in the answer — 85%+ animal inclusions, baked not extruded, no rendered by-products.', url: 'https://amzn.to/4xF5aFr' },
+  'what-is-the-best-dog-food-to-feed-your-dog': { label: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz', note: 'The EPA/DHA omega-3 oil referenced in the Hybrid Bowl formula above — add 1 tsp per 20 lbs of body weight daily.', url: 'https://amzn.to/46HCJdW' },
+  'can-dogs-live-on-dry-food-only': { label: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz', note: 'The answer recommends rehydrating kibble with warm bone broth to protect kidney function — this is that product.', url: 'https://amzn.to/4zSd7Zb' },
+  'what-is-the-best-natural-dog-food': { label: 'ZIWI Peak Air-Dried Dog Food – Beef (16oz) + Chicken (16oz) Bundle', note: 'Air-dried at low temperature to preserve natural enzymes — the minimally processed format the answer describes.', url: 'https://amzn.to/4gRp8FA' },
+  'what-are-the-top-5-healthiest-dog-food': { label: 'JustFoodForDogs Pantry Fresh – Chicken & White Rice (Pack of 24)', note: 'Human-grade gently cooked — the #1 ranked category in the list above, made in a USDA-inspected kitchen.', url: 'https://amzn.to/4x9327I' },
+  'what-is-the-best-diet-for-dogs': { label: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz', note: 'The omega-3 supplement the answer recommends adding to any diet — EPA/DHA for coat, joints, and inflammation.', url: 'https://amzn.to/46HCJdW' },
+  'should-i-feed-my-dog-wet-or-dry-food': { label: 'The Honest Kitchen Bone Broth Pour Overs – Variety Pack of 3, 5.5oz', note: 'The answer recommends adding moisture to dry kibble — these pour-over broths are the easiest way to do that.', url: 'https://amzn.to/4zZ68xK' },
+};
 
 export function getStaticPaths() {
   const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
@@ -37,8 +59,17 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 const p = getPageTranslations(lang).faqSingle;
 
-const faqBlob = `${faq.question} ${faq.shortAnswer} ${faq.tags.join(' ')} ${baseFaq.question} ${baseFaq.shortAnswer} ${baseFaq.tags.join(' ')}`;
-const affiliateCtx = findAffiliateContext(faqBlob);
+// Curated product for this specific FAQ (null for most FAQs — safety, definitions, etc.)
+const curatedProduct: FaqProduct | null = FAQ_PRODUCTS[baseFaq.slug] ?? null;
+
+// Brand-review FAQs: fall back to the brand's own product when no curated entry exists
+const brandCtx = !curatedProduct && baseFaq.category === 'Brand Reviews & Safety'
+  ? findBrandMatchInText(`${baseFaq.question} ${baseFaq.shortAnswer} ${baseFaq.tags.join(' ')}`)
+  : null;
+
+// Resolved product — single source used in the template (curated takes priority over brand)
+const resolvedProduct: FaqProduct | null = curatedProduct
+  ?? (brandCtx ? { label: brandCtx.product.name, note: `${brandCtx.brand} — the product reviewed and referenced above.`, url: brandCtx.product.url } : null);
 
 // Find related FAQs
 const relatedFaqs = (faq.relatedSlugs || [])
@@ -150,6 +181,18 @@ const articleJsonLd = {
         </h2>
         <div class="space-y-4" set:html={faq.fullAnswerHtml} />
 
+        {/* Product — lives inside the article card, flush with the answer above it */}
+        {resolvedProduct && (
+          <div class="not-prose mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] flex items-start justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">{p.referencedInAnswer}</p>
+              <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">{resolvedProduct.label}</p>
+              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">{resolvedProduct.note}</p>
+            </div>
+            <AffiliateButton url={resolvedProduct.url} label={p.buyNow} size="sm" class="shrink-0 mt-1" />
+          </div>
+        )}
+
         <!-- Tags / Topics -->
         <div class="pt-6 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center gap-1.5 not-prose">
           <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mr-1">{p.topics}</span>
@@ -160,53 +203,6 @@ const articleJsonLd = {
           ))}
         </div>
       </article>
-
-      {affiliateCtx && (
-        <aside class="mb-10 p-5 sm:p-6 rounded-2xl border-2 border-dashed border-[#0070f3]/40 dark:border-[#3291ff]/40 bg-gradient-to-br from-[#0070f3]/5 via-white to-transparent dark:from-[#3291ff]/10 dark:via-[#141414] dark:to-transparent shadow-xs">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-            <div class="flex-1 space-y-2">
-              <div class="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase font-semibold tracking-wider text-[#0070f3] dark:text-[#3291ff]">
-                <span>🛒</span> Recommended Product
-              </div>
-              {affiliateCtx.type === 'brand' ? (
-                <>
-                  <h3 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] leading-snug">
-                    {affiliateCtx.brand} — Pick Up the Formula We Analyzed
-                  </h3>
-                  <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
-                    Primary {affiliateCtx.brand} recipe referenced in our veterinary review above.
-                    Sourced from verified sellers with confirmed stock.
-                  </p>
-                  <p class="text-[11px] font-mono text-[#0070f3]/80 dark:text-[#3291ff]/80 mt-1 line-clamp-2">
-                    {affiliateCtx.product.name}
-                  </p>
-                </>
-              ) : (
-                <>
-                  <h3 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] leading-snug">
-                    Buy {affiliateCtx.name} — Verified Product Link
-                  </h3>
-                  <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
-                    Vet-recommended source of {affiliateCtx.name} in the purity and form referenced
-                    throughout our canine nutritional guidelines.
-                  </p>
-                </>
-              )}
-            </div>
-            <a
-              href={affiliateCtx.type === 'brand' ? affiliateCtx.product.url : affiliateCtx.url}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              class="shrink-0 self-start sm:self-center inline-flex items-center gap-2 px-5 py-3 bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-xs font-bold rounded-full transition-all shadow-md active:scale-95 touch-manipulation"
-            >
-              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-              </svg>
-              Buy Now →
-            </a>
-          </div>
-        </aside>
-      )}
 
       <!-- Interactive Calculator Call-to-Action -->
       <div class="p-6 sm:p-8 bg-gradient-to-br from-[#171717] to-[#333333] border border-[#2e2e2e] text-white rounded-2xl mb-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">

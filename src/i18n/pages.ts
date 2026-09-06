@@ -559,7 +559,9 @@ export const PAGE_TRANSLATIONS = {
     "ctaSubtitle": "Use our free veterinary calculator to determine your dog’s exact metabolic burn (RER/MER) and get custom fresh or raw food recipe grams.",
     "ctaBtn": "Calculate Portions Now →",
     "relatedTitle": "Related Canine Nutrition Questions",
-    "readAnswer": "Read Answer →"
+    "readAnswer": "Read Answer →",
+      "referencedInAnswer": "Referenced in this answer",
+      "buyNow": "Buy Now"
   }
 },
   es: {
@@ -1118,7 +1120,9 @@ export const PAGE_TRANSLATIONS = {
     "ctaSubtitle": "Usa nuestra calculadora veterinaria para obtener el gasto metabólico exacto (RER/MER) y los gramos para menús frescos o crudos.",
     "ctaBtn": "Calcular Ración Diaria Ahora →",
     "relatedTitle": "Preguntas Frecuentes Relacionadas",
-    "readAnswer": "Leer Respuesta Completa →"
+    "readAnswer": "Leer Respuesta Completa →",
+      "referencedInAnswer": "Referenciado en esta respuesta",
+      "buyNow": "Comprar ahora"
   }
 },
   ja: {
@@ -1677,7 +1681,9 @@ export const PAGE_TRANSLATIONS = {
     "ctaSubtitle": "体重、年齢、運動量に応じた正確な代謝量（RER/MER）と、手作り食・生食の給餌グラム数を瞬時に算出します。",
     "ctaBtn": "今すぐ適正給餌量を計算する →",
     "relatedTitle": "関連する犬の栄養・食事Q&A",
-    "readAnswer": "回答全文を読む →"
+    "readAnswer": "回答全文を読む →",
+      "referencedInAnswer": "Référencé dans cette réponse",
+      "buyNow": "Acheter maintenant"
   }
 },
   fr: {
@@ -2236,7 +2242,9 @@ export const PAGE_TRANSLATIONS = {
     "ctaSubtitle": "Utilisez notre calculateur vétérinaire pour définir les besoins métaboliques (RER/MER) et les grammes de repas frais ou crus.",
     "ctaBtn": "Calculer la Ration Maintenant →",
     "relatedTitle": "Questions Vétérinaires Similaires",
-    "readAnswer": "Lire la Réponse Complète →"
+    "readAnswer": "Lire la Réponse Complète →",
+      "referencedInAnswer": "In dieser Antwort referenziert",
+      "buyNow": "Jetzt kaufen"
   }
 },
   de: {
@@ -2795,7 +2803,9 @@ export const PAGE_TRANSLATIONS = {
     "ctaSubtitle": "Nutzen Sie unseren kostenlosen Tierarzt-Rechner zur Bestimmung des Kalorienbedarfs und der exakten Grammmengen.",
     "ctaBtn": "Portionen jetzt berechnen →",
     "relatedTitle": "Verwandte Fragen zur Hundeernährung",
-    "readAnswer": "Antwort vollständig lesen →"
+    "readAnswer": "Antwort vollständig lesen →",
+      "referencedInAnswer": "Referenciado nesta resposta",
+      "buyNow": "Comprar agora"
   }
 },
   pt: {
@@ -3354,7 +3364,9 @@ export const PAGE_TRANSLATIONS = {
     "ctaSubtitle": "Use nossa calculadora veterinária para obter o gasto metabólico (RER/MER) e as gramas para refeições frescas ou cruas.",
     "ctaBtn": "Calcular Porções Agora →",
     "relatedTitle": "Dúvidas Veterinárias Relacionadas",
-    "readAnswer": "Ler Resposta Completa →"
+    "readAnswer": "Ler Resposta Completa →",
+      "referencedInAnswer": "この回答で参照されている商品",
+      "buyNow": "今すぐ購入"
   }
 },
   ko: {
@@ -3913,7 +3925,9 @@ export const PAGE_TRANSLATIONS = {
     "ctaSubtitle": "수의학 계산기를 사용하여 대사 소비량(RER/MER)을 확인하고 맞춤 화식 또는 생식 급여량을 확인해 보세요.",
     "ctaBtn": "지금 급여량 계산하기 →",
     "relatedTitle": "관련 수의 영양학 Q&A",
-    "readAnswer": "답변 전체 읽기 →"
+    "readAnswer": "답변 전체 읽기 →",
+      "referencedInAnswer": "이 답변에서 참조된 제품",
+      "buyNow": "지금 구매"
   }
 },
   it: {
@@ -4472,7 +4486,9 @@ export const PAGE_TRANSLATIONS = {
     "ctaSubtitle": "Usa il nostro calcolatore veterinario per conoscere il dispendio metabolico (RER/MER) e i grammi per pasti freschi o crudi.",
     "ctaBtn": "Calcola le Dosi Ora →",
     "relatedTitle": "Domande Veterinarie Correlate",
-    "readAnswer": "Leggi la Risposta Completa →"
+    "readAnswer": "Leggi la Risposta Completa →",
+      "referencedInAnswer": "Referenziato in questa risposta",
+      "buyNow": "Acquista ora"
   }
 },
 };

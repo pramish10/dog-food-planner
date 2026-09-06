@@ -1,85 +1,14 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/Navbar.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import PlannerQuiz from '../../components/PlannerQuiz.astro';
-import PlanResults from '../../components/PlanResults.astro';
-import FaqSection from '../../components/FaqSection.astro';
-import Footer from '../../components/Footer.astro';
-import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../i18n/utils';
-import { ui, type Lang } from '../../i18n/ui';
-import { getPageTranslations } from '../../i18n/pages';
+import { getLangStaticPaths, useTranslatedPath } from '../../i18n/utils';
+import { type Lang } from '../../i18n/ui';
 
 export function getStaticPaths() {
   return getLangStaticPaths();
 }
 
 const { lang } = Astro.params as { lang: Lang };
-const currentStrings = ui[lang] || ui.en;
-const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
-const p = getPageTranslations(lang).calculator;
+
+// Redirect /[lang]/feeding-calculator → /[lang]/#planner-section
+return Astro.redirect(translatePath('/') + '#planner-section', 301);
 ---
-
-<Layout 
-  lang={lang}
-  title={currentStrings['calculator.title']}
-  description={currentStrings['calculator.desc']}
->
-  <Navbar />
-  
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
-    <Breadcrumbs 
-      items={[
-        { name: t('nav.brand'), url: translatePath('/') },
-        { name: t('nav.calculator') }
-      ]}
-    />
-
-    <!-- Header Section -->
-    <section class="py-10 sm:py-14 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
-          {p.eyebrow}
-        </div>
-
-        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 text-balance leading-tight">
-          {t('nav.calculator')}
-        </h1>
-        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
-          {p.heroSubtitle}
-        </p>
-      </div>
-    </section>
-
-    <!-- Interactive Planner Engine -->
-    <div class="py-6">
-      <PlannerQuiz />
-      <PlanResults />
-    </div>
-
-    <!-- Feeding Math Explanation Section -->
-    <section class="py-14 sm:py-16 bg-white dark:bg-[#0d0d0d] border-y border-[#ebebeb] dark:border-[#262626]">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
-        <h2 class="text-2xl font-bold text-[#171717] dark:text-[#ededed]">
-          {p.heroTitle}
-        </h2>
-        <p>
-          {p.heroSubtitle}
-        </p>
-        <div class="p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] font-mono text-xs">
-          RER (Resting Energy Requirement) = 70 × (Body Weight in kg)<sup>0.75</sup>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQs Section -->
-    <FaqSection 
-      category="Feeding Math & Portions"
-      limit={6}
-    />
-
-  </main>
-  
-  <Footer />
-</Layout>

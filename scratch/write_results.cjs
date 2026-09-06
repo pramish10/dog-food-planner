@@ -1,4 +1,6 @@
----
+const fs = require('fs');
+
+const content = `---
 import { RECIPES } from '../data/recipes';
 import { getLangFromUrl } from '../i18n/utils';
 import { plannerTranslations } from '../i18n/planner';
@@ -215,18 +217,18 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     (document.getElementById('res-treat-kcal') as HTMLElement).textContent = result.treatKcal.toLocaleString();
 
     const schedContainer = document.getElementById('feeding-schedule-container') as HTMLElement;
-    schedContainer.innerHTML = result.dailySchedule.map((slot: any) => `
+    schedContainer.innerHTML = result.dailySchedule.map((slot: any) => \`
       <div class="flex items-center justify-between p-3 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
         <div>
-          <div class="text-xs font-mono font-semibold text-[#0070f3] dark:text-[#3291ff]">${slot.timeLabel}</div>
-          <div class="text-sm font-semibold text-[#171717] dark:text-[#ededed]">${slot.slotName}</div>
+          <div class="text-xs font-mono font-semibold text-[#0070f3] dark:text-[#3291ff]">\${slot.timeLabel}</div>
+          <div class="text-sm font-semibold text-[#171717] dark:text-[#ededed]">\${slot.slotName}</div>
         </div>
         <div class="text-right">
-          <div class="text-lg font-bold text-[#171717] dark:text-[#ededed] font-mono">${slot.portionGrams}g</div>
-          <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373] font-mono">≈ ${slot.portionCups} cups</div>
+          <div class="text-lg font-bold text-[#171717] dark:text-[#ededed] font-mono">\${slot.portionGrams}g</div>
+          <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373] font-mono">≈ \${slot.portionCups} cups</div>
         </div>
       </div>
-    `).join('');
+    \`).join('');
 
     const breedNoteText = document.getElementById('breed-note-text') as HTMLElement;
     if (breedNoteText) breedNoteText.textContent = result.breedNote;
@@ -240,21 +242,21 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     if (iconEl) iconEl.textContent = HEALTH_ICONS[profile.healthFocus] || '⭐';
     if (titleEl) titleEl.textContent = advice.title;
     if (tipsList) {
-      tipsList.innerHTML = advice.tips.map((tip: string) => `
+      tipsList.innerHTML = advice.tips.map((tip: string) => \`
         <li class="flex items-start gap-2 text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
           <span class="text-[#0070f3] dark:text-[#3291ff] mt-0.5 shrink-0 font-bold">✓</span>
-          <span>${tip}</span>
+          <span>\${tip}</span>
         </li>
-      `).join('');
+      \`).join('');
     }
     if (nutrientsGrid) {
-      nutrientsGrid.innerHTML = advice.keyNutrients.map((n: any) => `
+      nutrientsGrid.innerHTML = advice.keyNutrients.map((n: any) => \`
         <div class="p-3 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
-          <div class="text-xs font-bold text-[#171717] dark:text-[#ededed] mb-0.5">${n.name}</div>
-          <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373] mb-1">${n.reason}</div>
-          <div class="text-[11px] text-[#0070f3] dark:text-[#3291ff] font-mono">${n.foods.join(' · ')}</div>
+          <div class="text-xs font-bold text-[#171717] dark:text-[#ededed] mb-0.5">\${n.name}</div>
+          <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373] mb-1">\${n.reason}</div>
+          <div class="text-[11px] text-[#0070f3] dark:text-[#3291ff] font-mono">\${n.foods.join(' · ')}</div>
         </div>
-      `).join('');
+      \`).join('');
     }
 
     const noRecipeWarning = document.getElementById('no-recipe-warning') as HTMLElement;
@@ -268,24 +270,24 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       const ingContainer = document.getElementById('ingredient-rows-container') as HTMLElement;
       ingContainer.innerHTML = recipe.ingredients.map((ing: any) => {
         const grams = Math.round((ing.percentage / 100) * result.activeDailyGrams);
-        return `
+        return \`
           <div class="flex items-center justify-between px-4 py-3 bg-white dark:bg-[#141414] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] transition-colors">
             <div>
-              <div class="text-sm font-medium text-[#171717] dark:text-[#ededed]">${ing.name}</div>
-              <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">${ing.purpose}</div>
+              <div class="text-sm font-medium text-[#171717] dark:text-[#ededed]">\${ing.name}</div>
+              <div class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">\${ing.purpose}</div>
             </div>
-            <div class="text-sm font-bold text-[#171717] dark:text-[#ededed] font-mono ml-4 shrink-0">${grams}g</div>
+            <div class="text-sm font-bold text-[#171717] dark:text-[#ededed] font-mono ml-4 shrink-0">\${grams}g</div>
           </div>
-        `;
+        \`;
       }).join('');
 
       const prepContainer = document.getElementById('prep-steps-container') as HTMLElement;
-      prepContainer.innerHTML = recipe.preparationNotes.map((step: string, i: number) => `
+      prepContainer.innerHTML = recipe.preparationNotes.map((step: string, i: number) => \`
         <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-[#0070f3]/10 text-[#0070f3] dark:text-[#3291ff] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
-          <span>${step}</span>
+          <span class="w-5 h-5 rounded-full bg-[#0070f3]/10 text-[#0070f3] dark:text-[#3291ff] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">\${i + 1}</span>
+          <span>\${step}</span>
         </li>
-      `).join('');
+      \`).join('');
     }
 
     document.querySelectorAll('.diet-tab-btn').forEach(btn => {
@@ -326,3 +328,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     }
   });
 </script>
+`;
+
+fs.writeFileSync('src/components/PlanResults.astro', content, 'utf8');
+console.log('PlanResults.astro written successfully, size:', content.length);

@@ -1,4 +1,6 @@
----
+const fs = require('fs');
+
+const content = `---
 import { CANINE_BREEDS } from '../data/breeds';
 import { getLangFromUrl } from '../i18n/utils';
 import { plannerTranslations } from '../i18n/planner';
@@ -435,7 +437,7 @@ const TOTAL_STEPS = 4;
     if (bar) bar.style.width = pct + '%';
     if (label) {
       const t = getTranslations();
-      label.textContent = `${t.stepPrefix || 'STEP'} ${currentStep} ${t.ofStep || 'OF 4'}`;
+      label.textContent = \`\${t.stepPrefix || 'STEP'} \${currentStep} \${t.ofStep || 'OF 4'}\`;
     }
     if (badge) {
       const t = getTranslations();
@@ -448,7 +450,7 @@ const TOTAL_STEPS = 4;
     document.querySelectorAll('.quiz-step').forEach((el) => {
       (el as HTMLElement).classList.add('hidden');
     });
-    const target = document.querySelector(`.quiz-step[data-step="${step}"]`) as HTMLElement;
+    const target = document.querySelector(\`.quiz-step[data-step="\${step}"]\`) as HTMLElement;
     if (target) target.classList.remove('hidden');
 
     const prevBtn = document.getElementById('prev-btn') as HTMLElement;
@@ -568,3 +570,7 @@ const TOTAL_STEPS = 4;
     document.dispatchEvent(new CustomEvent('dogPlannerSubmit', { detail: profile }));
   }
 </script>
+`;
+
+fs.writeFileSync('src/components/PlannerQuiz.astro', content, 'utf8');
+console.log('PlannerQuiz.astro written successfully, size:', content.length);
