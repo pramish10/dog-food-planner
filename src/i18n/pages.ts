@@ -3,6 +3,8 @@ import type { Lang } from './ui';
 export const PAGE_TRANSLATIONS = {
   en: {
   "about": {
+    "heroTitle": "About Us",
+    "heroSubtitle": "Learn about DogFoodPlanner.com. Our mission, veterinary nutritional methodology, NRC standards, and open-source commitment to healthy dog food.",
     "missionBadge": "OUR MISSION // CLINICAL CANINE NUTRITION",
     "whyTitle": "Why DogFoodPlanner Was Created",
     "whyP1": "For decades, the commercial pet food market has operated as a black box. Commercial dry kibble formulas regularly undergo ultra-high heat extrusion (exceeding 400°F), stripping out natural vitamins, oxidising essential omega fatty acids, and padding bag weight with up to 60% high-glycemic starches.",

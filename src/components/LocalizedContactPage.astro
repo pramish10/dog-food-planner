@@ -10,8 +10,8 @@ const { lang } = Astro.props as { lang: Lang }; const strings = ui[lang] || ui.e
     <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="inline-flex font-mono text-xs uppercase font-medium px-3 py-1 rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] mb-3 bg-[#fafafa] dark:bg-[#141414] shadow-2xs">{p.eyebrow}</div>
-        <h1 class="text-[1.65rem] sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] text-balance leading-tight">{strings['contact.title']}</h1>
-        <p class="mt-4 text-sm text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">{strings['contact.desc']}</p>
+        <h1 class="text-[1.65rem] sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] text-balance leading-tight">{p.formTitle}</h1>
+        <p class="mt-4 text-sm text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">{p.formDesc}</p>
       </div>
     </section>
 

@@ -20,8 +20,8 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
 
 <Layout 
   lang={lang}
-  title={currentStrings['faqs.title']}
-  description={currentStrings['faqs.desc']}
+  title={currentStrings['faqs.seoTitle'] || currentStrings['faqs.title']}
+  description={currentStrings['faqs.seoDesc'] || currentStrings['faqs.desc']}
 >
   <Navbar />
   
