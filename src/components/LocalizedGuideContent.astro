@@ -45,7 +45,14 @@ const p = getPageTranslations(getLangFromUrl(Astro.url))[kind] as any;
         <span class="font-mono text-xs text-[#7928ca]">{recipe.tag}</span>
         <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{recipe.title}</h2>
         <p>{recipe.desc}</p>
-        <ul class="list-disc pl-5 space-y-1">{recipe.ingredients.map((ingredient: string) => <li>{ingredient}</li>)}</ul>
+        <ul class="space-y-1">{recipe.ingredients.map((ingredient: any) => {
+          const hasLink = typeof ingredient === 'object' && ingredient.affiliateUrl;
+          const label = typeof ingredient === 'string' ? ingredient : ingredient.name || ingredient;
+          return <li class="flex items-center justify-between gap-3 py-1 border-b border-[#ebebeb] dark:border-[#262626] last:border-0">
+            <span class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">{label}</span>
+            {hasLink && <AffiliateButton url={ingredient.affiliateUrl} label="Buy →" size="sm" class="shrink-0 text-[10px] py-0.5 px-2" />}
+          </li>;
+        })}</ul>
         <p>{recipe.prep}</p>
         {prod && (
           <div class="mt-4 pt-4 border-t border-[#ebebeb] dark:border-[#262626] flex items-start justify-between gap-4">

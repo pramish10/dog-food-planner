@@ -5,54 +5,6 @@ import { plannerTranslations } from '../i18n/planner';
 
 const lang = getLangFromUrl(Astro.url);
 const p = plannerTranslations[lang] || plannerTranslations.en;
-
-// ── Affiliate product map keyed by recipe id ──────────────────────────────────
-// Each recipe surfaces ONE highly relevant product that is the natural next step
-// after reading the recipe (e.g. the exact supplement or ingredient mentioned).
-const RECIPE_AFFILIATE: Record<string, { name: string; note: string; url: string }> = {
-  // Fresh-cooked chicken → calcium supplement (critical for boneless recipes)
-  'fresh-chicken-everyday': {
-    name: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement',
-    note: 'Add ½ tsp per pound of boneless chicken to hit the 1.2:1 Ca:P ratio required by this recipe.',
-    url: 'https://amzn.to/4haNVWy',
-  },
-  // Fresh-cooked turkey → salmon oil (the omega-3 fat listed in the recipe)
-  'fresh-turkey-vitality': {
-    name: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz',
-    note: 'The EPA/DHA omega-3 oil used in this recipe — add after cooling to preserve heat-sensitive fatty acids.',
-    url: 'https://amzn.to/46HCJdW',
-  },
-  // Fresh-cooked beef → freeze-dried beef liver (organ meat called out in recipe)
-  'fresh-beef-power': {
-    name: 'Get Joy Freeze-Dried 100% Beef Heart Dog Treats, 4oz (Pack of 3)',
-    note: 'Freeze-dried beef organ — the convenient alternative to fresh liver & heart called out in this recipe.',
-    url: 'https://amzn.to/3Sz0bqy',
-  },
-  // Fresh salmon → Zesty Paws turmeric (anti-inflammatory ingredient in recipe)
-  'fresh-salmon-dermacare': {
-    name: 'Zesty Paws Liver Support — Milk Thistle & Turmeric Curcumin (Pack of 2)',
-    note: 'The turmeric curcumin supplement referenced in this skin-soothing recipe — convenient soft-chew form.',
-    url: 'https://amzn.to/46JlM2I',
-  },
-  // Raw BARF beef → freeze-dried beef meal mixers (easiest entry point for BARF)
-  'raw-barf-complete-beef': {
-    name: "Stella & Chewy's Freeze-Dried Raw Beef Meal Mixers — 95% Grass-Fed Beef, Organs & Bone, 1oz",
-    note: 'HPP pathogen-controlled freeze-dried raw — the safest, most convenient way to start this BARF recipe.',
-    url: 'https://amzn.to/4gyO85G',
-  },
-  // Raw BARF lamb → freeze-dried lamb meal mixers
-  'raw-barf-lamb-hypoallergenic': {
-    name: "Stella & Chewy's Freeze-Dried Raw Lamb Meal Mixers — 95% Grass-Fed Lamb, Organs & Bone, 35oz (Pack of 2)",
-    note: 'Freeze-dried novel-protein lamb — the hypoallergenic raw option this recipe is built around.',
-    url: 'https://amzn.to/46MbZsE',
-  },
-  // Superfood topper → bone broth (the #1 ingredient in the topper recipe)
-  'topper-gut-joint-shield': {
-    name: 'Brutus Broth Chicken Bone Broth — Hip & Joint Meal Topper, 16.9 fl oz',
-    note: 'The collagen bone broth base for this topper recipe — glucosamine & chondroitin for joints, ready to pour.',
-    url: 'https://amzn.to/4zSd7Zb',
-  },
-};
 ---
 
 <section id="results-section" class="hidden py-8 sm:py-14 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0e0cc] dark:border-[#2a1f14]" data-lang={lang}>
@@ -101,27 +53,9 @@ const RECIPE_AFFILIATE: Record<string, { name: string; note: string; url: string
       </div>
     </div>
 
-    <!-- Breed Note -->
-    <div id="breed-note-card" class="mb-5 p-4 rounded-2xl border border-[#c47a2b]/30 bg-[#c47a2b]/5 dark:bg-[#c47a2b]/10 flex gap-3">
-      <span class="text-lg shrink-0">🐾</span>
-      <p id="breed-note-text" class="text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed"></p>
-    </div>
-
-    <!-- Health Tips -->
-    <div id="health-advice-card" class="mb-5 bg-white dark:bg-[#1c1208] border border-[#c47a2b]/20 rounded-2xl p-4 sm:p-5">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="text-lg" id="health-advice-icon">⭐</span>
-        <h3 id="health-advice-title" class="text-sm font-bold text-[#1c0f00] dark:text-[#fde8c8]">Health Tips</h3>
-      </div>
-      <ul id="health-tips-list" class="space-y-2 mb-4">
-        <!-- Populated by JS -->
-      </ul>
-      <div>
-        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.keyNutrientsTitle}</div>
-        <div id="key-nutrients-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          <!-- Populated by JS -->
-        </div>
-      </div>
+    <!-- Profile-specific insight card (breed note + 1 focused tip) -->
+    <div id="insight-card" class="mb-5 p-4 rounded-2xl border border-[#c47a2b]/30 bg-[#c47a2b]/5 dark:bg-[#c47a2b]/10">
+      <p id="insight-text" class="text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed"></p>
     </div>
 
     <!-- Diet Tabs -->
@@ -157,39 +91,6 @@ const RECIPE_AFFILIATE: Record<string, { name: string; note: string; url: string
         </ol>
       </div>
 
-      <!-- Affiliate Product Card (populated by JS based on recipe id) -->
-      <div id="recipe-affiliate-card" class="hidden mt-5 pt-4 border-t border-[#f0d5a8] dark:border-[#3a2510]">
-        <div class="text-[10px] font-mono uppercase tracking-wider text-[#92400e] dark:text-[#c4956a] mb-2">🛒 Recommended for this recipe</div>
-        <div class="flex items-start justify-between gap-3 p-3 rounded-xl bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510]">
-          <div class="flex-1 min-w-0">
-            <p id="recipe-affiliate-name" class="text-xs font-semibold text-[#1c0f00] dark:text-[#fde8c8] leading-snug mb-1"></p>
-            <p id="recipe-affiliate-note" class="text-[11px] text-[#6b4226] dark:text-[#c4956a] leading-relaxed"></p>
-          </div>
-          <a id="recipe-affiliate-link" href="#" target="_blank" rel="noopener noreferrer sponsored"
-            class="shrink-0 mt-0.5 px-3 py-1.5 text-[11px] font-semibold bg-[#c47a2b] hover:bg-[#a8621f] text-white rounded-lg transition-colors whitespace-nowrap">
-            Buy on Amazon →
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7-Day Transition -->
-    <div class="mb-5 bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
-      <h4 class="text-xs font-bold text-[#1c0f00] dark:text-[#fde8c8] uppercase tracking-wider font-mono mb-3">{p.transitionHeader}</h4>
-      <div class="space-y-2">
-        <div class="flex items-center gap-3 text-sm text-[#6b4226] dark:text-[#c4956a]">
-          <span class="w-2 h-2 rounded-full bg-[#10b981] shrink-0"></span>{p.transitionP1}
-        </div>
-        <div class="flex items-center gap-3 text-sm text-[#6b4226] dark:text-[#c4956a]">
-          <span class="w-2 h-2 rounded-full bg-[#f5a623] shrink-0"></span>{p.transitionP2}
-        </div>
-        <div class="flex items-center gap-3 text-sm text-[#6b4226] dark:text-[#c4956a]">
-          <span class="w-2 h-2 rounded-full bg-[#f97316] shrink-0"></span>{p.transitionP3}
-        </div>
-        <div class="flex items-center gap-3 text-sm text-[#6b4226] dark:text-[#c4956a]">
-          <span class="w-2 h-2 rounded-full bg-[#0070f3] shrink-0"></span>{p.transitionP4}
-        </div>
-      </div>
     </div>
 
     <!-- Disclaimer + Start Over -->
@@ -291,33 +192,53 @@ const RECIPE_AFFILIATE: Record<string, { name: string; note: string; url: string
       </div>
     `).join('');
 
-    const breedNoteText = document.getElementById('breed-note-text') as HTMLElement;
-    if (breedNoteText) breedNoteText.textContent = result.breedNote;
+    // ── Single focused insight — specific to this dog's profile ──────────────
+    const insightEl = document.getElementById('insight-text') as HTMLElement;
+    if (insightEl) {
+      const name = result.dogName;
+      const goal = profile.targetGoal;
+      const activity = profile.activityLevel;
+      const health = profile.healthFocus || '';
+      const breed = profile.breed || '';
+      const bcs = Number(profile.bcs || 5);
+      const ageStage = profile.ageStage || 'adult';
 
-    const advice = result.healthAdvice;
-    const iconEl = document.getElementById('health-advice-icon') as HTMLElement;
-    const titleEl = document.getElementById('health-advice-title') as HTMLElement;
-    const tipsList = document.getElementById('health-tips-list') as HTMLElement;
-    const nutrientsGrid = document.getElementById('key-nutrients-grid') as HTMLElement;
+      // Build a single, specific sentence from the user's actual answers
+      let insight = '';
 
-    if (iconEl) iconEl.textContent = HEALTH_ICONS[profile.healthFocus] || '⭐';
-    if (titleEl) titleEl.textContent = advice.title;
-    if (tipsList) {
-      tipsList.innerHTML = advice.tips.map((tip: string) => `
-        <li class="flex items-start gap-2 text-sm text-[#6b4226] dark:text-[#c4956a]">
-          <span class="text-[#c47a2b] dark:text-[#e8a44a] mt-0.5 shrink-0 font-bold">✓</span>
-          <span>${tip}</span>
-        </li>
-      `).join('');
-    }
-    if (nutrientsGrid) {
-      nutrientsGrid.innerHTML = advice.keyNutrients.map((n: any) => `
-        <div class="p-3 rounded-xl bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510]">
-          <div class="text-xs font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-0.5">${n.name}</div>
-          <div class="text-[11px] text-[#92400e] dark:text-[#c4956a] mb-1">${n.reason}</div>
-          <div class="text-[11px] text-[#c47a2b] dark:text-[#e8a44a] font-mono">${n.foods.join(' · ')}</div>
-        </div>
-      `).join('');
+      if (ageStage === 'puppy-early') {
+        insight = `${name} is in rapid growth phase — feed 3× daily and prioritise calcium-to-phosphorus balance (1.2:1) to support bone development.`;
+      } else if (ageStage === 'puppy-late') {
+        insight = `${name} is transitioning to adult size — reduce to 2× daily and begin tapering calories as growth slows.`;
+      } else if (ageStage === 'senior') {
+        insight = `Senior ${name} needs 20% fewer calories than an adult — prioritise joint-supporting omega-3s and easily digestible proteins.`;
+      } else if (goal === 'lose' || bcs >= 7) {
+        insight = `${name} is overweight (BCS ${bcs}/9) — reduce portion by 10–15% and add 1–2 tbsp pure pumpkin per meal to increase satiety without extra calories.`;
+      } else if (goal === 'gain' || bcs <= 3) {
+        insight = `${name} is underweight (BCS ${bcs}/9) — increase daily portion by 10% and add a raw egg yolk or 1 tsp salmon oil per meal for calorie-dense nutrition.`;
+      } else if (activity === 'working') {
+        insight = `${name} is a working dog — this plan runs at 2.5–3× RER. Weigh food daily; adjust by ±10% based on body condition every 2 weeks.`;
+      } else if (activity === 'sedentary') {
+        insight = `${name} is sedentary — this plan uses a 1.2× RER multiplier. Avoid free-feeding; pick up the bowl after 15 minutes to prevent overeating.`;
+      } else if (health.includes('Joint') || health.includes('Hip')) {
+        insight = `For ${name}'s joint health, add 1 tsp salmon oil daily (EPA/DHA) and consider green-lipped mussel powder — both are proven to reduce canine joint inflammation.`;
+      } else if (health.includes('Skin') || health.includes('Coat')) {
+        insight = `For ${name}'s skin and coat, add 1 tsp wild salmon oil per 20 lbs of body weight daily — visible coat improvement typically appears within 3–4 weeks.`;
+      } else if (health.includes('Digest') || health.includes('Gut')) {
+        insight = `For ${name}'s sensitive digestion, add 1–2 tbsp plain pumpkin purée per meal and introduce new proteins one at a time over 7 days.`;
+      } else if (health.includes('Weight')) {
+        insight = `For ${name}'s weight management, weigh every meal on a kitchen scale — eyeballing portions causes 20–30% overfeeding in most households.`;
+      } else if (breed.includes('Bulldog') || breed.includes('Pug') || breed.includes('French')) {
+        insight = `${name}'s brachycephalic anatomy slows eating — use a slow-feeder bowl and avoid exercise for 30 minutes after meals to prevent bloat.`;
+      } else if (breed.includes('Labrador') || breed.includes('Beagle')) {
+        insight = `${name}'s breed is highly food-motivated and prone to obesity — stick strictly to this portion and avoid table scraps entirely.`;
+      } else if (breed.includes('Husky') || breed.includes('Border Collie') || breed.includes('Australian')) {
+        insight = `${name} is a high-drive working breed — on rest days reduce this portion by 10%; on active days increase by 10%.`;
+      } else {
+        insight = `${name}'s plan is calibrated to ${result.merKcal} kcal/day. Weigh each meal on a kitchen scale — cup measurements vary by up to 30% depending on food density.`;
+      }
+
+      insightEl.textContent = insight;
     }
 
     const noRecipeWarning = document.getElementById('no-recipe-warning') as HTMLElement;
@@ -331,13 +252,21 @@ const RECIPE_AFFILIATE: Record<string, { name: string; note: string; url: string
       const ingContainer = document.getElementById('ingredient-rows-container') as HTMLElement;
       ingContainer.innerHTML = recipe.ingredients.map((ing: any) => {
         const grams = Math.round((ing.percentage / 100) * result.activeDailyGrams);
+        const buyBtn = ing.affiliateUrl
+          ? `<a href="${ing.affiliateUrl}" target="_blank" rel="noopener noreferrer sponsored"
+               class="shrink-0 ml-3 px-2.5 py-1 text-[10px] font-semibold bg-[#c47a2b] hover:bg-[#a8621f] text-white rounded-lg transition-colors whitespace-nowrap">
+               Buy →
+             </a>`
+          : '';
         return `
           <div class="flex items-center justify-between px-4 py-3 bg-white dark:bg-[#1c1208] hover:bg-[#fdf8f3] dark:hover:bg-[#2a1a08] transition-colors">
-            <div>
+            <div class="flex-1 min-w-0">
               <div class="text-sm font-medium text-[#1c0f00] dark:text-[#fde8c8]">${ing.name}</div>
-              <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">${ing.purpose}</div>
             </div>
-            <div class="text-sm font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono ml-4 shrink-0">${grams}g</div>
+            <div class="flex items-center gap-2 shrink-0 ml-3">
+              <span class="text-sm font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${grams}g</span>
+              ${buyBtn}
+            </div>
           </div>
         `;
       }).join('');
@@ -350,26 +279,6 @@ const RECIPE_AFFILIATE: Record<string, { name: string; note: string; url: string
         </li>
       `).join('');
 
-      // ── Affiliate product card ──────────────────────────────────────────────
-      const RECIPE_AFFILIATE: Record<string, { name: string; note: string; url: string }> = {
-        'fresh-chicken-everyday': { name: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement', note: 'Add ½ tsp per pound of boneless chicken to hit the 1.2:1 Ca:P ratio required by this recipe.', url: 'https://amzn.to/4haNVWy' },
-        'fresh-turkey-vitality': { name: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz', note: 'The EPA/DHA omega-3 oil used in this recipe — add after cooling to preserve heat-sensitive fatty acids.', url: 'https://amzn.to/46HCJdW' },
-        'fresh-beef-power': { name: 'Get Joy Freeze-Dried 100% Beef Heart Dog Treats, 4oz (Pack of 3)', note: 'Freeze-dried beef organ — the convenient alternative to fresh liver & heart called out in this recipe.', url: 'https://amzn.to/3Sz0bqy' },
-        'fresh-salmon-dermacare': { name: 'Zesty Paws Liver Support — Milk Thistle & Turmeric Curcumin (Pack of 2)', note: 'The turmeric curcumin supplement referenced in this skin-soothing recipe — convenient soft-chew form.', url: 'https://amzn.to/46JlM2I' },
-        'raw-barf-complete-beef': { name: "Stella & Chewy's Freeze-Dried Raw Beef Meal Mixers — 95% Grass-Fed Beef, Organs & Bone, 1oz", note: 'HPP pathogen-controlled freeze-dried raw — the safest, most convenient way to start this BARF recipe.', url: 'https://amzn.to/4gyO85G' },
-        'raw-barf-lamb-hypoallergenic': { name: "Stella & Chewy's Freeze-Dried Raw Lamb Meal Mixers — 95% Grass-Fed Lamb, Organs & Bone, 35oz (Pack of 2)", note: 'Freeze-dried novel-protein lamb — the hypoallergenic raw option this recipe is built around.', url: 'https://amzn.to/46MbZsE' },
-        'topper-gut-joint-shield': { name: 'Brutus Broth Chicken Bone Broth — Hip & Joint Meal Topper, 16.9 fl oz', note: 'The collagen bone broth base for this topper recipe — glucosamine & chondroitin for joints, ready to pour.', url: 'https://amzn.to/4zSd7Zb' },
-      };
-      const affiliateCard = document.getElementById('recipe-affiliate-card') as HTMLElement;
-      const affiliateProd = RECIPE_AFFILIATE[recipe.id];
-      if (affiliateCard && affiliateProd) {
-        (document.getElementById('recipe-affiliate-name') as HTMLElement).textContent = affiliateProd.name;
-        (document.getElementById('recipe-affiliate-note') as HTMLElement).textContent = affiliateProd.note;
-        (document.getElementById('recipe-affiliate-link') as HTMLAnchorElement).href = affiliateProd.url;
-        affiliateCard.classList.remove('hidden');
-      } else if (affiliateCard) {
-        affiliateCard.classList.add('hidden');
-      }
     }
 
     document.querySelectorAll('.diet-tab-btn').forEach(btn => {
