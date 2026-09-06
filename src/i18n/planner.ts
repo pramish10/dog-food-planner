@@ -202,7 +202,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     maleIntactTitle: 'Male (Not Fixed) — Intact / Breeding',
     maleIntactDesc: 'Unaltered male. Natural testosterone maintains higher lean muscle mass and resting energy burn (factor: 1.8 × RER vs 1.6 for neutered).',
     step2Title: 'Physical Metrics & Breed',
-    step2Subtitle: "Don't know the breed? Use our free AI scanner or select a general size category.",
+    step2Subtitle: "Don't know the breed? Use the scanner as a rough guess, or choose the breed manually for a more reliable estimate.",
     aiScanBtn: 'AI Dog Breed Scanner',
     breedLabel: 'Breed / Genetic Size',
     weightLabel: 'Current Weight',

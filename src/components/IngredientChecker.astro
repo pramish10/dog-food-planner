@@ -58,6 +58,12 @@ const ingredients = getLocalizedIngredients(lang).map((item) => {
       </div>
     </div>
 
+    <noscript>
+      <div class="mb-6 rounded-xl border border-amber-200/70 dark:border-amber-900/50 bg-amber-50/70 dark:bg-amber-950/20 p-4 text-sm text-amber-900 dark:text-amber-100">
+        Search and filters need JavaScript, but the ingredient safety list still works below as a full browseable reference.
+      </div>
+    </noscript>
+
     <!-- Ingredient Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4" id="ingredients-grid">
       {ingredients.map((item) => (

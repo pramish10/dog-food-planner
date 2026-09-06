@@ -15,6 +15,23 @@ const bestFoodAffiliates = [
   findAffiliateContext("bone broth"),
   findAffiliateContext("fresh cooked"),
 ].filter(Boolean).slice(0, 4);
+
+// Minimal affiliate links for Life Stage cards
+const lifeStageLinks = [
+  { label: 'ORIJEN Small Breed', url: 'https://amzn.to/3VdZ4gE' },           // Puppy
+  { label: 'Blue Buffalo Wilderness', url: 'https://amzn.to/46DRjDg' },       // Small Dogs
+  { label: 'Purina Pro Plan HA', url: 'https://amzn.to/4iOBEIw' },            // Sensitive Stomachs
+  { label: "Hill's Science Diet Large Breed", url: 'https://amzn.to/3SOmfNW' }, // Senior Dogs
+];
+
+// Buy Now links for each of the Top 5 ranking cards
+const top5BuyLinks = [
+  { label: 'JustFoodForDogs', url: 'https://amzn.to/4x9327I' },           // #1 Fresh Cooked
+  { label: "Stella & Chewy's Freeze-Dried", url: 'https://amzn.to/4gCgdJp' }, // #2 Raw BARF
+  { label: 'ORIJEN Grain-Free', url: 'https://amzn.to/4xF5aFr' },         // #3 Premium Kibble
+  { label: 'Royal Canin Hydrolyzed', url: 'https://amzn.to/4ykV9Nk' },    // #4 Limited Ingredient
+  { label: 'Brutus Bone Broth', url: 'https://amzn.to/4zSd7Zb' },         // #5 Hybrid Bowl
+];
 ---
 
 <Layout 
@@ -62,51 +79,71 @@ const bestFoodAffiliates = [
         <div class="space-y-3 mt-4">
           <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">1</span>
-            <div>
+            <div class="flex-1 min-w-0">
               <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Gently Cooked Fresh Dog Food (Homemade or Human-Grade Kitchens)</h3>
               <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-1">
                 Cooked at 160°F to retain heat-sensitive taurine, vitamins, and natural hydration (70%+). Delivers 90%+ nutrient absorption with zero chemical BHA/BHT preservatives.
               </p>
+              <a href={top5BuyLinks[0].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                Buy Now — {top5BuyLinks[0].label}
+              </a>
             </div>
           </div>
 
           <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">2</span>
-            <div>
+            <div class="flex-1 min-w-0">
               <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Freeze-Dried / Pathogen-Controlled Raw BARF (80/10/10)</h3>
               <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-1">
                 80% muscle meat, 10% raw bone, and 10% organ meats. Retains active digestive enzymes for optimal dental plaque scraping and compact stools.
               </p>
+              <a href={top5BuyLinks[1].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                Buy Now — {top5BuyLinks[1].label}
+              </a>
             </div>
           </div>
 
           <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">3</span>
-            <div>
+            <div class="flex-1 min-w-0">
               <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Traceable, Low-Glycemic Dry Kibble with Whole Meats (e.g. Open Farm, Orijen)</h3>
               <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-1">
                 Utilizes Certified Humane meats, non-GMO produce, and avoids rendered animal by-products and heavy legume fractioning.
               </p>
+              <a href={top5BuyLinks[2].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                Buy Now — {top5BuyLinks[2].label}
+              </a>
             </div>
           </div>
 
           <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">4</span>
-            <div>
+            <div class="flex-1 min-w-0">
               <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Limited Ingredient Diets for Allergies (Novel Single Protein)</h3>
               <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-1">
                 Utilizes novel proteins (venison, rabbit, duck, wild salmon) with soluble pumpkin fiber to calm gastrointestinal inflammation.
               </p>
+              <a href={top5BuyLinks[3].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                Buy Now — {top5BuyLinks[3].label}
+              </a>
             </div>
           </div>
 
           <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-start gap-3">
             <span class="w-6 h-6 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">5</span>
-            <div>
+            <div class="flex-1 min-w-0">
               <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">Superfood Hybrid Bowl (Kibble + 20% Fresh Toppers)</h3>
               <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mt-1">
                 Adding warm bone broth, pasture-raised egg yolks, and steamed greens to high-tier kibble reduces inflammatory markers by up to 90% cost-effectively.
               </p>
+              <a href={top5BuyLinks[4].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1.5 rounded-lg bg-[#0070f3] hover:bg-[#005ac2] dark:bg-[#3291ff] dark:hover:bg-[#0070f3] text-white text-[11px] font-bold transition-colors shadow-xs">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                Buy Now — {top5BuyLinks[4].label}
+              </a>
             </div>
           </div>
         </div>
@@ -129,6 +166,9 @@ const bestFoodAffiliates = [
             <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
               Requires 28-32% protein, controlled 1.2:1 to 1.4:1 Calcium-to-Phosphorus ratio (especially for large breeds to prevent hip dysplasia), and DHA for neural cognitive growth.
             </p>
+            <a href={lifeStageLinks[0].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1 text-[11px] text-[#0070f3] dark:text-[#3291ff] hover:underline mt-1">
+              {lifeStageLinks[0].label} →
+            </a>
           </div>
 
           <div class="p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2">
@@ -138,6 +178,9 @@ const bestFoodAffiliates = [
             <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
               High metabolic burn per pound demands concentrated calories, miniature bite sizes for compact jaws, and steady complex carbs to prevent hypoglycemia.
             </p>
+            <a href={lifeStageLinks[1].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1 text-[11px] text-[#0070f3] dark:text-[#3291ff] hover:underline mt-1">
+              {lifeStageLinks[1].label} →
+            </a>
           </div>
 
           <div class="p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2">
@@ -147,6 +190,9 @@ const bestFoodAffiliates = [
             <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
               Single novel protein (turkey or lamb), zero corn/wheat/soy, enriched with pure pumpkin puree and soothing wild fish oil for gut mucosal healing.
             </p>
+            <a href={lifeStageLinks[2].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1 text-[11px] text-[#0070f3] dark:text-[#3291ff] hover:underline mt-1">
+              {lifeStageLinks[2].label} →
+            </a>
           </div>
 
           <div class="p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2">
@@ -156,6 +202,9 @@ const bestFoodAffiliates = [
             <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
               Higher biological protein to prevent sarcopenia (muscle wasting), lower fat to prevent pancreatitis, glucosamine/chondroitin for joints, and elevated moisture for renal support.
             </p>
+            <a href={lifeStageLinks[3].url} target="_blank" rel="noopener noreferrer nofollow" class="inline-flex items-center gap-1 text-[11px] text-[#0070f3] dark:text-[#3291ff] hover:underline mt-1">
+              {lifeStageLinks[3].label} →
+            </a>
           </div>
         </div>
       </section>
