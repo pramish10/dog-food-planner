@@ -71,8 +71,8 @@ export const RECIPES: MealRecipe[] = [
       kcalPerGram: 1.28
     },
     ingredients: [
-      { name: 'USDA Lean Ground Turkey (93/7)', category: 'Muscle Meat', percentage: 65, purpose: 'Bioavailable protein, zinc & vitamin B6', allergens: ['turkey', 'poultry'] },
-      { name: 'Organic Turkey Hearts & Gizzards', category: 'Organ', percentage: 10, purpose: 'Rich in taurine for cardiac muscle strength', allergens: ['turkey', 'poultry'] },
+      { name: 'USDA Lean Ground Turkey (93/7)', category: 'Muscle Meat', percentage: 65, purpose: 'Bioavailable protein, zinc & vitamin B6', allergens: ['turkey', 'poultry'], affiliateUrl: 'https://amzn.to/3ThvqGK' },
+      { name: 'Organic Turkey Hearts & Gizzards', category: 'Organ', percentage: 10, purpose: 'Rich in taurine for cardiac muscle strength', allergens: ['turkey', 'poultry'], affiliateUrl: 'https://amzn.to/3SUnT0v' },
       { name: 'Pure Organic Pumpkin Puree', category: 'Vegetables & Greens', percentage: 10, purpose: 'Soluble fiber for GI health', affiliateUrl: 'https://amzn.to/4xINd8W' },
       { name: 'Baby Spinach & Steamed Zucchini', category: 'Vegetables & Greens', percentage: 8, purpose: 'Folate, lutein, and magnesium', affiliateUrl: 'https://amzn.to/4yqDq7u' },
       { name: 'Wild Alaskan Salmon Oil', category: 'Healthy Fats & Oils', percentage: 3, purpose: 'DHA/EPA Omega-3s for skin & joints', affiliateUrl: 'https://amzn.to/46HCJdW' },
@@ -102,7 +102,7 @@ export const RECIPES: MealRecipe[] = [
       kcalPerGram: 1.45
     },
     ingredients: [
-      { name: 'Grass-Fed Ground Beef (85/15)', category: 'Muscle Meat', percentage: 65, purpose: 'High amino acid spectrum, iron & L-carnitine', allergens: ['beef'] },
+      { name: 'Grass-Fed Ground Beef (85/15)', category: 'Muscle Meat', percentage: 65, purpose: 'High amino acid spectrum, iron & L-carnitine', allergens: ['beef'], affiliateUrl: 'https://amzn.to/4AgiqlF' },
       { name: 'Pasture-Raised Beef Liver', category: 'Organ', percentage: 8, purpose: 'Vitamin A, copper & B12', allergens: ['beef'], affiliateUrl: 'https://amzn.to/3Sz0bqy' },
       { name: 'Steamed Sweet Carrots & Kale', category: 'Vegetables & Greens', percentage: 12, purpose: 'Beta-carotene for eye and cellular health', affiliateUrl: 'https://amzn.to/4gWqwad' },
       { name: 'Wild Blueberries (Antioxidant Boost)', category: 'Vegetables & Greens', percentage: 5, purpose: 'Anthocyanins to combat oxidative stress', affiliateUrl: 'https://amzn.to/4xadv2C' },

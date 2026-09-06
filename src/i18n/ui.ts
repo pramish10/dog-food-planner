@@ -118,6 +118,8 @@ export const ui = {
     'common.exploreMore': 'Explore More',
     'common.category': 'Category',
     'lang.select': 'Language',
+    'testimonials.title': 'Trusted by Veterinarians & Devoted Dog Parents',
+    'testimonials.subtitle': "A clearer way to plan today's meals for your dog.",
   },
 
   es: {
@@ -212,6 +214,8 @@ export const ui = {
     'common.exploreMore': 'Explorar Más',
     'common.category': 'Categoría',
     'lang.select': 'Idioma',
+    'testimonials.title': 'Avalado por Veterinarios y Dueños de Perros',
+    'testimonials.subtitle': 'Una forma más clara de planificar las comidas de tu perro.',
   },
 
   ja: {
@@ -306,6 +310,8 @@ export const ui = {
     'common.exploreMore': '詳しく見る',
     'common.category': 'カテゴリー',
     'lang.select': '言語を選択',
+    'testimonials.title': '獣医師と愛犬家から信頼されています',
+    'testimonials.subtitle': '愛犬の食事をより分かりやすく計画する方法。',
   },
 
   fr: {
@@ -400,6 +406,8 @@ export const ui = {
     'common.exploreMore': 'Explorer',
     'common.category': 'Catégorie',
     'lang.select': 'Langue',
+    'testimonials.title': 'Approuvé par les Vétérinaires et les Maîtres de Chiens',
+    'testimonials.subtitle': 'Une façon plus claire de planifier les repas de votre chien.',
   },
 
   de: {
@@ -494,6 +502,8 @@ export const ui = {
     'common.exploreMore': 'Mehr erfahren',
     'common.category': 'Kategorie',
     'lang.select': 'Sprache',
+    'testimonials.title': 'Von Tierärzten und Hundebesitzern vertraut',
+    'testimonials.subtitle': 'Ein klarerer Weg, die Mahlzeiten Ihres Hundes zu planen.',
   },
 
   pt: {
@@ -588,6 +598,8 @@ export const ui = {
     'common.exploreMore': 'Saiba Mais',
     'common.category': 'Categoria',
     'lang.select': 'Idioma',
+    'testimonials.title': 'Confiado por Veterinários e Donos de Cães',
+    'testimonials.subtitle': 'Uma forma mais clara de planejar as refeições do seu cão.',
   },
 
   ko: {
@@ -682,6 +694,8 @@ export const ui = {
     'common.exploreMore': '더 보기',
     'common.category': '카테고리',
     'lang.select': '언어 선택',
+    'testimonials.title': '수의사와 반려견 보호자들의 신뢰',
+    'testimonials.subtitle': '반려견의 식사를 더 명확하게 계획하는 방법.',
   },
 
   it: {
@@ -776,5 +790,7 @@ export const ui = {
     'common.exploreMore': 'Scopri di più',
     'common.category': 'Categoria',
     'lang.select': 'Lingua',
+    'testimonials.title': 'Fidato da Veterinari e Proprietari di Cani',
+    'testimonials.subtitle': 'Un modo più chiaro per pianificare i pasti del tuo cane.',
   },
 } as const;

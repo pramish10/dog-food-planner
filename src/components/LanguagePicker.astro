@@ -1,6 +1,6 @@
 ---
 import { languages, type Lang } from '../i18n/ui';
-import { getLangFromUrl, getLocalizedPath, cleanPathname } from '../i18n/utils';
+import { getLangFromUrl, getLocalizedPath, cleanPathname, useTranslations } from '../i18n/utils';
 
 interface Props {
   variant?: 'navbar' | 'footer' | 'compact';
@@ -9,6 +9,7 @@ interface Props {
 
 const { variant = 'navbar', class: className = '' } = Astro.props;
 const currentLang = getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
 const currentPath = Astro.url.pathname;
 const cleanPath = cleanPathname(currentPath);
 
@@ -71,7 +72,7 @@ const languageList = Object.entries(languages) as [Lang, string][];
       aria-labelledby="lang-picker-btn"
     >
       <div class="px-3 py-1.5 border-b border-[#ebebeb] dark:border-[#262626] text-[10px] font-mono text-[#8f8f8f] uppercase tracking-wider">
-        Select Language
+        {t('lang.select')}
       </div>
       <div class="max-h-64 overflow-y-auto py-1">
         {languageList.map(([langCode, langName]) => {

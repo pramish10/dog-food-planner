@@ -364,20 +364,37 @@ const TOTAL_STEPS = 4;
 
             <!-- Allergies -->
             <div>
-              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.allergiesLabel}</label>
-              <div class="grid grid-cols-2 gap-2">
+              <div class="flex items-center justify-between mb-2">
+                <label class="text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider font-mono">{p.allergiesLabel}</label>
+                <span class="text-[10px] text-[#92400e]/70 dark:text-[#c4956a]/70 font-mono">{p.allergyNone} = clear all</span>
+              </div>
+
+              <!-- None pill — full width, clears others -->
+              <label id="allergy-none-label" class="cursor-pointer flex items-center gap-3 px-4 py-3 mb-2 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl bg-white dark:bg-[#1c1208] has-[:checked]:border-[#22c55e] has-[:checked]:bg-[#22c55e]/8 transition-all">
+                <input type="checkbox" id="allergy-none" name="allergy" value="none / no allergies" class="sr-only" />
+                <span class="text-lg shrink-0">✅</span>
+                <div>
+                  <div class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8]">{p.allergyNone}</div>
+                  <div class="text-[11px] text-[#92400e] dark:text-[#c4956a]">No known food sensitivities</div>
+                </div>
+                <!-- checkmark shown when selected -->
+                <svg id="allergy-none-check" class="hidden ml-auto w-4 h-4 text-[#22c55e] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </label>
+
+              <!-- Allergen chips grid -->
+              <div class="grid grid-cols-3 gap-2" id="allergy-chips">
                 {[
-                  { value: 'none / no allergies', label: p.allergyNone },
-                  { value: 'chicken / poultry', label: p.allergyChicken },
-                  { value: 'beef', label: p.allergyBeef },
-                  { value: 'dairy', label: p.allergyDairy },
-                  { value: 'grains / wheat', label: p.allergyWheat },
-                  { value: 'soy', label: p.allergySoy },
-                  { value: 'eggs', label: p.allergyEggs },
+                  { value: 'chicken / poultry', label: p.allergyChicken, emoji: '🍗' },
+                  { value: 'beef',               label: p.allergyBeef,    emoji: '🥩' },
+                  { value: 'dairy',              label: p.allergyDairy,   emoji: '🥛' },
+                  { value: 'grains / wheat',     label: p.allergyWheat,   emoji: '🌾' },
+                  { value: 'soy',                label: p.allergySoy,     emoji: '🫘' },
+                  { value: 'eggs',               label: p.allergyEggs,    emoji: '🥚' },
                 ].map(a => (
-                  <label class="cursor-pointer flex items-center gap-2.5 p-3 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl bg-white dark:bg-[#1c1208] has-[:checked]:border-[#c47a2b] has-[:checked]:bg-[#c47a2b]/8 transition-all">
-                    <input type="checkbox" name="allergy" value={a.value} class="w-4 h-4 rounded accent-[#c47a2b] shrink-0" />
-                    <span class="text-sm text-[#1c0f00] dark:text-[#fde8c8] font-medium">{a.label}</span>
+                  <label class="allergy-chip cursor-pointer flex flex-col items-center gap-1 p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl bg-white dark:bg-[#1c1208] has-[:checked]:border-[#ef4444] has-[:checked]:bg-[#ef4444]/8 transition-all text-center">
+                    <input type="checkbox" name="allergy" value={a.value} class="sr-only" />
+                    <span class="text-2xl">{a.emoji}</span>
+                    <span class="text-[11px] font-semibold text-[#1c0f00] dark:text-[#fde8c8] leading-tight">{a.label}</span>
                   </label>
                 ))}
               </div>
@@ -385,16 +402,26 @@ const TOTAL_STEPS = 4;
 
             <!-- Protein Preference -->
             <div>
-              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.proteinLabel}</label>
-              <select id="protein-choice"
-                class="w-full px-4 py-3 text-sm bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] focus:ring-2 focus:ring-[#c47a2b]/20">
-                <option value="auto">{p.proteinRotation}</option>
-                <option value="chicken">{p.proteinChicken}</option>
-                <option value="beef">{p.proteinBeef}</option>
-                <option value="turkey">{p.proteinTurkey}</option>
-                <option value="lamb">{p.proteinLamb}</option>
-                <option value="salmon">{p.proteinSalmon}</option>
-              </select>
+              <label class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2 font-mono">{p.proteinLabel}</label>
+              <div class="grid grid-cols-3 gap-2">
+                {[
+                  { value: 'auto',    label: p.proteinRotation, emoji: '🔄', sub: 'Recommended' },
+                  { value: 'chicken', label: p.proteinChicken,  emoji: '🍗', sub: 'Lean & mild' },
+                  { value: 'beef',    label: p.proteinBeef,     emoji: '🥩', sub: 'Rich & hearty' },
+                  { value: 'turkey',  label: p.proteinTurkey,   emoji: '🦃', sub: 'Low-fat' },
+                  { value: 'lamb',    label: p.proteinLamb,     emoji: '🐑', sub: 'Novel protein' },
+                  { value: 'salmon',  label: p.proteinSalmon,   emoji: '🐟', sub: 'Omega-3 rich' },
+                ].map((opt, i) => (
+                  <label data-protein={opt.value} class="relative cursor-pointer flex flex-col items-center gap-1 p-3 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl bg-white dark:bg-[#1c1208] has-[:checked]:border-[#c47a2b] has-[:checked]:bg-[#c47a2b]/8 transition-all text-center">
+                    <input type="radio" name="protein" value={opt.value} class="sr-only" checked={i === 0} />
+                    <span class="text-2xl">{opt.emoji}</span>
+                    <span class="text-[11px] font-semibold text-[#1c0f00] dark:text-[#fde8c8] leading-tight">{opt.label}</span>
+                    <span class="text-[10px] text-[#92400e] dark:text-[#c4956a]">{opt.sub}</span>
+                    <!-- blocked badge — hidden by default, shown via JS -->
+                    <span class="protein-blocked-badge hidden absolute -top-1.5 -right-1.5 text-[10px] bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center font-bold leading-none">✕</span>
+                  </label>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -501,7 +528,84 @@ const TOTAL_STEPS = 4;
     }
   });
 
-  // Weight unit toggle
+  // ── Allergy ↔ Protein cross-link logic ───────────────────────────
+
+  // Maps allergen checkbox value → protein radio value(s) to block
+  const ALLERGEN_PROTEIN_MAP: Record<string, string[]> = {
+    'chicken / poultry': ['chicken'],
+    'beef':              ['beef'],
+    'dairy':             [],          // no direct protein match
+    'grains / wheat':    [],
+    'soy':               [],
+    'eggs':              [],
+  };
+
+  const noneBox      = document.getElementById('allergy-none') as HTMLInputElement;
+  const noneCheck    = document.getElementById('allergy-none-check') as HTMLElement;
+  const allergyChips = document.querySelectorAll<HTMLInputElement>('#allergy-chips input[type="checkbox"]');
+  const proteinCards = document.querySelectorAll<HTMLInputElement>('input[name="protein"]');
+
+  function syncNoneVisual() {
+    noneCheck?.classList.toggle('hidden', !noneBox?.checked);
+  }
+
+  function syncProteinBlocking() {
+    // Collect all currently checked allergen values
+    const blocked = new Set<string>();
+    allergyChips.forEach(cb => {
+      if (cb.checked) {
+        (ALLERGEN_PROTEIN_MAP[cb.value] || []).forEach(p => blocked.add(p));
+      }
+    });
+
+    proteinCards.forEach(radio => {
+      const card = radio.closest('label') as HTMLElement;
+      if (!card) return;
+      const badge = card.querySelector('.protein-blocked-badge') as HTMLElement;
+
+      if (blocked.has(radio.value)) {
+        // Disable & grey out
+        radio.disabled = true;
+        if (radio.checked) {
+          // Move selection to 'auto' (Balanced Rotation)
+          radio.checked = false;
+          const autoRadio = document.querySelector<HTMLInputElement>('input[name="protein"][value="auto"]');
+          if (autoRadio) autoRadio.checked = true;
+        }
+        card.classList.add('opacity-40', 'cursor-not-allowed', 'pointer-events-none');
+        card.setAttribute('title', 'Blocked — allergen selected');
+        badge?.classList.remove('hidden');
+      } else {
+        // Re-enable
+        radio.disabled = false;
+        card.classList.remove('opacity-40', 'cursor-not-allowed', 'pointer-events-none');
+        card.removeAttribute('title');
+        badge?.classList.add('hidden');
+      }
+    });
+  }
+
+  // "None" pill — clears all allergens and re-enables all proteins
+  noneBox?.addEventListener('change', () => {
+    if (noneBox.checked) {
+      allergyChips.forEach(cb => { cb.checked = false; });
+    }
+    syncNoneVisual();
+    syncProteinBlocking();
+  });
+
+  // Each allergen chip — blocks matching proteins, clears "None"
+  allergyChips.forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked && noneBox?.checked) {
+        noneBox.checked = false;
+        syncNoneVisual();
+      }
+      syncProteinBlocking();
+    });
+  });
+
+  // ── Weight unit toggle ────────────────────────────────────────────
   let currentWeightKg = false;
   document.getElementById('unit-lbs')?.addEventListener('click', () => {
     if (currentWeightKg) {
@@ -552,7 +656,7 @@ const TOTAL_STEPS = 4;
     const activity = (document.querySelector('input[name="activity"]:checked') as HTMLInputElement)?.value || 'moderate';
     const diet = (document.querySelector('input[name="diet"]:checked') as HTMLInputElement)?.value || 'fresh-cooked';
     const healthFocus = (document.querySelector('input[name="health-focus"]:checked') as HTMLInputElement)?.value || 'General Longevity & Health';
-    const proteinChoice = (document.getElementById('protein-choice') as HTMLSelectElement).value;
+    const proteinChoice = (document.querySelector('input[name="protein"]:checked') as HTMLInputElement)?.value || 'auto';
 
     const rawWeight = parseFloat((document.getElementById('dog-weight') as HTMLInputElement).value) || 45;
     const weightLbs = currentWeightKg ? rawWeight * 2.20462 : rawWeight;

@@ -11,13 +11,130 @@ const p = getPageTranslations(getLangFromUrl(Astro.url))[kind] as any;
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
   {kind === 'bestFood' && <>
+
+    {/* ── 1. Top 5 Rankings ── */}
     <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
       <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{p.rankingsTitle}</h2>
       <p>{p.rankingsIntro}</p>
-      <div class="space-y-3">{p.rankings.map((item: any) => { const rankProd = getPrimaryBrandProduct(item.title); return <article class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]"><div class="flex justify-between gap-3"><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.rank}. {item.title}</h3><span class="font-mono text-[#0070f3]">{item.score}</span></div><p class="mt-2">{item.pros}</p><p class="mt-1 text-[#8f8f8f]">{item.cons}</p>{rankProd && <div class="mt-3 pt-2 border-t border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-3"><p class="text-[11px] text-[#8f8f8f] dark:text-[#737373] flex-1 min-w-0 truncate">{rankProd.name}</p><AffiliateButton url={rankProd.url} label="Buy Now" size="sm" class="shrink-0" /></div>}</article>; })}</div>
+      <div class="space-y-3">
+        {p.rankings.map((item: any) => {
+          const rankProd = getPrimaryBrandProduct(item.title);
+          return (
+            <article class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+              <div class="flex justify-between gap-3">
+                <h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.rank}. {item.title}</h3>
+                <span class="font-mono text-[#0070f3] shrink-0">{item.score}</span>
+              </div>
+              <p class="mt-2">{item.pros}</p>
+              <p class="mt-1 text-[#8f8f8f]">{item.cons}</p>
+              {rankProd && (
+                <div class="mt-3 pt-2 border-t border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-3">
+                  <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373] flex-1 min-w-0 truncate">{rankProd.name}</p>
+                  <AffiliateButton url={rankProd.url} label="Buy Now" size="sm" class="shrink-0" />
+                </div>
+              )}
+            </article>
+          );
+        })}
+      </div>
     </section>
+
+    {/* ── 2. Fresh vs Raw vs Kibble ── */}
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+        Fresh Dog Food vs. Raw Dog Food vs. Commercial Kibble
+      </h2>
+      <p>The modern pet nutrition landscape has evolved rapidly. Today's pet parents choose between three primary feeding styles:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+          <div class="font-mono text-xs font-bold text-[#10b981] uppercase mb-1">Option 1</div>
+          <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] mb-2">Fresh Dog Food</h3>
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Gently cooked at ~160°F, preserving 70%+ moisture, heat-sensitive vitamins, and essential amino acids. Supports kidney health, coat sheen, and firm stools.</p>
+        </div>
+        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+          <div class="font-mono text-xs font-bold text-[#7928ca] dark:text-[#a855f7] uppercase mb-1">Option 2</div>
+          <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] mb-2">Raw Dog Food (BARF)</h3>
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">80% muscle meat, 10% raw bone, 10% secreting organs. Mirrors ancestral ecology — natural enzymes, zero refined starches, optimal dental hygiene.</p>
+        </div>
+        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+          <div class="font-mono text-xs font-bold text-[#0070f3] dark:text-[#3291ff] uppercase mb-1">Option 3</div>
+          <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] mb-2">Superfood Kibble Toppers</h3>
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Adding 25–50% fresh whole-food toppers (bone broth, sardines, pumpkin) over standard kibble boosts bioavailable micronutrients by 40%+ while staying cost-effective.</p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 3. Comparison Table ── */}
     <ComparisonTable />
-    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.buyerGuideTitle}</h2>{p.buyerRules.map((item: any) => <div><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.title}</h3><p>{item.desc}</p></div>)}</section>
+
+    {/* ── 4. Buyer Guide ── */}
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+      <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.buyerGuideTitle}</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {p.buyerRules.map((item: any) => (
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <h3 class="font-bold text-[#171717] dark:text-[#ededed] mb-1">{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* ── 5. Sensitive Stomach & Allergies ── */}
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
+      <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">Best Dog Foods for Sensitive Stomach</h2>
+      <p>If your dog suffers from gas, loose stools, or constant paw-licking, they likely need an easily digestible diet built on three core principles:</p>
+      <div class="grid sm:grid-cols-3 gap-3 mt-2">
+        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+          <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed] mb-1">Single Novel Protein</h3>
+          <p class="text-xs">Avoid common allergens (chicken, dairy) — use lean turkey, wild salmon, or pasture lamb instead.</p>
+        </div>
+        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+          <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed] mb-1">Soluble Prebiotic Fiber</h3>
+          <p class="text-xs">Organic pumpkin puree regulates intestinal transit time and feeds beneficial gut flora.</p>
+        </div>
+        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+          <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed] mb-1">Anti-Inflammatory Omega-3s</h3>
+          <p class="text-xs">Wild Alaskan salmon oil (EPA/DHA) soothes the gut mucosal barrier and reduces chronic inflammation.</p>
+        </div>
+      </div>
+    </section>
+
+    {/* ── 6. Puppy Nutrition ── */}
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
+      <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">Puppy Nutrition: Critical Growth Requirements</h2>
+      <p>Puppies require significantly more energy, calcium, and amino acids per pound than adult dogs. Key requirements:</p>
+      <ul class="space-y-2 mt-2">
+        <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">High Metabolic Burn:</strong> Young puppies (2–4 months) burn up to 3× their resting metabolic rate — serve 3–4 meals daily.</span></li>
+        <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">Ca:P Ratio:</strong> Large breed puppies need a strictly calibrated Calcium:Phosphorus ratio (1.2:1 to 1.4:1) to prevent hip dysplasia.</span></li>
+        <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">DHA for Brain Development:</strong> Supplement with fish oil — DHA supports optimal cognitive neural development in the first year.</span></li>
+      </ul>
+    </section>
+
+    {/* ── 7. DIY Recipe Blueprint ── */}
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
+      <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">Veterinary-Approved Homemade Recipe Blueprint</h2>
+      <p>A complete and balanced recipe for adult canine maintenance:</p>
+      <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] font-mono text-xs space-y-2 mt-2">
+        <div class="flex justify-between"><span>USDA Lean Ground Turkey (93/7)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">65%</span></div>
+        <div class="flex justify-between"><span>Turkey Hearts & Gizzards (Taurine source)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">10%</span></div>
+        <div class="flex justify-between"><span>Organic Pumpkin Puree (Digestive fiber)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">10%</span></div>
+        <div class="flex justify-between"><span>Steamed Baby Spinach & Zucchini</span><span class="font-bold text-[#171717] dark:text-[#ededed]">8%</span></div>
+        <div class="flex justify-between"><span>Wild Alaskan Salmon Oil (EPA/DHA)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">3%</span></div>
+        <div class="flex justify-between"><span>Eggshell Calcium & Kelp Mineral Blend</span><span class="font-bold text-[#171717] dark:text-[#ededed]">4%</span></div>
+      </div>
+      <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Use the <a href="/#planner-section" class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">free calculator</a> to convert these percentages into exact gram measurements for your dog's weight.</p>
+    </section>
+
+    {/* ── 8. CTA ── */}
+    <div class="p-6 sm:p-8 bg-[#1c0f00] dark:bg-[#1a1a1a] text-white rounded-2xl text-center space-y-3">
+      <h2 class="text-lg sm:text-xl font-bold text-white">100% Free — No Subscriptions, No Paywalls</h2>
+      <p class="text-xs sm:text-sm text-white/80 max-w-xl mx-auto leading-relaxed">Use our free calculator to plan healthy dog food recipes, check toxic ingredients, and print your customised feeding schedule today.</p>
+      <a href="/#planner-section" class="inline-flex items-center gap-2 mt-2 px-6 py-2.5 bg-[#c47a2b] hover:bg-[#e8a44a] text-white text-xs font-bold rounded-full transition-colors">
+        Calculate Your Dog's Bowl →
+      </a>
+    </div>
+
   </>}
 
   {kind === 'recipes' && <>
