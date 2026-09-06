@@ -497,7 +497,7 @@ export function getAffiliatesByBrand(brand: string): AffiliateProduct[] {
  */
 export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Wild Alaskan Salmon Oil': 'https://amzn.to/46HCJdW',
-  'Eggshell Calcium & Organic Kelp Blend': 'https://amzn.to/4gRALwj',
+  'Eggshell Calcium & Organic Kelp Blend': 'https://amzn.to/4gSFde8', // Prymal Pets Eggshell Calcium Powder
   'Ground Seaweed Calcium & Brewer\'s Yeast': 'https://amzn.to/4gRALwj',
   'Wild Canned Sardines in Water (No Salt)': 'https://amzn.to/4xg3W2h',
   'Slow-Simmered Grass-Fed Collagen Bone Broth': 'https://amzn.to/4zZ68xK',
@@ -510,10 +510,10 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Pureed Organic Leafy Greens & Cranberries': 'https://amzn.to/4xg3W2h',
   'Cold-Pressed Virgin Flaxseed Oil': 'https://amzn.to/4xg6A8d', // NOW Foods Organic Flax Seed Oil 24oz (fixed from salmon oil mismatch)
   'Virgin Coconut Oil & Golden Turmeric': 'https://amzn.to/46JlM2I',
-  'Vitamins & Supplements': 'https://amzn.to/4gRALwj', // Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder
-  'Dog-safe calcium and vitamin mix': 'https://amzn.to/4gRALwj', // Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder (legacy support)
-  'calcium and vitamin mix': 'https://amzn.to/4gRALwj', // Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder (alternative support)
-  'nutrient blend': 'https://amzn.to/4gRALwj', // Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder (alternative support)
+  'Vitamins & Supplements': 'https://amzn.to/3SrJddG', // Just Food For Dogs Nutrient Blend
+  'Dog-safe calcium and vitamin mix': 'https://amzn.to/3SrJddG', // Just Food For Dogs Nutrient Blend (legacy support)
+  'calcium and vitamin mix': 'https://amzn.to/3SrJddG', // Just Food For Dogs Nutrient Blend (alternative support)
+  'nutrient blend': 'https://amzn.to/3SrJddG', // Just Food For Dogs Nutrient Blend (alternative support)
   // ── Recipe-specific ingredient mappings ─────────────────────────────────────
   'Lean ground chicken': 'https://amzn.to/4xEuafH', // Stella & Chewy's Freeze-Dried Chicken Meal Mixers
   'Chicken hearts': 'https://amzn.to/4ctpLUu', // Vital Essentials Freeze-Dried Chicken Hearts
@@ -526,7 +526,7 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Grass-Fed Ground Beef (85/15)': 'https://amzn.to/4AgiqlF', // Old Mill Ground Beef
   'Pasture-Raised Beef Liver': 'https://amzn.to/3UryAbr', // Ancestral Supplements Beef Liver
   'Steamed Sweet Carrots & Kale': 'https://amzn.to/4gWqwad', // 365 Organic Shredded Carrots
-  'Wild Blueberries (Antioxidant Boost)': 'https://amzn.to/4xadv2C', // Icelandic+ Cod & Blueberry Sticks
+  'Wild Blueberries (Antioxidant Boost)': 'https://amzn.to/4yh4yFF', // Wild Planet Sardines single can (closer whole-food fit than fish treats)
   'Wild-Caught Pacific Salmon & Cod Fillets': 'https://amzn.to/4ymLrtY', // Stella & Chewy's Surf 'N Turf
   'Organic Steamed Sweet Potato': 'https://amzn.to/4xYpMst', // Crumps' Naturals Sweet Potato
   'Finely Shredded Green Zucchini': 'https://amzn.to/4ijNt9D', // Weis Quality Zucchini Squash
@@ -564,8 +564,8 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Flax Oil': 'https://amzn.to/4xg6A8d',
   'Sardines': 'https://amzn.to/4xg3W2h',
   'Canned Sardines': 'https://amzn.to/4xg3W2h',
-  'Eggshell Calcium': 'https://amzn.to/4gRALwj',
-  'Clean Eggshell Powder': 'https://amzn.to/4gRALwj',
+  'Eggshell Calcium': 'https://amzn.to/4gSFde8', // Prymal Pets Eggshell Calcium Powder
+  'Clean Eggshell Powder': 'https://amzn.to/4haNVWy', // U.S.A. Eggshell Powder 8 oz
   'Kelp': 'https://amzn.to/3UsBTPA',
   'Organic Kelp': 'https://amzn.to/3UsBTPA',
   'Sea Kelp': 'https://amzn.to/3UsBTPA',
@@ -596,7 +596,7 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Ground Lamb Rib Bone': 'https://amzn.to/46MbZsE',             // Stella & Chewy's Lamb Meal Mixers (w/ bone) 35oz ×2
   'Lamb Liver & Kidney': 'https://amzn.to/4yhHI0B',              // PureBites Lamb Freeze-Dried 3.35oz
   // ── Superfood Topper ────────────────────────────────────────────────────
-  'Pureed Zucchini, Celery & Pumpkin Seeds': 'https://amzn.to/3SUqibx', // Pumpkin & Green Bean Natural Dog Treats
+  'Pureed Zucchini, Celery & Pumpkin Seeds': 'https://amzn.to/4xPVcB1', // Fresh Green Zucchini
 };
 
 /**

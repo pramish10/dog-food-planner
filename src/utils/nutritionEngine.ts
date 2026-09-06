@@ -181,7 +181,7 @@ export function calculateCanineNutrition(input: DogProfileInput): NutritionResul
       items: [
         { name: 'Lean Protein & Organ Blend (Heart/Liver)', amount: `${Math.round(activeDailyGrams * 0.40)}g`, type: 'Protein & Taurine' },
         { name: 'Steamed Sweet Potato / Veggie Mash', amount: `${Math.round(activeDailyGrams * 0.08)}g`, type: 'Prebiotics & Minerals' },
-        { name: 'Eggshell Calcium & Kelp Powder', amount: '1/2 tsp (3g)', type: 'Bio-Available Minerals', affiliateNote: 'Recommended: Sea Kelp & Calcium Blend' }
+        { name: 'Eggshell Calcium & Kelp Powder', amount: '1/2 tsp (3g)', type: 'Bio-Available Minerals', affiliateNote: 'Recommended: Eggshell Calcium Powder' }
       ],
       instructions: 'Feed at least 3 hours before bedtime to ensure peaceful sleep and steady overnight recovery.',
       imagePlaceholder: 'evening_feast_preview'
