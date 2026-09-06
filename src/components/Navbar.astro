@@ -20,7 +20,7 @@ const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
 const isHomeActive = cleanPath === '/';
 ---
 
-<header class="bg-[#fff8f0]/95 dark:bg-[#150d04]/95 backdrop-blur-md border-b border-[#f0d5a8] dark:border-[#3a2510] transition-colors pt-[env(safe-area-inset-top)] sticky top-0 z-50">
+<header class="bg-[#fafafa]/95 dark:bg-[#0d0d0d]/95 backdrop-blur-md border-b border-[#ebebeb] dark:border-[#262626] transition-colors pt-[env(safe-area-inset-top)] sticky top-0 z-50">
 
   <!-- ── Main row ─────────────────────────────────────────────────── -->
   <div class="max-w-6xl mx-auto w-full min-w-0 pl-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))] sm:px-6 h-12 sm:h-14 lg:h-16 flex items-center gap-2 sm:gap-3">
@@ -31,13 +31,13 @@ const isHomeActive = cleanPath === '/';
       <div class="flex flex-col min-w-0 justify-center leading-none">
         <div class="flex items-center gap-1 min-w-0">
           <!-- On mobile: show a compact "DFP" abbreviation; sm+ show full brand name -->
-          <span class="font-bold text-[11px] xs:text-[12px] sm:text-[13px] lg:text-base text-[#1c0f00] dark:text-[#fde8c8] tracking-tight whitespace-nowrap">
+          <span class="font-bold text-[11px] xs:text-[12px] sm:text-[13px] lg:text-base text-[#171717] dark:text-[#ededed] tracking-tight whitespace-nowrap">
             <span class="inline sm:hidden">DFP</span>
             <span class="hidden sm:inline">{t('nav.brand')}</span>
           </span>
-          <span class="hidden sm:inline-flex font-mono text-[9px] sm:text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#92400e] dark:text-[#d97706] border border-[#f0d5a8] dark:border-[#3a2510] shrink-0">{t('nav.badge')}</span>
+          <span class="hidden sm:inline-flex font-mono text-[9px] sm:text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#737373] border border-[#ebebeb] dark:border-[#262626] shrink-0">{t('nav.badge')}</span>
         </div>
-        <span class="text-[10px] text-[#a16207] dark:text-[#92400e] font-mono mt-0.5 hidden md:block truncate">{t('nav.subbrand')}</span>
+        <span class="text-[10px] text-[#8f8f8f] dark:text-[#171717] font-mono mt-0.5 hidden md:block truncate">{t('nav.subbrand')}</span>
       </div>
     </a>
 
@@ -48,8 +48,8 @@ const isHomeActive = cleanPath === '/';
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150 font-medium",
           isBestFoodActive
-            ? "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-            : "text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+            : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
         ]}
         aria-current={isBestFoodActive ? 'page' : undefined}
       >{t('nav.bestDogFood')}</a>
@@ -59,8 +59,8 @@ const isHomeActive = cleanPath === '/';
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150 font-medium",
           isRecipesActive
-            ? "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-            : "text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+            : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
         ]}
         aria-current={isRecipesActive ? 'page' : undefined}
       >{t('nav.recipes')}</a>
@@ -70,8 +70,8 @@ const isHomeActive = cleanPath === '/';
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150 font-medium",
           isToxicFoodsActive
-            ? "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-            : "text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+            : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
         ]}
         aria-current={isToxicFoodsActive ? 'page' : undefined}
       >{t('nav.toxicFoods')}</a>
@@ -81,8 +81,8 @@ const isHomeActive = cleanPath === '/';
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150 font-medium",
           isBrandsActive
-            ? "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-            : "text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+            : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
         ]}
         aria-current={isBrandsActive ? 'page' : undefined}
       >{t('nav.brands')}</a>
@@ -92,13 +92,13 @@ const isHomeActive = cleanPath === '/';
         class:list={[
           "text-xs px-3 py-1.5 rounded-full transition-all duration-150 flex items-center gap-1 font-medium",
           isFaqActive
-            ? "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-            : "text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+            ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+            : "text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
         ]}
         aria-current={isFaqActive ? 'page' : undefined}
       >
         <span>{t('nav.faqs')}</span>
-        <span class="px-1.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 rounded text-[10px] font-mono font-bold">40+</span>
+        <span class="px-1.5 bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#8f8f8f] dark:text-[#737373] rounded text-[10px] font-mono font-bold">40+</span>
       </a>
     </nav>
 
@@ -115,19 +115,19 @@ const isHomeActive = cleanPath === '/';
         type="button"
         id="theme-toggle-btn"
         aria-label="Toggle light and dark mode"
-        class="theme-toggle inline-flex items-center justify-center size-8 sm:size-9 p-1.5 text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08] rounded-full border border-[#f0d5a8] dark:border-[#3a2510] transition-all cursor-pointer"
+        class="theme-toggle inline-flex items-center justify-center size-8 sm:size-9 p-1.5 text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-[#ededed] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] rounded-[6px] border border-[#ebebeb] dark:border-[#262626] transition-all cursor-pointer"
       >
-        <svg class="theme-sun-icon w-3.5 h-3.5 sm:w-4 sm:h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="theme-sun-icon w-3.5 h-3.5 sm:w-4 sm:h-4 hidden dark:block text-[#8f8f8f]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="4"></circle>
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
         </svg>
-        <svg class="theme-moon-icon w-3.5 h-3.5 sm:w-4 sm:h-4 block dark:hidden text-[#92400e]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="theme-moon-icon w-3.5 h-3.5 sm:w-4 sm:h-4 block dark:hidden text-[#4d4d4d]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
         </svg>
       </button>
 
       <!-- Plan Bowl CTA — md+ only -->
-      <a href={translatePath('/#planner-section')} class="hidden md:inline-flex items-center justify-center text-xs font-bold text-white active:scale-[0.98] transition-all px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-md whitespace-nowrap" style="background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%); box-shadow: 0 3px 12px rgba(196,122,43,0.35);">
+      <a href={translatePath('/#planner-section')} class="hidden md:inline-flex items-center justify-center gap-1.5 text-xs font-medium text-white dark:text-[#171717] bg-[#171717] dark:bg-white hover:bg-[#333] dark:hover:bg-[#e5e5e5] active:scale-[0.98] transition-all px-3 sm:px-4 py-1.5 sm:py-2 rounded-full whitespace-nowrap">
         <span>{t('nav.planBowl')}</span>
         <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
@@ -141,7 +141,7 @@ const isHomeActive = cleanPath === '/';
         aria-label="Toggle navigation menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        class="lg:hidden inline-flex items-center justify-center size-8 sm:size-9 p-1.5 text-[#6b4226] dark:text-[#c4956a] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08] rounded-md transition-colors border border-[#f0d5a8] dark:border-[#3a2510]"
+        class="lg:hidden inline-flex items-center justify-center size-8 sm:size-9 p-1.5 text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] rounded-[6px] transition-colors border border-[#ebebeb] dark:border-[#262626]"
       >
         <svg id="hamburger-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
@@ -154,7 +154,7 @@ const isHomeActive = cleanPath === '/';
   </div>
 
   <!-- ── Mobile quick-nav strip (visible on < lg, hidden when menu is open) ── -->
-  <div id="mobile-quicknav" class="lg:hidden border-t border-[#f0d5a8] dark:border-[#3a2510] bg-[#fff8f0]/95 dark:bg-[#150d04]/95">
+  <div id="mobile-quicknav" class="lg:hidden border-t border-[#ebebeb] dark:border-[#262626] bg-[#fafafa]/95 dark:bg-[#0d0d0d]/95">
     <div class="flex overflow-x-auto scrollbar-hide gap-1 pl-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))] py-1.5" style="scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;">
       <a
         href={translatePath('/#planner-section')}
@@ -162,9 +162,9 @@ const isHomeActive = cleanPath === '/';
           "quicknav-link flex-none text-[11px] font-semibold px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150 scroll-snap-align-start",
           isHomeActive || isCalculatorActive
             ? "text-white"
-            : "bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#6b4226] dark:text-[#c4956a]"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
         ]}
-        style={isHomeActive || isCalculatorActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
+        style={isHomeActive || isCalculatorActive ? "background: #171717; color: #ffffff;" : ""}
       >🐕 {t('nav.calculator')}</a>
 
       <a
@@ -173,9 +173,9 @@ const isHomeActive = cleanPath === '/';
           "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
           isBestFoodActive
             ? "text-white font-semibold"
-            : "bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#6b4226] dark:text-[#c4956a]"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
         ]}
-        style={isBestFoodActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
+        style={isBestFoodActive ? "background: #171717; color: #ffffff;" : ""}
         aria-current={isBestFoodActive ? 'page' : undefined}
       >🏆 {t('nav.bestDogFood')}</a>
 
@@ -185,9 +185,9 @@ const isHomeActive = cleanPath === '/';
           "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
           isRecipesActive
             ? "text-white font-semibold"
-            : "bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#6b4226] dark:text-[#c4956a]"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
         ]}
-        style={isRecipesActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
+        style={isRecipesActive ? "background: #171717; color: #ffffff;" : ""}
         aria-current={isRecipesActive ? 'page' : undefined}
       >🍲 {t('nav.recipes')}</a>
 
@@ -197,9 +197,9 @@ const isHomeActive = cleanPath === '/';
           "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
           isAllergiesActive
             ? "text-white font-semibold"
-            : "bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#6b4226] dark:text-[#c4956a]"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
         ]}
-        style={isAllergiesActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
+        style={isAllergiesActive ? "background: #171717; color: #ffffff;" : ""}
         aria-current={isAllergiesActive ? 'page' : undefined}
       >🛡️ {t('nav.allergies')}</a>
 
@@ -209,9 +209,9 @@ const isHomeActive = cleanPath === '/';
           "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
           isToxicFoodsActive
             ? "text-white font-semibold"
-            : "bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#6b4226] dark:text-[#c4956a]"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
         ]}
-        style={isToxicFoodsActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
+        style={isToxicFoodsActive ? "background: #171717; color: #ffffff;" : ""}
         aria-current={isToxicFoodsActive ? 'page' : undefined}
       >☠ {t('nav.toxicFoods')}</a>
 
@@ -221,9 +221,9 @@ const isHomeActive = cleanPath === '/';
           "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
           isBrandsActive
             ? "text-white font-semibold"
-            : "bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#6b4226] dark:text-[#c4956a]"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
         ]}
-        style={isBrandsActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
+        style={isBrandsActive ? "background: #171717; color: #ffffff;" : ""}
         aria-current={isBrandsActive ? 'page' : undefined}
       >⭐ {t('nav.brands')}</a>
 
@@ -233,21 +233,20 @@ const isHomeActive = cleanPath === '/';
           "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150 flex items-center gap-1",
           isFaqActive
             ? "text-white font-semibold"
-            : "bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#6b4226] dark:text-[#c4956a]"
+            : "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1]"
         ]}
-        style={isFaqActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
+        style={isFaqActive ? "background: #171717; color: #ffffff;" : ""}
         aria-current={isFaqActive ? 'page' : undefined}
-      >❓ {t('nav.faqs')} <span class="px-1 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 rounded text-[9px] font-mono font-bold">40+</span></a>
+      >❓ {t('nav.faqs')} <span class="px-1 bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#8f8f8f] dark:text-[#737373] rounded text-[9px] font-mono font-bold">40+</span></a>
     </div>
   </div>
 
   <!-- ── Mobile full-menu dropdown ──────────────────────────────────── -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-[#f0d5a8] dark:border-[#3a2510] bg-[#fff8f0] dark:bg-[#150d04] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] py-3 space-y-1 shadow-lg max-h-[min(calc(100dvh-6rem),32rem)] overflow-y-auto overscroll-contain pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#0d0d0d] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] py-3 space-y-1 shadow-lg max-h-[min(calc(100dvh-6rem),32rem)] overflow-y-auto overscroll-contain pb-[max(0.75rem,env(safe-area-inset-bottom))]">
     <!-- Plan Bowl CTA -->
     <a
       href={translatePath('/#planner-section')}
-      class="mobile-nav-link flex items-center justify-center gap-1.5 mb-3 min-h-11 px-3 py-2.5 text-sm font-bold text-white rounded-full shadow-md"
-      style="background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%); box-shadow: 0 4px 14px rgba(196,122,43,0.35);"
+      class="mobile-nav-link flex items-center justify-center gap-1.5 mb-3 min-h-11 px-3 py-2.5 text-sm font-medium text-white dark:text-[#171717] bg-[#171717] dark:bg-white hover:bg-[#333] dark:hover:bg-[#e5e5e5] rounded-full transition-all"
     >
       {t('nav.planBowl')}
       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -260,8 +259,8 @@ const isHomeActive = cleanPath === '/';
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-xl transition-colors",
         isHomeActive || isCalculatorActive
-          ? "bg-[#f0d5a8]/50 dark:bg-[#3a2510]/50 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-          : "font-medium text-[#6b4226] dark:text-[#c4956a] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+          ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+          : "font-medium text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
       ]}
     >🐕 {t('nav.calculator')}</a>
 
@@ -270,8 +269,8 @@ const isHomeActive = cleanPath === '/';
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-xl transition-colors",
         isBestFoodActive
-          ? "bg-[#f0d5a8]/50 dark:bg-[#3a2510]/50 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-          : "font-medium text-[#6b4226] dark:text-[#c4956a] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+          ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+          : "font-medium text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
       ]}
     >🏆 {t('nav.bestDogFood')}</a>
 
@@ -280,8 +279,8 @@ const isHomeActive = cleanPath === '/';
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-xl transition-colors",
         isRecipesActive
-          ? "bg-[#f0d5a8]/50 dark:bg-[#3a2510]/50 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-          : "font-medium text-[#6b4226] dark:text-[#c4956a] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+          ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+          : "font-medium text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
       ]}
     >🍲 {t('nav.recipes')}</a>
 
@@ -290,8 +289,8 @@ const isHomeActive = cleanPath === '/';
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-xl transition-colors",
         isAllergiesActive
-          ? "bg-[#f0d5a8]/50 dark:bg-[#3a2510]/50 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-          : "font-medium text-[#6b4226] dark:text-[#c4956a] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+          ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+          : "font-medium text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
       ]}
     >🛡️ {t('nav.allergies')}</a>
 
@@ -300,8 +299,8 @@ const isHomeActive = cleanPath === '/';
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-xl transition-colors",
         isToxicFoodsActive
-          ? "bg-[#f0d5a8]/50 dark:bg-[#3a2510]/50 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-          : "font-medium text-[#6b4226] dark:text-[#c4956a] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+          ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+          : "font-medium text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
       ]}
     >☠ {t('nav.toxicFoods')}</a>
 
@@ -310,8 +309,8 @@ const isHomeActive = cleanPath === '/';
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-xl transition-colors",
         isBrandsActive
-          ? "bg-[#f0d5a8]/50 dark:bg-[#3a2510]/50 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-          : "font-medium text-[#6b4226] dark:text-[#c4956a] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+          ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+          : "font-medium text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
       ]}
     >⭐ {t('nav.brands')}</a>
 
@@ -320,13 +319,13 @@ const isHomeActive = cleanPath === '/';
       class:list={[
         "mobile-nav-link flex items-center min-h-11 px-3 py-2.5 text-sm rounded-xl transition-colors",
         isFaqActive
-          ? "bg-[#f0d5a8]/50 dark:bg-[#3a2510]/50 text-[#92400e] dark:text-[#f59e0b] font-semibold"
-          : "font-medium text-[#6b4226] dark:text-[#c4956a] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
+          ? "bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] font-semibold"
+          : "font-medium text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
       ]}
     >❓ {t('nav.faqs')}</a>
 
     <!-- Mobile Language Switcher -->
-    <div class="pt-3 border-t border-[#f0d5a8] dark:border-[#3a2510]">
+    <div class="pt-3 border-t border-[#ebebeb] dark:border-[#262626]">
       <LanguagePicker variant="compact" />
     </div>
   </div>
