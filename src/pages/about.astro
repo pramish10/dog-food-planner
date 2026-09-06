@@ -21,7 +21,7 @@ const p = getPageTranslations(lang).about;
 >
   <Navbar />
   
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+  <main class="min-h-screen about-warm-bg">
     <Breadcrumbs 
       items={[
         { name: t('nav.brand'), url: translatePath('/') },
@@ -30,63 +30,62 @@ const p = getPageTranslations(lang).about;
     />
 
     <!-- Header -->
-    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
+    <section class="relative py-12 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] h-48 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.15) 0%, transparent 70%); filter: blur(35px);"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-xs uppercase font-bold text-[#92400e] dark:text-[#d97706] bg-[#fdf3e7] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] px-3 py-1 rounded-full mb-4">
           {p.missionBadge}
         </div>
-        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 text-balance leading-tight">
+        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-4 text-balance leading-tight">
           {p.heroTitle || 'About Us'}
         </h1>
-        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-base text-[#6b4226] dark:text-[#c4956a] max-w-2xl mx-auto leading-relaxed">
           {p.heroSubtitle || currentStrings['about.desc']}
         </p>
       </div>
     </section>
 
     <!-- Main Content -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12 space-y-6 text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
       
       <!-- Mission Pillars Card -->
-      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
-        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+      <section class="warm-card p-6 sm:p-8 space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8]">
           {p.whyTitle}
         </h2>
-        <p>
-          {p.whyP1}
-        </p>
-        <p>
-          {p.whyP2}
-        </p>
+        <p>{p.whyP1}</p>
+        <p>{p.whyP2}</p>
       </section>
 
       <!-- Methodology Card -->
-      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-6">
-        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+      <section class="warm-card p-6 sm:p-8 space-y-6">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8]">
           {p.methodTitle}
         </h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {p.pillars.map((pillar) => (
-            <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-1.5">
-              <div class="font-mono text-xs font-bold text-[#0070f3] dark:text-[#3291ff]">{pillar.tag}</div>
-              <h3 class="font-bold text-[#171717] dark:text-[#ededed] text-sm">{pillar.title}</h3>
-              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">{pillar.desc}</p>
+            <div class="p-4 bg-[#fdf3e7]/80 dark:bg-[#2a1a08]/80 rounded-xl border border-[#f0d5a8] dark:border-[#3a2510] space-y-1.5">
+              <div class="font-mono text-xs font-bold text-[#c47a2b] dark:text-[#f59e0b]">{pillar.tag}</div>
+              <h3 class="font-bold text-[#1c0f00] dark:text-[#fde8c8] text-sm">{pillar.title}</h3>
+              <p class="text-xs text-[#6b4226] dark:text-[#c4956a]">{pillar.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       <!-- CTA -->
-      <div class="p-6 sm:p-8 bg-[#171717] dark:bg-[#1a1a1a] text-white rounded-2xl text-center space-y-4">
-        <h3 class="text-xl font-bold text-white dark:text-[#ededed]">
+      <div class="p-6 sm:p-8 rounded-2xl text-center space-y-4" style="background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%); box-shadow: 0 8px 30px rgba(196,122,43,0.3);">
+        <h3 class="text-xl font-bold text-white">
           {p.ctaTitle}
         </h3>
-        <p class="text-xs sm:text-sm text-white/80 dark:text-[#a1a1a1] max-w-xl mx-auto">
+        <p class="text-xs sm:text-sm text-white/85 max-w-xl mx-auto">
           {p.ctaDesc}
         </p>
         <div>
-          <a href={translatePath('/#planner-section')} class="inline-flex items-center gap-2 px-6 py-2.5 bg-white dark:bg-[#ededed] text-[#171717] hover:bg-[#f2f2f2] text-xs font-bold rounded-full transition-all shadow-sm">
+          <a href={translatePath('/#planner-section')} class="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-[#92400e] hover:bg-[#fdf3e7] text-xs font-bold rounded-full transition-all shadow-sm">
             {p.ctaBtn}
           </a>
         </div>

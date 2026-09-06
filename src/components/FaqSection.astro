@@ -51,19 +51,94 @@ const faqJsonLd = generateFaqJsonLd(faqs);
       </p>
     </div>
 
-    <!-- Live Search Toolbar -->
+    <!-- Live Search Toolbar + Category Filters -->
     {showSearch && (
-      <div class="mb-8">
+      <div class="mb-8 space-y-4">
+        <!-- Search Input -->
         <div class="relative max-w-xl mx-auto">
           <input 
             type="search"
             id="faq-search-input"
-            placeholder={pageStrings.badge}
+            placeholder="Search questions, topics, ingredients…"
             class="w-full pl-10 pr-4 py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] focus:border-[#171717] dark:focus:border-[#ededed] focus:bg-white dark:focus:bg-[#141414] rounded-xl text-xs sm:text-sm text-[#171717] dark:text-[#ededed] outline-none transition-all placeholder:text-[#8f8f8f] dark:placeholder:text-[#737373] shadow-2xs"
           />
           <svg class="w-4 h-4 text-[#8f8f8f] dark:text-[#737373] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
           </svg>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-2" id="faq-category-filters" role="group" aria-label="Filter by category">
+          <button
+            type="button"
+            data-cat="all"
+            class="faq-cat-btn active px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
+              bg-[#171717] dark:bg-white text-white dark:text-[#171717] border-[#171717] dark:border-white"
+          >
+            All Questions
+          </button>
+          <button
+            type="button"
+            data-cat="Diet & Nutrition"
+            class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
+              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
+              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+          >
+            🥩 Diet & Nutrition
+          </button>
+          <button
+            type="button"
+            data-cat="Health & Allergies"
+            class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
+              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
+              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+          >
+            🩺 Health & Allergies
+          </button>
+          <button
+            type="button"
+            data-cat="Feeding Math & Portions"
+            class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
+              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
+              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+          >
+            ⚖️ Feeding Math
+          </button>
+          <button
+            type="button"
+            data-cat="Ingredients & Safety"
+            class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
+              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
+              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+          >
+            🔬 Ingredients & Safety
+          </button>
+          <button
+            type="button"
+            data-cat="Brand Reviews & Safety"
+            class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
+              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
+              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+          >
+            ⭐ Brand Reviews
+          </button>
+          <button
+            type="button"
+            data-cat="Glossary & Terms"
+            class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
+              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
+              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+          >
+            📖 Glossary
+          </button>
+        </div>
+
+        <!-- Active filter indicator -->
+        <div id="faq-filter-status" class="hidden text-center">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373]">
+            Showing: <span id="faq-filter-label" class="text-[#171717] dark:text-[#ededed] font-semibold"></span>
+            <button id="faq-clear-filter" type="button" class="text-[#0070f3] dark:text-[#3291ff] hover:underline ml-1">× Clear</button>
+          </span>
         </div>
       </div>
     )}
@@ -143,16 +218,21 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 
 <script>
-  // Interactive FAQ Accordion Logic
+  // Interactive FAQ Accordion + Search + Category Filter Logic
   const accordionList = document.getElementById('faq-accordion-list');
   const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
   const searchInput = document.getElementById('faq-search-input') as HTMLInputElement | null;
   const noResults = document.getElementById('faq-no-results');
   const faqLimit = parseInt(accordionList?.getAttribute('data-faq-limit') || '0', 10);
+  const catBtns = document.querySelectorAll<HTMLButtonElement>('.faq-cat-btn');
+  const filterStatus = document.getElementById('faq-filter-status');
+  const filterLabel = document.getElementById('faq-filter-label');
+  const clearFilterBtn = document.getElementById('faq-clear-filter');
 
   let searchTerm = '';
+  let activeCategory = 'all';
 
-  // Accordion Expand/Collapse
+  // ── Accordion Expand/Collapse ──────────────────────────────────────────────
   faqItems.forEach(item => {
     const btn = item.querySelector('.faq-toggle-btn');
     const content = item.querySelector('.faq-content');
@@ -160,8 +240,6 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 
     btn?.addEventListener('click', () => {
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      
-      // Toggle current
       if (isExpanded) {
         btn.setAttribute('aria-expanded', 'false');
         content?.classList.add('hidden');
@@ -174,20 +252,80 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     });
   });
 
-  // Filter by search term only
+  // ── Category Button Active State ───────────────────────────────────────────
+  function setActiveCatBtn(cat: string) {
+    catBtns.forEach(btn => {
+      const isActive = btn.dataset.cat === cat;
+      // Active styles
+      btn.classList.toggle('bg-[#171717]', isActive);
+      btn.classList.toggle('dark:bg-white', isActive);
+      btn.classList.toggle('text-white', isActive);
+      btn.classList.toggle('dark:text-[#171717]', isActive);
+      btn.classList.toggle('border-[#171717]', isActive);
+      btn.classList.toggle('dark:border-white', isActive);
+      // Inactive styles
+      btn.classList.toggle('bg-[#fafafa]', !isActive);
+      btn.classList.toggle('dark:bg-[#1a1a1a]', !isActive);
+      btn.classList.toggle('text-[#171717]', !isActive);
+      btn.classList.toggle('dark:text-[#ededed]', !isActive);
+      btn.classList.toggle('border-[#ebebeb]', !isActive);
+      btn.classList.toggle('dark:border-[#2e2e2e]', !isActive);
+    });
+
+    // Show/hide filter status indicator
+    if (filterStatus && filterLabel) {
+      if (cat !== 'all') {
+        filterStatus.classList.remove('hidden');
+        filterLabel.textContent = cat;
+      } else {
+        filterStatus.classList.add('hidden');
+      }
+    }
+  }
+
+  // ── Category Filter Click ──────────────────────────────────────────────────
+  catBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.cat || 'all';
+      // Clear search when switching category
+      if (searchInput) {
+        searchInput.value = '';
+        searchTerm = '';
+      }
+      setActiveCatBtn(activeCategory);
+      applyFilters();
+    });
+  });
+
+  // ── Clear Filter Button ────────────────────────────────────────────────────
+  clearFilterBtn?.addEventListener('click', () => {
+    activeCategory = 'all';
+    if (searchInput) {
+      searchInput.value = '';
+      searchTerm = '';
+    }
+    setActiveCatBtn('all');
+    applyFilters();
+  });
+
+  // ── Apply Search + Category Filters ───────────────────────────────────────
   function applyFilters() {
     let visibleCount = 0;
-    const shouldApplyLimit = faqLimit > 0 && searchTerm === '';
+    const isFiltered = searchTerm !== '' || activeCategory !== 'all';
+    const shouldApplyLimit = faqLimit > 0 && !isFiltered;
 
     faqItems.forEach(item => {
       const itemQ = item.getAttribute('data-question') || '';
       const itemKeywords = item.getAttribute('data-keywords') || '';
+      const itemCat = item.getAttribute('data-category') || '';
 
-      const matchSearch = searchTerm === '' || 
-        itemQ.includes(searchTerm) || 
+      const matchSearch = searchTerm === '' ||
+        itemQ.includes(searchTerm) ||
         itemKeywords.includes(searchTerm);
 
-      if (matchSearch) {
+      const matchCat = activeCategory === 'all' || itemCat === activeCategory;
+
+      if (matchSearch && matchCat) {
         visibleCount++;
         if (shouldApplyLimit && visibleCount > faqLimit) {
           item.classList.add('hidden');
@@ -208,11 +346,24 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     }
   }
 
-  // Search Input Event
+  // ── Search Input Event ─────────────────────────────────────────────────────
   searchInput?.addEventListener('input', (e) => {
     searchTerm = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    // Reset category filter when searching
+    if (searchTerm !== '') {
+      activeCategory = 'all';
+      setActiveCatBtn('all');
+    }
     applyFilters();
   });
+
+  // ── Handle URL ?category= param (from hero badges on /faq page) ───────────
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlCat = urlParams.get('category');
+  if (urlCat) {
+    activeCategory = urlCat;
+    setActiveCatBtn(urlCat);
+  }
 
   applyFilters();
 </script>

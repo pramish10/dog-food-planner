@@ -50,7 +50,7 @@ const TOTAL_STEPS = 4;
             <!-- Name -->
             <div>
               <label for="dog-name" class="block text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-1.5 font-mono">{p.nameLabel}</label>
-              <input type="text" id="dog-name" placeholder={p.namePlaceholder} value="Buddy" autocomplete="off"
+              <input type="text" id="dog-name" placeholder={p.namePlaceholder} value="Lucy" autocomplete="off"
                 class="w-full px-4 py-3 text-sm bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] focus:ring-2 focus:ring-[#c47a2b]/20 transition-all" />
             </div>
 
@@ -549,7 +549,7 @@ const TOTAL_STEPS = 4;
   });
 
   function submitForm() {
-    const name = (document.getElementById('dog-name') as HTMLInputElement).value.trim() || 'Buddy';
+    const name = (document.getElementById('dog-name') as HTMLInputElement).value.trim() || 'Lucy';
     const breed = (document.getElementById('dog-breed') as HTMLSelectElement).value;
     const ageStage = (document.querySelector('input[name="age-stage"]:checked') as HTMLInputElement)?.value || 'adult';
     const gender = (document.querySelector('input[name="gender"]:checked') as HTMLInputElement)?.value || 'male-neutered';

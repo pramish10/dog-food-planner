@@ -137,6 +137,45 @@ html.dark .mesh-gradient-bg::before {
   filter: blur(65px);
 }
 
+/* ============================================
+   WARM CARD — matches home page design language
+   ============================================ */
+.warm-card {
+  background-color: rgba(255, 248, 240, 0.9);
+  border: 1px solid #f0d5a8;
+  border-radius: 16px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0px 2px 8px rgba(196, 122, 43, 0.06);
+}
+
+html.dark .warm-card {
+  background-color: rgba(28, 16, 5, 0.8);
+  border-color: #3a2510;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.warm-card:hover {
+  border-color: #e8a44a;
+  box-shadow: 0px 4px 16px rgba(196, 122, 43, 0.12);
+}
+
+html.dark .warm-card:hover {
+  border-color: #5a3518;
+}
+
+/* Warm page background */
+.about-warm-bg,
+.contact-warm-bg,
+.legal-warm-bg {
+  background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 60%, #fff0e6 100%);
+}
+
+html.dark .about-warm-bg,
+html.dark .contact-warm-bg,
+html.dark .legal-warm-bg {
+  background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
+}
+
 /* Hairline Card Styling */
 .hairline-card {
   background-color: #ffffff;

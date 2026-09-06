@@ -22,17 +22,17 @@ const translatePath = useTranslatedPath(lang);
     <!-- Friendly badge -->
     <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] shadow-sm mb-5">
       <span class="w-2 h-2 rounded-full bg-[#22c55e] shrink-0 animate-pulse"></span>
-      <span class="text-[11px] font-bold text-[#92400e] dark:text-[#d97706] uppercase tracking-wider">Free · No Sign-Up · Vet-Informed</span>
+      <span class="text-[11px] font-bold text-[#92400e] dark:text-[#d97706] uppercase tracking-wider">{t('hero.badge')}</span>
     </div>
 
     <!-- Big friendly headline -->
     <h1 class="text-[2rem] xs:text-[2.4rem] sm:text-5xl md:text-6xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight leading-[1.12] max-w-2xl mx-auto mb-4 sm:mb-5 text-balance px-0.5">
-      What should <span class="text-[#c47a2b] dark:text-[#f59e0b]">your dog</span><br class="hidden sm:block" /> eat today? 🐶
+      {t('hero.title1')} <span class="text-[#c47a2b] dark:text-[#f59e0b]">{t('hero.titleHighlight')}</span><br class="hidden sm:block" /> {t('hero.title2')}
     </h1>
 
     <!-- Simple, warm subtitle -->
     <p class="text-sm sm:text-lg text-[#6b4226] dark:text-[#c4956a] max-w-xl mx-auto mb-7 sm:mb-10 leading-relaxed font-normal text-pretty px-0.5">
-      Answer 4 quick questions and get a personalised daily meal plan — with exact portions, a feeding schedule, and a recipe tailored to your dog.
+      {t('hero.subtitle')}
     </p>
 
     <!-- Primary CTA — warm amber -->
@@ -42,7 +42,7 @@ const translatePath = useTranslatedPath(lang);
         class="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-12 text-sm sm:text-base font-bold text-white rounded-full px-7 py-3.5 transition-all active:scale-[0.97] shadow-lg hover:shadow-xl"
         style="background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%); box-shadow: 0 6px 20px rgba(196,122,43,0.38);"
       >
-        <span>Build My Dog's Plan</span>
+        <span>{t('hero.ctaCalculate')}</span>
         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
         </svg>
@@ -52,27 +52,27 @@ const translatePath = useTranslatedPath(lang);
         href={translatePath('/best-dog-food')}
         class="w-full sm:w-auto inline-flex items-center justify-center min-h-12 text-sm font-semibold text-[#6b4226] dark:text-[#d4a574] bg-white dark:bg-[#1c1208] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] active:scale-[0.97] transition-all px-6 py-3.5 rounded-full"
       >
-        Compare Top Brands
+        {t('hero.ctaCompare')}
       </a>
     </div>
 
     <!-- Trust metrics strip — warm style -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 max-w-2xl mx-auto pt-5 sm:pt-6 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]">
       <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
-        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">200+</div>
-        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">Dog breeds covered</div>
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">{t('hero.metric1Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">{t('hero.metric1Label')}</div>
       </div>
       <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
-        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">AAFCO</div>
-        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">Nutrition standards</div>
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">{t('hero.metric2Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">{t('hero.metric2Label')}</div>
       </div>
       <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
-        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">3</div>
-        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">Diet types supported</div>
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">{t('hero.metric3Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">{t('hero.metric3Label')}</div>
       </div>
       <div class="p-3 sm:p-4 bg-white/80 dark:bg-[#1c1208]/80 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] text-center">
-        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">Free</div>
-        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">Always & forever</div>
+        <div class="text-xl sm:text-2xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8]">{t('hero.metric4Value')}</div>
+        <div class="text-[10px] sm:text-xs text-[#92400e] dark:text-[#c4956a] mt-1 leading-snug">{t('hero.metric4Label')}</div>
       </div>
     </div>
 

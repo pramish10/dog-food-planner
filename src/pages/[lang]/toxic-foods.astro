@@ -19,22 +19,34 @@ const strings = ui[lang] || ui.en;
   description={strings['toxic.desc']}
 >
   <Navbar />
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+  <main class="min-h-screen page-warm-bg">
     <Breadcrumbs items={[{ name: t('nav.brand'), url: translatePath('/') }, { name: t('nav.toxicFoods') }]} />
-    <section class="py-10 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-3 shadow-2xs">
-          <span class="text-[#ee0000]">☠</span> Ingredient Safety Database
+    <section class="relative py-10 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] h-48 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.15) 0%, transparent 70%); filter: blur(35px);"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-bold text-[#92400e] dark:text-[#d97706] bg-[#fdf3e7] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] px-3 py-1 rounded-full mb-4">
+          <span>☠</span> {t('nav.toxicFoods')}
         </div>
-        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 text-balance leading-tight">
+        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-4 text-balance leading-tight">
           {strings['toxic.title']}
         </h1>
-        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-base text-[#6b4226] dark:text-[#c4956a] max-w-2xl mx-auto leading-relaxed">
           {strings['toxic.desc']}
         </p>
       </div>
     </section>
     <IngredientChecker />
   </main>
+
+<style>
+  .page-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 60%, #fff0e6 100%);
+  }
+  html.dark .page-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
+  }
+</style>
   <Footer />
 </Layout>

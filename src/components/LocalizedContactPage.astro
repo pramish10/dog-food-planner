@@ -5,66 +5,69 @@ const { lang } = Astro.props as { lang: Lang }; const strings = ui[lang] || ui.e
 ---
 <Layout lang={lang} title={strings['contact.title']} description={strings['contact.desc']}>
   <Navbar />
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+  <main class="min-h-screen contact-warm-bg">
     <Breadcrumbs items={[{ name: t('nav.brand'), url: path('/') }, { name: t('footer.linkContact') }]} />
-    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <div class="inline-flex font-mono text-xs uppercase font-medium px-3 py-1 rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] mb-3 bg-[#fafafa] dark:bg-[#141414] shadow-2xs">{p.eyebrow}</div>
-        <h1 class="text-[1.65rem] sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] text-balance leading-tight">{p.formTitle}</h1>
-        <p class="mt-4 text-sm text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">{p.formDesc}</p>
+    <section class="relative py-12 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] h-48 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.15) 0%, transparent 70%); filter: blur(35px);"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="inline-flex font-mono text-xs uppercase font-bold px-3 py-1 rounded-full border border-[#f0d5a8] dark:border-[#3a2510] mb-4 bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#92400e] dark:text-[#d97706]">{p.eyebrow}</div>
+        <h1 class="text-[1.65rem] sm:text-4xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] text-balance leading-tight">{p.formTitle}</h1>
+        <p class="mt-4 text-sm text-[#6b4226] dark:text-[#c4956a] max-w-2xl mx-auto leading-relaxed">{p.formDesc}</p>
       </div>
     </section>
 
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-      <div class="grid md:grid-cols-3 gap-4 md:gap-6 mb-10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+      <div class="grid md:grid-cols-3 gap-4 md:gap-5 mb-8">
         {p.cards.map((card) => (
-          <article class="hairline-card p-5 bg-white dark:bg-[#141414] space-y-2">
-            <div class="text-xl">{card.icon}</div>
-            <h2 class="font-bold text-sm text-[#171717] dark:text-[#ededed] mt-1">{card.title}</h2>
-            <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">{card.desc}</p>
-            <a href={`mailto:${card.email}`} class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff] hover:underline block">{card.email}</a>
+          <article class="warm-card p-5 space-y-2">
+            <div class="text-2xl">{card.icon}</div>
+            <h2 class="font-bold text-sm text-[#1c0f00] dark:text-[#fde8c8] mt-1">{card.title}</h2>
+            <p class="text-xs text-[#6b4226] dark:text-[#c4956a]">{card.desc}</p>
+            <a href={`mailto:${card.email}`} class="font-mono text-xs text-[#c47a2b] dark:text-[#f59e0b] hover:underline block">{card.email}</a>
           </article>
         ))}
       </div>
 
       <section class="max-w-3xl mx-auto">
-        <div class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]">
-          <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.formTitle}</h2>
-          <p class="mt-2 text-xs text-[#8f8f8f] dark:text-[#737373] mb-6">{p.formDesc}</p>
+        <div class="warm-card p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8]">{p.formTitle}</h2>
+          <p class="mt-2 text-xs text-[#6b4226] dark:text-[#c4956a] mb-6">{p.formDesc}</p>
 
           <form id="locale-contact-form" method="POST" action="mailto:hello@dogfoodplanner.com" enctype="text/plain" class="mt-5 space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <label class="block">
-                <span class="block text-xs font-mono uppercase font-semibold text-[#171717] dark:text-[#ededed] mb-1.5">{p.nameLabel}</span>
-                <input required type="text" name="Name" placeholder={p.namePlaceholder} class="mt-1 w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] transition-all" />
+                <span class="block text-xs font-mono uppercase font-bold text-[#92400e] dark:text-[#d97706] mb-1.5">{p.nameLabel}</span>
+                <input required type="text" name="Name" placeholder={p.namePlaceholder} class="mt-1 w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#fff8f0] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] placeholder-[#a16207]/50 dark:placeholder-[#c4956a]/50 focus:outline-none focus:border-[#c47a2b] dark:focus:border-[#f59e0b] transition-all" />
               </label>
               <label class="block">
-                <span class="block text-xs font-mono uppercase font-semibold text-[#171717] dark:text-[#ededed] mb-1.5">{p.emailLabel}</span>
-                <input required type="email" name="From" placeholder={p.emailPlaceholder} class="mt-1 w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] transition-all" />
+                <span class="block text-xs font-mono uppercase font-bold text-[#92400e] dark:text-[#d97706] mb-1.5">{p.emailLabel}</span>
+                <input required type="email" name="From" placeholder={p.emailPlaceholder} class="mt-1 w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#fff8f0] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] placeholder-[#a16207]/50 dark:placeholder-[#c4956a]/50 focus:outline-none focus:border-[#c47a2b] dark:focus:border-[#f59e0b] transition-all" />
               </label>
             </div>
             <label class="block">
-              <span class="block text-xs font-mono uppercase font-semibold text-[#171717] dark:text-[#ededed] mb-1.5">{p.subjectLabel}</span>
-              <select name="Subject" class="mt-1 w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] transition-all">
+              <span class="block text-xs font-mono uppercase font-bold text-[#92400e] dark:text-[#d97706] mb-1.5">{p.subjectLabel}</span>
+              <select name="Subject" class="mt-1 w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#fff8f0] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] dark:focus:border-[#f59e0b] transition-all">
                 {p.subjectOptions.map((option) => <option>{option}</option>)}
               </select>
             </label>
             <label class="block">
-              <span class="block text-xs font-mono uppercase font-semibold text-[#171717] dark:text-[#ededed] mb-1.5">{p.messageLabel}</span>
-              <textarea required rows="5" name="Message" placeholder={p.messagePlaceholder} class="mt-1 w-full px-3.5 py-2.5 text-xs sm:text-sm bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] transition-all resize-none"></textarea>
+              <span class="block text-xs font-mono uppercase font-bold text-[#92400e] dark:text-[#d97706] mb-1.5">{p.messageLabel}</span>
+              <textarea required rows="5" name="Message" placeholder={p.messagePlaceholder} class="mt-1 w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#fff8f0] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] placeholder-[#a16207]/50 dark:placeholder-[#c4956a]/50 focus:outline-none focus:border-[#c47a2b] dark:focus:border-[#f59e0b] transition-all resize-none"></textarea>
             </label>
 
-            <div id="locale-contact-success" class="hidden p-3.5 bg-[#10b981]/10 border border-[#10b981]/30 rounded-lg text-[11px] leading-relaxed">
-              <div class="font-semibold text-[#10b981] mb-1">{p.successTitle}</div>
-              <div class="text-[#4d4d4d] dark:text-[#a1a1a1]">
-                {p.successDesc} <a href="mailto:hello@dogfoodplanner.com?subject=DogFoodPlanner%20Contact%20Inquiry" class="underline text-[#0070f3] dark:text-[#3291ff] font-mono">hello@dogfoodplanner.com</a>
+            <div id="locale-contact-success" class="hidden p-3.5 bg-[#22c55e]/10 border border-[#22c55e]/30 rounded-xl text-[11px] leading-relaxed">
+              <div class="font-semibold text-[#16a34a] mb-1">{p.successTitle}</div>
+              <div class="text-[#6b4226] dark:text-[#c4956a]">
+                {p.successDesc} <a href="mailto:hello@dogfoodplanner.com?subject=DogFoodPlanner%20Contact%20Inquiry" class="underline text-[#c47a2b] dark:text-[#f59e0b] font-mono">hello@dogfoodplanner.com</a>
               </div>
             </div>
 
-            <button type="submit" class="px-6 py-2.5 rounded-full bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold transition-all cursor-pointer shadow-sm w-full sm:w-auto">
+            <button type="submit" class="px-6 py-2.5 rounded-full text-white text-xs font-bold transition-all cursor-pointer shadow-md w-full sm:w-auto active:scale-[0.97]" style="background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%); box-shadow: 0 4px 14px rgba(196,122,43,0.35);">
               {p.submitBtn}
             </button>
-            <p class="mt-5 text-amber-700 dark:text-amber-400 text-[11px] leading-relaxed">{p.notice}</p>
+            <p class="mt-4 text-[#92400e] dark:text-[#d97706] text-[11px] leading-relaxed">{p.notice}</p>
           </form>
         </div>
       </section>
