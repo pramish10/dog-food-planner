@@ -14,7 +14,7 @@ export interface BreedInfo {
 
 export const CANINE_BREEDS: BreedInfo[] = [
   { 
-    name: 'Unknown / Mixed (Toy: under 12 lbs)', 
+    name: 'Unknown / Mixed (Toy: under 12 lbs / 5.4 kg)', 
     category: 'Toy', 
     avgWeightLbs: [4, 12], 
     metabolicFactor: 1.25, 
@@ -27,7 +27,7 @@ export const CANINE_BREEDS: BreedInfo[] = [
     predispositions: ['Fast Metabolism', 'Dental Tartar', 'Hypoglycemia Prevention']
   },
   { 
-    name: 'Unknown / Mixed (Small: 12–25 lbs)', 
+    name: 'Unknown / Mixed (Small: 12–25 lbs / 5.4–11.3 kg)', 
     category: 'Small', 
     avgWeightLbs: [12, 25], 
     metabolicFactor: 1.05, 
@@ -40,7 +40,7 @@ export const CANINE_BREEDS: BreedInfo[] = [
     predispositions: ['Patellar Luxation', 'Dental Health']
   },
   { 
-    name: 'Unknown / Mixed (Medium: 25–55 lbs)', 
+    name: 'Unknown / Mixed (Medium: 25–55 lbs / 11.3–25 kg)', 
     category: 'Medium', 
     avgWeightLbs: [25, 55], 
     metabolicFactor: 1.0, 
@@ -53,7 +53,7 @@ export const CANINE_BREEDS: BreedInfo[] = [
     predispositions: ['Weight Management', 'Coat Vitality']
   },
   { 
-    name: 'Unknown / Mixed (Large: 55–90 lbs)', 
+    name: 'Unknown / Mixed (Large: 55–90 lbs / 25–41 kg)', 
     category: 'Large', 
     avgWeightLbs: [55, 90], 
     metabolicFactor: 0.98, 
@@ -66,7 +66,7 @@ export const CANINE_BREEDS: BreedInfo[] = [
     predispositions: ['Joint & Hip Mobility', 'Bloat/GDV Sensitivity']
   },
   { 
-    name: 'Unknown / Mixed (Giant: 90+ lbs)', 
+    name: 'Unknown / Mixed (Giant: 90+ lbs / 41+ kg)', 
     category: 'Giant', 
     avgWeightLbs: [90, 160], 
     metabolicFactor: 0.95, 
