@@ -7,11 +7,11 @@ const lang = getLangFromUrl(Astro.url);
 const p = plannerTranslations[lang] || plannerTranslations.en;
 ---
 
-<section id="results-section" class="hidden py-8 sm:py-14 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0e0cc] dark:border-[#2a1f14]" data-lang={lang}>
-  <div class="max-w-xl mx-auto px-4 sm:px-6">
+<section id="results-section" class="hidden py-8 sm:py-12 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0e0cc] dark:border-[#2a1f14]" data-lang={lang}>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <!-- Results Header -->
-    <div class="mb-5">
+    <div class="mb-5 sm:mb-6">
       <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase font-semibold text-[#16a34a] bg-[#22c55e]/10 px-3 py-1 rounded-full mb-3">
         <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse"></span>
         {p.readyBadge}
@@ -22,85 +22,109 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       <p id="res-summary" class="text-sm text-[#6b4226] dark:text-[#c4956a] mt-1.5 leading-relaxed"></p>
     </div>
 
-    <!-- 3 Key Stat Cards -->
-    <div class="grid grid-cols-3 gap-2.5 mb-5">
-      <div class="p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
-        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardEnergyTitle}</div>
-        <div class="text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-mer-calories">—</div>
-        <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono">kcal/day</div>
-      </div>
-      <div class="p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
-        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardPortionTitle}</div>
-        <div class="text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-daily-grams">—</div>
-        <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono">g/day</div>
-      </div>
-      <div class="p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
-        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardPerMealTitle}</div>
-        <div class="text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-per-meal-grams">—</div>
-        <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono" id="res-meals-label">—x/day</div>
-      </div>
-    </div>
+    <!-- Horizontal layout on lg+: LEFT = stats/schedule/insight, RIGHT = recipe -->
+    <div class="lg:flex lg:gap-6 lg:items-start">
 
-    <!-- Feeding Schedule -->
-    <div class="mb-5 bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
-      <h3 class="text-xs font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-3 uppercase tracking-wider font-mono">{p.bowlSectionTitle} <span class="res-dog-name-inline text-[#c47a2b] dark:text-[#e8a44a]">Lucy</span></h3>
-      <div id="feeding-schedule-container" class="space-y-2">
-        <!-- Populated by JS -->
-      </div>
-      <div class="mt-3 pt-3 border-t border-[#f0d5a8] dark:border-[#3a2510] flex items-center justify-between text-xs text-[#92400e] dark:text-[#c4956a]">
-        <span>{p.cardTreatTitle}:</span>
-        <span class="font-mono font-semibold text-[#c47a2b]"><span id="res-treat-kcal">—</span> kcal/day</span>
-      </div>
-    </div>
+      <!-- LEFT COLUMN: Stats + Schedule + Insight -->
+      <div class="lg:w-[42%] xl:w-[38%] shrink-0 space-y-4 mb-5 lg:mb-0">
 
-    <!-- Profile-specific insight card (breed note + 1 focused tip) -->
-    <div id="insight-card" class="mb-5 p-4 rounded-2xl border border-[#c47a2b]/30 bg-[#c47a2b]/5 dark:bg-[#c47a2b]/10">
-      <p id="insight-text" class="text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed"></p>
-    </div>
-
-    <!-- Diet Tabs -->
-    <div class="flex gap-1.5 mb-3 p-1 bg-[#fdf3e7] dark:bg-[#1c1208] rounded-xl border border-[#f0d5a8] dark:border-[#3a2510]">
-      <button type="button" data-diet="fresh-cooked" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg bg-white dark:bg-[#2a1a08] text-[#1c0f00] dark:text-[#fde8c8] shadow-sm transition-all cursor-pointer">🍲 {p.dietFresh}</button>
-      <button type="button" data-diet="raw-barf" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer">🥩 {p.dietRaw}</button>
-      <button type="button" data-diet="superfood-topper" class="diet-tab-btn flex-1 py-2 text-xs font-semibold rounded-lg text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer">🥣 {p.dietTopper}</button>
-    </div>
-
-    <!-- Recipe Card -->
-    <div class="mb-5 bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
-      <div class="text-[10px] font-mono font-semibold text-[#c47a2b] dark:text-[#e8a44a] uppercase tracking-wider mb-1" id="recipe-diet-tag">{p.todayRecipePrefix}</div>
-      <h3 class="text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-1" id="recipe-title">—</h3>
-      <p class="text-sm text-[#6b4226] dark:text-[#c4956a] mb-4 leading-relaxed" id="recipe-description">—</p>
-
-      <div id="no-recipe-warning" class="hidden mb-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-sm text-amber-800 dark:text-amber-200">
-        {p.noRecipeMatch}
-      </div>
-
-      <!-- Ingredients -->
-      <div class="mb-4">
-        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.ingredientsHeader}</div>
-        <div id="ingredient-rows-container" class="divide-y divide-[#f0d5a8] dark:divide-[#3a2510] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl overflow-hidden">
-          <!-- Populated by JS -->
+        <!-- 3 Key Stat Cards -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-2.5">
+          <div class="p-3 sm:p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
+            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardEnergyTitle}</div>
+            <div class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-mer-calories">—</div>
+            <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono">kcal/day</div>
+          </div>
+          <div class="p-3 sm:p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
+            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardPortionTitle}</div>
+            <div class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-daily-grams">—</div>
+            <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono">g/day</div>
+          </div>
+          <div class="p-3 sm:p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
+            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardPerMealTitle}</div>
+            <div class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-per-meal-grams">—</div>
+            <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono" id="res-meals-label">—x/day</div>
+          </div>
         </div>
-      </div>
 
-      <!-- Prep Steps -->
-      <div>
-        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.prepStepsHeader}</div>
-        <ol id="prep-steps-container" class="space-y-2 text-sm text-[#6b4226] dark:text-[#c4956a]">
-          <!-- Populated by JS -->
-        </ol>
-      </div>
+        <!-- Feeding Schedule -->
+        <div class="bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
+          <h3 class="text-xs font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-3 uppercase tracking-wider font-mono">{p.bowlSectionTitle} <span class="res-dog-name-inline text-[#c47a2b] dark:text-[#e8a44a]">Lucy</span></h3>
+          <div id="feeding-schedule-container" class="space-y-2">
+            <!-- Populated by JS -->
+          </div>
+          <div class="mt-3 pt-3 border-t border-[#f0d5a8] dark:border-[#3a2510] flex items-center justify-between text-xs text-[#92400e] dark:text-[#c4956a]">
+            <span>{p.cardTreatTitle}:</span>
+            <span class="font-mono font-semibold text-[#c47a2b]"><span id="res-treat-kcal">—</span> kcal/day</span>
+          </div>
+        </div>
 
-    </div>
+        <!-- Profile-specific insight card -->
+        <div id="insight-card" class="p-4 rounded-2xl border border-[#c47a2b]/30 bg-[#c47a2b]/5 dark:bg-[#c47a2b]/10">
+          <p id="insight-text" class="text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed"></p>
+        </div>
 
-    <!-- Disclaimer + Start Over -->
-    <div class="text-center">
-      <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mb-4">{p.resultsDisclaimerText}</p>
-      <button id="start-over-btn" type="button"
-        class="px-6 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation">
-        {p.prevBtn}
-      </button>
-    </div>
+        <!-- Disclaimer + Start Over (desktop: in left col) -->
+        <div class="hidden lg:block text-center pt-1">
+          <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mb-3">{p.resultsDisclaimerText}</p>
+          <button id="start-over-btn" type="button"
+            class="px-6 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px]">
+            {p.prevBtn}
+          </button>
+        </div>
+
+      </div><!-- end LEFT COLUMN -->
+
+      <!-- RIGHT COLUMN: Diet tabs + Recipe -->
+      <div class="flex-1 min-w-0">
+
+        <!-- Diet Tabs -->
+        <div class="flex gap-1.5 mb-3 p-1 bg-[#fdf3e7] dark:bg-[#1c1208] rounded-xl border border-[#f0d5a8] dark:border-[#3a2510]">
+          <button type="button" data-diet="fresh-cooked" class="diet-tab-btn flex-1 py-2.5 text-xs font-semibold rounded-lg bg-white dark:bg-[#2a1a08] text-[#1c0f00] dark:text-[#fde8c8] shadow-sm transition-all cursor-pointer touch-manipulation min-h-[40px]">🍲 {p.dietFresh}</button>
+          <button type="button" data-diet="raw-barf" class="diet-tab-btn flex-1 py-2.5 text-xs font-semibold rounded-lg text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[40px]">🥩 {p.dietRaw}</button>
+          <button type="button" data-diet="superfood-topper" class="diet-tab-btn flex-1 py-2.5 text-xs font-semibold rounded-lg text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[40px]">🥣 {p.dietTopper}</button>
+        </div>
+
+        <!-- Recipe Card -->
+        <div class="bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
+          <div class="text-[10px] font-mono font-semibold text-[#c47a2b] dark:text-[#e8a44a] uppercase tracking-wider mb-1" id="recipe-diet-tag">{p.todayRecipePrefix}</div>
+          <h3 class="text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-1" id="recipe-title">—</h3>
+          <p class="text-sm text-[#6b4226] dark:text-[#c4956a] mb-4 leading-relaxed" id="recipe-description">—</p>
+
+          <div id="no-recipe-warning" class="hidden mb-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-sm text-amber-800 dark:text-amber-200">
+            {p.noRecipeMatch}
+          </div>
+
+          <!-- Ingredients -->
+          <div class="mb-4">
+            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.ingredientsHeader}</div>
+            <div id="ingredient-rows-container" class="divide-y divide-[#f0d5a8] dark:divide-[#3a2510] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl overflow-hidden">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Prep Steps -->
+          <div>
+            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.prepStepsHeader}</div>
+            <ol id="prep-steps-container" class="space-y-2 text-sm text-[#6b4226] dark:text-[#c4956a]">
+              <!-- Populated by JS -->
+            </ol>
+          </div>
+
+        </div>
+
+        <!-- Disclaimer + Start Over (mobile: below recipe) -->
+        <div class="lg:hidden text-center mt-5">
+          <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mb-4">{p.resultsDisclaimerText}</p>
+          <button id="start-over-btn-mobile" type="button"
+            class="px-6 py-3 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px]">
+            {p.prevBtn}
+          </button>
+        </div>
+
+      </div><!-- end RIGHT COLUMN -->
+
+    </div><!-- end horizontal layout -->
 
   </div>
 </section>
@@ -309,7 +333,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     });
   });
 
-  document.getElementById('start-over-btn')?.addEventListener('click', () => {
+  function startOver() {
     const resultsSection = document.getElementById('results-section') as HTMLElement;
     const plannerSection = document.getElementById('planner-section') as HTMLElement;
     resultsSection.classList.add('hidden');
@@ -317,5 +341,8 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       plannerSection.classList.remove('hidden');
       plannerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  });
+  }
+
+  document.getElementById('start-over-btn')?.addEventListener('click', startOver);
+  document.getElementById('start-over-btn-mobile')?.addEventListener('click', startOver);
 </script>

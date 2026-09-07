@@ -9,10 +9,10 @@ const TOTAL_STEPS = 4;
 ---
 
 <section id="planner-section" class="py-6 sm:py-10 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0d5a8] dark:border-[#3a2510]" data-lang={lang}>
-  <div class="max-w-xl mx-auto px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
     <!-- Header -->
-    <div class="text-center mb-4 sm:mb-5">
+    <div class="text-center mb-4 sm:mb-6">
       <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-1">
         {p.title}
       </h2>
@@ -21,23 +21,63 @@ const TOTAL_STEPS = 4;
       </p>
     </div>
 
-    <!-- Quiz Card -->
-    <div class="bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl shadow-sm overflow-hidden">
+    <!-- Quiz Card — horizontal on lg+, vertical on mobile -->
+    <div class="bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl shadow-sm overflow-hidden lg:flex lg:min-h-[520px]">
 
-      <!-- Progress Bar -->
-      <div class="px-4 sm:px-6 pt-4 pb-0">
-        <div class="flex items-center justify-between mb-2">
-          <span id="step-label" class="text-[11px] font-semibold text-[#92400e] dark:text-[#c4956a] font-mono uppercase tracking-wider">
-            {p.stepPrefix} 1 {p.ofStep}
-          </span>
-          <span id="step-title-badge" class="text-[11px] font-semibold text-[#1c0f00] dark:text-[#fde8c8]">{p.step1Title}</span>
-        </div>
-        <div class="w-full bg-[#fdf3e7] dark:bg-[#2a1a08] h-1 rounded-full overflow-hidden">
-          <div id="quiz-progress-bar" class="h-full rounded-full transition-all duration-500 ease-out" style="width: 25%; background: linear-gradient(90deg, #c47a2b, #e8a44a)"></div>
+      <!-- LEFT SIDEBAR: Step navigator (desktop only) -->
+      <div class="hidden lg:flex lg:flex-col lg:w-56 xl:w-64 shrink-0 bg-[#fdf3e7] dark:bg-[#1a0e04] border-r border-[#f0d5a8] dark:border-[#3a2510] p-5">
+        <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-widest mb-4">{p.stepPrefix}</div>
+        <nav class="flex flex-col gap-2 flex-1" id="step-nav-sidebar">
+          {[
+            { n: 1, title: p.step1Title, icon: '🐾' },
+            { n: 2, title: p.step2Title, icon: '⚖️' },
+            { n: 3, title: p.step3Title, icon: '🏃' },
+            { n: 4, title: p.step4Title, icon: '🌿' },
+          ].map(s => (
+            <button
+              type="button"
+              data-nav-step={s.n}
+              class={`step-nav-btn w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all cursor-pointer ${s.n === 1 ? 'bg-white dark:bg-[#2a1a08] shadow-sm border border-[#f0d5a8] dark:border-[#3a2510]' : 'hover:bg-white/60 dark:hover:bg-[#2a1a08]/60'}`}
+            >
+              <span class="text-base shrink-0">{s.icon}</span>
+              <div class="min-w-0">
+                <div class={`text-[10px] font-mono font-semibold uppercase tracking-wider ${s.n === 1 ? 'text-[#c47a2b]' : 'text-[#92400e] dark:text-[#c4956a]'}`} data-nav-step-label={s.n}>STEP {s.n}</div>
+                <div class={`text-xs font-semibold truncate ${s.n === 1 ? 'text-[#1c0f00] dark:text-[#fde8c8]' : 'text-[#92400e] dark:text-[#c4956a]'}`} data-nav-step-title={s.n}>{s.title}</div>
+              </div>
+              <svg data-nav-check={s.n} class="hidden ml-auto w-4 h-4 text-[#22c55e] shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </button>
+          ))}
+        </nav>
+        <!-- Sidebar progress bar -->
+        <div class="mt-4 pt-4 border-t border-[#f0d5a8] dark:border-[#3a2510]">
+          <div class="flex items-center justify-between mb-1.5">
+            <span id="sidebar-step-label" class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider">{p.stepPrefix} 1 {p.ofStep}</span>
+          </div>
+          <div class="w-full bg-[#fdf3e7] dark:bg-[#2a1a08] h-1.5 rounded-full overflow-hidden border border-[#f0d5a8] dark:border-[#3a2510]">
+            <div id="quiz-progress-bar-sidebar" class="h-full rounded-full transition-all duration-500 ease-out" style="width: 25%; background: linear-gradient(90deg, #c47a2b, #e8a44a)"></div>
+          </div>
         </div>
       </div>
 
-      <form id="dog-planner-form" onsubmit="return false;" novalidate class="p-4 sm:p-5">
+      <!-- RIGHT CONTENT AREA -->
+      <div class="flex-1 flex flex-col min-w-0">
+
+        <!-- Mobile Progress Bar (hidden on lg+) -->
+        <div class="lg:hidden px-4 sm:px-6 pt-4 pb-0">
+          <div class="flex items-center justify-between mb-2">
+            <span id="step-label" class="text-[11px] font-semibold text-[#92400e] dark:text-[#c4956a] font-mono uppercase tracking-wider">
+              {p.stepPrefix} 1 {p.ofStep}
+            </span>
+            <span id="step-title-badge" class="text-[11px] font-semibold text-[#1c0f00] dark:text-[#fde8c8]">{p.step1Title}</span>
+          </div>
+          <div class="w-full bg-[#fdf3e7] dark:bg-[#2a1a08] h-1 rounded-full overflow-hidden">
+            <div id="quiz-progress-bar" class="h-full rounded-full transition-all duration-500 ease-out" style="width: 25%; background: linear-gradient(90deg, #c47a2b, #e8a44a)"></div>
+          </div>
+        </div>
+        <!-- Desktop: hidden elements kept for JS compat (IDs used by updateProgress) -->
+        <!-- These are intentionally hidden on desktop; mobile versions above are shown -->
+
+      <form id="dog-planner-form" onsubmit="return false;" novalidate class="p-4 sm:p-5 lg:p-6 flex-1 flex flex-col">
 
         <!-- STEP 1: Dog Basics -->
         <div class="quiz-step" data-step="1">
@@ -426,23 +466,24 @@ const TOTAL_STEPS = 4;
         </div>
 
         <!-- Navigation Buttons -->
-        <div class="flex items-center justify-between mt-4 pt-4 border-t border-[#f0d5a8] dark:border-[#3a2510]">
+        <div class="flex items-center justify-between mt-4 pt-4 border-t border-[#f0d5a8] dark:border-[#3a2510] lg:mt-auto">
           <button type="button" id="prev-btn"
-            class="hidden px-5 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#1c0f00] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation">
+            class="hidden px-5 py-3 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#1c0f00] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px]">
             {p.prevBtn}
           </button>
           <div id="prev-placeholder"></div>
           <button type="button" id="next-btn"
-            class="px-6 py-2.5 text-sm font-semibold bg-[#c47a2b] hover:bg-[#b8691f] text-white rounded-xl transition-all cursor-pointer touch-manipulation">
+            class="px-7 py-3 text-sm font-semibold bg-[#c47a2b] hover:bg-[#b8691f] text-white rounded-xl transition-all cursor-pointer touch-manipulation min-h-[44px]">
             {p.nextBtn}
           </button>
           <button type="submit" id="submit-btn"
-            class="hidden px-6 py-2.5 text-sm font-semibold bg-[#c47a2b] hover:bg-[#b8691f] text-white rounded-xl transition-all cursor-pointer touch-manipulation">
+            class="hidden px-7 py-3 text-sm font-semibold bg-[#c47a2b] hover:bg-[#b8691f] text-white rounded-xl transition-all cursor-pointer touch-manipulation min-h-[44px]">
             {p.submitBtn}
           </button>
         </div>
 
       </form>
+      </div><!-- end RIGHT CONTENT AREA -->
     </div>
 
   </div>
@@ -463,6 +504,7 @@ const TOTAL_STEPS = 4;
 
   function updateProgress() {
     const pct = (currentStep / TOTAL_STEPS) * 100;
+    // Mobile progress bar
     const bar = document.getElementById('quiz-progress-bar') as HTMLElement;
     const label = document.getElementById('step-label') as HTMLElement;
     const badge = document.getElementById('step-title-badge') as HTMLElement;
@@ -476,6 +518,44 @@ const TOTAL_STEPS = 4;
       const key = stepTitles[currentStep - 1] as keyof typeof t;
       badge.textContent = t[key] || '';
     }
+    // Sidebar progress bar (desktop)
+    const sidebarBar = document.getElementById('quiz-progress-bar-sidebar') as HTMLElement;
+    const sidebarLabel = document.getElementById('sidebar-step-label') as HTMLElement;
+    if (sidebarBar) sidebarBar.style.width = pct + '%';
+    if (sidebarLabel) {
+      const t = getTranslations();
+      sidebarLabel.textContent = `${t.stepPrefix || 'STEP'} ${currentStep} ${t.ofStep || 'OF 4'}`;
+    }
+    // Update sidebar nav buttons
+    document.querySelectorAll('.step-nav-btn').forEach((btn) => {
+      const btnStep = Number((btn as HTMLElement).dataset.navStep);
+      const isActive = btnStep === currentStep;
+      const isCompleted = btnStep < currentStep;
+      btn.classList.toggle('bg-white', isActive);
+      btn.classList.toggle('dark:bg-[#2a1a08]', isActive);
+      btn.classList.toggle('shadow-sm', isActive);
+      btn.classList.toggle('border', isActive);
+      btn.classList.toggle('border-[#f0d5a8]', isActive);
+      btn.classList.toggle('dark:border-[#3a2510]', isActive);
+      // label color
+      const stepLabel = btn.querySelector(`[data-nav-step-label="${btnStep}"]`) as HTMLElement;
+      const stepTitle = btn.querySelector(`[data-nav-step-title="${btnStep}"]`) as HTMLElement;
+      const checkIcon = btn.querySelector(`[data-nav-check="${btnStep}"]`) as HTMLElement;
+      if (stepLabel) {
+        stepLabel.classList.toggle('text-[#c47a2b]', isActive || isCompleted);
+        stepLabel.classList.toggle('text-[#92400e]', !isActive && !isCompleted);
+        stepLabel.classList.toggle('dark:text-[#c4956a]', !isActive && !isCompleted);
+      }
+      if (stepTitle) {
+        stepTitle.classList.toggle('text-[#1c0f00]', isActive);
+        stepTitle.classList.toggle('dark:text-[#fde8c8]', isActive);
+        stepTitle.classList.toggle('text-[#92400e]', !isActive);
+        stepTitle.classList.toggle('dark:text-[#c4956a]', !isActive);
+      }
+      if (checkIcon) {
+        checkIcon.classList.toggle('hidden', !isCompleted);
+      }
+    });
   }
 
   function showStep(step: number) {
