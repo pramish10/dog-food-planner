@@ -4,6 +4,12 @@ import { getLangFromUrl, getLocalizedPath, cleanPathname, useTranslations } from
 
 function buildLocalizedHref(path: string, langCode: Lang) {
   const targetUrl = getLocalizedPath(cleanPath, langCode);
+  if (!path || path === '/') {
+    return targetUrl;
+  }
+  if (path.startsWith('#')) {
+    return `${targetUrl}${path}`;
+  }
   return `${targetUrl}${path}`;
 }
 
@@ -18,6 +24,7 @@ const t = useTranslations(currentLang);
 const currentPath = Astro.url.pathname;
 const currentHash = Astro.url.hash;
 const cleanPath = cleanPathname(currentPath);
+const isHomePage = cleanPath === '/';
 const preservedPath = `${cleanPath}${currentHash}`;
 
 const languageList = Object.entries(languages) as [Lang, string][];
@@ -119,7 +126,9 @@ const languageList = Object.entries(languages) as [Lang, string][];
   function saveLanguageSwitchState() {
     const activeStep = document.querySelector('.quiz-step:not(.hidden)')?.getAttribute('data-step');
     const plannerSection = document.getElementById('planner-section');
+    const resultsSection = document.getElementById('results-section');
     const plannerTop = plannerSection ? Math.round(plannerSection.getBoundingClientRect().top + window.scrollY) : null;
+    const resultsVisible = resultsSection ? !resultsSection.classList.contains('hidden') : false;
 
     sessionStorage.setItem(
       SCROLL_STATE_KEY,
@@ -128,6 +137,7 @@ const languageList = Object.entries(languages) as [Lang, string][];
         hash: window.location.hash,
         activeStep,
         plannerTop,
+        resultsVisible,
       })
     );
   }
@@ -140,16 +150,10 @@ const languageList = Object.entries(languages) as [Lang, string][];
 
     try {
       const state = JSON.parse(raw);
-      const hasPlannerContext = state.hash === '#planner-section' || state.activeStep || state.plannerTop !== null;
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          if (hasPlannerContext) {
-            const plannerSection = document.getElementById('planner-section');
-            if (plannerSection) {
-              plannerSection.scrollIntoView({ block: 'start' });
-            }
-          } else if (typeof state.scrollY === 'number') {
+          if (typeof state.scrollY === 'number') {
             window.scrollTo({ top: state.scrollY, left: 0, behavior: 'auto' });
           }
         });

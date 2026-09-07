@@ -151,6 +151,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     'Metabolic Weight Management': '⚖️',
   };
 
+  const RESULTS_STATE_KEY = 'dfp-results-state';
   let currentProfile: any = null;
   let currentDiet = 'fresh-cooked';
 
@@ -178,14 +179,45 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     return { recipe: scored[0]?.r || null, hadNoSafeMatch: safes.length === 0 };
   }
 
-  function renderResults(profile: any, dietOverride?: string) {
+  function saveResultsState(profile: any, diet: string) {
+    sessionStorage.setItem(
+      RESULTS_STATE_KEY,
+      JSON.stringify({
+        profile,
+        diet,
+      })
+    );
+  }
+
+  function clearResultsState() {
+    sessionStorage.removeItem(RESULTS_STATE_KEY);
+  }
+
+  function restoreResultsState() {
+    const raw = sessionStorage.getItem(RESULTS_STATE_KEY);
+    if (!raw) return;
+
+    try {
+      const state = JSON.parse(raw);
+      if (!state?.profile) return;
+      currentProfile = state.profile;
+      currentDiet = state.diet || state.profile.dietPreference || 'fresh-cooked';
+      renderResults(currentProfile, currentDiet, false);
+    } catch {
+      clearResultsState();
+    }
+  }
+
+  function renderResults(profile: any, dietOverride?: string, shouldScroll: boolean = true) {
     const result = calculateCanineNutrition(profile);
     const diet = dietOverride || profile.dietPreference;
     const { recipe, hadNoSafeMatch } = selectRecipe(profile, diet);
 
     const section = document.getElementById('results-section') as HTMLElement;
     section.classList.remove('hidden');
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (shouldScroll) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
     const plannerSection = document.getElementById('planner-section') as HTMLElement;
     if (plannerSection) plannerSection.classList.add('hidden');
@@ -316,6 +348,10 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       btn.classList.toggle('text-[#92400e]', !isActive);
       btn.classList.toggle('dark:text-[#c4956a]', !isActive);
     });
+
+    currentProfile = profile;
+    currentDiet = diet;
+    saveResultsState(profile, diet);
   }
 
   document.addEventListener('dogPlannerSubmit', (e: Event) => {
@@ -333,9 +369,12 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     });
   });
 
+  restoreResultsState();
+
   function startOver() {
     const resultsSection = document.getElementById('results-section') as HTMLElement;
     const plannerSection = document.getElementById('planner-section') as HTMLElement;
+    clearResultsState();
     resultsSection.classList.add('hidden');
     if (plannerSection) {
       plannerSection.classList.remove('hidden');
