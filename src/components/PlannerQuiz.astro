@@ -450,6 +450,7 @@ const TOTAL_STEPS = 4;
 
 <script>
   const TOTAL_STEPS = 4;
+  const PLANNER_STATE_KEY = 'dfp-planner-state';
   let currentStep = 1;
   let weightUnit: 'lbs' | 'kg' = 'lbs';
 
@@ -459,6 +460,87 @@ const TOTAL_STEPS = 4;
     const section = document.getElementById('planner-section') as HTMLElement;
     const lang = section?.dataset.lang || 'en';
     return (window as any).__plannerTranslations?.[lang] || {};
+  }
+
+  function savePlannerState() {
+    const form = document.getElementById('dog-planner-form') as HTMLFormElement | null;
+    if (!form) return;
+
+    const formData = new FormData(form);
+    const values: Record<string, string | string[]> = {};
+
+    for (const [key, value] of formData.entries()) {
+      if (key in values) {
+        const existing = values[key];
+        values[key] = Array.isArray(existing)
+          ? [...existing, String(value)]
+          : [String(existing), String(value)];
+      } else {
+        values[key] = String(value);
+      }
+    }
+
+    const dogName = document.getElementById('dog-name') as HTMLInputElement | null;
+    const dogBreed = document.getElementById('dog-breed') as HTMLSelectElement | null;
+    const dogWeight = document.getElementById('dog-weight') as HTMLInputElement | null;
+
+    sessionStorage.setItem(
+      PLANNER_STATE_KEY,
+      JSON.stringify({
+        currentStep,
+        weightUnit,
+        currentWeightKg,
+        values,
+        fields: {
+          dogName: dogName?.value ?? '',
+          dogBreed: dogBreed?.value ?? '',
+          dogWeight: dogWeight?.value ?? '',
+        },
+      })
+    );
+  }
+
+  function restorePlannerState() {
+    const raw = sessionStorage.getItem(PLANNER_STATE_KEY);
+    if (!raw) return;
+
+    try {
+      const state = JSON.parse(raw);
+      const values = state?.values || {};
+
+      Object.entries(values).forEach(([name, value]) => {
+        const inputs = document.querySelectorAll<HTMLInputElement>(`input[name="${name}"]`);
+        if (!inputs.length) return;
+
+        if (inputs[0].type === 'radio') {
+          inputs.forEach((input) => {
+            input.checked = input.value === value;
+          });
+          return;
+        }
+
+        if (inputs[0].type === 'checkbox') {
+          const selected = Array.isArray(value) ? value : [value];
+          inputs.forEach((input) => {
+            input.checked = selected.includes(input.value);
+          });
+        }
+      });
+
+      const dogName = document.getElementById('dog-name') as HTMLInputElement | null;
+      const dogBreed = document.getElementById('dog-breed') as HTMLSelectElement | null;
+      const dogWeight = document.getElementById('dog-weight') as HTMLInputElement | null;
+
+      if (dogName && state?.fields?.dogName !== undefined) dogName.value = state.fields.dogName;
+      if (dogBreed && state?.fields?.dogBreed !== undefined) dogBreed.value = state.fields.dogBreed;
+      if (dogWeight && state?.fields?.dogWeight !== undefined) dogWeight.value = state.fields.dogWeight;
+
+      currentWeightKg = Boolean(state?.currentWeightKg);
+      weightUnit = state?.weightUnit === 'kg' ? 'kg' : 'lbs';
+      currentStep = Math.min(Math.max(Number(state?.currentStep) || 1, 1), TOTAL_STEPS);
+    } catch {
+      sessionStorage.removeItem(PLANNER_STATE_KEY);
+    }
   }
 
   function updateProgress() {
@@ -553,6 +635,7 @@ const TOTAL_STEPS = 4;
     if (currentStep < TOTAL_STEPS) {
       currentStep++;
       showStep(currentStep);
+      savePlannerState();
       document.getElementById('planner-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
@@ -562,6 +645,7 @@ const TOTAL_STEPS = 4;
     if (currentStep > 1) {
       currentStep--;
       showStep(currentStep);
+      savePlannerState();
       document.getElementById('planner-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
@@ -633,6 +717,7 @@ const TOTAL_STEPS = 4;
     }
     syncNoneVisual();
     syncProteinBlocking();
+    savePlannerState();
   });
 
   // Each allergen chip — blocks matching proteins, clears "None"
@@ -649,6 +734,7 @@ const TOTAL_STEPS = 4;
       }
       syncNoneVisual();
       syncProteinBlocking();
+      savePlannerState();
     });
   });
 
@@ -666,6 +752,7 @@ const TOTAL_STEPS = 4;
     (document.getElementById('unit-lbs') as HTMLElement).className = 'px-3 py-1.5 bg-[#c47a2b] dark:bg-white text-white dark:text-[#1c0f00] font-semibold transition-colors cursor-pointer font-mono text-xs';
     (document.getElementById('unit-kg') as HTMLElement).className = 'px-3 py-1.5 bg-white dark:bg-[#2a1a08] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer font-mono text-xs';
     (document.getElementById('weight-unit-label') as HTMLElement).textContent = 'LBS';
+    savePlannerState();
 
   });
 
@@ -681,8 +768,34 @@ const TOTAL_STEPS = 4;
     (document.getElementById('unit-kg') as HTMLElement).className = 'px-3 py-1.5 bg-[#c47a2b] dark:bg-white text-white dark:text-[#1c0f00] font-semibold transition-colors cursor-pointer font-mono text-xs';
     (document.getElementById('unit-lbs') as HTMLElement).className = 'px-3 py-1.5 bg-white dark:bg-[#2a1a08] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer font-mono text-xs';
     (document.getElementById('weight-unit-label') as HTMLElement).textContent = 'KG';
+    savePlannerState();
 
   });
+
+  document.getElementById('dog-planner-form')?.addEventListener('input', () => {
+    savePlannerState();
+  });
+
+  document.getElementById('dog-planner-form')?.addEventListener('change', () => {
+    savePlannerState();
+  });
+
+  restorePlannerState();
+  syncNoneVisual();
+  syncProteinBlocking();
+  showStep(currentStep);
+
+  if (currentWeightKg) {
+    (document.getElementById('unit-kg') as HTMLElement).className = 'px-3 py-1.5 bg-[#c47a2b] dark:bg-white text-white dark:text-[#1c0f00] font-semibold transition-colors cursor-pointer font-mono text-xs';
+    (document.getElementById('unit-lbs') as HTMLElement).className = 'px-3 py-1.5 bg-white dark:bg-[#2a1a08] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer font-mono text-xs';
+    (document.getElementById('weight-unit-label') as HTMLElement).textContent = 'KG';
+  } else {
+    (document.getElementById('unit-lbs') as HTMLElement).className = 'px-3 py-1.5 bg-[#c47a2b] dark:bg-white text-white dark:text-[#1c0f00] font-semibold transition-colors cursor-pointer font-mono text-xs';
+    (document.getElementById('unit-kg') as HTMLElement).className = 'px-3 py-1.5 bg-white dark:bg-[#2a1a08] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer font-mono text-xs';
+    (document.getElementById('weight-unit-label') as HTMLElement).textContent = 'LBS';
+  }
+
+  savePlannerState();
 
   // Form submit
   document.getElementById('dog-planner-form')?.addEventListener('submit', (e) => {

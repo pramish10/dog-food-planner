@@ -2,6 +2,11 @@
 import { languages, type Lang } from '../i18n/ui';
 import { getLangFromUrl, getLocalizedPath, cleanPathname, useTranslations } from '../i18n/utils';
 
+function buildLocalizedHref(path: string, langCode: Lang) {
+  const targetUrl = getLocalizedPath(cleanPath, langCode);
+  return `${targetUrl}${path}`;
+}
+
 interface Props {
   variant?: 'navbar' | 'footer' | 'compact';
   class?: string;
@@ -11,7 +16,9 @@ const { variant = 'navbar', class: className = '' } = Astro.props;
 const currentLang = getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 const currentPath = Astro.url.pathname;
+const currentHash = Astro.url.hash;
 const cleanPath = cleanPathname(currentPath);
+const preservedPath = `${cleanPath}${currentHash}`;
 
 const languageList = Object.entries(languages) as [Lang, string][];
 ---
@@ -21,10 +28,11 @@ const languageList = Object.entries(languages) as [Lang, string][];
     <span class="text-[#8f8f8f] dark:text-[#737373] text-[11px] font-mono mr-1">Language:</span>
     {languageList.map(([langCode, langName]) => {
       const isCurrent = langCode === currentLang;
-      const targetUrl = getLocalizedPath(cleanPath, langCode);
+      const href = buildLocalizedHref(preservedPath, langCode);
       return (
         <a
-          href={targetUrl}
+          href={href}
+          data-lang-switch
           class:list={[
             "px-2.5 py-2 min-h-9 rounded text-[11px] transition-all font-medium",
             isCurrent
@@ -77,10 +85,11 @@ const languageList = Object.entries(languages) as [Lang, string][];
       <div class="max-h-64 overflow-y-auto py-1">
         {languageList.map(([langCode, langName]) => {
           const isCurrent = langCode === currentLang;
-          const targetUrl = getLocalizedPath(cleanPath, langCode);
+          const href = buildLocalizedHref(preservedPath, langCode);
           return (
             <a
-              href={targetUrl}
+              href={href}
+              data-lang-switch
               role="menuitem"
               class:list={[
                 "flex items-center justify-between px-3 py-2 text-xs font-medium transition-colors",
@@ -105,9 +114,61 @@ const languageList = Object.entries(languages) as [Lang, string][];
 )}
 
 <script is:inline>
+  const SCROLL_STATE_KEY = 'dfp-language-switch-scroll';
+
+  function saveLanguageSwitchState() {
+    const activeStep = document.querySelector('.quiz-step:not(.hidden)')?.getAttribute('data-step');
+    const plannerSection = document.getElementById('planner-section');
+    const plannerTop = plannerSection ? Math.round(plannerSection.getBoundingClientRect().top + window.scrollY) : null;
+
+    sessionStorage.setItem(
+      SCROLL_STATE_KEY,
+      JSON.stringify({
+        scrollY: window.scrollY,
+        hash: window.location.hash,
+        activeStep,
+        plannerTop,
+      })
+    );
+  }
+
+  function restoreLanguageSwitchState() {
+    const raw = sessionStorage.getItem(SCROLL_STATE_KEY);
+    if (!raw) return;
+
+    sessionStorage.removeItem(SCROLL_STATE_KEY);
+
+    try {
+      const state = JSON.parse(raw);
+      const hasPlannerContext = state.hash === '#planner-section' || state.activeStep || state.plannerTop !== null;
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (hasPlannerContext) {
+            const plannerSection = document.getElementById('planner-section');
+            if (plannerSection) {
+              plannerSection.scrollIntoView({ block: 'start' });
+            }
+          } else if (typeof state.scrollY === 'number') {
+            window.scrollTo({ top: state.scrollY, left: 0, behavior: 'auto' });
+          }
+        });
+      });
+    } catch {
+      sessionStorage.removeItem(SCROLL_STATE_KEY);
+    }
+  }
+
   function setupLanguagePicker() {
     const btn = document.getElementById('lang-picker-btn');
     const menu = document.getElementById('lang-picker-menu');
+
+    document.querySelectorAll('[data-lang-switch]').forEach((link) => {
+      if (link.dataset.langSwitchBound === 'true') return;
+      link.dataset.langSwitchBound = 'true';
+      link.addEventListener('click', saveLanguageSwitchState);
+    });
+
     if (!btn || !menu) return;
 
     function toggleMenu(e) {
@@ -133,6 +194,10 @@ const languageList = Object.entries(languages) as [Lang, string][];
     document.addEventListener('click', closeMenu);
   }
 
+  restoreLanguageSwitchState();
   setupLanguagePicker();
-  document.addEventListener('astro:page-load', setupLanguagePicker);
+  document.addEventListener('astro:page-load', () => {
+    restoreLanguageSwitchState();
+    setupLanguagePicker();
+  });
 </script>
