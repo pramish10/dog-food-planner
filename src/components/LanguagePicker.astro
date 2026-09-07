@@ -24,7 +24,6 @@ const t = useTranslations(currentLang);
 const currentPath = Astro.url.pathname;
 const currentHash = Astro.url.hash;
 const cleanPath = cleanPathname(currentPath);
-const isHomePage = cleanPath === '/';
 const preservedPath = `${cleanPath}${currentHash}`;
 
 const languageList = Object.entries(languages) as [Lang, string][];
@@ -154,7 +153,7 @@ const languageList = Object.entries(languages) as [Lang, string][];
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           if (typeof state.scrollY === 'number') {
-            window.scrollTo({ top: state.scrollY, left: 0, behavior: 'auto' });
+            window.scrollTo(0, state.scrollY);
           }
         });
       });

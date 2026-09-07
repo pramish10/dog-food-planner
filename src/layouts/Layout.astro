@@ -179,5 +179,39 @@ const {
   </head>
   <body class="bg-[#fafafa] dark:bg-[#0d0d0d] text-[#4d4d4d] dark:text-[#a1a1a1] antialiased selection:bg-[#0070f3] selection:text-white min-h-screen flex flex-col justify-between pb-[env(safe-area-inset-bottom)] overflow-x-clip">
     <slot />
+    <script is:inline>
+      (function () {
+        const KEY = 'dfp-language-switch-scroll';
+        const raw = sessionStorage.getItem(KEY);
+        if (!raw) return;
+
+        try {
+          const state = JSON.parse(raw);
+          if (typeof state?.scrollY !== 'number') return;
+
+          const root = document.documentElement;
+          const body = document.body;
+          const previousHtmlScrollBehavior = root.style.scrollBehavior;
+          const previousBodyScrollBehavior = body.style.scrollBehavior;
+
+          root.style.scrollBehavior = 'auto';
+          body.style.scrollBehavior = 'auto';
+          window.history.scrollRestoration = 'manual';
+          window.scrollTo(0, state.scrollY);
+
+          requestAnimationFrame(() => {
+            window.scrollTo(0, state.scrollY);
+            requestAnimationFrame(() => {
+              window.scrollTo(0, state.scrollY);
+              root.style.scrollBehavior = previousHtmlScrollBehavior;
+              body.style.scrollBehavior = previousBodyScrollBehavior;
+              sessionStorage.removeItem(KEY);
+            });
+          });
+        } catch {
+          sessionStorage.removeItem(KEY);
+        }
+      })();
+    </script>
   </body>
 </html>
