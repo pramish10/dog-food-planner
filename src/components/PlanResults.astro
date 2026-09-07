@@ -64,13 +64,21 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
           <p id="insight-text" class="text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed"></p>
         </div>
 
-        <!-- Disclaimer + Start Over (desktop: in left col) -->
+        <!-- Disclaimer + Start Over + Download PDF (desktop: in left col) -->
         <div class="hidden lg:block text-center pt-1">
           <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mb-3">{p.resultsDisclaimerText}</p>
-          <button id="start-over-btn" type="button"
-            class="px-6 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px]">
-            {p.prevBtn}
-          </button>
+          <div class="flex flex-col gap-2 items-center">
+            <button id="download-pdf-btn" type="button"
+              class="w-full px-6 py-2.5 text-sm font-semibold text-white bg-[#c47a2b] hover:bg-[#a8621f] rounded-xl transition-all cursor-pointer touch-manipulation min-h-[44px] flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+              {p.downloadPdfBtn}
+            </button>
+            <button id="start-over-btn" type="button"
+              class="w-full px-6 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px] flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              {p.startOverBtn}
+            </button>
+          </div>
         </div>
 
       </div><!-- end LEFT COLUMN -->
@@ -113,13 +121,21 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 
         </div>
 
-        <!-- Disclaimer + Start Over (mobile: below recipe) -->
+        <!-- Disclaimer + Start Over + Download PDF (mobile: below recipe) -->
         <div class="lg:hidden text-center mt-5">
           <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mb-4">{p.resultsDisclaimerText}</p>
-          <button id="start-over-btn-mobile" type="button"
-            class="px-6 py-3 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px]">
-            {p.prevBtn}
-          </button>
+          <div class="flex flex-col gap-2 items-center">
+            <button id="download-pdf-btn-mobile" type="button"
+              class="w-full max-w-xs px-6 py-3 text-sm font-semibold text-white bg-[#c47a2b] hover:bg-[#a8621f] rounded-xl transition-all cursor-pointer touch-manipulation min-h-[44px] flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+              {p.downloadPdfBtn}
+            </button>
+            <button id="start-over-btn-mobile" type="button"
+              class="w-full max-w-xs px-6 py-3 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px] flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              {p.startOverBtn}
+            </button>
+          </div>
         </div>
 
       </div><!-- end RIGHT COLUMN -->
@@ -375,13 +391,31 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     const resultsSection = document.getElementById('results-section') as HTMLElement;
     const plannerSection = document.getElementById('planner-section') as HTMLElement;
     clearResultsState();
+    currentProfile = null;
+    currentDiet = 'fresh-cooked';
     resultsSection.classList.add('hidden');
     if (plannerSection) {
       plannerSection.classList.remove('hidden');
+      // Dispatch a custom event so PlannerQuiz resets itself cleanly to step 1
+      document.dispatchEvent(new CustomEvent('dogPlannerReset'));
       plannerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
+  function downloadPdf() {
+    // Add a class to body so @media print CSS can isolate the results section
+    document.body.classList.add('printing-plan');
+    window.print();
+    // Remove the class after the print dialog closes
+    window.addEventListener('afterprint', () => {
+      document.body.classList.remove('printing-plan');
+    }, { once: true });
+  }
+
   document.getElementById('start-over-btn')?.addEventListener('click', startOver);
   document.getElementById('start-over-btn-mobile')?.addEventListener('click', startOver);
+  document.getElementById('download-pdf-btn')?.addEventListener('click', downloadPdf);
+  document.getElementById('download-pdf-btn-mobile')?.addEventListener('click', downloadPdf);
 </script>
+
+

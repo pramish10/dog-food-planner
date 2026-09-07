@@ -552,7 +552,7 @@ const TOTAL_STEPS = 4;
     if (bar) bar.style.width = pct + '%';
     if (label) {
       const t = getTranslations();
-      label.textContent = `${t.stepPrefix || 'STEP'} ${currentStep} ${t.ofStep || 'OF 3'}`;
+      label.textContent = `${t.stepPrefix || 'STEP'} ${currentStep} ${t.ofStep || 'OF 4'}`;
     }
     if (badge) {
       const t = getTranslations();
@@ -565,7 +565,7 @@ const TOTAL_STEPS = 4;
     if (sidebarBar) sidebarBar.style.width = pct + '%';
     if (sidebarLabel) {
       const t = getTranslations();
-      sidebarLabel.textContent = `${t.stepPrefix || 'STEP'} ${currentStep} ${t.ofStep || 'OF 3'}`;
+      sidebarLabel.textContent = `${t.stepPrefix || 'STEP'} ${currentStep} ${t.ofStep || 'OF 4'}`;
     }
     // Update sidebar nav buttons
     document.querySelectorAll('.step-nav-btn').forEach((btn) => {
@@ -780,6 +780,21 @@ const TOTAL_STEPS = 4;
     savePlannerState();
   });
 
+  // ── Reset handler (fired by Start Over button in PlanResults) ────
+  document.addEventListener('dogPlannerReset', () => {
+    // Clear saved planner state
+    sessionStorage.removeItem(PLANNER_STATE_KEY);
+    currentStep = 1;
+    // Reset the form to its default values
+    const form = document.getElementById('dog-planner-form') as HTMLFormElement | null;
+    if (form) form.reset();
+    // Re-sync allergy/protein UI after form reset
+    syncNoneVisual();
+    syncProteinBlocking();
+    // Go back to step 1 — this correctly shows next-btn and hides submit-btn
+    showStep(1);
+  });
+
   restorePlannerState();
   syncNoneVisual();
   syncProteinBlocking();
@@ -814,7 +829,7 @@ const TOTAL_STEPS = 4;
     const bcs = parseInt((document.querySelector('input[name="bcs"]:checked') as HTMLInputElement)?.value || '5');
     const weightGoal = (document.querySelector('input[name="weight-goal"]:checked') as HTMLInputElement)?.value || 'maintain';
     const activity = (document.querySelector('input[name="activity"]:checked') as HTMLInputElement)?.value || 'moderate';
-    const diet = 'all'; // All diet types shown in results
+    const diet = 'fresh-cooked'; // Default to first tab; user can switch tabs in results
     const healthFocus = (document.querySelector('input[name="health-focus"]:checked') as HTMLInputElement)?.value || 'General Longevity & Health';
     const proteinChoice = (document.querySelector('input[name="protein"]:checked') as HTMLInputElement)?.value || 'auto';
 

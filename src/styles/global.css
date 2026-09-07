@@ -228,7 +228,8 @@ html.dark .hairline-card-active {
     background-color: #ffffff !important;
     color: #000000 !important;
   }
-  /* Remove non-result sections from layout so they cannot create blank pages. */
+
+  /* ── Isolate only the results section when printing the meal plan ── */
   body.printing-plan > :not(main) {
     display: none !important;
   }
@@ -237,14 +238,35 @@ html.dark .hairline-card-active {
   }
   body.printing-plan #results-section {
     display: block !important;
-    width: 100%;
+    position: static !important;
+    width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
     background: #ffffff !important;
     border: 0 !important;
+    color: #1c0f00 !important;
+  }
+  /* Hide action buttons in the printed PDF */
+  body.printing-plan #download-pdf-btn,
+  body.printing-plan #download-pdf-btn-mobile,
+  body.printing-plan #start-over-btn,
+  body.printing-plan #start-over-btn-mobile {
+    display: none !important;
+  }
+  /* Hide Buy → affiliate buttons in the printed PDF */
+  body.printing-plan a[rel~="sponsored"] {
+    display: none !important;
+  }
+  /* Force light colours for dark-mode users printing */
+  body.printing-plan #results-section [class*='dark:bg-'],
+  body.printing-plan #results-section [class*='dark:text-'] {
+    background: #ffffff !important;
+    color: #1c0f00 !important;
   }
   body.printing-plan #results-section .hairline-card,
-  body.printing-plan #results-section [class*='border'] { box-shadow: none !important; }
+  body.printing-plan #results-section [class*='border'] {
+    box-shadow: none !important;
+  }
   .no-print {
     display: none !important;
   }

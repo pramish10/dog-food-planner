@@ -156,6 +156,8 @@ export interface PlannerTranslations {
   transitionP4: string;
   noRecipeMatch: string;
   keyNutrientsTitle: string;
+  startOverBtn: string;
+  downloadPdfBtn: string;
 }
 
 export const plannerTranslations: Record<Lang, PlannerTranslations> = {
@@ -303,6 +305,8 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP4: 'Day 7+: 100% Tailored Whole-Food Nutrition',
     noRecipeMatch: 'No recipe in this feeding style safely matches every selected sensitivity. Please choose another feeding style or ask your veterinarian for a formulated diet.',
     keyNutrientsTitle: 'Key Nutrients',
+    startOverBtn: 'Start Over',
+    downloadPdfBtn: 'Download PDF',
   },
 
   es: {
@@ -448,6 +452,8 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP4: 'Día 7+: 100% Alimentación Natural Personalizada',
     noRecipeMatch: 'Ninguna receta disponible coincide de forma segura con todas las alergias seleccionadas. Por favor, selecciona otro estilo o consulta con tu veterinario.',
     keyNutrientsTitle: 'Nutrientes Clave',
+    startOverBtn: 'Empezar de Nuevo',
+    downloadPdfBtn: 'Descargar PDF',
   },
 
   ja: {
@@ -593,6 +599,8 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP4: '7日目以降：100% 新しい理想の食事へ移行完了',
     noRecipeMatch: '選択されたアレルギー条件をすべて満たすレシピが見つかりませんでした。別の食事スタイルを選択するか、獣医師にご相談ください。',
     keyNutrientsTitle: '主要栄養素',
+    startOverBtn: '最初からやり直す',
+    downloadPdfBtn: 'PDFをダウンロード',
   },
 
   fr: {
@@ -738,6 +746,8 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP4: 'Jour 7+ : 100% Nouvelle Alimentation Équilibrée',
     noRecipeMatch: 'Aucune recette ne correspond en toute sécurité à l\'ensemble des allergies sélectionnées. Veuillez tester un autre régime ou contacter votre vétérinaire.',
     keyNutrientsTitle: 'Nutriments Clés',
+    startOverBtn: 'Recommencer',
+    downloadPdfBtn: 'Télécharger PDF',
   },
 
   de: {
@@ -883,6 +893,8 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP4: 'Ab Tag 7: 100 % Gesunde Artgerechte Fütterung',
     noRecipeMatch: 'Kein Rezept entspricht allen ausgewählten Allergiekriterien. Bitte wählen Sie eine andere Fütterungsart oder wenden Sie sich an Ihren Tierarzt.',
     keyNutrientsTitle: 'Wichtige Nährstoffe',
+    startOverBtn: 'Neu starten',
+    downloadPdfBtn: 'PDF herunterladen',
   },
 
   pt: {
@@ -1028,6 +1040,8 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP4: 'Dia 7+: 100% Nutrição Natural e Balanceada',
     noRecipeMatch: 'Nenhuma receita disponível atende com segurança a todas as alergias selecionadas. Experimente outro tipo de dieta ou consulte seu veterinário.',
     keyNutrientsTitle: 'Nutrientes Chave',
+    startOverBtn: 'Recomeçar',
+    downloadPdfBtn: 'Baixar PDF',
   },
 
   ko: {
@@ -1173,6 +1187,8 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP4: '7일차 이후: 100% 건강한 맞춤 식단 완성',
     noRecipeMatch: '선택하신 모든 알레르기 조건을 충족하는 레시피가 없습니다. 다른 급여 방식을 선택하시거나 수의사와 상의하세요.',
     keyNutrientsTitle: '주요 영양소',
+    startOverBtn: '다시 시작',
+    downloadPdfBtn: 'PDF 다운로드',
   },
 
   it: {
@@ -1318,5 +1334,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP4: 'Giorno 7+: 100% Nuova Alimentazione Completa',
     noRecipeMatch: 'Nessuna ricetta disponibile è compatibile con tutte le allergie selezionate. Prova a selezionare un altro stile o chiedi al tuo veterinario.',
     keyNutrientsTitle: 'Nutrienti Chiave',
+    startOverBtn: 'Ricomincia',
+    downloadPdfBtn: 'Scarica PDF',
   },
 };
