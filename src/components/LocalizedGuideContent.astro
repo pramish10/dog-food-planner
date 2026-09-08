@@ -37,7 +37,7 @@ const p = getPageTranslations(lang)[kind] as any;
                   href={translatePath(`/best-dog-food/${detailSlug}`)}
                   class="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0070f3] hover:text-[#005ac2]"
                 >
-                  Read more →
+                  {p.readMoreLabel || 'Read more →'}
                 </a>
               )}
               {rankProd && (

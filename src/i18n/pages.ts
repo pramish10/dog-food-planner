@@ -142,6 +142,7 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "PILLAR GUIDE // CLINICAL CANINE RANKING 2026",
     "rankingsTitle": "What Are the Top 5 Healthiest Dog Foods in 2026?",
     "rankingsIntro": "Canine nutritional longevity research confirms that minimal heat processing and high biological moisture are the two strongest predictors of canine vitality, kidney health, and disease resistance.",
+    "readMoreLabel": "Read more →",
     "rankings": [
       {
         "rank": "01",
@@ -512,8 +513,8 @@ export const PAGE_TRANSLATIONS = {
   },
   "comparisonTable": {
     "eyebrow": "CLINICAL COMPARISON // FRESH FOOD VS. KIBBLE",
-    "title": "Why Biological Whole Food Trumps Kibble",
-    "subtitle": "A side-by-side analysis of biological bioavailability, processing temperatures, and financial transparency.",
+    "title": "Why Whole Food Biologically Outperforms Kibble",
+    "subtitle": "A side-by-side clinical breakdown of processing heat, portion accuracy, and true monthly cost — the same variables a 5-year longevity study linked to dogs living up to 32 months longer on fresh whole food.",
     "scrollHint": "↔ Scroll table horizontally",
     "colMetric": "Nutritional Metric",
     "colDfp": "✨ DogFoodPlanner",
@@ -522,32 +523,44 @@ export const PAGE_TRANSLATIONS = {
     "rows": [
       {
         "metric": "Processing Method",
-        "dfp": "Gently Cooked (160°F) or Raw Enzymes",
-        "subs": "Flash-Frozen Cooked",
-        "kibble": "High-Heat Extrusion (400°F)"
+        "dfp": "Gently Cooked (~165°F) or Raw — Enzymes Intact",
+        "subs": "Sous-Vide Cooked & Flash-Frozen",
+        "kibble": "High-Heat Extrusion (400°F+)"
+      },
+      {
+        "metric": "Portion Accuracy",
+        "dfp": "Exact grams via RER/MER metabolic math, personalized to weight, age & activity",
+        "subs": "Fixed weight-range feeding chart",
+        "kibble": "Generic bag chart — overestimates portions by 20–30%"
       },
       {
         "metric": "Net Carbohydrates",
-        "dfp": "< 3.5% (Vegetables only)",
-        "subs": "10% – 15%",
-        "kibble": "45% – 60% (Starch fillers)"
+        "dfp": "< 5% (vegetables only, zero fillers)",
+        "subs": "10% – 20%",
+        "kibble": "45% – 60% (corn, wheat & pea starch fillers)"
       },
       {
         "metric": "Biological Moisture",
-        "dfp": "70% – 75% (Essential renal hydration)",
+        "dfp": "70% – 75% (supports renal & urinary hydration)",
         "subs": "70% – 75%",
-        "kibble": "8% – 10% (Sub-clinical dehydration)"
+        "kibble": "8% – 10% (chronic sub-clinical dehydration)"
+      },
+      {
+        "metric": "Nutrient Integrity",
+        "dfp": "Minimal oxidation — omega-3s & enzymes preserved",
+        "subs": "Moderate — some heat-sensitive nutrients degraded",
+        "kibble": "Fat oxidation & AGE formation from extrusion heat"
       },
       {
         "metric": "Ingredient Transparency",
-        "dfp": "100% Disclosed grams & percentages",
-        "subs": "Proprietary blend (amounts withheld)",
-        "kibble": "Split ingredients & generic meat meals"
+        "dfp": "100% disclosed grams & percentages — you control every gram",
+        "subs": "Proprietary blend (exact ratios withheld)",
+        "kibble": "Split ingredients & vague \"meat meal\" sourcing"
       },
       {
-        "metric": "Average Monthly Cost (50 lb dog)",
-        "dfp": "$85 – $120 (Prepared at home)",
-        "subs": "$280 – $380 / month",
+        "metric": "Avg. Monthly Cost (50 lb dog)",
+        "dfp": "$80 – $130 (home-prepared ingredients only)",
+        "subs": "$250 – $450 / month",
         "kibble": "$60 – $95 / month"
       }
     ]
@@ -577,6 +590,19 @@ export const PAGE_TRANSLATIONS = {
     "readAnswer": "Read Answer →",
       "referencedInAnswer": "Referenced in this answer",
       "buyNow": "Buy Now"
+  },
+  "bestFoodSingle": {
+    "rankBadge": "TOP 5 HEALTHIEST DOG FOODS // RANK",
+    "reviewedBy": "Reviewed by: Veterinary Canine Nutritionist",
+    "nutritionalScore": "Nutritional Score",
+    "strengths": "Strengths",
+    "tradeoffs": "Tradeoffs",
+    "fullBreakdown": "Full Breakdown",
+    "exampleProduct": "Example product in this category",
+    "previousRank": "Previous rank",
+    "nextRank": "Next rank",
+    "backToRanking": "Back to the Full Top 5 Ranking",
+    "viewOnAmazon": "View on Amazon"
   }
 },
   es: {
@@ -718,41 +744,57 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "GUÍA CLÍNICA // RANKING CANINO 2026",
     "rankingsTitle": "¿Cuáles Son los 5 Alimentos Más Saludables para Perros en 2026?",
     "rankingsIntro": "La investigación veterinaria sobre longevidad canina confirma que el procesamiento térmico mínimo y una hidratación biológica elevada son los dos factores predictivos más determinantes de vitalidad y salud renal.",
+    "readMoreLabel": "Leer más →",
     "rankings": [
       {
         "rank": "01",
         "title": "Comida Fresca Grado Humano Cocinada a Fuego Lento",
         "score": "98/100",
         "pros": "Carnes y verduras reales cocinadas a baja temperatura (70°C). Mantiene más del 70% de humedad natural, enzimas activas y vitaminas biodisponibles.",
-        "cons": "Requiere conservación en nevera o congelador. Coste algo superior al pienso convencional."
+        "cons": "Requiere conservación en nevera o congelador. Coste algo superior al pienso convencional.",
+        "readMore": "La comida fresca cocinada suavemente ocupa el primer puesto del ranking porque imita una comida casera sin sacrificar la seguridad alimentaria. Los ingredientes proceden de instalaciones de alimentos de grado humano inspeccionadas por el USDA, y se cocinan justo el tiempo necesario a baja temperatura (unos 71 °C) para eliminar patógenos mientras se preservan las proteínas delicadas, la taurina y las vitaminas B hidrosolubles que la extrusión a alta temperatura destruye.\n\nComo este alimento ya aporta más de un 70% de humedad, reduce la presión sobre los riñones y disminuye la deshidratación crónica de bajo grado habitual en las dietas basadas únicamente en pienso. Es especialmente adecuado para perros en recuperación de una enfermedad, perros senior con menor impulso de sed, o razas propensas a sensibilidades alimentarias, ya que las recetas suelen ser de proteína única y están libres de harinas de carne procesadas o conservantes sintéticos.\n\nLa principal contrapartida es la logística: necesita espacio en el frigorífico o el congelador, y las raciones deben descongelarse antes de servirse. Si no estás preparado para cocinarlo tú mismo, varias marcas con cocinas certificadas por el USDA venden versiones de larga duración de este mismo formato cocinado suavemente, una forma de bajo esfuerzo para probar esta categoría antes de comprometerte con una rutina casera completa.",
+        "productKey": "justfoodfordogs-chicken-white-rice",
+        "productNote": "Una opción de larga duración para probar esta categoría:"
       },
       {
         "rank": "02",
         "title": "Dieta Cruda Ancestral BARF 80-10-10",
         "score": "95/100",
         "pros": "Proporción biológica carnívora: 80% carne muscular, 10% hueso carnoso, 10% vísceras. Excelente para salud dental y musculatura magra.",
-        "cons": "Requiere higiene rigurosa en la manipulación y un estricto equilibrio del calcio."
+        "cons": "Requiere higiene rigurosa en la manipulación y un estricto equilibrio del calcio.",
+        "readMore": "La proporción 80-10-10 (80% carne muscular, 10% hueso crudo comestible, 10% órgano secretor) está diseñada para replicar lo que un ancestro canino salvaje obtendría de una presa entera. Bien formulada, aporta de forma natural una relación calcio-fósforo equilibrada procedente directamente del contenido óseo, favorece la masa muscular magra, y la acción mecánica de masticar hueso crudo ayuda a raspar el sarro de los dientes.\n\nComo no se cocina nada, las enzimas y los aminoácidos sensibles al calor permanecen totalmente intactos. El inconveniente está en la precisión: obtener hueso crudo seguro y respetar exactamente la proporción requieren verdadera disciplina, ya que calcular mal el porcentaje de hueso es el error más común, y puede provocar estreñimiento o, con el tiempo, problemas esqueléticos en cachorros en crecimiento. La carne cruda también debe manipularse con la misma higiene que cualquier alimento crudo de consumo humano (tablas de corte separadas, refrigeración, limpieza inmediata).\n\nLa mayoría de los hogares encuentran más sencillo empezar con un producto crudo formulado profesionalmente que ya cumple la proporción, antes de pasar a comidas crudas completamente personalizadas, obtenidas y pesadas en casa.",
+        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+        "productNote": "Una opción cruda ya equilibrada que elimina las conjeturas:"
       },
       {
         "rank": "03",
         "title": "Comida Cruda Liofilizada y Deshidratada al Aire",
         "score": "91/100",
         "pros": "Aporta la calidad nutricional de la comida cruda con la comodidad de almacenarse a temperatura ambiente.",
-        "cons": "Es imprescindible rehidratar con agua tibia o caldo de huesos antes de servir."
+        "cons": "Es imprescindible rehidratar con agua tibia o caldo de huesos antes de servir.",
+        "readMore": "Tanto el secado al aire como la liofilización eliminan la humedad de la carne cruda a baja temperatura, manteniendo el perfil de nutrientes y enzimas cercano al de un alimento crudo, a la vez que hacen el alimento estable a temperatura ambiente, por lo que no se necesita congelador. La liofilización utiliza un proceso de vacío en frío que tiende a preservar los nutrientes aún mejor que el secado al aire, aunque suele costar más por kilo.\n\nAmbos formatos se transportan bien y funcionan muy bien como topping crudo mezclado con el pienso para mejorar la palatabilidad. Rehidratar con agua templada o caldo de huesos antes de servir ayuda a restaurar una humedad más cercana a la dieta ancestral salvaje del perro, y es especialmente recomendable para perros propensos a cristales urinarios o con insuficiencia renal.\n\nLa principal consideración es el coste por caloría: al eliminarse el peso del agua, se paga por nutrición concentrada, por lo que suele usarse como topping o dieta rotacional, más que como el alimento diario único de un perro de gran tamaño.",
+        "productKey": "ziwi-peak-beef-chicken-bundle",
+        "productNote": "Una opción de secado al aire con buenas valoraciones:"
       },
       {
         "rank": "04",
         "title": "Pienso Seco Alto en Proteína Sin Granos o con Granos Ancestrales",
         "score": "78/100",
         "pros": "Cómodo, no perecedero y económicamente viable para hogares con perros grandes o múltiples mascotas.",
-        "cons": "Sometido a extrusión a 200°C, solo 8-10% de humedad y 40-50% de carbohidratos amiláceos."
+        "cons": "Sometido a extrusión a 200°C, solo 8-10% de humedad y 40-50% de carbohidratos amiláceos.",
+        "readMore": "El pienso premium sigue siendo la opción más práctica para muchos hogares: es estable hasta un año, fácil de dosificar con un comedero automático, y notablemente más económico por caloría que las dietas frescas o crudas.\n\nLas mejores fórmulas de esta categoría encabezan la lista de ingredientes con una proteína animal identificada en lugar de una \"harina de carne\" genérica, limitan los almidones a granos ancestrales como la avena y el sorgo en vez de rellenos pesados de maíz o trigo, y se someten a análisis de laboratorio independientes para detectar metales pesados.\n\nLa contrapartida es el propio proceso de extrusión: la exposición a temperaturas superiores a 200 °C destruye algunas vitaminas sensibles al calor y reduce la humedad hasta aproximadamente un 10%, por lo que los veterinarios suelen recomendar añadir un poco de caldo de huesos o un topping crudo a las dietas basadas únicamente en pienso, especialmente en perros propensos a cristales urinarios.",
+        "productKey": "orijen-original-grain-free-23lb",
+        "productNote": "Una fórmula alta en proteína, tipo WholePrey, en esta categoría:"
       },
       {
         "rank": "05",
         "title": "Dietas Terapéuticas de Prescripción Veterinaria",
         "score": "72/100",
         "pros": "Formuladas para patologías clínicas específicas (insuficiencia renal, hepática o cálculos urinarios).",
-        "cons": "A menudo recurren a subproductos vegetales y requieren receta veterinaria."
+        "cons": "A menudo recurren a subproductos vegetales y requieren receta veterinaria.",
+        "readMore": "Las dietas terapéuticas están diseñadas para controlar una afección específica diagnosticada: proteína y fósforo reducidos en caso de insuficiencia renal, proteínas hidrolizadas ante las que el sistema inmunitario no puede reaccionar en alergias alimentarias graves, o magnesio y pH controlados para prevenir cálculos vesicales de estruvita.\n\nOcupan un puesto más bajo en una escala general de \"más saludable\" únicamente porque son deliberadamente restrictivas en lugar de estar optimizadas para un perro sano medio; una fórmula diseñada para proteger unos riñones deteriorados, por ejemplo, no busca intencionadamente ser el alimento más denso en proteína del mercado.\n\nEstas dietas requieren la aprobación de un veterinario y análisis de sangre periódicos para confirmar que están funcionando, y nunca deben administrarse a un perro sano sin una razón clínica, ya que restringir nutrientes que un perro sano realmente necesita puede causar daño con el tiempo.",
+        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+        "productNote": "Una fórmula habitual de apoyo renal recetada por veterinarios:"
       }
     ],
     "buyerGuideTitle": "4 Reglas de Oro para Elegir el Mejor Alimento Canino",
@@ -1138,6 +1180,19 @@ export const PAGE_TRANSLATIONS = {
     "readAnswer": "Leer Respuesta Completa →",
       "referencedInAnswer": "Referenciado en esta respuesta",
       "buyNow": "Comprar ahora"
+  },
+  "bestFoodSingle": {
+    "rankBadge": "TOP 5 ALIMENTOS MÁS SALUDABLES // PUESTO",
+    "reviewedBy": "Revisado por: Nutricionista Canino Veterinario",
+    "nutritionalScore": "Puntuación Nutricional",
+    "strengths": "Puntos Fuertes",
+    "tradeoffs": "Contrapartidas",
+    "fullBreakdown": "Análisis Completo",
+    "exampleProduct": "Producto de ejemplo en esta categoría",
+    "previousRank": "Puesto anterior",
+    "nextRank": "Puesto siguiente",
+    "backToRanking": "Volver al Ranking Top 5 Completo",
+    "viewOnAmazon": "Ver en Amazon"
   }
 },
   ja: {
@@ -1279,41 +1334,57 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "総合ガイド // 2026年最新ドッグフード評価・ランキング",
     "rankingsTitle": "【2026年最新】愛犬の健康寿命を延ばすフードランキングTOP5",
     "rankingsIntro": "近年の獣医栄養学研究において、「加熱処理の最小化」と「70％以上の自然な水分含有量」が、愛犬の活力維持、腎臓病予防、抗病性の鍵であることが立証されています。",
+    "readMoreLabel": "続きを読む →",
     "rankings": [
       {
         "rank": "01",
         "title": "ヒューマングレード 低温スチーム調理フレッシュフード",
         "score": "98/100",
         "pros": "人間用基準の安全な肉と野菜を70℃の低温で加熱。天然の水分（70％以上）、生きた消化酵素、微量ビタミンが損なわれず保持されます。",
-        "cons": "冷凍庫や冷蔵庫での保管が必要。ドライフードと比較してコストが高め。"
+        "cons": "冷凍庫や冷蔵庫での保管が必要。ドライフードと比較してコストが高め。",
+        "readMore": "低温スチーム調理のフレッシュフードがランキング上位に位置するのは、食品安全性を犠牲にすることなく手作り食に近い品質を再現できるからです。原材料はUSDA検査済みのヒューマングレード食品工場から調達され、その後、病原菌を死滅させるのに必要な最小限の時間だけ約71℃という低温で加熱調理されます。これにより、高温での押し出し成形(エクストルージョン)で失われがちな繊細なタンパク質、タウリン、水溶性ビタミンB群が保持されます。\n\nこのフードはもともと70％以上の水分を含んでいるため、腎臓への負担が軽減され、キブルのみの食事でよく見られる慢性的な軽度脱水のリスクを下げることができます。レシピは基本的に単一タンパク源で、レンダリング処理された副産物ミールや合成保存料を含まないため、病後の回復期にある犬、飲水量が減りがちなシニア犬、食物過敏症になりやすい犬種に特に適しています。\n\n主なデメリットは取り扱いの手間です。冷蔵または冷凍のスペースが必要で、給餌前に解凍する必要があります。自分で調理する準備がまだ整っていない場合は、USDA認定キッチンを持つ複数のブランドが同じ低温調理製法による常温保存可能なバージョンを販売しているので、本格的な手作り食に移行する前に、まずはこのカテゴリーを気軽に試すことができます。",
+        "productKey": "justfoodfordogs-chicken-white-rice",
+        "productNote": "常温保存が可能でこのカテゴリーを気軽に試せる製品:"
       },
       {
         "rank": "02",
         "title": "先祖伝来の80-10-10 生肉BARFダイエット",
         "score": "95/100",
         "pros": "肉食動物本来の黄金比率（肉80％、生骨10％、内臓10％）。歯石の沈着を防ぎ、引き締まった筋肉を維持します。",
-        "cons": "徹底した衛生管理と正確なカルシウム比率の把握が不可欠。"
+        "cons": "徹底した衛生管理と正確なカルシウム比率の把握が不可欠。",
+        "readMore": "80-10-10比率(筋肉80％、生の可食骨10％、内臓10％)は、野生の犬の祖先が獲物一頭からまるごと摂取していた栄養バランスを再現するために組み立てられています。正しく実践すれば、骨に含まれるカルシウムとリンが自然な比率で摂取でき、引き締まった筋肉量の維持を助け、生骨を嚙むという物理的な動作が歯の歯石を削り落とす効果も期待できます。\n\n一切加熱しないため、酵素や熱に弱いアミノ酸がそのまま保たれます。ただし注意すべきは精度の高さが求められる点です。安全な生骨の調達と正確な比率の実現には相応の知識と規律が必要で、骨の割合の計算を誤ることが便秘、さらには成長期の子犬における骨格異常につながる最も一般的な失敗要因です。生肉の取り扱いにも、人間用の生食と同様の衛生管理(専用のまな板、冷蔵保存、速やかな後片付け)が求められます。\n\n多くの家庭では、自宅で食材を調達・計量して完全にカスタムの生食メニューを組む段階に進む前に、まずはこの比率をあらかじめ満たしたプロ設計の生食製品から始める方が取り組みやすいでしょう。",
+        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+        "productNote": "面倒な比率計算が不要な、あらかじめバランス調整済みの生食製品:"
       },
       {
         "rank": "03",
         "title": "エアドライ＆フリーズドライ生ドッグフード",
         "score": "91/100",
         "pros": "生肉の優れた栄養価を常温保存できる利便性を両立。偏食な愛犬のトッピングにも最適。",
-        "cons": "腎臓への負担を避けるため、ぬるま湯や骨スープで戻してから与える必要があります。"
+        "cons": "腎臓への負担を避けるため、ぬるま湯や骨スープで戻してから与える必要があります。",
+        "readMore": "エアドライとフリーズドライは、いずれも低温で生肉から水分を取り除く製法で、栄養素と酵素のプロファイルを生食に近い状態に保ちながら、冷凍庫を必要としない常温保存を可能にします。フリーズドライは低温真空プロセスを使用するため、一般的にエアドライよりもさらに栄養素を保持しやすい一方、1ポンドあたりのコストは高くなる傾向があります。\n\nどちらの形状も持ち運びに優れており、キブルに混ぜて嗜好性を高めるための生食トッパーとしても非常に優秀です。給餌前にぬるま湯やボーンブロスで戻すことで、犬の祖先が野生で摂取していた水分量に近づけることができ、尿路結石(ストルバイト結晶など)になりやすい犬や腎臓に負担をかけたくない犬にとって特に価値があります。\n\n主な検討ポイントはカロリーあたりのコストです。水分が取り除かれている分、栄養が凝縮された状態にお金を払うことになるため、大型犬の主食として毎日大量に与えるよりも、トッパーやローテーション食として使われることが多い製法です。",
+        "productKey": "ziwi-peak-beef-chicken-bundle",
+        "productNote": "評価の高いエアドライ製品:"
       },
       {
         "rank": "04",
         "title": "高タンパク質 グレインフリー＆古代穀物ドライフード",
         "score": "78/100",
         "pros": "常温で長期保存が可能。多頭飼育や大型犬のご家庭でも経済的な選択肢。",
-        "cons": "200℃以上の超高温加工が施され、水分がわずか8〜10％しかなく、炭水化物が40〜50％含まれます。"
+        "cons": "200℃以上の超高温加工が施され、水分がわずか8〜10％しかなく、炭水化物が40〜50％含まれます。",
+        "readMore": "プレミアムキブルは、多くの家庭にとって依然として最も実用的な選択肢です。最長で1年ほど常温保存が可能で、自動給餌器での計量もしやすく、フレッシュフードや生食と比べてカロリーあたりのコストも大幅に抑えられます。\n\nこのカテゴリーで優れた処方は、あいまいな「ミートミール」ではなく具体的な動物性タンパク源を主原料とし、でんぷん源はトウモロコシや小麦などの重いフィラーではなく、オーツや高粱(ソルガム)といった古代穀物を使用し、さらに重金属について第三者機関による検査を受けています。\n\nトレードオフとなるのは押し出し成形(エクストルージョン)そのものの工程です。200℃を超える高温にさらされることで熱に弱いビタミンの一部が失われ、水分量もおよそ10％まで下がります。そのため獣医師は、キブルのみの食事にボーンブロスを少量加えたり生食トッパーを併用したりすることを勧めることが多く、これは特に尿路結石になりやすい犬にとって有効です。",
+        "productKey": "orijen-original-grain-free-23lb",
+        "productNote": "このカテゴリーに該当する高タンパク質・ホールプレイ処方の製品:"
       },
       {
         "rank": "05",
         "title": "獣医師専任 処方療法食",
         "score": "72/100",
         "pros": "進行した慢性腎不全、肝不全、ストルバイト結石症などの疾患管理に特化。",
-        "cons": "穀物由来の増量材が多く使われる傾向があり、獣医師の診断書・指示が必要です。"
+        "cons": "穀物由来の増量材が多く使われる傾向があり、獣医師の診断書・指示が必要です。",
+        "readMore": "療法食は、診断済みの特定の病態を管理するために設計されています。腎臓病であればタンパク質とリンを制限し、重度の食物アレルギーであれば免疫系が反応しない加水分解タンパク質を使用し、ストルバイト膀胱結石であればマグネシウムとpHを厳密にコントロールする、といった具合です。\n\n総合的な「健康度」ランキングで順位が下がるのは、平均的な健康な犬向けに最適化されているのではなく、意図的に成分が制限されているためです。例えば、機能が低下した腎臓をいたわるために設計された処方は、市場で最もタンパク質密度が高いフードにはあえてしていません。\n\nこれらの療法食は獣医師の処方と、効果を確認するための定期的な血液検査を必要とし、臨床的な理由がない健康な犬に与えるべきではありません。健康な犬に本来必要な栄養素を制限してしまうと、長期的に害を及ぼす可能性があるためです。",
+        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+        "productNote": "獣医師の処方でよく使われる腎臓ケア療法食:"
       }
     ],
     "buyerGuideTitle": "最高のドッグフードを選ぶための4大原則",
@@ -1699,6 +1770,19 @@ export const PAGE_TRANSLATIONS = {
     "readAnswer": "回答全文を読む →",
       "referencedInAnswer": "Référencé dans cette réponse",
       "buyNow": "Acheter maintenant"
+  },
+  "bestFoodSingle": {
+    "rankBadge": "健康フードTOP5 // 順位",
+    "reviewedBy": "監修：獣医臨床栄養士",
+    "nutritionalScore": "栄養スコア",
+    "strengths": "メリット",
+    "tradeoffs": "デメリット",
+    "fullBreakdown": "詳細解説",
+    "exampleProduct": "このカテゴリーの製品例",
+    "previousRank": "前の順位",
+    "nextRank": "次の順位",
+    "backToRanking": "TOP5ランキング一覧に戻る",
+    "viewOnAmazon": "Amazonで見る"
   }
 },
   fr: {
@@ -1839,42 +1923,58 @@ export const PAGE_TRANSLATIONS = {
   "bestFood": {
     "eyebrow": "GUIDE CLINIQUE // CLASSEMENT ALIMENTATION CANINE 2026",
     "rankingsTitle": "Quels Sont les 5 Meilleurs Aliments pour Chien en 2026 ?",
-    "rankingsIntro": "Les recherches sur la longévité canine confirment qu’une cuisson minimale et une hydratation biologique supérieure à 70% sont les deux facteurs les plus déterminants de la vitalité et de la santé rénale.",
+    "rankingsIntro": "Les recherches sur la longevité canine confirment qu’une cuisson minimale et une hydratation biologique supérieure à 70% sont les deux facteurs les plus déterminants de la vitalité et de la santé rénale.",
+    "readMoreLabel": "Lire la suite →",
     "rankings": [
       {
         "rank": "01",
         "title": "Ration Ménagère Fraîche Cuite à Basse Température",
         "score": "98/100",
         "pros": "Viandes et légumes réels cuits doucement à 70°C. Préserve plus de 70% d’humidité naturelle, les enzymes actives et les vitamines intactes.",
-        "cons": "Nécessite une conservation au congélateur ou réfrigérateur. Coût supérieur aux croquettes bas de gamme."
+        "cons": "Nécessite une conservation au congélateur ou réfrigérateur. Coût supérieur aux croquettes bas de gamme.",
+        "readMore": "La ration fraîche cuite à basse température arrive en tête du classement car elle imite un repas fait maison sans sacrifier la sécurité alimentaire. Les ingrédients proviennent d'installations agréées USDA pour l'alimentation humaine, puis sont cuits juste assez longtemps à basse température (environ 71 °C) pour éliminer les pathogènes tout en préservant les protéines fragiles, la taurine et les vitamines B hydrosolubles que l'extrusion à haute température détruit.\n\nComme cet aliment contient déjà plus de 70 % d'humidité, il soulage les reins et réduit la déshydratation chronique légère fréquente chez les chiens nourris exclusivement aux croquettes. Il convient particulièrement bien aux chiens en convalescence, aux seniors dont la sensation de soif diminue, ou aux races sujettes aux sensibilités alimentaires, car les recettes sont généralement à protéine unique et exemptes de farines de viande transformée ou de conservateurs synthétiques.\n\nLe principal compromis reste logistique : elle nécessite de la place au réfrigérateur ou au congélateur, et les portions doivent être décongelées avant chaque repas. Si vous n'êtes pas prêt à cuisiner vous-même, plusieurs marques disposant de cuisines agréées USDA proposent des versions longue conservation de ce même format cuit en douceur, une façon simple de tester cette catégorie avant de vous engager dans une routine entièrement faite maison.",
+        "productKey": "justfoodfordogs-chicken-white-rice",
+        "productNote": "Une option longue conservation pour tester cette catégorie :"
       },
       {
         "rank": "02",
         "title": "Alimentation Crue Ancestrale BARF 80-10-10",
         "score": "95/100",
         "pros": "Équilibre biologique adapté aux carnivores : 80% muscle, 10% os charnu, 10% abats. Prévient le tartre et développe une masse musculaire sèche.",
-        "cons": "Exige une hygiène rigoureuse et un équilibrage précis du calcium."
+        "cons": "Exige une hygiène rigoureuse et un équilibrage précis du calcium.",
+        "readMore": "Le ratio 80-10-10 (80 % de viande musculaire, 10 % d'os cru comestible, 10 % d'organes sécrétants) est conçu pour reproduire ce qu'un ancêtre canin sauvage obtiendrait d'une proie entière. Correctement appliqué, il fournit un rapport calcium-phosphore naturellement équilibré directement issu de l'os, soutient la masse musculaire maigre, et l'action mécanique de la mastication d'os crus aide à détacher le tartre des dents.\n\nComme rien n'est cuit, les enzymes et les acides aminés sensibles à la chaleur restent parfaitement intacts. Le défi réside dans la précision : trouver des os crus sûrs et respecter exactement le ratio exigent une véritable discipline, car une mauvaise estimation du pourcentage d'os est l'erreur la plus courante, pouvant entraîner constipation ou, à terme, des troubles squelettiques chez les chiots en croissance. La viande crue doit également être manipulée avec la même hygiène que tout aliment cru destiné à l'homme (planches à découper séparées, réfrigération, nettoyage rapide).\n\nLa plupart des foyers trouvent plus simple de commencer avec un produit cru formulé par des professionnels qui respecte déjà ce ratio, avant de passer à des repas crus entièrement personnalisés, sourcés et pesés à la maison.",
+        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+        "productNote": "Une option crue déjà équilibrée qui évite les calculs :"
       },
       {
         "rank": "03",
         "title": "Nourriture Crue Lyophilisée & Déshydratée à l’Air",
         "score": "91/100",
         "pros": "Offre la qualité nutritionnelle du cru avec la facilité de conservation à température ambiante.",
-        "cons": "Doit impérativement être réhydratée à l’eau tiède ou au bouillon d’os avant distribution."
+        "cons": "Doit impérativement être réhydratée à l’eau tiède ou au bouillon d’os avant distribution.",
+        "readMore": "Le séchage à l'air et la lyophilisation retirent tous deux l'humidité de la viande crue à basse température, préservant un profil nutritionnel et enzymatique proche du cru tout en rendant l'aliment stable à température ambiante, sans besoin de congélateur. La lyophilisation utilise un procédé de vide à froid qui tend à mieux préserver les nutriments que le séchage à l'air, bien qu'elle coûte généralement plus cher au kilo.\n\nCes deux formats se transportent bien et fonctionnent parfaitement comme topping cru mélangé aux croquettes pour en améliorer l'appétence. Réhydrater avec de l'eau tiède ou un bouillon d'os avant de servir aide à restaurer une humidité plus proche du régime ancestral sauvage du chien, ce qui est particulièrement bénéfique pour les chiens sujets aux cristaux urinaires ou aux reins fragiles.\n\nLa principale considération est le coût par calorie : comme le poids en eau est retiré, vous payez pour une nutrition concentrée, ce qui explique pourquoi ce format est souvent utilisé en complément ou en alimentation rotative plutôt que comme unique ration quotidienne d'un grand chien.",
+        "productKey": "ziwi-peak-beef-chicken-bundle",
+        "productNote": "Une option séchée à l'air très bien notée :"
       },
       {
         "rank": "04",
         "title": "Croquettes Riches en Protéines Sans Céréales ou Grains Anciens",
         "score": "78/100",
         "pros": "Pratiques, longue conservation et accessibles pour les foyers ayant de grands chiens.",
-        "cons": "Extrudées à 200°C, seulement 8 à 10% d’humidité et 40 à 50% de glucides complexes."
+        "cons": "Extrudées à 200°C, seulement 8 à 10% d’humidité et 40 à 50% de glucides complexes.",
+        "readMore": "Les croquettes premium restent l'option la plus pratique pour de nombreux foyers : elles se conservent jusqu'à un an, se portionnent facilement avec un distributeur automatique, et coûtent nettement moins cher par calorie que les régimes frais ou crus.\n\nLes meilleures formules de cette catégorie mettent en avant une protéine animale nommée plutôt qu'une vague « farine de viande », limitent les féculents à des céréales anciennes comme l'avoine et le sorgho plutôt qu'à des charges lourdes de maïs ou de blé, et sont soumises à des analyses de laboratoire tierces pour détecter les métaux lourds.\n\nLe compromis réside dans le procédé d'extrusion lui-même : l'exposition à des températures supérieures à 200 °C détruit certaines vitamines sensibles à la chaleur et réduit l'humidité à environ 10 %, ce qui explique pourquoi les vétérinaires recommandent souvent d'ajouter un peu de bouillon d'os ou un topping cru aux régimes composés uniquement de croquettes, en particulier pour les chiens sujets aux cristaux urinaires.",
+        "productKey": "orijen-original-grain-free-23lb",
+        "productNote": "Une formule riche en protéines, de type WholePrey, dans cette catégorie :"
       },
       {
         "rank": "05",
         "title": "Aliments Thérapeutiques Vétérinaires Spécialisés",
         "score": "72/100",
         "pros": "Formulés pour les pathologies avérées (insuffisance rénale chronique, calculs de struvite, troubles hépatiques).",
-        "cons": "Composés fréquemment de sous-produits végétaux et nécessitent une ordonnance."
+        "cons": "Composés fréquemment de sous-produits végétaux et nécessitent une ordonnance.",
+        "readMore": "Les aliments thérapeutiques sont conçus pour gérer une seule pathologie diagnostiquée précise : protéines et phosphore réduits pour l'insuffisance rénale, protéines hydrolysées auxquelles le système immunitaire ne peut pas réagir en cas d'allergies alimentaires sévères, ou magnésium et pH contrôlés pour les calculs vésicaux de struvite.\n\nIls se classent plus bas sur une échelle générale de « santé optimale » simplement parce qu'ils sont délibérément restrictifs plutôt qu'optimisés pour un chien sain moyen ; une formule conçue pour ménager des reins défaillants, par exemple, n'est volontairement pas l'aliment le plus riche en protéines du marché.\n\nCes régimes nécessitent l'aval d'un vétérinaire et des bilans sanguins périodiques pour confirmer leur efficacité, et ne doivent jamais être donnés à un chien en bonne santé sans raison clinique, car restreindre des nutriments dont un chien sain a réellement besoin peut nuire à sa santé à long terme.",
+        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+        "productNote": "Une formule courante de soutien rénal prescrite par les vétérinaires :"
       }
     ],
     "buyerGuideTitle": "4 Règles d’Or pour Choisir le Meilleur Aliment",
@@ -2260,6 +2360,19 @@ export const PAGE_TRANSLATIONS = {
     "readAnswer": "Lire la Réponse Complète →",
       "referencedInAnswer": "In dieser Antwort referenziert",
       "buyNow": "Jetzt kaufen"
+  },
+  "bestFoodSingle": {
+    "rankBadge": "TOP 5 MEILLEURS ALIMENTS POUR CHIEN // RANG",
+    "reviewedBy": "Vérifié par : Nutritionniste Vétérinaire Canin",
+    "nutritionalScore": "Score nutritionnel",
+    "strengths": "Points forts",
+    "tradeoffs": "Compromis",
+    "fullBreakdown": "Analyse complète",
+    "exampleProduct": "Exemple de produit dans cette catégorie",
+    "previousRank": "Rang précédent",
+    "nextRank": "Rang suivant",
+    "backToRanking": "Retour au classement complet du Top 5",
+    "viewOnAmazon": "Voir sur Amazon"
   }
 },
   de: {
@@ -2401,41 +2514,57 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "LEITFADEN // DIE BESTEN HUNDEFUTTER 2026",
     "rankingsTitle": "Welche sind die 5 gesündesten Hundefutter im Jahr 2026?",
     "rankingsIntro": "Aktuelle veterinärmedizinische Studien belegen: Minimale Hitzebehandlung und ein biologischer Feuchtigkeitsgehalt von über 70% sind die wichtigsten Faktoren für Vitalität und gesunde Nieren.",
+    "readMoreLabel": "Mehr erfahren →",
     "rankings": [
       {
         "rank": "01",
         "title": "Schonend dampfgegartes Frischfutter in Lebensmittelqualität",
         "score": "98/100",
         "pros": "Echtes Muskelfleisch und Gemüse bei milden 70°C gegart. Erhält über 70% natürliche Feuchtigkeit, aktive Enzyme und hitzeempfindliche Vitamine.",
-        "cons": "Muss gekühlt oder tiefgefroren gelagert werden. Höhere Kosten als billiges Supermarktfutter."
+        "cons": "Muss gekühlt oder tiefgefroren gelagert werden. Höhere Kosten als billiges Supermarktfutter.",
+        "readMore": "Schonend gegartes Frischfutter steht an der Spitze des Rankings, weil es einer hausgemachten Mahlzeit nahekommt, ohne bei der Lebensmittelsicherheit Abstriche zu machen. Die Zutaten stammen aus USDA-zertifizierten Lebensmittelbetrieben und werden anschließend nur so lange bei niedriger Temperatur (rund 71 °C bzw. 160 °F) erhitzt, dass Krankheitserreger abgetötet werden, während empfindliche Proteine, Taurin und wasserlösliche B-Vitamine erhalten bleiben, die bei der Hochtemperatur-Extrusion verloren gehen.\n\nDa das Futter bereits einen Feuchtegehalt von über 70 % besitzt, entlastet es die Nieren und verringert die chronische, leichte Dehydrierung, die bei reiner Trockenfutterernährung häufig auftritt. Es eignet sich besonders gut für Hunde in der Rekonvaleszenz, Senioren mit vermindertem Durstgefühl oder Rassen mit einer Tendenz zu Futterunverträglichkeiten, da die Rezepte meist auf ein einziges Protein setzen und ohne tierische Mehle oder synthetische Konservierungsstoffe auskommen.\n\nDer größte Kompromiss liegt in der Logistik: Es benötigt Kühl- oder Gefrierraum, und Portionen müssen vor der Fütterung aufgetaut werden. Wer nicht selbst kochen möchte, findet bei mehreren Marken mit USDA-zugelassenen Küchen auch lang haltbare Varianten desselben schonend gegarten Formats – ein unkomplizierter Einstieg in diese Kategorie, bevor man sich für eine vollständige selbstgekochte Routine entscheidet.",
+        "productKey": "justfoodfordogs-chicken-white-rice",
+        "productNote": "Eine lange haltbare Möglichkeit, diese Kategorie auszuprobieren:"
       },
       {
         "rank": "02",
         "title": "Artgerechte 80-10-10 BARF Rohfütterung",
         "score": "95/100",
         "pros": "Natürliches Beutetier-Prinzip: 80% Fleisch, 10% fleischige Knochen, 10% Innereien. Perfekt für Zahnhygiene und kräftige Muskulatur.",
-        "cons": "Erfordert strikte Hygiene bei der Fleischverarbeitung und präzisen Kalziumausgleich."
+        "cons": "Erfordert strikte Hygiene bei der Fleischverarbeitung und präzisen Kalziumausgleich.",
+        "readMore": "Das 80-10-10-Verhältnis (80 % Muskelfleisch, 10 % roher, essbarer Knochen, 10 % Innereien mit Drüsenfunktion) wurde entwickelt, um nachzubilden, was ein wildlebender Hundevorfahre von einem vollständigen Beutetier erhalten würde. Richtig umgesetzt liefert es ein natürlich ausgewogenes Calcium-Phosphor-Verhältnis direkt aus dem Knochenanteil, unterstützt die Muskelmasse, und das Kauen roher Knochen hilft mechanisch, Zahnstein von den Zähnen zu lösen.\n\nDa nichts erhitzt wird, bleiben Enzyme und hitzeempfindliche Aminosäuren vollständig erhalten. Der Haken liegt in der Präzision: Sichere Rohknochen zu beziehen und das Verhältnis exakt einzuhalten erfordert echte Disziplin, denn ein falsch berechneter Knochenanteil ist der häufigste Fehler, der zu Verstopfung oder – bei wachsenden Welpen – langfristig zu Skelettproblemen führen kann. Rohes Fleisch muss außerdem mit derselben Hygiene behandelt werden wie jedes andere rohe Lebensmittel für Menschen (getrennte Schneidebretter, Kühlung, sofortige Reinigung).\n\nDie meisten Haushalte finden es einfacher, mit einem professionell formulierten Rohfutterprodukt zu beginnen, das das Verhältnis bereits korrekt abbildet, bevor sie zu vollständig individuell zusammengestellten und zu Hause abgewogenen Rohmahlzeiten übergehen.",
+        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+        "productNote": "Eine bereits ausgewogene Rohfutter-Option, die Rätselraten erspart:"
       },
       {
         "rank": "03",
         "title": "Luftgetrocknetes & Gefriergetrocknetes Rohfutter",
         "score": "91/100",
         "pros": "Kombiniert die Nährstoffdichte von Rohfleisch mit der Bequemlichkeit normaler Trockenlagerung.",
-        "cons": "Sollte vor dem Füttern unbedingt mit lauwarmem Wasser oder Knochenbrühe eingeweicht werden."
+        "cons": "Sollte vor dem Füttern unbedingt mit lauwarmem Wasser oder Knochenbrühe eingeweicht werden.",
+        "readMore": "Sowohl luftgetrocknetes als auch gefriergetrocknetes Futter entziehen rohem Fleisch bei niedrigen Temperaturen Feuchtigkeit, wodurch das Nährstoff- und Enzymprofil nahe am Rohzustand bleibt, während das Futter bei Raumtemperatur lagerfähig wird – ein Gefrierschrank ist nicht nötig. Gefriertrocknung nutzt ein kaltes Vakuumverfahren, das Nährstoffe meist noch besser bewahrt als die Lufttrocknung, ist dafür aber pro Kilogramm meist teurer.\n\nBeide Varianten sind gut transportierbar und eignen sich hervorragend als Rohfutter-Topping, das über Trockenfutter gemischt die Akzeptanz erhöht. Das Einweichen in warmem Wasser oder Knochenbrühe vor dem Servieren stellt einen Feuchtegehalt wieder her, der näher an der ursprünglichen Wildnahrung des Hundes liegt, und ist besonders sinnvoll für Hunde mit Neigung zu Harnkristallen oder Nierenbelastung.\n\nDer wichtigste Aspekt ist der Preis pro Kalorie: Da das Wassergewicht entfernt wurde, bezahlt man für konzentrierte Nährstoffe – deshalb wird diese Form meist als Topping oder im Rotationsplan eingesetzt und seltener als alleinige Tagesration für einen großen Hund.",
+        "productKey": "ziwi-peak-beef-chicken-bundle",
+        "productNote": "Eine gut bewertete, luftgetrocknete Option:"
       },
       {
         "rank": "04",
         "title": "Proteinreiches Trockenfutter ohne Getreide oder mit Urgetreide",
         "score": "78/100",
         "pros": "Lange haltbar, unkompliziert und budgetfreundlich bei großen Hunderassen.",
-        "cons": "Extrusion bei 200°C, nur 8–10% Restfeuchte und 40–50% verarbeitete Stärkekohlenhydrate."
+        "cons": "Extrusion bei 200°C, nur 8–10% Restfeuchte und 40–50% verarbeitete Stärkekohlenhydrate.",
+        "readMore": "Hochwertiges Trockenfutter bleibt für viele Haushalte die praktischste Option: Es ist bis zu ein Jahr lagerfähig, lässt sich mit einem automatischen Futterspender einfach portionieren und ist pro Kalorie deutlich günstiger als Frisch- oder Rohfutter.\n\nDie besten Formulierungen dieser Kategorie führen eine namentlich benannte Tierproteinquelle statt eines vagen „Fleischmehls“ an, setzen bei den Kohlenhydraten auf Urgetreide wie Hafer und Sorghum statt auf schwere Mais- oder Weizenfüllstoffe und werden von unabhängigen Laboren auf Schwermetalle getestet.\n\nDer Kompromiss liegt im Extrusionsverfahren selbst: Temperaturen über 200 °C (400 °F) zerstören einige hitzeempfindliche Vitamine und senken den Feuchtegehalt auf etwa 10 %. Deshalb empfehlen Tierärzte bei reiner Trockenfutterernährung oft, einen Schuss Knochenbrühe oder ein Rohfutter-Topping zuzugeben – besonders bei Hunden mit Neigung zu Harnkristallen.",
+        "productKey": "orijen-original-grain-free-23lb",
+        "productNote": "Eine proteinreiche WholePrey-Formel dieser Kategorie:"
       },
       {
         "rank": "05",
         "title": "Veterinärmedizinische Spezial-Diäten",
         "score": "72/100",
         "pros": "Speziell formuliert für Niereninsuffizienz, Lebererkrankungen oder Struvitsteine.",
-        "cons": "Enthält oft minderwertige Getreidenebenprodukte; rezeptpflichtig."
+        "cons": "Enthält oft minderwertige Getreidenebenprodukte; rezeptpflichtig.",
+        "readMore": "Therapeutische Diäten sind gezielt darauf ausgelegt, eine einzelne, ärztlich diagnostizierte Erkrankung zu behandeln: reduzierter Protein- und Phosphorgehalt bei Nierenerkrankungen, hydrolysierte Proteine, auf die das Immunsystem nicht reagieren kann, bei schweren Futtermittelallergien, oder ein kontrollierter Magnesiumgehalt und pH-Wert bei Struvit-Blasensteinen.\n\nSie rangieren auf einer allgemeinen „Gesündeste-Futter“-Skala nur deshalb weiter unten, weil sie bewusst restriktiv ausgelegt sind und nicht auf einen durchschnittlich gesunden Hund optimiert wurden; eine Formulierung, die geschwächte Nieren schonen soll, ist beispielsweise absichtlich nicht das proteinreichste Futter auf dem Markt.\n\nDiese Diäten erfordern eine tierärztliche Freigabe und regelmäßige Blutkontrollen, um ihre Wirksamkeit zu bestätigen, und sollten einem gesunden Hund niemals ohne klinischen Grund gefüttert werden, da die Einschränkung von Nährstoffen, die ein gesunder Hund tatsächlich benötigt, auf Dauer schaden kann.",
+        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+        "productNote": "Eine gängige, tierärztlich verordnete Nieren-Diät:"
       }
     ],
     "buyerGuideTitle": "4 goldene Regeln für die Futterauswahl",
@@ -2821,6 +2950,19 @@ export const PAGE_TRANSLATIONS = {
     "readAnswer": "Antwort vollständig lesen →",
       "referencedInAnswer": "Referenciado nesta resposta",
       "buyNow": "Comprar agora"
+  },
+  "bestFoodSingle": {
+    "rankBadge": "TOP 5 GESÜNDESTE HUNDEFUTTER // PLATZ",
+    "reviewedBy": "Geprüft von: Fachtierarzt für Tierernährung",
+    "nutritionalScore": "Nährwert-Score",
+    "strengths": "Stärken",
+    "tradeoffs": "Kompromisse",
+    "fullBreakdown": "Vollständige Analyse",
+    "exampleProduct": "Beispielprodukt dieser Kategorie",
+    "previousRank": "Vorheriger Platz",
+    "nextRank": "Nächster Platz",
+    "backToRanking": "Zurück zur vollständigen Top-5-Rangliste",
+    "viewOnAmazon": "Auf Amazon ansehen"
   }
 },
   pt: {
@@ -2962,41 +3104,57 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "GUIA CLÍNICO // RANKING DAS MELHORES RAÇÕES 2026",
     "rankingsTitle": "Quais São os 5 Alimentos Mais Saudáveis para Cães em 2026?",
     "rankingsIntro": "Pesquisas em longevidade canina comprovam que o processamento térmico brando e a umidade biológica superior a 70% são os dois maiores indicadores de vitalidade e proteção renal.",
+    "readMoreLabel": "Leia mais →",
     "rankings": [
       {
         "rank": "01",
         "title": "Alimentação Natural (AN) Cozida no Vapor de Grau Humano",
         "score": "98/100",
         "pros": "Carnes e vegetais reais cozidos a baixa temperatura (70°C). Preserva mais de 70% de umidade natural, enzimas e vitaminas biodisponíveis.",
-        "cons": "Exige armazenamento em geladeira ou freezer. Custo maior que rações comuns de supermercado."
+        "cons": "Exige armazenamento em geladeira ou freezer. Custo maior que rações comuns de supermercado.",
+        "readMore": "A comida fresca levemente cozida ocupa o topo do ranking porque reproduz uma refeição caseira sem abrir mão da segurança alimentar. Os ingredientes vêm de instalações de alimentos humanos inspecionadas por órgãos sanitários, e depois são cozidos apenas o tempo suficiente em baixa temperatura (cerca de 70°C) para eliminar patógenos, preservando proteínas delicadas, taurina e vitaminas do complexo B hidrossolýveis que a extrusão em alta temperatura destrói.\n\nComo o alimento já contém mais de 70% de umidade, ele reduz a sobrecarga nos rins e diminui a desidratação crônica leve comum em dietas baseadas apenas em ração seca. É uma opção especialmente indicada para cães em recuperação de doenças, idosos com menor estímulo de sede, ou raças propensas a sensibilidades alimentares, já que as receitas costumam ter uma única fonte de proteína e não contêm farinhas de carne processada nem conservantes sintéticos.\n\nA principal desvantagem é a logística: é preciso espaço na geladeira ou no freezer, e as porções precisam ser descongeladas antes do horário da refeição. Se você ainda não está pronto para cozinhar em casa, várias marcas que utilizam cozinhas certificadas vendem versões estáveis à temperatura ambiente do mesmo formato levemente cozido, uma forma prática de experimentar essa categoria antes de adotar uma rotina caseira completa.",
+        "productKey": "justfoodfordogs-chicken-white-rice",
+        "productNote": "Uma opção estável à temperatura ambiente para experimentar essa categoria:"
       },
       {
         "rank": "02",
         "title": "Dieta Crua Biologicamente Adequada BARF 80-10-10",
         "score": "95/100",
         "pros": "Proporção ancestral carnívora: 80% carne muscular, 10% ossos carnudos, 10% vísceras. Excelente para limpeza dental e massa magra.",
-        "cons": "Exige higiene rigorosa na manipulação e monitoramento preciso da relação cálcio-fósforo."
+        "cons": "Exige higiene rigorosa na manipulação e monitoramento preciso da relação cálcio-fósforo.",
+        "readMore": "A proporção 80-10-10 (80% de carne muscular, 10% de osso cru comestível, 10% de vísceras) foi criada para reproduzir o que um ancestral canino selvagem obteria de uma presa inteira. Quando feita corretamente, ela fornece uma proporção naturalmente equilibrada de cálcio e fósforo diretamente do conteúdo ósseo, favorece a massa muscular magra, e a ação mecânica de mastigar osso cru ajuda a remover o tártaro dos dentes.\n\nComo nada é cozido, enzimas e aminoácidos sensíveis ao calor permanecem totalmente intactos. O desafio está na precisão: encontrar ossos crus seguros e acertar exatamente a proporção exigem disciplina real, já que calcular mal o percentual de osso é o erro mais comum, levando à constipação ou, com o tempo, a problemas ósseos em filhotes em crescimento. A carne crua também precisa ser manuseada com o mesmo cuidado higiênico de qualquer alimento cru para consumo humano (tábuas de corte separadas, refrigeração, limpeza imediata).\n\nA maioria das famílias acha mais fácil começar com um produto cru formulado profissionalmente que já atinge essa proporção, antes de migrar para refeições cruas totalmente personalizadas, compradas e pesadas em casa.",
+        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+        "productNote": "Uma opção crua pré-balanceada que elimina o trabalho de cálculo:"
       },
       {
         "rank": "03",
         "title": "Comida Crua Liofilizada e Desidratada a Frio",
         "score": "91/100",
         "pros": "Mantém a pureza nutricional do alimento cru com a praticidade do armazenamento em temperatura ambiente.",
-        "cons": "Deve ser reidratada com água morna ou caldo de ossos antes do fornecimento."
+        "cons": "Deve ser reidratada com água morna ou caldo de ossos antes do fornecimento.",
+        "readMore": "Tanto a desidratação a ar quanto a liofilização retiram a umidade da carne crua em baixas temperaturas, mantendo o perfil de nutrientes e enzimas próximo ao da comida crua, e ao mesmo tempo tornam o alimento estável à temperatura ambiente, sem necessidade de freezer. A liofilização usa um processo a vácuo e frio que costuma preservar os nutrientes ainda melhor do que a desidratação a ar, embora geralmente custe mais por quilo.\n\nOs dois formatos viajam bem e funcionam ótimo como complemento cru misturado à ração seca para aumentar a palatabilidade. Reidratar com água morna ou caldo de ossos antes de servir ajuda a restaurar a umidade, aproximando-se da dieta ancestral selvagem do cão, o que é especialmente vantajoso para cães propensos a cristais urinários ou sobrecarga renal.\n\nO principal ponto de atenção é o custo por caloria: como a água é removida, você está pagando por nutrição concentrada, motivo pelo qual esse formato costuma ser usado como complemento ou em dietas rotativas, em vez de ser a única fonte diária de alimentação para um cão de grande porte.",
+        "productKey": "ziwi-peak-beef-chicken-bundle",
+        "productNote": "Uma opção desidratada a ar bem avaliada:"
       },
       {
         "rank": "04",
         "title": "Ração Seca Super Premium sem Grãos ou com Grãos Ancestrais",
         "score": "78/100",
         "pros": "Prática, durável e acessível para lares com múltiplos cães ou cães de porte grande.",
-        "cons": "Processada a mais de 200°C, apenas 8 a 10% de umidade e 40 a 50% de carboidratos amiláceos."
+        "cons": "Processada a mais de 200°C, apenas 8 a 10% de umidade e 40 a 50% de carboidratos amiláceos.",
+        "readMore": "A ração seca premium continua sendo a opção mais prática para muitas famílias: é estável por até um ano, fácil de dosar com um alimentador automático, e significativamente mais barata por caloria do que dietas frescas ou cruas.\n\nAs melhores fórmulas dessa categoria trazem uma proteína animal nomeada, em vez de uma vaga \"farinha de carne\", limitam os amidos a grãos ancestrais como aveia e sorgo, ao invés de excesso de milho ou trigo como carga, e passam por testes laboratoriais de terceiros para detectar metais pesados.\n\nA desvantagem está no próprio processo de extrusão: a exposição a temperaturas acima de 200°C destrói algumas vitaminas sensíveis ao calor e reduz a umidade para cerca de 10%, motivo pelo qual veterinários costumam recomendar adicionar um pouco de caldo de ossos ou um complemento cru a dietas baseadas apenas em ração seca, especialmente para cães propensos a cristais urinários.",
+        "productKey": "orijen-original-grain-free-23lb",
+        "productNote": "Uma fórmula rica em proteína, no estilo WholePrey, dessa categoria:"
       },
       {
         "rank": "05",
         "title": "Dietas Terapêuticas e Medicamentosas Veterinárias",
         "score": "72/100",
         "pros": "Formuladas para doenças clínicas diagnosticadas (insuficiência renal, hepática ou urólitos).",
-        "cons": "Costumam conter ingredientes vegetais refinados e exigem prescrição veterinária."
+        "cons": "Costumam conter ingredientes vegetais refinados e exigem prescrição veterinária.",
+        "readMore": "As dietas terapêuticas são desenvolvidas para controlar uma condição específica já diagnosticada: proteína e fósforo reduzidos para doença renal, proteínas hidrolisadas às quais o sistema imunológico não reage em casos de alergia alimentar grave, ou magnésio e pH controlados para cálculos de estruvita na bexiga.\n\nElas ficam em posições mais baixas em uma escala geral de \"mais saudáveis\" apenas porque são deliberadamente restritivas, e não otimizadas para um cão saudável médio; uma fórmula desenvolvida para poupar rins em declínio, por exemplo, é intencionalmente não a mais rica em proteína do mercado.\n\nEssas dietas exigem aval veterinário e exames de sangue periódicos para confirmar que estão funcionando, e nunca devem ser oferecidas a um cão saudável sem justificativa clínica, já que restringir nutrientes que um cão saudável realmente precisa pode causar danos ao longo do tempo.",
+        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+        "productNote": "Uma fórmula de suporte renal comumente prescrita por veterinários:"
       }
     ],
     "buyerGuideTitle": "4 Regras de Ouro para Escolher a Melhor Alimentação",
@@ -3382,6 +3540,19 @@ export const PAGE_TRANSLATIONS = {
     "readAnswer": "Ler Resposta Completa →",
       "referencedInAnswer": "この回答で参照されている商品",
       "buyNow": "今すぐ購入"
+  },
+  "bestFoodSingle": {
+    "rankBadge": "TOP 5 ALIMENTOS MAIS SAUDÁVEIS // RANKING",
+    "reviewedBy": "Revisado por: Nutricionista Veterinário Canino",
+    "nutritionalScore": "Pontuação Nutricional",
+    "strengths": "Pontos Fortes",
+    "tradeoffs": "Desvantagens",
+    "fullBreakdown": "Análise Completa",
+    "exampleProduct": "Exemplo de produto nessa categoria",
+    "previousRank": "Posição anterior",
+    "nextRank": "Próxima posição",
+    "backToRanking": "Voltar ao Ranking Completo do Top 5",
+    "viewOnAmazon": "Ver na Amazon"
   }
 },
   ko: {
@@ -3523,41 +3694,57 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "핵심 가이드 // 2026 최고의 강아지 사료 추천 및 순위",
     "rankingsTitle": "【2026년 최신】 반려견 건강수명을 늘려주는 사료 순위 TOP 5",
     "rankingsIntro": "수의 임상 영양학의 장기 추적 연구에 따르면, ‘최소한의 열 가공’과 ‘70% 이상의 천연 생체 수분’이 반려견의 신장 건강과 면역력을 결정짓는 가장 핵심적인 요소임이 입증되었습니다.",
+    "readMoreLabel": "더 자세히 보기 →",
     "rankings": [
       {
         "rank": "01",
         "title": "휴먼그레이드 저온 조리 화식 (자연식)",
         "score": "98/100",
         "pros": "사람이 먹을 수 있는 신선한 육류와 채소를 70℃ 저온에서 부드럽게 가열. 70% 이상의 천연 수분, 활성 소화 효소, 비타민이 온전히 보존됩니다.",
-        "cons": "냉장 또는 냉동 보관 필수. 시중 건식 사료에 비해 비용이 높은 편."
+        "cons": "냉장 또는 냉동 보관 필수. 시중 건식 사료에 비해 비용이 높은 편.",
+        "readMore": "저온 조리 화식(자연식)이 랭킹 최상위에 오른 이유는 식품 안전성을 희생하지 않으면서도 집에서 만든 밥과 가장 유사한 형태이기 때문입니다. 재료는 USDA 검사를 통과한 식품 가공 시설에서 공급받으며, 병원균을 사멸시키기에 충분하면서도 고온 압출 공정에서 파괴되는 민감한 단백질, 타우린, 수용성 비타민 B군은 보존할 수 있는 저온(약 71°C) 조리 방식을 사용합니다.\n\n수분 함량이 이미 70% 이상이기 때문에 신장에 가해지는 부담이 줄어들고, 건식 사료만 급여할 때 흔히 나타나는 만성적인 경미한 탈수 상태를 완화할 수 있습니다. 대부분 단일 단백질원을 사용하고 렌더링 육분이나 합성 보존제가 들어가지 않기 때문에, 회복기에 있는 반려견이나 갈증 반응이 둔해진 노령견, 음식 민감성이 있는 견종에게 특히 적합합니다.\n\n가장 큰 단점은 관리의 번거로움입니다. 냉장 또는 냉동 보관 공간이 필요하고, 급여 전 미리 해동해야 합니다. 직접 조리할 여건이 안 된다면, USDA 인증 주방에서 만든 상온 보관형 저온 조리 제품을 선택해 전체 수제식 루틴으로 전환하기 전에 이 카테고리를 부담 없이 시도해볼 수 있습니다.",
+        "productKey": "justfoodfordogs-chicken-white-rice",
+        "productNote": "이 카테고리를 상온 보관 형태로 시도해볼 수 있는 제품:"
       },
       {
         "rank": "02",
         "title": "자연의 섭리에 맞춘 80-10-10 생식 BARF 식단",
         "score": "95/100",
         "pros": "육식동물의 이상적 비율 (살코기 80%, 생뼈 10%, 내장 10%). 치석 형성 억제 및 탄탄한 근육 유지에 탁월.",
-        "cons": "철저한 위생 관리와 정밀한 칼슘-인 섭취 비율 계산이 요구됨."
+        "cons": "철저한 위생 관리와 정밀한 칼슈-인 섭취 비율 계산이 요구됨.",
+        "readMore": "80-10-10 비율(근육육 80%, 생곀 10%, 내장 10%)은 야생 개과 조상이 먹이 동물 한 마리를 통채로 섭취했을 때 얻는 영양 구성을 재현하도록 설계되었습니다. 제대로 구성하면 뱐 성분에서 자연스러운 칼슈 대 인 비율을 얻을 수 있고, 탄탄한 근육량 유지에 도움이 되며, 생뱐를 쉦는 물리적 작용이 치아의 치석을 제거하는 데도 도움을 줍니다.\n\n전혀 조리하지 않기 때문에 효소와 열에 민감한 아미노산이 온전히 유지됩니다. 다만 관건은 정밀함입니다. 안전한 생뱐를 조달하고 비율을 정확히 맞추는 데는 상당한 주의가 필요하며, 뱐 비율을 잘못 계산하는 것이 변비를 유발하거나 성장기 강아지의 경우 장기적으로 계거적 문제로 이어지는 가장 흔한 실수입니다. 생고기 역시 사람이 먹는 생식품과 동일한 수준의 위생 관리(별도 도마 사용, 냉장 보관, 신속한 뒷정리)가 필요합니다.\n\n대부분의 가정에서는 재료를 직접 계량해 완전히 맞춤화된 생식을 만들기 전 단계로, 이미 비율이 맞춰진 전문 제조 생식 제품으로 시작하는 것이 더 수월합니다.",
+        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+        "productNote": "비율 계산의 수고를 덜어주는 사전 균형 생식 제품:"
       },
       {
         "rank": "03",
         "title": "에어드라이 & 동결건조 생식 사료",
         "score": "91/100",
         "pros": "생식의 풍부한 영양가를 상온 보관 가능한 편의성으로 구현. 입맛이 까다로운 아이들을 위한 토핑으로 훌륭함.",
-        "cons": "신장 부담을 방지하기 위해 급여 전 미온수나 뼈 육수에 반드시 불려주어야 함."
+        "cons": "신장 부담을 방지하기 위해 급여 전 미온수나 뿈 육수에 반드시 불려주어야 함.",
+        "readMore": "에어드라이와 동결건조는 모두 낮은 온도에서 생고기의 수분을 제거하는 방식으로, 생식에 가까운 영양소와 효소 프로필을 유지하면서도 실온 보관이 가능하게 만들어 냉동 보관이 필요 없습니다. 동결건조는 저온 진공 공정을 사용해 에어드라이보다 영양소를 더 잘 보존하는 경향이 있지만, 파운드당 비용은 대체로 더 높습니다.\n\n두 형태 모두 휴대가 간편하고, 건식 사료에 섞어 기호성을 높이는 생식 토퍼로도 훌륭하게 활용됩니다. 급여 전 따뜻한 물이나 본브로스로 수분을 보충하면 개의 조상이 섭취했던 야생 식단에 더 가까운 수분 함량을 회복할 수 있어, 요로 결정이나 신장 부담이 우려되는 반려견에게 특히 유용합니다.\n\n가장 중요하게 고려할 점은 칼로리당 비용입니다. 수분 무게가 제거된 만큼 농축된 영양을 구매하는 셈이므로, 대형견의 유일한 주식으로 사용하기보다는 토퍼나 로테이션 식단으로 활용되는 경우가 많습니다.",
+        "productKey": "ziwi-peak-beef-chicken-bundle",
+        "productNote": "평이 좋은 에어드라이 제품:"
       },
       {
         "rank": "04",
         "title": "고단백 그레인프리 & 고대곡물 건식 사료 (키블)",
         "score": "78/100",
         "pros": "상온 장기 보관이 가능하며 대형견이나 다견 가정에서 경제적인 선택지.",
-        "cons": "200℃ 이상의 고온 압출 제조로 수분이 8~10%에 불과하며 전분 탄수화물이 40~50% 함유됨."
+        "cons": "200℃ 이상의 고온 압출 제조로 수분이 8~10%에 불과하며 전분 탄수화물이 40~50% 함유됨.",
+        "readMore": "프리미엄 건식 사료는 많은 가정에서 여전히 가장 실용적인 선택지입니다. 최대 1년까지 상온 보관이 가능하고, 자동 급식기로 급여량 조절이 쉬우며, 화식이나 생식에 비해 칼로리당 비용이 훨씬 저렴합니다.\n\n이 등급에서 가장 우수한 제품들은 모호한 '육류 부산물' 대신 구체적인 동물성 단백질원을 주원료로 내세우고, 옥수수나 밀 같은 저가 충전재 대신 귀리나 수수 같은 고대곱물로 탄수화물원을 구성하며, 중금속 검사를 위한 제3자 실험실 테스트를 거칩니다.\n\n단점은 압출 공정 자체에 있습니다. 200℃ 이상의 고온에 노출되면 열에 민감한 일부 비타민이 파괴되고 수분 함량이 약 10%까지 낮아지는데, 이 때문에 수의사들은 건식 사료만 급여하는 경우, 특히 요로 결정이 우려되는 반려견에게는 본브로스나 생식 토퍼를 소량 추가할 것을 권장하는 경우가 많습니다.",
+        "productKey": "orijen-original-grain-free-23lb",
+        "productNote": "이 카테고리의 고단백 홀프레이 제품:"
       },
       {
         "rank": "05",
         "title": "수의사 처방 전문 치료식 사료",
         "score": "72/100",
         "pros": "만성 신부전, 간 질환, 결석증 등 특정 임상 질환 관리에 맞춤 배합.",
-        "cons": "곡물성 충전재 비율이 높고 수의사의 처방이 필요함."
+        "cons": "공물성 충전재 비율이 높고 수의사의 처방이 필요함.",
+        "readMore": "처방식은 하나의 특정 진단 질환을 관리하기 위해 설계됩니다. 신장 질환에는 단백질과 인 함량을 낮춘 제품을, 심각한 음식 알레르기에는 면역계가 반응하지 않는 가수분해 단백질을, 스트루바이트 방광 결석에는 마그네슈과 pH를 조절한 제품을 사용하는 식입니다.\n\n일반적인 '건강함' 기준으로는 순위가 낮게 매겨지는 이유는 단순합니다. 평균적으로 건강한 개에게 최적화된 것이 아니라 의도적으로 제한적인 구성을 취하기 때문입니다. 예를 들어 신장 기능 저하를 완화하도록 설계된 제품은 의도적으로 시중에서 가장 단백질 함량이 높은 사료가 아닙니다.\n\n이러한 처방식은 수의사의 승인이 필요하며, 효과를 확인하기 위한 주기적인 혈액 검사가 동반되어야 합니다. 건강한 개에게 실제로 필요한 영양소를 제한하면 시간이 지나면서 해를 끼칠 수 있으므로, 임상적인 이유 없이 건강한 반려견에게 급여해서는 안 됩니다.",
+        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+        "productNote": "수의사가 흔히 처방하는 신장 관리용 처방식:"
       }
     ],
     "buyerGuideTitle": "최고의 사료를 선택하기 위한 4대 황금 원칙",
@@ -3943,6 +4130,19 @@ export const PAGE_TRANSLATIONS = {
     "readAnswer": "답변 전체 읽기 →",
       "referencedInAnswer": "이 답변에서 참조된 제품",
       "buyNow": "지금 구매"
+  },
+  "bestFoodSingle": {
+    "rankBadge": "건강 사료 TOP 5 // 순위",
+    "reviewedBy": "검증: 수의 임상 영양사",
+    "nutritionalScore": "영양 점수",
+    "strengths": "장점",
+    "tradeoffs": "단점",
+    "fullBreakdown": "상세 분석",
+    "exampleProduct": "이 카테고리의 예시 제품",
+    "previousRank": "이전 순위",
+    "nextRank": "다음 순위",
+    "backToRanking": "TOP 5 전체 랭킹으로 돌아가기",
+    "viewOnAmazon": "아마존에서 보기"
   }
 },
   it: {
@@ -4084,41 +4284,57 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "GUIDA COMPLETA // MIGLIOR CIBO PER CANI 2026",
     "rankingsTitle": "Quali Sono i 5 Cibi Più Sani per Cani nel 2026?",
     "rankingsIntro": "La ricerca veterinaria sulla longevità canina conferma che una lavorazione termica minima e un’idratazione biologica superiore al 70% sono i due fattori più determinanti per la vitalità e la salute dei reni.",
+    "readMoreLabel": "Leggi di più →",
     "rankings": [
       {
         "rank": "01",
         "title": "Cibo Fresco Casalingo Cotto a Bassa Temperatura di Grado Umano",
         "score": "98/100",
         "pros": "Vera carne e verdure cotte dolcemente a 70°C. Mantiene oltre il 70% di idratazione naturale, enzimi attivi e vitamine intatte.",
-        "cons": "Richiede conservazione in frigo o freezer. Costo leggermente superiore alle crocchette da supermercato."
+        "cons": "Richiede conservazione in frigo o freezer. Costo leggermente superiore alle crocchette da supermercato.",
+        "readMore": "Il cibo fresco cotto delicatamente si posiziona al primo posto della classifica perché riproduce un pasto casalingo senza sacrificare la sicurezza alimentare. Gli ingredienti provengono da stabilimenti per alimenti destinati al consumo umano ispezionati dalle autorità sanitarie, poi vengono cotti a bassa temperatura (circa 70°C) solo per il tempo necessario a eliminare i patogeni, preservando al contempo proteine delicate, taurina e vitamine del gruppo B idrosolubili che l'estrusione ad alta temperatura distrugge.\n\nPoiché l'alimento contiene già oltre il 70% di umidità, allevia il carico di lavoro renale e riduce la lieve disidratazione cronica tipica delle diete a base di sole crocchette. È una scelta particolarmente indicata per cani in convalescenza, anziani con uno stimolo della sete ridotto o razze predisposte a sensibilità alimentari, dato che le ricette sono generalmente monoproteiche e prive di farine di carne animale o conservanti sintetici.\n\nIl principale compromesso riguarda la logistica: richiede spazio in frigorifero o freezer e le porzioni devono essere scongelate in anticipo rispetto al pasto. Se non si è pronti a cucinarlo autonomamente, diversi marchi che utilizzano cucine certificate per uso umano vendono versioni a lunga conservazione dello stesso formato cotto delicatamente, un modo semplice per provare questa categoria prima di impegnarsi in una routine completamente casalinga.",
+        "productKey": "justfoodfordogs-chicken-white-rice",
+        "productNote": "Un'opzione a lunga conservazione per provare questa categoria:"
       },
       {
         "rank": "02",
         "title": "Dieta Cruda Ancestrale BARF 80-10-10",
         "score": "95/100",
         "pros": "Proporzione carnivora naturale: 80% polpa, 10% ossa polpose, 10% organi. Ideale per la salute dentale e massa magra tonica.",
-        "cons": "Richiede igiene scrupolosa nella manipolazione e un bilanciamento rigoroso del calcio."
+        "cons": "Richiede igiene scrupolosa nella manipolazione e un bilanciamento rigoroso del calcio.",
+        "readMore": "Il rapporto 80-10-10 (80% carne muscolare, 10% ossa crude commestibili, 10% organi secretori) è pensato per replicare ciò che un antenato canino selvatico riceverebbe da una preda intera. Se eseguito correttamente, garantisce un rapporto calcio-fosforo naturalmente equilibrato grazie al contenuto osseo, sostiene la massa muscolare magra e l'azione meccanica della masticazione delle ossa crude aiuta a rimuovere il tartaro dai denti.\n\nPoiché nulla viene cotto, enzimi e amminoacidi sensibili al calore rimangono completamente intatti. Il punto critico è la precisione: reperire ossa crude sicure e rispettare esattamente il rapporto richiedono vera disciplina, dato che un calcolo errato della percentuale di ossa è l'errore più comune, causa di stitichezza o, nel tempo, di problemi scheletrici nei cuccioli in crescita. La carne cruda va inoltre maneggiata con le stesse precauzioni igieniche di qualsiasi alimento crudo destinato al consumo umano (taglieri separati, refrigerazione, pulizia immediata).\n\nLa maggior parte delle famiglie trova più semplice iniziare con un prodotto crudo formulato professionalmente che già rispetta il rapporto corretto, prima di passare a pasti crudi completamente personalizzati, reperiti e pesati in casa.",
+        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+        "productNote": "Un'opzione cruda pre-bilanciata che elimina le congetture:"
       },
       {
         "rank": "03",
         "title": "Cibo Crudo Liofilizzato e Disidratato ad Aria",
         "score": "91/100",
         "pros": "Unisce la ricchezza nutrizionale della carne cruda alla comodità della conservazione a temperatura ambiente.",
-        "cons": "Va reidratato con acqua tiepida o brodo di ossa prima della somministrazione."
+        "cons": "Va reidratato con acqua tiepida o brodo di ossa prima della somministrazione.",
+        "readMore": "Sia l'essiccazione all'aria che la liofilizzazione rimuovono l'umidità dalla carne cruda a basse temperature, mantenendo il profilo nutrizionale e enzimatico vicino a quello del crudo e rendendo l'alimento conservabile a temperatura ambiente, senza bisogno del freezer. La liofilizzazione utilizza un processo sottovuoto a freddo che tende a preservare i nutrienti ancora meglio dell'essiccazione all'aria, anche se solitamente ha un costo più elevato al chilo.\n\nEntrambi i formati si trasportano facilmente e funzionano benissimo come topping crudo mescolato alle crocchette per aumentarne l'appetibilità. Reidratare con acqua tiepida o brodo d'ossa prima di servire aiuta a ripristinare un livello di umidità più vicino alla dieta ancestrale del cane, ed è particolarmente utile per i cani predisposti a cristalli urinari o a un affaticamento renale.\n\nLa considerazione principale è il costo per caloria: poiché il peso in acqua viene eliminato, si paga per una nutrizione concentrata, motivo per cui questo formato viene spesso usato come topping o come dieta a rotazione piuttosto che come unico alimento quotidiano per un cane di taglia grande.",
+        "productKey": "ziwi-peak-beef-chicken-bundle",
+        "productNote": "Un'opzione essiccata all'aria molto apprezzata:"
       },
       {
         "rank": "04",
         "title": "Crocchette ad Alto Contenuto Proteico Senza Cereali o Grani Antichi",
         "score": "78/100",
         "pros": "Pratiche, a lunga conservazione e sostenibili per famiglie con cani di grossa taglia.",
-        "cons": "Estrusione a oltre 200°C, solo 8-10% di umidità e 40-50% di amidi amidacei."
+        "cons": "Estrusione a oltre 200°C, solo 8-10% di umidità e 40-50% di amidi amidacei.",
+        "readMore": "Le crocchette premium restano l'opzione più pratica per molte famiglie: si conservano fino a un anno, sono facili da dosare con un distributore automatico e costano significativamente meno per caloria rispetto alle diete fresche o crude.\n\nLe formule migliori di questa fascia indicano in etichetta una proteina animale specifica invece di una vaga \"farina di carne\", limitano gli amidi a grani antichi come avena e sorgo invece di pesanti riempitivi a base di mais o frumento, e vengono sottoposte a test di laboratorio indipendenti per i metalli pesanti.\n\nIl compromesso è il processo di estrusione stesso: l'esposizione a temperature superiori ai 200°C distrugge alcune vitamine sensibili al calore e riduce l'umidità a circa il 10%, motivo per cui i veterinari raccomandano spesso di aggiungere un po' di brodo d'ossa o un topping crudo alle diete a base di sole crocchette, soprattutto per i cani predisposti a cristalli urinari.",
+        "productKey": "orijen-original-grain-free-23lb",
+        "productNote": "Una formula ad alto contenuto proteico, in stile WholePrey, in questa categoria:"
       },
       {
         "rank": "05",
         "title": "Diete Veterinarie Terapeutiche da Prescrizione",
         "score": "72/100",
         "pros": "Formulate specificamente per insufficienze renali, epatopatie o calcoli di struvite accertati.",
-        "cons": "Frequente impiego di sottoprodotti vegetali; richiedono prescrizione medica."
+        "cons": "Frequente impiego di sottoprodotti vegetali; richiedono prescrizione medica.",
+        "readMore": "Le diete terapeutiche sono progettate per gestire una specifica condizione diagnosticata: proteine e fosforo ridotti per la malattia renale, proteine idrolizzate a cui il sistema immunitario non può reagire per le gravi allergie alimentari, oppure magnesio e pH controllati per i calcoli vescicali di struvite.\n\nSi collocano più in basso in una classifica generale di \"alimenti più sani\" solo perché sono deliberatamente restrittive piuttosto che ottimizzate per un cane sano nella media; una formula pensata per alleviare il lavoro di reni compromessi, ad esempio, non è intenzionalmente l'alimento più ricco di proteine sul mercato.\n\nQueste diete richiedono l'approvazione del veterinario ed esami del sangue periodici per confermarne l'efficacia, e non dovrebbero mai essere somministrate a un cane sano senza una motivazione clinica, poiché limitare i nutrienti di cui un cane sano ha effettivamente bisogno può causare danni nel tempo.",
+        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+        "productNote": "Una comune formula veterinaria di supporto renale su prescrizione:"
       }
     ],
     "buyerGuideTitle": "4 Regole d’Oro per Scegliere il Miglior Alimento",
@@ -4504,6 +4720,19 @@ export const PAGE_TRANSLATIONS = {
     "readAnswer": "Leggi la Risposta Completa →",
       "referencedInAnswer": "Referenziato in questa risposta",
       "buyNow": "Acquista ora"
+  },
+  "bestFoodSingle": {
+    "rankBadge": "TOP 5 CIBI PIÙ SANI // POSIZIONE",
+    "reviewedBy": "Revisionato da: Nutrizionista Veterinario Canino",
+    "nutritionalScore": "Punteggio Nutrizionale",
+    "strengths": "Punti di Forza",
+    "tradeoffs": "Compromessi",
+    "fullBreakdown": "Analisi Completa",
+    "exampleProduct": "Prodotto di esempio in questa categoria",
+    "previousRank": "Posizione precedente",
+    "nextRank": "Posizione successiva",
+    "backToRanking": "Torna alla Classifica Completa Top 5",
+    "viewOnAmazon": "Vedi su Amazon"
   }
 },
 };
