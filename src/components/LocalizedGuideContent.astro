@@ -5,6 +5,7 @@ import { getPageTranslations } from '../i18n/pages';
 import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 import { getPrimaryBrandProduct } from '../data/affiliates';
 import { BEST_FOOD_RANKING_SLUGS } from '../data/bestFoodRankings';
+import { FEEDING_STYLES } from '../data/feedingStyles';
 
 const { kind } = Astro.props as { kind: 'bestFood' | 'recipes' | 'toxic' | 'brands' | 'allergies' };
 const lang = getLangFromUrl(Astro.url);
@@ -58,21 +59,19 @@ const p = getPageTranslations(lang)[kind] as any;
       </h2>
       <p>The modern pet nutrition landscape has evolved rapidly. Today's pet parents choose between three primary feeding styles:</p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
-        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
-          <div class="font-mono text-xs font-bold text-[#10b981] uppercase mb-1">Option 1</div>
-          <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] mb-2">Fresh Dog Food</h3>
-          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Gently cooked at ~160°F, preserving 70%+ moisture, heat-sensitive vitamins, and essential amino acids. Supports kidney health, coat sheen, and firm stools.</p>
-        </div>
-        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
-          <div class="font-mono text-xs font-bold text-[#7928ca] dark:text-[#a855f7] uppercase mb-1">Option 2</div>
-          <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] mb-2">Raw Dog Food (BARF)</h3>
-          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">80% muscle meat, 10% raw bone, 10% secreting organs. Mirrors ancestral ecology — natural enzymes, zero refined starches, optimal dental hygiene.</p>
-        </div>
-        <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
-          <div class="font-mono text-xs font-bold text-[#0070f3] dark:text-[#3291ff] uppercase mb-1">Option 3</div>
-          <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] mb-2">Superfood Kibble Toppers</h3>
-          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Adding 25–50% fresh whole-food toppers (bone broth, sardines, pumpkin) over standard kibble boosts bioavailable micronutrients by 40%+ while staying cost-effective.</p>
-        </div>
+        {FEEDING_STYLES.map((style) => (
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex flex-col">
+            <div class="font-mono text-xs font-bold uppercase mb-1" style={`color: ${style.accent}`}>{style.optionLabel}</div>
+            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] mb-2">{style.title}</h3>
+            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed flex-1">{style.summary}</p>
+            <a
+              href={translatePath(`/best-dog-food/feeding-style/${style.slug}`)}
+              class="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0070f3] hover:text-[#005ac2]"
+            >
+              Read more →
+            </a>
+          </div>
+        ))}
       </div>
       <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Want step-by-step blueprints? See our <a href={translatePath('/dog-food-recipes')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">homemade &amp; 80-10-10 raw BARF recipes guide</a>.</p>
     </section>

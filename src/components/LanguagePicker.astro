@@ -3,14 +3,7 @@ import { languages, type Lang } from '../i18n/ui';
 import { getLangFromUrl, getLocalizedPath, cleanPathname, useTranslations } from '../i18n/utils';
 
 function buildLocalizedHref(path: string, langCode: Lang) {
-  const targetUrl = getLocalizedPath(cleanPath, langCode);
-  if (!path || path === '/') {
-    return targetUrl;
-  }
-  if (path.startsWith('#')) {
-    return `${targetUrl}${path}`;
-  }
-  return `${targetUrl}${path}`;
+  return getLocalizedPath(path, langCode);
 }
 
 interface Props {
