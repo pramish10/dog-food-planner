@@ -64,6 +64,7 @@ const p = getPageTranslations(lang)[kind] as any;
           <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Adding 25–50% fresh whole-food toppers (bone broth, sardines, pumpkin) over standard kibble boosts bioavailable micronutrients by 40%+ while staying cost-effective.</p>
         </div>
       </div>
+      <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Want step-by-step blueprints? See our <a href={translatePath('/dog-food-recipes')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">homemade &amp; 80-10-10 raw BARF recipes guide</a>.</p>
     </section>
 
     {/* ── 3. Comparison Table ── */}
@@ -100,6 +101,7 @@ const p = getPageTranslations(lang)[kind] as any;
           <p class="text-xs">Wild Alaskan salmon oil (EPA/DHA) soothes the gut mucosal barrier and reduces chronic inflammation.</p>
         </div>
       </div>
+      <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">For a full 8-week elimination diet protocol and the top canine allergens to avoid, see our dedicated <a href={translatePath('/dog-food-allergies')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">Allergies &amp; Sensitive Stomach guide</a>.</p>
     </section>
 
     {/* ── 6. Puppy Nutrition ── */}
@@ -110,6 +112,7 @@ const p = getPageTranslations(lang)[kind] as any;
         <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">High Metabolic Burn:</strong> Young puppies (2–4 months) burn up to 3× their resting metabolic rate — serve 3–4 meals daily.</span></li>
         <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">Ca:P Ratio:</strong> Large breed puppies need a strictly calibrated Calcium:Phosphorus ratio (1.2:1 to 1.4:1) to prevent hip dysplasia.</span></li>
         <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">DHA for Brain Development:</strong> Supplement with fish oil — DHA supports optimal cognitive neural development in the first year.</span></li>
+        <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">Size-Specific Formulas Matter:</strong> Toy & small breed puppies need calorie-dense, bite-sized kibble to guard against hypoglycemia, while large & giant breed puppies need calorie-controlled growth formulas that slow bone development and reduce hip/elbow dysplasia risk.</span></li>
       </ul>
     </section>
 
@@ -130,10 +133,11 @@ const p = getPageTranslations(lang)[kind] as any;
 
     {/* ── 8. CTA ── */}
     <div class="p-6 sm:p-8 bg-[#1c0f00] dark:bg-[#1a1a1a] text-white rounded-2xl text-center space-y-3">
-      <h2 class="text-lg sm:text-xl font-bold text-white">100% Free — No Subscriptions, No Paywalls</h2>
-      <p class="text-xs sm:text-sm text-white/80 max-w-xl mx-auto leading-relaxed">Use our free calculator to plan healthy dog food recipes, check toxic ingredients, and print your customised feeding schedule today.</p>
+      <span class="inline-block font-mono text-[10px] uppercase tracking-wider text-[#e8a44a] bg-white/10 px-3 py-1 rounded-full">100% Free — No Subscriptions, No Paywalls</span>
+      <h2 class="text-lg sm:text-xl font-bold text-white">{p.ctaTitle}</h2>
+      <p class="text-xs sm:text-sm text-white/80 max-w-xl mx-auto leading-relaxed">{p.ctaDesc}</p>
       <a href={translatePath('/#planner-section')} class="inline-flex items-center gap-2 mt-2 px-6 py-2.5 bg-[#c47a2b] hover:bg-[#e8a44a] text-white text-xs font-bold rounded-full transition-colors">
-        Calculate Your Dog's Bowl →
+        {p.ctaBtn}
       </a>
     </div>
 

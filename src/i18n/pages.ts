@@ -496,7 +496,7 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "Answers to portion questions, feeding frequency, and best foods."
   },
   "comparisonTable": {
-    "eyebrow": "04 // CLINICAL COMPARISON",
+    "eyebrow": "CLINICAL COMPARISON // FRESH FOOD VS. KIBBLE",
     "title": "Why Biological Whole Food Trumps Kibble",
     "subtitle": "A side-by-side analysis of biological bioavailability, processing temperatures, and financial transparency.",
     "scrollHint": "↔ Scroll table horizontally",
@@ -1057,7 +1057,7 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "Respuestas sobre cálculo de raciones, número de tomas y mejores alimentos."
   },
   "comparisonTable": {
-    "eyebrow": "04 // COMPARATIVA CLÍNICA",
+    "eyebrow": "COMPARATIVA CLÍNICA // COMIDA FRESCA VS PIENSO SECO",
     "title": "Por Qué la Comida Real Supera al Pienso Seco",
     "subtitle": "Análisis exhaustivo de biodisponibilidad biológica, temperaturas de procesamiento y transparencia en costes.",
     "scrollHint": "↔ Desliza la tabla horizontalmente",
