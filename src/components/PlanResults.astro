@@ -186,10 +186,36 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     );
     const pool = safes.length ? safes : dietRecipes;
     const preferred = profile.proteinChoice?.toLowerCase();
+    // ── Smarter scoring: protein preference + health focus + life stage + BCS ──
     const scored = pool.map((r) => {
       let score = 0;
+      // Protein preference match (highest weight)
       if (preferred && preferred !== 'auto' && r.primaryProtein.toLowerCase() === preferred) score += 100;
-      if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes(profile.healthFocus?.toLowerCase()?.split(' ')[0] || ''))) score += 30;
+      // Health focus match — check all words in the focus string
+      const focusWords = (profile.healthFocus || '').toLowerCase().split(/[\s&]+/).filter((w: string) => w.length > 3);
+      focusWords.forEach((word: string) => {
+        if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes(word))) score += 25;
+      });
+      // Life stage bonuses
+      if (profile.ageStage === 'puppy-early' || profile.ageStage === 'puppy-late') {
+        if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('puppy'))) score += 40;
+      }
+      if (profile.ageStage === 'senior') {
+        if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('senior'))) score += 40;
+      }
+      // Weight management bonus for overweight dogs
+      const bcs = Number(profile.bcs || 5);
+      if ((bcs >= 7 || profile.targetGoal === 'lose') && r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('weight'))) score += 35;
+      // Cardiac bonus for heart-risk breeds
+      const heartBreeds = ['doberman', 'boxer', 'cavalier', 'golden retriever', 'irish wolfhound', 'great dane', 'saint bernard'];
+      if (heartBreeds.some(b => (profile.breed || '').toLowerCase().includes(b)) && r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('cardiac') || h.toLowerCase().includes('heart'))) score += 50;
+      // Allergy bonus — prefer novel proteins for allergy dogs
+      const hasAllergies = (profile.allergies || []).filter((a: string) => a !== 'none / no allergies').length > 0;
+      if (hasAllergies && r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('allerg'))) score += 35;
+      // Skin/coat bonus
+      if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('skin') || h.toLowerCase().includes('coat'))) {
+        if ((profile.healthFocus || '').toLowerCase().includes('skin') || (profile.healthFocus || '').toLowerCase().includes('coat')) score += 30;
+      }
       return { r, score };
     }).sort((a, b) => b.score - a.score);
     return { recipe: scored[0]?.r || null, hadNoSafeMatch: safes.length === 0 };
