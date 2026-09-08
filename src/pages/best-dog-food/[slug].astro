@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Footer from '../../components/Footer.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import { getPageTranslations } from '../../i18n/pages';
+import { AFFILIATE_PRODUCTS } from '../../data/affiliates';
+import { BEST_FOOD_RANKING_SLUGS } from '../../data/bestFoodRankings';
+
+const rankings = (getPageTranslations('en').bestFood as any).rankings as Array<{
+  rank: string;
+  title: string;
+  score: string;
+  pros: string;
+  cons: string;
+  readMore?: string;
+  productKey?: string;
+  productNote?: string;
+}>;
+
+export function getStaticPaths() {
+  return BEST_FOOD_RANKING_SLUGS.map((slug, idx) => ({
+    params: { slug },
+    props: { idx },
+  }));
+}
+
+const { idx } = Astro.props as { idx: number };
+const item = rankings[idx];
+
+if (!item || !item.readMore) {
+  return Astro.redirect('/best-dog-food');
+}
+
+const slug = BEST_FOOD_RANKING_SLUGS[idx];
+const product = item.productKey ? AFFILIATE_PRODUCTS[item.productKey] : null;
+const paragraphs = item.readMore.split('\n\n');
+
+const prevItem = idx > 0 ? { title: rankings[idx - 1].title, slug: BEST_FOOD_RANKING_SLUGS[idx - 1] } : null;
+const nextItem = idx < rankings.length - 1 ? { title: rankings[idx + 1].title, slug: BEST_FOOD_RANKING_SLUGS[idx + 1] } : null;
+
+const pageTitle = `${item.title} (${item.score}) | Best Dog Food 2026`;
+const pageDescription = `${item.pros} ${item.cons}`.slice(0, 155);
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": item.title,
+  "description": pageDescription,
+  "author": {
+    "@type": "Organization",
+    "name": "Dog Food Planner Nutrition Team",
+    "url": "https://dogfoodplanner.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dog Food Planner",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dogfoodplanner.com/logo.png"
+    }
+  },
+  "mainEntityOfPage": `https://dogfoodplanner.com/best-dog-food/${slug}`
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={`https://dogfoodplanner.com/best-dog-food/${slug}`}
+>
+  <Navbar />
+
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Best Dog Food', url: '/best-dog-food' },
+        { name: item.title }
+      ]}
+    />
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+
+      <!-- Header -->
+      <header class="mb-8">
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-3 py-1 rounded-full mb-3">
+          <span>TOP 5 HEALTHIEST DOG FOODS // RANK #{item.rank}</span>
+        </div>
+        <h1 class="text-[1.35rem] sm:text-3xl lg:text-4xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 leading-tight text-balance">
+          {item.title}
+        </h1>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8f8f8f] dark:text-[#737373] font-mono border-b border-[#ebebeb] dark:border-[#262626] pb-4">
+          <span>Nutritional Score: <strong class="text-[#0070f3]">{item.score}</strong></span>
+          <span>•</span>
+          <span>Reviewed by: <strong>Veterinary Canine Nutritionist</strong></span>
+        </div>
+      </header>
+
+      <!-- Pros / Cons callout -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        <div class="p-5 bg-white dark:bg-[#141414] rounded-2xl border-2 border-[#10b981]/40 shadow-sm">
+          <h2 class="text-xs font-mono uppercase font-bold text-[#10b981] mb-1.5">Strengths</h2>
+          <p class="text-sm text-[#171717] dark:text-[#ededed] leading-relaxed">{item.pros}</p>
+        </div>
+        <div class="p-5 bg-white dark:bg-[#141414] rounded-2xl border-2 border-[#f59e0b]/40 shadow-sm">
+          <h2 class="text-xs font-mono uppercase font-bold text-[#f59e0b] mb-1.5">Tradeoffs</h2>
+          <p class="text-sm text-[#171717] dark:text-[#ededed] leading-relaxed">{item.cons}</p>
+        </div>
+      </div>
+
+      <!-- Full breakdown -->
+      <article class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] mb-10 prose prose-neutral dark:prose-invert max-w-none text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed space-y-4">
+        <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] border-b border-[#ebebeb] dark:border-[#262626] pb-3 mb-4">
+          Full Breakdown
+        </h2>
+        {paragraphs.map(paragraph => <p>{paragraph}</p>)}
+
+        {product && (
+          <div class="not-prose mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] flex items-start justify-between gap-4">
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">
+                {item.productNote || 'Example product in this category'}
+              </p>
+              <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">{product.name}</p>
+            </div>
+            <AffiliateButton url={product.url} label="View on Amazon" size="sm" class="shrink-0 mt-1" />
+          </div>
+        )}
+      </article>
+
+      <!-- Prev / Next -->
+      {(prevItem || nextItem) && (
+        <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          {prevItem ? (
+            <a href={`/best-dog-food/${prevItem.slug}`} class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all">
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">← Previous rank</span>
+              <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">{prevItem.title}</span>
+            </a>
+          ) : <div />}
+          {nextItem && (
+            <a href={`/best-dog-food/${nextItem.slug}`} class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all text-right">
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">Next rank →</span>
+              <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">{nextItem.title}</span>
+            </a>
+          )}
+        </section>
+      )}
+
+      <!-- Back to list -->
+      <div class="mt-4 text-center">
+        <a
+          href="/best-dog-food"
+          class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
+        >
+          ← Back to the Full Top 5 Ranking
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />

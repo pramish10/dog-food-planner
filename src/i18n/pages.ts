@@ -148,35 +148,50 @@ export const PAGE_TRANSLATIONS = {
         "title": "Gently Cooked Human-Grade Fresh Food",
         "score": "98/100",
         "pros": "Real USDA meats and vegetables cooked at low temperatures (160°F). Retains 70%+ natural moisture, live enzymes, and bioavailable vitamins.",
-        "cons": "Requires freezer or refrigerator storage. Slightly higher cost than commercial kibble."
+        "cons": "Requires freezer or refrigerator storage. Slightly higher cost than commercial kibble.",
+        "readMore": "Gently cooked fresh food sits at the top of the ranking because it mimics a home-cooked meal without sacrificing food safety. Ingredients are sourced from USDA-inspected human food facilities, then cooked just long enough at low heat (around 160°F) to kill pathogens while preserving delicate proteins, taurine, and water-soluble B-vitamins that high-heat extrusion destroys.\n\nBecause the food already carries 70%+ moisture, it takes pressure off the kidneys and lowers the chronic low-grade dehydration common in kibble-only diets. It's an especially strong fit for dogs recovering from illness, seniors with a reduced thirst drive, or breeds prone to food sensitivities, since recipes are typically single-protein and free of rendered meat meals or synthetic preservatives.\n\nThe main tradeoff is logistics: it needs fridge or freezer space, and portions must be thawed ahead of feeding time. If you're not ready to cook it yourself, several USDA-kitchen brands sell shelf-stable versions of the same gently-cooked format, which is a low-effort way to try the category before committing to a full homemade routine.",
+        "productKey": "justfoodfordogs-chicken-white-rice",
+        "productNote": "A shelf-stable way to try this category:"
       },
       {
         "rank": "02",
         "title": "Ancestral 80-10-10 Raw BARF Diets",
         "score": "95/100",
         "pros": "Biologically appropriate balance: 80% muscle meat, 10% bone, 10% organ. Promotes optimal dental health and lean muscle tone.",
-        "cons": "Requires strict safe food handling and careful calcium balancing."
+        "cons": "Requires strict safe food handling and careful calcium balancing.",
+        "readMore": "The 80-10-10 ratio (80% muscle meat, 10% raw edible bone, 10% secreting organ) is built to replicate what a wild canine ancestor would get from a whole prey animal. Done correctly, it delivers naturally balanced calcium-to-phosphorus ratios straight from the bone content, supports lean muscle mass, and the mechanical action of chewing raw bone helps scrape tartar off teeth.\n\nBecause nothing is cooked, enzymes and heat-sensitive amino acids stay fully intact. The catch is precision: sourcing safe raw bone and hitting the ratio exactly both require real discipline, since miscalculating the bone percentage is the most common mistake that leads to constipation or, over time, skeletal issues in growing puppies. Raw meat also needs to be handled with the same hygiene as any raw human food (separate cutting boards, refrigeration, prompt cleanup).\n\nMost households find it easier to start with a professionally-formulated raw product that already hits the ratio before graduating to fully custom raw meals sourced and weighed at home.",
+        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+        "productNote": "A pre-balanced raw option that removes the guesswork:"
       },
       {
         "rank": "03",
         "title": "Air-Dried & Freeze-Dried Raw Dog Food",
         "score": "91/100",
         "pros": "Delivers raw nutritional integrity with ambient shelf stability. Excellent convenient topper for picky eaters.",
-        "cons": "Must be rehydrated with warm water or bone broth for optimal kidney function."
+        "cons": "Must be rehydrated with warm water or bone broth for optimal kidney function.",
+        "readMore": "Air-drying and freeze-drying both pull moisture out of raw meat at low temperatures, keeping the nutrient and enzyme profile close to raw while making the food shelf-stable at room temperature, so no freezer is required. Freeze-drying uses a cold vacuum process that tends to preserve nutrients even better than air-drying, though it usually costs more per pound.\n\nBoth formats travel well and work great as a raw topper mixed into kibble to boost palatability. Rehydrating with warm water or bone broth before serving helps restore moisture closer to a dog's ancestral wild diet, and is especially worthwhile for dogs prone to urinary crystals or kidney strain.\n\nThe main consideration is cost-per-calorie: since the water weight is removed, you're paying for concentrated nutrition, which is why it's often used as a topper or rotational diet rather than a large dog's sole daily feed.",
+        "productKey": "ziwi-peak-beef-chicken-bundle",
+        "productNote": "A well-reviewed air-dried option:"
       },
       {
         "rank": "04",
         "title": "High-Protein Grain-Free & Ancient Grain Kibble",
         "score": "78/100",
         "pros": "Convenient, shelf-stable, and budget-accessible for large and multi-dog households.",
-        "cons": "Undergoes 400°F extrusion, only 8-10% moisture, contains 40-50% high-glycemic starches."
+        "cons": "Undergoes 400°F extrusion, only 8-10% moisture, contains 40-50% high-glycemic starches.",
+        "readMore": "Premium kibble remains the most practical option for many households: it's shelf-stable for up to a year, easy to portion with an automatic feeder, and significantly cheaper per calorie than fresh or raw diets.\n\nThe best formulas in this tier lead with a named animal protein rather than a vague \"meat meal\", keep starches to ancient grains like oats and sorghum instead of heavy corn or wheat fillers, and undergo third-party lab testing for heavy metals.\n\nThe tradeoff is the extrusion process itself: exposure to temperatures above 400°F destroys some heat-sensitive vitamins and reduces moisture to roughly 10%, which is why vets often recommend adding a splash of bone broth or a raw topper to kibble-only diets, especially for dogs prone to urinary crystals.",
+        "productKey": "orijen-original-grain-free-23lb",
+        "productNote": "A high-protein, WholePrey formula in this category:"
       },
       {
         "rank": "05",
         "title": "Prescription Therapeutic Diets",
         "score": "72/100",
         "pros": "Formulated specifically for clinical renal failure, liver disease, or struvite bladder stones.",
-        "cons": "Often utilizes lower-grade carbohydrate fillers and requires veterinary prescription."
+        "cons": "Often utilizes lower-grade carbohydrate fillers and requires veterinary prescription.",
+        "readMore": "Therapeutic diets are engineered to manage one specific diagnosed condition: reduced protein and phosphorus for kidney disease, hydrolyzed proteins the immune system can't react to for severe food allergies, or controlled magnesium and pH for struvite bladder stones.\n\nThey rank lower on a general \"healthiest\" scale only because they're deliberately restrictive rather than optimized for an average healthy dog; a formula built to spare failing kidneys, for example, is intentionally not the most protein-dense food on the market.\n\nThese diets require veterinary sign-off and periodic bloodwork to confirm they're working, and should never be fed to a healthy dog without a clinical reason, since restricting nutrients a healthy dog actually needs can cause harm over time.",
+        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+        "productNote": "A common vet-prescribed kidney-support formula:"
       }
     ],
     "buyerGuideTitle": "4 Golden Rules for Choosing the Best Dog Food",
