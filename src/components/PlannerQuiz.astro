@@ -892,7 +892,23 @@ const TOTAL_STEPS = 4;
     showStep(1);
   });
 
-  restorePlannerState();
+  // ── If user navigated here via a "Plan Bowl" / CTA link from another page,
+  //    always start fresh at step 1 instead of restoring a previous session ──
+  (function () {
+    var NAV_FLAG = 'dfp-navigate-to-planner';
+    var shouldReset = false;
+    try { shouldReset = !!sessionStorage.getItem(NAV_FLAG); } catch (_) {}
+
+    if (shouldReset) {
+      // Flag is consumed by PlanResults — just ensure planner starts at step 1
+      currentStep = 1;
+      const form = document.getElementById('dog-planner-form') as HTMLFormElement | null;
+      if (form) form.reset();
+    } else {
+      restorePlannerState();
+    }
+  })();
+
   syncNoneVisual();
   syncProteinBlocking();
   showStep(currentStep);

@@ -2,11 +2,13 @@
 import ComparisonTable from './ComparisonTable.astro';
 import AffiliateButton from './AffiliateButton.astro';
 import { getPageTranslations } from '../i18n/pages';
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 import { getPrimaryBrandProduct } from '../data/affiliates';
 
 const { kind } = Astro.props as { kind: 'bestFood' | 'recipes' | 'toxic' | 'brands' | 'allergies' };
-const p = getPageTranslations(getLangFromUrl(Astro.url))[kind] as any;
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const p = getPageTranslations(lang)[kind] as any;
 ---
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
@@ -123,14 +125,14 @@ const p = getPageTranslations(getLangFromUrl(Astro.url))[kind] as any;
         <div class="flex justify-between"><span>Wild Alaskan Salmon Oil (EPA/DHA)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">3%</span></div>
         <div class="flex justify-between"><span>Eggshell Calcium & Kelp Mineral Blend</span><span class="font-bold text-[#171717] dark:text-[#ededed]">4%</span></div>
       </div>
-      <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Use the <a href="/#planner-section" class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">free calculator</a> to convert these percentages into exact gram measurements for your dog's weight.</p>
+      <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Use the <a href={translatePath('/#planner-section')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">free calculator</a> to convert these percentages into exact gram measurements for your dog's weight.</p>
     </section>
 
     {/* ── 8. CTA ── */}
     <div class="p-6 sm:p-8 bg-[#1c0f00] dark:bg-[#1a1a1a] text-white rounded-2xl text-center space-y-3">
       <h2 class="text-lg sm:text-xl font-bold text-white">100% Free — No Subscriptions, No Paywalls</h2>
       <p class="text-xs sm:text-sm text-white/80 max-w-xl mx-auto leading-relaxed">Use our free calculator to plan healthy dog food recipes, check toxic ingredients, and print your customised feeding schedule today.</p>
-      <a href="/#planner-section" class="inline-flex items-center gap-2 mt-2 px-6 py-2.5 bg-[#c47a2b] hover:bg-[#e8a44a] text-white text-xs font-bold rounded-full transition-colors">
+      <a href={translatePath('/#planner-section')} class="inline-flex items-center gap-2 mt-2 px-6 py-2.5 bg-[#c47a2b] hover:bg-[#e8a44a] text-white text-xs font-bold rounded-full transition-colors">
         Calculate Your Dog's Bowl →
       </a>
     </div>

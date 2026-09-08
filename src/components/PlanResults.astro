@@ -411,7 +411,55 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     });
   });
 
-  restoreResultsState();
+  // ── Cross-page navigation: if the user clicked "Plan Bowl" from another page,
+  //    skip restoring results and go straight to the planner instead ──────────
+  (function () {
+    var NAV_FLAG = 'dfp-navigate-to-planner';
+    var shouldGoToPlanner = false;
+    try { shouldGoToPlanner = !!sessionStorage.getItem(NAV_FLAG); } catch (_) {}
+
+    if (shouldGoToPlanner) {
+      try { sessionStorage.removeItem(NAV_FLAG); } catch (_) {}
+      // Make sure planner is visible and results stay hidden
+      var plannerEl = document.getElementById('planner-section');
+      if (plannerEl) {
+        plannerEl.classList.remove('hidden');
+        // Scroll after a short tick so the layout has settled
+        setTimeout(function () {
+          plannerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+      }
+      // Do NOT call restoreResultsState — we want the planner, not the results
+      return;
+    }
+
+    // Check if the user navigated here from another page (e.g. "Calculate Your
+    // Dog's Bowl" CTA). If results exist, restore them and scroll into view.
+    var cameFromOtherPage = false;
+    try {
+      // performance.navigation is legacy but widely supported; Navigation API
+      // is the modern alternative. We fall back gracefully if neither exists.
+      if (typeof performance !== 'undefined' && performance.getEntriesByType) {
+        var navEntries = performance.getEntriesByType('navigation');
+        if (navEntries.length && (navEntries[0] as any).type === 'navigate') {
+          cameFromOtherPage = true;
+        }
+      }
+    } catch (_) {}
+
+    restoreResultsState();
+
+    // If we restored results and the user came here via a cross-page link,
+    // scroll the results section into view after a short tick.
+    if (cameFromOtherPage) {
+      setTimeout(function () {
+        var resultsEl = document.getElementById('results-section');
+        if (resultsEl && !resultsEl.classList.contains('hidden')) {
+          resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 80);
+    }
+  })();
 
   function startOver() {
     const resultsSection = document.getElementById('results-section') as HTMLElement;

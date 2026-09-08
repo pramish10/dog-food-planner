@@ -180,6 +180,47 @@ const {
   <body class="bg-[#fafafa] dark:bg-[#0d0d0d] text-[#4d4d4d] dark:text-[#a1a1a1] antialiased selection:bg-[#0070f3] selection:text-white min-h-screen flex flex-col justify-between pb-[env(safe-area-inset-bottom)] overflow-x-clip">
     <slot />
     <script is:inline>
+      // ── Site-wide: "Plan Bowl" / #planner-section link handler ──────────────
+      // Works from ANY page on the site.
+      (function () {
+        var NAV_FLAG = 'dfp-navigate-to-planner';
+
+        document.addEventListener('click', function (e) {
+          var link = e.target && e.target.closest('a[href*="#planner-section"]');
+          if (!link) return;
+
+          var href = link.getAttribute('href') || '';
+          var plannerSection  = document.getElementById('planner-section');
+          var resultsSection  = document.getElementById('results-section');
+
+          // ── Case 1: We're already on the home page (planner exists in DOM) ──
+          if (plannerSection) {
+            // Results are showing — scroll to them instead of resetting
+            if (resultsSection && !resultsSection.classList.contains('hidden')) {
+              e.preventDefault();
+              resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            // Planner already visible — let the default anchor scroll happen
+            return;
+          }
+
+          // ── Case 2: We're on a different page ──
+          // If the user already has results saved, navigate home and let the
+          // results restore automatically (don't set the reset flag).
+          // Only set the reset flag when there are no saved results, so the
+          // planner starts fresh at step 1.
+          var hasResults = false;
+          try { hasResults = !!sessionStorage.getItem('dfp-results-state'); } catch (_) {}
+
+          if (!hasResults) {
+            try { sessionStorage.setItem(NAV_FLAG, '1'); } catch (_) {}
+          }
+          // Let the browser navigate normally (href="/#planner-section")
+        });
+      })();
+    </script>
+
+    <script is:inline>
       (function () {
         const KEY = 'dfp-language-switch-scroll';
         const raw = sessionStorage.getItem(KEY);
