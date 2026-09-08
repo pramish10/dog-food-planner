@@ -40,9 +40,9 @@ export const RECIPES: MealRecipe[] = [
     description: 'Lean chicken, easy-to-digest rice, pumpkin, and green vegetables. Each ingredient is shown below with the amount to weigh for your dog.',
     macroProfile: { proteinPct: 46, fatPct: 29, carbsPct: 5, moisturePct: 73, fiberPct: 3, caPhosphorusRatio: '1.2 : 1', kcalPerGram: 1.25 },
     ingredients: [
-      { name: 'Lean ground chicken', category: 'Muscle Meat', percentage: 62, purpose: 'Fresh lean protein base — high-quality amino acids for muscle maintenance', allergens: ['chicken', 'poultry'] },
+      { name: 'Lean ground chicken', category: 'Muscle Meat', percentage: 62, purpose: 'Fresh lean protein base — high-quality amino acids for muscle maintenance', allergens: ['chicken', 'poultry'], affiliateUrl: 'https://amzn.to/4xEuafH' },
       { name: 'Chicken hearts', category: 'Organ', percentage: 8, purpose: 'Natural taurine, CoQ10 & B12', allergens: ['chicken', 'poultry'], affiliateUrl: 'https://amzn.to/4ctpLUu' },
-      { name: 'Cooked white rice', category: 'Vegetables & Greens', percentage: 12, purpose: 'Easy-digest carbohydrate base' },
+      { name: 'Cooked white rice', category: 'Vegetables & Greens', percentage: 12, purpose: 'Easy-digest carbohydrate base', affiliateUrl: 'https://amzn.to/3SrJddG' },
       { name: 'Plain pumpkin purée', category: 'Vegetables & Greens', percentage: 10, purpose: 'Gentle fibre for digestion', affiliateUrl: 'https://amzn.to/4xINd8W' },
       { name: 'Steamed zucchini', category: 'Vegetables & Greens', percentage: 4, purpose: 'Hydration & potassium', affiliateUrl: 'https://amzn.to/4xPVcB1' },
       { name: 'Vitamins & Supplements', category: 'Natural Supplements', percentage: 4, purpose: 'Calcium & vitamin blend for homemade meals', affiliateUrl: 'https://amzn.to/4haNVWy' }
