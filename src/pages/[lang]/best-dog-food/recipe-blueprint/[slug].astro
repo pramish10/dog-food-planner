@@ -33,6 +33,9 @@ if (!item) {
   return Astro.redirect(translatePath('/best-dog-food'));
 }
 
+const prevItem = idx > 0 ? blueprints[idx - 1] : null;
+const nextItem = idx < blueprints.length - 1 ? blueprints[idx + 1] : null;
+
 const pageTitle = `${item.name}: ${p.titleSuffix}`;
 const pageDescription = item.shortDesc.slice(0, 155);
 
@@ -77,7 +80,7 @@ const articleJsonLd = {
 >
   <Navbar />
 
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+  <main class="min-h-screen page-warm-bg">
     <Breadcrumbs
       items={[
         { name: t('nav.brand') || 'Home', url: translatePath('/') },
@@ -165,20 +168,17 @@ const articleJsonLd = {
         <!-- Visual Multi-Color Ratio Distribution Bar -->
         <div class="space-y-2">
           <div class="flex h-4 w-full rounded-full overflow-hidden shadow-inner bg-[#f0f0f0] dark:bg-[#262626]">
-            <div class="bg-[#0070f3]" style="width: 65%"></div>
-            <div class="bg-[#7928ca]" style="width: 10%"></div>
-            <div class="bg-[#f5a623]" style="width: 10%"></div>
-            <div class="bg-[#10b981]" style="width: 8%"></div>
-            <div class="bg-[#e11d48]" style="width: 4%"></div>
-            <div class="bg-[#06b6d4]" style="width: 3%"></div>
+            {item.ingredients.map((ing) => (
+              <div style={`width: ${ing.percentage}%; background-color: ${ing.color};`} title={`${ing.percentage}% ${ing.name}`}></div>
+            ))}
           </div>
           <div class="flex flex-wrap items-center justify-between text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] gap-2 pt-1">
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#0070f3] inline-block"></span> 65%</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#7928ca] inline-block"></span> 10%</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#f5a623] inline-block"></span> 10%</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#10b981] inline-block"></span> 8%</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#e11d48] inline-block"></span> 4%</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#06b6d4] inline-block"></span> 3%</span>
+            {item.ingredients.map((ing) => (
+              <span class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full inline-block" style={`background-color: ${ing.color};`}></span>
+                {ing.percentage}% {ing.name.split('(')[0].trim()}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -343,9 +343,10 @@ const articleJsonLd = {
                 <th class="py-2.5 pr-4">{p.dogWeightCol}</th>
                 <th class="py-2.5 px-3">{p.dailyGramsCol}</th>
                 <th class="py-2.5 px-3">{p.dailyKcalCol}</th>
-                <th class="py-2.5 px-3">{p.turkeyCol}</th>
-                <th class="py-2.5 px-3">{p.organsCol}</th>
-                <th class="py-2.5 pl-3">Supplements (Oils & Calcium)</th>
+                <th class="py-2.5 px-3">{p.proteinCol}</th>
+                <th class="py-2.5 px-3">{p.organCol}</th>
+                <th class="py-2.5 px-3">{p.produceCol}</th>
+                <th class="py-2.5 pl-3">{p.supplementsCol}</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
@@ -354,9 +355,10 @@ const articleJsonLd = {
                   <td class="py-3 pr-4 font-semibold text-[#171717] dark:text-[#ededed] whitespace-nowrap">{ref.dogWeight}</td>
                   <td class="py-3 px-3 font-mono font-bold text-[#0070f3] dark:text-[#3291ff] whitespace-nowrap">{ref.dailyGramsTotal}</td>
                   <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.dailyKcal}</td>
-                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.turkeyGrams}</td>
-                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.organsGrams}</td>
-                  <td class="py-3 pl-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap font-mono text-[11px]">{ref.salmonOilGrams} / {ref.calciumKelpGrams}</td>
+                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.mainProtein}</td>
+                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.organMeat}</td>
+                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.produceAndCarbs}</td>
+                  <td class="py-3 pl-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap font-mono text-[11px]">{ref.supplements}</td>
                 </tr>
               ))}
             </tbody>
@@ -474,8 +476,42 @@ const articleJsonLd = {
         </div>
       </section>
 
+      <!-- Prev / Next Navigation -->
+      {(prevItem || nextItem) && (
+        <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {prevItem ? (
+            <a
+              href={translatePath(`/best-dog-food/recipe-blueprint/${prevItem.slug}`)}
+              class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                ← {p.prevBlueprint}
+              </span>
+              <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">
+                {prevItem.name}
+              </span>
+            </a>
+          ) : (
+            <div />
+          )}
+          {nextItem && (
+            <a
+              href={translatePath(`/best-dog-food/recipe-blueprint/${nextItem.slug}`)}
+              class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all sm:text-right"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                {p.nextBlueprint} →
+              </span>
+              <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">
+                {nextItem.name}
+              </span>
+            </a>
+          )}
+        </section>
+      )}
+
       <!-- Back Link -->
-      <div class="text-center pt-4">
+      <div class="text-center pt-2">
         <a
           href={translatePath('/best-dog-food')}
           class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"

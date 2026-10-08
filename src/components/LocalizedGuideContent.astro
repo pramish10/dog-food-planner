@@ -1,5 +1,4 @@
 ---
-import ComparisonTable from './ComparisonTable.astro';
 import AffiliateButton from './AffiliateButton.astro';
 import { getPageTranslations } from '../i18n/pages';
 import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
@@ -89,10 +88,7 @@ const flagshipBlueprint = recipeBlueprints[0];
       <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">{fsI18n.footerText} <a href={translatePath('/dog-food-recipes')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">{fsI18n.footerLink}</a>.</p>
     </section>
 
-    {/* ── 3. Comparison Table ── */}
-    <ComparisonTable />
-
-    {/* ── 4. Buyer Guide ── */}
+    {/* ── 3. Buyer Guide ── */}
     <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
       <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.buyerGuideTitle}</h2>
       <div class="grid sm:grid-cols-2 gap-4">
@@ -118,7 +114,7 @@ const flagshipBlueprint = recipeBlueprints[0];
       </div>
     </section>
 
-    {/* ── 5. Sensitive Stomach & Allergies ── */}
+    {/* ── 4. Sensitive Stomach & Allergies ── */}
     <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
       <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{ssI18n.title}</h2>
       <p>{ssI18n.intro}</p>
@@ -141,7 +137,7 @@ const flagshipBlueprint = recipeBlueprints[0];
       <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">{ssI18n.footerText} <a href={translatePath('/dog-food-allergies')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">{ssI18n.footerLink}</a>.</p>
     </section>
 
-    {/* ── 6. Puppy Nutrition ── */}
+    {/* ── 5. Puppy Nutrition ── */}
     <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
       <div>
         <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{pnI18n.title}</h2>
@@ -174,37 +170,41 @@ const flagshipBlueprint = recipeBlueprints[0];
       </p>
     </section>
 
-    {/* ── 7. DIY Recipe Blueprint ── */}
+    {/* ── 6. DIY Recipe Blueprint ── */}
     <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
       <div>
         <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{rbI18n.title}</h2>
         <p class="mt-2 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">{rbI18n.intro}</p>
       </div>
 
-      <article class="p-5 sm:p-6 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
-        <div>
-          <div class="inline-flex items-center gap-1.5 font-mono text-[11px] text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-3">
-            <span>{flagshipBlueprint.badge}</span>
-          </div>
-          <h3 class="font-bold text-base sm:text-lg text-[#171717] dark:text-[#ededed] mb-2 leading-snug">
-            {flagshipBlueprint.name}
-          </h3>
-          <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
-            {flagshipBlueprint.shortDesc}
-          </p>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+        {recipeBlueprints.map((blueprint) => (
+          <article class="p-5 sm:p-6 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-1.5 font-mono text-[11px] text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-3">
+                <span>{blueprint.badge}</span>
+              </div>
+              <h3 class="font-bold text-base sm:text-lg text-[#171717] dark:text-[#ededed] mb-2 leading-snug">
+                {blueprint.name}
+              </h3>
+              <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                {blueprint.shortDesc}
+              </p>
+            </div>
 
-        <div class="mt-4 pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center justify-between gap-3">
-          <a
-            href={translatePath(`/best-dog-food/recipe-blueprint/${flagshipBlueprint.slug}`)}
-            class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0070f3] hover:text-[#005ac2] dark:text-[#3291ff] dark:hover:text-[#60a5fa] group"
-          >
-            <span>{rbI18n.readMoreBtn}</span>
-          </a>
-        </div>
-      </article>
+            <div class="mt-4 pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center justify-between gap-3">
+              <a
+                href={translatePath(`/best-dog-food/recipe-blueprint/${blueprint.slug}`)}
+                class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0070f3] hover:text-[#005ac2] dark:text-[#3291ff] dark:hover:text-[#60a5fa] group"
+              >
+                <span>{rbI18n.readMoreBtn}</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
 
-      <p class="text-xs text-[#8f8f8f] dark:text-[#737373] pt-1">
+      <p class="text-xs text-[#8f8f8f] dark:text-[#737373] pt-2">
         {rbI18n.footerText} <a href={translatePath('/#planner-section')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">{rbI18n.footerLink}</a>.
       </p>
     </section>
