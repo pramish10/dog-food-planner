@@ -9,6 +9,7 @@ import { getFeedingStyles, FEEDING_STYLES_SECTION_I18N } from '../data/feedingSt
 import { GOLDEN_RULE_SLUGS } from '../data/goldenRules';
 import { getSensitiveStomachPillars, SENSITIVE_STOMACH_SECTION_I18N } from '../data/sensitiveStomach';
 import { getPuppyNutritionRequirements, PUPPY_NUTRITION_SECTION_I18N } from '../data/puppyNutrition';
+import { getRecipeBlueprints, RECIPE_BLUEPRINT_SECTION_I18N } from '../data/recipeBlueprint';
 
 const { kind } = Astro.props as { kind: 'bestFood' | 'recipes' | 'toxic' | 'brands' | 'allergies' };
 const lang = getLangFromUrl(Astro.url);
@@ -20,6 +21,9 @@ const sensitivePillars = getSensitiveStomachPillars(lang);
 const ssI18n = SENSITIVE_STOMACH_SECTION_I18N[lang] || SENSITIVE_STOMACH_SECTION_I18N.en;
 const puppyRequirements = getPuppyNutritionRequirements(lang);
 const pnI18n = PUPPY_NUTRITION_SECTION_I18N[lang] || PUPPY_NUTRITION_SECTION_I18N.en;
+const recipeBlueprints = getRecipeBlueprints(lang);
+const rbI18n = RECIPE_BLUEPRINT_SECTION_I18N[lang] || RECIPE_BLUEPRINT_SECTION_I18N.en;
+const flagshipBlueprint = recipeBlueprints[0];
 ---
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
@@ -171,18 +175,38 @@ const pnI18n = PUPPY_NUTRITION_SECTION_I18N[lang] || PUPPY_NUTRITION_SECTION_I18
     </section>
 
     {/* ── 7. DIY Recipe Blueprint ── */}
-    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
-      <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">Veterinary-Approved Homemade Recipe Blueprint</h2>
-      <p>A complete and balanced recipe for adult canine maintenance:</p>
-      <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] font-mono text-xs space-y-2 mt-2">
-        <div class="flex justify-between"><span>USDA Lean Ground Turkey (93/7)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">65%</span></div>
-        <div class="flex justify-between"><span>Turkey Hearts & Gizzards (Taurine source)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">10%</span></div>
-        <div class="flex justify-between"><span>Organic Pumpkin Puree (Digestive fiber)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">10%</span></div>
-        <div class="flex justify-between"><span>Steamed Baby Spinach & Zucchini</span><span class="font-bold text-[#171717] dark:text-[#ededed]">8%</span></div>
-        <div class="flex justify-between"><span>Wild Alaskan Salmon Oil (EPA/DHA)</span><span class="font-bold text-[#171717] dark:text-[#ededed]">3%</span></div>
-        <div class="flex justify-between"><span>Eggshell Calcium & Kelp Mineral Blend</span><span class="font-bold text-[#171717] dark:text-[#ededed]">4%</span></div>
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{rbI18n.title}</h2>
+        <p class="mt-2 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">{rbI18n.intro}</p>
       </div>
-      <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">Use the <a href={translatePath('/#planner-section')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">free calculator</a> to convert these percentages into exact gram measurements for your dog's weight.</p>
+
+      <article class="p-5 sm:p-6 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+        <div>
+          <div class="inline-flex items-center gap-1.5 font-mono text-[11px] text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-3">
+            <span>{flagshipBlueprint.badge}</span>
+          </div>
+          <h3 class="font-bold text-base sm:text-lg text-[#171717] dark:text-[#ededed] mb-2 leading-snug">
+            {flagshipBlueprint.name}
+          </h3>
+          <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+            {flagshipBlueprint.shortDesc}
+          </p>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center justify-between gap-3">
+          <a
+            href={translatePath(`/best-dog-food/recipe-blueprint/${flagshipBlueprint.slug}`)}
+            class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0070f3] hover:text-[#005ac2] dark:text-[#3291ff] dark:hover:text-[#60a5fa] group"
+          >
+            <span>{rbI18n.readMoreBtn}</span>
+          </a>
+        </div>
+      </article>
+
+      <p class="text-xs text-[#8f8f8f] dark:text-[#737373] pt-1">
+        {rbI18n.footerText} <a href={translatePath('/#planner-section')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">{rbI18n.footerLink}</a>.
+      </p>
     </section>
 
 

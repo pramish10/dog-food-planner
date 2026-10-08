@@ -1,0 +1,492 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Navbar from '../../../../components/Navbar.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
+import Footer from '../../../../components/Footer.astro';
+import AffiliateButton from '../../../../components/AffiliateButton.astro';
+import { useTranslations, useTranslatedPath } from '../../../../i18n/utils';
+import {
+  RECIPE_BLUEPRINT_SLUGS,
+  getRecipeBlueprints,
+  RECIPE_BLUEPRINT_PAGE_I18N,
+} from '../../../../data/recipeBlueprint';
+import type { Lang } from '../../../../i18n/ui';
+
+export function getStaticPaths() {
+  const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
+  return targetLangs.flatMap((lang) =>
+    RECIPE_BLUEPRINT_SLUGS.map((slug, idx) => ({
+      params: { lang, slug },
+      props: { idx, lang },
+    }))
+  );
+}
+
+const { idx, lang } = Astro.props as { idx: number; lang: Lang };
+const blueprints = getRecipeBlueprints(lang);
+const item = blueprints[idx];
+const p = RECIPE_BLUEPRINT_PAGE_I18N[lang] || RECIPE_BLUEPRINT_PAGE_I18N.en;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+if (!item) {
+  return Astro.redirect(translatePath('/best-dog-food'));
+}
+
+const pageTitle = `${item.name}: ${p.titleSuffix}`;
+const pageDescription = item.shortDesc.slice(0, 155);
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: item.name,
+  description: pageDescription,
+  inLanguage: lang,
+  author: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner Clinical Veterinary Nutrition Team',
+    url: 'https://dogfoodplanner.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://dogfoodplanner.com/logo.png',
+    },
+  },
+  suitableForDiet: 'https://schema.org/CanineNutrition',
+  recipeCategory: 'Dog Food',
+  recipeCuisine: 'Veterinary Canine Nutrition',
+  recipeIngredient: item.ingredients.map(
+    (ing) => `${ing.percentage}% ${ing.name} (${ing.role})`
+  ),
+  recipeInstructions: item.prepProtocol.map((step) => ({
+    '@type': 'HowToStep',
+    name: step.title,
+    text: step.instruction,
+  })),
+  mainEntityOfPage: `https://dogfoodplanner.com/${lang}/best-dog-food/recipe-blueprint/${item.slug}`,
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={`https://dogfoodplanner.com/${lang}/best-dog-food/recipe-blueprint/${item.slug}`}
+>
+  <Navbar />
+
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs
+      items={[
+        { name: t('nav.brand') || 'Home', url: translatePath('/') },
+        { name: t('nav.bestDogFood') || 'Best Dog Food', url: translatePath('/best-dog-food') },
+        { name: item.name },
+      ]}
+    />
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 space-y-10">
+      <!-- Header -->
+      <header class="space-y-4">
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-3 py-1 rounded-full">
+          <span>{p.badge}</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight leading-tight text-balance">
+          {item.name}
+        </h1>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#8f8f8f] dark:text-[#737373] font-mono border-b border-[#ebebeb] dark:border-[#262626] pb-4">
+          <span class="text-[#0070f3] dark:text-[#3291ff] font-semibold">{item.targetAudience}</span>
+          <span>•</span>
+          <span>{p.reviewedBy}</span>
+        </div>
+      </header>
+
+      <!-- Executive Summary Card -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] shadow-sm space-y-3">
+        <div class="text-[11px] font-mono uppercase tracking-wider text-[#0070f3] dark:text-[#3291ff] font-semibold">
+          Veterinary Clinical Overview
+        </div>
+        <p class="text-sm sm:text-base text-[#171717] dark:text-[#ededed] font-medium leading-relaxed">
+          {item.executiveSummary}
+        </p>
+      </section>
+
+      <!-- Calculated Dry Matter Macro Profile -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.macroTitle}
+          </h2>
+          <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1 font-mono">
+            Laboratory Dry Matter Basis // AAFCO & NRC Adult Maintenance Standard
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="block text-[11px] text-[#8f8f8f] dark:text-[#737373] uppercase font-mono">{p.proteinLabel}</span>
+            <span class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed]">{item.macroProfile.proteinDm}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="block text-[11px] text-[#8f8f8f] dark:text-[#737373] uppercase font-mono">{p.fatLabel}</span>
+            <span class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed]">{item.macroProfile.fatDm}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="block text-[11px] text-[#8f8f8f] dark:text-[#737373] uppercase font-mono">{p.carbsLabel}</span>
+            <span class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed]">{item.macroProfile.carbsDm}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="block text-[11px] text-[#8f8f8f] dark:text-[#737373] uppercase font-mono">{p.moistureLabel}</span>
+            <span class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed]">{item.macroProfile.moisture}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="block text-[11px] text-[#8f8f8f] dark:text-[#737373] uppercase font-mono">{p.caRatioLabel}</span>
+            <span class="text-base sm:text-lg font-bold text-[#10b981] dark:text-[#34d399]">{item.macroProfile.caPhosphorusRatio}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="block text-[11px] text-[#8f8f8f] dark:text-[#737373] uppercase font-mono">{p.energyDensityLabel}</span>
+            <span class="text-xs sm:text-sm font-bold text-[#171717] dark:text-[#ededed]">{item.macroProfile.kcalPerKg}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Blueprint Formula (Current Recipe Way with Percentages and Rationale) -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-6">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.formulaTitle}
+          </h2>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
+            {p.formulaSubtitle}
+          </p>
+        </div>
+
+        <!-- Visual Multi-Color Ratio Distribution Bar -->
+        <div class="space-y-2">
+          <div class="flex h-4 w-full rounded-full overflow-hidden shadow-inner bg-[#f0f0f0] dark:bg-[#262626]">
+            <div class="bg-[#0070f3]" style="width: 65%"></div>
+            <div class="bg-[#7928ca]" style="width: 10%"></div>
+            <div class="bg-[#f5a623]" style="width: 10%"></div>
+            <div class="bg-[#10b981]" style="width: 8%"></div>
+            <div class="bg-[#e11d48]" style="width: 4%"></div>
+            <div class="bg-[#06b6d4]" style="width: 3%"></div>
+          </div>
+          <div class="flex flex-wrap items-center justify-between text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] gap-2 pt-1">
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#0070f3] inline-block"></span> 65%</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#7928ca] inline-block"></span> 10%</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#f5a623] inline-block"></span> 10%</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#10b981] inline-block"></span> 8%</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#e11d48] inline-block"></span> 4%</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#06b6d4] inline-block"></span> 3%</span>
+          </div>
+        </div>
+
+        <!-- Ingredients Detailed Cards -->
+        <div class="space-y-3 pt-2">
+          {item.ingredients.map((ing) => (
+            <article class="p-4 sm:p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] transition-colors hover:border-[#0070f3]/40">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-[#ebebeb] dark:border-[#262626]">
+                <div class="flex items-center gap-3">
+                  <span class="text-base sm:text-lg font-bold font-mono text-[#0070f3] dark:text-[#3291ff] shrink-0 bg-blue-50 dark:bg-blue-950/60 px-2.5 py-0.5 rounded-md">
+                    {ing.percentage}%
+                  </span>
+                  <div>
+                    <h3 class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed]">
+                      {ing.name}
+                    </h3>
+                    <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373]">
+                      {ing.category}
+                    </span>
+                  </div>
+                </div>
+                {ing.affiliateUrl && (
+                  <AffiliateButton
+                    url={ing.affiliateUrl}
+                    label="Amazon →"
+                    size="sm"
+                    class="shrink-0 self-start sm:self-auto"
+                  />
+                )}
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 text-xs sm:text-sm">
+                <div>
+                  <span class="text-[11px] uppercase font-mono font-semibold text-[#8f8f8f] dark:text-[#737373] block mb-0.5">
+                    {p.roleCol}
+                  </span>
+                  <p class="text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                    {ing.role}
+                  </p>
+                </div>
+                <div>
+                  <span class="text-[11px] uppercase font-mono font-semibold text-[#10b981] dark:text-[#34d399] block mb-0.5">
+                    Clinical Target Benefit
+                  </span>
+                  <p class="text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                    {ing.clinicalBenefit}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- In-Depth Nutritional & Clinical Rationale -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-6">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.clinicalTitle}
+          </h2>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
+            Veterinary physiology and biological mechanisms behind this specific nutrient balance.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          {item.clinicalRationale.map((rationale) => (
+            <div class="p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-3">
+              <h3 class="text-sm sm:text-base font-bold text-[#171717] dark:text-[#ededed]">
+                {rationale.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                {rationale.description}
+              </p>
+              <ul class="space-y-1.5 pt-1">
+                {rationale.points.map((pt) => (
+                  <li class="flex items-start gap-2 text-xs sm:text-sm text-[#171717] dark:text-[#ededed]">
+                    <span class="text-[#0070f3] dark:text-[#3291ff] font-bold shrink-0 mt-0.5">✓</span>
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Culinary Preparation & Batch Cooking Protocol -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-6">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.prepTitle}
+          </h2>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
+            {p.prepSubtitle}
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {item.prepProtocol.map((step) => (
+            <div class="p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#0070f3] text-white text-xs font-bold flex items-center justify-center shrink-0">
+                  {step.step}
+                </span>
+                <h3 class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed]">
+                  {step.title}
+                </h3>
+              </div>
+              <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed pl-8">
+                {step.instruction}
+              </p>
+              {step.criticalTip && (
+                <div class="ml-8 mt-2 p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 rounded-lg text-xs text-amber-800 dark:text-amber-200 flex items-center gap-2">
+                  <span class="font-bold">⚠️ CRITICAL:</span>
+                  <span>{step.criticalTip}</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Food Safety, Storage & Freezing Guidelines -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.storageTitle}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {item.storageGuidelines.map((st) => (
+            <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-mono font-bold text-[#0070f3] dark:text-[#3291ff] uppercase block mb-1">
+                  {st.duration}
+                </span>
+                <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed] mb-2">
+                  {st.method}
+                </h3>
+                <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                  {st.instructions}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Reference Gram Portions by Dog Body Weight Table -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <div>
+          <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.portionTitle}
+          </h2>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
+            {p.portionSubtitle}
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-[#ebebeb] dark:border-[#262626] text-[#8f8f8f] dark:text-[#737373] font-mono">
+                <th class="py-2.5 pr-4">{p.dogWeightCol}</th>
+                <th class="py-2.5 px-3">{p.dailyGramsCol}</th>
+                <th class="py-2.5 px-3">{p.dailyKcalCol}</th>
+                <th class="py-2.5 px-3">{p.turkeyCol}</th>
+                <th class="py-2.5 px-3">{p.organsCol}</th>
+                <th class="py-2.5 pl-3">Supplements (Oils & Calcium)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
+              {item.portionReference.map((ref) => (
+                <tr class="hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] transition-colors">
+                  <td class="py-3 pr-4 font-semibold text-[#171717] dark:text-[#ededed] whitespace-nowrap">{ref.dogWeight}</td>
+                  <td class="py-3 px-3 font-mono font-bold text-[#0070f3] dark:text-[#3291ff] whitespace-nowrap">{ref.dailyGramsTotal}</td>
+                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.dailyKcal}</td>
+                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.turkeyGrams}</td>
+                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.organsGrams}</td>
+                  <td class="py-3 pl-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap font-mono text-[11px]">{ref.salmonOilGrams} / {ref.calciumKelpGrams}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Essential Verified Supplements / Affiliate Products -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-4">
+        <div>
+          <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            🛒 {p.supplementsTitle}
+          </h2>
+          <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
+            Clinical purity matters. Verified ingredients available on Amazon:
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">U.S.A. Eggshell Powder (8oz) — Calcium Balancer</h3>
+              <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">Pure calcium carbonate yielding ~38% elemental calcium to balance meat phosphorus at 1.25:1 Ca:P.</p>
+            </div>
+            <AffiliateButton url="https://amzn.to/4haNVWy" label="Buy Now" size="sm" class="shrink-0" />
+          </div>
+
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Zesty Paws Wild Alaskan Salmon Oil (16oz) — Omega-3 EPA/DHA</h3>
+              <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">Cold-pressed unoxidized marine omega-3 fatty acids for dermatological and joint cartilage support.</p>
+            </div>
+            <AffiliateButton url="https://amzn.to/46HCJdW" label="Buy Now" size="sm" class="shrink-0" />
+          </div>
+
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Organic 100% Pure Pumpkin Purée (15oz) — Prebiotic Soluble Fiber</h3>
+              <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">Zero spices, zero sugar. Clinically stabilizes colonic transit and produces butyrate for gut barrier health.</p>
+            </div>
+            <AffiliateButton url="https://amzn.to/4xINd8W" label="Buy Now" size="sm" class="shrink-0" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Veterinary Safety, Transition & Contraindications -->
+      <section class="space-y-4">
+        <!-- Golden Warning Banner -->
+        <div class="p-5 sm:p-6 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 rounded-2xl space-y-2">
+          <h3 class="text-sm font-bold text-red-900 dark:text-red-200 flex items-center gap-2">
+            <span>⚠️</span> {p.contraindicationsTitle}
+          </h3>
+          <ul class="space-y-1.5 text-xs sm:text-sm text-red-800 dark:text-red-300">
+            {item.safetyAndPrecautions.contraindications.map((c) => (
+              <li class="flex items-start gap-2">
+                <span class="font-bold shrink-0">✕</span>
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Safe Transition Schedule -->
+        <div class="p-5 sm:p-6 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-3">
+          <h3 class="text-sm font-bold text-[#171717] dark:text-[#ededed] flex items-center gap-2">
+            <span>🔄</span> {p.transitionTitle}
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+            {item.safetyAndPrecautions.transitionSteps.map((step) => (
+              <div class="p-3 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-lg border border-[#ebebeb] dark:border-[#262626]">
+                {step}
+              </div>
+            ))}
+          </div>
+          <p class="text-xs text-amber-700 dark:text-amber-300 font-medium pt-2">
+            💡 {item.safetyAndPrecautions.calciumRule}
+          </p>
+        </div>
+      </section>
+
+      <!-- Interactive Calculator Call-to-Action -->
+      <section class="hairline-card p-6 sm:p-8 bg-gradient-to-br from-blue-50/50 to-indigo-50/30 dark:from-blue-950/20 dark:to-indigo-950/10 rounded-2xl border border-blue-100 dark:border-blue-900/50 text-center space-y-4">
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.calculatorCtaTitle}
+        </h2>
+        <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] max-w-xl mx-auto leading-relaxed">
+          {p.calculatorCtaDesc}
+        </p>
+        <div class="pt-2">
+          <a
+            href={translatePath('/#planner-section')}
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0070f3] hover:bg-[#005ac2] text-white text-xs sm:text-sm font-semibold shadow-md transition-all"
+          >
+            {p.calculatorCtaBtn}
+          </a>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.faqTitle}
+        </h2>
+        <div class="space-y-4">
+          {item.faq.map((q) => (
+            <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2">
+              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">
+                Q: {q.question}
+              </h3>
+              <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                {q.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Back Link -->
+      <div class="text-center pt-4">
+        <a
+          href={translatePath('/best-dog-food')}
+          class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
+        >
+          ← {p.backLink}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />

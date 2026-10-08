@@ -1,0 +1,15 @@
+---
+import type { Lang } from '../../../../i18n/ui';
+import { useTranslatedPath } from '../../../../i18n/utils';
+
+export function getStaticPaths() {
+  const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
+  return targetLangs.map((lang) => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const translatePath = useTranslatedPath(lang);
+return Astro.redirect(translatePath('/best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance'));
+---
