@@ -215,60 +215,21 @@ const flagshipBlueprint = recipeBlueprints[0];
   {kind === 'recipes' && <>
     <aside class="p-6 bg-[#fffbeb] dark:bg-[#291f05] border border-[#fef08a] dark:border-[#854d0e] rounded-2xl"><h2 class="font-bold text-amber-800 dark:text-amber-300">⚠️ {p.calciumWarningTitle}</h2><p class="mt-2 text-amber-900 dark:text-amber-200">{p.calciumWarningDesc}</p></aside>
 
-    {/* Calcium supplement — the #1 missing nutrient in any homemade boneless recipe */}
-    <div class="hairline-card p-5 bg-white dark:bg-[#141414] flex items-start justify-between gap-4">
-      <div class="flex-1 min-w-0">
-        <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">🛒 Essential for every homemade recipe</p>
-        <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">U.S.A. Eggshell Powder, 8oz — Calcium Supplement</p>
-        <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Add ½ tsp per pound of boneless meat to balance the Ca:P ratio — the most critical step in any homemade dog food recipe.</p>
-      </div>
-      <AffiliateButton url="https://amzn.to/4haNVWy" label="Buy Now" size="sm" class="shrink-0 mt-1" />
-    </div>
-
-    {p.recipesList.map((recipe: any, idx: number) => {
-      // Per-recipe affiliate products matched to the recipe's key ingredient
-      const recipeAffiliates: Record<number, { name: string; note: string; url: string }> = {
-        0: { name: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz', note: 'The omega-3 supplement for this recipe — add after cooling to preserve EPA/DHA fatty acids.', url: 'https://amzn.to/46HCJdW' },
-        1: { name: 'Brutus Broth Chicken Bone Broth — Hip & Joint Meal Topper, 16.9 fl oz', note: 'Add warm bone broth to this recipe for extra collagen, hydration, and palatability.', url: 'https://amzn.to/4zSd7Zb' },
-        2: { name: "Stella & Chewy's Freeze-Dried Raw Beef Meal Mixers — 95% Grass-Fed Beef, Organs & Bone, 1oz", note: 'Convenient freeze-dried organ meat topper — the beef liver & heart this recipe calls for, ready to crumble in.', url: 'https://amzn.to/4gyO85G' },
-      };
-      const prod = recipeAffiliates[idx];
-      return <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+    {p.recipesList.map((recipe: any) => (
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
         <span class="font-mono text-xs text-[#7928ca]">{recipe.tag}</span>
         <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{recipe.title}</h2>
         <p>{recipe.desc}</p>
         <ul class="space-y-1">{recipe.ingredients.map((ingredient: any) => {
-          const hasLink = typeof ingredient === 'object' && ingredient.affiliateUrl;
           const label = typeof ingredient === 'string' ? ingredient : ingredient.name || ingredient;
-          return <li class="flex items-center justify-between gap-3 py-1 border-b border-[#ebebeb] dark:border-[#262626] last:border-0">
+          return <li class="py-1 border-b border-[#ebebeb] dark:border-[#262626] last:border-0">
             <span class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">{label}</span>
-            {hasLink && <AffiliateButton url={ingredient.affiliateUrl} label="Buy →" size="sm" class="shrink-0 text-[10px] py-0.5 px-2" />}
           </li>;
         })}</ul>
         <p>{recipe.prep}</p>
-        {prod && (
-          <div class="mt-4 pt-4 border-t border-[#ebebeb] dark:border-[#262626] flex items-start justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">🛒 Recommended for this recipe</p>
-              <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">{prod.name}</p>
-              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">{prod.note}</p>
-            </div>
-            <AffiliateButton url={prod.url} label="Buy Now" size="sm" class="shrink-0 mt-1" />
-          </div>
-        )}
       </section>
-    })}
+    ))}
     <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.calciumGuideTitle}</h2>{p.calciumGuideItems.map((item: any) => <div><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.title} — {item.ratio}</h3><p>{item.desc}</p></div>)}</section>
-
-    {/* Calcium guide bottom CTA */}
-    <div class="hairline-card p-5 bg-white dark:bg-[#141414] flex items-start justify-between gap-4">
-      <div class="flex-1 min-w-0">
-        <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">🛒 Seaweed calcium alternative</p>
-        <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">Animal Essentials Sea-Cal — Pure Seaweed Calcium Powder, 12oz</p>
-        <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Vegan Icelandic seaweed calcium with magnesium — the plant-based alternative to eggshell powder for bone & joint health.</p>
-      </div>
-      <AffiliateButton url="https://amzn.to/4gRALwj" label="Buy Now" size="sm" class="shrink-0 mt-1" />
-    </div>
   </>}
 
   {kind === 'toxic' && <>
