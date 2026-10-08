@@ -1115,8 +1115,8 @@ export const PAGE_TRANSLATIONS = {
   },
   "comparisonTable": {
     "eyebrow": "COMPARATIVA CLÍNICA // COMIDA FRESCA VS PIENSO SECO",
-    "title": "Por Qué la Comida Real Supera al Pienso Seco",
-    "subtitle": "Análisis exhaustivo de biodisponibilidad biológica, temperaturas de procesamiento y transparencia en costes.",
+    "title": "Por Qué la Comida Real Supera Biológicamente al Pienso",
+    "subtitle": "Un análisis clínico comparativo de calor de procesado, precisión de las raciones y coste mensual real: las mismas variables asociadas en un estudio de longevidad de 5 años con hasta 32 meses más de vida en perros alimentados con comida natural fresca.",
     "scrollHint": "↔ Desliza la tabla horizontalmente",
     "colMetric": "Métrica Nutricional",
     "colDfp": "✨ DogFoodPlanner",
@@ -1124,34 +1124,46 @@ export const PAGE_TRANSLATIONS = {
     "colKibble": "Pienso Seco Extruido",
     "rows": [
       {
-        "metric": "Método de Cocinado",
-        "dfp": "Cocinada a Baja Temp. (70°C) o Cruda Activa",
-        "subs": "Cocinado Industrial Ultracongelado",
-        "kibble": "Extrusión a Ultra-Alta Temperatura (200°C)"
+        "metric": "Método de Procesamiento",
+        "dfp": "Cocinada a Fuego Lento (~74°C) o Cruda — Enzimas Intactas",
+        "subs": "Cocinado al Vacío (Sous-Vide) y Ultracongelado",
+        "kibble": "Extrusión a Ultra-Alta Temperatura (200°C+)"
+      },
+      {
+        "metric": "Precisión de la Ración",
+        "dfp": "Gramos exactos mediante cálculo metabólico RER/MER, personalizado por peso, edad y actividad",
+        "subs": "Tabla fija por rangos de peso",
+        "kibble": "Tabla genérica del saco — sobreestima las porciones un 20–30%"
       },
       {
         "metric": "Carbohidratos Netos",
-        "dfp": "< 3.5% (Solo verduras seleccionadas)",
-        "subs": "10% – 15%",
-        "kibble": "45% – 60% (Relleno de almidones)"
+        "dfp": "< 5% (solo verduras seleccionadas, cero rellenos)",
+        "subs": "10% – 20%",
+        "kibble": "45% – 60% (rellenos de maíz, trigo y almidón de guisante)"
       },
       {
         "metric": "Humedad Biológica",
-        "dfp": "70% – 75% (Hidratación renal esencial)",
+        "dfp": "70% – 75% (favorece la hidratación renal y urinaria)",
         "subs": "70% – 75%",
-        "kibble": "8% – 10% (Deshidratación subclínica)"
+        "kibble": "8% – 10% (deshidratación subclínica crónica)"
+      },
+      {
+        "metric": "Integridad Nutricional",
+        "dfp": "Mínima oxidación — omega-3 y enzimas preservados",
+        "subs": "Moderada — algunos nutrientes termosensibles degradados",
+        "kibble": "Oxidación lipídica y formación de compuestos AGE por calor de extrusión"
       },
       {
         "metric": "Transparencia de Ingredientes",
-        "dfp": "100% Gramos y porcentajes públicos",
-        "subs": "Fórmula patentada (gramajes ocultos)",
-        "kibble": "Ingredientes fraccionados y harinas cárnicas"
+        "dfp": "100% gramos y porcentajes declarados — tú controlas cada gramo",
+        "subs": "Fórmula patentada (proporciones exactas ocultas)",
+        "kibble": "Ingredientes fraccionados y harinas cárnicas genéricas"
       },
       {
-        "metric": "Coste Medio Mensual (Perro 23 kg)",
-        "dfp": "75€ – 110€ (Elaborado en casa)",
-        "subs": "260€ – 360€ / mes",
-        "kibble": "55€ – 85€ / mes"
+        "metric": "Coste Medio Mensual (Perro de 23 kg)",
+        "dfp": "75€ – 120€ (solo ingredientes caseros)",
+        "subs": "240€ – 420€ / mes",
+        "kibble": "55€ – 90€ / mes"
       }
     ]
   },
@@ -1704,44 +1716,56 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "給餌回数、適正体重の維持、おすすめの食材について。"
   },
   "comparisonTable": {
-    "eyebrow": "臨床比較 // なぜ新鮮な自然食がドライフードより優れているのか",
-    "title": "生肉・手作り食 vs 一般ドライフードの科学的比較",
-    "subtitle": "体内での消化吸収率、加熱加工温度、長期的なコストの客観的な比較検証。",
+    "eyebrow": "臨床比較 // フレッシュフード VS ドライフード",
+    "title": "ホールフード（自然食）が生化学的にドライフードより優れている理由",
+    "subtitle": "加熱加工温度、給餌量の精度、実際の月額コストを徹底比較 — 5年間の長寿研究において新鮮な自然食を食べた犬が最大32か月長く生きたことと直結する臨床変数です。",
     "scrollHint": "↔ 横にスクロールしてご覧ください",
-    "colMetric": "比較項目",
-    "colDfp": "✨ DogFoodPlanner手作り食",
-    "colSubs": "フレッシュフード定期便",
+    "colMetric": "栄養・臨床評価項目",
+    "colDfp": "✨ DogFoodPlanner",
+    "colSubs": "定期便フレッシュフード",
     "colKibble": "市販ドライフード（カリカリ）",
     "rows": [
       {
-        "metric": "調理・加工温度",
-        "dfp": "70℃の低温スチーム または 生肉酵素",
-        "subs": "瞬間冷凍レトルト加熱",
+        "metric": "加工・調理方法",
+        "dfp": "低温スチーム（約70℃）または生食 — 酵素が活性状態",
+        "subs": "真空調理（低温調理）後に急速冷凍",
         "kibble": "200℃以上の超高温エクストルーダー加工"
       },
       {
-        "metric": "純炭水化物割合",
-        "dfp": "3.5％未満（必要な野菜繊維のみ）",
-        "subs": "10％〜15％",
-        "kibble": "45％〜60％（デンプン増量材）"
+        "metric": "給餌量の精度",
+        "dfp": "体重・年齢・活動量に応じたRER/MER代謝計算による厳密なグラム単位",
+        "subs": "大まかな体重範囲による固定給餌チャート",
+        "kibble": "パッケージ記載の標準給餌表 — 20〜30％過剰になりがち"
       },
       {
-        "metric": "自然な水分含有量",
-        "dfp": "70％〜75％（腎臓を守る不可欠な水分）",
-        "subs": "70％〜75％",
-        "kibble": "8％〜10％（潜在的脱水リスク）"
+        "metric": "純炭水化物割合",
+        "dfp": "5％未満（必要な野菜繊維のみ・増量剤ゼロ）",
+        "subs": "10％〜20％",
+        "kibble": "45％〜60％（トウモロコシ・小麦・エンドウ豆デンプン等）"
+      },
+      {
+        "metric": "生物学的水分量",
+        "dfp": "70％〜75％（腎臓・泌尿器の健康を支える生体水分）",
+        "subs": "70％〜75%",
+        "kibble": "8％〜10％（慢性的・潜在的な脱水リスク）"
+      },
+      {
+        "metric": "栄養素の完全性",
+        "dfp": "酸化を最小限に抑制 — オメガ3や酵素を保持",
+        "subs": "中程度 — 一部の熱に弱い栄養素が変性",
+        "kibble": "高温加工による脂質酸化および終末糖化産物（AGEs）の生成"
       },
       {
         "metric": "原材料の透明性",
-        "dfp": "100％グラム数と配合比率を全公開",
-        "subs": "独自配合（詳細グラム数は非公開）",
-        "kibble": "曖昧なミール表記・豆類の分割表示"
+        "dfp": "100％グラム数と配合比率を完全公開 — 全てを飼い主が管理",
+        "subs": "独自ブレンド（詳細な配合比率は非公開）",
+        "kibble": "曖昧な肉粉（ミール）表記や原材料の分割記載"
       },
       {
-        "metric": "月々の平均食費（体重10kg換算）",
-        "dfp": "約8,000円〜12,000円（自宅で調理）",
-        "subs": "約25,000円〜35,000円 / 月",
-        "kibble": "約5,000円〜8,000円 / 月"
+        "metric": "月々の平均食費（体重23kgの犬）",
+        "dfp": "約12,000円〜19,000円（食材のみ・自宅調達）",
+        "subs": "約38,000円〜68,000円 / 月",
+        "kibble": "約9,000円〜15,000円 / 月"
       }
     ]
   },
@@ -2295,42 +2319,54 @@ export const PAGE_TRANSLATIONS = {
   },
   "comparisonTable": {
     "eyebrow": "COMPARAISON CLINIQUE // ALIMENTATION FRAÎCHE VS CROQUETTES",
-    "title": "Pourquoi la Vraie Nourriture Dépasse les Croquettes",
-    "subtitle": "Analyse comparative de la biodisponibilité, des températures de fabrication et des coûts réels.",
+    "title": "Pourquoi les Aliments Entiers Surpassent Biologiquement les Croquettes",
+    "subtitle": "Une analyse clinique comparative de la température de cuisson, de la précision des portions et du coût mensuel réel — les variables qu'une étude de longévité sur 5 ans a associées à une espérance de vie accrue jusqu'à 32 mois chez les chiens nourris aux aliments frais.",
     "scrollHint": "↔ Faites défiler le tableau horizontalement",
     "colMetric": "Critère Nutritionnel",
-    "colDfp": "✨ DogFoodPlanner Maison",
+    "colDfp": "✨ DogFoodPlanner",
     "colSubs": "Abonnements Frais",
     "colKibble": "Croquettes Sèches",
     "rows": [
       {
-        "metric": "Mode de Cuisson",
-        "dfp": "Vapeur Douce (70°C) ou Cru Actif",
-        "subs": "Cuisson Industrielle Surgelée",
-        "kibble": "Extrusion Très Haute Température (200°C)"
+        "metric": "Méthode de Cuisson",
+        "dfp": "Cuisson Douce (~74°C) ou Cru — Enzymes Intactes",
+        "subs": "Cuit Sous-Vide et Surgelé",
+        "kibble": "Extrusion à Très Haute Température (200°C+)"
+      },
+      {
+        "metric": "Précision des Portions",
+        "dfp": "Grammes exacts via calcul métabolique RER/MER, personnalisé au poids, à l'âge et à l'activité",
+        "subs": "Tableau de rationnement par tranche de poids fixe",
+        "kibble": "Tableau générique sur le sac — surestime les rations de 20 à 30%"
       },
       {
         "metric": "Glucides Nets",
-        "dfp": "< 3.5% (Légumes sélectionnés)",
-        "subs": "10% – 15%",
-        "kibble": "45% – 60% (Amidons de remplissage)"
+        "dfp": "< 5% (légumes uniquement, zéro agent de remplissage)",
+        "subs": "10% – 20%",
+        "kibble": "45% – 60% (amidons de maïs, de blé et de pois)"
       },
       {
         "metric": "Humidité Biologique",
-        "dfp": "70% – 75% (Hydratation rénale vitale)",
+        "dfp": "70% – 75% (maintient l'hydratation rénale et urinaire)",
         "subs": "70% – 75%",
-        "kibble": "8% – 10% (Déshydratation chronique)"
+        "kibble": "8% – 10% (déshydratation subclinique chronique)"
       },
       {
-        "metric": "Transparence des Doses",
-        "dfp": "100% Grammes et pourcentages affichés",
-        "subs": "Formule exclusive (grammages cachés)",
-        "kibble": "Ingrédients scindés et farines animales"
+        "metric": "Intégrité des Nutriments",
+        "dfp": "Oxydation minime — oméga-3 et enzymes préservés",
+        "subs": "Modérée — altération de certains nutriments thermosensibles",
+        "kibble": "Oxydation des graisses et formation d'AGEs par l'extrusion thermique"
       },
       {
-        "metric": "Coût Moyen Mensuel (Chien 23 kg)",
-        "dfp": "75€ – 115€ (Cuisiné à la maison)",
-        "subs": "270€ – 370€ / mois",
+        "metric": "Transparence des Ingrédients",
+        "dfp": "100% de grammes et pourcentages divulgués — vous contrôlez chaque gramme",
+        "subs": "Mélange exclusif (ratios exacts gardés secrets)",
+        "kibble": "Ingrédients fractionnés et farines animales génériques"
+      },
+      {
+        "metric": "Coût Moyen Mensuel (Chien de 23 kg)",
+        "dfp": "75€ – 120€ (ingrédients bruts préparés à la maison)",
+        "subs": "240€ – 420€ / mois",
         "kibble": "55€ – 90€ / mois"
       }
     ]
@@ -2885,43 +2921,55 @@ export const PAGE_TRANSLATIONS = {
   },
   "comparisonTable": {
     "eyebrow": "KLINISCHER VERGLEICH // FRISCHFUTTER VS. TROCKENFUTTER",
-    "title": "Warum echte Nahrung Trockenfutter überlegen ist",
-    "subtitle": "Ein sachlicher Vergleich von biologischer Verwertbarkeit, Verarbeitungstemperaturen und Kosten.",
-    "scrollHint": "↔ Tabelle seitlich verschieben",
+    "title": "Warum echte Vollwertnahrung Trockenfutter biologisch übertrifft",
+    "subtitle": "Ein direkter klinischer Vergleich von Verarbeitungshitze, Portionsgenauigkeit und tatsächlichen monatlichen Futterkosten — genau die Faktoren, die eine 5-jährige Langlebigkeitsstudie mit einer bis zu 32 Monate längeren Lebensdauer bei Frischfütterung in Verbindung brachte.",
+    "scrollHint": "↔ Tabelle horizontal scrollen",
     "colMetric": "Ernährungskriterium",
-    "colDfp": "✨ DogFoodPlanner Frisch",
+    "colDfp": "✨ DogFoodPlanner",
     "colSubs": "Frische-Abos",
     "colKibble": "Trockenfutter (Kibble)",
     "rows": [
       {
-        "metric": "Gar- / Herstellungsverfahren",
-        "dfp": "Schongarung (70°C) oder rohe Enzyme",
-        "subs": "Schockgefrostetes Fertigmenü",
-        "kibble": "Extrusion bei über 200°C Hitze"
+        "metric": "Herstellungsverfahren",
+        "dfp": "Schonend gegart (~74°C) oder roh — Enzyme intakt",
+        "subs": "Sous-Vide gegart & schockgefrostet",
+        "kibble": "Extrusion bei extremer Hitze (200°C+)"
+      },
+      {
+        "metric": "Portionsgenauigkeit",
+        "dfp": "Exakte Gramm nach RER/MER-Stoffwechselformel, angepasst an Gewicht, Alter & Aktivität",
+        "subs": "Starrer Fütterungsplan nach groben Gewichtsbereichen",
+        "kibble": "Pauschale Sacktabelle — überschätzt Portionen um 20–30%"
       },
       {
         "metric": "Netto-Kohlenhydrate",
-        "dfp": "< 3.5% (Nur ausgewähltes Gemüse)",
-        "subs": "10% – 15%",
-        "kibble": "45% – 60% (Stärkebasierte Füllstoffe)"
+        "dfp": "< 5% (nur ausgewähltes Gemüse, null Füllstoffe)",
+        "subs": "10% – 20%",
+        "kibble": "45% – 60% (Mais-, Weizen- & Erbsenstärkefüllstoffe)"
       },
       {
         "metric": "Biologische Feuchtigkeit",
-        "dfp": "70% – 75% (Lebenswichtige Nierenhydration)",
+        "dfp": "70% – 75% (unterstützt Nieren- und Blasenhydration)",
         "subs": "70% – 75%",
-        "kibble": "8% – 10% (Chronische Belastung der Nieren)"
+        "kibble": "8% – 10% (chronische subklinische Dehydration)"
       },
       {
-        "metric": "Transparenz der Rezeptur",
-        "dfp": "100% offengelegte Grammzahlen & Anteile",
-        "subs": "Geschützte Mischung (Gramm verborgen)",
-        "kibble": "Gesplittete Zutaten & unklare Tiermehle"
+        "metric": "Nährstoffintegrität",
+        "dfp": "Minimale Oxidation — Omega-3-Fettsäuren & Enzyme geschützt",
+        "subs": "Mäßig — einige hitzeempfindliche Vitalstoffe degeneriert",
+        "kibble": "Fettoxidation & AGE-Bildung durch aggressive Extrusionshitze"
       },
       {
-        "metric": "Monatliche Futterkosten (23 kg Hund)",
-        "dfp": "75€ – 110€ (Selbst zubereitet)",
-        "subs": "260€ – 360€ / Monat",
-        "kibble": "50€ – 85€ / Monat"
+        "metric": "Zutatentransparenz",
+        "dfp": "100% offengelegte Grammzahlen & Anteile — Sie bestimmen jedes Gramm",
+        "subs": "Rezepturgeheimnis (exakte Verhältnisse verborgen)",
+        "kibble": "Zutatensplitting & undurchsichtige Tiermehlquellen"
+      },
+      {
+        "metric": "Monatl. Futterkosten (23 kg Hund)",
+        "dfp": "75€ – 120€ (nur Rohzutaten für die eigene Küche)",
+        "subs": "240€ – 420€ / Monat",
+        "kibble": "55€ – 90€ / Monat"
       }
     ]
   },
@@ -3475,42 +3523,54 @@ export const PAGE_TRANSLATIONS = {
   },
   "comparisonTable": {
     "eyebrow": "COMPARAÇÃO CLÍNICA // COMIDA NATURAL VS RAÇÃO SECA",
-    "title": "Por Que a Comida Natural Supera a Ração Seca",
-    "subtitle": "Uma análise lado a lado sobre biodisponibilidade digestiva, temperaturas de preparo e custos reais.",
-    "scrollHint": "↔ Deslize a tabela para o lado",
+    "title": "Por Que Alimentos Integrais Naturais Superam Biologicamente a Ração Seca",
+    "subtitle": "Um comparativo clínico lado a lado sobre temperatura de processamento, precisão da porção e custo mensal real — as mesmas variáveis associadas em um estudo de longevidade de 5 anos a até 32 meses a mais de vida em cães alimentados com comida fresca.",
+    "scrollHint": "↔ Deslize a tabela horizontalmente",
     "colMetric": "Critério Nutricional",
-    "colDfp": "✨ DogFoodPlanner Caseiro",
+    "colDfp": "✨ DogFoodPlanner",
     "colSubs": "Assinaturas Naturais",
     "colKibble": "Ração Seca Extrudada",
     "rows": [
       {
-        "metric": "Método de Cozimento",
-        "dfp": "Vapor Suave (70°C) ou Dieta Crua",
-        "subs": "Cozimento Industrial Ultracongelado",
-        "kibble": "Extrusão a Mais de 200°C"
+        "metric": "Método de Processamento",
+        "dfp": "Cozimento Suave (~74°C) ou Cru — Enzimas Intactas",
+        "subs": "Cozimento a Vácuo (Sous-Vide) e Congelamento Rápido",
+        "kibble": "Extrusão em Altíssima Temperatura (200°C+)"
+      },
+      {
+        "metric": "Precisão da Porção",
+        "dfp": "Gramas exatos via cálculo metabólico RER/MER, ajustados para peso, idade e atividade",
+        "subs": "Tabela fixa de faixas amplas de peso",
+        "kibble": "Tabela genérica da embalagem — superestima porções em 20–30%"
       },
       {
         "metric": "Carboidratos Líquidos",
-        "dfp": "< 3.5% (Apenas vegetais funcionais)",
-        "subs": "10% – 15%",
-        "kibble": "45% – 60% (Amidos de enchimento)"
+        "dfp": "< 5% (apenas vegetais funcionais, zero enchimentos)",
+        "subs": "10% – 20%",
+        "kibble": "45% – 60% (amidos de milho, trigo e ervilha)"
       },
       {
         "metric": "Umidade Biológica",
-        "dfp": "70% – 75% (Hidratação renal indispensável)",
+        "dfp": "70% – 75% (favorece a hidratação renal e urinária)",
         "subs": "70% – 75%",
-        "kibble": "8% – 10% (Sobrecarga e desidratação crônica)"
+        "kibble": "8% – 10% (desidratação subclínica crônica)"
       },
       {
-        "metric": "Transparência de Quantidades",
-        "dfp": "100% Gramas e proporções reveladas",
-        "subs": "Fórmula proprietária (gramas ocultas)",
-        "kibble": "Ingredientes fracionados e farinhas mistas"
+        "metric": "Integridade Nutricional",
+        "dfp": "Mínima oxidação — ômega-3 e enzimas preservados",
+        "subs": "Moderada — alguns nutrientes termossensíveis degradados",
+        "kibble": "Oxidação de gorduras e formação de compostos AGE pelo calor de extrusão"
       },
       {
-        "metric": "Custo Médio Mensual (Cão de 23 kg)",
-        "dfp": "R$ 380 – R$ 550 (Preparo caseiro)",
-        "subs": "R$ 1.300 – R$ 1.800 / mês",
+        "metric": "Transparência de Ingredientes",
+        "dfp": "100% de gramas e porcentagens declarados — você controla cada grama",
+        "subs": "Fórmula patenteada (proporções exatas ocultas)",
+        "kibble": "Ingredientes fracionados e farinhas residuais de carne"
+      },
+      {
+        "metric": "Custo Médio Mensal (Cão de 23 kg)",
+        "dfp": "R$ 380 – R$ 620 (ingredientes caseiros comprados in natura)",
+        "subs": "R$ 1.200 – R$ 2.100 / mês",
         "kibble": "R$ 280 – R$ 450 / mês"
       }
     ]
@@ -4064,44 +4124,56 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "적정 식사 횟수, 체중 관리법, 추천 식재료 안내."
   },
   "comparisonTable": {
-    "eyebrow": "임상 비교 // 자연 화식이 건식 사료보다 우수한 과학적 이유",
-    "title": "자연 화식 vs 일반 건식 사료 (키블) 영양 비교",
-    "subtitle": "체내 소화 흡수율, 조리 가공 온도, 장기적 비용에 대한 객관적인 데이터 비교.",
+    "eyebrow": "임상 비교 // 자연 화식 VS 일반 건식 사료",
+    "title": "자연 원물 식단이 건식 사료보다 생물학적으로 우수한 이유",
+    "subtitle": "가공 열처리 온도, 급여량의 정밀도, 실제 월간 사료비를 임상적으로 비교 분석 — 5년간의 반려견 수명 연구에서 신선한 자연식을 급여한 반려견이 최대 32개월 더 오래 생존한 핵심 원인 변수들입니다.",
     "scrollHint": "↔ 표를 좌우로 스크롤하여 확인하세요",
-    "colMetric": "영양 분석 항목",
-    "colDfp": "✨ DogFoodPlanner 홈메이드",
+    "colMetric": "영양·임상 분석 지표",
+    "colDfp": "✨ DogFoodPlanner",
     "colSubs": "화식 정기구독 서비스",
     "colKibble": "일반 건식 사료 (키블)",
     "rows": [
       {
-        "metric": "조리 및 가공 온도",
-        "dfp": "70℃ 저온 스팀 또는 생식 효소",
-        "subs": "급속 냉동 레토르트 가열",
-        "kibble": "200℃ 이상의 초고온 익스트루더 압출"
+        "metric": "가공 및 조리 방식",
+        "dfp": "저온 스팀 조리 (~74℃) 또는 생식 — 효소 활성 유지",
+        "subs": "수비드 저온 조리 후 급속 냉동",
+        "kibble": "200℃ 이상의 초고온 압출 팽창 가공"
+      },
+      {
+        "metric": "급여량 정밀도",
+        "dfp": "체중·연령·활동량에 맞춘 RER/MER 대사 계산으로 정확한 g 단위 산출",
+        "subs": "체중 범위별 고정 급여량 차트",
+        "kibble": "사료 포장지 표준 권장량 — 권장 칼로리를 20~30% 과대평가"
       },
       {
         "metric": "순 탄수화물 함량",
-        "dfp": "3.5% 미만 (필수 식이섬유 채소만)",
-        "subs": "10% ~ 15%",
-        "kibble": "45% ~ 60% (전분질 증량 충전재)"
+        "dfp": "< 5% (필수 채소 식이섬유만, 전분 충전재 제로)",
+        "subs": "10% – 20%",
+        "kibble": "45% – 60% (옥수수·밀·완두콩 전분 충전재)"
       },
       {
-        "metric": "천연 생체 수분 함유량",
-        "dfp": "70% ~ 75% (신장을 지키는 필수 수분)",
-        "subs": "70% ~ 75%",
-        "kibble": "8% ~ 10% (만성 미세 탈수 위험)"
+        "metric": "생체 수분 함유량",
+        "dfp": "70% – 75% (신장 및 비뇨기 수분 공급 최적화)",
+        "subs": "70% – 75%",
+        "kibble": "8% – 10% (만성적인 잠재적 탈수 유발)"
       },
       {
-        "metric": "원재료 배합의 투명성",
-        "dfp": "100% 정밀 그램(g)과 배합비 공개",
-        "subs": "독자 배합 (세부 그램 비공개)",
-        "kibble": "분할 표기 및 모호한 육골분 표기"
+        "metric": "영양소 보존율",
+        "dfp": "산화 최소화 — 오메가-3 지방산 및 천연 효소 보존",
+        "subs": "보통 수준 — 일부 열 민감성 영양소 변성",
+        "kibble": "압출 고열로 인한 지방 산패 및 최종당화산물(AGEs) 형성"
       },
       {
-        "metric": "월평균 예상 식비 (10kg 반려견 기준)",
-        "dfp": "약 8만 ~ 12만 원 (직접 조리)",
-        "subs": "약 25만 ~ 38만 원 / 월",
-        "kibble": "약 5만 ~ 9만 원 / 월"
+        "metric": "원재료 투명성",
+        "dfp": "100% 정밀 그램(g) 및 배합 비율 공개 — 보호자가 직접 통제",
+        "subs": "독자 배합비 (상세 배합률 비공개)",
+        "kibble": "원재료 쪼개기 표기 및 모호한 '육골분/가금부산물' 표기"
+      },
+      {
+        "metric": "월평균 예상 식비 (23kg 성견 기준)",
+        "dfp": "약 11만 – 18만 원 (직접 장보기 식재료 기준)",
+        "subs": "약 35만 – 60만 원 / 월",
+        "kibble": "약 8만 – 14만 원 / 월"
       }
     ]
   },
@@ -4655,43 +4727,55 @@ export const PAGE_TRANSLATIONS = {
   },
   "comparisonTable": {
     "eyebrow": "CONFRONTO CLINICO // CIBO FRESCO NATURALE VS CROCCHETTE",
-    "title": "Perché il Cibo Naturale Supera le Crocchette",
-    "subtitle": "Un’analisi comparativa su biodisponibilità, temperature di lavorazione e costi reali sostenuti.",
+    "title": "Perché il Cibo Naturale Supera Biologicamente le Crocchette",
+    "subtitle": "Un confronto clinico dettagliato tra calore di lavorazione, precisione delle porzioni e costo mensile reale — gli stessi fattori che uno studio di 5 anni sulla longevità ha correlato a una vita fino a 32 mesi più lunga nei cani nutriti con cibo fresco.",
     "scrollHint": "↔ Scorri la tabella in orizzontale",
     "colMetric": "Parametro Nutrizionale",
-    "colDfp": "✨ DogFoodPlanner Casalingo",
+    "colDfp": "✨ DogFoodPlanner",
     "colSubs": "Abbonamenti Fresco",
     "colKibble": "Crocchette Secche",
     "rows": [
       {
-        "metric": "Metodo di Cottura",
-        "dfp": "Vapore Dolce (70°C) o Crudo Attivo",
-        "subs": "Cottura Industriale Surgelata",
-        "kibble": "Estrusione ad Alta Temperatura (200°C)"
+        "metric": "Metodo di Lavorazione",
+        "dfp": "Cottura Delicata (~74°C) o Crudo — Enzimi Intatti",
+        "subs": "Cotto Sottovuoto (Sous-Vide) e Surgelato",
+        "kibble": "Estrusione ad Altissima Temperatura (200°C+)"
+      },
+      {
+        "metric": "Precisione della Porzione",
+        "dfp": "Grammi esatti tramite calcolo metabolico RER/MER, calibrato su peso, età e attività",
+        "subs": "Tabella fissa per fasce di peso approssimative",
+        "kibble": "Tabella generica sul sacco — sovrastima le porzioni del 20–30%"
       },
       {
         "metric": "Carboidrati Netti",
-        "dfp": "< 3.5% (Solo verdure selezionate)",
-        "subs": "10% – 15%",
-        "kibble": "45% – 60% (Amidi di riempimento)"
+        "dfp": "< 5% (solo verdure selezionate, zero riempitivi)",
+        "subs": "10% – 20%",
+        "kibble": "45% – 60% (amidi di mais, frumento e piselli)"
       },
       {
         "metric": "Umidità Biologica",
-        "dfp": "70% – 75% (Idratazione renale vitale)",
+        "dfp": "70% – 75% (supporta l'idratazione renale e urinaria)",
         "subs": "70% – 75%",
-        "kibble": "8% – 10% (Disidratazione subclinica)"
+        "kibble": "8% – 10% (disidratazione subclinica cronica)"
       },
       {
-        "metric": "Trasparenza delle Dosi",
-        "dfp": "100% Grammi e percentuali svelati",
-        "subs": "Formula brevettata (grammi nascosti)",
-        "kibble": "Ingredienti frazionati e farine miste"
+        "metric": "Integrità Nutrizionale",
+        "dfp": "Minima ossidazione — omega-3 ed enzimi preservati",
+        "subs": "Moderata — degradazione di alcuni nutrienti termosensibili",
+        "kibble": "Ossidazione lipidica e formazione di composti AGE dal calore di estrusione"
+      },
+      {
+        "metric": "Trasparenza degli Ingredienti",
+        "dfp": "100% grammi e percentuali dichiarati — controlli ogni singolo grammo",
+        "subs": "Formula proprietaria (proporzioni esatte non divulgate)",
+        "kibble": "Frazionamento degli ingredienti e farine di carne generiche"
       },
       {
         "metric": "Costo Medio Mensile (Cane 23 kg)",
-        "dfp": "75€ – 115€ (Cucinato a casa)",
-        "subs": "260€ – 360€ / mese",
-        "kibble": "50€ – 85€ / mese"
+        "dfp": "75€ – 120€ (solo ingredienti freschi preparati a casa)",
+        "subs": "240€ – 420€ / mese",
+        "kibble": "55€ – 90€ / mese"
       }
     ]
   },
