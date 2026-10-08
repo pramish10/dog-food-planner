@@ -143,6 +143,7 @@ export const PAGE_TRANSLATIONS = {
     "rankingsTitle": "What Are the Top 5 Healthiest Dog Foods in 2026?",
     "rankingsIntro": "Canine nutritional longevity research confirms that minimal heat processing and high biological moisture are the two strongest predictors of canine vitality, kidney health, and disease resistance.",
     "readMoreLabel": "Read more →",
+    "readLessLabel": "Show less ↑",
     "rankings": [
       {
         "rank": "01",
@@ -199,19 +200,23 @@ export const PAGE_TRANSLATIONS = {
     "buyerRules": [
       {
         "title": "1. Named Animal Protein First",
-        "desc": "Look for \"Deboned Turkey\", \"Beef\", or \"Wild Salmon\" as the primary ingredient rather than ambiguous generic \"meat meal\"."
+        "desc": "Look for \"Deboned Turkey\", \"Beef\", or \"Wild Salmon\" as the primary ingredient rather than ambiguous generic \"meat meal\".",
+        "readMore": "Ingredients are listed by pre-cooking weight on commercial pet food labels. Whole named meats (such as 'Deboned Turkey' or 'Fresh Beef') supply essential amino acids like taurine, arginine, and carnitine in their most bioavailable form. Avoid generic terms like 'animal derivatives', 'poultry meal', or 'meat and bone meal', which allow manufacturers to blend low-grade rendered waste from unspecified animal species.\n\nBe mindful of 'ingredient splitting' as well: brands frequently split carbohydrates into separate entries (e.g. peas, pea flour, pea protein) so that the meat appears first on the list, even when carbohydrates make up the majority of the food.\n\nConcentrated named meals—such as 'Dehydrated Lamb Meal' or 'Wild Salmon Meal'—are acceptable when transparently named, as their moisture has already been removed before cooking, providing a dense source of animal protein."
       },
       {
         "title": "2. High Biological Moisture (>70%)",
-        "desc": "Dry kibble (8-10% moisture) causes chronic low-grade dehydration. Always add fresh toppers or rehydrate with warm bone broth."
+        "desc": "Dry kibble (8-10% moisture) causes chronic low-grade dehydration. Always add fresh toppers or rehydrate with warm bone broth.",
+        "readMore": "In the wild, canine ancestral prey animals consist of 70% to 75% water. Dogs have an evolutionary low thirst reflex because their physiology expects to absorb hydration directly through their food. Relying entirely on dry kibble (which contains only 8–10% moisture) leaves dogs in a persistent state of low-grade dehydration.\n\nOver years, concentrated urine places intense strain on the kidneys and creates an ideal environment for struvite and calcium oxalate bladder stones to form.\n\nIf you feed kibble, always incorporate moisture: rehydrate meals 1:1 with warm low-sodium bone broth, filtered water, or plain kefir, or top kibble with fresh steamed meats and organ puree to safeguard kidney function."
       },
       {
         "title": "3. Zero Synthetic Preservatives",
-        "desc": "Strictly avoid BHA, BHT, ethoxyquin, propylene glycol, and artificial food colorings."
+        "desc": "Strictly avoid BHA, BHT, ethoxyquin, propylene glycol, and artificial food colorings.",
+        "readMore": "To achieve 18–24 month shelf lives, budget pet foods rely on chemical antioxidants like BHA (butylated hydroxyanisole), BHT (butylated hydroxytoluene), and ethoxyquin. Scientific studies have flagged BHA and BHT as potential endocrine disruptors and carcinogens, while ethoxyquin—originally designed as a pesticide—has been tied to liver toxicity and allergies.\n\nAdditionally, artificial dyes like Red 40, Yellow 5, and Blue 2 serve purely cosmetic purposes for human pet owners while triggering dermatitis, chronic itching, and gastrointestinal inflammation in sensitive dogs.\n\nPrioritize foods preserved strictly with natural antioxidants: mixed tocopherols (Vitamin E), rosemary extract, and citric acid. These keep fats fresh safely without systemic toxicity."
       },
       {
         "title": "4. Controlled Carbohydrates (<25%)",
-        "desc": "Dogs lack salivary amylase. High-starch diets overtax the pancreas and accelerate obesity."
+        "desc": "Dogs lack salivary amylase. High-starch diets overtax the pancreas and accelerate obesity.",
+        "readMore": "Dogs are facultative carnivores with zero biological requirement for refined carbohydrates. Unlike humans, dogs produce no salivary amylase to start breaking down starches during chewing; their pancreas must shoulder the entire enzymatic load of digesting complex carbohydrates.\n\nBecause pet food regulations do not mandate carbohydrate disclosure on guaranteed analysis panels, many commercial kibbles quietly hide 45% to 60% starch from corn, wheat, white potatoes, or tapioca simply to bind dry pellets together.\n\nExcessive glycemic loads trigger rapid insulin spikes, systemic inflammation, chronic ear infections, and accelerate canine obesity. Calculate carb content using the Nitrogen-Free Extract formula: 100% minus (Protein + Fat + Fiber + Moisture + Ash). Strive for foods under 25% total carbohydrates."
       }
     ],
     "ctaTitle": "Calculate Exact Portions for Your Dog’s Ideal Food",
@@ -745,6 +750,7 @@ export const PAGE_TRANSLATIONS = {
     "rankingsTitle": "¿Cuáles Son los 5 Alimentos Más Saludables para Perros en 2026?",
     "rankingsIntro": "La investigación veterinaria sobre longevidad canina confirma que el procesamiento térmico mínimo y una hidratación biológica elevada son los dos factores predictivos más determinantes de vitalidad y salud renal.",
     "readMoreLabel": "Leer más →",
+    "readLessLabel": "Mostrar menos ↑",
     "rankings": [
       {
         "rank": "01",
@@ -801,19 +807,23 @@ export const PAGE_TRANSLATIONS = {
     "buyerRules": [
       {
         "title": "1. Proteína Animal Específica en Primer Lugar",
-        "desc": "Busca \"Pavo Deshuesado\", \"Ternera\" o \"Salmón Fresco\" en lugar de harinas cárnicas anónimas."
+        "desc": "Busca \"Pavo Deshuesado\", \"Ternera\" o \"Salmón Fresco\" en lugar de harinas cárnicas anónimas.",
+        "readMore": "Los ingredientes en el etiquetado de alimentos para mascotas se ordenan por peso antes de la cocción. Las carnes enteras y claramente identificadas (como «Pavo deshuesado» o «Ternera fresca») aportan aminoácidos esenciales como taurina, arginina y carnitina en su forma más biodisponible. Evita términos ambiguos como «derivados de origen animal», «harina de carne» o «subproductos de ave», que permiten a los fabricantes usar despojos y restos de procedencia indefinida.\n\nTen cuidado con la «división de ingredientes» (ingredient splitting): algunas marcas desglosan los carbohidratos en varios componentes (guisantes, almidón de guisante y proteína de guisante) para que la carne figure engañosamente en primer lugar.\n\nLas harinas de carne con nombre específico —como «Harina de cordero» o «Harina de salmón deshidratado»— son aceptables si son transparentes, ya que se pesan sin agua y aportan una alta concentración de proteína animal real."
       },
       {
         "title": "2. Humedad Biológica Alta (>70%)",
-        "desc": "El pienso seco causa deshidratación crónica subclínica. Añade siempre toppers frescos o caldos nutritivos."
+        "desc": "El pienso seco causa deshidratación crónica subclínica. Añade siempre toppers frescos o caldos nutritivos.",
+        "readMore": "En la naturaleza, las presas de las que descienden los perros contienen entre un 70% y un 75% de agua. Los perros tienen un reflejo de sed instintivamente bajo, ya que su organismo espera hidratarse principalmente a través de la comida. Alimentarlos exclusivamente con pienso seco (que solo contiene un 8-10% de humedad) los somete a un estado constante de deshidratación subclínica.\n\nCon los años, una orina excesivamente concentrada sobrecarga los riñones e incrementa de forma drástica el riesgo de cálculos vesicales de estruvita y oxalato de calcio.\n\nSi das pienso, incorpora siempre humedad: rehidrata la ración en proporción 1:1 con caldo de huesos tibio (sin sal ni cebolla), agua filtrada o kéfir natural, o añade toppers de carne fresca para proteger su salud renal."
       },
       {
         "title": "3. Cero Conservantes Sintéticos",
-        "desc": "Evita rotundamente aditivos químicos como BHA, BHT, etoxiquina y colorantes artificiales."
+        "desc": "Evita rotundamente aditivos químicos como BHA, BHT, etoxiquina y colorantes artificiales.",
+        "readMore": "Para lograr una caducidad de 18 a 24 meses, muchos piensos industriales emplean antioxidantes químicos como el BHA (butilhidroxianisol), el BHT (butilhidroxitolueno) y la etoxiquina. Estudios científicos han catalogado al BHA y BHT como posibles disruptores endocrinos y cancerígenos, mientras que la etoxiquina (diseñada originalmente como pesticida) se asocia con daños hepáticos y reacciones alérgicas.\n\nAdemás, los colorantes artificiales (como Rojo 40 o Amarillo 5) solo buscan hacer el producto visualmente atractivo para el dueño, pero provocan dermatitis, picor crónico e inflamación gastrointestinal en perros sensibles.\n\nElige siempre marcas conservadas con antioxidantes naturales: tocoferoles mixtos (Vitamina E), extracto de romero y ácido cítrico. Protegen las grasas de forma inocua sin poner en riesgo la salud de tu perro."
       },
       {
         "title": "4. Carbohidratos Controlados (<25%)",
-        "desc": "Los perros carecen de amilasa salival. El exceso de almidón sobrecarga el páncreas y causa obesidad."
+        "desc": "Los perros carecen de amilasa salival. El exceso de almidón sobrecarga el páncreas y causa obesidad.",
+        "readMore": "Los perros son carnívoros facultativos y no tienen un requerimiento nutricional biológico de carbohidratos refinados. A diferencia de las personas, los perros no producen amilasa salival para descomponer los almidones en la boca; todo el trabajo enzimático recae directamente sobre su páncreas.\n\nComo la normativa no exige indicar el porcentaje de carbohidratos en la etiqueta, muchos piensos comerciales ocultan entre un 45% y un 60% de almidón procedente de maíz, trigo o tapioca solo para dar consistencia a la croqueta.\n\nLas dietas altas en índice glucémico causan picos continuos de insulina, inflamación sistémica, otitis crónicas y favorecen la obesidad canina. Puedes calcular los carbohidratos restando a 100 la suma de proteína, grasa, fibra, humedad y cenizas. Prioriza siempre fórmulas con menos del 25% de carbohidratos."
       }
     ],
     "ctaTitle": "Calcula las Raciones Exactas del Mejor Alimento para tu Perro",
@@ -1347,6 +1357,7 @@ export const PAGE_TRANSLATIONS = {
     "rankingsTitle": "【2026年最新】愛犬の健康寿命を延ばすフードランキングTOP5",
     "rankingsIntro": "近年の獣医栄養学研究において、「加熱処理の最小化」と「70％以上の自然な水分含有量」が、愛犬の活力維持、腎臓病予防、抗病性の鍵であることが立証されています。",
     "readMoreLabel": "続きを読む →",
+    "readLessLabel": "折りたたむ ↑",
     "rankings": [
       {
         "rank": "01",
@@ -1403,19 +1414,23 @@ export const PAGE_TRANSLATIONS = {
     "buyerRules": [
       {
         "title": "1. 原材料の筆頭が明確な動物性生肉であること",
-        "desc": "「肉副産物粉末」や「家禽ミール」などの曖昧な表記ではなく、「生骨抜き七面鳥肉」「牛肉」「生サーモン」と具体的に明記されたものを選びましょう。"
+        "desc": "「肉副産物粉末」や「家禽ミール」などの曖昧な表記ではなく、「生骨抜き七面鳥肉」「牛肉」「生サーモン」と具体的に明記されたものを選びましょう。",
+        "readMore": "ペットフードの原材料表示は、調理前の重量が多い順に記載されます。「生骨抜き七面鳥」や「新鮮な牛肉」のように具体的な動物名が記載された肉は、タウリンやアルギニン、カルニチンといった必須アミノ酸を最も消化吸収しやすい形で供給します。「動物性油脂」「肉副産物粉末」「家禽ミール」といった曖昧な総称表記は、由来不明の低品質なレンダリング肉が使われている恐れがあるため避けてください。\n\nまた「原材料の分割表記(イングリディエント・スプリッティング)」にも注意が必要です。エンドウ豆、エンドウ豆デンプン、エンドウ豆タンパク質のように炭水化物を細分化して記載することで、実質的には炭水化物が多いにもかかわらず肉を筆頭に見せかける手法があります。\n\n「乾燥ラム肉粉」や「サーモンミール」のように動物名が明記されたミールは、水分を除去した高濃度なタンパク源となるため、透明性の高い良質な製品であれば問題ありません。"
       },
       {
         "title": "2. 70％以上の自然な水分を確保すること",
-        "desc": "水分8〜10％のドライフードのみを食べている犬は慢性的な水分不足になりがちです。必ずウェットフードや骨スープを足しましょう。"
+        "desc": "水分8〜10％のドライフードのみを食べている犬は慢性的な水分不足になりがちです。必ずウェットフードや骨スープを足しましょう。",
+        "readMore": "犬の祖先が野生で捕食していた獲物の肉は、約70〜75％が水分で構成されていました。そのため犬は水分を食事から摂取することに適応しており、水分を自発的にたくさん飲む反射が本質的に強くありません。水分が8〜10％しか含まれないドライフードのみを与え続けると、慢性的な軽度脱水状態が常態化してしまいます。\n\n尿が長期間濃縮されると腎臓に多大な負担がかかり、ストルバイト結石やシュウ酸カルシウム結石などの尿路結石リスクが劇的に高まります。\n\nドライフードを主食にする場合は、塩分・ネギ類不使用の温かいボーンブロスやぬるま湯を1:1で加えてふやかすか、水分の多いウェットフードや蒸した肉のトッパーを加えて腎臓を保護してください。"
       },
       {
         "title": "3. 合成酸化防止剤・着色料の完全排除",
-        "desc": "BHA、BHT、エトキシキン、プロピレングリコール、赤色○号などの発がん性・毒性が懸念される化学添加物は絶対に避けてください。"
+        "desc": "BHA、BHT、エトキシキン、プロピレングリコール、赤色○号などの発がん性・毒性が懸念される化学添加物は絶対に避けてください。",
+        "readMore": "賞味期限を1〜2年と長く保つため、安価なペットフードにはBHA(ブチルヒドロキシアニソール)、BHT(ジブチルヒドロキシトルエン)、エトキシキンといった合成化学抗酸化剤が添加されることがあります。これらは発がん性や内分泌かく乱作用(環境ホルモン)、肝機能障害との関連性が数多くの研究で指摘されています。\n\nさらに赤色40号や黄色5号などの合成着色料は、飼い主の購買意欲をそそるためだけに使われており、犬にとっては不要なばかりかアレルギー性皮膚炎や消化器症状の引き金になります。\n\nミックストコフェロール(ビタミンE)、ローズマリー抽出物、クエン酸など、天然由来の酸化防止剤で保存されている安全なフードを必ず選んでください。"
       },
       {
         "title": "4. 炭水化物を25％未満に抑えること",
-        "desc": "犬の唾液には炭水化物を分解するアミラーゼがありません。過剰なデンプンはすい臓に負担をかけ肥満を引き起こします。"
+        "desc": "犬の唾液には炭水化物を分解するアミラーゼがありません。過剰なデンプンはすい臓に負担をかけ肥満を引き起こします。",
+        "readMore": "犬は広義の肉食動物(通性肉食動物)であり、精製された炭水化物を必須とする生物学的理由はありません。人間と異なり、犬の唾液には口の中でデンプンを分解する消化酵素「アミラーゼ」が含まれておらず、デンプンの分解負担はすべてすい臓に集中します。\n\nペットフードの成分保証値には炭水化物量の表示義務がないため、多くのドライキブルは粒を固める製造上の都合から、トウモロコシや小麦、タピオカなどの炭水化物を45〜60％も含んでいるのが実態です。\n\n高血糖を引き起こす高デンプン食はインスリンの急上昇を招き、肥満、慢性炎症、外耳炎、すい炎のリスクを高めます。「100 − (粗タンパク質 ＋ 粗脂肪 ＋ 粗繊維 ＋ 水分 ＋ 粗灰分)」の計算式で炭水化物割合を算出し、25％未満に抑えられたフードを選びましょう。"
       }
     ],
     "ctaTitle": "愛犬に最適なフードの正確な給餌量を計算する",
@@ -1949,6 +1964,7 @@ export const PAGE_TRANSLATIONS = {
     "rankingsTitle": "Quels Sont les 5 Meilleurs Aliments pour Chien en 2026 ?",
     "rankingsIntro": "Les recherches sur la longevité canine confirment qu’une cuisson minimale et une hydratation biologique supérieure à 70% sont les deux facteurs les plus déterminants de la vitalité et de la santé rénale.",
     "readMoreLabel": "Lire la suite →",
+    "readLessLabel": "Afficher moins ↑",
     "rankings": [
       {
         "rank": "01",
@@ -2005,19 +2021,23 @@ export const PAGE_TRANSLATIONS = {
     "buyerRules": [
       {
         "title": "1. Protéine Animale Nommée en Premier Ingrédient",
-        "desc": "Exigez « Dinde désossée », « Bœuf » ou « Saumon frais » plutôt que de vagues « farines de viandes »."
+        "desc": "Exigez « Dinde désossée », « Bœuf » ou « Saumon frais » plutôt que de vagues « farines de viandes ».",
+        "readMore": "Sur l'étiquette des aliments pour animaux, les ingrédients sont ordonnés par ordre de poids avant cuisson. Les viandes entières clairement identifiées (comme « Dinde désossée » ou « Bœuf frais ») apportent les acides aminés essentiels tels que la taurine, l'arginine et la carnitine sous leur forme la plus biodisponible. Évitez absolument les dénominations floues telles que « sous-produits animaux », « farines de viandes » ou « graisses animales », qui masquent souvent des chutes d'abattoir de qualité médiocre.\n\nMéfiez-vous également du fractionnement des ingrédients (« ingredient splitting ») : certains fabricants divisent les glucides en plusieurs mentions (pois, farine de pois, protéines de pois) pour positionner artificiellement la viande en tête de liste.\n\nLes farines nommées avec précision — comme la « farine de saumon déshydraté » ou la « farine d'agneau » — restent tout à fait acceptables lorsqu'elles sont transparentes, car l'eau a déjà été retirée, offrant une excellente densité en protéines animales."
       },
       {
         "title": "2. Humidité Biologique Élevée (>70%)",
-        "desc": "Les croquettes sèches provoquent une déshydratation chronique. Réhydratez toujours ou ajoutez des garnitures fraîches."
+        "desc": "Les croquettes sèches provoquent une déshydratation chronique. Réhydratez toujours ou ajoutez des garnitures fraîches.",
+        "readMore": "Dans la nature, les proies dont descendent les canidés contiennent 70 à 75 % d'humidité. Les chiens ont un réflexe de soif naturellement faible car leur physiologie est programmée pour s'hydrater directement par leur nourriture. Ne consommer que des croquettes sèches (qui ne renferment que 8 à 10 % d'eau) installe le chien dans un état de déshydratation chronique insidieuse.\n\nÀ long terme, des urines constamment trop concentrées épuisent les reins et créent un terrain propice à la formation de calculs urinaires de struvite ou d'oxalate de calcium.\n\nSi vous donnez des croquettes, apportez systématiquement de l'humidité : réhydratez la ration à parts égales avec un bouillon d'os tiède non salé, de l'eau tiède filtrée ou du kéfir, ou complétez avec des garnitures fraîches riches en eau pour préserver la fonction rénale."
       },
       {
         "title": "3. Zéro Conservateur Chimique Synthétique",
-        "desc": "Bannissez fermement le BHA, le BHT, l’éthoxyquine et les colorants artificiels."
+        "desc": "Bannissez fermement le BHA, le BHT, l’éthoxyquine et les colorants artificiels.",
+        "readMore": "Pour garantir une conservation de 18 à 24 mois, de nombreux aliments industriels font appel à des antioxydants chimiques de synthèse comme le BHA (butylhydroxyanisol), le BHT (butylhydroxytoluène) et l'éthoxyquine. De nombreuses études scientifiques ont mis en évidence le potentiel cancérigène et perturbateur endocrinien du BHA/BHT, tandis que l'éthoxyquine (un ancien pesticide) est suspectée de toxicité hépatique.\n\nDe même, les colorants artificiels (Rouge 40, Jaune 5) ne servent qu'à séduire l'œil du maître tout en favorisant démangeaisons chroniques et intolérances digestives chez le chien.\n\nPrivilégiez exclusivement les formules conservées naturellement avec des tocophérols mixtes (Vitamine E), de l'extrait de romarin et de l'acide citrique. Ils protègent les graisses de l'oxydation en toute innocuité."
       },
       {
         "title": "4. Teneur en Glucides Réduite (<25%)",
-        "desc": "Le chien ne possède pas d’amylase salivaire. Trop d’amidon fatigue le pancréas et favorise l’obésité."
+        "desc": "Le chien ne possède pas d’amylase salivaire. Trop d’amidon fatigue le pancréas et favorise l’obésité.",
+        "readMore": "Le chien est un carnivore opportuniste sans aucun besoin biologique en glucides raffinés. Contrairement aux humains, sa salive ne contient pas d'amylase pour amorcer la digestion des féculents dans la gueule ; l'intégralité du travail enzymatique repose donc sur son pancréas.\n\nComme la réglementation n'impose pas d'afficher le taux de glucides sur les paquets, beaucoup de croquettes conventionnelles en dissimulent 45 à 60 % (maïs, blé, fécule de pomme de terre ou tapioca) simplement pour agglomérer les croquettes lors de l'extrusion.\n\nCette surcharge en amidon à indice glycémique élevé provoque des pics d'insuline répétés, de l'inflammation systémique, des otites chroniques et favorise l'obésité. Calculez les glucides selon la formule de l'ENA : 100 % moins (Protéines + Matières grasses + Fibres + Humidité + Cendres). Visez impérativement moins de 25 % de glucides."
       }
     ],
     "ctaTitle": "Calculez la Ration Exacte pour Votre Chien",
@@ -2551,6 +2571,7 @@ export const PAGE_TRANSLATIONS = {
     "rankingsTitle": "Welche sind die 5 gesündesten Hundefutter im Jahr 2026?",
     "rankingsIntro": "Aktuelle veterinärmedizinische Studien belegen: Minimale Hitzebehandlung und ein biologischer Feuchtigkeitsgehalt von über 70% sind die wichtigsten Faktoren für Vitalität und gesunde Nieren.",
     "readMoreLabel": "Mehr erfahren →",
+    "readLessLabel": "Weniger anzeigen ↑",
     "rankings": [
       {
         "rank": "01",
@@ -2607,19 +2628,23 @@ export const PAGE_TRANSLATIONS = {
     "buyerRules": [
       {
         "title": "1. Eindeutig deklariertes Fleisch an 1. Stelle",
-        "desc": "Achten Sie auf „Frische Pute“, „Rindfleisch“ oder „Lachs“ statt diffuser „Fleischmehle“."
+        "desc": "Achten Sie auf „Frische Pute“, „Rindfleisch“ oder „Lachs“ statt diffuser „Fleischmehle“.",
+        "readMore": "Auf Tierfutteretiketten werden Zutaten nach ihrem Gewicht vor dem Kochen sortiert. Eindeutig deklariertes Frischfleisch (wie „Entbeinte Pute“ oder „Frisches Rindfleisch“) liefert lebenswichtige Aminosäuren wie Taurin, Arginin und Carnitin in höchster Bioverfügbarkeit. Vermeiden Sie schwammige Sammelbegriffe wie „tierische Nebenerzeugnisse“, „Fleischmehl“ oder „Geflügelmehl“, hinter denen sich minderwertige Schlachtabfälle undefinierter Tierarten verbergen können.\n\nAchten Sie zudem auf den Trick des „Zutaten-Splittings“: Hersteller teilen Kohlenhydrate oft in mehrere Einzelposten auf (z. B. Erbsen, Erbsenmehl und Erbsenprotein), damit das Fleisch auf dem Papier an erster Stelle steht, obwohl Kohlenhydrate den Hauptteil ausmachen.\n\nPräzise benannte Fleischmehle – wie „Getrocknetes Lammfleischmehl“ oder „Lachsmehl“ – sind bei transparenter Deklaration unbedenklich, da ihnen vor der Verarbeitung das Wasser entzogen wurde und sie konzentriertes tierisches Protein liefern."
       },
       {
         "title": "2. Hohe biologische Feuchtigkeit (>70%)",
-        "desc": "Reines Trockenfutter führt zu schleichender Dehydration. Immer mit Brühe anfeuchten oder frische Topper ergänzen."
+        "desc": "Reines Trockenfutter führt zu schleichender Dehydration. Immer mit Brühe anfeuchten oder frische Topper ergänzen.",
+        "readMore": "In freier Natur besteht die Nahrung wilder Caniden zu 70 bis 75 % aus Wasser. Hunde besitzen evolutionär bedingt ein schwaches Durstgefühl, da ihr Organismus darauf ausgelegt ist, Feuchtigkeit direkt über die Nahrung aufzunehmen. Die ausschließliche Fütterung von Trockenfutter (mit nur 8–10 % Restfeuchte) führt zu einer dauerhaften, leichten Dehydration.\n\nÜber Jahre hinweg überlastet hochkonzentrierter Urin die Nieren und begünstigt drastisch die Bildung von schmerzhaften Struvit- und Calciumoxalat-Blasensteinen.\n\nWenn Sie Trockenfutter füttern, fügen Sie immer Flüssigkeit hinzu: Weichen Sie die Kroketten im Verhältnis 1:1 mit lauwarmer, ungewürzter Knochenbrühe oder Wasser ein, oder ergänzen Sie die Mahlzeit mit frischen Fleischtoppern, um die Nierenfunktion zu schützen."
       },
       {
         "title": "3. Verzicht auf synthetische Konservierungsstoffe",
-        "desc": "Meiden Sie BHA, BHT, Ethoxyquin, Propylenglykol und künstliche Farbstoffe."
+        "desc": "Meiden Sie BHA, BHT, Ethoxyquin, Propylenglykol und künstliche Farbstoffe.",
+        "readMore": "Um eine Haltbarkeit von bis zu zwei Jahren zu gewährleisten, greifen Billigfutter oft zu synthetischen Antioxidantien wie BHA (Butylhydroxyanisol), BHT (Butylhydroxytoluol) und Ethoxyquin. Wissenschaftliche Untersuchungen stufen BHA und BHT als potenziell krebserregend und hormonell wirksam ein; Ethoxyquin (ursprünglich ein Pestizid) steht im Verdacht, Leberschäden auszulösen.\n\nAuch künstliche Farbstoffe dienen ausschließlich dem menschlichen Auge, belasten jedoch den Hundeorganismus und provozieren allergischen Juckreiz sowie Magen-Darm-Entzündungen.\n\nWählen Sie Futter, das ausschließlich mit natürlichen Antioxidantien haltbar gemacht wird: gemischte Tocopherole (Vitamin E), Rosmarinextrakt und Zitronensäure. Diese schützen Fette schonend ohne giftige Nebenwirkungen."
       },
       {
         "title": "4. Geringer Kohlenhydratanteil (<25%)",
-        "desc": "Hunde besitzen keine Speichelamylase. Hohe Stärkemengen überlasten die Bauchspeicheldrüse."
+        "desc": "Hunde besitzen keine Speichelamylase. Hohe Stärkemengen überlasten die Bauchspeicheldrüse.",
+        "readMore": "Hunde sind fakultative Karnivoren ohne biologischen Bedarf an isolierten Kohlenhydraten. Im Gegensatz zum Menschen enthält der Speichel des Hundes keine Amylase, um Stärke bereits im Maul aufzuspalten; die gesamte enzymatische Verdauung lastet allein auf der Bauchspeicheldrüse.\n\nDa Hersteller den Kohlenhydratgehalt nicht auf der Packung angeben müssen, enthalten herkömmliche Trockenfutter oft 45 bis 60 % Stärke aus Mais, Weizen oder Tapioka, nur um den Kroketten bei der Extrusion Form zu geben.\n\nHohe Stärkemengen verursachen Blutzuckerspitzen, chronische Entzündungen, Ohrenentzündungen und fördern rasant Übergewicht. Berechnen Sie den Kohlenhydratanteil mit der NfE-Formel: 100 % minus (Rohprotein + Rohfett + Rohfaser + Feuchtigkeit + Rohasche). Bevorzugen Sie Futter mit unter 25 % Kohlenhydraten."
       }
     ],
     "ctaTitle": "Berechnen Sie die exakte Futtermenge für Ihren Hund",
@@ -3153,6 +3178,7 @@ export const PAGE_TRANSLATIONS = {
     "rankingsTitle": "Quais São os 5 Alimentos Mais Saudáveis para Cães em 2026?",
     "rankingsIntro": "Pesquisas em longevidade canina comprovam que o processamento térmico brando e a umidade biológica superior a 70% são os dois maiores indicadores de vitalidade e proteção renal.",
     "readMoreLabel": "Leia mais →",
+    "readLessLabel": "Mostrar menos ↑",
     "rankings": [
       {
         "rank": "01",
@@ -3209,19 +3235,23 @@ export const PAGE_TRANSLATIONS = {
     "buyerRules": [
       {
         "title": "1. Proteína Animal Específica no 1º Lugar da Composição",
-        "desc": "Priorize «Peru Desossado», «Carne Bovina» ou «Salmão Fresco» em vez de genéricas «farinhas de subprodutos»."
+        "desc": "Priorize «Peru Desossado», «Carne Bovina» ou «Salmão Fresco» em vez de genéricas «farinhas de subprodutos».",
+        "readMore": "No rótulo dos alimentos para cães, os ingredientes são listados por ordem de peso antes do cozimento. Carnes frescas e especificadas (como «Peru desossado» ou «Carne bovina fresca») fornecem aminoácidos essenciais cruciais como taurina, arginina e carnitina com máxima biodisponibilidade. Fuja de descrições genéricas como «subprodutos de carne», «farinha de carnes» ou «derivados animais», que permitem a inclusão de resíduos de baixa qualidade de origens desconhecidas.\n\nFique atento também à divisão de ingredientes («ingredient splitting»): marcas costumam desmembrar carboidratos (como ervilha, amido de ervilha e proteína de ervilha) para que a carne pareça o ingrediente principal na lista, mesmo quando os carboidratos formam a maior parte da receita.\n\nFarinhas com origem declarada — como «Farinha de carne de cordeiro» ou «Farinha de salmão desidratado» — são legítimas quando transparentes, pois tiveram a água removida antes do preparo e entregam alta densidade de proteína animal."
       },
       {
         "title": "2. Alta Umidade Biológica (>70%)",
-        "desc": "A ração seca causa desidratação crônica de baixo grau. Sempre adicione água, caldos ou alimentos úmidos."
+        "desc": "A ração seca causa desidratação crônica de baixo grau. Sempre adicione água, caldos ou alimentos úmidos.",
+        "readMore": "Na natureza, as presas ancestrais dos canídeos contêm entre 70% e 75% de água. Cães possuem um mecanismo de sede naturalmente lento, pois sua fisiologia espera absorver hidratação prioritariamente pela comida. Oferecer somente ração seca (que possui apenas 8% a 10% de umidade) mantém o cão em um estado contínuo de desidratação subclínica.\n\nCom o passar dos anos, a urina cronicamente concentrada sobrecarrega os rins e eleva bastante o perigo de cristais e cálculos vesicais de estruvita e oxalato de cálcio.\n\nSe você utiliza ração seca, sempre acrescente umidade: hidrate na proporção 1:1 com caldo de ossos morno sem tempero, água filtrada ou kefir natural, ou complemente com toppers de carnes frescas e cozidas para preservar os rins."
       },
       {
         "title": "3. Zero Conservantes Químicos Artificiais",
-        "desc": "Evite terminantemente aditivos como BHA, BHT, etoxiquina e corantes sintéticos."
+        "desc": "Evite terminantemente aditivos como BHA, BHT, etoxiquina e corantes sintéticos.",
+        "readMore": "Para alcançar prazos de validade de 18 a 24 meses, alimentos industriais econômicos recorrem a antioxidantes químicos como BHA (butil-hidroxianisol), BHT (butil-hidroxitolueno) e etoxiquina. Estudos científicos associam BHA e BHT a potencial cancerígeno e desregulação hormonal, enquanto a etoxiquina (criada inicialmente como pesticida) tem vínculos com toxicidade hepática.\n\nCorantes artificiais (como Vermelho 40 e Amarelo 5) são colocados unicamente para atrair os olhos humanos, mas frequentemente desencadeiam coceiras alérgicas, dermatites e distúrbios digestivos.\n\nExija fórmulas conservadas unicamente com antioxidantes de origem natural: tocoferóis mistos (Vitamina E), extrato de alecrim e ácido cítrico. Eles conservam as gorduras saudavelmente sem agredir o organismo."
       },
       {
         "title": "4. Carboidratos Controlados (<25%)",
-        "desc": "Cães não possuem amilase salivar. O excesso de amido sobrecarrega o pâncreas e acelera a obesidade."
+        "desc": "Cães não possuem amilase salivar. O excesso de amido sobrecarrega o pâncreas e acelera a obesidade.",
+        "readMore": "Cães são carnívoros facultativos e não possuem qualquer exigência biológica por carboidratos refinados. Diferente dos humanos, cães não produzem amilase salivar para iniciar a digestão de amidos na boca; toda a carga enzimática fica concentrada no pâncreas.\n\nComo as tabelas nutricionais não são obrigadas a estampar a porcentagem de carboidratos, muitas rações secas ocultam de 45% a 60% de amido derivado de milho, trigo ou mandioca para dar liga física aos grãos durante a extrusão.\n\nAlimentos de alto índice glicêmico provocam picos contínuos de insulina, inflamação crônica, infecções de ouvido e favorecem a obesidade canina. Calcule os carboidratos subtraindo de 100% a soma de proteína, gordura, fibra, umidade e matéria mineral. Busque alimentos com menos de 25% de carboidratos totais."
       }
     ],
     "ctaTitle": "Calcule a Porção Diária Ideal para o Seu Cão",
@@ -3755,6 +3785,7 @@ export const PAGE_TRANSLATIONS = {
     "rankingsTitle": "【2026년 최신】 반려견 건강수명을 늘려주는 사료 순위 TOP 5",
     "rankingsIntro": "수의 임상 영양학의 장기 추적 연구에 따르면, ‘최소한의 열 가공’과 ‘70% 이상의 천연 생체 수분’이 반려견의 신장 건강과 면역력을 결정짓는 가장 핵심적인 요소임이 입증되었습니다.",
     "readMoreLabel": "더 자세히 보기 →",
+    "readLessLabel": "간략히 보기 ↑",
     "rankings": [
       {
         "rank": "01",
@@ -3811,19 +3842,23 @@ export const PAGE_TRANSLATIONS = {
     "buyerRules": [
       {
         "title": "1. 원재료 첫 번째 자리에 명확한 생육 표기",
-        "desc": "출처를 알 수 없는 ‘가금류 육골분’ 대신 ‘뼈를 바른 칠면조’, ‘소고기’, ‘생연어’가 명시되어 있는지 확인하세요."
+        "desc": "출처를 알 수 없는 ‘가금류 육골분’ 대신 ‘뼈를 바른 칠면조’, ‘소고기’, ‘생연어’가 명시되어 있는지 확인하세요.",
+        "readMore": "반려동물 사료 라벨의 원재료는 조리 전 무게가 무거운 순서대로 표기됩니다. '뼈를 바른 칠면조', '생소고기', '신선한 연어'처럼 구체적인 동물 명칭이 명시된 원육은 타우린, 아르기닌, 카르니틴 등 필수 아미노산을 가장 생체 이용률이 높은 형태로 제공합니다. '동물성 부산물', '육골분', '가금류 미ール'과 같이 모호한 일반 명칭은 출처를 알 수 없는 저급 렌더링 원료가 섞일 위험이 높으므로 피해야 합니다.\n\n또한 '원재료 쪼개기(Ingredient Splitting)' 꼼수도 주의 깊게 살펴야 합니다. 완두콩, 완두콩 전분, 완두콩 단백질처럼 탄수화물을 여러 항목으로 나누어 표기함으로써, 실제로는 탄수화물 비중이 더 높음에도 불구하고 고기가 첫 번째 성분인 것처럼 보이게 만드는 제조 방식이 있습니다.\n\n'탈수 양고기 분말'이나 '연어 미ール'처럼 구체적인 동물이 명시된 고품질 건조육은 제조 전 수분을 미리 제거한 상태이므로 투명하게 공개된 경우 훌륭한 고농축 동물성 단백질 공급원이 됩니다."
       },
       {
         "title": "2. 70% 이상의 풍부한 수분 공급",
-        "desc": "수분 8~10%의 건식 사료만 먹는 개는 만성적인 미세 탈수 상태에 빠집니다. 수제 화식이나 뼈 육수를 꼭 섞어주세요."
+        "desc": "수분 8~10%의 건식 사료만 먹는 개는 만성적인 미세 탈수 상태에 빠집니다. 수제 화식이나 뼈 육수를 꼭 섞어주세요.",
+        "readMore": "야생에서 개의 조상이 섭취하던 먹이 동물은 수분 함량이 70~75%에 달합니다. 개는 진화 과정에서 식사를 통해 직접 수분을 섭취해왔기 때문에 갈증을 느끼고 물을 찾아 마시는 반사 신경이 사람에 비해 둔합니다. 수분이 8~10%에 불과한 건식 사료만 급여하면 만성적인 미세 탈수 상태가 지속되기 쉽습니다.\n\n장기간 농축된 소변은 신장에 막대한 부담을 주며, 스트루바이트 및 옥살산칼슘 방광 결석이 발생하기에 가장 취약한 환경을 만듭니다.\n\n건식 사료를 먹일 때는 반드시 수분을 보충해주세요. 염분과 양파류가 없는 따뜻한 본브로스나 미온수를 1:1 비율로 붓거나, 수분이 풍부한 저온 조리 화식 토퍼를 함께 급여하면 신장과 요로 건강을 효과적으로 지킬 수 있습니다."
       },
       {
         "title": "3. 화학 합성 방부제 및 인공 색소 배제",
-        "desc": "BHA, BHT, 에톡시퀸, 프로필렌글리콜 등 유해성이 지적된 합성 첨가물을 철저히 피하십시오."
+        "desc": "BHA, BHT, 에톡시퀸, 프로필렌글리콜 등 유해성이 지적된 합성 첨가물을 철저히 피하십시오.",
+        "readMore": "1~2년의 긴 유통기한을 확보하기 위해 저가 사료에는 BHA(부틸히드록시아니솔), BHT(부틸히드록시톨루엔), 에톡시퀸과 같은 합성 화학 산화방지제가 흔히 쓰입니다. 다수의 연구에서 BHA와 BHT는 발암 가능 물질 및 내분비계 교란 물질로 지목되었으며, 살충제 및 고무 안정제로 개발되었던 에톡시퀸은 간 손상과 심각한 알레르기 유발 위험이 보고되어 있습니다.\n\n또한 적색 40호, 황색 5호 같은 인공 색소는 사람의 시각적 만족만을 위한 불필요한 첨가물로, 민감한 개에게 피부 가려움증과 알레르기, 소화기 염증을 일으키는 주원인이 됩니다.\n\n반드시 혼합 토코페롤(비타민 E), 로즈마리 추출물, 구연산 등 천연 항산화제로 보존된 안전한 사료를 선택하십시오."
       },
       {
         "title": "4. 탄수화물 함량을 25% 이하로 제어",
-        "desc": "개의 침에는 아밀라아제가 없습니다. 과도한 전분은 췌장에 무리를 주고 비만을 유발합니다."
+        "desc": "개의 침에는 아밀라아제가 없습니다. 과도한 전분은 췌장에 무리를 주고 비만을 유발합니다.",
+        "readMore": "개는 통성 육식동물(facultative carnivore)로, 정제 탄수화물에 대한 생물학적 필수 요구량이 전혀 없습니다. 사람과 달리 개의 침에는 전분을 입안에서 분해하는 효소인 아밀라아제가 분비되지 않으므로, 섭취한 모든 탄수화물의 소화 부담은 고스란히 췌장에 집중됩니다.\n\n사료 라벨의 보증성분표에는 탄수화물 함량 표시 의무가 없기 때문에, 많은 일반 건식 사료는 알갱이(키블)를 물리적으로 팽창시키고 뭉치기 위해 옥수수, 밀, 감자 전분 등을 45~60%나 포함하고 있습니다.\n\n혈당을 급격히 높이는 고탄수화물 식단은 잦은 인슐린 분비, 만성 염증, 귓병, 췌장염 및 비만을 유발합니다. '100% − (조단백질 + 조지방 + 조섬유 + 수분 + 조회분)' 계산식을 통해 탄수화물 비율을 역산하고, 탄수화물이 25% 이하로 엄격히 관리된 사료를 고르세요."
       }
     ],
     "ctaTitle": "우리 강아지 맞춤 사료의 일일 급여량을 계산해 보세요",
@@ -4357,6 +4392,7 @@ export const PAGE_TRANSLATIONS = {
     "rankingsTitle": "Quali Sono i 5 Cibi Più Sani per Cani nel 2026?",
     "rankingsIntro": "La ricerca veterinaria sulla longevità canina conferma che una lavorazione termica minima e un’idratazione biologica superiore al 70% sono i due fattori più determinanti per la vitalità e la salute dei reni.",
     "readMoreLabel": "Leggi di più →",
+    "readLessLabel": "Mostra meno ↑",
     "rankings": [
       {
         "rank": "01",
@@ -4413,19 +4449,23 @@ export const PAGE_TRANSLATIONS = {
     "buyerRules": [
       {
         "title": "1. Carne Animale Specifica al 1° Posto negli Ingredienti",
-        "desc": "Cerca «Tacchino disossato», «Manzo» o «Salmone fresco» invece di generiche «farine di carne»."
+        "desc": "Cerca «Tacchino disossato», «Manzo» o «Salmone fresco» invece di generiche «farine di carne».",
+        "readMore": "Sull'etichetta degli alimenti per animali domestici, gli ingredienti sono elencati in ordine decrescente di peso prima della cottura. Le carni intere e chiaramente specificate (come «Tacchino disossato» o «Manzo fresco») forniscono aminoacidi essenziali come taurina, arginina e carnitina nella loro forma più biodisponible. Evita espressioni generiche come «derivati animali», «farina di carne» o «sottoprodotti di pollame», che consentono l'impiego di scarti industriali di provenienza sconosciuta.\n\nFai attenzione anche alla tecnica dell'«ingredient splitting»: molti produttori suddividono i carboidrati in voci distinte (piselli, amido di piselli e proteine di piselli) per far figurare la carne al primo posto nell'elenco, anche quando i carboidrati costituiscono la maggior parte della formula.\n\nLe farine disidratate con nome specifico — come la «Farina di agnello disidratata» o la «Farina di salmone» — sono valide se chiaramente dichiarate, poiché l'acqua è stata rimossa prima della lavorazione, garantendo un apporto concentrato di proteine animali nobili."
       },
       {
         "title": "2. Elevata Umidità Biologica (>70%)",
-        "desc": "Le sole crocchette secche provocano una disidratazione cronica latente. Aggiungi sempre brodi o cibi freschi."
+        "desc": "Le sole crocchette secche provocano una disidratazione cronica latente. Aggiungi sempre brodi o cibi freschi.",
+        "readMore": "In natura, le prede da cui discendono i cani contengono tra il 70% e il 75% di acqua. I cani hanno uno stimolo della sete fisiologicamente basso perché il loro organismo è evoluto per assumere liquidi direttamente dal cibo. Nutrirli esclusivamente con crocchette secche (con appena l'8-10% di umidità) li espone a una disidratazione cronica latente.\n\nNel tempo, un'urina continuamente concentrata affatica i reni e crea l'ambiente ideale per la comparsa di calcoli vescicali di struvite e ossalato di calcio.\n\nSe somministri crocchette, reidrata sempre la ciotola: aggiungi in proporzione 1:1 brodo di ossa tiepido non salato, acqua filtrata o kefir semplice, oppure integra con cibi freschi cucinati per proteggere la salute renale."
       },
       {
         "title": "3. Zero Conservanti Chimici Sintetici",
-        "desc": "Evita categoricamente additivi come BHA, BHT, etossichina e coloranti sintetici."
+        "desc": "Evita categoricamente additivi come BHA, BHT, etossichina e coloranti sintetici.",
+        "readMore": "Per assicurare scadenze fino a 24 mesi, molti mangimi economici impiegano antiossidanti chimici di sintesi come BHA (butilidrossianisolo), BHT (butilidrossitoluene) ed etossichina. Numerosi studi scientifici classificano BHA e BHT come sospetti interferenti endocrini e cancerogeni, mentre l'etossichina (nata originariamente come pesticida) è correlata a tossicità epatica e reazioni allergiche.\n\nInoltre, i coloranti artificiali (come Rosso 40 o Giallo 5) hanno una funzione puramente visiva per il proprietario, ma scatenano dermatiti, prurito cronico e infiammazioni intestinali nei cani sensibili.\n\nScegli sempre formule conservate naturalmente con tocoferoli misti (Vitamina E), estratto di rosmarino e acido citrico, che proteggono i grassi dall'ossidazione in modo sicuro."
       },
       {
         "title": "4. Carboidrati Moderati (<25%)",
-        "desc": "I cani non possiedono amilasi salivare. Troppi amidi affaticano il pancreas e favoriscono il sovrappeso."
+        "desc": "I cani non possiedono amilasi salivare. Troppi amidi affaticano il pancreas e favoriscono il sovrappeso.",
+        "readMore": "Il cane è un carnivoro facoltativo privo di un fabbisogno biologico di carboidrati raffinati. A differenza dell'essere umano, la saliva del cane non contiene amilasi salivare per digerire gli amidi in bocca; tutto il carico enzimatico grava unicamente sul pancreas.\n\nPoiché le tabelle nutrizionali non obbligano a dichiarare i carboidrati, molte crocchette commerciali nascondono dal 45% al 60% di amidi (da mais, frumento o tapioca) al solo scopo di agglomerare i croccantini durante l'estrusione.\n\nUn elevato carico glicemico provoca continui picchi di insulina, infiammazione sistemica, otiti croniche e obesità canina. Calcola i carboidrati sottraendo al 100% la somma di proteine, grassi, fibre, umidità e ceneri grezze. Cerca sempre prodotti con meno del 25% di carboidrati."
       }
     ],
     "ctaTitle": "Calcola la Dose Giornaliera Esatta per il Tuo Cane",
