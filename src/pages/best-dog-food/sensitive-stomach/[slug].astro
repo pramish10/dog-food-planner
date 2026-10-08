@@ -1,0 +1,210 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Footer from '../../../components/Footer.astro';
+import {
+  SENSITIVE_STOMACH_SLUGS,
+  getSensitiveStomachPillars,
+  SENSITIVE_STOMACH_PAGE_I18N,
+} from '../../../data/sensitiveStomach';
+
+export function getStaticPaths() {
+  return SENSITIVE_STOMACH_SLUGS.map((slug, idx) => ({
+    params: { slug },
+    props: { idx },
+  }));
+}
+
+const { idx } = Astro.props as { idx: number };
+const pillars = getSensitiveStomachPillars('en');
+const item = pillars[idx];
+const p = SENSITIVE_STOMACH_PAGE_I18N.en;
+
+if (!item) {
+  return Astro.redirect('/best-dog-food');
+}
+
+const paragraphs = item.readMore.split('\n\n');
+
+const prevItem = idx > 0 ? pillars[idx - 1] : null;
+const nextItem = idx < pillars.length - 1 ? pillars[idx + 1] : null;
+
+const pageTitle = `${item.title}: ${p.titleSuffix}`;
+const pageDescription = item.desc.slice(0, 155);
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: item.title,
+  description: pageDescription,
+  author: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner Nutrition Team',
+    url: 'https://dogfoodplanner.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://dogfoodplanner.com/logo.png',
+    },
+  },
+  mainEntityOfPage: `https://dogfoodplanner.com/best-dog-food/sensitive-stomach/${item.slug}`,
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={`https://dogfoodplanner.com/best-dog-food/sensitive-stomach/${item.slug}`}
+>
+  <Navbar />
+
+  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Best Dog Food', url: '/best-dog-food' },
+        { name: item.title },
+      ]}
+    />
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <!-- Header -->
+      <header class="mb-8">
+        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-3 py-1 rounded-full mb-3">
+          <span>{p.badge} // {p.pillarBadgePrefix} 0{item.pillarNumber}</span>
+        </div>
+        <h1 class="text-[1.35rem] sm:text-3xl lg:text-4xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 leading-tight text-balance">
+          {item.title}
+        </h1>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8f8f8f] dark:text-[#737373] font-mono border-b border-[#ebebeb] dark:border-[#262626] pb-4">
+          <span>{p.reviewedBy}</span>
+        </div>
+      </header>
+
+      <!-- Executive Summary / Lead -->
+      <div class="p-5 sm:p-6 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] mb-8 shadow-sm">
+        <p class="text-sm sm:text-base text-[#171717] dark:text-[#ededed] font-medium leading-relaxed">
+          {item.desc}
+        </p>
+      </div>
+
+      <!-- Strengths / Look-for vs Red-flags Callout -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        <div class="p-5 bg-white dark:bg-[#141414] rounded-2xl border-2 border-[#10b981]/40 shadow-sm">
+          <h2 class="text-xs font-mono uppercase font-bold text-[#10b981] mb-2 flex items-center gap-1.5">
+            <span>✓</span> {p.whatToLookForTitle}
+          </h2>
+          <ul class="space-y-2">
+            {item.whatToLookFor.map((item) => (
+              <li class="text-xs sm:text-sm text-[#171717] dark:text-[#ededed] leading-relaxed flex gap-2">
+                <span class="text-[#10b981] font-bold shrink-0">+</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="p-5 bg-white dark:bg-[#141414] rounded-2xl border-2 border-[#f59e0b]/40 shadow-sm">
+          <h2 class="text-xs font-mono uppercase font-bold text-[#f59e0b] mb-2 flex items-center gap-1.5">
+            <span>⚠</span> {p.redFlagsTitle}
+          </h2>
+          <ul class="space-y-2">
+            {item.redFlags.map((item) => (
+              <li class="text-xs sm:text-sm text-[#171717] dark:text-[#ededed] leading-relaxed flex gap-2">
+                <span class="text-[#f59e0b] font-bold shrink-0">−</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Full In-Depth Breakdown -->
+      <article class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] mb-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed space-y-4">
+        <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] border-b border-[#ebebeb] dark:border-[#262626] pb-3 mb-4">
+          {p.fullBreakdown}
+        </h2>
+        {paragraphs.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </article>
+
+      <!-- Inspection Checklist & Vet Recommendation -->
+      <div class="space-y-4 mb-10">
+        <div class="p-5 sm:p-6 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626]">
+          <h3 class="text-xs font-mono uppercase font-bold text-[#0070f3] dark:text-[#3291ff] mb-3">
+            📋 {p.checklistTitle}
+          </h3>
+          <ul class="space-y-2">
+            {item.checklist.map((check) => (
+              <li class="text-xs sm:text-sm text-[#171717] dark:text-[#ededed] flex items-start gap-2.5">
+                <span class="text-[#0070f3] dark:text-[#3291ff] font-bold shrink-0 mt-0.5">→</span>
+                <span>{check}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="p-5 sm:p-6 bg-[#f0fdf4] dark:bg-[#052e16]/30 border border-[#bbf7d0] dark:border-[#166534]/50 rounded-2xl">
+          <h3 class="text-xs font-mono uppercase font-bold text-[#166534] dark:text-[#4ade80] mb-2 flex items-center gap-1.5">
+            <span>🩺</span> {p.vetTipTitle}
+          </h3>
+          <p class="text-xs sm:text-sm text-[#14532d] dark:text-[#86efac] leading-relaxed">
+            {item.vetTip}
+          </p>
+        </div>
+      </div>
+
+      <!-- Prev / Next Navigation -->
+      {(prevItem || nextItem) && (
+        <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          {prevItem ? (
+            <a
+              href={`/best-dog-food/sensitive-stomach/${prevItem.slug}`}
+              class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                ← {p.prevPillar}
+              </span>
+              <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">
+                {prevItem.title}
+              </span>
+            </a>
+          ) : (
+            <div />
+          )}
+          {nextItem && (
+            <a
+              href={`/best-dog-food/sensitive-stomach/${nextItem.slug}`}
+              class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all sm:text-right"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                {p.nextPillar} →
+              </span>
+              <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">
+                {nextItem.title}
+              </span>
+            </a>
+          )}
+        </section>
+      )}
+
+      <!-- Back Link -->
+      <div class="mt-4 text-center space-y-4">
+        <a
+          href="/best-dog-food"
+          class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
+        >
+          ← {p.backLink}
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
