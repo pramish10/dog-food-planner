@@ -64,7 +64,11 @@ function serializeSitemapItem(item) {
   ) {
     item.priority = 0.8;
     item.changefreq = ChangeFreqEnum.WEEKLY;
-  } else if (unprefixed.startsWith('/faq/') || unprefixed.startsWith('/breeds/')) {
+  } else if (
+    unprefixed.startsWith('/faq/') ||
+    unprefixed.startsWith('/breeds/') ||
+    unprefixed.startsWith('/best-dog-food/')
+  ) {
     item.priority = 0.7;
     item.changefreq = ChangeFreqEnum.MONTHLY;
   } else if (['/about', '/contact'].includes(unprefixed)) {

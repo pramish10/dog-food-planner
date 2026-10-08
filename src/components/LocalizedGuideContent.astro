@@ -8,6 +8,7 @@ import { BEST_FOOD_RANKING_SLUGS } from '../data/bestFoodRankings';
 import { getFeedingStyles, FEEDING_STYLES_SECTION_I18N } from '../data/feedingStyles';
 import { GOLDEN_RULE_SLUGS } from '../data/goldenRules';
 import { getSensitiveStomachPillars, SENSITIVE_STOMACH_SECTION_I18N } from '../data/sensitiveStomach';
+import { getPuppyNutritionRequirements, PUPPY_NUTRITION_SECTION_I18N } from '../data/puppyNutrition';
 
 const { kind } = Astro.props as { kind: 'bestFood' | 'recipes' | 'toxic' | 'brands' | 'allergies' };
 const lang = getLangFromUrl(Astro.url);
@@ -17,6 +18,8 @@ const feedingStyles = getFeedingStyles(lang);
 const fsI18n = FEEDING_STYLES_SECTION_I18N[lang] || FEEDING_STYLES_SECTION_I18N.en;
 const sensitivePillars = getSensitiveStomachPillars(lang);
 const ssI18n = SENSITIVE_STOMACH_SECTION_I18N[lang] || SENSITIVE_STOMACH_SECTION_I18N.en;
+const puppyRequirements = getPuppyNutritionRequirements(lang);
+const pnI18n = PUPPY_NUTRITION_SECTION_I18N[lang] || PUPPY_NUTRITION_SECTION_I18N.en;
 ---
 
 <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-8 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
@@ -135,15 +138,36 @@ const ssI18n = SENSITIVE_STOMACH_SECTION_I18N[lang] || SENSITIVE_STOMACH_SECTION
     </section>
 
     {/* ── 6. Puppy Nutrition ── */}
-    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3">
-      <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">Puppy Nutrition: Critical Growth Requirements</h2>
-      <p>Puppies require significantly more energy, calcium, and amino acids per pound than adult dogs. Key requirements:</p>
-      <ul class="space-y-2 mt-2">
-        <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">High Metabolic Burn:</strong> Young puppies (2–4 months) burn up to 3× their resting metabolic rate — serve 3–4 meals daily.</span></li>
-        <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">Ca:P Ratio:</strong> Large breed puppies need a strictly calibrated Calcium:Phosphorus ratio (1.2:1 to 1.4:1) to prevent hip dysplasia.</span></li>
-        <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">DHA for Brain Development:</strong> Supplement with fish oil — DHA supports optimal cognitive neural development in the first year.</span></li>
-        <li class="flex gap-2"><span class="text-[#0070f3] font-bold shrink-0">→</span><span><strong class="text-[#171717] dark:text-[#ededed]">Size-Specific Formulas Matter:</strong> Toy & small breed puppies need calorie-dense, bite-sized kibble to guard against hypoglycemia, while large & giant breed puppies need calorie-controlled growth formulas that slow bone development and reduce hip/elbow dysplasia risk.</span></li>
-      </ul>
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">{pnI18n.title}</h2>
+        <p class="mt-2 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">{pnI18n.intro}</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+        {puppyRequirements.map((req) => (
+          <article class="p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed] mb-2 leading-snug">
+                {req.title}
+              </h3>
+              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                {req.desc}
+              </p>
+            </div>
+            <a
+              href={translatePath(`/best-dog-food/puppy-nutrition/${req.slug}`)}
+              class="mt-4 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0070f3] hover:text-[#005ac2] dark:text-[#3291ff] dark:hover:text-[#60a5fa] group"
+            >
+              <span>{pnI18n.readMoreBtn}</span>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <p class="text-xs text-[#8f8f8f] dark:text-[#737373] pt-2">
+        {pnI18n.footerText} <a href={translatePath('/#planner-section')} class="text-[#0070f3] dark:text-[#3291ff] font-semibold underline">{pnI18n.footerLink}</a>.
+      </p>
     </section>
 
     {/* ── 7. DIY Recipe Blueprint ── */}
