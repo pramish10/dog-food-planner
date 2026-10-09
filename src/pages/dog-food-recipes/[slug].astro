@@ -1,0 +1,650 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Footer from '../../components/Footer.astro';
+import AffiliateButton from '../../components/AffiliateButton.astro';
+import {
+  HOMEMADE_RECIPE_SLUGS,
+  HOMEMADE_RECIPES,
+  HOMEMADE_RECIPES_PAGE_I18N,
+  type HomemadeRecipeSlug,
+} from '../../data/homemadeRecipes';
+
+export function getStaticPaths() {
+  return HOMEMADE_RECIPE_SLUGS.map((slug, idx) => ({
+    params: { slug },
+    props: { idx },
+  }));
+}
+
+const { idx } = Astro.props as { idx: number };
+const slug = HOMEMADE_RECIPE_SLUGS[idx] as HomemadeRecipeSlug;
+const recipe = HOMEMADE_RECIPES[slug];
+const p = HOMEMADE_RECIPES_PAGE_I18N.en;
+
+if (!recipe) {
+  return Astro.redirect('/dog-food-recipes');
+}
+
+const prevSlug = idx > 0 ? HOMEMADE_RECIPE_SLUGS[idx - 1] : null;
+const nextSlug = idx < HOMEMADE_RECIPE_SLUGS.length - 1 ? HOMEMADE_RECIPE_SLUGS[idx + 1] : null;
+const prevRecipe = prevSlug ? HOMEMADE_RECIPES[prevSlug] : null;
+const nextRecipe = nextSlug ? HOMEMADE_RECIPES[nextSlug] : null;
+
+const pageTitle = `${recipe.title}: ${p.titleSuffix}`;
+const pageDescription = recipe.shortDesc.slice(0, 155);
+
+const recipeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: recipe.title,
+  description: recipe.shortDesc,
+  author: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner Clinical Veterinary Nutrition Team',
+    url: 'https://dogfoodplanner.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://dogfoodplanner.com/logo.png',
+    },
+  },
+  suitableForDiet: 'https://schema.org/CanineNutrition',
+  recipeCategory: 'Dog Food',
+  recipeCuisine: 'Veterinary Canine Nutrition',
+  prepTime: recipe.prepTime,
+  cookTime: recipe.cookTime,
+  recipeYield: recipe.yieldAmount,
+  recipeIngredient: recipe.ingredients.map(
+    (ing) => `${ing.percentage} ${ing.name} (${ing.batchAmount}) - ${ing.role}`
+  ),
+  recipeInstructions: recipe.prepProtocol.map((step) => ({
+    '@type': 'HowToStep',
+    name: step.title,
+    text: step.instruction,
+  })),
+  mainEntityOfPage: `https://dogfoodplanner.com/dog-food-recipes/${recipe.slug}`,
+};
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={`https://dogfoodplanner.com/dog-food-recipes/${recipe.slug}`}
+>
+  <Navbar />
+
+  <main class="min-h-screen page-warm-bg">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Homemade Recipes', url: '/dog-food-recipes' },
+        { name: recipe.title },
+      ]}
+    />
+
+    <!-- Hero Section -->
+    <section class="relative py-10 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div
+          class="absolute -top-10 left-1/2 -translate-x-1/2 w-[600px] h-52 rounded-full opacity-50"
+          style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.18) 0%, transparent 70%); filter: blur(40px);"
+        ></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 min-w-0">
+        <!-- Eyebrow Badge -->
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <span class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-bold text-[#92400e] dark:text-[#d97706] bg-[#fdf3e7] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] px-3 py-1 rounded-full">
+            {p.badge}
+          </span>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold" style={`background-color: ${recipe.colorTheme.tagBg}; color: ${recipe.colorTheme.tagText};`}>
+            {recipe.tag}
+          </span>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-4 text-balance leading-tight">
+          {recipe.heroTitle}
+        </h1>
+
+        <p class="text-sm sm:text-base text-[#6b4226] dark:text-[#c4956a] leading-relaxed text-pretty mb-6 max-w-3xl">
+          {recipe.summary}
+        </p>
+
+        <!-- Reviewer citation -->
+        <div class="p-3.5 bg-white/80 dark:bg-[#1f1307]/80 rounded-xl border border-[#f0d5a8] dark:border-[#3a2510] text-xs text-[#8f5e35] dark:text-[#a87c54] flex items-center gap-2.5">
+          <span class="text-base">🩺</span>
+          <span>{p.reviewedBy}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 space-y-10 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+
+      <!-- 1. Quick Specs & Vital Metrics -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.quickSpecsTitle}
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.prepTimeLabel}</span>
+            <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{recipe.prepTime}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.cookTimeLabel}</span>
+            <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{recipe.cookTime}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.yieldLabel}</span>
+            <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{recipe.yieldAmount}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.lifeStageLabel}</span>
+            <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{recipe.lifeStage}</span>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] sm:col-span-2">
+            <span class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.caRatioLabel}</span>
+            <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{recipe.macroProfile.caPhosphorusRatio}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Balanced Ingredient Formulation Section -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] shadow-sm space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <span class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-2">
+              Veterinary Whole-Food Formulation
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+              {p.formulaTitle}
+            </h2>
+            <p class="mt-1 text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373]">
+              {p.formulaSubtitle}
+            </p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1.5 rounded-lg bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-[#171717] dark:text-[#ededed]">
+              <span>⚖️</span>
+              <span>Yield: {recipe.yieldAmount.split('(')[0].trim()}</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Visual Multi-Color Ratio Distribution Bar -->
+        <div class="space-y-2.5 p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+          <div class="flex items-center justify-between text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] pb-1">
+            <span class="font-semibold uppercase tracking-wider text-[#171717] dark:text-[#ededed]">Formulation Ratio Balance (100% Total)</span>
+            <span>{recipe.ingredients.length} Balanced Ingredients</span>
+          </div>
+          <div class="flex h-3.5 w-full rounded-full overflow-hidden shadow-inner bg-[#e5e5e5] dark:bg-[#262626] ring-1 ring-black/5 dark:ring-white/10">
+            {recipe.ingredients.map((ing) => (
+              <div
+                style={`width: ${ing.numericPercentage}%; background-color: ${ing.color};`}
+                title={`${ing.percentage} ${ing.name}`}
+                class="h-full transition-all"
+              />
+            ))}
+          </div>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 pt-1 text-[11px] font-mono text-[#666] dark:text-[#a1a1a1]">
+            {recipe.ingredients.map((ing) => (
+              <span class="inline-flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full inline-block shrink-0 shadow-sm" style={`background-color: ${ing.color};`}></span>
+                <span class="font-semibold text-[#171717] dark:text-[#ededed]">{ing.percentage}</span>
+                <span class="truncate max-w-[140px] sm:max-w-none">{ing.name.split('(')[0].trim()}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Ingredients Detailed Cards -->
+        <div class="space-y-3.5 pt-1">
+          {recipe.ingredients.map((ing) => (
+            <article class="p-4 sm:p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] hover:border-[#0070f3]/40 dark:hover:border-[#3291ff]/40 transition-all space-y-3 shadow-xs">
+              
+              <!-- Card Header -->
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#ebebeb] dark:border-[#262626]">
+                <div class="flex items-start sm:items-center gap-3">
+                  <div
+                    class="px-3 py-1.5 rounded-lg font-mono font-extrabold text-sm sm:text-base shrink-0 shadow-xs flex items-center justify-center min-w-[58px]"
+                    style={`background-color: ${ing.color}18; color: ${ing.color}; border: 1px solid ${ing.color}40;`}
+                  >
+                    {ing.percentage}
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed] leading-snug">
+                      {ing.name}
+                    </h3>
+                    <div class="flex flex-wrap items-center gap-2 mt-1">
+                      <span class="inline-flex items-center text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-[#666] dark:text-[#999] bg-white dark:bg-[#141414] px-2 py-0.5 rounded border border-[#ebebeb] dark:border-[#2a2a2a]">
+                        {ing.category}
+                      </span>
+                      <span class="inline-flex items-center gap-1 text-[11px] font-mono font-semibold text-[#0070f3] dark:text-[#3291ff]">
+                        <span>⚖️</span>
+                        <span>{ing.batchAmount}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {ing.affiliateUrl && (
+                  <div class="shrink-0 self-start sm:self-auto">
+                    <AffiliateButton
+                      url={ing.affiliateUrl}
+                      label="Buy Verified Ingredient →"
+                      size="sm"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <!-- Card Content: 2-Column Grid for Function & Clinical Benefit -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
+                <div class="p-3.5 bg-white dark:bg-[#141414] rounded-lg border border-[#ebebeb] dark:border-[#262626]">
+                  <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-bold text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                    {p.roleCol}
+                  </span>
+                  <p class="text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                    {ing.role}
+                  </p>
+                </div>
+                <div class="p-3.5 bg-emerald-50/40 dark:bg-emerald-950/20 rounded-lg border border-emerald-200/60 dark:border-emerald-900/40">
+                  <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-bold text-emerald-800 dark:text-emerald-400 block mb-1 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    Clinical Target Benefit
+                  </span>
+                  <p class="text-emerald-950 dark:text-emerald-200/90 leading-relaxed">
+                    {ing.clinicalBenefit}
+                  </p>
+                </div>
+              </div>
+
+            </article>
+          ))}
+        </div>
+
+        <!-- Quick Formulation Reference Table -->
+        <div class="pt-2">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-3">
+            <span class="text-[11px] font-mono uppercase tracking-wider font-bold text-[#8f8f8f] dark:text-[#737373] block">
+              Quick Reference Formula Summary
+            </span>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="border-b border-[#ebebeb] dark:border-[#262626] font-mono text-[11px] text-[#8f8f8f] dark:text-[#737373]">
+                    <th class="py-2 px-2.5">{p.ingredientCol}</th>
+                    <th class="py-2 px-2.5 text-center">{p.ratioCol}</th>
+                    <th class="py-2 px-2.5">{p.batchCol}</th>
+                    <th class="py-2 px-2.5">Category</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
+                  {recipe.ingredients.map((ing) => (
+                    <tr class="hover:bg-white dark:hover:bg-[#141414] transition-colors">
+                      <td class="py-2.5 px-2.5 font-semibold text-[#171717] dark:text-[#ededed]">
+                        {ing.name}
+                      </td>
+                      <td class="py-2.5 px-2.5 text-center font-mono font-bold text-[#0070f3] dark:text-[#3291ff]">
+                        {ing.percentage}
+                      </td>
+                      <td class="py-2.5 px-2.5 font-mono text-[#666] dark:text-[#999] whitespace-nowrap">
+                        {ing.batchAmount}
+                      </td>
+                      <td class="py-2.5 px-2.5 text-[#666] dark:text-[#999]">
+                        {ing.category}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 3. Calculated Macro & Energy Profile -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.macroTitle}
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.proteinLabel}</span>
+            <span class="text-xl font-extrabold text-[#171717] dark:text-[#ededed]">{recipe.macroProfile.proteinDm}</span>
+          </div>
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.fatLabel}</span>
+            <span class="text-xl font-extrabold text-[#171717] dark:text-[#ededed]">{recipe.macroProfile.fatDm}</span>
+          </div>
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.carbsLabel}</span>
+            <span class="text-xl font-extrabold text-[#171717] dark:text-[#ededed]">{recipe.macroProfile.carbsDm}</span>
+          </div>
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.fiberLabel}</span>
+            <span class="text-xl font-extrabold text-[#171717] dark:text-[#ededed]">{recipe.macroProfile.fiberDm}</span>
+          </div>
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.moistureLabel}</span>
+            <span class="text-xl font-extrabold text-[#171717] dark:text-[#ededed]">{recipe.macroProfile.moisture}</span>
+          </div>
+          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
+            <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.energyLabel}</span>
+            <span class="text-sm font-extrabold text-[#171717] dark:text-[#ededed] leading-snug">{recipe.macroProfile.kcalPerKg}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Clinical Rationale & Veterinary Deep Dives -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.clinicalTitle}
+        </h2>
+        <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+          {recipe.executiveRationale}
+        </p>
+
+        <div class="space-y-4 pt-2">
+          {recipe.clinicalDeepDives.map((dive) => (
+            <article class="p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-3">
+              <h3 class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed]">
+                {dive.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                {dive.description}
+              </p>
+              <ul class="space-y-1.5 pt-1">
+                {dive.keyPoints.map((pt) => (
+                  <li class="flex items-start gap-2 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
+                    <span class="text-[#0070f3] dark:text-[#3291ff] font-bold mt-0.5">•</span>
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- 5. Step-by-Step Culinary Preparation Protocol -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <div>
+          <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.prepTitle}
+          </h2>
+          <p class="mt-1 text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373]">
+            {p.prepSubtitle}
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {recipe.prepProtocol.map((step) => (
+            <div class="p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full bg-[#171717] dark:bg-[#ededed] text-white dark:text-[#171717] flex items-center justify-center font-bold text-sm shrink-0">
+                {step.step}
+              </div>
+              <div class="space-y-1.5 flex-1 min-w-0">
+                <h3 class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed]">
+                  {step.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                  {step.instruction}
+                </p>
+                {step.criticalTip && (
+                  <div class="mt-2 p-2.5 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-lg text-[11px] text-amber-900 dark:text-amber-200 font-medium">
+                    ⚠️ <strong>Important:</strong> {step.criticalTip}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 6. Daily Feeding Portion Reference -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] shadow-sm space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-2 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div>
+            <span class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-2">
+              Feeding & Dosage Chart
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+              {p.portionTitle}
+            </h2>
+            <p class="mt-1 text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373]">
+              {p.portionSubtitle}
+            </p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="inline-flex items-center gap-1 text-[11px] font-mono font-semibold px-2.5 py-1 rounded-lg bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-[#666] dark:text-[#999]">
+              <span>📊</span>
+              <span>MER Calibrated</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Desktop & Tablet View: Full-Width Clean Table (Zero Horizontal Scroll!) -->
+        <div class="hidden md:block">
+          <table class="w-full text-left border-collapse table-fixed text-xs">
+            <thead>
+              <tr class="border-b border-[#ebebeb] dark:border-[#262626] text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373]">
+                <th class="py-3 px-3 w-[18%]">{p.dogWeightCol}</th>
+                <th class="py-3 px-3 w-[22%]">{p.dailyGramsCol}</th>
+                <th class="py-3 px-3 w-[14%]">{p.dailyKcalCol}</th>
+                <th class="py-3 px-3 w-[16%]">{p.mealsCol}</th>
+                <th class="py-3 px-3 w-[30%]">{p.servingNotesCol}</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
+              {recipe.portionReference.map((row) => (
+                <tr class="hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]/50 transition-colors">
+                  <td class="py-3.5 px-3 font-bold text-xs text-[#171717] dark:text-[#ededed]">
+                    {row.dogWeight}
+                  </td>
+                  <td class="py-3.5 px-3 font-mono font-bold text-xs text-[#0070f3] dark:text-[#3291ff]">
+                    {row.dailyGrams}
+                  </td>
+                  <td class="py-3.5 px-3 font-mono text-xs text-[#171717] dark:text-[#ededed]">
+                    {row.dailyKcal}
+                  </td>
+                  <td class="py-3.5 px-3 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
+                    {row.mealsPerDay}
+                  </td>
+                  <td class="py-3.5 px-3 text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                    {row.servingNotes}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile View (< 768px): Responsive Portion Cards (Zero Horizontal Scroll!) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:hidden">
+          {recipe.portionReference.map((row) => (
+            <article class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2.5">
+              <div class="flex items-center justify-between pb-2 border-b border-[#ebebeb] dark:border-[#262626]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#0070f3] dark:bg-[#3291ff]"></span>
+                  <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{row.dogWeight}</span>
+                </div>
+                <span class="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                  {row.dailyKcal}
+                </span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="p-2.5 bg-white dark:bg-[#141414] rounded-lg border border-[#ebebeb] dark:border-[#262626]">
+                  <span class="text-[10px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-0.5">{p.dailyGramsCol}</span>
+                  <span class="font-mono font-bold text-xs text-[#0070f3] dark:text-[#3291ff] leading-tight block">{row.dailyGrams}</span>
+                </div>
+                <div class="p-2.5 bg-white dark:bg-[#141414] rounded-lg border border-[#ebebeb] dark:border-[#262626]">
+                  <span class="text-[10px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-0.5">{p.mealsCol}</span>
+                  <span class="font-medium text-xs text-[#171717] dark:text-[#ededed] leading-tight block">{row.mealsPerDay}</span>
+                </div>
+              </div>
+              <p class="text-[11px] text-[#666] dark:text-[#999] leading-relaxed pt-1 bg-white/50 dark:bg-[#141414]/50 p-2 rounded-lg border border-[#ebebeb]/60 dark:border-[#262626]/60">
+                <span class="font-semibold text-[#171717] dark:text-[#ededed]">💡 Note:</span> {row.servingNotes}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- 7. Safe Storage, Freezing & Thawing Guidelines -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-4">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.storageTitle}
+        </h2>
+        <div class="grid sm:grid-cols-3 gap-3.5">
+          {recipe.storageGuidelines.map((item) => (
+            <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-1.5">
+              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{item.method}</h3>
+              <p class="font-mono text-xs text-[#0070f3] dark:text-[#3291ff]">{item.duration}</p>
+              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed pt-1">{item.instructions}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- 8. Safety, Contraindications & Transition Plan -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.safetyTitle}
+        </h2>
+
+        <!-- Calcium Warning Banner -->
+        <div class="p-4 sm:p-5 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/80 rounded-xl space-y-1.5">
+          <h3 class="font-bold text-sm text-amber-900 dark:text-amber-200 flex items-center gap-1.5">
+            <span>⚠️</span> {p.calciumNoticeTitle}
+          </h3>
+          <p class="text-xs sm:text-sm text-amber-800 dark:text-amber-300 leading-relaxed">
+            {recipe.safetyAndPrecautions.calciumRule}
+          </p>
+        </div>
+
+        <!-- Contraindications -->
+        <div class="space-y-2">
+          <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">
+            {p.contraindicationsTitle}
+          </h3>
+          <ul class="space-y-1.5">
+            {recipe.safetyAndPrecautions.contraindications.map((contra) => (
+              <li class="flex items-start gap-2 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1]">
+                <span class="text-red-500 font-bold mt-0.5">✕</span>
+                <span>{contra}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Transition Schedule -->
+        <div class="space-y-2 pt-2 border-t border-[#ebebeb] dark:border-[#262626]">
+          <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">
+            {p.transitionTitle}
+          </h3>
+          <div class="grid sm:grid-cols-2 gap-2">
+            {recipe.safetyAndPrecautions.transitionSchedule.map((trans) => (
+              <div class="p-3 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-lg border border-[#ebebeb] dark:border-[#262626] text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
+                {trans}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. FAQ Section -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
+        <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
+          {p.faqTitle}
+        </h2>
+        <div class="space-y-3.5">
+          {recipe.faq.map((q) => (
+            <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-1.5">
+              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">
+                Q: {q.question}
+              </h3>
+              <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                {q.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Interactive Calculator CTA -->
+      <section class="p-6 sm:p-8 bg-[#fdf3e7] dark:bg-[#201407] rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="space-y-1 text-center sm:text-left">
+          <h3 class="font-bold text-base sm:text-lg text-[#1c0f00] dark:text-[#fde8c8]">
+            {p.calculatorCtaTitle}
+          </h3>
+          <p class="text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a]">
+            {p.calculatorCtaDesc}
+          </p>
+        </div>
+        <a
+          href="/#planner-section"
+          class="shrink-0 px-5 py-2.5 bg-[#92400e] hover:bg-[#78350f] text-white dark:bg-[#d97706] dark:hover:bg-[#b45309] font-bold text-xs rounded-xl shadow-sm transition-colors text-center"
+        >
+          {p.calculatorCtaBtn}
+        </a>
+      </section>
+
+      <!-- Prev / Next Navigation -->
+      {(prevRecipe || nextRecipe) && (
+        <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {prevRecipe ? (
+            <a
+              href={`/dog-food-recipes/${prevRecipe.slug}`}
+              class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                ← {p.prevRecipe}
+              </span>
+              <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">
+                {prevRecipe.title}
+              </span>
+            </a>
+          ) : (
+            <div />
+          )}
+          {nextRecipe && (
+            <a
+              href={`/dog-food-recipes/${nextRecipe.slug}`}
+              class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all sm:text-right"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                {p.nextRecipe} →
+              </span>
+              <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">
+                {nextRecipe.title}
+              </span>
+            </a>
+          )}
+        </section>
+      )}
+
+      <!-- Back to All Recipes Link -->
+      <div class="text-center pt-2">
+        <a
+          href="/dog-food-recipes"
+          class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
+        >
+          ← {p.backToRecipes}
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify(recipeJsonLd)} />
