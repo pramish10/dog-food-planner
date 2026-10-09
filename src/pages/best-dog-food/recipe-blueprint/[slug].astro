@@ -317,44 +317,78 @@ const articleJsonLd = {
         </div>
       </section>
 
-      <!-- Reference Gram Portions by Dog Body Weight Table -->
-      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
-        <div>
-          <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
-            {p.portionTitle}
-          </h2>
-          <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
-            {p.portionSubtitle}
-          </p>
+      <!-- Reference Gram Portions by Dog Body Weight Section -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] shadow-sm space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-3 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div>
+            <span class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-2">
+              Veterinary Portion Reference (MER Calibrated)
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+              {p.portionTitle}
+            </h2>
+            <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
+              {p.portionSubtitle}
+            </p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1.5 rounded-lg bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-[#171717] dark:text-[#ededed]">
+              <span>⚖️</span>
+              <span>{item.portionReference.length} Weight Tiers</span>
+            </span>
+          </div>
         </div>
 
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs border-collapse">
-            <thead>
-              <tr class="border-b border-[#ebebeb] dark:border-[#262626] text-[#8f8f8f] dark:text-[#737373] font-mono">
-                <th class="py-2.5 pr-4">{p.dogWeightCol}</th>
-                <th class="py-2.5 px-3">{p.dailyGramsCol}</th>
-                <th class="py-2.5 px-3">{p.dailyKcalCol}</th>
-                <th class="py-2.5 px-3">{p.proteinCol}</th>
-                <th class="py-2.5 px-3">{p.organCol}</th>
-                <th class="py-2.5 px-3">{p.produceCol}</th>
-                <th class="py-2.5 pl-3">{p.supplementsCol}</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
-              {item.portionReference.map((ref) => (
-                <tr class="hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] transition-colors">
-                  <td class="py-3 pr-4 font-semibold text-[#171717] dark:text-[#ededed] whitespace-nowrap">{ref.dogWeight}</td>
-                  <td class="py-3 px-3 font-mono font-bold text-[#0070f3] dark:text-[#3291ff] whitespace-nowrap">{ref.dailyGramsTotal}</td>
-                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.dailyKcal}</td>
-                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.mainProtein}</td>
-                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.organMeat}</td>
-                  <td class="py-3 px-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">{ref.produceAndCarbs}</td>
-                  <td class="py-3 pl-3 text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap font-mono text-[11px]">{ref.supplements}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <!-- Responsive Portion Cards Grid (Zero Horizontal Scroll, Zero Hidden Columns!) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {item.portionReference.map((ref) => (
+            <article class="p-4 sm:p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] hover:border-[#0070f3]/40 dark:hover:border-[#3291ff]/40 transition-all flex flex-col justify-between space-y-3.5 shadow-xs">
+              
+              <!-- Header: Weight + Calorie Badge -->
+              <div class="flex items-center justify-between gap-2 pb-2.5 border-b border-[#ebebeb] dark:border-[#262626]">
+                <div class="flex items-center gap-2 min-w-0">
+                  <span class="text-base shrink-0">🐕</span>
+                  <span class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed] leading-snug">
+                    {ref.dogWeight}
+                  </span>
+                </div>
+                <span class="font-mono text-xs font-extrabold px-2.5 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/80 shrink-0 shadow-2xs">
+                  {ref.dailyKcal}
+                </span>
+              </div>
+
+              <!-- Total Daily Food Banner -->
+              <div class="p-2.5 bg-white dark:bg-[#141414] rounded-lg border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373]">
+                  {p.dailyGramsCol}
+                </span>
+                <span class="font-mono font-bold text-xs sm:text-sm text-[#0070f3] dark:text-[#3291ff]">
+                  {ref.dailyGramsTotal}
+                </span>
+              </div>
+
+              <!-- Component Breakdown -->
+              <div class="space-y-1.5 text-xs">
+                <div class="flex justify-between items-center text-[#4d4d4d] dark:text-[#a1a1a1] py-1 border-b border-[#ebebeb]/60 dark:border-[#262626]/60">
+                  <span class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.proteinCol}:</span>
+                  <span class="font-semibold text-[#171717] dark:text-[#ededed]">{ref.mainProtein}</span>
+                </div>
+                <div class="flex justify-between items-center text-[#4d4d4d] dark:text-[#a1a1a1] py-1 border-b border-[#ebebeb]/60 dark:border-[#262626]/60">
+                  <span class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.organCol}:</span>
+                  <span class="font-semibold text-[#171717] dark:text-[#ededed]">{ref.organMeat}</span>
+                </div>
+                <div class="flex justify-between items-center text-[#4d4d4d] dark:text-[#a1a1a1] py-1 border-b border-[#ebebeb]/60 dark:border-[#262626]/60">
+                  <span class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.produceCol}:</span>
+                  <span class="font-semibold text-[#171717] dark:text-[#ededed]">{ref.produceAndCarbs}</span>
+                </div>
+                <div class="flex justify-between items-center text-[#4d4d4d] dark:text-[#a1a1a1] pt-1">
+                  <span class="text-[11px] text-[#8f8f8f] dark:text-[#737373]">{p.supplementsCol}:</span>
+                  <span class="font-mono text-[11px] text-[#0070f3] dark:text-[#3291ff]">{ref.supplements}</span>
+                </div>
+              </div>
+
+            </article>
+          ))}
         </div>
       </section>
 

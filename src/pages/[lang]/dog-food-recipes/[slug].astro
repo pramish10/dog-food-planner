@@ -277,41 +277,39 @@ const recipeJsonLd = {
           ))}
         </div>
 
-        <!-- Quick Formulation Reference Table -->
+        <!-- Quick Formulation Reference (Zero Scroll, Fully Responsive) -->
         <div class="pt-2">
-          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-3">
-            <span class="text-[11px] font-mono uppercase tracking-wider font-bold text-[#8f8f8f] dark:text-[#737373] block">
-              Quick Reference Formula Summary
-            </span>
-            <div class="overflow-x-auto">
-              <table class="w-full text-left border-collapse text-xs">
-                <thead>
-                  <tr class="border-b border-[#ebebeb] dark:border-[#262626] font-mono text-[11px] text-[#8f8f8f] dark:text-[#737373]">
-                    <th class="py-2 px-2.5">{p.ingredientCol}</th>
-                    <th class="py-2 px-2.5 text-center">{p.ratioCol}</th>
-                    <th class="py-2 px-2.5">{p.batchCol}</th>
-                    <th class="py-2 px-2.5">Category</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
-                  {recipe.ingredients.map((ing) => (
-                    <tr class="hover:bg-white dark:hover:bg-[#141414] transition-colors">
-                      <td class="py-2.5 px-2.5 font-semibold text-[#171717] dark:text-[#ededed]">
-                        {ing.name}
-                      </td>
-                      <td class="py-2.5 px-2.5 text-center font-mono font-bold text-[#0070f3] dark:text-[#3291ff]">
-                        {ing.percentage}
-                      </td>
-                      <td class="py-2.5 px-2.5 font-mono text-[#666] dark:text-[#999] whitespace-nowrap">
-                        {ing.batchAmount}
-                      </td>
-                      <td class="py-2.5 px-2.5 text-[#666] dark:text-[#999]">
-                        {ing.category}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          <div class="p-4 sm:p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-3">
+            <div class="flex items-center justify-between pb-2 border-b border-[#ebebeb] dark:border-[#262626]">
+              <span class="text-[11px] font-mono uppercase tracking-wider font-bold text-[#8f8f8f] dark:text-[#737373]">
+                Quick Formula Ratio Summary
+              </span>
+              <span class="text-[11px] font-mono font-semibold text-[#0070f3] dark:text-[#3291ff]">
+                100% Balanced Batch
+              </span>
+            </div>
+            <div class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
+              {recipe.ingredients.map((ing) => (
+                <div class="py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4 text-xs">
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span class="w-2.5 h-2.5 rounded-full shrink-0" style={`background-color: ${ing.color}`}></span>
+                    <span class="font-semibold text-[#171717] dark:text-[#ededed]">
+                      {ing.name}
+                    </span>
+                    <span class="hidden md:inline text-[11px] text-[#8f8f8f] dark:text-[#737373]">
+                      • {ing.category}
+                    </span>
+                  </div>
+                  <div class="flex items-center gap-2.5 shrink-0 self-start sm:self-auto pl-4 sm:pl-0">
+                    <span class="font-mono text-[#4d4d4d] dark:text-[#a1a1a1] text-xs">
+                      {ing.batchAmount}
+                    </span>
+                    <span class="font-mono font-bold text-xs px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/60 text-[#0070f3] dark:text-[#3291ff] border border-blue-100 dark:border-blue-900/60 min-w-[42px] text-center">
+                      {ing.percentage}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -417,50 +415,76 @@ const recipeJsonLd = {
         </div>
       </section>
 
-      <!-- 6. Daily Feeding Portion Reference -->
-      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-4">
-        <div>
-          <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
-            {p.portionTitle}
-          </h2>
-          <p class="mt-1 text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373]">
-            {p.portionSubtitle}
-          </p>
+      <!-- 6. Scientific Daily Portion Reference by Dog Weight -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] shadow-sm space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-3 border-b border-[#ebebeb] dark:border-[#262626]">
+          <div>
+            <span class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-2">
+              Veterinary Portion Reference (MER Calibrated)
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
+              {p.portionTitle}
+            </h2>
+            <p class="mt-1 text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373]">
+              {p.portionSubtitle}
+            </p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1.5 rounded-lg bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-[#171717] dark:text-[#ededed]">
+              <span>⚖️</span>
+              <span>{recipe.portionReference.length} Weight Tiers</span>
+            </span>
+          </div>
         </div>
 
-        <div class="overflow-x-auto -mx-6 sm:mx-0">
-          <table class="w-full text-left border-collapse min-w-[580px]">
-            <thead>
-              <tr class="border-b border-[#ebebeb] dark:border-[#262626] text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373]">
-                <th class="py-3 px-3">{p.dogWeightCol}</th>
-                <th class="py-3 px-3">{p.dailyGramsCol}</th>
-                <th class="py-3 px-3">{p.dailyKcalCol}</th>
-                <th class="py-3 px-3">{p.mealsCol}</th>
-                <th class="py-3 px-3">{p.servingNotesCol}</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
-              {recipe.portionReference.map((row) => (
-                <tr class="hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]/50 transition-colors">
-                  <td class="py-3.5 px-3 font-bold text-xs sm:text-sm text-[#171717] dark:text-[#ededed] whitespace-nowrap">
+        <!-- Responsive Portion Cards Grid (Zero Horizontal Scroll, Zero Hidden Columns!) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {recipe.portionReference.map((row) => (
+            <article class="p-4 sm:p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] hover:border-[#0070f3]/40 dark:hover:border-[#3291ff]/40 transition-all flex flex-col justify-between space-y-3.5 shadow-xs">
+              
+              <!-- Header: Weight Badge + Calorie Target -->
+              <div class="flex items-center justify-between gap-2 pb-2.5 border-b border-[#ebebeb] dark:border-[#262626]">
+                <div class="flex items-center gap-2 min-w-0">
+                  <span class="text-base shrink-0">🐕</span>
+                  <span class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed] leading-snug">
                     {row.dogWeight}
-                  </td>
-                  <td class="py-3.5 px-3 font-mono font-bold text-xs sm:text-sm text-[#0070f3] dark:text-[#3291ff] whitespace-nowrap">
+                  </span>
+                </div>
+                <span class="font-mono text-xs font-extrabold px-2.5 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/80 shrink-0 shadow-2xs">
+                  {row.dailyKcal}
+                </span>
+              </div>
+
+              <!-- 2 Metric Boxes: Daily Grams & Meal Frequency -->
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="p-2.5 bg-white dark:bg-[#141414] rounded-lg border border-[#ebebeb] dark:border-[#262626]">
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] block mb-0.5">
+                    {p.dailyGramsCol}
+                  </span>
+                  <span class="font-mono font-bold text-xs sm:text-sm text-[#0070f3] dark:text-[#3291ff] leading-tight block">
                     {row.dailyGrams}
-                  </td>
-                  <td class="py-3.5 px-3 font-mono text-xs text-[#171717] dark:text-[#ededed] whitespace-nowrap">
-                    {row.dailyKcal}
-                  </td>
-                  <td class="py-3.5 px-3 text-xs text-[#4d4d4d] dark:text-[#a1a1a1] whitespace-nowrap">
+                  </span>
+                </div>
+                <div class="p-2.5 bg-white dark:bg-[#141414] rounded-lg border border-[#ebebeb] dark:border-[#262626]">
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] block mb-0.5">
+                    {p.mealsCol}
+                  </span>
+                  <span class="font-medium text-xs text-[#171717] dark:text-[#ededed] leading-tight block">
                     {row.mealsPerDay}
-                  </td>
-                  <td class="py-3.5 px-3 text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
-                    {row.servingNotes}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Clinical Serving Advice Box -->
+              <div class="p-3 bg-white/70 dark:bg-[#141414]/70 rounded-lg border border-[#ebebeb] dark:border-[#262626] text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                <span class="font-semibold text-[#171717] dark:text-[#ededed] block mb-0.5 text-[11px]">
+                  💡 {p.servingNotesCol}:
+                </span>
+                <span>{row.servingNotes}</span>
+              </div>
+
+            </article>
+          ))}
         </div>
       </section>
 
