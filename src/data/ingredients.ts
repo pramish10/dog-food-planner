@@ -1,4 +1,5 @@
 export interface IngredientSafetyItem {
+  slug: string;
   name: string;
   category: 'Protein' | 'Vegetable' | 'Fruit' | 'Dairy & Ferments' | 'Herbs & Supplements' | 'FATAL_TOXIC' | 'HARMFUL';
   status: 'SAFE_AND_BENEFICIAL' | 'FEED_WITH_CAUTION' | 'DANGEROUS_TOXIC';
@@ -10,6 +11,7 @@ export interface IngredientSafetyItem {
 export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
   // SAFE INGREDIENTS
   {
+    slug: 'pumpkin',
     name: 'Pumpkin (Pure Puree)',
     category: 'Vegetable',
     status: 'SAFE_AND_BENEFICIAL',
@@ -18,6 +20,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['Soluble Fiber', 'Vitamin A', 'Beta-Carotene', 'Potassium']
   },
   {
+    slug: 'wild-alaskan-salmon',
     name: 'Wild Alaskan Salmon',
     category: 'Protein',
     status: 'SAFE_AND_BENEFICIAL',
@@ -26,6 +29,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['EPA/DHA Omega-3', 'Vitamin B12', 'Selenium', 'High Biological Value Protein']
   },
   {
+    slug: 'wild-blueberries',
     name: 'Wild Blueberries',
     category: 'Fruit',
     status: 'SAFE_AND_BENEFICIAL',
@@ -34,6 +38,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['Anthocyanins', 'Vitamin C', 'Vitamin K', 'Manganese']
   },
   {
+    slug: 'raw-green-tripe',
     name: 'Raw Unbleached Green Tripe',
     category: 'Protein',
     status: 'SAFE_AND_BENEFICIAL',
@@ -42,6 +47,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['Lactobacillus Probiotics', 'Digestive Enzymes', '1:1 Ca:P Ratio']
   },
   {
+    slug: 'bone-broth',
     name: 'Collagen Bone Broth',
     category: 'Herbs & Supplements',
     status: 'SAFE_AND_BENEFICIAL',
@@ -50,6 +56,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['Type II Collagen', 'Glucosamine', 'Glycine', 'Proline']
   },
   {
+    slug: 'zucchini',
     name: 'Organic Steamed Zucchini',
     category: 'Vegetable',
     status: 'SAFE_AND_BENEFICIAL',
@@ -58,6 +65,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['Hydration', 'Folate', 'Lutein', 'Potassium']
   },
   {
+    slug: 'raw-goat-milk-kefir',
     name: 'Raw Goat Milk / Kefir',
     category: 'Dairy & Ferments',
     status: 'SAFE_AND_BENEFICIAL',
@@ -68,6 +76,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
 
   // CAUTION INGREDIENTS
   {
+    slug: 'cooked-bones',
     name: 'Cooked Bones (Any Poultry or Meat)',
     category: 'HARMFUL',
     status: 'DANGEROUS_TOXIC',
@@ -76,6 +85,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['DANGER: Splinter hazard', 'Emergency veterinary surgery risk']
   },
   {
+    slug: 'bacon-grease-fat-trimmings',
     name: 'High-Fat Trimmings & Bacon Grease',
     category: 'HARMFUL',
     status: 'FEED_WITH_CAUTION',
@@ -86,6 +96,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
 
   // STRICTLY TOXIC INGREDIENTS
   {
+    slug: 'xylitol',
     name: 'Xylitol (Birch Sugar / E967)',
     category: 'FATAL_TOXIC',
     status: 'DANGEROUS_TOXIC',
@@ -94,6 +105,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['FATAL TOXIN: Rapid insulin spike & hepatic failure']
   },
   {
+    slug: 'grapes-and-raisins',
     name: 'Grapes & Raisins (All Varieties)',
     category: 'FATAL_TOXIC',
     status: 'DANGEROUS_TOXIC',
@@ -102,6 +114,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['FATAL TOXIN: Acute Renal Failure']
   },
   {
+    slug: 'onions-and-garlic',
     name: 'Onions, Garlic, Leeks & Chives (Allium Family)',
     category: 'FATAL_TOXIC',
     status: 'DANGEROUS_TOXIC',
@@ -110,6 +123,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['FATAL TOXIN: Hemolytic Anemia']
   },
   {
+    slug: 'chocolate-and-cocoa',
     name: 'Chocolate & Cocoa (Theobromine)',
     category: 'FATAL_TOXIC',
     status: 'DANGEROUS_TOXIC',
@@ -118,6 +132,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     nutrients: ['FATAL TOXIN: Neurotoxin & Cardiac Arrhythmia']
   },
   {
+    slug: 'macadamia-nuts',
     name: 'Macadamia Nuts',
     category: 'FATAL_TOXIC',
     status: 'DANGEROUS_TOXIC',

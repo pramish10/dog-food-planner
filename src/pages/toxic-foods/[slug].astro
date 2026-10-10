@@ -1,0 +1,443 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Footer from '../../components/Footer.astro';
+import {
+  TOXIC_FOOD_SLUGS,
+  getToxicFoods,
+  getToxicFoodBySlug,
+  TOXIC_FOODS_PAGE_I18N,
+} from '../../data/toxicFoods';
+
+export function getStaticPaths() {
+  return TOXIC_FOOD_SLUGS.map((slug, idx) => ({
+    params: { slug },
+    props: { idx },
+  }));
+}
+
+const { idx } = Astro.props as { idx: number };
+const allFoods = getToxicFoods('en');
+const item = allFoods[idx];
+const p = TOXIC_FOODS_PAGE_I18N.en;
+
+if (!item) {
+  return Astro.redirect('/toxic-foods');
+}
+
+const prevItem = idx > 0 ? allFoods[idx - 1] : null;
+const nextItem = idx < allFoods.length - 1 ? allFoods[idx + 1] : null;
+
+const isToxic = item.status === 'DANGEROUS_TOXIC';
+const isCaution = item.status === 'FEED_WITH_CAUTION';
+const isSafe = item.status === 'SAFE_AND_BENEFICIAL';
+
+const pageTitle = isToxic
+  ? `${item.name}: Canine Toxicity, Lethal Dose & Emergency Protocol | DogFoodPlanner`
+  : isCaution
+  ? `${item.name}: Dog Safety, Health Risks & Caution Guide | DogFoodPlanner`
+  : `${item.name} for Dogs: Benefits, Serving Size & Veterinary Guide | DogFoodPlanner`;
+
+const pageDescription = item.summary.slice(0, 155);
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': isToxic ? 'MedicalWebPage' : 'Article',
+  headline: pageTitle,
+  description: pageDescription,
+  name: item.name,
+  author: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner Veterinary Toxicology Team',
+    url: 'https://dogfoodplanner.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://dogfoodplanner.com/logo.png',
+    },
+  },
+  mainEntityOfPage: `https://dogfoodplanner.com/toxic-foods/${item.slug}`,
+};
+---
+
+<Layout
+  lang="en"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={`https://dogfoodplanner.com/toxic-foods/${item.slug}`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+
+  <Navbar />
+
+  <main class="min-h-screen page-warm-bg pb-16">
+    <Breadcrumbs
+      items={[
+        { name: 'Home', url: '/' },
+        { name: 'Toxic Foods Lookup', url: '/toxic-foods' },
+        { name: item.name },
+      ]}
+    />
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      
+      <!-- Emergency Hotline Callout for Toxic Items -->
+      {isToxic && (
+        <div class="mb-8 p-4 sm:p-5 rounded-2xl border-2 border-red-500/80 bg-red-50 dark:bg-red-950/40 text-red-900 dark:text-red-200 shadow-md">
+          <div class="flex items-start gap-3.5">
+            <span class="text-2xl shrink-0 mt-0.5">🚨</span>
+            <div class="flex-1 min-w-0">
+              <h2 class="text-sm sm:text-base font-bold text-red-950 dark:text-red-100 mb-1">
+                {p.emergencyHotlineTitle}
+              </h2>
+              <p class="text-xs sm:text-sm text-red-800 dark:text-red-200 leading-relaxed mb-2.5">
+                {p.emergencyHotlineDesc}
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono font-bold">
+                <a href="tel:8884264435" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white transition-colors">
+                  <span>📞 Call ASPCA: (888) 426-4435</span>
+                </a>
+                <a href="tel:8557647661" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-100 dark:bg-red-900/60 hover:bg-red-200 text-red-900 dark:text-red-100 border border-red-300 dark:border-red-800 transition-colors">
+                  <span>📞 Pet Poison Helpline: (855) 764-7661</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- Header Section -->
+      <header class="mb-8">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          {isToxic && (
+            <span class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-red-700 dark:text-red-400 bg-red-100 dark:bg-red-950/70 border border-red-200 dark:border-red-900 px-3 py-1 rounded-full animate-pulse">
+              <span>☠</span> {item.badgeLabel}
+            </span>
+          )}
+          {isCaution && (
+            <span class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-amber-700 dark:text-amber-400 bg-amber-100 dark:bg-amber-950/70 border border-amber-200 dark:border-amber-900 px-3 py-1 rounded-full">
+              <span>⚠</span> {item.badgeLabel}
+            </span>
+          )}
+          {isSafe && (
+            <span class="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/70 border border-emerald-200 dark:border-emerald-900 px-3 py-1 rounded-full">
+              <span>✓</span> {item.badgeLabel}
+            </span>
+          )}
+          <span class="font-mono text-[11px] text-[#8f8f8f] dark:text-[#737373]">
+            {p.badgePrefix}
+          </span>
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#171717] dark:text-[#ededed] tracking-tight mb-2 leading-tight text-balance">
+          {item.name}
+        </h1>
+
+        <p class="font-mono text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mb-4">
+          Clinical Designation: {item.scientificName}
+        </p>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#6b4226] dark:text-[#c4956a] font-mono border-b border-[#f0d5a8] dark:border-[#3a2510] pb-4">
+          <span>🩺 {p.reviewedBy}</span>
+        </div>
+      </header>
+
+      <!-- Executive Summary Card -->
+      <section class="p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] mb-8 shadow-sm">
+        <h2 class="text-xs font-mono uppercase tracking-wider font-bold text-[#8f8f8f] dark:text-[#737373] mb-2">
+          {p.quickOverviewTitle}
+        </h2>
+        <p class="text-base sm:text-lg text-[#171717] dark:text-[#ededed] font-medium leading-relaxed mb-4">
+          {item.summary}
+        </p>
+        <div class="p-3.5 rounded-xl border text-xs leading-relaxed font-mono"
+             class:list={[
+               isToxic ? 'border-red-200 dark:border-red-900/60 bg-red-50/50 dark:bg-red-950/20 text-red-900 dark:text-red-200' : '',
+               isCaution ? 'border-amber-200 dark:border-amber-900/60 bg-amber-50/50 dark:bg-amber-950/20 text-amber-900 dark:text-amber-200' : '',
+               isSafe ? 'border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/50 dark:bg-emerald-950/20 text-emerald-900 dark:text-emerald-200' : '',
+             ]}>
+          <strong>Status & Severity: </strong> {item.riskSeverity}
+        </div>
+      </section>
+
+      <!-- Vital Parameters Grid -->
+      <section class="mb-8">
+        <h2 class="text-xs font-mono uppercase tracking-wider font-bold text-[#8f8f8f] dark:text-[#737373] mb-3">
+          📊 {p.vitalStatsTitle}
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          {item.vitalStats.map((stat) => (
+            <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+              <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mb-1">
+                {stat.label}
+              </span>
+              <span class="text-sm sm:text-base font-bold"
+                    class:list={[
+                      stat.tone === 'danger' ? 'text-red-600 dark:text-red-400' : '',
+                      stat.tone === 'warning' ? 'text-amber-600 dark:text-amber-400' : '',
+                      stat.tone === 'safe' ? 'text-emerald-600 dark:text-emerald-400' : '',
+                      stat.tone === 'neutral' || !stat.tone ? 'text-[#171717] dark:text-[#ededed]' : '',
+                    ]}>
+                {stat.value}
+              </span>
+            </div>
+          ))}
+          <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+            <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mb-1">
+              Active Compound / Biomolecule
+            </span>
+            <span class="text-sm sm:text-base font-semibold text-[#171717] dark:text-[#ededed]">
+              {item.primaryCompound}
+            </span>
+          </div>
+          <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+            <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mb-1">
+              Primary Affected Organs / Systems
+            </span>
+            <span class="text-sm sm:text-base font-semibold text-[#171717] dark:text-[#ededed]">
+              {item.targetOrgans.join(', ')}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detailed Clinical Narrative -->
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] mb-8 space-y-4">
+        <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] border-b border-[#ebebeb] dark:border-[#262626] pb-3">
+          🔬 Comprehensive Clinical Analysis
+        </h2>
+        {item.narrativeOverview.map((paragraph) => (
+          <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+            {paragraph}
+          </p>
+        ))}
+      </section>
+
+      <!-- Biochemical Mechanism Section -->
+      <section class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] mb-8">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-lg">🧬</span>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.biochemicalTitle}
+          </h2>
+        </div>
+        <div class="p-5 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+          {item.biochemicalMechanism}
+        </div>
+      </section>
+
+      <!-- Clinical Timeline & Symptom Progression -->
+      <section class="mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-lg">⏱️</span>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.timelineTitle}
+          </h2>
+        </div>
+        <div class="space-y-4">
+          {item.timeline.map((stage, idx) => (
+            <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626]">
+              <div class="flex items-center gap-2.5 mb-3">
+                <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-[#171717] dark:bg-white text-white dark:text-[#171717]">
+                  Phase 0{idx + 1}
+                </span>
+                <h3 class="text-sm sm:text-base font-bold text-[#171717] dark:text-[#ededed]">
+                  {stage.phase}
+                </h3>
+              </div>
+              <ul class="space-y-2 pl-1">
+                {stage.symptoms.map((symptom) => (
+                  <li class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] flex items-start gap-2.5">
+                    <span class="text-[#c47a2b] dark:text-[#f59e0b] font-bold shrink-0 mt-0.5">•</span>
+                    <span>{symptom}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Emergency First Aid & Ingestion Protocol -->
+      <section class="mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-lg">🚨</span>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.emergencyTitle}
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {item.emergencyProtocol.map((step) => (
+            <div class="p-5 rounded-2xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between"
+                 class:list={[
+                   step.isUrgent ? 'border-l-4 border-l-red-500' : 'border-l-4 border-l-[#c47a2b]',
+                 ]}>
+              <div>
+                <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1 block">
+                  Step 0{step.stepNumber}
+                </span>
+                <h3 class="text-sm sm:text-base font-bold text-[#171717] dark:text-[#ededed] mb-2">
+                  {step.title}
+                </h3>
+                <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                  {step.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- In-Hospital Veterinary Medical Treatments -->
+      <section class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-lg">🏥</span>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.vetCareTitle}
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {item.vetTreatments.map((treatment) => (
+            <div class="p-4 sm:p-5 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+              <h3 class="font-bold text-xs sm:text-sm text-[#171717] dark:text-[#ededed] mb-1.5 flex items-center gap-1.5">
+                <span class="text-[#0070f3] dark:text-[#3291ff]">→</span> {treatment.name}
+              </h3>
+              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                {treatment.purpose}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Safe Canine Alternatives -->
+      <section class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-lg">🌿</span>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.alternativesTitle}
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+          {item.safeAlternatives.map((alt) => (
+            <div class="p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+              <h3 class="font-bold text-xs sm:text-sm text-emerald-700 dark:text-emerald-400 mb-1 flex items-center gap-1">
+                <span>✓</span> {alt.name}
+              </h3>
+              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                {alt.why}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Household Prevention & Safety Checklist -->
+      <section class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-lg">📋</span>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.preventionTitle}
+          </h2>
+        </div>
+        <ul class="space-y-2.5">
+          {item.preventionRules.map((rule) => (
+            <li class="text-xs sm:text-sm text-[#171717] dark:text-[#ededed] flex items-start gap-2.5">
+              <span class="text-[#0070f3] dark:text-[#3291ff] font-bold shrink-0 mt-0.5">✔</span>
+              <span class="leading-relaxed">{rule}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Frequently Asked Questions -->
+      <section class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] mb-10">
+        <div class="flex items-center gap-2 mb-5">
+          <span class="text-lg">❓</span>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {p.faqTitle}
+          </h2>
+        </div>
+        <div class="space-y-4">
+          {item.faqs.map((faq) => (
+            <div class="p-4 sm:p-5 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+              <h3 class="font-bold text-xs sm:text-sm text-[#171717] dark:text-[#ededed] mb-2 flex items-start gap-2">
+                <span class="text-[#c47a2b] dark:text-[#f59e0b] font-bold">Q:</span>
+                <span>{faq.q}</span>
+              </h3>
+              <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed pl-5">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Medical Disclaimer -->
+      <div class="p-4 rounded-xl bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] text-[11px] text-[#8f8f8f] dark:text-[#737373] leading-relaxed mb-8">
+        <strong>Veterinary Clinical Notice: </strong> {p.disclaimer}
+      </div>
+
+      <!-- Prev / Next Navigation -->
+      {(prevItem || nextItem) && (
+        <nav class="border-t border-[#ebebeb] dark:border-[#262626] pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+          {prevItem ? (
+            <a
+              href={`/toxic-foods/${prevItem.slug}`}
+              class="hairline-card p-4 sm:p-5 bg-white dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                ← {p.prevFood}
+              </span>
+              <span class="text-sm font-semibold text-[#171717] dark:text-[#ededed] group-hover:text-[#c47a2b] dark:group-hover:text-[#f59e0b] transition-colors">
+                {prevItem.name}
+              </span>
+            </a>
+          ) : (
+            <div />
+          )}
+
+          {nextItem && (
+            <a
+              href={`/toxic-foods/${nextItem.slug}`}
+              class="hairline-card p-4 sm:p-5 bg-white dark:bg-[#141414] rounded-xl border border-[#ebebeb] dark:border-[#262626] hover:border-[#171717] dark:hover:border-[#ededed] transition-all text-left sm:text-right group"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                {p.nextFood} →
+              </span>
+              <span class="text-sm font-semibold text-[#171717] dark:text-[#ededed] group-hover:text-[#c47a2b] dark:group-hover:text-[#f59e0b] transition-colors">
+                {nextItem.name}
+              </span>
+            </a>
+          )}
+        </nav>
+      )}
+
+      <!-- Back to Toxic Foods Lookup Button -->
+      <div class="text-center pt-4">
+        <a
+          href="/toxic-foods"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold font-mono transition-all shadow-sm"
+        >
+          <span>← {p.backToList}</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 60%, #fff0e6 100%);
+  }
+  html.dark .page-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
+  }
+</style>

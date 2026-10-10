@@ -1,7 +1,8 @@
 ---
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl, useTranslatedPath } from '../i18n/utils';
 import { getLocalizedIngredients, INGREDIENT_UI } from '../i18n/ingredients';
 const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 const uiText = INGREDIENT_UI[lang] || INGREDIENT_UI.en;
 const ingredients = getLocalizedIngredients(lang);
 ---
@@ -90,10 +91,18 @@ const ingredients = getLocalizedIngredients(lang);
             </p>
           </div>
 
-          <div class="pt-2.5 sm:pt-3 border-t border-[#ebebeb] dark:border-[#262626]">
-            <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373]">
+          <div class="pt-2.5 sm:pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex flex-col xs:flex-row xs:items-center justify-between gap-2.5 mt-auto">
+            <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] flex-1 min-w-0 pr-1">
               <strong class="text-[#171717] dark:text-[#ededed] font-medium">{uiText.servingTitle} </strong> {item.servingAdvice}
             </div>
+            <a
+              href={translatePath(`/toxic-foods/${item.slug}`)}
+              class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#92400e] dark:text-[#f59e0b] bg-[#fdf3e7] hover:bg-[#fae4cd] dark:bg-[#2a1a08] dark:hover:bg-[#3d260c] border border-[#f0d5a8] dark:border-[#523315] shrink-0 transition-all hover:scale-[1.02] active:scale-[0.98] group touch-manipulation"
+              title={`${uiText.readMoreBtn}: ${item.name}`}
+            >
+              <span>{uiText.readMoreBtn}</span>
+              <span class="transition-transform group-hover:translate-x-0.5 text-[10px]">→</span>
+            </a>
           </div>
         </div>
       ))}

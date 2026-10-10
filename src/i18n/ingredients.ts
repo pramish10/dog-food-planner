@@ -21,6 +21,7 @@ export interface IngredientCheckerUI {
   keyNutrientsTitle: string;
   noResultsTitle: string;
   noResultsDesc: string;
+  readMoreBtn: string;
 }
 
 export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
@@ -39,6 +40,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     keyNutrientsTitle: 'Key Nutrients & Clinical Profile:',
     noResultsTitle: 'No ingredients found.',
     noResultsDesc: 'Try searching for common foods like "salmon", "pumpkin", "grapes", or "chocolate".',
+    readMoreBtn: 'Read More',
   },
   es: {
     eyebrow: '02 // CONSULTA DE SEGURIDAD Y TOXICIDAD',
@@ -55,6 +57,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     keyNutrientsTitle: 'Perfil Nutricional y Clínico:',
     noResultsTitle: 'No se encontraron ingredientes.',
     noResultsDesc: 'Prueba buscando términos como "salmón", "calabaza", "uvas" o "chocolate".',
+    readMoreBtn: 'Leer Más',
   },
   ja: {
     eyebrow: '02 // 食材の安全性・毒性チェック',
@@ -71,6 +74,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     keyNutrientsTitle: '主な栄養素・臨床プロファイル:',
     noResultsTitle: '該当する食材が見つかりませんでした。',
     noResultsDesc: '「サーモン」「かぼちゃ」「ぶどう」「チョコレート」などの単語で検索してください。',
+    readMoreBtn: '詳細を見る',
   },
   fr: {
     eyebrow: '02 // SÉCURITÉ & TOXICITÉ ALIMENTAIRE',
@@ -87,6 +91,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     keyNutrientsTitle: 'Profil Nutritionnel & Clinique:',
     noResultsTitle: 'Aucun ingrédient trouvé.',
     noResultsDesc: 'Essayez avec "saumon", "citrouille", "raisin" ou "chocolat".',
+    readMoreBtn: 'En Savoir Plus',
   },
   de: {
     eyebrow: '02 // ZUTATENSICHERHEIT & GIFT-DATENBANK',
@@ -103,6 +108,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     keyNutrientsTitle: 'Nährstoffprofil & Tiermedizinischer Nutzen:',
     noResultsTitle: 'Keine Zutaten gefunden.',
     noResultsDesc: 'Versuchen Sie Begriffe wie „Lachs“, „Kürbis“, „Weintrauben“ oder „Schokolade“.',
+    readMoreBtn: 'Mehr Erfahren',
   },
   pt: {
     eyebrow: '02 // CONSULTA DE SEGURANÇA E TOXICIDADE',
@@ -119,6 +125,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     keyNutrientsTitle: 'Perfil Nutricional e Clínico:',
     noResultsTitle: 'Nenhum ingrediente encontrado.',
     noResultsDesc: 'Tente pesquisar por "salmão", "abóbora", "uvas" ou "chocolate".',
+    readMoreBtn: 'Ler Mais',
   },
   ko: {
     eyebrow: '02 // 식재료 안전성 및 중독 위험도 검색',
@@ -135,6 +142,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     keyNutrientsTitle: '주요 영양소 및 수의학적 프로필:',
     noResultsTitle: '검색된 식재료가 없습니다.',
     noResultsDesc: '"연어", "단호박", "포도", "초콜릿" 등의 단어로 검색해 보세요.',
+    readMoreBtn: '자세히 보기',
   },
   it: {
     eyebrow: '02 // VERIFICA SICUREZZA E TOSSICITÀ',
@@ -151,6 +159,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     keyNutrientsTitle: 'Profilo Nutrizionale e Clinico:',
     noResultsTitle: 'Nessun ingrediente trovato.',
     noResultsDesc: 'Prova a cercare termini come "salmone", "zucca", "uva" o "cioccolato".',
+    readMoreBtn: 'Scopri di Più',
   },
 };
 
