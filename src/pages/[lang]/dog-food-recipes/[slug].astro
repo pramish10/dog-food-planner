@@ -569,24 +569,6 @@ const recipeJsonLd = {
         </div>
       </section>
 
-      <!-- Interactive Calculator CTA -->
-      <section class="p-6 sm:p-8 bg-[#fdf3e7] dark:bg-[#201407] rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="space-y-1 text-center sm:text-left">
-          <h3 class="font-bold text-base sm:text-lg text-[#1c0f00] dark:text-[#fde8c8]">
-            {p.calculatorCtaTitle}
-          </h3>
-          <p class="text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a]">
-            {p.calculatorCtaDesc}
-          </p>
-        </div>
-        <a
-          href={translatePath('/#planner-section')}
-          class="shrink-0 px-5 py-2.5 bg-[#92400e] hover:bg-[#78350f] text-white dark:bg-[#d97706] dark:hover:bg-[#b45309] font-bold text-xs rounded-xl shadow-sm transition-colors text-center"
-        >
-          {p.calculatorCtaBtn}
-        </a>
-      </section>
-
       <!-- Prev / Next Navigation -->
       {(prevRecipe || nextRecipe) && (
         <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -102,6 +102,8 @@ export interface ToxicFoodsPageI18n {
   emergencyHotlineDesc: string;
   disclaimer: string;
   vitalStatsTitle: string;
+  recommendedProductTitle: string;
+  viewOnAmazon: string;
 }
 
 export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {

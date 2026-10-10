@@ -452,11 +452,6 @@ export const AFFILIATE_PRODUCTS: Record<string, AffiliateProduct> = {
     url: 'https://amzn.to/3SrJddG',
     category: 'fresh-cooked',
   },
-  'animal-essentials-sea-cal-12oz': {
-    name: 'Animal Essentials Sea-Cal - Pure Seaweed Calcium Powder for Dogs with Magnesium, Joint Supplement for Dogs & Cats for Healthy Bones & Teeth, Joint Health, Vegan Icelandic Seaweed Calcium - 12 oz',
-    url: 'https://amzn.to/4gRALwj',
-    category: 'calcium-supplement',
-  },
 
   // ── WET / FRESH FOOD ─────────────────────────────────────────────────────
   'whole-paws-turkey-sweet-potato-13oz-3pack': {
@@ -506,7 +501,6 @@ export const INGREDIENT_AFFILIATE_MAP: Record<string, string> = {
   'Green Tripe & Fermented Kefir / Raw Goat Milk': 'https://amzn.to/3UA8cvX',
   'Pure Organic Pumpkin Puree': 'https://amzn.to/3UFE0PZ',
   'Organic Pumpkin Puree & Steamed Spinach': 'https://amzn.to/3UFE0PZ',
-  'Plain pumpkin purée': 'https://amzn.to/3UFE0PZ',
   'Pureed Organic Leafy Greens & Cranberries': 'https://amzn.to/3SUqibx', // Pumpkin & Green Bean Dog Treat — closest whole-food greens product
   'Cold-Pressed Virgin Flaxseed Oil': 'https://amzn.to/4xg6A8d', // NOW Foods Organic Flax Seed Oil 24oz (fixed from salmon oil mismatch)
   'Virgin Coconut Oil & Golden Turmeric': 'https://amzn.to/46JlM2I',
