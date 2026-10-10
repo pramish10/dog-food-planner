@@ -10,4 +10,33 @@ import { getPageTranslations } from '../i18n/pages';
 const { lang, kind, titleKey, navKey } = Astro.props as { lang: Lang; kind: 'privacy' | 'terms'; titleKey: keyof typeof ui.en; navKey: keyof typeof ui.en };
 const strings = ui[lang] || ui.en; const t = useTranslations(lang); const path = useTranslatedPath(lang); const page = getPageTranslations(lang)[kind]; const descriptionKey = titleKey.replace('.title', '.desc') as keyof typeof ui.en;
 ---
-<Layout lang={lang} title={strings[titleKey]} description={strings[descriptionKey]}><Navbar /><main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]"><Breadcrumbs items={[{ name: t('nav.brand'), url: path('/') }, { name: t(navKey) }]} /><section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]"><div class="max-w-4xl mx-auto px-4 sm:px-6 text-center"><div class="inline-flex font-mono text-xs uppercase font-medium px-3 py-1 rounded-full border border-[#ebebeb] dark:border-[#2e2e2e] mb-3">{page.eyebrow}</div><h1 class="text-[1.65rem] sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] text-balance leading-tight">{t(navKey)}</h1></div></section><LocalizedLegalContent kind={kind} /></main><Footer /></Layout>
+<Layout lang={lang} title={strings[titleKey]} description={strings[descriptionKey]}>
+  <Navbar />
+  <main class="min-h-screen page-warm-bg pb-16">
+    <Breadcrumbs items={[{ name: t('nav.brand'), url: path('/') }, { name: t(navKey) }]} />
+    
+    <!-- Hero Header with Warm Glow -->
+    <section class="relative py-12 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[600px] h-52 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.18) 0%, transparent 70%); filter: blur(40px);"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center min-w-0">
+        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight text-balance leading-tight">
+          {t(navKey)}
+        </h1>
+      </div>
+    </section>
+
+    <LocalizedLegalContent kind={kind} />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 60%, #fff0e6 100%);
+  }
+  html.dark .page-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
+  }
+</style>
