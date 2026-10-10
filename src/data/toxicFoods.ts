@@ -81,6 +81,7 @@ export interface ToxicFoodItem {
   safeAlternatives: SafeAlternative[];
   preventionRules: string[];
   faqs: ToxicFoodFaq[];
+  recommendedProduct?: RecommendedProduct;
 }
 
 export interface ToxicFoodsPageI18n {
@@ -408,12 +409,6 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'No. Clinical veterinary toxicology shows that activated charcoal has poor binding affinity for small, highly water-soluble sugar alcohols like xylitol. Vets generally prioritize emesis and IV dextrose over charcoal administration.',
       },
     ],
-    recommendedProduct: {
-      name: "Zesty Paws Liver Support Supplement for Dogs - with Milk Thistle & Curcumin (Pack of 2)",
-      url: "https://amzn.to/46JlM2I",
-      badge: "VETERINARY LIVER & DETOX DEFENSE",
-      whyRecommended: "Xylitol directly attacks canine liver cells (hepatocytes). Formulated with Milk Thistle (Silymarin), Curcumin, and Choline to defend liver function and replenish vital cellular glutathione reserves.",
-    },
   },
 
   // 2. CHOCOLATE & COCOA
@@ -548,12 +543,6 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Yes. With prompt decontamination, fluid diuresis, and anti-arrhythmic care, the vast majority of dogs survive chocolate poisoning with no long-term organ damage.',
       },
     ],
-    recommendedProduct: {
-      name: "PureBites Lamb Single Ingredient Freeze Dried Dog Treats, 3.35 oz",
-      url: "https://amzn.to/4yhHI0B",
-      badge: "100% THEOBROMINE-FREE REWARD TREAT",
-      whyRecommended: "The safe whole-food alternative to human confections. Satisfies treat motivation with 100% single-ingredient pure meat without methylxanthines, cocoa, theobromine, or added sugars.",
-    },
   },
 
   // 3. GRAPES & RAISINS
@@ -689,12 +678,6 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Absolutely not. Grape juice contains dense liquid concentrations of tartaric acid, while wine adds ethanol, multiplying the toxicity tenfold.',
       },
     ],
-    recommendedProduct: {
-      name: "Icelandic+ Combo Sticks: Cod & Blueberry Dog Treats, Wild Caught Fish (Pack of 2)",
-      url: "https://amzn.to/4xadv2C",
-      badge: "SAFE BERRY & KIDNEY-SAFE REWARD",
-      whyRecommended: "The safe whole-food fruit alternative highlighted in our clinical guide. Wild blueberries provide deep cellular antioxidants and natural sweetness with zero tartaric acid and zero nephrotoxicity.",
-    },
   },
 
   // 4. ONIONS & GARLIC
@@ -829,12 +812,6 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Urine typically turns dark amber, reddish-brown, or deep "port wine" color (hemoglobinuria) as ruptured red blood cells release free hemoglobin that filters through the bladder.',
       },
     ],
-    recommendedProduct: {
-      name: "Brutus Broth Chicken Bone Broth for Dogs (100% Onion-Free & Garlic-Free)",
-      url: "https://amzn.to/4zSd7Zb",
-      badge: "GUARANTEED 100% ONION & GARLIC-FREE BROTH",
-      whyRecommended: "Human grocery store broths almost universally hide toxic onion and garlic powders. Brutus Broth is crafted specifically for dogs with zero alliums, zero added sodium, and joint-nourishing collagen.",
-    },
   },
 
   // 5. MACADAMIA NUTS
@@ -967,12 +944,6 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Most nuts are poor choices for dogs: walnuts and pecans are prone to tremorgenic mycotoxins, pistachios cause bowel blockages, and almonds are difficult to digest. Peanuts (technically legumes) in unsalted form are the only safe option.',
       },
     ],
-    recommendedProduct: {
-      name: "Crumps' Naturals Sweet Potato for Pets, 11.6-Ounce (Pack of 2)",
-      url: "https://amzn.to/4xYpMst",
-      badge: "SAFE CRUNCHY LOW-FAT REWARD",
-      whyRecommended: "Replaces dangerous high-fat nuts with 100% natural dehydrated sweet potato slices, delivering satisfying crunch and prebiotic fiber with zero neurotoxins and zero pancreatitis risk.",
-    },
   },
 
   // 6. COOKED BONES
@@ -1105,12 +1076,6 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Yes, significantly. Raw bones contain natural moisture and flexible collagen fibers that bend and crush under canine teeth rather than shattering into shards. However, raw bones should still be size-appropriate and fed under direct supervision.',
       },
     ],
-    recommendedProduct: {
-      name: "Vital Essentials Freeze Dried Raw Chicken Hearts Dog Treats, 3.75 oz",
-      url: "https://amzn.to/4ctpLUu",
-      badge: "100% DIGESTIBLE REAL MEAT CHEW (ZERO SPLINTERS)",
-      whyRecommended: "Satisfies primal carnivorous chewing instincts with 100% pure digestible meat, completely eliminating the catastrophic risk of cooked bone splintering and gastrointestinal punctures.",
-    },
   },
 
   // 7. HIGH-FAT TRIMMINGS & BACON GREASE

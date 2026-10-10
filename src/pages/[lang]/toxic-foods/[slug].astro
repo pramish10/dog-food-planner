@@ -368,7 +368,7 @@ const articleJsonLd = {
       </section>
 
       <!-- Clinical Product Recommendation -->
-      {item.recommendedProduct && (
+      {!isToxic && item.category !== 'FATAL_TOXIC' && item.recommendedProduct && (
         <section class="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-amber-50/90 via-white/90 to-amber-50/70 dark:from-[#24170a] dark:via-[#1c1208] dark:to-[#170e05] border border-[#f0d5a8] dark:border-amber-900/60 shadow-sm mb-8 backdrop-blur-sm">
           <div class="flex items-center gap-2 mb-4">
             <span class="text-lg">⭐</span>
