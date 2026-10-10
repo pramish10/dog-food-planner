@@ -515,3 +515,19 @@ html.dark .page-warm-bg {
   background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
 }
 
+.page-warm-bg .hairline-card {
+  background-color: rgba(255, 255, 255, 0.88);
+  border-color: #f0d5a8;
+}
+html.dark .page-warm-bg .hairline-card {
+  background-color: rgba(28, 18, 8, 0.88);
+  border-color: #3a2510;
+}
+.page-warm-bg .hairline-card:hover {
+  border-color: #c47a2b;
+}
+html.dark .page-warm-bg .hairline-card:hover {
+  border-color: #f59e0b;
+}
+
+

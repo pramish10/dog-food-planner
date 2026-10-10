@@ -35,15 +35,15 @@ const displayLimit = limit || 0;
 const faqJsonLd = generateFaqJsonLd(faqs);
 ---
 
-<section id="faq-section" class="py-12 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+<section id="faq-section" class="relative py-12 sm:py-20 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     
     <!-- Section Header -->
     <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-3">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-3">
         {title}
       </h2>
-      <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+      <p class="text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
         {subtitle}
       </p>
     </div>
@@ -57,9 +57,9 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             type="search"
             id="faq-search-input"
             placeholder="Search questions, topics, ingredients…"
-            class="w-full pl-10 pr-4 py-2.5 bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] focus:border-[#171717] dark:focus:border-[#ededed] focus:bg-white dark:focus:bg-[#141414] rounded-xl text-xs sm:text-sm text-[#171717] dark:text-[#ededed] outline-none transition-all placeholder:text-[#8f8f8f] dark:placeholder:text-[#737373] shadow-2xs"
+            class="w-full pl-10 pr-4 py-2.5 bg-white/85 dark:bg-[#1c1208]/85 border border-[#f0d5a8] dark:border-[#3a2510] focus:border-[#c47a2b] dark:focus:border-[#f59e0b] focus:bg-white dark:focus:bg-[#25180c] rounded-xl text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] outline-none transition-all placeholder:text-[#8f5e35]/60 dark:placeholder:text-[#c4956a]/60 shadow-2xs"
           />
-          <svg class="w-4 h-4 text-[#8f8f8f] dark:text-[#737373] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-[#8f5e35] dark:text-[#c4956a] absolute left-3.5 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
           </svg>
         </div>
@@ -70,7 +70,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             type="button"
             data-cat="all"
             class="faq-cat-btn active px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
-              bg-[#171717] dark:bg-white text-white dark:text-[#171717] border-[#171717] dark:border-white"
+              bg-[#92400e] dark:bg-[#f59e0b] text-white dark:text-[#1c0f00] border-[#92400e] dark:border-[#f59e0b] shadow-xs"
           >
             All Questions
           </button>
@@ -78,8 +78,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             type="button"
             data-cat="Diet & Nutrition"
             class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
-              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
-              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+              bg-white/85 dark:bg-[#1c1208]/85 text-[#6b4226] dark:text-[#c4956a] border-[#f0d5a8] dark:border-[#3a2510]
+              hover:bg-[#fff0e6] dark:hover:bg-[#2a1a08] hover:text-[#1c0f00] dark:hover:text-[#fde8c8]"
           >
             🥩 Diet & Nutrition
           </button>
@@ -87,8 +87,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             type="button"
             data-cat="Health & Allergies"
             class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
-              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
-              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+              bg-white/85 dark:bg-[#1c1208]/85 text-[#6b4226] dark:text-[#c4956a] border-[#f0d5a8] dark:border-[#3a2510]
+              hover:bg-[#fff0e6] dark:hover:bg-[#2a1a08] hover:text-[#1c0f00] dark:hover:text-[#fde8c8]"
           >
             🩺 Health & Allergies
           </button>
@@ -96,8 +96,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             type="button"
             data-cat="Feeding Math & Portions"
             class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
-              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
-              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+              bg-white/85 dark:bg-[#1c1208]/85 text-[#6b4226] dark:text-[#c4956a] border-[#f0d5a8] dark:border-[#3a2510]
+              hover:bg-[#fff0e6] dark:hover:bg-[#2a1a08] hover:text-[#1c0f00] dark:hover:text-[#fde8c8]"
           >
             ⚖️ Feeding Math
           </button>
@@ -105,8 +105,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             type="button"
             data-cat="Ingredients & Safety"
             class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
-              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
-              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+              bg-white/85 dark:bg-[#1c1208]/85 text-[#6b4226] dark:text-[#c4956a] border-[#f0d5a8] dark:border-[#3a2510]
+              hover:bg-[#fff0e6] dark:hover:bg-[#2a1a08] hover:text-[#1c0f00] dark:hover:text-[#fde8c8]"
           >
             🔬 Ingredients & Safety
           </button>
@@ -114,8 +114,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             type="button"
             data-cat="Brand Reviews & Safety"
             class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
-              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
-              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+              bg-white/85 dark:bg-[#1c1208]/85 text-[#6b4226] dark:text-[#c4956a] border-[#f0d5a8] dark:border-[#3a2510]
+              hover:bg-[#fff0e6] dark:hover:bg-[#2a1a08] hover:text-[#1c0f00] dark:hover:text-[#fde8c8]"
           >
             ⭐ Brand Reviews
           </button>
@@ -123,8 +123,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             type="button"
             data-cat="Glossary & Terms"
             class="faq-cat-btn px-3 py-1.5 text-[11px] sm:text-xs font-mono font-semibold rounded-lg border transition-all cursor-pointer
-              bg-[#fafafa] dark:bg-[#1a1a1a] text-[#171717] dark:text-[#ededed] border-[#ebebeb] dark:border-[#2e2e2e]
-              hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] hover:border-[#171717] dark:hover:border-white"
+              bg-white/85 dark:bg-[#1c1208]/85 text-[#6b4226] dark:text-[#c4956a] border-[#f0d5a8] dark:border-[#3a2510]
+              hover:bg-[#fff0e6] dark:hover:bg-[#2a1a08] hover:text-[#1c0f00] dark:hover:text-[#fde8c8]"
           >
             📖 Glossary
           </button>
@@ -132,9 +132,9 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 
         <!-- Active filter indicator -->
         <div id="faq-filter-status" class="hidden text-center">
-          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373]">
-            Showing: <span id="faq-filter-label" class="text-[#171717] dark:text-[#ededed] font-semibold"></span>
-            <button id="faq-clear-filter" type="button" class="text-[#0070f3] dark:text-[#3291ff] hover:underline ml-1">× Clear</button>
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#8f5e35] dark:text-[#c4956a]">
+            Showing: <span id="faq-filter-label" class="text-[#1c0f00] dark:text-[#fde8c8] font-semibold"></span>
+            <button id="faq-clear-filter" type="button" class="text-[#92400e] dark:text-[#f59e0b] hover:underline ml-1 font-bold">× Clear</button>
           </span>
         </div>
       </div>
@@ -150,7 +150,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     <div id="faq-accordion-list" class="space-y-3" data-faq-limit={displayLimit}>
       {faqs.map((faq, index) => (
         <div 
-          class="faq-item hairline-card bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#262626] rounded-xl overflow-hidden transition-all duration-200"
+          class="faq-item hairline-card bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl overflow-hidden hover:border-[#c47a2b] dark:hover:border-[#f59e0b] transition-all duration-200 shadow-2xs"
           data-category={faq.categoryKey}
           data-question={faq.question.toLowerCase()}
           data-keywords={faq.tags.join(' ').toLowerCase()}
@@ -161,25 +161,25 @@ const faqJsonLd = generateFaqJsonLd(faqs);
             aria-expanded="false"
             aria-controls={`faq-answer-${faq.id}`}
           >
-            <span class="font-medium text-xs sm:text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] transition-colors leading-snug">
+            <span class="font-medium text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] transition-colors leading-snug">
               {faq.question}
             </span>
-            <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-white dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] flex items-center justify-center text-[#171717] dark:text-[#ededed] font-mono text-xs transition-transform duration-200">
+            <span class="faq-icon shrink-0 w-6 h-6 rounded-full bg-[#fffbf6] dark:bg-[#25180c] border border-[#f0d5a8] dark:border-[#3a2510] flex items-center justify-center text-[#8f5e35] dark:text-[#c4956a] font-mono text-xs transition-transform duration-200">
               +
             </span>
           </button>
 
           <div 
             id={`faq-answer-${faq.id}`}
-            class="faq-content hidden px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed border-t border-[#f0f0f0] dark:border-[#262626] bg-white/70 dark:bg-[#121212]/90"
+            class="faq-content hidden px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed border-t border-[#f0d5a8]/60 dark:border-[#3a2510] bg-[#fffbf6]/70 dark:bg-[#150d04]/80"
           >
-            <p class="font-medium text-[#171717] dark:text-[#ededed] mb-2 text-xs bg-[#f8fafc] dark:bg-[#1a1a1a] p-3 rounded-lg border border-blue-100/50 dark:border-blue-900/30">
-              💡 <strong>{getPageTranslations(lang).faqSingle.directQuickAnswer}:</strong> {faq.shortAnswer}
+            <p class="font-medium text-[#1c0f00] dark:text-[#fde8c8] mb-2 text-xs bg-[#fef7ee] dark:bg-[#231507] p-3 rounded-lg border border-[#f0d5a8] dark:border-[#4a2e12]">
+              💡 <strong class="text-[#92400e] dark:text-[#f59e0b]">{getPageTranslations(lang).faqSingle.directQuickAnswer}:</strong> {faq.shortAnswer}
             </p>
 
-            <div class="mt-4 pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center justify-between gap-2 text-[11px]">
-              <span class="font-mono text-[#8f8f8f] dark:text-[#737373]">{faq.category}</span>
-              <a href={translatePath(`/faq/${faq.slug}`)} class="font-mono font-semibold text-[#0070f3] dark:text-[#3291ff] hover:underline flex items-center gap-1">
+            <div class="mt-4 pt-3 border-t border-[#f0d5a8]/60 dark:border-[#3a2510] flex flex-wrap items-center justify-between gap-2 text-[11px]">
+              <span class="font-mono text-[#8f5e35] dark:text-[#c4956a]">{faq.category}</span>
+              <a href={translatePath(`/faq/${faq.slug}`)} class="font-mono font-semibold text-[#92400e] dark:text-[#f59e0b] hover:underline flex items-center gap-1">
                 Read More →
               </a>
             </div>
@@ -189,8 +189,8 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     </div>
 
     <!-- No Search Results Fallback -->
-    <div id="faq-no-results" class="hidden text-center py-12 text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] bg-[#fafafa] dark:bg-[#141414] rounded-xl border border-dashed border-[#ebebeb] dark:border-[#2e2e2e]">
-      <p class="font-medium text-[#171717] dark:text-[#ededed] mb-1">{pageStrings.exploreHubsTitle}</p>
+    <div id="faq-no-results" class="hidden text-center py-12 text-xs sm:text-sm text-[#8f5e35] dark:text-[#c4956a] bg-white/85 dark:bg-[#1c1208]/85 rounded-xl border border-dashed border-[#f0d5a8] dark:border-[#3a2510]">
+      <p class="font-medium text-[#1c0f00] dark:text-[#fde8c8] mb-1">{pageStrings.exploreHubsTitle}</p>
       <p>{pageStrings.exploreHubsSubtitle}</p>
     </div>
 
@@ -198,7 +198,7 @@ const faqJsonLd = generateFaqJsonLd(faqs);
       <div class="mt-10 text-center">
         <a 
           href={translatePath('/faq')} 
-          class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] text-xs font-semibold rounded-full transition-all shadow-sm"
+          class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#92400e] dark:bg-[#f59e0b] text-white dark:text-[#1c0f00] hover:bg-[#78350f] dark:hover:bg-[#fbbf24] text-xs font-semibold rounded-full transition-all shadow-sm"
         >
           <span>{pageStrings.badge}</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -254,19 +254,20 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     catBtns.forEach(btn => {
       const isActive = btn.dataset.cat === cat;
       // Active styles
-      btn.classList.toggle('bg-[#171717]', isActive);
-      btn.classList.toggle('dark:bg-white', isActive);
+      btn.classList.toggle('bg-[#92400e]', isActive);
+      btn.classList.toggle('dark:bg-[#f59e0b]', isActive);
       btn.classList.toggle('text-white', isActive);
-      btn.classList.toggle('dark:text-[#171717]', isActive);
-      btn.classList.toggle('border-[#171717]', isActive);
-      btn.classList.toggle('dark:border-white', isActive);
+      btn.classList.toggle('dark:text-[#1c0f00]', isActive);
+      btn.classList.toggle('border-[#92400e]', isActive);
+      btn.classList.toggle('dark:border-[#f59e0b]', isActive);
+      btn.classList.toggle('shadow-xs', isActive);
       // Inactive styles
-      btn.classList.toggle('bg-[#fafafa]', !isActive);
-      btn.classList.toggle('dark:bg-[#1a1a1a]', !isActive);
-      btn.classList.toggle('text-[#171717]', !isActive);
-      btn.classList.toggle('dark:text-[#ededed]', !isActive);
-      btn.classList.toggle('border-[#ebebeb]', !isActive);
-      btn.classList.toggle('dark:border-[#2e2e2e]', !isActive);
+      btn.classList.toggle('bg-white/85', !isActive);
+      btn.classList.toggle('dark:bg-[#1c1208]/85', !isActive);
+      btn.classList.toggle('text-[#6b4226]', !isActive);
+      btn.classList.toggle('dark:text-[#c4956a]', !isActive);
+      btn.classList.toggle('border-[#f0d5a8]', !isActive);
+      btn.classList.toggle('dark:border-[#3a2510]', !isActive);
     });
 
     // Show/hide filter status indicator

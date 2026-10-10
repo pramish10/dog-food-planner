@@ -25,7 +25,7 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
 >
   <Navbar />
   
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+  <main class="min-h-screen page-warm-bg">
     <Breadcrumbs 
       items={[
         { name: t('nav.brand'), url: translatePath('/') },
@@ -33,13 +33,17 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
       ]}
     />
 
-    <!-- Hero Header -->
-    <section class="py-12 sm:py-16 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 text-balance leading-tight">
+    <!-- Hero Header with Warm Glow -->
+    <section class="relative py-12 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+      <!-- Warm glow -->
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[600px] h-52 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.18) 0%, transparent 70%); filter: blur(40px);"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-4 text-balance leading-tight">
           {currentStrings['faqs.title']}
         </h1>
-        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-base text-[#6b4226] dark:text-[#c4956a] max-w-2xl mx-auto leading-relaxed">
           {currentStrings['faqs.desc']}
         </p>
 
@@ -48,7 +52,7 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
           {FAQ_CATEGORIES.slice(1).map(category => (
             <a 
               href={`${translatePath('/faq')}?category=${encodeURIComponent(category)}#faq-section`}
-              class="px-3 py-1.5 text-xs font-mono bg-[#fafafa] dark:bg-[#141414] text-[#171717] dark:text-[#ededed] hover:bg-[#171717] dark:hover:bg-white hover:text-white dark:hover:text-[#171717] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg transition-colors"
+              class="px-3 py-1.5 text-xs font-mono bg-white/85 dark:bg-[#1c1208]/85 text-[#8f5e35] dark:text-[#e8b584] hover:bg-[#92400e] dark:hover:bg-[#f59e0b] hover:text-white dark:hover:text-[#1c0f00] border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg transition-colors shadow-2xs"
             >
               # {categories[category] || category}
             </a>
@@ -65,68 +69,68 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
     />
 
     <!-- Quick Navigation to Specialized Nutrition Hubs -->
-    <section class="py-14 sm:py-16 bg-[#fafafa] dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
+    <section class="py-14 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510]">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-xl mx-auto mb-10">
-          <h2 class="text-xl sm:text-2xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-2">
             {p.exploreHubsTitle}
           </h2>
-          <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373]">
+          <p class="text-xs sm:text-sm text-[#8f5e35] dark:text-[#c4956a]">
             {p.exploreHubsSubtitle}
           </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <a href={translatePath('/best-dog-food')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+          <a href={translatePath('/best-dog-food')} class="hairline-card p-5 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] hover:border-[#c47a2b] dark:hover:border-[#f59e0b] transition-all group shadow-xs">
+            <h3 class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] mb-1">
               {t('nav.bestDogFood')} →
             </h3>
-            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+            <p class="text-xs text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
               {p.cardBestFood}
             </p>
           </a>
 
-          <a href={translatePath('/feeding-calculator')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+          <a href={translatePath('/feeding-calculator')} class="hairline-card p-5 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] hover:border-[#c47a2b] dark:hover:border-[#f59e0b] transition-all group shadow-xs">
+            <h3 class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] mb-1">
               {t('nav.calculator')} →
             </h3>
-            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+            <p class="text-xs text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
               {p.cardCalc}
             </p>
           </a>
 
-          <a href={translatePath('/dog-food-recipes')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+          <a href={translatePath('/dog-food-recipes')} class="hairline-card p-5 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] hover:border-[#c47a2b] dark:hover:border-[#f59e0b] transition-all group shadow-xs">
+            <h3 class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] mb-1">
               {t('nav.recipes')} →
             </h3>
-            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+            <p class="text-xs text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
               {p.cardRecipes}
             </p>
           </a>
 
-          <a href={translatePath('/dog-food-allergies')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+          <a href={translatePath('/dog-food-allergies')} class="hairline-card p-5 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] hover:border-[#c47a2b] dark:hover:border-[#f59e0b] transition-all group shadow-xs">
+            <h3 class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] mb-1">
               {t('nav.allergies')} →
             </h3>
-            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+            <p class="text-xs text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
               {p.cardAllergies}
             </p>
           </a>
 
-          <a href={translatePath('/toxic-foods')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+          <a href={translatePath('/toxic-foods')} class="hairline-card p-5 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] hover:border-[#c47a2b] dark:hover:border-[#f59e0b] transition-all group shadow-xs">
+            <h3 class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] mb-1">
               {t('nav.toxicFoods')} →
             </h3>
-            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+            <p class="text-xs text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
               {p.cardToxic}
             </p>
           </a>
 
-          <a href={translatePath('/dog-food-brands')} class="hairline-card p-5 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group">
-            <h3 class="font-semibold text-sm text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] mb-1">
+          <a href={translatePath('/dog-food-brands')} class="hairline-card p-5 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] hover:border-[#c47a2b] dark:hover:border-[#f59e0b] transition-all group shadow-xs">
+            <h3 class="font-semibold text-sm text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] mb-1">
               {t('nav.brands')} →
             </h3>
-            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] leading-relaxed">
+            <p class="text-xs text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
               {p.cardBrands}
             </p>
           </a>
@@ -138,3 +142,12 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
 
   <Footer />
 </Layout>
+
+<style>
+  .page-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 60%, #fff0e6 100%);
+  }
+  html.dark .page-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
+  }
+</style>

@@ -130,7 +130,7 @@ const articleJsonLd = {
 >
   <Navbar />
   
-  <main class="min-h-screen bg-[#fafafa] dark:bg-[#0d0d0d]">
+  <main class="min-h-screen page-warm-bg pb-16">
     <Breadcrumbs 
       items={[
         { name: t('nav.brand'), url: translatePath('/') },
@@ -139,115 +139,141 @@ const articleJsonLd = {
       ]}
     />
 
-    <!-- Article & Q&A Container -->
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
-      
-      <!-- Article Header -->
-      <header class="mb-8">
-        <div class="inline-flex items-center gap-2 font-mono text-xs text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-3 py-1 rounded-full mb-3">
+    <!-- Hero Header with Warm Glow matching other pages -->
+    <section class="relative py-8 sm:py-14 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div
+          class="absolute -top-10 left-1/2 -translate-x-1/2 w-[600px] h-52 rounded-full opacity-50"
+          style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.18) 0%, transparent 70%); filter: blur(40px);"
+        ></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 min-w-0">
+        <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#92400e] dark:text-[#d97706] bg-[#fdf3e7] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] px-3 py-1 rounded-full mb-3">
           <span>{faq.category}</span>
         </div>
-        <h1 class="text-[1.35rem] sm:text-3xl lg:text-4xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 leading-tight text-balance">
+        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-3 leading-tight text-balance">
           {faq.question}
         </h1>
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8f8f8f] dark:text-[#737373] font-mono border-b border-[#ebebeb] dark:border-[#262626] pb-4">
-          <span>{p.reviewedBy}</span>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8f5e35] dark:text-[#c4956a] font-mono">
+          <span>🩺 {p.reviewedBy}</span>
           <span>•</span>
-          <span>{p.updated}</span>
-        </div>
-      </header>
-
-      <!-- Highlighted Direct Answer Callout -->
-      <div class="p-5 sm:p-6 bg-white dark:bg-[#141414] rounded-2xl border-2 border-[#171717] dark:border-[#ededed] shadow-sm mb-8">
-        <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-lg bg-[#171717] dark:bg-white text-white dark:text-[#171717] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
-            ✓
-          </div>
-          <div>
-            <h2 class="text-xs font-mono uppercase font-bold text-[#171717] dark:text-[#ededed] mb-1">
-              {p.directQuickAnswer}
-            </h2>
-            <p class="text-sm sm:text-base text-[#171717] dark:text-[#ededed] leading-relaxed font-medium">
-              {faq.shortAnswer}
-            </p>
-          </div>
+          <span>📅 {p.updated}</span>
         </div>
       </div>
+    </section>
 
-      <!-- In-Depth Clinical Explanation -->
-      <article class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] mb-10 prose prose-neutral dark:prose-invert max-w-none text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed space-y-4">
-        <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] border-b border-[#ebebeb] dark:border-[#262626] pb-3 mb-4">
-          {p.clinicalAnalysis}
-        </h2>
-        <div class="space-y-4" set:html={faq.fullAnswerHtml} />
+    <!-- Whole Content Area with Ambient Warm Blooms matching top background -->
+    <div class="relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-24 -right-20 w-[500px] h-[500px] rounded-full opacity-35"
+          style="background: radial-gradient(circle, rgba(234,179,8,0.12) 0%, rgba(196,122,43,0.06) 40%, transparent 70%); filter: blur(50px);"></div>
+        <div class="absolute top-1/2 -left-20 w-[500px] h-[500px] rounded-full opacity-35"
+          style="background: radial-gradient(circle, rgba(196,122,43,0.12) 0%, rgba(255,200,100,0.06) 40%, transparent 70%); filter: blur(50px);"></div>
+      </div>
 
-        {/* Product — lives inside the article card, flush with the answer above it */}
-        {resolvedProduct && (
-          <div class="not-prose mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] flex items-start justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">{p.referencedInAnswer}</p>
-              <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">{resolvedProduct.label}</p>
-              <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">{resolvedProduct.note}</p>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <!-- Highlighted Direct Answer Callout -->
+        <div class="p-5 sm:p-6 bg-white/90 dark:bg-[#1c1208]/90 backdrop-blur-sm rounded-2xl border-2 border-[#d97706]/70 dark:border-[#f59e0b]/60 shadow-sm mb-8">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-[#92400e] dark:bg-[#f59e0b] text-white dark:text-[#1c0f00] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+              ✓
             </div>
-            <AffiliateButton url={resolvedProduct.url} label={p.buyNow} size="sm" class="shrink-0 mt-1" />
+            <div>
+              <h2 class="text-xs font-mono uppercase font-bold text-[#92400e] dark:text-[#f59e0b] mb-1">
+                {p.directQuickAnswer}
+              </h2>
+              <p class="text-sm sm:text-base text-[#1c0f00] dark:text-[#fde8c8] leading-relaxed font-medium">
+                {faq.shortAnswer}
+              </p>
+            </div>
           </div>
-        )}
-
-        <!-- Tags / Topics -->
-        <div class="pt-6 border-t border-[#ebebeb] dark:border-[#262626] flex flex-wrap items-center gap-1.5 not-prose">
-          <span class="text-xs font-mono text-[#8f8f8f] dark:text-[#737373] mr-1">{p.topics}</span>
-          {faq.tags.map(tag => (
-            <span class="px-2 py-0.5 text-[11px] font-mono bg-[#fafafa] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-md">
-              #{tag}
-            </span>
-          ))}
         </div>
-      </article>
 
-      <!-- Related Questions Section -->
-      {finalRelated.length > 0 && (
-        <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-10">
-          <h3 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-4">
-            {p.relatedTitle}
-          </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {finalRelated.map(related => (
-              <a 
-                href={translatePath(`/faq/${related.slug}`)} 
-                class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  <span class="text-[10px] font-mono text-[#0070f3] dark:text-[#3291ff] uppercase font-semibold mb-1 block">
-                    {related.category}
-                  </span>
-                  <h4 class="font-medium text-xs text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] transition-colors leading-snug line-clamp-3 mb-2">
-                    {related.question}
-                  </h4>
-                </div>
-                <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] group-hover:text-[#171717] dark:group-hover:text-white transition-colors mt-2">
-                  {p.readAnswer}
-                </span>
-              </a>
+        <!-- In-Depth Clinical Explanation -->
+        <article class="hairline-card p-6 sm:p-8 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] mb-10 prose prose-neutral dark:prose-invert max-w-none text-xs sm:text-sm text-[#4d4d4d] dark:text-[#c4956a] leading-relaxed space-y-4 shadow-xs">
+          <h2 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] border-b border-[#f0d5a8] dark:border-[#3a2510] pb-3 mb-4">
+            {p.clinicalAnalysis}
+          </h2>
+          <div class="space-y-4 text-[#4d4d4d] dark:text-[#c4956a]" set:html={faq.fullAnswerHtml} />
+
+          {/* Product — lives inside the article card, flush with the answer above it */}
+          {resolvedProduct && (
+            <div class="not-prose mt-6 pt-5 border-t border-[#f0d5a8] dark:border-[#3a2510] flex items-start justify-between gap-4 p-4 rounded-xl bg-[#fffbf6] dark:bg-[#25180c] border border-[#f0d5a8]/60 dark:border-[#3a2510]">
+              <div class="flex-1 min-w-0">
+                <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f5e35] dark:text-[#c4956a] mb-1">{p.referencedInAnswer}</p>
+                <p class="text-sm font-semibold text-[#1c0f00] dark:text-[#fde8c8] leading-snug mb-1">{resolvedProduct.label}</p>
+                <p class="text-xs text-[#6b4226] dark:text-[#c4956a] leading-relaxed">{resolvedProduct.note}</p>
+              </div>
+              <AffiliateButton url={resolvedProduct.url} label={p.buyNow} size="sm" class="shrink-0 mt-1" />
+            </div>
+          )}
+
+          <!-- Tags / Topics -->
+          <div class="pt-6 border-t border-[#f0d5a8] dark:border-[#3a2510] flex flex-wrap items-center gap-1.5 not-prose">
+            <span class="text-xs font-mono text-[#8f5e35] dark:text-[#c4956a] mr-1">{p.topics}</span>
+            {faq.tags.map(tag => (
+              <span class="px-2.5 py-1 text-[11px] font-mono bg-[#fffbf6] dark:bg-[#25180c] text-[#8f5e35] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-md">
+                #{tag}
+              </span>
             ))}
           </div>
-        </section>
-      )}
+        </article>
 
-      <!-- Back to FAQ Directory -->
-      <div class="mt-10 text-center">
-        <a 
-          href={translatePath('/faq')} 
-          class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
-        >
-          ← {t('nav.faqs')}
-        </a>
+        <!-- Related Questions Section -->
+        {finalRelated.length > 0 && (
+          <section class="border-t border-[#f0d5a8] dark:border-[#3a2510] pt-10">
+            <h3 class="text-base sm:text-lg font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-4">
+              {p.relatedTitle}
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {finalRelated.map(related => (
+                <a 
+                  href={translatePath(`/faq/${related.slug}`)} 
+                  class="hairline-card p-4 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] hover:border-[#c47a2b] dark:hover:border-[#f59e0b] transition-all flex flex-col justify-between group rounded-xl shadow-2xs"
+                >
+                  <div>
+                    <span class="text-[10px] font-mono text-[#92400e] dark:text-[#f59e0b] uppercase font-semibold mb-1 block">
+                      {related.category}
+                    </span>
+                    <h4 class="font-medium text-xs text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] transition-colors leading-snug line-clamp-3 mb-2">
+                      {related.question}
+                    </h4>
+                  </div>
+                  <span class="text-[11px] font-mono text-[#8f5e35] dark:text-[#c4956a] group-hover:text-[#92400e] dark:group-hover:text-[#f59e0b] transition-colors mt-2">
+                    {p.readAnswer}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Back to FAQ Directory -->
+        <div class="mt-10 text-center">
+          <a 
+            href={translatePath('/faq')} 
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#92400e] dark:bg-[#f59e0b] text-white dark:text-[#1c0f00] hover:bg-[#78350f] dark:hover:bg-[#fbbf24] text-xs font-semibold font-mono transition-all shadow-sm"
+          >
+            ← {t('nav.faqs')}
+          </a>
+        </div>
+
       </div>
-
     </div>
   </main>
 
   <Footer />
 </Layout>
+
+<style>
+  .page-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 60%, #fff0e6 100%);
+  }
+  html.dark .page-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
+  }
+</style>
 
 <!-- JSON-LD FAQPage & Article Schemas -->
 <script type="application/ld+json" set:html={JSON.stringify(singleFaqJsonLd)} />
