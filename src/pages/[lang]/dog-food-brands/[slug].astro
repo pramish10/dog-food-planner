@@ -1,0 +1,467 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Footer from '../../../components/Footer.astro';
+import AffiliateButton from '../../../components/AffiliateButton.astro';
+import {
+  BRAND_REVIEW_SLUGS,
+  getBrandReviews,
+  getBrandReviewBySlug,
+  BRAND_REVIEWS_PAGE_I18N,
+} from '../../../data/brandReviews';
+import { AFFILIATE_PRODUCTS } from '../../../data/affiliates';
+import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
+import type { Lang } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
+  return targetLangs.flatMap((lang) =>
+    BRAND_REVIEW_SLUGS.map((slug) => ({
+      params: { lang, slug },
+      props: { lang },
+    }))
+  );
+}
+
+const { lang } = Astro.props as { lang: Lang };
+const { slug } = Astro.params as { slug: string };
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const allReviews = getBrandReviews(lang);
+const item = getBrandReviewBySlug(slug, lang);
+const i18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
+
+if (!item) {
+  return Astro.redirect(translatePath('/dog-food-brands'));
+}
+
+const currentIndex = allReviews.findIndex((r) => r.slug === item.slug);
+const prevItem = currentIndex > 0 ? allReviews[currentIndex - 1] : null;
+const nextItem = currentIndex < allReviews.length - 1 ? allReviews[currentIndex + 1] : null;
+
+// Strictly retrieve verified brand-specific affiliate products
+const brandProducts = (item.affiliateProductKeys || [])
+  .map((k) => AFFILIATE_PRODUCTS[k])
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
+
+const pageTitle = `${item.name} | ${t('nav.brands')} 2026 | DogFoodPlanner.com`;
+const pageDescription = `${item.overview.slice(0, 150)}... ${item.name}`;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalWebPage',
+  headline: `${item.name} Dog Food Review & Clinical Analysis`,
+  description: pageDescription,
+  name: `${item.name} Brand Review`,
+  author: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner Veterinary Nutrition Team',
+    url: 'https://dogfoodplanner.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Dog Food Planner',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://dogfoodplanner.com/logo.png',
+    },
+  },
+  mainEntityOfPage: `https://dogfoodplanner.com/${lang}/dog-food-brands/${item.slug}`,
+};
+---
+
+<Layout
+  lang={lang}
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={`https://dogfoodplanner.com/${lang}/dog-food-brands/${item.slug}`}
+>
+  <Navbar />
+
+  <main class="min-h-screen page-warm-bg text-[#262626] dark:text-[#d4d4d4]">
+    <Breadcrumbs
+      items={[
+        { name: t('nav.brand'), url: translatePath('/') },
+        { name: t('nav.brands'), url: translatePath('/dog-food-brands') },
+        { name: item.name },
+      ]}
+    />
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-10">
+
+      {/* ── 1. HEADER / HERO ── */}
+      <header class="space-y-4 border-b border-[#ebd7b9] dark:border-[#2f2216] pb-8">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#171717] dark:text-[#ededed] tracking-tight leading-tight">
+            {item.name}
+          </h1>
+          <div class="flex items-center gap-2 shrink-0">
+            <span class="px-3 py-1 text-sm sm:text-base font-extrabold rounded-xl bg-[#0070f3]/10 dark:bg-[#0070f3]/20 text-[#0070f3] dark:text-[#3291ff] border border-[#0070f3]/20">
+              {item.grade}
+            </span>
+          </div>
+        </div>
+
+        <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed text-pretty">
+          {item.overview}
+        </p>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-mono text-[#8f8f8f] dark:text-[#737373] pt-2">
+          <span>{i18n.scoreLabel}: <strong class="text-[#0070f3] dark:text-[#3291ff]">{item.score}</strong></span>
+          <span>•</span>
+          <span>{i18n.reviewedBy}</span>
+          <span>•</span>
+          <span>2026</span>
+        </div>
+      </header>
+
+      {/* ── 2. CORPORATE & MANUFACTURING PROFILE ── */}
+      <section class="hairline-card p-6 sm:p-7 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed] flex items-center gap-2">
+          <span>🏢</span>
+          <span>{i18n.companyInfoTitle}</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-3.5 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+            <p class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-0.5">{i18n.parentCompany}</p>
+            <p class="font-semibold text-[#171717] dark:text-[#ededed]">{item.parentCompany}</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+            <p class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-0.5">{i18n.origin}</p>
+            <p class="font-semibold text-[#171717] dark:text-[#ededed]">{item.countryOfOrigin}</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+            <p class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-0.5">{i18n.facilities}</p>
+            <p class="font-semibold text-[#171717] dark:text-[#ededed]">{item.manufacturingFacilities}</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+            <p class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-0.5">{i18n.category}</p>
+            <p class="font-semibold text-[#171717] dark:text-[#ededed]">{item.category}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. PROS & CONS CALLOUT ── */}
+      <section class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="p-6 bg-white dark:bg-[#141414] rounded-2xl border-2 border-emerald-500/30 dark:border-emerald-500/20 shadow-xs space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <h2 class="text-xs font-mono uppercase font-bold text-emerald-700 dark:text-emerald-400">
+              {i18n.strengthsTitle}
+            </h2>
+          </div>
+          <ul class="space-y-2 text-xs sm:text-sm text-[#333] dark:text-[#ccc]">
+            {item.pros.map((pro) => (
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-600 dark:text-emerald-400 font-bold shrink-0">✓</span>
+                <span class="leading-relaxed">{pro}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white dark:bg-[#141414] rounded-2xl border-2 border-amber-500/30 dark:border-amber-500/20 shadow-xs space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+            <h2 class="text-xs font-mono uppercase font-bold text-amber-700 dark:text-amber-400">
+              {i18n.tradeoffsTitle}
+            </h2>
+          </div>
+          <ul class="space-y-2 text-xs sm:text-sm text-[#333] dark:text-[#ccc]">
+            {item.cons.map((con) => (
+              <li class="flex items-start gap-2">
+                <span class="text-amber-600 dark:text-amber-400 font-bold shrink-0">!</span>
+                <span class="leading-relaxed">{con}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── 4. MACRONUTRIENT PROFILE ── */}
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {i18n.macroTitle}
+          </h2>
+          <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">
+            {i18n.macroSubtitle}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-2">
+          <div class="p-3.5 bg-blue-50/60 dark:bg-blue-950/40 rounded-xl border border-blue-100 dark:border-blue-900/50 text-center">
+            <p class="text-[11px] font-mono uppercase text-[#0070f3] dark:text-[#3291ff] font-semibold">{i18n.proteinLabel}</p>
+            <p class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] mt-1">{item.macroProfile.protein}</p>
+          </div>
+          <div class="p-3.5 bg-amber-50/60 dark:bg-amber-950/40 rounded-xl border border-amber-100 dark:border-amber-900/50 text-center">
+            <p class="text-[11px] font-mono uppercase text-amber-700 dark:text-amber-400 font-semibold">{i18n.fatLabel}</p>
+            <p class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] mt-1">{item.macroProfile.fat}</p>
+          </div>
+          <div class="p-3.5 bg-orange-50/60 dark:bg-orange-950/40 rounded-xl border border-orange-100 dark:border-orange-900/50 text-center">
+            <p class="text-[11px] font-mono uppercase text-orange-700 dark:text-orange-400 font-semibold">{i18n.carbsLabel}</p>
+            <p class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] mt-1">{item.macroProfile.carbohydrates}</p>
+          </div>
+          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] text-center">
+            <p class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] font-semibold">{i18n.fiberLabel}</p>
+            <p class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] mt-1">{item.macroProfile.fiber}</p>
+          </div>
+          <div class="col-span-2 sm:col-span-1 p-3.5 bg-cyan-50/60 dark:bg-cyan-950/40 rounded-xl border border-cyan-100 dark:border-cyan-900/50 text-center">
+            <p class="text-[11px] font-mono uppercase text-cyan-700 dark:text-cyan-400 font-semibold">{i18n.moistureLabel}</p>
+            <p class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] mt-1">{item.macroProfile.moisture}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. 4-POINT INGREDIENT PILLARS ── */}
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-5">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {i18n.pillarsTitle}
+          </h2>
+          <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">
+            Clinical evaluation of protein origin, starch levels, processing safeguards, and safety standards.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {item.ingredientPillars.map((pillar) => (
+            <div class="p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <h3 class="text-sm font-bold text-[#171717] dark:text-[#ededed]">{pillar.title}</h3>
+                  <span class="font-mono text-xs font-bold text-[#0070f3] dark:text-[#3291ff]">{pillar.score}</span>
+                </div>
+                <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+                  {pillar.explanation}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 6. FDA RECALL RECORD ── */}
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-[#ebebeb] dark:border-[#262626] pb-3">
+          <div>
+            <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] flex items-center gap-2">
+              <span>🛡️</span>
+              <span>{i18n.recallsTitle}</span>
+            </h2>
+            <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">{i18n.recallsSubtitle}</p>
+          </div>
+          <span
+            class={`px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider ${
+              item.recallRecord.status === 'CLEAN'
+                ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/60'
+                : item.recallRecord.status === 'MONITORED'
+                ? 'bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200 dark:border-amber-900/60'
+                : 'bg-rose-100 text-rose-800 dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200 dark:border-rose-900/60'
+            }`}
+          >
+            {item.recallRecord.label}
+          </span>
+        </div>
+
+        <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+          {item.recallRecord.details}
+        </p>
+
+        {item.recallRecord.history.length > 0 && (
+          <div class="mt-3 p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] space-y-2">
+            <p class="text-[11px] font-mono uppercase font-semibold text-[#8f8f8f] dark:text-[#737373]">
+              Chronological Regulatory Record:
+            </p>
+            <ul class="space-y-1.5 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
+              {item.recallRecord.history.map((log) => (
+                <li class="flex items-start gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#0070f3] shrink-0 mt-1.5"></span>
+                  <span class="leading-relaxed">{log}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
+
+      {/* ── 7. NOTABLE PRODUCT LINES ── */}
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+            {i18n.productLinesTitle}
+          </h2>
+          <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">
+            {i18n.productLinesSubtitle}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+          {item.keyProductLines.map((line) => (
+            <div class="p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] flex flex-col justify-between">
+              <div>
+                <span class="inline-block text-[10px] font-mono uppercase font-bold tracking-wider text-[#0070f3] dark:text-[#3291ff] mb-1">
+                  {line.type}
+                </span>
+                <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed] mb-1.5">{line.name}</h3>
+                <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed mb-3">
+                  {line.description}
+                </p>
+              </div>
+              <div class="pt-2 border-t border-[#ebebeb] dark:border-[#262626]">
+                <p class="text-[10px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] mb-0.5">{i18n.targetDogsLabel}</p>
+                <p class="text-[11px] font-semibold text-[#171717] dark:text-[#ededed]">{line.targetDogs}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 8. IN-DEPTH CLINICAL AUDIT ── */}
+      <article class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+        <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed] border-b border-[#ebebeb] dark:border-[#262626] pb-3">
+          {i18n.clinicalAuditTitle}
+        </h2>
+        <div class="space-y-4 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+          {item.deepDive.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      </article>
+
+      {/* ── 9. VETERINARY VERDICT & FEEDING TIP ── */}
+      <section class="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent border-2 border-amber-500/30 dark:border-amber-500/20 space-y-4">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-amber-500 text-white">
+            {i18n.verdictBadge}
+          </span>
+          <h2 class="text-base sm:text-lg font-bold text-[#171717] dark:text-[#ededed]">
+            {i18n.verdictTitle}
+          </h2>
+        </div>
+
+        <p class="text-xs sm:text-sm text-[#171717] dark:text-[#ededed] font-medium leading-relaxed">
+          {item.veterinaryVerdict}
+        </p>
+
+        <div class="pt-3 border-t border-amber-500/20">
+          <h3 class="text-xs font-mono font-bold uppercase text-[#854d0e] dark:text-[#fde047] mb-1">
+            💡 {i18n.feedingTipTitle}
+          </h3>
+          <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+            {item.feedingRecommendation}
+          </p>
+        </div>
+      </section>
+
+      {/* ── 10. VERIFIED BRAND-SPECIFIC AMAZON AFFILIATE RECOMMENDATIONS ── */}
+      <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-5">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-base">🛒</span>
+            <h2 class="text-lg sm:text-xl font-bold text-[#171717] dark:text-[#ededed]">
+              {i18n.affiliateSectionTitle}
+            </h2>
+          </div>
+          <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">
+            {i18n.affiliateSectionSubtitle}
+          </p>
+        </div>
+
+        {brandProducts.length > 0 ? (
+          <div class="space-y-4 divide-y divide-[#ebebeb] dark:divide-[#262626]">
+            {brandProducts.map((product) => (
+              <div class="pt-4 first:pt-0 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex-1 min-w-0 space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/60">
+                      {i18n.affiliateBadge}
+                    </span>
+                    <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] capitalize">
+                      {product.category.replace('-', ' ')}
+                    </span>
+                  </div>
+                  <h3 class="text-sm sm:text-base font-semibold text-[#171717] dark:text-[#ededed] leading-snug">
+                    {product.name}
+                  </h3>
+                  <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">
+                    Official {item.name} formulation verified for canine nutritional standards.
+                  </p>
+                </div>
+                <div class="shrink-0">
+                  <AffiliateButton
+                    url={product.url}
+                    label={i18n.buyOnAmazon}
+                    size="sm"
+                    class="w-full sm:w-auto"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          /* Strictly NO unrelated affiliate products recommended */
+          <div class="p-5 rounded-xl bg-amber-50/50 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/50 space-y-2">
+            <div class="flex items-center gap-2 text-amber-800 dark:text-amber-300 font-bold text-xs sm:text-sm">
+              <span>ℹ️</span>
+              <span>{i18n.noAffiliateTitle}</span>
+            </div>
+            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+              {i18n.noAffiliateNotice}
+            </p>
+          </div>
+        )}
+      </section>
+
+      {/* ── 11. PREV / NEXT BRAND ── */}
+      {(prevItem || nextItem) && (
+        <section class="border-t border-[#ebd7b9] dark:border-[#2f2216] pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {prevItem ? (
+            <a
+              href={translatePath(`/dog-food-brands/${prevItem.slug}`)}
+              class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all group"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                ← {i18n.prevBrand}
+              </span>
+              <span class="text-sm font-semibold text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] transition-colors">
+                {prevItem.name} ({prevItem.grade})
+              </span>
+            </a>
+          ) : <div />}
+
+          {nextItem && (
+            <a
+              href={translatePath(`/dog-food-brands/${nextItem.slug}`)}
+              class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all text-right group"
+            >
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">
+                {i18n.nextBrand} →
+              </span>
+              <span class="text-sm font-semibold text-[#171717] dark:text-[#ededed] group-hover:text-[#0070f3] dark:group-hover:text-[#3291ff] transition-colors">
+                {nextItem.name} ({nextItem.grade})
+              </span>
+            </a>
+          )}
+        </section>
+      )}
+
+      {/* ── 13. BACK TO BRAND DIRECTORY ── */}
+      <div class="text-center pt-2">
+        <a
+          href={translatePath('/dog-food-brands')}
+          class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
+        >
+          {i18n.backToBrands}
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />

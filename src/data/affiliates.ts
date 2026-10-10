@@ -617,10 +617,12 @@ export const BRAND_AFFILIATE_MAP: Record<string, string[]> = {
     'nutrish-peak-variety-pack-wet',
     'nutrish-beef-pea-brown-rice-28lb',
   ],
-  'Pure Balance': [
-    'victor-chicken-brown-rice-5lb',
-  ],
+  'Pure Balance': [],
+  'Pure Balance (Walmart)': [],
   'Ollie': [
+    'ollie-chicken-apple-jerky-treats',
+  ],
+  'Ollie Fresh Dog Food': [
     'ollie-chicken-apple-jerky-treats',
   ],
   'Open Farm': [
@@ -706,6 +708,16 @@ export function getPrimaryBrandProduct(brandName: string): AffiliateProduct | nu
   if (!keys || keys.length === 0) return null;
   const key = keys[0];
   return AFFILIATE_PRODUCTS[key] || null;
+}
+
+/**
+ * Returns all mapped affiliate products for a brand, strictly brand-specific.
+ * Returns empty array if no genuine brand products are mapped.
+ */
+export function getBrandProducts(brandName: string): AffiliateProduct[] {
+  const keys = BRAND_AFFILIATE_MAP[brandName];
+  if (!keys || keys.length === 0) return [];
+  return keys.map((key) => AFFILIATE_PRODUCTS[key]).filter((p): p is AffiliateProduct => Boolean(p));
 }
 
 /**
