@@ -7,18 +7,26 @@ const uiText = INGREDIENT_UI[lang] || INGREDIENT_UI.en;
 const ingredients = getLocalizedIngredients(lang);
 ---
 
-<section id="safety-checker" class="py-10 sm:py-20 bg-white dark:bg-[#0d0d0d] border-b border-[#ebebeb] dark:border-[#262626]">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+<section id="safety-checker" class="relative py-10 sm:py-20 bg-transparent border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+  <!-- Warm glow radial blooms matching top background -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute top-12 -right-20 w-[500px] h-[500px] rounded-full opacity-35"
+      style="background: radial-gradient(circle, rgba(234,179,8,0.12) 0%, rgba(196,122,43,0.06) 40%, transparent 70%); filter: blur(50px);"></div>
+    <div class="absolute bottom-20 -left-20 w-[500px] h-[500px] rounded-full opacity-35"
+      style="background: radial-gradient(circle, rgba(196,122,43,0.12) 0%, rgba(255,200,100,0.06) 40%, transparent 70%); filter: blur(50px);"></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6">
     
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-medium text-[#171717] dark:text-[#ededed] bg-[#fafafa] dark:bg-[#141414] border border-[#ebebeb] dark:border-[#2e2e2e] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
+      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-xs uppercase font-bold text-[#92400e] dark:text-[#d97706] bg-[#fdf3e7] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] px-3 py-1 rounded-full mb-2.5 shadow-2xs">
         {uiText.eyebrow}
       </div>
-      <h2 class="text-2xl sm:text-4xl font-semibold text-[#171717] dark:text-[#ededed] tracking-tight mb-2 sm:mb-3">
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-2 sm:mb-3">
         {uiText.title}
       </h2>
-      <p class="text-xs sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+      <p class="text-xs sm:text-base text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
         {uiText.subtitle}
       </p>
     </div>
@@ -30,22 +38,22 @@ const ingredients = getLocalizedIngredients(lang);
           type="text" 
           id="ingredient-search-input" 
           placeholder={uiText.searchPlaceholder} 
-          class="w-full pl-9 pr-4 py-2.5 text-xs bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#2e2e2e] rounded-lg text-[#171717] dark:text-[#ededed] focus:outline-none focus:border-[#171717] dark:focus:border-[#ededed] focus:bg-white dark:focus:bg-[#141414] transition-all font-mono"
+          class="w-full pl-9 pr-4 py-2.5 text-xs bg-white/90 dark:bg-[#1f1307]/90 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] placeholder-[#9c7149] dark:placeholder-[#a8825c] focus:outline-none focus:border-[#c47a2b] dark:focus:border-[#f59e0b] focus:ring-2 focus:ring-[#c47a2b]/20 transition-all font-mono shadow-xs backdrop-blur-sm"
         />
-        <svg class="w-4 h-4 text-[#8f8f8f] dark:text-[#737373] absolute left-3 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 text-[#9c7149] dark:text-[#a8825c] absolute left-3 top-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
         </svg>
       </div>
 
       <!-- Filter Buttons -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 no-scrollbar">
-        <button type="button" data-filter="ALL" class="safety-filter-btn active shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#171717] dark:bg-white text-white dark:text-[#171717] hover:bg-[#333333] dark:hover:bg-[#e5e5e5] hover:text-white dark:hover:text-[#171717] transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="ALL" class="safety-filter-btn active shrink-0 px-3.5 py-2 text-[11px] font-mono font-bold rounded-lg bg-[#92400e] dark:bg-[#f59e0b] text-white dark:text-[#1c0f00] hover:bg-[#78350f] dark:hover:bg-[#fbbf24] transition-all touch-manipulation cursor-pointer shadow-xs">
           {uiText.filterAll}
         </button>
-        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#ebebeb] dark:hover:bg-[#262626] hover:text-[#171717] dark:hover:text-[#ededed] transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="SAFE_AND_BENEFICIAL" class="safety-filter-btn shrink-0 px-3.5 py-2 text-[11px] font-mono font-medium rounded-lg bg-[#fdf3e7] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] text-[#78350f] dark:text-[#d4a574] hover:bg-[#fae4cd] dark:hover:bg-[#3d260c] hover:text-[#92400e] dark:hover:text-[#fde8c8] transition-all touch-manipulation cursor-pointer shadow-xs">
           {uiText.filterSafe}
         </button>
-        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn shrink-0 px-3 py-2 text-[11px] font-mono font-medium rounded-md bg-[#f2f2f2] dark:bg-[#1a1a1a] text-[#4d4d4d] dark:text-[#a1a1a1] hover:bg-[#ebebeb] dark:hover:bg-[#262626] hover:text-[#171717] dark:hover:text-[#ededed] transition-all touch-manipulation cursor-pointer">
+        <button type="button" data-filter="DANGEROUS_TOXIC" class="safety-filter-btn shrink-0 px-3.5 py-2 text-[11px] font-mono font-medium rounded-lg bg-[#fdf3e7] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] text-[#78350f] dark:text-[#d4a574] hover:bg-[#fae4cd] dark:hover:bg-[#3d260c] hover:text-[#92400e] dark:hover:text-[#fde8c8] transition-all touch-manipulation cursor-pointer shadow-xs">
           {uiText.filterToxic}
         </button>
       </div>
@@ -61,43 +69,43 @@ const ingredients = getLocalizedIngredients(lang);
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4" id="ingredients-grid">
       {ingredients.map((item) => (
         <div 
-          class="ingredient-card p-4 sm:p-5 rounded-xl border border-[#ebebeb] dark:border-[#262626] bg-[#fafafa] dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all flex flex-col justify-between"
+          class="ingredient-card p-4 sm:p-5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm hover:border-[#c47a2b] dark:hover:border-[#f59e0b] hover:shadow-md transition-all flex flex-col justify-between shadow-xs"
           data-status={item.status}
           data-name={item.name.toLowerCase()}
         >
           <div>
             <div class="flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 mb-2">
-              <h4 class="font-semibold text-xs sm:text-sm text-[#171717] dark:text-[#ededed]">{item.name}</h4>
+              <h4 class="font-bold text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">{item.name}</h4>
               
               {item.status === 'SAFE_AND_BENEFICIAL' && (
-                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-[#10b981] bg-[#10b981]/15 px-2 py-0.5 rounded border border-[#10b981]/30 w-fit">
+                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100/80 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-800 w-fit">
                   ✓ {item.statusLabel}
                 </span>
               )}
               {item.status === 'FEED_WITH_CAUTION' && (
-                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-[#f5a623] bg-[#f5a623]/15 px-2 py-0.5 rounded border border-[#f5a623]/30 w-fit">
+                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-amber-800 dark:text-amber-300 bg-amber-100/90 dark:bg-amber-950/70 px-2 py-0.5 rounded-full border border-amber-300 dark:border-amber-800 w-fit">
                   ⚠ {item.statusLabel}
                 </span>
               )}
               {item.status === 'DANGEROUS_TOXIC' && (
-                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-[#ee0000] bg-[#ee0000]/15 px-2 py-0.5 rounded border border-[#ee0000]/30 animate-pulse w-fit">
+                <span class="font-mono text-[9px] sm:text-[10px] font-bold text-red-700 dark:text-red-400 bg-red-100/90 dark:bg-red-950/70 px-2 py-0.5 rounded-full border border-red-300 dark:border-red-800 animate-pulse w-fit">
                   ☠ {item.statusLabel}
                 </span>
               )}
             </div>
 
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] mb-3 leading-relaxed">
+            <p class="text-xs text-[#6b4226] dark:text-[#c4956a] mb-3 leading-relaxed">
               {item.benefitsOrRisks}
             </p>
           </div>
 
-          <div class="pt-2.5 sm:pt-3 border-t border-[#ebebeb] dark:border-[#262626] flex flex-col xs:flex-row xs:items-center justify-between gap-2.5 mt-auto">
-            <div class="text-[10px] sm:text-[11px] text-[#8f8f8f] dark:text-[#737373] flex-1 min-w-0 pr-1">
-              <strong class="text-[#171717] dark:text-[#ededed] font-medium">{uiText.servingTitle} </strong> {item.servingAdvice}
+          <div class="pt-2.5 sm:pt-3 border-t border-[#f0d5a8]/70 dark:border-[#3a2510] flex flex-col xs:flex-row xs:items-center justify-between gap-2.5 mt-auto">
+            <div class="text-[10px] sm:text-[11px] text-[#8f5e35] dark:text-[#a87c54] flex-1 min-w-0 pr-1">
+              <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-semibold">{uiText.servingTitle} </strong> {item.servingAdvice}
             </div>
             <a
               href={translatePath(`/toxic-foods/${item.slug}`)}
-              class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#92400e] dark:text-[#f59e0b] bg-[#fdf3e7] hover:bg-[#fae4cd] dark:bg-[#2a1a08] dark:hover:bg-[#3d260c] border border-[#f0d5a8] dark:border-[#523315] shrink-0 transition-all hover:scale-[1.02] active:scale-[0.98] group touch-manipulation"
+              class="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#92400e] dark:text-[#f59e0b] bg-[#fdf3e7] hover:bg-[#fae4cd] dark:bg-[#2a1a08] dark:hover:bg-[#3d260c] border border-[#f0d5a8] dark:border-[#523315] shrink-0 transition-all hover:scale-[1.02] active:scale-[0.98] group touch-manipulation shadow-2xs"
               title={`${uiText.readMoreBtn}: ${item.name}`}
             >
               <span>{uiText.readMoreBtn}</span>
@@ -141,11 +149,11 @@ const ingredients = getLocalizedIngredients(lang);
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => {
-        b.classList.remove('active', 'bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]', 'hover:bg-[#333333]', 'dark:hover:bg-[#e5e5e5]', 'hover:text-white', 'dark:hover:text-[#171717]');
-        b.classList.add('bg-[#f2f2f2]', 'dark:bg-[#1a1a1a]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]', 'hover:bg-[#ebebeb]', 'dark:hover:bg-[#262626]', 'hover:text-[#171717]', 'dark:hover:text-[#ededed]');
+        b.classList.remove('active', 'bg-[#92400e]', 'dark:bg-[#f59e0b]', 'text-white', 'dark:text-[#1c0f00]', 'font-bold');
+        b.classList.add('bg-[#fdf3e7]', 'dark:bg-[#2a1a08]', 'border', 'border-[#f0d5a8]', 'dark:border-[#3a2510]', 'text-[#78350f]', 'dark:text-[#d4a574]', 'font-medium');
       });
-      btn.classList.add('active', 'bg-[#171717]', 'dark:bg-white', 'text-white', 'dark:text-[#171717]', 'hover:bg-[#333333]', 'dark:hover:bg-[#e5e5e5]', 'hover:text-white', 'dark:hover:text-[#171717]');
-      btn.classList.remove('bg-[#f2f2f2]', 'dark:bg-[#1a1a1a]', 'text-[#4d4d4d]', 'dark:text-[#a1a1a1]', 'hover:bg-[#ebebeb]', 'dark:hover:bg-[#262626]', 'hover:text-[#171717]', 'dark:hover:text-[#ededed]');
+      btn.classList.add('active', 'bg-[#92400e]', 'dark:bg-[#f59e0b]', 'text-white', 'dark:text-[#1c0f00]', 'font-bold');
+      btn.classList.remove('bg-[#fdf3e7]', 'dark:bg-[#2a1a08]', 'text-[#78350f]', 'dark:text-[#d4a574]', 'font-medium');
 
       activeFilter = btn.getAttribute('data-filter') || 'ALL';
       filterCards();

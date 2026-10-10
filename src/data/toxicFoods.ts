@@ -52,6 +52,13 @@ export interface VitalStat {
   tone?: 'danger' | 'warning' | 'safe' | 'neutral';
 }
 
+export interface RecommendedProduct {
+  name: string;
+  url: string;
+  badge: string;
+  whyRecommended: string;
+}
+
 export interface ToxicFoodItem {
   slug: ToxicFoodSlug;
   name: string;
@@ -115,6 +122,8 @@ export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {
     emergencyHotlineDesc: 'If ingestion is suspected, act immediately: ASPCA Animal Poison Control: (888) 426-4435 or Pet Poison Helpline: (855) 764-7661.',
     disclaimer: 'This veterinary safety dossier is for educational reference and does not substitute emergency clinical veterinary care. If poisoning is suspected, transport your dog to the nearest 24/7 veterinary emergency hospital immediately.',
     vitalStatsTitle: 'Critical Parameters',
+    recommendedProductTitle: 'Clinical Product Recommendation',
+    viewOnAmazon: 'View on Amazon',
   },
   es: {
     badgePrefix: 'SEGURIDAD DE ALIMENTOS CANINOS // DOSSIER',
@@ -134,6 +143,8 @@ export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {
     emergencyHotlineDesc: 'Si sospechas ingestión, actúa de inmediato: ASPCA Animal Poison Control (888) 426-4435 o Pet Poison Helpline (855) 764-7661.',
     disclaimer: 'Este dossier veterinario es para fines informativos y no reemplaza la atención veterinaria de urgencia.',
     vitalStatsTitle: 'Parámetros Críticos',
+    recommendedProductTitle: 'Recomendación de Producto Clínico',
+    viewOnAmazon: 'Ver en Amazon',
   },
   ja: {
     badgePrefix: '犬の食材安全性データベース // ドシエ',
@@ -153,6 +164,8 @@ export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {
     emergencyHotlineDesc: '誤飲が疑われる場合は一刻を争います。直ちにかかりつけ医または夜間救急動物病院へ連絡してください。',
     disclaimer: '本資料は情報提供を目的としており、獣医師の診断や救急処置に代わるものではありません。',
     vitalStatsTitle: '重要臨床パラメータ',
+    recommendedProductTitle: '臨床推奨製品',
+    viewOnAmazon: 'Amazonで見る',
   },
   fr: {
     badgePrefix: 'SÉCURITÉ ALIMENTAIRE CANINE // DOSSIER',
@@ -172,6 +185,8 @@ export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {
     emergencyHotlineDesc: 'En cas de suspicion d\'ingestion, agissez sans attendre auprès de votre clinique d\'urgence.',
     disclaimer: 'Ce dossier médical ne remplace en aucun cas une consultation vétérinaire d\'urgence.',
     vitalStatsTitle: 'Paramètres Critiques',
+    recommendedProductTitle: 'Recommandation de Produit Clinique',
+    viewOnAmazon: 'Voir sur Amazon',
   },
   de: {
     badgePrefix: 'HUNDEGESUNDHEIT & ZUTATENSICHERHEIT // DOSSIER',
@@ -191,6 +206,8 @@ export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {
     emergencyHotlineDesc: 'Bei Verdacht auf Vergiftung sofort die nächste Tierklinik kontaktieren.',
     disclaimer: 'Dieses veterinärmedizinische Dossier dient der Aufklärung und ersetzt keinen tierärztlichen Notfalleinsatz.',
     vitalStatsTitle: 'Kritische Parameter',
+    recommendedProductTitle: 'Klinische Produktempfehlung',
+    viewOnAmazon: 'Auf Amazon ansehen',
   },
   pt: {
     badgePrefix: 'SEGURANÇA ALIMENTAR CANINA // DOSSIÊ',
@@ -210,6 +227,8 @@ export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {
     emergencyHotlineDesc: 'Em caso de suspeita de intoxicação, procure atendimento veterinário imediato.',
     disclaimer: 'Este dossiê veterinário tem finalidade educativa e não substitui o atendimento emergencial de um médico veterinário.',
     vitalStatsTitle: 'Parâmetros Críticos',
+    recommendedProductTitle: 'Recomendação de Produto Clínico',
+    viewOnAmazon: 'Ver na Amazon',
   },
   ko: {
     badgePrefix: '반려견 식재료 안전성 // 전문 분석서',
@@ -229,6 +248,8 @@ export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {
     emergencyHotlineDesc: '독성 물질 섭취가 의심되면 지체 없이 가까운 24시간 응급 동물병원으로 내원하세요.',
     disclaimer: '본 전문 자료는 정보 제공 목적이며 수의사의 응급 임상 진료를 대체할 수 없습니다.',
     vitalStatsTitle: '핵심 임상 지표',
+    recommendedProductTitle: '임상 추천 제품',
+    viewOnAmazon: 'Amazon에서 보기',
   },
   it: {
     badgePrefix: 'SICUREZZA DEGLI ALIMENTI PER CANI // DOSSIER',
@@ -248,6 +269,8 @@ export const TOXIC_FOODS_PAGE_I18N: Record<Lang, ToxicFoodsPageI18n> = {
     emergencyHotlineDesc: 'In caso di ingestione sospetta, recarsi immediatamente presso il pronto soccorso veterinario.',
     disclaimer: 'Questo dossier veterinario è a solo scopo informativo e non sostituisce l\'intervento clinico d\'urgenza.',
     vitalStatsTitle: 'Parametri Critici',
+    recommendedProductTitle: 'Raccomandazione Clinica del Prodotto',
+    viewOnAmazon: 'Vedi su Amazon',
   },
 };
 
@@ -385,6 +408,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'No. Clinical veterinary toxicology shows that activated charcoal has poor binding affinity for small, highly water-soluble sugar alcohols like xylitol. Vets generally prioritize emesis and IV dextrose over charcoal administration.',
       },
     ],
+    recommendedProduct: {
+      name: "Zesty Paws Liver Support Supplement for Dogs - with Milk Thistle & Curcumin (Pack of 2)",
+      url: "https://amzn.to/46JlM2I",
+      badge: "VETERINARY LIVER & DETOX DEFENSE",
+      whyRecommended: "Xylitol directly attacks canine liver cells (hepatocytes). Formulated with Milk Thistle (Silymarin), Curcumin, and Choline to defend liver function and replenish vital cellular glutathione reserves.",
+    },
   },
 
   // 2. CHOCOLATE & COCOA
@@ -519,6 +548,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Yes. With prompt decontamination, fluid diuresis, and anti-arrhythmic care, the vast majority of dogs survive chocolate poisoning with no long-term organ damage.',
       },
     ],
+    recommendedProduct: {
+      name: "PureBites Lamb Single Ingredient Freeze Dried Dog Treats, 3.35 oz",
+      url: "https://amzn.to/4yhHI0B",
+      badge: "100% THEOBROMINE-FREE REWARD TREAT",
+      whyRecommended: "The safe whole-food alternative to human confections. Satisfies treat motivation with 100% single-ingredient pure meat without methylxanthines, cocoa, theobromine, or added sugars.",
+    },
   },
 
   // 3. GRAPES & RAISINS
@@ -654,6 +689,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Absolutely not. Grape juice contains dense liquid concentrations of tartaric acid, while wine adds ethanol, multiplying the toxicity tenfold.',
       },
     ],
+    recommendedProduct: {
+      name: "Icelandic+ Combo Sticks: Cod & Blueberry Dog Treats, Wild Caught Fish (Pack of 2)",
+      url: "https://amzn.to/4xadv2C",
+      badge: "SAFE BERRY & KIDNEY-SAFE REWARD",
+      whyRecommended: "The safe whole-food fruit alternative highlighted in our clinical guide. Wild blueberries provide deep cellular antioxidants and natural sweetness with zero tartaric acid and zero nephrotoxicity.",
+    },
   },
 
   // 4. ONIONS & GARLIC
@@ -788,6 +829,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Urine typically turns dark amber, reddish-brown, or deep "port wine" color (hemoglobinuria) as ruptured red blood cells release free hemoglobin that filters through the bladder.',
       },
     ],
+    recommendedProduct: {
+      name: "Brutus Broth Chicken Bone Broth for Dogs (100% Onion-Free & Garlic-Free)",
+      url: "https://amzn.to/4zSd7Zb",
+      badge: "GUARANTEED 100% ONION & GARLIC-FREE BROTH",
+      whyRecommended: "Human grocery store broths almost universally hide toxic onion and garlic powders. Brutus Broth is crafted specifically for dogs with zero alliums, zero added sodium, and joint-nourishing collagen.",
+    },
   },
 
   // 5. MACADAMIA NUTS
@@ -920,6 +967,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Most nuts are poor choices for dogs: walnuts and pecans are prone to tremorgenic mycotoxins, pistachios cause bowel blockages, and almonds are difficult to digest. Peanuts (technically legumes) in unsalted form are the only safe option.',
       },
     ],
+    recommendedProduct: {
+      name: "Crumps' Naturals Sweet Potato for Pets, 11.6-Ounce (Pack of 2)",
+      url: "https://amzn.to/4xYpMst",
+      badge: "SAFE CRUNCHY LOW-FAT REWARD",
+      whyRecommended: "Replaces dangerous high-fat nuts with 100% natural dehydrated sweet potato slices, delivering satisfying crunch and prebiotic fiber with zero neurotoxins and zero pancreatitis risk.",
+    },
   },
 
   // 6. COOKED BONES
@@ -1052,6 +1105,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Yes, significantly. Raw bones contain natural moisture and flexible collagen fibers that bend and crush under canine teeth rather than shattering into shards. However, raw bones should still be size-appropriate and fed under direct supervision.',
       },
     ],
+    recommendedProduct: {
+      name: "Vital Essentials Freeze Dried Raw Chicken Hearts Dog Treats, 3.75 oz",
+      url: "https://amzn.to/4ctpLUu",
+      badge: "100% DIGESTIBLE REAL MEAT CHEW (ZERO SPLINTERS)",
+      whyRecommended: "Satisfies primal carnivorous chewing instincts with 100% pure digestible meat, completely eliminating the catastrophic risk of cooked bone splintering and gastrointestinal punctures.",
+    },
   },
 
   // 7. HIGH-FAT TRIMMINGS & BACON GREASE
@@ -1184,6 +1243,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Yes. Once a dog suffers an episode of acute pancreatitis, the pancreas can develop fibrous scarring, predisposing the dog to recurrent chronic flare-ups, exocrine pancreatic insufficiency (EPI), or secondary diabetes mellitus.',
       },
     ],
+    recommendedProduct: {
+      name: "Libby's 100% Pure Canned Pumpkin, 15 oz (Pack of 5)",
+      url: "https://amzn.to/4xINd8W",
+      badge: "ZERO-FAT DIGESTIVE SOOTHER",
+      whyRecommended: "Pure soluble prebiotic fiber with 0% fat. Clinically utilized by veterinarians to soothe irritated digestive tracts, firm loose stools, and provide meal volume without triggering pancreatic flare-ups.",
+    },
   },
 
   // 8. PUMPKIN
@@ -1315,6 +1380,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Yes, puppies can safely eat small amounts of 100% pure pumpkin (1/2 to 1 teaspoon) to soothe digestive transitions when moving from milk to solid food or switching kibble formulas.',
       },
     ],
+    recommendedProduct: {
+      name: "Libby's 100% Pure Canned Pumpkin, 15 oz (Pack of 5)",
+      url: "https://amzn.to/4xINd8W",
+      badge: "100% PURE PUMPKIN — VET-RECOMMENDED",
+      whyRecommended: "The gold-standard single-ingredient canned pumpkin with zero added sugars, cinnamon, or toxic nutmeg. Balances bowel motility for both loose stools and constipation.",
+    },
   },
 
   // 9. WILD ALASKAN SALMON
@@ -1446,6 +1517,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Salmon is considered a novel, low-allergen protein compared to common triggers like chicken and beef. However, dogs can develop allergies to any protein source. Introduce it in small portions if your dog has an extensive allergy history.',
       },
     ],
+    recommendedProduct: {
+      name: "Zesty Paws Salmon Oil for Dogs & Cats - Wild Alaskan Omega 3 Supplement, 16 oz",
+      url: "https://amzn.to/46HCJdW",
+      badge: "PURE WILD ALASKAN SALMON OIL",
+      whyRecommended: "Cold-pressed wild Alaskan salmon oil delivering preformed marine EPA and DHA. Clinically reduces allergic itching, soothes stiff joints, and creates a lustrous, glossy coat.",
+    },
   },
 
   // 10. WILD BLUEBERRIES
@@ -1577,6 +1654,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Wild blueberries grow on low bushes in harsh environments, forcing the plant to produce much higher concentrations of protective anthocyanins. They contain roughly 33% more anthocyanins and double the total antioxidant capacity of standard cultivated highbush berries.',
       },
     ],
+    recommendedProduct: {
+      name: "Icelandic+ Combo Sticks: Cod & Blueberry Dog Treats, Wild Caught Fish (Pack of 2)",
+      url: "https://amzn.to/4xadv2C",
+      badge: "WILD BLUEBERRY & CLEAN COD TREATS",
+      whyRecommended: "Real wild blueberries combined with wild-caught ocean cod. Delivers natural anthocyanin polyphenols to protect canine brain cells and eye health in a clean, crunchy treat.",
+    },
   },
 
   // 11. RAW GREEN TRIPE
@@ -1708,6 +1791,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Yes! You do not need to feed a 100% raw diet to unlock the benefits of green tripe. Adding just 1–2 spoonfuls of raw or freeze-dried green tripe to commercial dry kibble provides living enzymes and probiotics that kibble heat extrusion destroyed.',
       },
     ],
+    recommendedProduct: {
+      name: "K9 Natural Grain Free Freeze Dried Dog Food Booster Lamb Green Tripe",
+      url: "https://amzn.to/3SrLyW0",
+      badge: "100% UNBLEACHED FREEZE-DRIED GREEN TRIPE",
+      whyRecommended: "Unbleached green tripe freeze-dried to lock in living digestive enzymes, Lactobacillus probiotics, and natural 1:1 Calcium-to-Phosphorus ratio without refrigeration mess.",
+    },
   },
 
   // 12. COLLAGEN BONE BROTH
@@ -1839,6 +1928,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'ABSOLUTELY NEVER. Simmering bones for 24 hours makes them completely brittle and prone to shattering into razor-sharp needle shards. Always strain every piece of bone and dispose of them in a secure outdoor trash bin.',
       },
     ],
+    recommendedProduct: {
+      name: "Brutus Broth Chicken Bone Broth for Dogs - Meal Topper with Glucosamine & Chondroitin",
+      url: "https://amzn.to/4zSd7Zb",
+      badge: "SLOW-SIMMERED COLLAGEN BONE BROTH",
+      whyRecommended: "Simmered without onions, garlic, or excess sodium. Infused with natural collagen, glucosamine, and chondroitin to seal the gut barrier and lubricate arthritic joints.",
+    },
   },
 
   // 13. ZUCCHINI
@@ -1970,6 +2065,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'Zucchini is 94% water and contains only 17 calories per 100 grams. By replacing 10% to 20% of high-calorie kibble with steamed zucchini, you maintain the physical volume in your dog’s stomach, keeping them feeling full while substantially cutting daily calories.',
       },
     ],
+    recommendedProduct: {
+      name: "Fresh Green Zucchini (Whole Produce)",
+      url: "https://amzn.to/4xPVcB1",
+      badge: "FRESH WHOLE-FOOD BULKING VEGETABLE",
+      whyRecommended: "Fresh green zucchini providing 94% cellular hydration and gentle insoluble fiber. Ideal for adding satisfying meal volume on canine weight-loss and bladder-flushing regimens.",
+    },
   },
 
   // 14. RAW GOAT MILK & KEFIR
@@ -2101,6 +2202,12 @@ export const TOXIC_FOODS_DATA_EN: ToxicFoodItem[] = [
         a: 'A safe daily maintenance dose is: 1 teaspoon for toy dogs (under 10 lbs); 1 tablespoon for small-to-medium dogs (15–30 lbs); 2 tablespoons for large dogs (40–70 lbs); and 3 tablespoons for giant breeds. Start with half this amount for the first few days to allow the digestive flora to adapt.',
       },
     ],
+    recommendedProduct: {
+      name: "Native Pet Pup-Kin Spice Latte Bundle - Goat Milk & Pumpkin Powder for Dogs",
+      url: "https://amzn.to/3UA8cvX",
+      badge: "ALL-NATURAL GOAT MILK & DIGESTIVE PROBIOTICS",
+      whyRecommended: "Hypoallergenic A2 beta-casein goat milk powder paired with pure pumpkin. Delivers billions of living probiotic CFUs to calm yeasty paws, sooth allergies, and rebuild gut flora.",
+    },
   },
 ];
 
