@@ -29,13 +29,12 @@ const isHomeActive = cleanPath === '/';
     <a href={translatePath('/')} class="flex items-center gap-1.5 sm:gap-2 group shrink-0">
       <Logo class="size-6 sm:size-7 lg:size-8 shadow-sm group-hover:scale-105 transition-transform" />
       <div class="flex flex-col min-w-0 justify-center leading-none">
-        <div class="flex items-center gap-1 min-w-0">
+        <div class="flex items-center min-w-0">
           <!-- On mobile: show a compact "DFP" abbreviation; sm+ show full brand name -->
           <span class="font-bold text-[11px] xs:text-[12px] sm:text-[13px] lg:text-base text-[#1c0f00] dark:text-[#fde8c8] tracking-tight whitespace-nowrap">
             <span class="inline sm:hidden">DFP</span>
             <span class="hidden sm:inline">{t('nav.brand')}</span>
           </span>
-          <span class="hidden sm:inline-flex font-mono text-[9px] sm:text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-[#fdf3e7] dark:bg-[#2a1a08] text-[#92400e] dark:text-[#d97706] border border-[#f0d5a8] dark:border-[#3a2510] shrink-0">{t('nav.badge')}</span>
         </div>
         <span class="text-[10px] text-[#a16207] dark:text-[#92400e] font-mono mt-0.5 hidden md:block truncate">{t('nav.subbrand')}</span>
       </div>
@@ -90,16 +89,13 @@ const isHomeActive = cleanPath === '/';
       <a
         href={translatePath('/faq')}
         class:list={[
-          "text-xs px-3 py-1.5 rounded-full transition-all duration-150 flex items-center gap-1 font-medium",
+          "text-xs px-3 py-1.5 rounded-full transition-all duration-150 font-medium",
           isFaqActive
             ? "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#1c0f00] dark:text-[#fde8c8] font-semibold"
             : "text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
         ]}
         aria-current={isFaqActive ? 'page' : undefined}
-      >
-        <span>{t('nav.faqs')}</span>
-        <span class="px-1.5 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 rounded text-[10px] font-mono font-bold">40+</span>
-      </a>
+      >{t('nav.faqs')}</a>
     </nav>
 
     <!-- Right-side actions -->
@@ -230,14 +226,14 @@ const isHomeActive = cleanPath === '/';
       <a
         href={translatePath('/faq')}
         class:list={[
-          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150 flex items-center gap-1",
+          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
           isFaqActive
             ? "text-white font-semibold"
             : "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#6b4226] dark:text-[#c4956a]"
         ]}
         style={isFaqActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
         aria-current={isFaqActive ? 'page' : undefined}
-      >❓ {t('nav.faqs')} <span class="px-1 bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 rounded text-[9px] font-mono font-bold">40+</span></a>
+      >❓ {t('nav.faqs')}</a>
     </div>
   </div>
 

@@ -219,10 +219,6 @@ const hrI18n = HOMEMADE_RECIPES_PAGE_I18N[lang] || HOMEMADE_RECIPES_PAGE_I18N.en
   </>}
 
   {kind === 'recipes' && <>
-    <aside class="p-6 bg-[#fffbeb] dark:bg-[#291f05] border border-[#fef08a] dark:border-[#854d0e] rounded-2xl">
-      <h2 class="font-bold text-amber-800 dark:text-amber-300">⚠️ {p.calciumWarningTitle}</h2>
-      <p class="mt-2 text-amber-900 dark:text-amber-200">{p.calciumWarningDesc}</p>
-    </aside>
 
     {p.recipesList.map((recipe: any, idx: number) => {
       const slug = HOMEMADE_RECIPE_SLUGS[idx] || 'gently-cooked-turkey-pumpkin';

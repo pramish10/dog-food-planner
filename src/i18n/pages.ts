@@ -71,7 +71,7 @@ export const PAGE_TRANSLATIONS = {
     "submitBtn": "Send Message →",
     "notice": "Veterinary Emergency Notice: If your pet is exhibiting acute symptoms of poisoning or severe distress, contact your emergency veterinarian or the ASPCA Poison Control hotline immediately.",
     "faqTitle": "Looking for fast answers?",
-    "faqDesc": "Check our comprehensive 40+ veterinary FAQ knowledge base covering picky eating, raw diets, cat food, and commercial dog food brands.",
+    "faqDesc": "Check our comprehensive veterinary FAQ knowledge base covering picky eating, raw diets, cat food, and commercial dog food brands.",
     "faqBtn": "Browse All FAQs →",
     "successTitle": "✓ Message prepared — sending to hello@dogfoodplanner.com",
     "successDesc": "Your email client should open with a pre-drafted message addressed to hello@dogfoodplanner.com. Just hit Send in your email app and it will arrive in our inbox."
@@ -571,7 +571,7 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "faqPage": {
-    "badge": "KNOWLEDGE BASE // 40+ VERIFIED CANINE ANSWERS",
+    "badge": "KNOWLEDGE BASE // VERIFIED CANINE ANSWERS",
     "exploreHubsTitle": "Explore Dedicated Canine Nutrition Hubs",
     "exploreHubsSubtitle": "Deep-dive into specialized guides created for dog parents seeking optimal health.",
     "cardBestFood": "Comparison of fresh, raw, high-protein kibble, and specialized formulas for small and sensitive dogs.",
@@ -2392,7 +2392,7 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "faqPage": {
-    "badge": "BASE DE CONNAISSANCES // 40+ RÉPONSES VÉTÉRINAIRES",
+    "badge": "BASE DE CONNAISSANCES // RÉPONSES VÉTÉRINAIRES",
     "exploreHubsTitle": "Explorez Nos Guides Vétérinaires Spécialisés",
     "exploreHubsSubtitle": "Des dossiers approfondis pour les maîtres soucieux de la longévité et du bien-être de leur compagnon.",
     "cardBestFood": "Comparatif ration fraîche, BARF, croquettes riches en viande et digestion délicate.",
