@@ -238,17 +238,32 @@ const {
           root.style.scrollBehavior = 'auto';
           body.style.scrollBehavior = 'auto';
           window.history.scrollRestoration = 'manual';
-          window.scrollTo(0, state.scrollY);
+          const targetY = state.scrollY;
+          window.scrollTo(0, targetY);
+
+          let userInteracted = false;
+          const markInteracted = () => { userInteracted = true; };
+          window.addEventListener('wheel', markInteracted, { once: true, passive: true });
+          window.addEventListener('touchmove', markInteracted, { once: true, passive: true });
+          window.addEventListener('keydown', markInteracted, { once: true, passive: true });
 
           requestAnimationFrame(() => {
-            window.scrollTo(0, state.scrollY);
+            window.scrollTo(0, targetY);
             requestAnimationFrame(() => {
-              window.scrollTo(0, state.scrollY);
+              window.scrollTo(0, targetY);
               root.style.scrollBehavior = previousHtmlScrollBehavior;
               body.style.scrollBehavior = previousBodyScrollBehavior;
               sessionStorage.removeItem(KEY);
             });
           });
+
+          if (document.readyState !== 'complete') {
+            window.addEventListener('load', () => {
+              if (!userInteracted && Math.abs(window.scrollY - targetY) > 5) {
+                window.scrollTo(0, targetY);
+              }
+            }, { once: true });
+          }
         } catch {
           sessionStorage.removeItem(KEY);
         }

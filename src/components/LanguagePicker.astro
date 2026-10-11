@@ -112,7 +112,7 @@ const languageList = Object.entries(languages) as [Lang, string][];
   </div>
 )}
 
-<script is:inline>
+<script>
   const SCROLL_STATE_KEY = 'dfp-language-switch-scroll';
 
   function saveLanguageSwitchState() {
@@ -122,53 +122,37 @@ const languageList = Object.entries(languages) as [Lang, string][];
     const plannerTop = plannerSection ? Math.round(plannerSection.getBoundingClientRect().top + window.scrollY) : null;
     const resultsVisible = resultsSection ? !resultsSection.classList.contains('hidden') : false;
 
-    sessionStorage.setItem(
-      SCROLL_STATE_KEY,
-      JSON.stringify({
-        scrollY: window.scrollY,
-        hash: window.location.hash,
-        activeStep,
-        plannerTop,
-        resultsVisible,
-      })
-    );
-  }
-
-  function restoreLanguageSwitchState() {
-    const raw = sessionStorage.getItem(SCROLL_STATE_KEY);
-    if (!raw) return;
-
-    sessionStorage.removeItem(SCROLL_STATE_KEY);
-
     try {
-      const state = JSON.parse(raw);
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          if (typeof state.scrollY === 'number') {
-            window.scrollTo(0, state.scrollY);
-          }
-        });
-      });
-    } catch {
-      sessionStorage.removeItem(SCROLL_STATE_KEY);
-    }
+      sessionStorage.setItem(
+        SCROLL_STATE_KEY,
+        JSON.stringify({
+          scrollY: window.scrollY,
+          hash: window.location.hash,
+          activeStep,
+          plannerTop,
+          resultsVisible,
+        })
+      );
+    } catch (_) {}
   }
 
-  function setupLanguagePicker() {
+  // Delegated click listener ensures any [data-lang-switch] link clicked
+  // anywhere on the page (navbar, footer, or dynamic content) reliably saves scroll state.
+  document.addEventListener('click', (e) => {
+    const target = (e.target as Element | null)?.closest?.('a[data-lang-switch]');
+    if (target) {
+      saveLanguageSwitchState();
+    }
+  });
+
+  function setupLanguagePickerDropdown() {
     const btn = document.getElementById('lang-picker-btn');
     const menu = document.getElementById('lang-picker-menu');
+    if (!btn || !menu || btn.dataset.langPickerBound === 'true') return;
+    btn.dataset.langPickerBound = 'true';
 
-    document.querySelectorAll('[data-lang-switch]').forEach((link) => {
-      if (link.dataset.langSwitchBound === 'true') return;
-      link.dataset.langSwitchBound = 'true';
-      link.addEventListener('click', saveLanguageSwitchState);
-    });
-
-    if (!btn || !menu) return;
-
-    function toggleMenu(e) {
-      e?.stopPropagation();
+    function toggleMenu(e: Event) {
+      e.stopPropagation();
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
       if (isExpanded) {
         menu.classList.add('hidden');
@@ -179,8 +163,8 @@ const languageList = Object.entries(languages) as [Lang, string][];
       }
     }
 
-    function closeMenu(e) {
-      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+    function closeMenu(e: MouseEvent) {
+      if (!btn.contains(e.target as Node) && !menu.contains(e.target as Node)) {
         menu.classList.add('hidden');
         btn.setAttribute('aria-expanded', 'false');
       }
@@ -190,10 +174,6 @@ const languageList = Object.entries(languages) as [Lang, string][];
     document.addEventListener('click', closeMenu);
   }
 
-  restoreLanguageSwitchState();
-  setupLanguagePicker();
-  document.addEventListener('astro:page-load', () => {
-    restoreLanguageSwitchState();
-    setupLanguagePicker();
-  });
+  setupLanguagePickerDropdown();
+  document.addEventListener('astro:page-load', setupLanguagePickerDropdown);
 </script>
