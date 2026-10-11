@@ -146,12 +146,14 @@ const languageList = Object.entries(languages) as [Lang, string][];
   });
 
   function setupLanguagePickerDropdown() {
-    const btn = document.getElementById('lang-picker-btn');
-    const menu = document.getElementById('lang-picker-menu');
-    if (!btn || !menu || btn.dataset.langPickerBound === 'true') return;
+    const btnEl = document.getElementById('lang-picker-btn');
+    const menuEl = document.getElementById('lang-picker-menu');
+    if (!btnEl || !menuEl || btnEl.dataset.langPickerBound === 'true') return;
+    const btn = btnEl;
+    const menu = menuEl;
     btn.dataset.langPickerBound = 'true';
 
-    function toggleMenu(e: Event) {
+    const toggleMenu = (e: Event) => {
       e.stopPropagation();
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
       if (isExpanded) {
@@ -161,14 +163,14 @@ const languageList = Object.entries(languages) as [Lang, string][];
         menu.classList.remove('hidden');
         btn.setAttribute('aria-expanded', 'true');
       }
-    }
+    };
 
-    function closeMenu(e: MouseEvent) {
+    const closeMenu = (e: MouseEvent) => {
       if (!btn.contains(e.target as Node) && !menu.contains(e.target as Node)) {
         menu.classList.add('hidden');
         btn.setAttribute('aria-expanded', 'false');
       }
-    }
+    };
 
     btn.addEventListener('click', toggleMenu);
     document.addEventListener('click', closeMenu);

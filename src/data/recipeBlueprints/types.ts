@@ -90,6 +90,7 @@ export interface VerifiedSupplementCard {
   desc: string;
   url: string;
   btnLabel?: string;
+  buttonLabel?: string;
 }
 
 export interface RecipeBlueprintPageI18n {

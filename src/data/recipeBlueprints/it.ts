@@ -269,7 +269,6 @@ export const itBlueprints: RecipeBlueprint[] = [
     clinicalRationale: [
       {
         title: '1. Sviluppo e Resistenza Muscolare con Creatina Naturale',
-        body: '',
         description:
           'Il manzo magro combinato con fegato offre una densità ineguagliabile di zinco organico (58 mg/kg DM) e ferro eme, essenziali per la sintesi proteica e l\'ossigenazione muscolare durante l\'attività fisica.',
         points: [

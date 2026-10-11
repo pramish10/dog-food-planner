@@ -410,7 +410,7 @@ const articleJsonLd = {
                 <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{sup.title}</h3>
                 <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">{sup.desc}</p>
               </div>
-              <AffiliateButton url={sup.url} label={sup.buttonLabel || "Buy Now"} size="sm" class="shrink-0" />
+              <AffiliateButton url={sup.url} label={sup.btnLabel || sup.buttonLabel || "Buy Now"} size="sm" class="shrink-0" />
             </div>
           ))}
         </div>

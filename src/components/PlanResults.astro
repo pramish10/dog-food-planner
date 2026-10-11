@@ -427,9 +427,10 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       var plannerEl = document.getElementById('planner-section');
       if (plannerEl) {
         plannerEl.classList.remove('hidden');
+        var targetEl = plannerEl;
         // Scroll after a short tick so the layout has settled
         setTimeout(function () {
-          plannerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          targetEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 80);
       }
       // Do NOT call restoreResultsState — we want the planner, not the results
