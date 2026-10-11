@@ -108,7 +108,7 @@ const articleJsonLd = {
       <!-- Executive Summary Card -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] shadow-sm space-y-3">
         <div class="text-[11px] font-mono uppercase tracking-wider text-[#0070f3] dark:text-[#3291ff] font-semibold">
-          Veterinary Clinical Overview
+          {p.clinicalOverview}
         </div>
         <p class="text-sm sm:text-base text-[#171717] dark:text-[#ededed] font-medium leading-relaxed">
           {item.executiveSummary}
@@ -122,7 +122,7 @@ const articleJsonLd = {
             {p.macroTitle}
           </h2>
           <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1 font-mono">
-            Laboratory Dry Matter Basis // AAFCO & NRC Adult Maintenance Standard
+            {p.labBasisNote}
           </p>
         </div>
 
@@ -220,7 +220,7 @@ const articleJsonLd = {
                 </div>
                 <div>
                   <span class="text-[11px] uppercase font-mono font-semibold text-[#10b981] dark:text-[#34d399] block mb-0.5">
-                    Clinical Target Benefit
+                    {p.clinicalTargetBenefit}
                   </span>
                   <p class="text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
                     {ing.clinicalBenefit}
@@ -239,7 +239,7 @@ const articleJsonLd = {
             {p.clinicalTitle}
           </h2>
           <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
-            Veterinary physiology and biological mechanisms behind this specific nutrient balance.
+            {p.clinicalSubtitle}
           </p>
         </div>
 
@@ -292,7 +292,7 @@ const articleJsonLd = {
               </p>
               {step.criticalTip && (
                 <div class="ml-8 mt-2 p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 rounded-lg text-xs text-amber-800 dark:text-amber-200 flex items-center gap-2">
-                  <span class="font-bold">⚠️ CRITICAL:</span>
+                  <span class="font-bold">⚠️ {p.criticalPrefix}:</span>
                   <span>{step.criticalTip}</span>
                 </div>
               )}
@@ -330,7 +330,7 @@ const articleJsonLd = {
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-3 border-b border-[#ebebeb] dark:border-[#262626]">
           <div>
             <span class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-2">
-              Veterinary Portion Reference (MER Calibrated)
+              {p.portionBadge}
             </span>
             <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
               {p.portionTitle}
@@ -342,7 +342,7 @@ const articleJsonLd = {
           <div class="shrink-0 flex items-center gap-2">
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1.5 rounded-lg bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-[#171717] dark:text-[#ededed]">
               <span>⚖️</span>
-              <span>{item.portionReference.length} Weight Tiers</span>
+              <span>{item.portionReference.length} {p.weightTiersLabel}</span>
             </span>
           </div>
         </div>
@@ -407,34 +407,20 @@ const articleJsonLd = {
             🛒 {p.supplementsTitle}
           </h2>
           <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
-            Clinical purity matters. Verified ingredients available on Amazon:
+            {p.supplementsSubtitle}
           </p>
         </div>
 
         <div class="space-y-3">
-          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">U.S.A. Eggshell Powder (8oz) — Calcium Balancer</h3>
-              <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">Pure calcium carbonate yielding ~38% elemental calcium to balance meat phosphorus at 1.25:1 Ca:P.</p>
+          {(p.supplementsList || []).map((sup) => (
+            <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-4">
+              <div class="min-w-0 flex-1">
+                <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{sup.title}</h3>
+                <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">{sup.desc}</p>
+              </div>
+              <AffiliateButton url={sup.url} label={sup.buttonLabel || "Buy Now"} size="sm" class="shrink-0" />
             </div>
-            <AffiliateButton url="https://amzn.to/4haNVWy" label="Buy Now" size="sm" class="shrink-0" />
-          </div>
-
-          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Zesty Paws Wild Alaskan Salmon Oil (16oz) — Omega-3 EPA/DHA</h3>
-              <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">Cold-pressed unoxidized marine omega-3 fatty acids for dermatological and joint cartilage support.</p>
-            </div>
-            <AffiliateButton url="https://amzn.to/46HCJdW" label="Buy Now" size="sm" class="shrink-0" />
-          </div>
-
-          <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-4">
-            <div class="min-w-0 flex-1">
-              <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">Organic 100% Pure Pumpkin Purée (15oz) — Prebiotic Soluble Fiber</h3>
-              <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">Zero spices, zero sugar. Clinically stabilizes colonic transit and produces butyrate for gut barrier health.</p>
-            </div>
-            <AffiliateButton url="https://amzn.to/4xINd8W" label="Buy Now" size="sm" class="shrink-0" />
-          </div>
+          ))}
         </div>
       </section>
 
