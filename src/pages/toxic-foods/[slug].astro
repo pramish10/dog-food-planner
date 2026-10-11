@@ -35,10 +35,10 @@ const isCaution = item.status === 'FEED_WITH_CAUTION';
 const isSafe = item.status === 'SAFE_AND_BENEFICIAL';
 
 const pageTitle = isToxic
-  ? `${item.name}: Canine Toxicity, Lethal Dose & Emergency Protocol | DogFoodPlanner`
+  ? `${item.name}${p.metaToxicSuffix}`
   : isCaution
-  ? `${item.name}: Dog Safety, Health Risks & Caution Guide | DogFoodPlanner`
-  : `${item.name} for Dogs: Benefits, Serving Size & Veterinary Guide | DogFoodPlanner`;
+  ? `${item.name}${p.metaCautionSuffix}`
+  : `${item.name}${p.metaSafeSuffix}`;
 
 const pageDescription = item.summary.slice(0, 155);
 
@@ -108,10 +108,10 @@ const articleJsonLd = {
                 </p>
                 <div class="flex flex-wrap gap-2 text-[11px] font-mono font-bold">
                   <a href="tel:8884264435" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white transition-colors">
-                    <span>📞 Call ASPCA: (888) 426-4435</span>
+                    <span>📞 {p.callAspca}: (888) 426-4435</span>
                   </a>
                   <a href="tel:8557647661" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-100 dark:bg-red-900/60 hover:bg-red-200 text-red-900 dark:text-red-100 border border-red-300 dark:border-red-800 transition-colors">
-                    <span>📞 Pet Poison Helpline: (855) 764-7661</span>
+                    <span>📞 {p.callPetPoison}: (855) 764-7661</span>
                   </a>
                 </div>
               </div>
@@ -147,7 +147,7 @@ const articleJsonLd = {
           </h1>
 
           <p class="font-mono text-xs sm:text-sm text-[#8f5e35] dark:text-[#c4956a] mb-4">
-            Clinical Designation: {item.scientificName}
+            {p.clinicalDesignation}: {item.scientificName}
           </p>
 
           <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#6b4226] dark:text-[#c4956a] font-mono">
@@ -184,7 +184,7 @@ const articleJsonLd = {
                isCaution ? 'border-amber-200 dark:border-amber-900/60 bg-amber-50/70 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200' : '',
                isSafe ? 'border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/70 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200' : '',
              ]}>
-          <strong>Status & Severity: </strong> {item.riskSeverity}
+          <strong>{p.statusAndSeverity}: </strong> {item.riskSeverity}
         </div>
       </section>
 
@@ -212,7 +212,7 @@ const articleJsonLd = {
           ))}
           <div class="p-4 sm:p-5 rounded-xl bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] flex flex-col justify-between shadow-2xs">
             <span class="text-xs font-mono text-[#8f5e35] dark:text-[#c4956a] mb-1">
-              Active Compound / Biomolecule
+              {p.activeCompound}
             </span>
             <span class="text-sm sm:text-base font-semibold text-[#1c0f00] dark:text-[#fde8c8]">
               {item.primaryCompound}
@@ -220,7 +220,7 @@ const articleJsonLd = {
           </div>
           <div class="p-4 sm:p-5 rounded-xl bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] flex flex-col justify-between shadow-2xs">
             <span class="text-xs font-mono text-[#8f5e35] dark:text-[#c4956a] mb-1">
-              Primary Affected Organs / Systems
+              {p.affectedOrgans}
             </span>
             <span class="text-sm sm:text-base font-semibold text-[#1c0f00] dark:text-[#fde8c8]">
               {item.targetOrgans.join(', ')}
@@ -232,7 +232,7 @@ const articleJsonLd = {
       <!-- Detailed Clinical Narrative -->
       <section class="hairline-card p-6 sm:p-8 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] mb-8 space-y-4 shadow-xs">
         <h2 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] border-b border-[#f0d5a8]/60 dark:border-[#3a2510] pb-3">
-          🔬 Comprehensive Clinical Analysis
+          🔬 {p.clinicalAnalysisTitle}
         </h2>
         {item.narrativeOverview.map((paragraph) => (
           <p class="text-sm sm:text-base text-[#4d3319] dark:text-[#d4a574] leading-relaxed">
@@ -267,7 +267,7 @@ const articleJsonLd = {
             <div class="p-5 sm:p-6 rounded-2xl bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs">
               <div class="flex items-center gap-2.5 mb-3">
                 <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-md bg-[#92400e] dark:bg-[#f59e0b] text-white dark:text-[#1c0f00]">
-                  Phase 0{idx + 1}
+                  {p.phasePrefix} 0{idx + 1}
                 </span>
                 <h3 class="text-sm sm:text-base font-bold text-[#1c0f00] dark:text-[#fde8c8]">
                   {stage.phase}
@@ -302,7 +302,7 @@ const articleJsonLd = {
                  ]}>
               <div>
                 <span class="font-mono text-[11px] font-bold uppercase tracking-wider text-[#8f5e35] dark:text-[#c4956a] mb-1 block">
-                  Step 0{step.stepNumber}
+                  {p.stepPrefix} 0{step.stepNumber}
                 </span>
                 <h3 class="text-sm sm:text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-2">
                   {step.title}
@@ -436,7 +436,7 @@ const articleJsonLd = {
 
       <!-- Medical Disclaimer -->
       <div class="p-4 rounded-xl bg-[#fdf8f2]/90 dark:bg-[#24170a]/90 border border-[#f0d5a8]/70 dark:border-[#3a2510] text-[11px] text-[#8f5e35] dark:text-[#c4956a] leading-relaxed mb-8">
-        <strong>Veterinary Clinical Notice: </strong> {p.disclaimer}
+        <strong>{p.clinicalNoticeTitle}: </strong> {p.disclaimer}
       </div>
 
       <!-- Prev / Next Navigation -->
