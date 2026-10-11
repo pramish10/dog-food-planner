@@ -7,8 +7,8 @@ import AffiliateButton from '../../../components/AffiliateButton.astro';
 import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import {
   HOMEMADE_RECIPE_SLUGS,
-  HOMEMADE_RECIPES,
   HOMEMADE_RECIPES_PAGE_I18N,
+  getHomemadeRecipeBySlug,
   type HomemadeRecipeSlug,
 } from '../../../data/homemadeRecipes';
 import type { Lang } from '../../../i18n/ui';
@@ -23,9 +23,9 @@ export function getStaticPaths() {
   );
 }
 
-const { idx, lang } = Astro.props as { idx: number; lang: Lang };
-const slug = HOMEMADE_RECIPE_SLUGS[idx] as HomemadeRecipeSlug;
-const recipe = HOMEMADE_RECIPES[slug];
+const lang = ((Astro.params.lang || Astro.props.lang) as Lang) || 'en';
+const slug = ((Astro.params.slug as HomemadeRecipeSlug) || (Astro.props.idx !== undefined ? HOMEMADE_RECIPE_SLUGS[Astro.props.idx] : undefined)) as HomemadeRecipeSlug;
+const recipe = slug ? getHomemadeRecipeBySlug(slug, lang) : undefined;
 const p = HOMEMADE_RECIPES_PAGE_I18N[lang] || HOMEMADE_RECIPES_PAGE_I18N.en;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
@@ -34,10 +34,11 @@ if (!recipe) {
   return Astro.redirect(translatePath('/dog-food-recipes'));
 }
 
+const idx = HOMEMADE_RECIPE_SLUGS.indexOf(slug);
 const prevSlug = idx > 0 ? HOMEMADE_RECIPE_SLUGS[idx - 1] : null;
-const nextSlug = idx < HOMEMADE_RECIPE_SLUGS.length - 1 ? HOMEMADE_RECIPE_SLUGS[idx + 1] : null;
-const prevRecipe = prevSlug ? HOMEMADE_RECIPES[prevSlug] : null;
-const nextRecipe = nextSlug ? HOMEMADE_RECIPES[nextSlug] : null;
+const nextSlug = idx >= 0 && idx < HOMEMADE_RECIPE_SLUGS.length - 1 ? HOMEMADE_RECIPE_SLUGS[idx + 1] : null;
+const prevRecipe = prevSlug ? getHomemadeRecipeBySlug(prevSlug, lang) : null;
+const nextRecipe = nextSlug ? getHomemadeRecipeBySlug(nextSlug, lang) : null;
 
 const pageTitle = `${recipe.title}: ${p.titleSuffix}`;
 const pageDescription = recipe.shortDesc.slice(0, 155);
@@ -168,7 +169,7 @@ const recipeJsonLd = {
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
           <div>
             <span class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-2">
-              Veterinary Whole-Food Formulation
+              {p.veterinaryWholeFoodBadge}
             </span>
             <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
               {p.formulaTitle}
@@ -180,7 +181,7 @@ const recipeJsonLd = {
           <div class="shrink-0 flex items-center gap-2">
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1.5 rounded-lg bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-[#171717] dark:text-[#ededed]">
               <span>⚖️</span>
-              <span>Yield: {recipe.yieldAmount.split('(')[0].trim()}</span>
+              <span>{p.yieldPrefix} {recipe.yieldAmount.split('(')[0].trim()}</span>
             </span>
           </div>
         </div>
@@ -188,8 +189,8 @@ const recipeJsonLd = {
         <!-- Visual Multi-Color Ratio Distribution Bar -->
         <div class="space-y-2.5 p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
           <div class="flex items-center justify-between text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] pb-1">
-            <span class="font-semibold uppercase tracking-wider text-[#171717] dark:text-[#ededed]">Formulation Ratio Balance (100% Total)</span>
-            <span>{recipe.ingredients.length} Balanced Ingredients</span>
+            <span class="font-semibold uppercase tracking-wider text-[#171717] dark:text-[#ededed]">{p.formulationRatioBalance}</span>
+            <span>{recipe.ingredients.length} {p.balancedIngredientsCount}</span>
           </div>
           <div class="flex h-3.5 w-full rounded-full overflow-hidden shadow-inner bg-[#e5e5e5] dark:bg-[#262626] ring-1 ring-black/5 dark:ring-white/10">
             {recipe.ingredients.map((ing) => (
@@ -245,7 +246,7 @@ const recipeJsonLd = {
                   <div class="shrink-0 self-start sm:self-auto">
                     <AffiliateButton
                       url={ing.affiliateUrl}
-                      label="Buy Verified Ingredient →"
+                      label={p.buyIngredientBtn}
                       size="sm"
                     />
                   </div>
@@ -265,7 +266,7 @@ const recipeJsonLd = {
                 <div class="p-3.5 bg-emerald-50/40 dark:bg-emerald-950/20 rounded-lg border border-emerald-200/60 dark:border-emerald-900/40">
                   <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-bold text-emerald-800 dark:text-emerald-400 block mb-1 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                    Clinical Target Benefit
+                    {p.clinicalTargetBenefit}
                   </span>
                   <p class="text-emerald-950 dark:text-emerald-200/90 leading-relaxed">
                     {ing.clinicalBenefit}
@@ -282,10 +283,10 @@ const recipeJsonLd = {
           <div class="p-4 sm:p-5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-3">
             <div class="flex items-center justify-between pb-2 border-b border-[#ebebeb] dark:border-[#262626]">
               <span class="text-[11px] font-mono uppercase tracking-wider font-bold text-[#8f8f8f] dark:text-[#737373]">
-                Quick Formula Ratio Summary
+                {p.quickSummaryTitle}
               </span>
               <span class="text-[11px] font-mono font-semibold text-[#0070f3] dark:text-[#3291ff]">
-                100% Balanced Batch
+                {p.balancedBatch}
               </span>
             </div>
             <div class="divide-y divide-[#ebebeb] dark:divide-[#262626]">
@@ -406,7 +407,7 @@ const recipeJsonLd = {
                 </p>
                 {step.criticalTip && (
                   <div class="mt-2 p-2.5 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-lg text-[11px] text-amber-900 dark:text-amber-200 font-medium">
-                    ⚠️ <strong>Important:</strong> {step.criticalTip}
+                    ⚠️ <strong>{p.importantLabel}:</strong> {step.criticalTip}
                   </div>
                 )}
               </div>
@@ -420,7 +421,7 @@ const recipeJsonLd = {
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-3 border-b border-[#ebebeb] dark:border-[#262626]">
           <div>
             <span class="inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-bold text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-2.5 py-0.5 rounded-full mb-2">
-              Veterinary Portion Reference (MER Calibrated)
+              {p.portionReferenceBadge}
             </span>
             <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">
               {p.portionTitle}
@@ -432,7 +433,7 @@ const recipeJsonLd = {
           <div class="shrink-0 flex items-center gap-2">
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1.5 rounded-lg bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] text-[#171717] dark:text-[#ededed]">
               <span>⚖️</span>
-              <span>{recipe.portionReference.length} Weight Tiers</span>
+              <span>{recipe.portionReference.length} {p.weightTiersLabel}</span>
             </span>
           </div>
         </div>

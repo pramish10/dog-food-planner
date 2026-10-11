@@ -11,8 +11,8 @@ import { getPuppyNutritionRequirements, PUPPY_NUTRITION_SECTION_I18N } from '../
 import { getRecipeBlueprints, RECIPE_BLUEPRINT_SECTION_I18N } from '../data/recipeBlueprint';
 import {
   HOMEMADE_RECIPE_SLUGS,
-  HOMEMADE_RECIPES,
   HOMEMADE_RECIPES_PAGE_I18N,
+  getHomemadeRecipeBySlug,
 } from '../data/homemadeRecipes';
 import { BRAND_REVIEW_SLUGS, BRAND_REVIEWS_PAGE_I18N } from '../data/brandReviews';
 
@@ -224,7 +224,7 @@ const brI18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
 
     {p.recipesList.map((recipe: any, idx: number) => {
       const slug = HOMEMADE_RECIPE_SLUGS[idx] || 'gently-cooked-turkey-pumpkin';
-      const richRecipe = HOMEMADE_RECIPES[slug];
+      const richRecipe = getHomemadeRecipeBySlug(slug, lang);
       return (
         <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
           <div class="flex flex-wrap items-center justify-between gap-2">
@@ -253,7 +253,7 @@ const brI18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
           {/* Streamlined Key Ingredients Preview */}
           <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] space-y-2">
             <p class="text-[11px] font-mono uppercase tracking-wider font-semibold text-[#8f8f8f] dark:text-[#737373]">
-              Key Ingredients Preview:
+              {hrI18n.keyIngredientsPreview}:
             </p>
             <ul class="grid sm:grid-cols-2 gap-1.5 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
               {recipe.ingredients.slice(0, 4).map((ingredient: any) => {
@@ -268,7 +268,7 @@ const brI18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
             </ul>
             {recipe.ingredients.length > 4 && (
               <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373] italic pt-1">
-                + {recipe.ingredients.length - 4} more balanced whole-food essentials & micro-nutrients
+                + {recipe.ingredients.length - 4} {hrI18n.moreEssentialsLabel}
               </p>
             )}
           </div>

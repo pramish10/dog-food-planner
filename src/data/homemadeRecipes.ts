@@ -1,4 +1,5 @@
 import type { Lang } from '../i18n/ui';
+import { HOMEMADE_RECIPES_TRANSLATIONS } from './homemadeRecipes/index';
 
 export const HOMEMADE_RECIPE_SLUGS = [
   'gently-cooked-turkey-pumpkin',
@@ -138,6 +139,19 @@ export interface HomemadeRecipesPageI18n {
   calculatorCtaBtn: string;
   titleSuffix: string;
   readMoreBtn: string;
+  veterinaryWholeFoodBadge: string;
+  yieldPrefix: string;
+  formulationRatioBalance: string;
+  balancedIngredientsCount: string;
+  buyIngredientBtn: string;
+  clinicalTargetBenefit: string;
+  quickSummaryTitle: string;
+  balancedBatch: string;
+  portionReferenceBadge: string;
+  weightTiersLabel: string;
+  importantLabel: string;
+  keyIngredientsPreview: string;
+  moreEssentialsLabel: string;
 }
 
 export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> = {
@@ -188,6 +202,19 @@ export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> =
     calculatorCtaBtn: 'Open Canine Feeding Calculator →',
     titleSuffix: 'Detailed Recipe, Ingredients & Prep Guide | DogFoodPlanner.com',
     readMoreBtn: 'Read full recipe & preparation guide →',
+    veterinaryWholeFoodBadge: 'Veterinary Whole-Food Formulation',
+    yieldPrefix: 'Yield:',
+    formulationRatioBalance: 'Formulation Ratio Balance (100% Total)',
+    balancedIngredientsCount: 'Balanced Ingredients',
+    buyIngredientBtn: 'Buy Verified Ingredient →',
+    clinicalTargetBenefit: 'Clinical Target Benefit',
+    quickSummaryTitle: 'Quick Formula Ratio Summary',
+    balancedBatch: '100% Balanced Batch',
+    portionReferenceBadge: 'Veterinary Portion Reference (MER Calibrated)',
+    weightTiersLabel: 'Weight Tiers',
+    importantLabel: 'Important',
+    keyIngredientsPreview: 'Key Ingredients Preview',
+    moreEssentialsLabel: 'more balanced whole-food essentials & micro-nutrients',
   },
   es: {
     badge: 'RECETA CASERA VETERINARIA // ESTÁNDARES NUTRICIONALES NRC Y AAFCO',
@@ -236,6 +263,19 @@ export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> =
     calculatorCtaBtn: 'Abrir Calculadora de Alimentación →',
     titleSuffix: 'Guía Detallada de Receta, Ingredientes y Cocina | DogFoodPlanner.com',
     readMoreBtn: 'Leer receta completa y guía de preparación →',
+    veterinaryWholeFoodBadge: 'Formulación Veterinaria con Alimentos Integrales',
+    yieldPrefix: 'Rendimiento:',
+    formulationRatioBalance: 'Equilibrio de Proporciones (100% Total)',
+    balancedIngredientsCount: 'Ingredientes Equilibrados',
+    buyIngredientBtn: 'Comprar Ingrediente Verificado →',
+    clinicalTargetBenefit: 'Beneficio Clínico Específico',
+    quickSummaryTitle: 'Resumen Rápido de Proporciones',
+    balancedBatch: 'Lote 100% Equilibrado',
+    portionReferenceBadge: 'Referencia de Porciones Veterinarias (Calibrado MER)',
+    weightTiersLabel: 'Rangos de Peso',
+    importantLabel: 'Importante',
+    keyIngredientsPreview: 'Ingredientes Clave',
+    moreEssentialsLabel: 'más nutrientes esenciales y micronutrientes equilibrados',
   },
   ja: {
     badge: '獣医師監修 手作りドッグフード // AAFCO・NRC栄養基準準拠',
@@ -284,6 +324,19 @@ export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> =
     calculatorCtaBtn: '無料の給餌計算ツールを開く →',
     titleSuffix: '詳細レシピ・原材料配合・調理給餌ガイド | DogFoodPlanner.com',
     readMoreBtn: '詳細レシピと調理・給餌ガイドを見る →',
+    veterinaryWholeFoodBadge: '獣医師監修 ホールフード配合設計',
+    yieldPrefix: '仕上がり総量:',
+    formulationRatioBalance: '配合比率バランス（合計100%）',
+    balancedIngredientsCount: '品目のバランス配合原材料',
+    buyIngredientBtn: '推奨原材料を購入 →',
+    clinicalTargetBenefit: '臨床的ターゲット効果',
+    quickSummaryTitle: '配合比率クイックサマリー',
+    balancedBatch: '完全栄養バランス設計バッチ',
+    portionReferenceBadge: '体重別・獣医学的給餌基準（MER適合）',
+    weightTiersLabel: '体重区分',
+    importantLabel: '重要',
+    keyIngredientsPreview: '主要原材料プレビュー',
+    moreEssentialsLabel: '種のバランス自然食材＆微量栄養素',
   },
   fr: {
     badge: 'RECETTE MAISON VÉTÉRINAIRE // NORMES NRC & AAFCO',
@@ -332,6 +385,19 @@ export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> =
     calculatorCtaBtn: 'Lancer le Calculateur Alimentaire →',
     titleSuffix: 'Guide Complet de la Recette, Ingrédients et Préparation | DogFoodPlanner.com',
     readMoreBtn: 'Lire la recette complète et le protocole →',
+    veterinaryWholeFoodBadge: 'Formulation Vétérinaire à Base d’Aliments Complets',
+    yieldPrefix: 'Rendement :',
+    formulationRatioBalance: 'Équilibre des Proportions (Total 100%)',
+    balancedIngredientsCount: 'Ingrédients Équilibrés',
+    buyIngredientBtn: 'Acheter l’Ingrédient Vérifié →',
+    clinicalTargetBenefit: 'Bénéfice Clinique Ciblé',
+    quickSummaryTitle: 'Résumé Rapide des Proportions',
+    balancedBatch: 'Lot 100% Équilibré',
+    portionReferenceBadge: 'Référence des Portions Vétérinaires (Calibré MER)',
+    weightTiersLabel: 'Paliers de Poids',
+    importantLabel: 'Important',
+    keyIngredientsPreview: 'Aperçu des Ingrédients Clés',
+    moreEssentialsLabel: 'autres nutriments essentiels et micronutriments équilibrés',
   },
   de: {
     badge: 'TIERÄRZTLICHE HAUSGEMACHTE REZEPTUR // NRC & AAFCO STANDARDS',
@@ -380,6 +446,19 @@ export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> =
     calculatorCtaBtn: 'Tierärztlichen Futterrechner starten →',
     titleSuffix: 'Ausführliche Rezepturanleitung & Fütterung | DogFoodPlanner.com',
     readMoreBtn: 'Vollständiges Rezept & Zubereitung lesen →',
+    veterinaryWholeFoodBadge: 'Tierärztliche Vollwert-Rezeptur',
+    yieldPrefix: 'Ertrag:',
+    formulationRatioBalance: 'Ausgewogenes Rezepturverhältnis (100% Gesamt)',
+    balancedIngredientsCount: 'Ausgewogene Zutaten',
+    buyIngredientBtn: 'Geprüfte Zutat Kaufen →',
+    clinicalTargetBenefit: 'Gezielter Klinischer Nutzen',
+    quickSummaryTitle: 'Schnellübersicht Mischverhältnis',
+    balancedBatch: '100% Ausgewogene Charge',
+    portionReferenceBadge: 'Tierärztliche Portionsreferenz (MER-Kalibriert)',
+    weightTiersLabel: 'Gewichtsstufen',
+    importantLabel: 'Wichtig',
+    keyIngredientsPreview: 'Vorschau der Hauptzutaten',
+    moreEssentialsLabel: 'weitere ausgewogene Vollwert-Zutaten & Mikronährstoffe',
   },
   pt: {
     badge: 'RECEITA CASEIRA VETERINÁRIA // PADRÕES NUTRICIONAIS NRC E AAFCO',
@@ -428,6 +507,19 @@ export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> =
     calculatorCtaBtn: 'Abrir Calculadora de Alimentação →',
     titleSuffix: 'Guia Completo de Receita, Ingredientes e Preparo | DogFoodPlanner.com',
     readMoreBtn: 'Ver receita completa e modo de preparo →',
+    veterinaryWholeFoodBadge: 'Formulação Veterinária com Alimentos Integrais',
+    yieldPrefix: 'Rendimento:',
+    formulationRatioBalance: 'Equilíbrio de Proporções (100% Total)',
+    balancedIngredientsCount: 'Ingredientes Equilibrados',
+    buyIngredientBtn: 'Comprar Ingrediente Verificado →',
+    clinicalTargetBenefit: 'Benefício Clínico Alvo',
+    quickSummaryTitle: 'Resumo Rápido da Proporção',
+    balancedBatch: 'Lote 100% Equilibrado',
+    portionReferenceBadge: 'Referência de Porções Veterinárias (Calibrado MER)',
+    weightTiersLabel: 'Faixas de Peso',
+    importantLabel: 'Importante',
+    keyIngredientsPreview: 'Prévia dos Ingredientes Chave',
+    moreEssentialsLabel: 'mais nutrientes essenciais e micronutrientes equilibrados',
   },
   ko: {
     badge: '수의사 검증 홈메이드 영양 레시피 // NRC 및 AAFCO 기준 충족',
@@ -476,6 +568,19 @@ export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> =
     calculatorCtaBtn: '수의 영양 급여 계산기 열기 →',
     titleSuffix: '상세 레시피, 원재료 배합 및 조리 급여 가이드 | DogFoodPlanner.com',
     readMoreBtn: '상세 레시피 및 조리 가이드 보기 →',
+    veterinaryWholeFoodBadge: '수의사 설계 자연 생식/자연식 배합',
+    yieldPrefix: '수율:',
+    formulationRatioBalance: '영양 배합비 균형 (합계 100%)',
+    balancedIngredientsCount: '가지 균형 원재료',
+    buyIngredientBtn: '검증된 원재료 구매하기 →',
+    clinicalTargetBenefit: '핵심 임상 효능',
+    quickSummaryTitle: '배합 비율 요약',
+    balancedBatch: '100% 영양 균형 배치',
+    portionReferenceBadge: '체중별 수의 급여 기준 (MER 환산)',
+    weightTiersLabel: '체중 구간',
+    importantLabel: '중요',
+    keyIngredientsPreview: '핵심 원재료 미리보기',
+    moreEssentialsLabel: '가지 균형 잡힌 자연 재료 및 미량 영양소 추가',
   },
   it: {
     badge: 'RICETTA CASALINGHA VETERINARIA // STANDARD NUTRIZIONALI NRC & AAFCO',
@@ -524,6 +629,19 @@ export const HOMEMADE_RECIPES_PAGE_I18N: Record<Lang, HomemadeRecipesPageI18n> =
     calculatorCtaBtn: 'Apri la Calcolatrice Alimentare →',
     titleSuffix: 'Guida Dettagliata alla Ricetta, Ingredienti e Preparazione | DogFoodPlanner.com',
     readMoreBtn: 'Leggi la ricetta completa e la preparazione →',
+    veterinaryWholeFoodBadge: 'Formulazione Veterinaria con Ingredienti Naturali',
+    yieldPrefix: 'Resa:',
+    formulationRatioBalance: 'Bilanciamento Proporzioni (Totale 100%)',
+    balancedIngredientsCount: 'Ingredienti Bilanciati',
+    buyIngredientBtn: 'Acquista Ingrediente Verificato →',
+    clinicalTargetBenefit: 'Beneficio Clinico Mirato',
+    quickSummaryTitle: 'Riepilogo Rapido delle Proporzioni',
+    balancedBatch: 'Lotto 100% Bilanciato',
+    portionReferenceBadge: 'Riferimento Porzioni Veterinarie (Calibrato MER)',
+    weightTiersLabel: 'Fasce di Peso',
+    importantLabel: 'Importante',
+    keyIngredientsPreview: 'Anteprima Ingredienti Chiave',
+    moreEssentialsLabel: 'altri ingredienti essenziali e micronutrienti bilanciati',
   },
 };
 
@@ -1266,20 +1384,78 @@ export const HOMEMADE_RECIPES: Record<HomemadeRecipeSlug, HomemadeRecipe> = {
   },
 };
 
-export function getHomemadeRecipes(lang: Lang = 'en'): HomemadeRecipe[] {
-  // English base
-  const recipes = Object.values(HOMEMADE_RECIPES);
-  if (lang === 'en') {
-    return recipes;
-  }
+export function getHomemadeRecipeBySlug(
+  slug: HomemadeRecipeSlug,
+  lang: Lang = 'en'
+): HomemadeRecipe {
+  const base = HOMEMADE_RECIPES[slug];
+  if (!base) return base;
+  const tr = HOMEMADE_RECIPES_TRANSLATIONS[lang]?.[slug];
+  if (!tr) return base;
 
-  // Localized title & descriptions if available
-  const p = HOMEMADE_RECIPES_PAGE_I18N[lang] || HOMEMADE_RECIPES_PAGE_I18N.en;
-  return recipes.map((r) => {
-    // Provide localized tags/titles where available
-    return {
-      ...r,
-      // The recipe object retains rich data with localized fallback
-    };
-  });
+  return {
+    ...base,
+    tag: tr.tag ?? base.tag,
+    title: tr.title ?? base.title,
+    heroTitle: tr.heroTitle ?? base.heroTitle,
+    shortDesc: tr.shortDesc ?? base.shortDesc,
+    summary: tr.summary ?? base.summary,
+    badge: tr.badge ?? base.badge,
+    prepTime: tr.prepTime ?? base.prepTime,
+    cookTime: tr.cookTime ?? base.cookTime,
+    yieldAmount: tr.yieldAmount ?? base.yieldAmount,
+    lifeStage: tr.lifeStage ?? base.lifeStage,
+    dietStyle: tr.dietStyle ?? base.dietStyle,
+    macroProfile: {
+      ...base.macroProfile,
+      ...(tr.macroProfile || {}),
+    },
+    keyHighlights: tr.keyHighlights ?? base.keyHighlights,
+    ingredients: base.ingredients.map((ing, i) => {
+      const tIng = tr.ingredients?.[i];
+      if (!tIng) return ing;
+      return {
+        ...ing,
+        name: tIng.name ?? ing.name,
+        batchAmount: tIng.batchAmount ?? ing.batchAmount,
+        category: tIng.category ?? ing.category,
+        role: tIng.role ?? ing.role,
+        clinicalBenefit: tIng.clinicalBenefit ?? ing.clinicalBenefit,
+      };
+    }),
+    executiveRationale: tr.executiveRationale ?? base.executiveRationale,
+    clinicalDeepDives: tr.clinicalDeepDives ?? base.clinicalDeepDives,
+    prepProtocol: base.prepProtocol.map((step, i) => {
+      const tStep = tr.prepProtocol?.[i];
+      if (!tStep) return step;
+      return {
+        ...step,
+        title: tStep.title ?? step.title,
+        instruction: tStep.instruction ?? step.instruction,
+        criticalTip: tStep.criticalTip !== undefined ? tStep.criticalTip : step.criticalTip,
+      };
+    }),
+    portionReference: base.portionReference.map((row, i) => {
+      const tRow = tr.portionReference?.[i];
+      if (!tRow) return row;
+      return {
+        ...row,
+        dogWeight: tRow.dogWeight ?? row.dogWeight,
+        dailyGrams: tRow.dailyGrams ?? row.dailyGrams,
+        dailyKcal: tRow.dailyKcal ?? row.dailyKcal,
+        mealsPerDay: tRow.mealsPerDay ?? row.mealsPerDay,
+        servingNotes: tRow.servingNotes ?? row.servingNotes,
+      };
+    }),
+    storageGuidelines: tr.storageGuidelines ?? base.storageGuidelines,
+    safetyAndPrecautions: {
+      ...base.safetyAndPrecautions,
+      ...(tr.safetyAndPrecautions || {}),
+    },
+    faq: tr.faq ?? base.faq,
+  };
+}
+
+export function getHomemadeRecipes(lang: Lang = 'en'): HomemadeRecipe[] {
+  return HOMEMADE_RECIPE_SLUGS.map((slug) => getHomemadeRecipeBySlug(slug, lang));
 }
