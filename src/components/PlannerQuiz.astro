@@ -1,4 +1,4 @@
-﻿---
+---
 import { CANINE_BREEDS } from '../data/breeds';
 import { getLangFromUrl } from '../i18n/utils';
 import { plannerTranslations } from '../i18n/planner';
@@ -449,6 +449,9 @@ const TOTAL_STEPS = 4;
 </section>
 
 <script>
+  import { plannerTranslations } from '../i18n/planner';
+  import type { Lang } from '../i18n/ui';
+
   const TOTAL_STEPS = 4;
   const PLANNER_STATE_KEY = 'dfp-planner-state';
   let currentStep = 1;
@@ -458,8 +461,8 @@ const TOTAL_STEPS = 4;
 
   function getTranslations() {
     const section = document.getElementById('planner-section') as HTMLElement;
-    const lang = section?.dataset.lang || 'en';
-    return (window as any).__plannerTranslations?.[lang] || {};
+    const lang = (section?.dataset.lang || 'en') as Lang;
+    return plannerTranslations[lang] || plannerTranslations.en;
   }
 
   function savePlannerState() {

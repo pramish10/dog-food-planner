@@ -148,6 +148,16 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
 <script>
   import { calculateCanineNutrition } from '../utils/nutritionEngine';
   import { RECIPES } from '../data/recipes';
+  import { getLocalizedRecipe } from '../data/recipesI18n';
+  import {
+    getLocalizedSummary,
+    getLocalizedSchedule,
+    getLocalizedInsight,
+    getDietTagName,
+    getBuyBtnText,
+    getMealsLabel,
+  } from '../i18n/plannerResults';
+  import type { Lang } from '../i18n/ui';
 
   const ALLERGY_ALIASES: Record<string, string[]> = {
     'chicken / poultry': ['chicken', 'poultry', 'turkey'],
@@ -170,6 +180,20 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
   const RESULTS_STATE_KEY = 'dfp-results-state';
   let currentProfile: any = null;
   let currentDiet = 'fresh-cooked';
+
+  function getCurrentLang(): Lang {
+    const section = document.getElementById('results-section');
+    const sectionLang = section?.getAttribute('data-lang') as Lang;
+    if (sectionLang && ['en', 'es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'].includes(sectionLang)) {
+      return sectionLang;
+    }
+    const path = window.location.pathname;
+    const match = path.match(/^\/([a-z]{2})(\/|$)/);
+    if (match && ['en', 'es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'].includes(match[1])) {
+      return match[1] as Lang;
+    }
+    return 'en';
+  }
 
   function selectRecipe(profile: any, dietOverride?: string) {
     const diet = dietOverride || profile.dietPreference;
@@ -251,6 +275,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
   }
 
   function renderResults(profile: any, dietOverride?: string, shouldScroll: boolean = true) {
+    const lang = getCurrentLang();
     const result = calculateCanineNutrition(profile);
     const diet = dietOverride || profile.dietPreference;
     const { recipe, hadNoSafeMatch } = selectRecipe(profile, diet);
@@ -268,16 +293,26 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     document.querySelectorAll('#res-dog-name, .res-dog-name-inline').forEach(el => el.textContent = dogName);
 
     const summaryEl = document.getElementById('res-summary') as HTMLElement;
-    if (summaryEl) summaryEl.textContent = result.summary;
+    if (summaryEl) {
+      summaryEl.textContent = getLocalizedSummary({
+        dogName: result.dogName,
+        breed: profile.breed,
+        merKcal: result.merKcal,
+        goal: profile.targetGoal,
+        mealsPerDay: result.mealsPerDay,
+        perMealGrams: result.perMealGrams,
+      }, lang);
+    }
 
-    (document.getElementById('res-mer-calories') as HTMLElement).textContent = result.merKcal.toLocaleString();
+    (document.getElementById('res-mer-calories') as HTMLElement).textContent = result.merKcal.toLocaleString(lang);
     (document.getElementById('res-daily-grams') as HTMLElement).textContent = result.activeDailyGrams + 'g';
     (document.getElementById('res-per-meal-grams') as HTMLElement).textContent = result.perMealGrams + 'g';
-    (document.getElementById('res-meals-label') as HTMLElement).textContent = result.mealsPerDay + 'x/day';
-    (document.getElementById('res-treat-kcal') as HTMLElement).textContent = result.treatKcal.toLocaleString();
+    (document.getElementById('res-meals-label') as HTMLElement).textContent = getMealsLabel(result.mealsPerDay, lang);
+    (document.getElementById('res-treat-kcal') as HTMLElement).textContent = result.treatKcal.toLocaleString(lang);
 
     const schedContainer = document.getElementById('feeding-schedule-container') as HTMLElement;
-    schedContainer.innerHTML = result.dailySchedule.map((slot: any) => `
+    const localizedSchedule = getLocalizedSchedule(result.dailySchedule, lang);
+    schedContainer.innerHTML = localizedSchedule.map((slot: any) => `
       <div class="flex items-center justify-between p-3 rounded-xl bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510]">
         <div>
           <div class="text-xs font-mono font-semibold text-[#c47a2b] dark:text-[#e8a44a]">${slot.timeLabel}</div>
@@ -285,7 +320,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
         </div>
         <div class="text-right">
           <div class="text-lg font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${slot.portionGrams}g</div>
-          <div class="text-[11px] text-[#92400e] dark:text-[#c4956a] font-mono">≈ ${slot.portionCups} cups</div>
+          <div class="text-[11px] text-[#92400e] dark:text-[#c4956a] font-mono">${slot.cupsText}</div>
         </div>
       </div>
     `).join('');
@@ -293,67 +328,35 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     // ── Single focused insight — specific to this dog's profile ──────────────
     const insightEl = document.getElementById('insight-text') as HTMLElement;
     if (insightEl) {
-      const name = result.dogName;
-      const goal = profile.targetGoal;
-      const activity = profile.activityLevel;
-      const health = profile.healthFocus || '';
-      const breed = profile.breed || '';
-      const bcs = Number(profile.bcs || 5);
-      const ageStage = profile.ageStage || 'adult';
-
-      // Build a single, specific sentence from the user's actual answers
-      let insight = '';
-
-      if (ageStage === 'puppy-early') {
-        insight = `${name} is in rapid growth phase — feed 3× daily and prioritise calcium-to-phosphorus balance (1.2:1) to support bone development.`;
-      } else if (ageStage === 'puppy-late') {
-        insight = `${name} is transitioning to adult size — reduce to 2× daily and begin tapering calories as growth slows.`;
-      } else if (ageStage === 'senior') {
-        insight = `Senior ${name} needs 20% fewer calories than an adult — prioritise joint-supporting omega-3s and easily digestible proteins.`;
-      } else if (goal === 'lose' || bcs >= 7) {
-        insight = `${name} is overweight (BCS ${bcs}/9) — reduce portion by 10–15% and add 1–2 tbsp pure pumpkin per meal to increase satiety without extra calories.`;
-      } else if (goal === 'gain' || bcs <= 3) {
-        insight = `${name} is underweight (BCS ${bcs}/9) — increase daily portion by 10% and add a raw egg yolk or 1 tsp salmon oil per meal for calorie-dense nutrition.`;
-      } else if (activity === 'working') {
-        insight = `${name} is a working dog — this plan runs at 2.5–3× RER. Weigh food daily; adjust by ±10% based on body condition every 2 weeks.`;
-      } else if (activity === 'sedentary') {
-        insight = `${name} is sedentary — this plan uses a 1.2× RER multiplier. Avoid free-feeding; pick up the bowl after 15 minutes to prevent overeating.`;
-      } else if (health.includes('Joint') || health.includes('Hip')) {
-        insight = `For ${name}'s joint health, add 1 tsp salmon oil daily (EPA/DHA) and consider green-lipped mussel powder — both are proven to reduce canine joint inflammation.`;
-      } else if (health.includes('Skin') || health.includes('Coat')) {
-        insight = `For ${name}'s skin and coat, add 1 tsp wild salmon oil per 20 lbs of body weight daily — visible coat improvement typically appears within 3–4 weeks.`;
-      } else if (health.includes('Digest') || health.includes('Gut')) {
-        insight = `For ${name}'s sensitive digestion, add 1–2 tbsp plain pumpkin purée per meal and introduce new proteins one at a time over 7 days.`;
-      } else if (health.includes('Weight')) {
-        insight = `For ${name}'s weight management, weigh every meal on a kitchen scale — eyeballing portions causes 20–30% overfeeding in most households.`;
-      } else if (breed.includes('Bulldog') || breed.includes('Pug') || breed.includes('French')) {
-        insight = `${name}'s brachycephalic anatomy slows eating — use a slow-feeder bowl and avoid exercise for 30 minutes after meals to prevent bloat.`;
-      } else if (breed.includes('Labrador') || breed.includes('Beagle')) {
-        insight = `${name}'s breed is highly food-motivated and prone to obesity — stick strictly to this portion and avoid table scraps entirely.`;
-      } else if (breed.includes('Husky') || breed.includes('Border Collie') || breed.includes('Australian')) {
-        insight = `${name} is a high-drive working breed — on rest days reduce this portion by 10%; on active days increase by 10%.`;
-      } else {
-        insight = `${name}'s plan is calibrated to ${result.merKcal} kcal/day. Weigh each meal on a kitchen scale — cup measurements vary by up to 30% depending on food density.`;
-      }
-
-      insightEl.textContent = insight;
+      insightEl.textContent = getLocalizedInsight({
+        name: result.dogName,
+        ageStage: profile.ageStage || 'adult',
+        goal: profile.targetGoal,
+        bcs: Number(profile.bcs || 5),
+        activity: profile.activityLevel,
+        health: profile.healthFocus || '',
+        breed: profile.breed || '',
+        merKcal: result.merKcal,
+      }, lang);
     }
 
     const noRecipeWarning = document.getElementById('no-recipe-warning') as HTMLElement;
     if (noRecipeWarning) noRecipeWarning.classList.toggle('hidden', !hadNoSafeMatch);
 
     if (recipe) {
-      (document.getElementById('recipe-diet-tag') as HTMLElement).textContent = diet.replace(/-/g, ' ').toUpperCase();
-      (document.getElementById('recipe-title') as HTMLElement).textContent = recipe.name;
-      (document.getElementById('recipe-description') as HTMLElement).textContent = recipe.description;
+      const localizedRecipe = getLocalizedRecipe(recipe, lang);
+      (document.getElementById('recipe-diet-tag') as HTMLElement).textContent = getDietTagName(diet, lang);
+      (document.getElementById('recipe-title') as HTMLElement).textContent = localizedRecipe.name;
+      (document.getElementById('recipe-description') as HTMLElement).textContent = localizedRecipe.description;
 
+      const buyBtnText = getBuyBtnText(lang);
       const ingContainer = document.getElementById('ingredient-rows-container') as HTMLElement;
-      ingContainer.innerHTML = recipe.ingredients.map((ing: any) => {
+      ingContainer.innerHTML = localizedRecipe.ingredients.map((ing: any) => {
         const grams = Math.round((ing.percentage / 100) * result.activeDailyGrams);
         const buyBtn = ing.affiliateUrl
           ? `<a href="${ing.affiliateUrl}" target="_blank" rel="noopener noreferrer sponsored"
                class="shrink-0 ml-3 px-2.5 py-1 text-[10px] font-semibold bg-[#c47a2b] hover:bg-[#a8621f] text-white rounded-lg transition-colors whitespace-nowrap">
-               Buy →
+               ${buyBtnText}
              </a>`
           : '';
         return `
@@ -370,7 +373,7 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
       }).join('');
 
       const prepContainer = document.getElementById('prep-steps-container') as HTMLElement;
-      prepContainer.innerHTML = recipe.preparationNotes.map((step: string, i: number) => `
+      prepContainer.innerHTML = localizedRecipe.preparationNotes.map((step: string, i: number) => `
         <li class="flex items-start gap-3">
           <span class="w-5 h-5 rounded-full bg-[#c47a2b]/10 text-[#c47a2b] dark:text-[#e8a44a] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
           <span class="text-[#6b4226] dark:text-[#c4956a]">${step}</span>
