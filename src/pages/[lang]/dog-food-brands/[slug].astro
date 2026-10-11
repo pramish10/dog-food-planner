@@ -52,12 +52,12 @@ const pageDescription = `${item.overview.slice(0, 150)}... ${item.name}`;
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'MedicalWebPage',
-  headline: `${item.name} Dog Food Review & Clinical Analysis`,
+  headline: `${item.name} - ${i18n.clinicalAuditTitle}`,
   description: pageDescription,
-  name: `${item.name} Brand Review`,
+  name: `${item.name} | ${t('nav.brands')}`,
   author: {
     '@type': 'Organization',
-    name: 'Dog Food Planner Veterinary Nutrition Team',
+    name: i18n.reviewedBy || 'Dog Food Planner Veterinary Nutrition Team',
     url: 'https://dogfoodplanner.com',
   },
   publisher: {
@@ -222,7 +222,7 @@ const articleJsonLd = {
             {i18n.pillarsTitle}
           </h2>
           <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-1">
-            Clinical evaluation of protein origin, starch levels, processing safeguards, and safety standards.
+            {i18n.pillarsSubtitle}
           </p>
         </div>
 
@@ -273,7 +273,7 @@ const articleJsonLd = {
         {item.recallRecord.history.length > 0 && (
           <div class="mt-3 p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626] space-y-2">
             <p class="text-[11px] font-mono uppercase font-semibold text-[#8f8f8f] dark:text-[#737373]">
-              Chronological Regulatory Record:
+              {i18n.regulatoryRecordTitle}
             </p>
             <ul class="space-y-1.5 text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">
               {item.recallRecord.history.map((log) => (
@@ -387,7 +387,7 @@ const articleJsonLd = {
                     {product.name}
                   </h3>
                   <p class="text-xs text-[#8f8f8f] dark:text-[#737373]">
-                    Official {item.name} formulation verified for canine nutritional standards.
+                    {i18n.officialProductNote.replace('{name}', item.name)}
                   </p>
                 </div>
                 <div class="shrink-0">
