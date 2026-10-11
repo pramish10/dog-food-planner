@@ -612,6 +612,8 @@ export const PAGE_TRANSLATIONS = {
 },
   es: {
   "about": {
+    "heroTitle": "Sobre Nosotros",
+    "heroSubtitle": "Conoce DogFoodPlanner.com: nuestra misión, metodología nutricional veterinaria bajo estándares NRC y compromiso con la alimentación saludable para perros.",
     "missionBadge": "NUESTRA MISIÓN // NUTRICIÓN CANINA CLÍNICA",
     "whyTitle": "Por Qué se Creó DogFoodPlanner",
     "whyP1": "Durante décadas, la industria de alimentos comerciales para mascotas ha funcionado como una caja negra. El pienso seco extruido a más de 200°C destruye vitaminas naturales, oxida los ácidos grasos omega esenciales y rellena el saco con hasta un 60% de almidones de alto índice glucémico.",
@@ -1219,6 +1221,8 @@ export const PAGE_TRANSLATIONS = {
 },
   ja: {
   "about": {
+    "heroTitle": "当サイトについて",
+    "heroSubtitle": "DogFoodPlanner.comのミッション、NRC基準に基づく獣医栄養学アルゴリズム、愛犬の健康を第一に考えた取り組みについて。",
     "missionBadge": "私たちの使命 // 臨床犬栄養学",
     "whyTitle": "DogFoodPlannerが設立された理由",
     "whyP1": "何十年もの間、市販のペットフード市場は不透明なブラックボックスとして運営されてきました。200℃以上の超高温で押し出し成形される一般的なドライフードは、熱に弱い天然ビタミンを破壊し、必須オメガ脂肪酸を酸化させ、袋の重さの最大60％を高GI値のデンプンでかさ増ししています。",
@@ -1826,6 +1830,8 @@ export const PAGE_TRANSLATIONS = {
 },
   fr: {
   "about": {
+    "heroTitle": "À Propos",
+    "heroSubtitle": "Découvrez DogFoodPlanner.com, notre mission, notre méthodologie nutritionnelle conforme aux normes NRC et notre engagement pour la santé canine.",
     "missionBadge": "NOTRE MISSION // NUTRITION CLINIQUE CANINE",
     "whyTitle": "Pourquoi DogFoodPlanner a été Créé",
     "whyP1": "Pendant des décennies, l’industrie des aliments pour animaux a fonctionné comme une boîte noire. Les croquettes industrielles extrudées à plus de 200°C détruisent les vitamines naturelles, oxydent les acides gras oméga essentiels et alourdissent les sacs avec jusqu’à 60% d’amidons hautement glycémiques.",
@@ -2433,6 +2439,8 @@ export const PAGE_TRANSLATIONS = {
 },
   de: {
   "about": {
+    "heroTitle": "Über Uns",
+    "heroSubtitle": "Erfahren Sie mehr über DogFoodPlanner.com: Unsere tierärztliche Methodik, NRC-Standards und freie Ernährungsrechner für Hunde.",
     "missionBadge": "UNSERE MISSION // TIERÄRZTLICHE HUNDEERNÄHRUNG",
     "whyTitle": "Warum DogFoodPlanner gegründet wurde",
     "whyP1": "Seit Jahrzehnten agiert die Heimtierfutter-Industrie als undurchsichtige Blackbox. Herkömmliches Trockenfutter wird bei über 200°C extrem erhitzt und extrudiert, wodurch natürliche Vitamine zerstört, lebenswichtige Omega-Fettsäuren oxidiert und bis zu 60% des Beutels mit billigen Stärkefüllern aufgefüllt werden.",
@@ -3040,6 +3048,8 @@ export const PAGE_TRANSLATIONS = {
 },
   pt: {
   "about": {
+    "heroTitle": "Sobre Nós",
+    "heroSubtitle": "Conheça o DogFoodPlanner.com: nossa missão, metodologia nutricional com base no NRC e compromisso com a alimentação canina de verdade.",
     "missionBadge": "NOSSA MISSÃO // NUTRIÇÃO CANINA CLÍNICA",
     "whyTitle": "Por Que o DogFoodPlanner Foi Criado",
     "whyP1": "Por décadas, a indústria comercial de alimentos para pets operou como uma caixa preta. A ração seca extrudada a mais de 200°C degrada vitaminas naturais, oxida ácidos graxos ômega essenciais e preenche os sacos com até 60% de amidos de alto índice glicêmico.",
@@ -3647,6 +3657,8 @@ export const PAGE_TRANSLATIONS = {
 },
   ko: {
   "about": {
+    "heroTitle": "회사 소개",
+    "heroSubtitle": "DogFoodPlanner.com의 비전, 미국 NRC 영양 기준에 맞춘 정밀 알고리즘 및 반려동물 건강 식단 연구 소개.",
     "missionBadge": "우리의 사명 // 임상 반려견 영양학",
     "whyTitle": "DogFoodPlanner의 설립 취지",
     "whyP1": "수십 년 동안 상업용 펫푸드 시장은 깜깜이 정보 속에서 소비자를 기만해 왔습니다. 200℃ 이상의 고온 압출 성형을 거치는 시중 건식 사료(키블)는 열에 약한 천연 비타민을 파괴하고, 필수 오메가 지방산을 산화시키며, 사료 포대의 최대 60%를 고혈당 탄수화물 증량제로 채웁니다.",
@@ -4254,6 +4266,8 @@ export const PAGE_TRANSLATIONS = {
 },
   it: {
   "about": {
+    "heroTitle": "Chi Siamo",
+    "heroSubtitle": "Scopri DogFoodPlanner.com: la nostra missione, gli standard nutrizionali NRC e il nostro impegno per la sana alimentazione dei cani.",
     "missionBadge": "LA NOSTRA MISSION // NUTRIZIONE CANINA CLINICA",
     "whyTitle": "Perché è Nato DogFoodPlanner",
     "whyP1": "Per decenni il mercato industriale del pet food ha operato come una scatola nera. Le crocchette estruse a oltre 200°C distruggono vitamine naturali, ossidano gli acidi grassi essenziali omega e riempiono i sacchi con fino al 60% di amidi ad alto indice glicemico.",
