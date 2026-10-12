@@ -12,10 +12,8 @@ const cleanPath = cleanPathname(currentPath);
 
 const isBestFoodActive = cleanPath.startsWith('/best-dog-food');
 const isRecipesActive = cleanPath.startsWith('/dog-food-recipes');
-const isToxicFoodsActive = cleanPath.startsWith('/toxic-foods');
 const isBrandsActive = cleanPath.startsWith('/dog-food-brands');
 const isFaqActive = cleanPath.startsWith('/faq');
-const isAllergiesActive = cleanPath.startsWith('/dog-food-allergies');
 const isCalculatorActive = cleanPath.startsWith('/feeding-calculator');
 const isHomeActive = cleanPath === '/';
 ---
@@ -64,16 +62,6 @@ const isHomeActive = cleanPath === '/';
         aria-current={isRecipesActive ? 'page' : undefined}
       >{t('nav.recipes')}</a>
 
-      <a
-        href={translatePath('/toxic-foods')}
-        class:list={[
-          "text-xs px-3 py-1.5 rounded-full transition-all duration-150 font-medium",
-          isToxicFoodsActive
-            ? "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#1c0f00] dark:text-[#fde8c8] font-semibold"
-            : "text-[#6b4226] dark:text-[#c4956a] hover:text-[#92400e] dark:hover:text-[#f59e0b] hover:bg-[#fdf3e7] dark:hover:bg-[#2a1a08]"
-        ]}
-        aria-current={isToxicFoodsActive ? 'page' : undefined}
-      >{t('nav.toxicFoods')}</a>
 
       <a
         href={translatePath('/dog-food-brands')}
@@ -173,29 +161,6 @@ const isHomeActive = cleanPath === '/';
         aria-current={isRecipesActive ? 'page' : undefined}
       >🍲 {t('nav.recipes')}</a>
 
-      <a
-        href={translatePath('/dog-food-allergies')}
-        class:list={[
-          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
-          isAllergiesActive
-            ? "text-white font-semibold"
-            : "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#6b4226] dark:text-[#c4956a]"
-        ]}
-        style={isAllergiesActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
-        aria-current={isAllergiesActive ? 'page' : undefined}
-      >🛡️ {t('nav.allergies')}</a>
-
-      <a
-        href={translatePath('/toxic-foods')}
-        class:list={[
-          "quicknav-link flex-none text-[11px] font-medium px-2.5 py-1 rounded-full whitespace-nowrap transition-all duration-150",
-          isToxicFoodsActive
-            ? "text-white font-semibold"
-            : "bg-[#f0d5a8]/60 dark:bg-[#3a2510]/60 text-[#6b4226] dark:text-[#c4956a]"
-        ]}
-        style={isToxicFoodsActive ? "background: linear-gradient(135deg, #c47a2b 0%, #e8a44a 100%);" : ""}
-        aria-current={isToxicFoodsActive ? 'page' : undefined}
-      >☠ {t('nav.toxicFoods')}</a>
 
       <a
         href={translatePath('/dog-food-brands')}
