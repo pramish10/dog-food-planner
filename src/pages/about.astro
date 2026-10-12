@@ -25,7 +25,7 @@ const p = getPageTranslations(lang).about;
     <Breadcrumbs 
       items={[
         { name: t('nav.brand'), url: translatePath('/') },
-        { name: p.heroTitle || 'About Us' }
+        { name: t('footer.linkAbout') || 'About Us' }
       ]}
     />
 
@@ -53,8 +53,18 @@ const p = getPageTranslations(lang).about;
           {p.whyTitle}
         </h2>
         <p>{p.whyP1}</p>
-        <p>{p.whyP2}</p>
+        {p.whyP2 && <p>{p.whyP2}</p>}
       </section>
+
+      <!-- Who We Are Card -->
+      {p.whoTitle && (
+        <section class="warm-card p-6 sm:p-8 space-y-4">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8]">
+            {p.whoTitle}
+          </h2>
+          <p>{p.whoContent}</p>
+        </section>
+      )}
 
       <!-- Methodology Card -->
       <section class="warm-card p-6 sm:p-8 space-y-6">
@@ -87,6 +97,13 @@ const p = getPageTranslations(lang).about;
           </a>
         </div>
       </div>
+
+      <!-- Amazon Affiliate Disclaimer -->
+      {p.amazonDisclaimer && (
+        <p class="text-center text-xs text-[#8f5e35] dark:text-[#a16207] italic pt-2">
+          {p.amazonDisclaimer}
+        </p>
+      )}
 
     </div>
   </main>

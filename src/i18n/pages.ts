@@ -3,33 +3,36 @@ import type { Lang } from './ui';
 export const PAGE_TRANSLATIONS = {
   en: {
   "about": {
-    "heroTitle": "About Us",
-    "heroSubtitle": "Learn about DogFoodPlanner.com. Our mission, nutritional methodology, NRC standards, and open-source commitment to healthy dog food.",
-    "missionBadge": "OUR MISSION // CANINE NUTRITION",
+    "heroTitle": "About DogFoodPlanner: Dog Meal Planning Made Simple",
+    "heroSubtitle": "Learn about DogFoodPlanner.com, our mission, and how our free dog feeding calculator works.",
+    "missionBadge": "OUR MISSION // CANINE MEAL PLANNING",
     "whyTitle": "Why DogFoodPlanner Was Created",
-    "whyP1": "For decades, the commercial pet food market has operated as a black box. Commercial dry kibble formulas regularly undergo ultra-high heat extrusion (exceeding 400°F), stripping out natural vitamins, oxidising essential omega fatty acids, and padding bag weight with up to 60% high-glycemic starches.",
-    "whyP2": "Meanwhile, fresh-food subscription startups charge upwards of $300 to $450 per month for basic lean meats and vegetables. DogFoodPlanner bridges this gap. We provide the exact mathematical algorithms so dog parents can prepare balanced fresh meals, raw BARF ratios, or superfood toppers cost-effectively at home.",
+    "whyP1": "We built DogFoodPlanner to help dog owners plan meals and feeding portions with confidence. We research publicly available guidance and turn it into simple, free tools and guides.",
+    "whyP2": "",
+    "whoTitle": "Who We Are",
+    "whoContent": "DogFoodPlanner is an independent website run by dog-loving researchers and writers. We are not veterinarians. Always consult your veterinarian before changing your dog's diet, especially for puppies, seniors, or dogs with health conditions.",
     "methodTitle": "Our Nutritional Methodology",
     "pillars": [
       {
-        "tag": "01 // NRC FORMULAS",
-        "title": "Resting Metabolic Math",
-        "desc": "Calculates exact Resting Energy Requirement (RER) based on exponential body mass (70 × (kg)^0.75) instead of rough weight-range averages."
+        "tag": "01 // CALORIE ESTIMATES",
+        "title": "Calorie Estimates",
+        "desc": "Our calculator uses the standard Resting Energy Requirement formula (70 × body weight in kg^0.75) and common activity multipliers to estimate daily calories."
       },
       {
-        "tag": "02 // AAFCO STANDARDS",
-        "title": "Bioavailable Micronutrients",
-        "desc": "Every formulation balances calcium-to-phosphorus ratios (1.2:1 to 1.4:1), EPA/DHA ratios, and essential taurine pathways."
+        "tag": "02 // REFERENCE SOURCES",
+        "title": "Reference Sources",
+        "desc": "We refer to published guidance from sources such as AAFCO and the National Research Council. Our content is educational and does not replace professional advice."
       },
       {
-        "tag": "03 // ZERO PAYWALLS",
-        "title": "Open & Independent",
-        "desc": "We do not accept sponsored brand placements or conceal recipe grams behind forced credit card subscriptions."
+        "tag": "03 // TRANSPARENT",
+        "title": "Transparent",
+        "desc": "Some pages contain affiliate links, including Amazon Associates links. If you buy through them we may earn a small commission at no extra cost to you. This never changes our recommendations."
       }
     ],
     "ctaTitle": "Ready to Calculate Your Dog's Nutritional Needs?",
-    "ctaDesc": "Try our interactive calculator, explore our canine allergy guides, and view our dog food reviews.",
-    "ctaBtn": "Launch Free Nutrition Calculator →"
+    "ctaDesc": "Try our interactive calculator, explore our canine allergy guides, and read our dog food guides.",
+    "ctaBtn": "Launch Free Nutrition Calculator →",
+    "amazonDisclaimer": "As an Amazon Associate we earn from qualifying purchases."
   },
   "contact": {
     "eyebrow": "SUPPORT & FEEDBACK // DIRECT INQUIRIES",
@@ -78,12 +81,12 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "LEGAL // DATA PROTECTION & PRIVACY",
-    "lastUpdated": "Updated: January 2026",
+    "lastUpdated": "Updated: October 12, 2026",
     "intro": "At DogFoodPlanner.com, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, process, and safeguard information when you use our website.",
     "sections": [
       {
         "title": "1. Information We Do Not Collect",
-        "content": "We believe your pet’s health data belongs to you. We do not require account registration, passwords, or credit cards to use our nutrition engine. Dog profiles, body weights, and meal selections entered into the calculator are processed client-side in your browser and are not saved to external databases."
+        "content": "We believe your pet’s health data belongs to you. We do not require account registration, passwords, or credit cards to use our dog feeding calculator. Dog profiles, body weights, and meal selections entered into the calculator are processed client-side in your browser and are not saved to external databases."
       },
       {
         "title": "2. Anonymous Technical Data",
@@ -91,18 +94,22 @@ export const PAGE_TRANSLATIONS = {
       },
       {
         "title": "3. Browser Cookies & Local Storage",
-        "content": "We use local browser storage (localStorage) exclusively to remember your preferred language selection and retain your active dog meal plan on your device so you do not lose your calculation when refreshing."
+        "content": "We use localStorage to remember your language and meal plan on your device. If you click an affiliate link, the third-party site (such as Amazon) may set its own cookies."
       },
       {
-        "title": "4. Third-Party Links & Scientific Resources",
-        "content": "Our site contains reference links to published scientific research, AAFCO standards, NRC databases, and external resources. We are not responsible for the privacy practices or content of third-party websites."
+        "title": "4. Third-Party Links",
+        "content": "Our site contains reference links to published research, AAFCO standards, NRC databases, and external resources. We are not responsible for the privacy practices or content of third-party websites."
       },
       {
-        "title": "5. Children’s Privacy",
+        "title": "5. Affiliate Disclosure",
+        "content": "DogFoodPlanner participates in the Amazon Services LLC Associates Program. As an Amazon Associate we earn from qualifying purchases, at no extra cost to you."
+      },
+      {
+        "title": "6. Children’s Privacy",
         "content": "Our website is intended for general audiences and adult pet owners. We do not knowingly collect or solicit personal information from children under the age of 13."
       },
       {
-        "title": "6. Policy Updates & Contact",
+        "title": "7. Policy Updates & Contact",
         "content": "We may periodically update this policy to reflect enhancements to our tools. Any changes will be posted directly to this page. If you have questions regarding this policy, please contact privacy@dogfoodplanner.com."
       }
     ]
@@ -612,32 +619,34 @@ export const PAGE_TRANSLATIONS = {
 },
   es: {
   "about": {
-    "heroTitle": "Sobre Nosotros",
-    "heroSubtitle": "Conoce DogFoodPlanner.com: nuestra misión, metodología nutricional bajo estándares NRC y compromiso con la alimentación saludable para perros.",
-    "missionBadge": "NUESTRA MISIÓN // NUTRICIÓN CANINA",
+    "heroTitle": "Sobre DogFoodPlanner: Planificación de Comidas Caninas Hecha Simple",
+    "heroSubtitle": "Conoce DogFoodPlanner.com, nuestra misión y cómo funciona nuestra calculadora gratuita de alimentación canina.",
+    "missionBadge": "NUESTRA MISIÓN // PLANIFICACIÓN DE COMIDAS CANINAS",
     "whyTitle": "Por Qué se Creó DogFoodPlanner",
-    "whyP1": "Durante décadas, la industria de alimentos comerciales para mascotas ha funcionado como una caja negra. El pienso seco extruido a más de 200°C destruye vitaminas naturales, oxida los ácidos grasos omega esenciales y rellena el saco con hasta un 60% de almidones de alto índice glucémico.",
-    "whyP2": "Al mismo tiempo, las suscripciones de comida fresca cobran más de 300€ al mes por carnes magras y verduras básicas. DogFoodPlanner elimina esa barrera. Ofrecemos los algoritmos matemáticos exactos que emplean los nutricionistas caninos clínicos para que cualquier dueño prepare menús cocinados al vapor, dietas BARF o toppers caseros a una fracción de su coste.",
+    "whyP1": "Creamos DogFoodPlanner para ayudar a los dueños de perros a planificar las comidas y las porciones con total confianza. Investigamos las recomendaciones públicas disponibles y las convertimos en guías y herramientas gratuitas y sencillas.",
+    "whyP2": "",
+    "whoTitle": "Quiénes Somos",
+    "whoContent": "DogFoodPlanner es un sitio web independiente gestionado por investigadores y redactores apasionados por los perros. No somos veterinarios. Consulta siempre con tu veterinario antes de cambiar la dieta de tu perro, especialmente en el caso de cachorros, perros mayores o perros con problemas de salud.",
     "methodTitle": "Nuestra Metodología Nutricional",
     "pillars": [
       {
-        "tag": "01 // FÓRMULAS NRC",
-        "title": "Matemática Metabólica Basal",
-        "desc": "Calcula el Requerimiento Energético en Reposo (RER) exacto según la masa corporal exponencial (70 × (kg)^0.75) en lugar de tablas genéricas por rangos de peso."
+        "tag": "01 // ESTIMACIONES CALÓRICAS",
+        "title": "Estimaciones Calóricas",
+        "desc": "Nuestra calculadora utiliza la fórmula estándar de Requerimiento Energético en Reposo (70 × peso corporal en kg^0.75) y multiplicadores habituales de actividad para estimar las calorías diarias."
       },
       {
-        "tag": "02 // ESTÁNDARES AAFCO",
-        "title": "Micronutrientes Biodisponibles",
-        "desc": "Cada menú equilibra la relación calcio-fósforo (1.2:1 a 1.4:1), ácidos grasos EPA/DHA y niveles esenciales de taurina."
+        "tag": "02 // FUENTES DE REFERENCIA",
+        "title": "Fuentes de Referencia",
+        "desc": "Nos basamos en guías publicadas por entidades como la AAFCO y el National Research Council. Nuestro contenido es educativo y no reemplaza el asesoramiento profesional."
       },
       {
-        "tag": "03 // CERO MUROS DE PAGO",
-        "title": "100% Abierto e Independiente",
-        "desc": "No aceptamos patrocinios comerciales ni ocultamos los gramos de las recetas tras suscripciones con tarjeta de crédito."
+        "tag": "03 // TRANSPARENTE",
+        "title": "Transparente",
+        "desc": "Algunas páginas contienen enlaces de afiliados, incluidos los de Amazon Afiliados. Si compras a través de ellos, podemos recibir una pequeña comisión sin coste adicional para ti. Esto nunca altera nuestras recomendaciones."
       }
     ],
     "ctaTitle": "¿Listo para Calcular las Necesidades Nutricionales de tu Perro?",
-    "ctaDesc": "Utiliza nuestra calculadora interactiva, explora las guías de alergias caninas y consulta nuestros análisis de alimentos.",
+    "ctaDesc": "Utiliza nuestra calculadora interactiva, explora las guías de alergias caninas y lee nuestras guías de comida para perros.",
     "ctaBtn": "Abrir Calculadora Nutricional Gratuita →"
   },
   "contact": {
@@ -687,12 +696,12 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "LEGAL // PROTECCIÓN DE DATOS Y PRIVACIDAD",
-    "lastUpdated": "Actualizado: Enero de 2026",
+    "lastUpdated": "Actualizado: 12 de octubre de 2026",
     "intro": "En DogFoodPlanner.com respetamos tu privacidad y nos comprometemos a proteger los datos personales. Esta política explica cómo tratamos y protegemos tu información.",
     "sections": [
       {
         "title": "1. Información Que No Recopilamos",
-        "content": "Los datos de salud de tu mascota te pertenecen. No requerimos registro, contraseñas ni tarjetas bancarias. Los perfiles caninos, pesos y selecciones de dieta se procesan localmente en tu navegador y no se almacenan en servidores externos."
+        "content": "Los datos de salud de tu mascota te pertenecen. No requerimos registro, contraseñas ni tarjetas bancarias para usar nuestra calculadora de comida para perros. Los perfiles caninos, pesos y selecciones de dieta introducidos en la calculadora se procesan en tu navegador (lado del cliente) y no se guardan en bases de datos externas."
       },
       {
         "title": "2. Datos Técnicos Anónimos",
@@ -700,18 +709,22 @@ export const PAGE_TRANSLATIONS = {
       },
       {
         "title": "3. Cookies y Almacenamiento Local",
-        "content": "Utilizamos el almacenamiento local del navegador (localStorage) exclusivamente para recordar tu idioma preferido y conservar el plan de comida activo en tu dispositivo sin perder los cálculos al recargar."
+        "content": "Utilizamos localStorage para recordar tu idioma y plan de comida en tu dispositivo. Si haces clic en un enlace de afiliados, el sitio web de terceros (como Amazon) puede instalar sus propias cookies."
       },
       {
-        "title": "4. Enlaces Externos y Fuentes Científicas",
-        "content": "Nuestra web contiene referencias a estudios científicos publicados, guías AAFCO y bases de datos del NRC. No nos hacemos responsables de las políticas de privacidad de sitios de terceros."
+        "title": "4. Enlaces a Terceros",
+        "content": "Nuestro sitio contiene enlaces de referencia a investigaciones publicadas, estándares AAFCO, bases de datos del NRC y recursos externos. No nos hacemos responsables de las prácticas de privacidad ni del contenido de sitios web de terceros."
       },
       {
-        "title": "5. Privacidad de Menores",
+        "title": "5. Declaración de Afiliados",
+        "content": "DogFoodPlanner participa en el Programa de Afiliados de Amazon Services LLC. Como afiliados de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables, sin ningún coste adicional para ti."
+      },
+      {
+        "title": "6. Privacidad de Menores",
         "content": "Nuestros contenidos y herramientas están dirigidos a adultos responsables de mascotas. No recopilamos conscientemente datos de menores de 13 años."
       },
       {
-        "title": "6. Actualizaciones y Contacto",
+        "title": "7. Actualizaciones y Contacto",
         "content": "Podemos actualizar periódicamente esta política para reflejar mejoras técnicas. Las novedades se publicarán en esta página. Para cualquier consulta, escribe a privacy@dogfoodplanner.com."
       }
     ]
@@ -1221,32 +1234,34 @@ export const PAGE_TRANSLATIONS = {
 },
   ja: {
   "about": {
-    "heroTitle": "当サイトについて",
-    "heroSubtitle": "DogFoodPlanner.comのミッション、NRC基準に基づく獣医栄養学アルゴリズム、愛犬の健康を第一に考えた取り組みについて。",
-    "missionBadge": "私たちの使命 // 犬の栄養管理",
+    "heroTitle": "DogFoodPlannerについて：愛犬の食事管理をシンプルに",
+    "heroSubtitle": "DogFoodPlanner.comのミッションと無料の給餌量計算ツールの仕組みをご紹介します。",
+    "missionBadge": "私たちの使命 // 愛犬の食事計画",
     "whyTitle": "DogFoodPlannerが設立された理由",
-    "whyP1": "何十年もの間、市販のペットフード市場は不透明なブラックボックスとして運営されてきました。200℃以上の超高温で押し出し成形される一般的なドライフードは、熱に弱い天然ビタミンを破壊し、必須オメガ脂肪酸を酸化させ、袋の重さの最大60％を高GI値のデンプンでかさ増ししています。",
-    "whyP2": "その一方で、フレッシュフードの定期購入サービスは、基本的な赤身肉や野菜だけで月額3万円〜5万円以上も請求します。DogFoodPlannerはこの格差を解消します。私たちは臨床犬栄養士が使用する正確な科学的計算アルゴリズムを完全無料で提供し、愛犬家が自宅で手頃なコストで栄養バランスの取れた手作り食や生肉BARF食、スーパーフードトッピングを作れるよう支援します。",
-    "methodTitle": "私たちの栄養学アプローチと計算基準",
+    "whyP1": "DogFoodPlannerは、愛犬家が自信を持って食事や給餌量を計画できるように作られました。公表されている信頼できるガイドラインを調査し、シンプルで使いやすい無料のツールとガイドとしてお届けしています。",
+    "whyP2": "",
+    "whoTitle": "運営者について",
+    "whoContent": "DogFoodPlannerは、犬を愛するリサーチャーとライターによって運営されている独立系ウェブサイトです。私たちは獣医師ではありません。愛犬の食事を変更する前、特に子犬、シニア犬、または健康上の不安がある犬の場合は、必ずかかりつけの獣医師にご相談ください。",
+    "methodTitle": "私たちの栄養計算アプローチ",
     "pillars": [
       {
-        "tag": "01 // NRC標準計算式",
-        "title": "安静時エネルギー要求量 (RER)",
-        "desc": "大雑把な体重別目安ではなく、指数関数的な体表面積（70 × 体重kg^0.75）に基づいて正確なRER（安静時必要カロリー）を算出します。"
+        "tag": "01 // カロリー推定",
+        "title": "カロリー推定",
+        "desc": "計算ツールでは、標準的な安静時エネルギー要求量（RER）計算式（70 × 体重kg^0.75）と一般的な活動係数を使用して1日の必要カロリーを算出します。"
       },
       {
-        "tag": "02 // AAFCO基準の充足",
-        "title": "生体利用効率の高い微量栄養素",
-        "desc": "すべての給餌プランはカルシウム・リン比率（1.2:1〜1.4:1）、EPA/DHA比率、必須タウリンの維持を徹底しています。"
+        "tag": "02 // 参考ガイドライン",
+        "title": "参考ガイドライン",
+        "desc": "AAFCO（米国飼料検査官協会）やNRC（全米研究評議会）などが公表している指針を参照しています。本サイトの内容は教育目的であり、専門家のアドバイスに代わるものではありません。"
       },
       {
-        "tag": "03 // 課金・有料機能なし",
-        "title": "100%オープン＆独立性",
-        "desc": "特定ペットフード企業の有償スポンサー枠を一切排除し、クレジットカードの登録なしで詳細な分量（グラム数）を公開しています。"
+        "tag": "03 // 透明性の確保",
+        "title": "透明性の確保",
+        "desc": "一部のページにはAmazonアソシエイトなどのアフィリエイトリンクが含まれています。リンク経由で商品を購入された場合、お客様に追加費用が発生することなく少額の紹介料を得ることがありますが、これによって推奨内容が変わることはありません。"
       }
     ],
     "ctaTitle": "愛犬に必要な適正カロリーと食事量を計算してみませんか？",
-    "ctaDesc": "無料の対話型給餌計算機や犬のアレルギー対策ガイド、フード評価レビューをご活用ください。",
+    "ctaDesc": "対話型計算ツールを試し、愛犬のアレルギー対策ガイドを確認し、ドッグフードガイドをお読みください。",
     "ctaBtn": "無料の栄養計算機を起動する →"
   },
   "contact": {
@@ -1296,12 +1311,12 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "利用規約・プライバシー // 個人情報保護方針",
-    "lastUpdated": "最終改訂：2026年1月",
+    "lastUpdated": "最終更新日：2026年10月12日",
     "intro": "DogFoodPlanner.com（以下「当サイト」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、当サイトにおける情報の取り扱いについて説明します。",
     "sections": [
       {
         "title": "1. 当サイトが収集しない個人情報",
-        "content": "愛犬の健康データはお客様自身のものです。当サイトの栄養計算機を利用するにあたり、会員登録、パスワード設定、クレジットカード情報の入力は一切不要です。計算機に入力された愛犬の犬種、体重、食事スタイルなどのデータはお使いのブラウザ内（クライアントサイド）でのみ演算され、外部サーバーに保存されることはありません。"
+        "content": "愛犬の健康データはお客様自身のものです。当サイトの犬の給餌量計算ツールを利用するにあたり、会員登録、パスワード設定、クレジットカード情報の入力は一切不要です。計算機に入力された愛犬のプロフィール、体重、食事スタイルなどのデータはお使いのブラウザ内（クライアントサイド）でのみ処理され、外部データベースに保存されることはありません。"
       },
       {
         "title": "2. 匿名技術データとアクセスログ",
@@ -1309,18 +1324,22 @@ export const PAGE_TRANSLATIONS = {
       },
       {
         "title": "3. Cookieおよびローカルストレージ（localStorage）",
-        "content": "当サイトでは、選択された表示言語設定の保持、およびページを更新した際に愛犬の計算結果を維持する目的でのみ、ブラウザのローカルストレージ（localStorage）を利用します。"
+        "content": "お使いの端末で選択した言語とお食事プランを保持するためにlocalStorageを使用しています。アフィリエイトリンクをクリックした場合、第三者の外部サイト（Amazonなど）が独自のクッキーを設定することがあります。"
       },
       {
-        "title": "4. 外部リンクおよび科学的リソース",
-        "content": "当サイトには査読付き科学論文、AAFCO基準、NRCデータベースなどへの外部リンクが含まれます。リンク先の第三者ウェブサイトにおける個人情報保護方針について、当サイトは責任を負いません。"
+        "title": "4. サードパーティへのリンク",
+        "content": "当サイトには、公表された研究、AAFCO基準、NRCデータベース、および外部リソースへの参考リンクが含まれています。当サイトは第三者のウェブサイトにおけるプライバシー保護の取り組みやコンテンツについて責任を負いません。"
       },
       {
-        "title": "5. 未成年者の利用について",
+        "title": "5. アフィリエイトに関する開示",
+        "content": "DogFoodPlannerはAmazon Services LLCアソシエイト・プログラムに参加しています。Amazonアソシエイトとして、適格販売により収入を得ています。お客様への追加費用は一切かかりません。"
+      },
+      {
+        "title": "6. 未成年者のプライバシー",
         "content": "当サイトのサービスは成人した愛犬家を対象としています。13歳未満の児童から意図的に個人情報を収集することはありません。"
       },
       {
-        "title": "6. プライバシーポリシーの改定とお問い合わせ",
+        "title": "7. ポリシーの改定とお問い合わせ",
         "content": "本ポリシーは機能向上等に伴い改定されることがあります。ご不明な点がございましたら privacy@dogfoodplanner.com までご連絡ください。"
       }
     ]
@@ -1830,32 +1849,34 @@ export const PAGE_TRANSLATIONS = {
 },
   fr: {
   "about": {
-    "heroTitle": "À Propos",
-    "heroSubtitle": "Découvrez DogFoodPlanner.com, notre mission, notre méthodologie nutritionnelle conforme aux normes NRC et notre engagement pour la santé canine.",
-    "missionBadge": "NOTRE MISSION // NUTRITION CANINE",
+    "heroTitle": "À Propos de DogFoodPlanner : Les Repas Canins en Toute Simplicité",
+    "heroSubtitle": "Découvrez DogFoodPlanner.com, notre mission et le fonctionnement de notre calculateur de ration pour chien 100% gratuit.",
+    "missionBadge": "NOTRE MISSION // PLANIFICATION DES REPAS",
     "whyTitle": "Pourquoi DogFoodPlanner a été Créé",
-    "whyP1": "Pendant des décennies, l’industrie des aliments pour animaux a fonctionné comme une boîte noire. Les croquettes industrielles extrudées à plus de 200°C détruisent les vitamines naturelles, oxydent les acides gras oméga essentiels et alourdissent les sacs avec jusqu’à 60% d’amidons hautement glycémiques.",
-    "whyP2": "En parallèle, les abonnements de ration ménagère facturent plus de 300€ par mois pour de la viande maigre et des légumes basiques. DogFoodPlanner comble ce fossé. Nous mettons à disposition gratuitement les algorithmes mathématiques exacts des nutritionnistes vétérinaires afin que chaque maître puisse préparer à domicile des repas frais, des rations BARF ou des garnitures riches à une fraction du coût.",
+    "whyP1": "Nous avons créé DogFoodPlanner pour aider les propriétaires de chiens à planifier les repas et les rations en toute confiance. Nous étudions les recommandations publiques disponibles pour les transformer en guides et outils gratuits et faciles d'accès.",
+    "whyP2": "",
+    "whoTitle": "Qui Sommes-Nous",
+    "whoContent": "DogFoodPlanner est un site indépendant géré par des passionnés de chiens, chercheurs et rédacteurs. Nous ne sommes pas vétérinaires. Consultez toujours votre vétérinaire avant de modifier l'alimentation de votre chien, en particulier pour les chiots, les chiens seniors ou les animaux ayant des problèmes de santé.",
     "methodTitle": "Notre Méthodologie Nutritionnelle",
     "pillars": [
       {
-        "tag": "01 // FORMULES NRC",
-        "title": "Calcul Métabolique au Repos (RER)",
-        "desc": "Détermine le Besoin Énergétique au Repos (RER) exact fondé sur la masse corporelle exponentielle (70 × (kg)^0.75) au lieu d’estimations approximatives par tranche de poids."
+        "tag": "01 // ESTIMATION DES CALORIES",
+        "title": "Estimation des Calories",
+        "desc": "Notre calculateur utilise la formule standard du Besoin Énergétique au Repos (70 × poids en kg^0,75) et des coefficients d'activité courants pour estimer les calories quotidiennes."
       },
       {
-        "tag": "02 // STANDARDS AAFCO / FEDIAF",
-        "title": "Micronutriments Biodisponibles",
-        "desc": "Chaque formulation équilibre scrupuleusement le ratio calcium/phosphore (1.2:1 à 1.4:1), les acides gras EPA/DHA et les apports indispensables en taurine."
+        "tag": "02 // SOURCES DE RÉFÉRENCE",
+        "title": "Sources de Référence",
+        "desc": "Nous nous référons aux recommandations publiées par des organismes tels que l'AAFCO et le National Research Council. Notre contenu est éducatif et ne remplace pas l'avis d'un professionnel."
       },
       {
-        "tag": "03 // ZÉRO ABONNEMENT PAYANT",
-        "title": "Ouvert et Indépendant",
-        "desc": "Nous refusons tout parrainage commercial rémunéré et ne dissimulons aucun grammage derrière un abonnement bancaire obligatoire."
+        "tag": "03 // TRANSPARENCE",
+        "title": "Transparence",
+        "desc": "Certaines pages contiennent des liens d'affiliation, notamment des liens Partenaires Amazon. Si vous effectuez un achat via ces liens, nous pouvons percevoir une petite commission sans aucun surcoût pour vous. Cela n'influence jamais nos recommandations."
       }
     ],
     "ctaTitle": "Prêt à Calculer les Besoins Nutritionnels de Votre Chien ?",
-    "ctaDesc": "Utilisez notre calculateur interactif, découvrez nos guides sur les allergies et consultez nos analyses impartiales.",
+    "ctaDesc": "Essayez notre calculateur interactif, découvrez nos guides sur les allergies canines et lisez nos guides sur l'alimentation pour chien.",
     "ctaBtn": "Lancer le Calculateur Nutritionnel Gratuit →"
   },
   "contact": {
@@ -1905,12 +1926,12 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "MENTIONS LÉGALES // POLITIQUE DE CONFIDENTIALITÉ",
-    "lastUpdated": "Mise à jour : Janvier 2026",
+    "lastUpdated": "Mis à jour : 12 octobre 2026",
     "intro": "Sur DogFoodPlanner.com, nous respectons votre vie privée. Cette politique détaille comment vos données sont traitées et protégées.",
     "sections": [
       {
         "title": "1. Informations Que Nous Ne Collectons Pas",
-        "content": "Les données de santé de votre chien vous appartiennent. L’utilisation de notre calculateur ne requiert aucune inscription, mot de passe ou carte bancaire. Les profils canins, poids et choix d’aliments sont traités localement sur votre navigateur et ne sont jamais enregistrés sur des serveurs externes."
+        "content": "Les données de santé de votre animal vous appartiennent. L’utilisation de notre calculateur de ration pour chien ne requiert aucune inscription, mot de passe ou carte bancaire. Les profils canins, poids et choix de repas saisis dans le calculateur sont traités localement sur votre navigateur (côté client) et ne sont jamais enregistrés sur des bases de données externes."
       },
       {
         "title": "2. Données Techniques Anonymes",
@@ -1918,18 +1939,22 @@ export const PAGE_TRANSLATIONS = {
       },
       {
         "title": "3. Cookies et Stockage Local (localStorage)",
-        "content": "Nous utilisons uniquement le stockage local de votre navigateur pour mémoriser votre langue préférée et conserver votre plan de repas actif afin d’éviter de recalculer lors d’un rafraîchissement."
+        "content": "Nous utilisons le localStorage pour mémoriser votre langue et votre plan de repas sur votre appareil. Si vous cliquez sur un lien d'affiliation, le site tiers (comme Amazon) peut déposer ses propres cookies."
       },
       {
-        "title": "4. Liens Externes et Sources Scientifiques",
-        "content": "Notre site renvoie vers des études scientifiques publiées, les directives AAFCO/FEDIAF et les banques de données du NRC. Nous ne sommes pas responsables des pratiques de confidentialité de ces tiers."
+        "title": "4. Liens Vers des Tiers",
+        "content": "Notre site contient des liens de référence vers des recherches publiées, les normes de l'AAFCO, les bases de données du NRC et des ressources externes. Nous ne sommes pas responsables des pratiques de confidentialité ou du contenu des sites tiers."
       },
       {
-        "title": "5. Protection des Mineurs",
+        "title": "5. Divulgation d'Affiliation",
+        "content": "DogFoodPlanner participe au Programme Partenaires d’Amazon Services LLC. En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises, sans aucun surcoût pour vous."
+      },
+      {
+        "title": "6. Protection des Mineurs",
         "content": "Nos outils sont destinés aux adultes propriétaires d’animaux de compagnie. Nous ne collectons pas sciemment de données relatives aux mineurs de moins de 13 ans."
       },
       {
-        "title": "6. Mises à Jour et Contact",
+        "title": "7. Mises à Jour et Contact",
         "content": "Cette politique peut être mise à jour pour refléter l’évolution du service. Pour toute question, écrivez à privacy@dogfoodplanner.com."
       }
     ]
@@ -2439,32 +2464,34 @@ export const PAGE_TRANSLATIONS = {
 },
   de: {
   "about": {
-    "heroTitle": "Über Uns",
-    "heroSubtitle": "Erfahren Sie mehr über DogFoodPlanner.com: Unsere tierärztliche Methodik, NRC-Standards und freie Ernährungsrechner für Hunde.",
-    "missionBadge": "UNSERE MISSION // HUNDEERNÄHRUNG",
+    "heroTitle": "Über DogFoodPlanner: Hunde-Futterplanung einfach gemacht",
+    "heroSubtitle": "Erfahren Sie mehr über DogFoodPlanner.com, unsere Mission und wie unser kostenloser Hundefutter-Rechner funktioniert.",
+    "missionBadge": "UNSERE MISSION // FUTTERPLANUNG FÜR HUNDE",
     "whyTitle": "Warum DogFoodPlanner gegründet wurde",
-    "whyP1": "Seit Jahrzehnten agiert die Heimtierfutter-Industrie als undurchsichtige Blackbox. Herkömmliches Trockenfutter wird bei über 200°C extrem erhitzt und extrudiert, wodurch natürliche Vitamine zerstört, lebenswichtige Omega-Fettsäuren oxidiert und bis zu 60% des Beutels mit billigen Stärkefüllern aufgefüllt werden.",
-    "whyP2": "Gleichzeitig verlangen Start-ups für Frischfutter-Abonnements 300€ bis 450€ pro Monat für einfaches Muskelfleisch und Gemüse. DogFoodPlanner schließt diese Lücke. Wir stellen die exakten mathematischen Berechnungsformeln klinischer Tierernährungsberater kostenlos bereit, damit Hundehalter ausgewogene gekochte Mahlzeiten, 80-10-10 BARF-Rationen oder nährstoffreiche Topper kostengünstig zu Hause zubereiten können.",
-    "methodTitle": "Unsere Ernährungsmethodik und Standards",
+    "whyP1": "Wir haben DogFoodPlanner entwickelt, damit Hundebesitzer Mahlzeiten und Futterportionen mit gutem Gefühl planen können. Wir recherchieren öffentlich zugängliche Richtlinien und machen daraus einfache, kostenlose Tools und Ratgeber.",
+    "whyP2": "",
+    "whoTitle": "Wer Wir Sind",
+    "whoContent": "DogFoodPlanner ist eine unabhängige Website, die von hundebegeisterten Rechercheuren und Autoren betrieben wird. Wir sind keine Tierärzte. Konsultieren Sie immer Ihren Tierarzt, bevor Sie die Ernährung Ihres Hundes umstellen – insbesondere bei Welpen, Senioren oder Hunden mit Vorerkrankungen.",
+    "methodTitle": "Unsere Ernährungsmethodik",
     "pillars": [
       {
-        "tag": "01 // NRC-FORMELN",
-        "title": "Ruhe-Energiebedarf (RER)",
-        "desc": "Berechnet den exakten Erhaltungsbedarf anhand der metabolischen Körpermasse (70 × (kg)^0.75) statt ungenauer Durchschnittswerte nach Gewichtsklassen."
+        "tag": "01 // KALORIENSCHÄTZUNG",
+        "title": "Kalorienschätzung",
+        "desc": "Unser Rechner nutzt die Standardformel für den Ruheenergiebedarf (70 × Körpergewicht in kg^0,75) und gängige Aktivitätsfaktoren, um den täglichen Kalorienbedarf zu schätzen."
       },
       {
-        "tag": "02 // AAFCO- & FEDIAF-RICHTLINIEN",
-        "title": "Bioverfügbare Mikronährstoffe",
-        "desc": "Jede Ration balanciert das lebenswichtige Kalzium-Phosphor-Verhältnis (1.2:1 bis 1.4:1), EPA/DHA-Fettsäuren und essentielle Taurinwerte."
+        "tag": "02 // REFERENZQUELLEN",
+        "title": "Referenzquellen",
+        "desc": "Wir orientieren uns an veröffentlichten Leitlinien von Organisationen wie AAFCO und dem National Research Council. Unsere Inhalte dienen Bildungszwecken und ersetzen keine fachliche Beratung."
       },
       {
-        "tag": "03 // KEINE PAYWALLS",
-        "title": "100% Unabhängig & Kostenfrei",
-        "desc": "Wir akzeptieren keine bezahlten Markenkooperationen und verstecken Grammangaben nicht hinter erzwungenen Kreditkarten-Abos."
+        "tag": "03 // TRANSPARENZ",
+        "title": "Transparenz",
+        "desc": "Einige Seiten enthalten Affiliate-Links, einschließlich Links des Amazon-Partnerprogramms. Wenn Sie darüber einkaufen, erhalten wir möglicherweise eine kleine Provision – ohne zusätzliche Kosten für Sie. Dies hat keinerlei Einfluss auf unsere Empfehlungen."
       }
     ],
-    "ctaTitle": "Bereit, den Nährstoffbedarf Ihres Hundes exakt zu berechnen?",
-    "ctaDesc": "Nutzen Sie unseren interaktiven Rechner, erkunden Sie unsere Allergie-Ratgeber und lesen Sie unabhängige Futteranalysen.",
+    "ctaTitle": "Bereit, den Nährstoffbedarf Ihres Hundes zu berechnen?",
+    "ctaDesc": "Nutzen Sie unseren interaktiven Rechner, erkunden Sie unsere Allergie-Ratgeber und lesen Sie unsere Hundefutter-Ratgeber.",
     "ctaBtn": "Kostenlosen Futterrechner starten →"
   },
   "contact": {
@@ -2514,12 +2541,12 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "RECHTLICHES // DATENSCHUTZERKLÄRUNG",
-    "lastUpdated": "Stand: Januar 2026",
+    "lastUpdated": "Stand: 12. Oktober 2026",
     "intro": "Auf DogFoodPlanner.com nehmen wir den Schutz Ihrer Daten sehr ernst. Diese Erklärung erläutert, wie wir Daten erheben und schützen.",
     "sections": [
       {
         "title": "1. Daten, die wir nicht erfassen",
-        "content": "Die Gesundheitsdaten Ihres Hundes gehören Ihnen. Für die Nutzung unseres Futterrechners ist keine Registrierung, kein Passwort und keine Zahlungsangabe erforderlich. Eingegebene Rassedaten, Gewichte und Fütterungsstile werden ausschließlich lokal in Ihrem Browser verarbeitet und nicht auf externen Servern gespeichert."
+        "content": "Die Gesundheitsdaten Ihres Hundes gehören Ihnen. Für die Nutzung unseres Hundefutter-Rechners ist keine Registrierung, kein Passwort und keine Zahlungsangabe erforderlich. Eingegebene Hundeprofile, Gewichte und Mahlzeitenauswahlen werden clientseitig in Ihrem Browser verarbeitet und nicht in externen Datenbanken gespeichert."
       },
       {
         "title": "2. Anonyme technische Serverdaten",
@@ -2527,18 +2554,22 @@ export const PAGE_TRANSLATIONS = {
       },
       {
         "title": "3. Cookies und lokaler Speicher (localStorage)",
-        "content": "Wir nutzen den lokalen Browser-Speicher (localStorage) ausschließlich zur Speicherung Ihrer bevorzugten Sprache und Ihres aktiven Futterplans, damit Sie Ihre Berechnungen beim Neuladen nicht verlieren."
+        "content": "Wir nutzen den lokalen Speicher (localStorage), um Ihre Spracheinstellung und Ihren Futterplan auf Ihrem Gerät zu speichern. Wenn Sie auf einen Affiliate-Link klicken, kann die Website des Drittanbieters (z. B. Amazon) eigene Cookies setzen."
       },
       {
-        "title": "4. Externe wissenschaftliche Quellen",
-        "content": "Unsere Website verlinkt auf peer-reviewte wissenschaftliche Studien, AAFCO/FEDIAF-Richtlinien und NRC-Datenbanken. Für den Datenschutz externer Seiten übernehmen wir keine Haftung."
+        "title": "4. Links zu Drittanbietern",
+        "content": "Unsere Website enthält Referenz-Links zu veröffentlichten Studien, AAFCO-Standards, NRC-Datenbanken und externen Ressourcen. Wir sind nicht verantwortlich für die Datenschutzpraktiken oder den Inhalt von Websites Dritter."
       },
       {
-        "title": "5. Schutz von Minderjährigen",
+        "title": "5. Affiliate-Offenlegung",
+        "content": "DogFoodPlanner ist Teilnehmer des Partnerprogramms von Amazon Services LLC. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen – ganz ohne zusätzliche Kosten für Sie."
+      },
+      {
+        "title": "6. Schutz von Minderjährigen",
         "content": "Unsere Inhalte und Werkzeuge richten sich an volljährige Hundehalter. Wir erfassen wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren."
       },
       {
-        "title": "6. Änderungen und Kontakt",
+        "title": "7. Aktualisierungen und Kontakt",
         "content": "Diese Datenschutzerklärung kann gelegentlich aktualisiert werden. Bei Fragen erreichen Sie uns unter privacy@dogfoodplanner.com."
       }
     ]
@@ -3048,32 +3079,34 @@ export const PAGE_TRANSLATIONS = {
 },
   pt: {
   "about": {
-    "heroTitle": "Sobre Nós",
-    "heroSubtitle": "Conheça o DogFoodPlanner.com: nossa missão, metodologia nutricional com base no NRC e compromisso com a alimentação canina de verdade.",
-    "missionBadge": "NOSSA MISSÃO // NUTRIÇÃO CANINA",
+    "heroTitle": "Sobre o DogFoodPlanner: Planejamento de Refeições Caninas Descomplicado",
+    "heroSubtitle": "Conheça o DogFoodPlanner.com, nossa missão e como funciona a nossa calculadora gratuita de alimentação canina.",
+    "missionBadge": "NOSSA MISSÃO // ALIMENTAÇÃO CANINA",
     "whyTitle": "Por Que o DogFoodPlanner Foi Criado",
-    "whyP1": "Por décadas, a indústria comercial de alimentos para pets operou como uma caixa preta. A ração seca extrudada a mais de 200°C degrada vitaminas naturais, oxida ácidos graxos ômega essenciais e preenche os sacos com até 60% de amidos de alto índice glicêmico.",
-    "whyP2": "Ao mesmo tempo, empresas de alimentação natural cobram mensalidades superiores a R$ 1.500 / 300€ por carnes magras e vegetais simples. O DogFoodPlanner elimina essa barreira. Disponibilizamos gratuitamente os algoritmos matemáticos exatos usados por nutrólogos veterinários para que qualquer tutor prepare em casa dietas cozidas no vapor, BARF crua ou enriquecedores nutritivos a uma fração do custo.",
-    "methodTitle": "Nossa Metodologia e Padrões Científicos",
+    "whyP1": "Criamos o DogFoodPlanner para ajudar tutores de cães a planejar refeições e porções com total confiança. Pesquisamos orientações públicas e as transformamos em guias e ferramentas gratuitas e fáceis de usar.",
+    "whyP2": "",
+    "whoTitle": "Quem Somos",
+    "whoContent": "O DogFoodPlanner é um site independente criado por pesquisadores e redatores apaixonados por cães. Não somos veterinários. Sempre consulte seu médico veterinário antes de alterar a dieta do seu cão, especialmente para filhotes, idosos ou cães com problemas de saúde.",
+    "methodTitle": "Nossa Metodologia Nutricional",
     "pillars": [
       {
-        "tag": "01 // FÓRMULAS NRC",
-        "title": "Necessidade Energética em Repouso (RER)",
-        "desc": "Calcula o gasto basal exato com base na massa corporal exponencial (70 × (kg)^0.75) em vez de faixas genéricas de peso."
+        "tag": "01 // ESTIMATIVA DE CALORIAS",
+        "title": "Estimativa de Calorias",
+        "desc": "Nossa calculadora utiliza a fórmula padrão de Necessidade Energética de Repouso (70 × peso corporal em kg^0,75) e fatores habituais de atividade para estimar as calorias diárias."
       },
       {
-        "tag": "02 // DIRETRIZES AAFCO & FEDIAF",
-        "title": "Micronutrientes Biodisponíveis",
-        "desc": "Toda formulação equilibra a relação cálcio-fósforo (1.2:1 a 1.4:1), ácidos graxos EPA/DHA e níveis fundamentais de taurina."
+        "tag": "02 // FONTES DE REFERÊNCIA",
+        "title": "Fontes de Referência",
+        "desc": "Baseamo-nos em diretrizes publicadas por instituições como a AAFCO e o National Research Council. Nosso conteúdo é educativo e não substitui a orientação de um profissional."
       },
       {
-        "tag": "03 // TOTALMENTE GRATUITO",
-        "title": "100% Aberto e Independente",
-        "desc": "Não aceitamos parcerias pagas de marcas nem exigimos cadastro de cartão de crédito para visualizar as gramas das receitas."
+        "tag": "03 // TRANSPARÊNCIA",
+        "title": "Transparência",
+        "desc": "Algumas páginas contêm links de afiliados, incluindo links do Programa de Associados da Amazon. Se você comprar por meio deles, podemos receber uma pequena comissão sem custo adicional para você. Isso nunca altera nossas recomendações."
       }
     ],
     "ctaTitle": "Pronto para Calcular as Necessidades Nutricionais do Seu Cão?",
-    "ctaDesc": "Acesse nossa calculadora interativa, explore guias de alergia canina e veja nossas avaliações de marcas.",
+    "ctaDesc": "Experimente nossa calculadora interativa, explore nossos guias de alergias e leia nossos guias de alimentação canina.",
     "ctaBtn": "Iniciar Calculadora Nutricional Gratuita →"
   },
   "contact": {
@@ -3123,12 +3156,12 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "LEGAL // POLÍTICA DE PRIVACIDADE",
-    "lastUpdated": "Atualizado em: Janeiro de 2026",
+    "lastUpdated": "Atualizado em: 12 de outubro de 2026",
     "intro": "No DogFoodPlanner.com respeitamos a sua privacidade e garantimos a proteção dos seus dados. Esta política explica como as informações são tratadas.",
     "sections": [
       {
         "title": "1. Informações Que Não Coletamos",
-        "content": "Os dados de saúde do seu cão pertencem a você. O uso da nossa calculadora não exige cadastro, senhas nem cartão de crédito. Raça, peso e escolhas alimentares são processados localmente no seu próprio navegador e não são armazenados em servidores externos."
+        "content": "Os dados de saúde do seu animal pertencem a você. O uso da nossa calculadora de alimentação canina não exige cadastro, senhas nem cartão de crédito. Perfis caninos, pesos e seleções de refeição inseridos na calculadora são processados no lado do cliente no seu navegador e não são salvos em bancos de dados externos."
       },
       {
         "title": "2. Dados Técnicos Anônimos",
@@ -3136,18 +3169,22 @@ export const PAGE_TRANSLATIONS = {
       },
       {
         "title": "3. Cookies e Armazenamento Local (localStorage)",
-        "content": "Utilizamos o armazenamento local do navegador (localStorage) apenas para guardar sua preferência de idioma e manter seu plano de refeições ativo no dispositivo, evitando recalcular ao recarregar a página."
+        "content": "Usamos o localStorage para lembrar seu idioma e plano de refeições no seu dispositivo. Se você clicar em um link de afiliado, o site de terceiros (como a Amazon) poderá definir seus próprios cookies."
       },
       {
-        "title": "4. Links Externos e Fontes Científicas",
-        "content": "Nosso site faz referência a artigos científicos revisados por pares, diretrizes AAFCO/FEDIAF e bancos de dados do NRC. Não nos responsabilizamos pelas políticas de privacidade de terceiros."
+        "title": "4. Links de Terceiros",
+        "content": "Nosso site contém links de referência para pesquisas publicadas, padrões da AAFCO, bancos de dados do NRC e recursos externos. Não nos responsabilizamos pelas práticas de privacidade ou conteúdo de sites de terceiros."
       },
       {
-        "title": "5. Privacidade de Menores",
+        "title": "5. Divulgação de Afiliados",
+        "content": "O DogFoodPlanner participa do Programa de Associados da Amazon Services LLC. Como Associado da Amazon, recebemos remuneração por compras qualificadas, sem nenhum custo extra para você."
+      },
+      {
+        "title": "6. Privacidade de Menores",
         "content": "Nossos conteúdos e ferramentas destinam-se a adultos responsáveis por animais de estimação. Não coletamos intencionalmente dados de menores de 13 anos."
       },
       {
-        "title": "6. Atualizações e Contato",
+        "title": "7. Atualizações e Contato",
         "content": "Esta política pode ser atualizada periodicamente. Em caso de dúvidas, entre em contato pelo e-mail privacy@dogfoodplanner.com."
       }
     ]
@@ -3657,32 +3694,34 @@ export const PAGE_TRANSLATIONS = {
 },
   ko: {
   "about": {
-    "heroTitle": "회사 소개",
-    "heroSubtitle": "DogFoodPlanner.com의 비전, 미국 NRC 영양 기준에 맞춘 정밀 알고리즘 및 반려동물 건강 식단 연구 소개.",
-    "missionBadge": "우리의 사명 // 반려견 맞춤 영양학",
+    "heroTitle": "DogFoodPlanner 소개: 반려견 식단 관리를 더 쉽게",
+    "heroSubtitle": "DogFoodPlanner.com의 미션과 무료 반려견 사료 급여량 계산기의 작동 방식을 알아보세요.",
+    "missionBadge": "우리의 사명 // 반려견 식단 계획",
     "whyTitle": "DogFoodPlanner의 설립 취지",
-    "whyP1": "수십 년 동안 상업용 펫푸드 시장은 깜깜이 정보 속에서 소비자를 기만해 왔습니다. 200℃ 이상의 고온 압출 성형을 거치는 시중 건식 사료(키블)는 열에 약한 천연 비타민을 파괴하고, 필수 오메가 지방산을 산화시키며, 사료 포대의 최대 60%를 고혈당 탄수화물 증량제로 채웁니다.",
-    "whyP2": "반면 맞춤형 자연화식 정기구독 서비스는 단순한 살코기와 채소만으로 월 30~50만 원이라는 과도한 비용을 청구합니다. DogFoodPlanner는 이 불합리한 장벽을 허물고자 합니다. 수의 임상 영양학에서 사용하는 정밀한 대사 계산 알고리즘을 100% 무료로 공개하여, 보호자가 가정에서 저렴한 비용으로 균형 잡힌 저온 조리 화식이나 80-10-10 생식, 항산화 토핑을 직접 만들 수 있도록 돕습니다.",
-    "methodTitle": "수의학적 영양 분석 기준 및 원칙",
+    "whyP1": "DogFoodPlanner는 반려견 보호자가 식단과 급여량을 안심하고 계획할 수 있도록 개발되었습니다. 공개된 가이드라인을 연구하여 누구나 쉽게 활용할 수 있는 무료 도구와 유용한 가이드로 제공합니다.",
+    "whyP2": "",
+    "whoTitle": "운영진 소개",
+    "whoContent": "DogFoodPlanner는 반려견을 사랑하는 연구원과 전문 필진이 운영하는 독립 웹사이트입니다. 저희는 수의사가 아닙니다. 특히 강아지(퍼피), 노령견, 또는 건강 질환이 있는 반려견의 식단을 변경하기 전에는 반드시 담당 수의사와 상담하시기 바랍니다.",
+    "methodTitle": "영양 분석 방법론",
     "pillars": [
       {
-        "tag": "01 // NRC 표준 공식",
-        "title": "안정시 대사요구량 (RER)",
-        "desc": "단순한 체중 구간별 대략적 수치가 아닌 지수 함수 공식(70 × 체중kg^0.75)을 기반으로 개별 반려견의 기초 대사 에너지를 정밀 산출합니다."
+        "tag": "01 // 칼로리 추정",
+        "title": "칼로리 추정",
+        "desc": "저희 계산기는 표준 휴지기 에너지 요구량(RER) 공식(70 × 체중 kg^0.75)과 일반적인 활동 계수를 적용하여 일일 권장 칼로리를 추정합니다."
       },
       {
-        "tag": "02 // AAFCO & FEDIAF 기준",
-        "title": "생체 흡수율 높은 미량 영양소",
-        "desc": "모든 식단은 칼슘과 인의 황금 비율(1.2:1 ~ 1.4:1), EPA/DHA 지방산 및 필수 타우린 공급 기준을 엄격히 충족합니다."
+        "tag": "02 // 참고 문헌 및 기준",
+        "title": "참고 문헌 및 기준",
+        "desc": "AAFCO 및 미국 국립연구회(NRC) 등의 공개 가이드라인을 참조합니다. 제공되는 콘텐츠는 교육 목적이며 전문가의 수의학적 조언을 대신하지 않습니다."
       },
       {
-        "tag": "03 // 완전 무료 공개",
-        "title": "독립성과 객관성 유지",
-        "desc": "사료 제조사의 유료 협찬을 일절 배제하며, 레시피의 그램(g) 수치를 유료 결제 장벽 뒤에 숨기지 않습니다."
+        "tag": "03 // 투명한 운영",
+        "title": "투명한 운영",
+        "desc": "일부 페이지에는 아마존 어소시에이트를 포함한 제휴 링크가 포함되어 있습니다. 링크를 통해 구매하시면 추가 비용 없이 소정의 수수료를 지급받을 수 있으나, 이는 추천 내용에 일절 영향을 주지 않습니다."
       }
     ],
     "ctaTitle": "우리 강아지에게 필요한 정확한 영양과 칼로리를 계산해 보세요",
-    "ctaDesc": "대화형 급여량 계산기와 식이 알레르기 관리 가이드, 객관적인 사료 리뷰를 지금 확인하세요.",
+    "ctaDesc": "간편한 계산기를 사용해보고, 알레르기 케어 가이드를 확인하며, 강아지 사료 가이드를 읽어보세요.",
     "ctaBtn": "무료 영양 계산기 실행하기 →"
   },
   "contact": {
@@ -3732,31 +3771,35 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "개인정보 처리방침 // 데이터 보호 정책",
-    "lastUpdated": "최종 수정일: 2026년 1월",
+    "lastUpdated": "최종 수정일: 2026년 10월 12일",
     "intro": "DogFoodPlanner.com은 이용자의 개인정보를 소중히 여기며 관련 법령을 준수합니다. 본 방침은 웹사이트 이용 시 정보가 어떻게 취급되는지 안내합니다.",
     "sections": [
       {
         "title": "1. 수집하지 않는 개인정보",
-        "content": "반려견의 건강 데이터는 오직 보호자의 것입니다. 당사의 영양 계산기를 이용할 때 회원가입, 비밀번호 설정, 결제 카드 정보 입력이 일절 요구되지 않습니다. 입력된 체중, 연령, 식단 유형은 오직 이용자의 웹 브라우저 로컬에서만 연산되며 외부 데이터베이스에 저장되지 않습니다."
+        "content": "반려견의 건강 데이터는 보호자의 것입니다. 당사의 반려견 사료 급여량 계산기를 이용할 때 회원가입, 비밀번호 설정, 결제 카드 정보 입력이 일절 필요하지 않습니다. 계산기에 입력된 반려견 프로필, 체중, 식단 선택 정보는 웹 브라우저 로컬(클라이언트 측)에서만 처리되며 외부 데이터베이스에 저장되지 않습니다."
       },
       {
         "title": "2. 익명 기술 로그 데이터",
         "content": "웹사이트 보안 유지 및 해킹 공격 방어를 위해, CDN 서버는 통상적인 익명 기술 로그(익명화된 IP 주소, 브라우저 종류, 접속 시간)를 시스템에 임시 기록합니다."
       },
       {
-        "title": "3. 로컬 스토리지(localStorage) 사용",
-        "content": "이용자가 선택한 선호 언어 설정 및 새로고침 시 계산 결과를 유지하기 위한 목적으로만 브라우저의 로컬 저장소(localStorage)를 활용합니다."
+        "title": "3. 브라우저 쿠키 및 로컬 스토리지(localStorage)",
+        "content": "기기에서 언어 설정과 식단 플랜을 기억하기 위해 localStorage를 사용합니다. 제휴 링크를 클릭하는 경우 제3자 사이트(예: 아마존)가 자체 쿠키를 설정할 수 있습니다."
       },
       {
-        "title": "4. 외부 과학 학술지 및 참조 링크",
-        "content": "당사는 AAFCO, FEDIAF, NRC 등의 공신력 있는 외부 학술 자료 링크를 제공합니다. 외부 사이트의 개인정보 보호 정책에 대해서는 책임을 지지 않습니다."
+        "title": "4. 제3자 링크",
+        "content": "당사 웹사이트에는 발표된 연구 자료, AAFCO 기준, NRC 데이터베이스 및 외부 자료에 대한 참조 링크가 포함되어 있습니다. 당사는 제3자 웹사이트의 개인정보 보호 정책이나 콘텐츠에 대해 책임을 지지 않습니다."
       },
       {
-        "title": "5. 아동의 개인정보 보호",
+        "title": "5. 제휴 마케팅 안내",
+        "content": "DogFoodPlanner는 Amazon Services LLC Associates Program에 참여하고 있습니다. 아마존 어소시에이트로서 적격 구매를 통해 수수료를 지급받으며, 이용자에게 추가 비용이 전혀 발생하지 않습니다."
+      },
+      {
+        "title": "6. 아동의 개인정보 보호",
         "content": "당사의 서비스는 성인 반려동물 보호자를 대상으로 하며, 만 14세 미만 아동의 개인정보를 수집하지 않습니다."
       },
       {
-        "title": "6. 정책 변경 및 문의",
+        "title": "7. 정책 변경 및 문의",
         "content": "개인정보 처리방침과 관련된 문의 사항은 privacy@dogfoodplanner.com으로 연락해 주시기 바랍니다."
       }
     ]
@@ -4266,32 +4309,34 @@ export const PAGE_TRANSLATIONS = {
 },
   it: {
   "about": {
-    "heroTitle": "Chi Siamo",
-    "heroSubtitle": "Scopri DogFoodPlanner.com: la nostra missione, gli standard nutrizionali NRC e il nostro impegno per la sana alimentazione dei cani.",
-    "missionBadge": "LA NOSTRA MISSION // NUTRIZIONE CANINA",
+    "heroTitle": "Su DogFoodPlanner: Piani Pasto per Cani in Tutta Semplicità",
+    "heroSubtitle": "Scopri DogFoodPlanner.com, la nostra missione e come funziona il nostro calcolatore gratuito di pappa per cani.",
+    "missionBadge": "LA NOSTRA MISSION // PIANI PASTO PER CANI",
     "whyTitle": "Perché è Nato DogFoodPlanner",
-    "whyP1": "Per decenni il mercato industriale del pet food ha operato come una scatola nera. Le crocchette estruse a oltre 200°C distruggono vitamine naturali, ossidano gli acidi grassi essenziali omega e riempiono i sacchi con fino al 60% di amidi ad alto indice glicemico.",
-    "whyP2": "Allo stesso tempo, i servizi di cibo fresco in abbonamento chiedono oltre 300€ al mese per semplici tagli di carne e verdure. DogFoodPlanner supera questo ostacolo. Offriamo gratuitamente gli esatti algoritmi matematici affinché ogni proprietario possa preparare a casa razioni fresche cotte a vapore, diete BARF o topper nutrienti a una frazione del costo.",
+    "whyP1": "Abbiamo creato DogFoodPlanner per aiutare i proprietari di cani a pianificare pasti e porzioni con sicurezza. Analizziamo le linee guida pubbliche per trasformarle in strumenti e guide semplici e gratuiti.",
+    "whyP2": "",
+    "whoTitle": "Chi Siamo",
+    "whoContent": "DogFoodPlanner è un sito web indipendente gestito da ricercatori e scrittori amanti dei cani. Non siamo veterinari. Consulta sempre il tuo medico veterinario prima di modificare la dieta del tuo cane, soprattutto per cuccioli, cani anziani o con patologie pregresse.",
     "methodTitle": "La Nostra Metodologia Nutrizionale",
     "pillars": [
       {
-        "tag": "01 // FORMULE NRC",
-        "title": "Fabbisogno Energetico a Riposo (RER)",
-        "desc": "Calcola il consumo metabolico basale esatto in base alla massa corporea esponenziale (70 × (kg)^0.75) invece di tabelle generiche per fasce di peso."
+        "tag": "01 // STIMA DELLE CALORIE",
+        "title": "Stima delle Calorie",
+        "desc": "Il nostro calcolatore utilizza la formula standard del Fabbisogno Energetico a Riposo (70 × peso corporeo in kg^0,75) e comuni moltiplicatori di attività per stimare le calorie giornaliere."
       },
       {
-        "tag": "02 // STANDARD AAFCO E FEDIAF",
-        "title": "Micronutrienti Biodisponibili",
-        "desc": "Ogni razione bilancia rigorosamente il rapporto calcio-fosforo (da 1.2:1 a 1.4:1), gli acidi grassi EPA/DHA e la taurina essenziale."
+        "tag": "02 // FONTI DI RIFERIMENTO",
+        "title": "Fonti di Riferimento",
+        "desc": "Ci basiamo su linee guida pubblicate da fonti autorevoli come AAFCO e il National Research Council. I nostri contenuti hanno scopo educativo e non sostituiscono il parere di un professionista."
       },
       {
-        "tag": "03 // NESSUN COSTO NASCOSTO",
-        "title": "100% Libero e Indipendente",
-        "desc": "Non accettiamo sponsorizzazioni a pagamento di marchi e non nascondiamo i grammi delle ricette dietro abbonamenti con carta di credito."
+        "tag": "03 // TRASPARENZA",
+        "title": "Trasparenza",
+        "desc": "Alcune pagine contengono link di affiliazione, compresi i link Amazon Associates. Se effettui un acquisto tramite essi potremmo ricevere una piccola commissione senza alcun costo aggiuntivo per te. Questo non influenza in alcun modo i nostri consigli."
       }
     ],
     "ctaTitle": "Pronto a Calcolare i Fabbisogni del Tuo Cane?",
-    "ctaDesc": "Usa il nostro calcolatore interattivo, consulta le guide sulle allergie ed esplora le nostre recensioni indipendenti.",
+    "ctaDesc": "Prova il nostro calcolatore interattivo, consulta le guide sulle allergie canine e leggi le nostre guide sul cibo per cani.",
     "ctaBtn": "Avvia il Calcolatore Gratuito →"
   },
   "contact": {
@@ -4341,12 +4386,12 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "INFORMATIVA SULLA PRIVACY // PROTEZIONE DATI",
-    "lastUpdated": "Aggiornato a: Gennaio 2026",
+    "lastUpdated": "Aggiornato al: 12 ottobre 2026",
     "intro": "Su DogFoodPlanner.com rispettiamo la tua privacy e proteggiamo i tuoi dati personali. Questa informativa descrive come gestiamo le informazioni.",
     "sections": [
       {
         "title": "1. Informazioni che non raccogliamo",
-        "content": "I dati di salute del tuo cane appartengono a te. Non richiediamo alcuna registrazione, password né carta di credito per utilizzare il nostro calcolatore. Peso, razza e preferenze alimentari sono elaborati localmente nel tuo browser e non vengono salvati su server esterni."
+        "content": "I dati sulla salute del tuo cane appartengono a te. Non richiediamo alcuna registrazione, password né carta di credito per utilizzare il nostro calcolatore di cibo per cani. I profili dei cani, i pesi corporei e le selezioni dei pasti inseriti nel calcolatore vengono elaborati lato client nel tuo browser e non vengono salvati in database esterni."
       },
       {
         "title": "2. Dati tecnici anonimi di navigazione",
@@ -4354,18 +4399,22 @@ export const PAGE_TRANSLATIONS = {
       },
       {
         "title": "3. Cookie e memoria locale (localStorage)",
-        "content": "Utilizziamo la memoria locale del browser (localStorage) esclusivamente per ricordare la lingua scelta e conservare il piano alimentare attivo sul dispositivo, evitando di dover ricalcolare i dati a ogni aggiornamento."
+        "content": "Utilizziamo il localStorage per ricordare la lingua e il piano pasti sul tuo dispositivo. Se fai clic su un link di affiliazione, il sito di terze parti (come Amazon) potrebbe impostare i propri cookie."
       },
       {
-        "title": "4. Link esterni e fonti scientifiche",
-        "content": "Il nostro portale rimanda a studi scientifici peer-reviewed, standard AAFCO/FEDIAF e banche dati del NRC. Non siamo responsabili delle pratiche di riservatezza dei siti terzi."
+        "title": "4. Link di Terze Parti",
+        "content": "Il nostro sito contiene link di riferimento a ricerche pubblicate, standard AAFCO, database del NRC e risorse esterne. Non siamo responsabili delle pratiche sulla privacy o dei contenuti dei siti web di terze parti."
       },
       {
-        "title": "5. Protezione dei minori",
+        "title": "5. Informativa sulle Affiliazioni",
+        "content": "DogFoodPlanner partecipa al Programma Affiliazione Amazon Services LLC. In qualità di Affiliato Amazon, riceviamo un guadagno dagli acquisti idonei, senza alcun costo aggiuntivo per te."
+      },
+      {
+        "title": "6. Protezione dei Minori",
         "content": "I nostri contenuti e strumenti sono rivolti a persone adulte. Non raccogliamo consapevolmente informazioni di minori di 13 anni."
       },
       {
-        "title": "6. Aggiornamenti e contatti",
+        "title": "7. Aggiornamenti e Contatti",
         "content": "Questa policy può essere periodicamente aggiornata. Per ogni richiesta, scrivi a privacy@dogfoodplanner.com."
       }
     ]
