@@ -111,7 +111,7 @@ export const FEEDING_STYLES_SECTION_I18N: Record<Lang, FeedingStylesSectionI18n>
 export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
   en: {
     badge: 'FRESH VS. RAW VS. KIBBLE',
-    reviewedBy: 'Reviewed by: Veterinary Canine Nutritionist',
+    reviewedBy: 'DogFoodPlanner Editorial Team',
     strengths: 'Strengths',
     tradeoffs: 'Tradeoffs',
     fullBreakdown: 'Full Breakdown',
@@ -124,7 +124,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
   },
   es: {
     badge: 'FRESCA VS. CRUDA VS. PIENSO',
-    reviewedBy: 'Revisado por: Nutricionista Canino Veterinario',
+    reviewedBy: 'DogFoodPlanner Editorial Team',
     strengths: 'Puntos Fuertes',
     tradeoffs: 'Aspectos a Considerar',
     fullBreakdown: 'Análisis Completo',
@@ -137,7 +137,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
   },
   ja: {
     badge: 'フレッシュ VS. 生食 VS. ドライフード',
-    reviewedBy: '監修：獣医犬栄養士',
+    reviewedBy: 'DogFoodPlanner Editorial Team',
     strengths: 'メリット・強み',
     tradeoffs: '注意点・デメリット',
     fullBreakdown: '詳細解説',
@@ -150,7 +150,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
   },
   fr: {
     badge: 'FRAIS VS. CRU VS. CROQUETTES',
-    reviewedBy: 'Examiné par : Nutritionniste Canin Vétérinaire',
+    reviewedBy: 'DogFoodPlanner Editorial Team',
     strengths: 'Points Forts',
     tradeoffs: 'Inconvénients & Défis',
     fullBreakdown: 'Analyse Complète',
@@ -163,7 +163,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
   },
   de: {
     badge: 'FRISCH VS. ROH VS. TROCKENFUTTER',
-    reviewedBy: 'Geprüft von: Tierärztlicher Ernährungsberater',
+    reviewedBy: 'DogFoodPlanner Editorial Team',
     strengths: 'Stärken & Vorteile',
     tradeoffs: 'Nachteile & Kompromisse',
     fullBreakdown: 'Ausführliche Analyse',
@@ -176,7 +176,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
   },
   pt: {
     badge: 'NATURAL VS. CRUA VS. RAÇÃO',
-    reviewedBy: 'Revisado por: Nutricionista Canino Veterinário',
+    reviewedBy: 'DogFoodPlanner Editorial Team',
     strengths: 'Pontos Fortes',
     tradeoffs: 'Compromissos & Desafios',
     fullBreakdown: 'Análise Completa',
@@ -189,7 +189,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
   },
   ko: {
     badge: '화식 VS. 생식 VS. 건식사료',
-    reviewedBy: '검수: 수의 개 영양학 전문가',
+    reviewedBy: 'DogFoodPlanner Editorial Team',
     strengths: '핵심 장점',
     tradeoffs: '고려사항 및 단점',
     fullBreakdown: '심층 분석',
@@ -202,7 +202,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
   },
   it: {
     badge: 'FRESCO VS. CRUDO VS. CROCCHETTE',
-    reviewedBy: 'Revisionato da: Nutrizionista Veterinario Canino',
+    reviewedBy: 'DogFoodPlanner Editorial Team',
     strengths: 'Punti di Forza',
     tradeoffs: 'Compromessi',
     fullBreakdown: 'Analisi Completa',

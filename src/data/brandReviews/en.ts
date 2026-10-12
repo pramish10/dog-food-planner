@@ -45,7 +45,7 @@ export const enBrandReviews: Record<BrandReviewSlug, BrandReview> = {
     deepDive: [
       'Nutritional Architecture & LifeSource Bits: Unlike conventional dry pet foods that subject all nutrients to high-heat extrusion (often exceeding 200°C), Blue Buffalo separates its vitamin and antioxidant package into cold-formed LifeSource Bits. This dual-component technology preserves heat-labile vitamins (such as Vitamin C, Vitamin E, and B-complex vitamins) and active bioflavonoids that normally degrade in standard processing.',
       'The Carbohydrate & Legume Balance: While Wilderness formulas deliver a robust 34-38% protein fraction, laboratory proximate analysis indicates total carbohydrate levels remain between 42% and 48%. In grain-free recipes, the brand utilizes split peas, pea protein, and tapioca starch. While safe for healthy canines, dogs prone to pancreatitis or metabolic insulin resistance should be monitored closely.',
-      'Hydration & Clinical Management: Extruded dry kibble contains only 8-10% moisture, placing an insidious strain on canine kidneys over years of exclusive feeding. Blue Buffalo provides solid baseline nutrition, but veterinarians recommend adding warm bone broth, warm water, or a 20% fresh whole-food topper to prevent concentrated urine and support renal filtration.',
+      'Hydration & Moisture Management: Extruded dry kibble contains only 8-10% moisture, placing an insidious strain on canine kidneys over years of exclusive feeding. Blue Buffalo provides solid baseline nutrition, but veterinarians recommend adding warm bone broth, warm water, or a 20% fresh whole-food topper to prevent concentrated urine and support renal filtration.',
     ],
     ingredientPillars: [
       {
@@ -236,7 +236,7 @@ export const enBrandReviews: Record<BrandReviewSlug, BrandReview> = {
     deepDive: [
       'Contract Manufacturing & Quality Assurance: Because Pure Balance is a private-label store brand, production is contracted to established third-party manufacturing plants (predominantly Ainsworth Pet Nutrition / Post Holdings). Despite its budget identity, the brand adheres to stringent AAFCO nutrient standards and has maintained an impressive safety record over more than a decade.',
       'Ingredient Profile vs Specialty Competitors: A direct comparison of Pure Balance Grain-Free Salmon & Pea against specialty pet-store brands reveals nearly identical primary ingredient decks: real deboned salmon followed by salmon meal and garbanzo beans. This makes it an outstanding choice for families wanting clean ingredients without pet boutique markups.',
-      'Clinical Recommendations on Carbohydrates: As with most commercial kibbles priced under $2.00 per pound, the carbohydrate percentage is significant (46-50%). For young, active dogs, this provides ample clean energy. For senior or overweight canines, careful portion management using a veterinary gram scale is strongly recommended.',
+      'Nutritional Recommendations on Carbohydrates: As with most commercial kibbles priced under $2.00 per pound, the carbohydrate percentage is significant (46-50%). For young, active dogs, this provides ample clean energy. For senior or overweight canines, careful portion management using a kitchen gram scale is strongly recommended.',
     ],
     ingredientPillars: [
       {
@@ -327,7 +327,7 @@ export const enBrandReviews: Record<BrandReviewSlug, BrandReview> = {
     overview:
       'Ollie was founded in 2016 to revolutionize canine longevity by replacing over-processed dry kibble with real, human-grade food. Formulated by board-certified veterinary nutritionists (ACVN), Ollie prepares gently cooked recipes in USDA-inspected facilities, delivering precision pre-portioned packs customized to each dog’s exact metabolic profile.',
     deepDive: [
-      'The Science of Gentle Cooking vs Extrusion: Extruded dry pet food is subjected to extreme temperatures (150°C-200°C) and violent mechanical shear forces, generating harmful advanced glycation end-products (AGEs) and denaturing fragile proteins. In contrast, Ollie gently cooks whole muscle meats and fresh produce at low temperatures. Clinical trials demonstrate that gently cooked human-grade diets exhibit up to 40% higher protein digestibility and significantly improved nutrient assimilation.',
+      'The Science of Gentle Cooking vs Extrusion: Extruded dry pet food is subjected to extreme temperatures (150°C-200°C) and violent mechanical shear forces, generating harmful advanced glycation end-products (AGEs) and denaturing fragile proteins. In contrast, Ollie gently cooks whole muscle meats and fresh produce at low temperatures. Feeding trials demonstrate that gently cooked human-grade diets exhibit up to 40% higher protein digestibility and significantly improved nutrient assimilation.',
       'Renal & Bladder Protection via Natural Hydration: Canine physiology evolved to derive over 70% of total hydration directly from food. Feeding dry kibble (8-10% water) leaves dogs in a chronic state of low-grade dehydration, elevating urine concentration and accelerating renal decline. Ollie delivers 72% biological moisture, promoting kidney filtration and helping prevent urinary crystals.',
       'Personalized Portioning & Longevity: Obesity is the leading preventable cause of premature death in domestic dogs. Ollie eliminates guesswork by packaging custom-portioned packs calibrated to each dog’s exact Resting Energy Requirement (RER) and Maintenance Energy Requirement (MER), keeping body condition scores (BCS) at an ideal 4-5 out of 9.',
     ],
@@ -345,7 +345,7 @@ export const enBrandReviews: Record<BrandReviewSlug, BrandReview> = {
       {
         title: '3. Microbiome & Digestibility',
         score: '9.7 / 10',
-        explanation: 'Clinical studies demonstrate higher gut bacterial diversity, reduced stool volume, and optimal gastrointestinal absorption.',
+        explanation: 'Feeding trials demonstrate higher gut bacterial diversity, reduced stool volume, and optimal gastrointestinal absorption.',
       },
       {
         title: '4. Manufacturing & Safety',
@@ -374,7 +374,7 @@ export const enBrandReviews: Record<BrandReviewSlug, BrandReview> = {
       },
     ],
     veterinaryVerdict:
-      'Ollie is the gold standard in modern canine nutrition. The clinical advantages of 100% human-grade, gently cooked whole food over industrial dry kibble in terms of digestibility, coat quality, and organ longevity are undeniable.',
+      'Ollie is the gold standard in modern canine nutrition. The nutritional advantages of 100% human-grade, gently cooked whole food over industrial dry kibble in terms of digestibility, coat quality, and organ longevity are undeniable.',
     feedingRecommendation:
       'If a 100% fresh Ollie subscription exceeds your monthly household budget, we strongly recommend a 50/50 hybrid plan: feed half high-grade kibble and top with 50% Ollie. Even a 25% fresh whole-food topper dramatically reduces cellular inflammation and revitalizes gut microbiome health.',
     affiliateProductKeys: [

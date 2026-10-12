@@ -358,7 +358,7 @@ function getHealthAdvice(healthFocus: string, ageStage: string, weightKg: number
     'Joints & Mobility Support': {
       title: 'Joint & Mobility Nutrition',
       tips: [
-        `Add ${salmonOilDose} wild salmon oil daily — EPA/DHA omega-3s are clinically proven to reduce canine joint inflammation within 4–6 weeks.`,
+        `Add ${salmonOilDose} wild salmon oil daily — EPA/DHA omega-3s are shown in studies to help reduce canine joint inflammation within 4–6 weeks.`,
         `Add ${brothDose} slow-simmered bone broth (no onion/garlic) 3–4x per week — natural source of type II collagen, glucosamine, and chondroitin.`,
         'Keep weight at the lower end of the healthy range — every extra 1 kg adds 4× the pressure on hip and knee joints.',
         'Green-lipped mussel powder (GLM) is the most bioavailable natural source of glucosamine and chondroitin — more effective than synthetic supplements.',

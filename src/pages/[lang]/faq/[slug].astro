@@ -21,7 +21,7 @@ const FAQ_PRODUCTS: Record<string, FaqProduct> = {
   'is-homemade-dog-food-healthy': { label: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement', note: 'The calcium supplement referenced above — prevents the bone demineralization risk of unsupplemented homemade diets.', url: 'https://amzn.to/4haNVWy' },
   'raw-food-diet-for-dogs': { label: "Stella & Chewy's Freeze-Dried Raw Dinner Patties – Variety Pack (5 Proteins)", note: 'HPP pathogen-controlled freeze-dried raw — the safest way to start BARF without sourcing and handling raw meat yourself.', url: 'https://amzn.to/4gCgdJp' },
   'what-is-the-80-10-10-rule-for-dog-food': { label: "Stella & Chewy's Freeze-Dried Raw Beef Meal Mixers – 95% Grass-Fed Beef, Organs & Bone, 1oz", note: 'Contains the muscle meat, organ, and raw bone ratio the 80/10/10 rule describes — use as a complete meal or topper.', url: 'https://amzn.to/4gyO85G' },
-  'what-is-the-best-dog-food-for-allergies': { label: 'Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb', note: 'Vet-grade hydrolyzed protein — the elimination diet option described in step 2 of the protocol above.', url: 'https://amzn.to/4ykV9Nk' },
+  'what-is-the-best-dog-food-for-allergies': { label: 'Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb', note: 'Hydrolyzed protein formula — the elimination diet option described in step 2 of the protocol above.', url: 'https://amzn.to/4ykV9Nk' },
   'why-is-my-dog-not-eating-his-food-but-will-eat-treats': { label: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz', note: 'Warm bone broth over kibble is the first step the answer recommends — adds aroma and moisture without rewarding refusal.', url: 'https://amzn.to/4zSd7Zb' },
   'what-is-the-best-dry-dog-food': { label: 'ORIJEN Grain-Free WHOLEPREY Dry Dog Food Original Recipe, 23.5lb', note: 'The top-rated traceable kibble named in the answer — 85%+ animal inclusions, baked not extruded, no rendered by-products.', url: 'https://amzn.to/4xF5aFr' },
   'what-is-the-best-dog-food-to-feed-your-dog': { label: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz', note: 'The EPA/DHA omega-3 oil referenced in the Hybrid Bowl formula above — add 1 tsp per 20 lbs of body weight daily.', url: 'https://amzn.to/46HCJdW' },
@@ -108,7 +108,7 @@ const articleJsonLd = {
   "description": faq.shortAnswer,
   "author": {
     "@type": "Organization",
-    "name": "Dog Food Planner Nutrition Team",
+    "name": "Dog Food Planner Editorial Team",
     "url": "https://dogfoodplanner.com"
   },
   "publisher": {
@@ -156,7 +156,7 @@ const articleJsonLd = {
           {faq.question}
         </h1>
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8f5e35] dark:text-[#c4956a] font-mono">
-          <span>🩺 {p.reviewedBy}</span>
+          <span>{p.reviewedBy}</span>
           <span>•</span>
           <span>📅 {p.updated}</span>
         </div>

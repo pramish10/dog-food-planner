@@ -36,18 +36,18 @@ const brandProducts = (item.affiliateProductKeys || [])
   .map((k) => AFFILIATE_PRODUCTS[k])
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
-const pageTitle = `${item.name} Dog Food Review & Clinical Analysis 2026 | DogFoodPlanner.com`;
-const pageDescription = `${item.overview.slice(0, 150)}... Unbiased veterinary review, recall history, and macronutrient profile for ${item.name}.`;
+const pageTitle = `${item.name} Dog Food Review & Nutrition Analysis 2026 | DogFoodPlanner.com`;
+const pageDescription = `${item.overview.slice(0, 150)}... Unbiased nutritional review, recall history, and macronutrient profile for ${item.name}.`;
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'MedicalWebPage',
+  '@type': 'Article',
   headline: `${item.name} Dog Food Review & Quality Assessment`,
   description: pageDescription,
-  name: `${item.name} Clinical Brand Review`,
+  name: `${item.name} Brand Review`,
   author: {
     '@type': 'Organization',
-    name: 'Dog Food Planner Veterinary Nutrition Team',
+    name: 'Dog Food Planner Editorial Team',
     url: 'https://dogfoodplanner.com',
   },
   publisher: {

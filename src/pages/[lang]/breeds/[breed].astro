@@ -62,14 +62,14 @@ const titleMap: Record<Lang, (n: string) => string> = {
 };
 
 const descMap: Record<Lang, (n: string, c: number, w0: number, w1: number) => string> = {
-  en: (n, c, w0, w1) => `Veterinary nutrition guide for ${n}s. Average weight (${w0}-${w1} lbs), daily calories (~${c} kcal), portion cups, and health predispositions.`,
-  es: (n, c, w0, w1) => `Guía veterinaria de alimentación para ${n}. Peso medio (${w0}-${w1} lbs), calorías diarias (~${c} kcal) y porciones de comida recomendadas.`,
-  ja: (n, c, w0, w1) => `${n}の獣医師監修フードガイド。平均体重（${w0}〜${w1}ポンド）、推定カロリー（約${c} kcal）、適正な給餌量。`,
-  fr: (n, c, w0, w1) => `Guide nutritionnel vétérinaire pour ${n}. Poids moyen (${w0}-${w1} lbs), calories quotidiennes (~${c} kcal) et portions recommandées.`,
-  de: (n, c, w0, w1) => `Veterinärmedizinischer Futter-Ratgeber für ${n}. Durchschnittsgewicht (${w0}-${w1} lbs), Tageskalorien (~${c} kcal) und Futterbedarf.`,
+  en: (n, c, w0, w1) => `Nutrition and feeding guide for ${n}s. Average weight (${w0}-${w1} lbs), daily calories (~${c} kcal), portion cups, and health predispositions.`,
+  es: (n, c, w0, w1) => `Guía de alimentación y nutrición para ${n}. Peso medio (${w0}-${w1} lbs), calorías diarias (~${c} kcal) y porciones de comida recomendadas.`,
+  ja: (n, c, w0, w1) => `${n}の食事・フードガイド。平均体重（${w0}〜${w1}ポンド）、推定カロリー（約${c} kcal）、適正な給餌量。`,
+  fr: (n, c, w0, w1) => `Guide nutritionnel et alimentaire pour ${n}. Poids moyen (${w0}-${w1} lbs), calories quotidiennes (~${c} kcal) et portions recommandées.`,
+  de: (n, c, w0, w1) => `Ernährungs- und Futter-Ratgeber für ${n}. Durchschnittsgewicht (${w0}-${w1} lbs), Tageskalorien (~${c} kcal) und Futterbedarf.`,
   pt: (n, c, w0, w1) => `Guia nutricional para ${n}. Peso médio (${w0}-${w1} lbs), calorias diárias (~${c} kcal) e porções recomendadas.`,
-  ko: (n, c, w0, w1) => `${n} 수의 영양 가이드. 평균 체중 (${w0}-${w1} lbs), 일일 권장 칼로리 (~${c} kcal) 및 사료 급여량.`,
-  it: (n, c, w0, w1) => `Guida nutrizionale veterinaria per ${n}. Peso medio (${w0}-${w1} lbs), calorie giornaliere (~${c} kcal) e dosi consigliate.`,
+  ko: (n, c, w0, w1) => `${n} 맞춤 영양 가이드. 평균 체중 (${w0}-${w1} lbs), 일일 권장 칼로리 (~${c} kcal) 및 사료 급여량.`,
+  it: (n, c, w0, w1) => `Guida nutrizionale e alimentare per ${n}. Peso medio (${w0}-${w1} lbs), calorie giornaliere (~${c} kcal) e dosi consigliate.`,
 };
 
 const pageTitle = (titleMap[lang] || titleMap.en)(breed.name);

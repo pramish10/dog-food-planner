@@ -70,7 +70,7 @@ const FAQ_PRODUCTS: Record<string, FaqProduct> = {
   // "Best dog food for allergies?" → vet hydrolyzed diet is the clinical gold standard named in the answer
   'what-is-the-best-dog-food-for-allergies': {
     label: 'Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb',
-    note: 'Vet-grade hydrolyzed protein — the elimination diet option described in step 2 of the protocol above.',
+    note: 'Hydrolyzed protein formula — the elimination diet option described in step 2 of the protocol above.',
     url: 'https://amzn.to/4ykV9Nk',
   },
 
@@ -317,7 +317,7 @@ const FAQ_PRODUCTS: Record<string, FaqProduct> = {
   // "What is the best dog food for skin and coat?" → salmon oil is the #1 answer
   'what-is-the-best-dog-food-for-skin-and-coat': {
     label: 'Nordic Naturals Omega-3 Pet, Unflavored – 16oz (Pack of 2)',
-    note: 'Pharmaceutical-grade EPA/DHA omega-3 — the most clinically effective supplement for skin barrier and coat shine.',
+    note: 'Pharmaceutical-grade EPA/DHA omega-3 — a highly effective supplement for skin barrier and coat shine.',
     url: 'https://amzn.to/4i9KfW3',
   },
 
@@ -478,7 +478,7 @@ const FAQ_PRODUCTS: Record<string, FaqProduct> = {
   // "What is the best dog food for arthritis?" → green-lipped mussel + omega-3 is the answer
   'what-is-the-best-dog-food-for-arthritis': {
     label: 'Super Snouts Joint Power Supplement Powder – 100% Green Lipped Mussels, 5.29oz',
-    note: '100% green-lipped mussel — the most clinically studied natural anti-inflammatory for canine arthritis.',
+    note: '100% green-lipped mussel — a widely researched natural anti-inflammatory for canine joint support.',
     url: 'https://amzn.to/4d082US',
   },
 
@@ -633,7 +633,7 @@ const articleJsonLd = {
 ---
 
 <Layout 
-  title={`${faq.question} | Veterinary Canine Answer`}
+  title={`${faq.question} | Dog Food Planner`}
   description={faq.shortAnswer}
   canonicalUrl={`https://dogfoodplanner.com/faq/${faq.slug}`}
 >
@@ -665,7 +665,7 @@ const articleJsonLd = {
           {faq.question}
         </h1>
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8f5e35] dark:text-[#c4956a] font-mono">
-          <span>🩺 Reviewed by: <strong>Veterinary Canine Nutritionist</strong></span>
+          <span>Reviewed by: <strong>DogFoodPlanner Editorial Team</strong></span>
           <span>•</span>
           <span>📅 Updated: {new Date().getFullYear()}</span>
         </div>
@@ -702,7 +702,7 @@ const articleJsonLd = {
         <!-- In-Depth Clinical Explanation -->
         <article class="hairline-card p-6 sm:p-8 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] mb-10 prose prose-neutral dark:prose-invert max-w-none text-xs sm:text-sm text-[#4d4d4d] dark:text-[#c4956a] leading-relaxed space-y-4 shadow-xs">
           <h2 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] border-b border-[#f0d5a8] dark:border-[#3a2510] pb-3 mb-4">
-            Detailed Nutritional & Clinical Analysis
+            Detailed Nutritional Analysis
           </h2>
           <div class="space-y-4 text-[#4d4d4d] dark:text-[#c4956a]" set:html={faq.fullAnswerHtml} />
 

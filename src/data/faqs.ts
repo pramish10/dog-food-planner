@@ -40,7 +40,7 @@ export const FAQS_DATA: FaqItem[] = [
       <ul>
         <li><strong>Pros:</strong> Real deboned meat is typically the first ingredient (e.g., real chicken, lamb, or salmon), and their recipes contain no corn, wheat, soy, or artificial preservatives. Their proprietary "LifeSource Bits" provide cold-formed antioxidants and vitamins.</li>
         <li><strong>Cons:</strong> Like most commercial extruded dry kibbles, carbohydrate levels hover between 42% and 52% of the recipe to allow the kibble pieces to hold form during high-heat manufacturing. They have also had several past FDA recalls regarding moisture, mold, and elevated Vitamin D levels.</li>
-        <li><strong>Veterinary Verdict:</strong> Blue Buffalo Wilderness and Basics (limited ingredient) lines provide solid commercial baseline nutrition, but incorporating 20-30% fresh, gently cooked whole foods or transitioning to human-grade meal recipes significantly improves bioavailable hydration and micronutrient density.</li>
+        <li><strong>Nutrition Verdict:</strong> Blue Buffalo Wilderness and Basics (limited ingredient) lines provide solid commercial baseline nutrition, but incorporating 20-30% fresh, gently cooked whole foods or transitioning to human-grade meal recipes significantly improves bioavailable hydration and micronutrient density.</li>
       </ul>
     `,
     tags: ['blue buffalo', 'brand review', 'kibble', 'recalls'],
@@ -89,7 +89,7 @@ export const FAQS_DATA: FaqItem[] = [
     category: 'Feeding Math & Portions',
     shortAnswer: 'An average adult dog requires 2% to 3% of their ideal body weight in fresh/raw food daily, or 25 to 30 calories per pound of body weight. The exact portion is calculated using their Resting Energy Requirement: RER = 70 × (Body Weight in kg)^0.75.',
     fullAnswerHtml: `
-      <p>Feeding guidelines printed on commercial bags are generic averages and frequently overestimate portion sizes by 20% to 30%, causing canine obesity. Clinical veterinary nutrition uses metabolic math:</p>
+      <p>Feeding guidelines printed on commercial bags are generic averages and frequently overestimate portion sizes by 20% to 30%, causing canine obesity. Standard canine nutrition uses metabolic math:</p>
       <ul>
         <li><strong>Step 1: Calculate Resting Energy Requirement (RER):</strong><br>
         <code>RER (kcal/day) = 70 × (Weight in kg)<sup>0.75</sup></code></li>
@@ -206,7 +206,7 @@ export const FAQS_DATA: FaqItem[] = [
     category: 'Ingredients & Safety',
     shortAnswer: 'Chicken meal is dehydrated, rendered chicken meat and clean tissue cooked at high temperatures to remove water and fat, creating a concentrated protein powder containing approximately 65% protein compared to 18-20% in raw whole chicken.',
     fullAnswerHtml: `
-      <p>Pet parents often wonder whether <strong>chicken meal</strong> is a quality ingredient or a cheap filler. Here is the veterinary breakdown:</p>
+      <p>Pet parents often wonder whether <strong>chicken meal</strong> is a quality ingredient or a cheap filler. Here is the nutritional breakdown:</p>
       <ul>
         <li><strong>How It Is Made:</strong> Whole chicken contains roughly 70% water and 18% protein. When rendered and dehydrated into "chicken meal," the moisture is removed, resulting in a shelf-stable dry powder with roughly 65% protein and 12% fat.</li>
         <li><strong>Named Meal vs. Generic By-Product Meal:</strong> A specifically named meal like <em>Chicken Meal</em> or <em>Lamb Meal</em> is composed of clean flesh and skin with or without bone. This is vastly superior to vague "Meat Meal" or "Poultry By-Product Meal" (which can include heads, feet, and entrails).</li>
@@ -282,7 +282,7 @@ export const FAQS_DATA: FaqItem[] = [
     category: 'Diet & Nutrition',
     shortAnswer: 'The best daily food is a fresh, whole-food diet or a high-quality kibble enhanced with fresh toppers (eggs, leafy greens, pumpkin, salmon oil) formulated for your dog\'s exact life stage and caloric requirement.',
     fullAnswerHtml: `
-      <p>Feeding your dog daily comes down to bio-availability, moisture, and safety. Rather than searching for an elusive single bag, the most veterinary-recommended daily routine is <strong>The Hybrid Whole-Food Bowl</strong>:</p>
+      <p>Feeding your dog daily comes down to bio-availability, moisture, and safety. Rather than searching for an elusive single bag, a widely recommended daily routine is <strong>The Hybrid Whole-Food Bowl</strong>:</p>
       <ul>
         <li><strong>Base (70%):</strong> High-grade dry kibble or gently cooked human-grade meat.</li>
         <li><strong>Moisture & Hydration:</strong> Unsalted bone broth or warm filtered water.</li>
@@ -298,7 +298,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'whats-the-best-dog-food-brand',
     question: 'What is the best dog food brand?',
     category: 'Brand Reviews & Safety',
-    shortAnswer: 'Top tier dog food brands include Open Farm, The Farmer\'s Dog, Ollie, Orijen, Stella & Chewy\'s, and JustFoodForDogs, all known for transparent ethical sourcing, human-grade ingredients, and veterinary formulation testing.',
+    shortAnswer: 'Top tier dog food brands include Open Farm, The Farmer\'s Dog, Ollie, Orijen, Stella & Chewy\'s, and JustFoodForDogs, all known for transparent ethical sourcing, human-grade ingredients, and balanced nutrition formulation.',
     fullAnswerHtml: `
       <p>Leading dog food brands in 2026 ranked by processing quality and ingredient integrity:</p>
       <ul>
@@ -316,7 +316,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'what-is-the-1-best-dog-food',
     question: 'What is the #1 best dog food in the world?',
     category: 'Diet & Nutrition',
-    shortAnswer: 'By veterinary clinical consensus, the #1 dog food is freshly prepared, gently cooked, human-grade whole food formulated to NRC/AAFCO complete nutrient standards with real meats, organs, vegetables, and natural calcium balancing.',
+    shortAnswer: 'By canine nutrition standards, the #1 dog food is freshly prepared, gently cooked, human-grade whole food formulated to NRC/AAFCO complete nutrient standards with real meats, organs, vegetables, and natural calcium balancing.',
     fullAnswerHtml: `
       <p>When evaluated across digestibility, organ longevity, coat condition, and metabolic health, <strong>gently cooked human-grade fresh food</strong> ranks #1 over conventional dry kibble.</p>
       <p>A landmark 5-year European canine longevity study showed dogs fed natural, human-grade whole food lived an average of <strong>32 months (nearly 3 years) longer</strong> than dogs fed ultra-processed industrial kibbles. Fresh diets preserve biological hydration, maintain kidney function, and eliminate chemical preservatives and advanced glycation end-products (AGEs).</p>
@@ -570,7 +570,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'is-2-meals-a-day-enough-for-a-dog',
     question: 'Is 2 meals a day enough for a dog?',
     category: 'Feeding Math & Portions',
-    shortAnswer: 'Yes, 2 meals a day is the veterinary gold standard for almost all adult dogs. It prevents gastric acid buildup, maintains steady energy, and significantly lowers the risk of bloat (GDV) compared to large single-meal feeding.',
+    shortAnswer: 'Yes, 2 meals a day is the standard feeding schedule for almost all adult dogs. It prevents gastric acid buildup, maintains steady energy, and significantly lowers the risk of bloat (GDV) compared to large single-meal feeding.',
     fullAnswerHtml: `
       <p>Feeding your adult dog twice a day (morning and evening) offers key biological advantages over once-a-day feeding:</p>
       <ul>
@@ -604,7 +604,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'what-is-the-7-7-7-rule-for-dogs',
     question: 'What is the 7-7-7 rule for dogs (and 7-Day Transition)?',
     category: 'Health & Allergies',
-    shortAnswer: 'The 7-7-7 rule (or 3-3-3 rule) describes dog adoption decompression milestones, while in nutrition, the 7-Day Rule is the veterinary protocol for transitioning a dog to new food safely (25% day 1-2, 50% day 3-4, 75% day 5-6, 100% day 7) without diarrhea.',
+    shortAnswer: 'The 7-7-7 rule (or 3-3-3 rule) describes dog adoption decompression milestones, while in nutrition, the 7-Day Rule is the standard protocol for transitioning a dog to new food safely (25% day 1-2, 50% day 3-4, 75% day 5-6, 100% day 7) without diarrhea.',
     fullAnswerHtml: `
       <p>In canine care, the "7 Rule" represents two foundational concepts:</p>
       <h4>1. The 7-Day Dietary Transition Protocol:</h4>
@@ -626,7 +626,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'what-are-the-top-5-healthiest-dog-food',
     question: 'What are the top 5 healthiest dog foods?',
     category: 'Brand Reviews & Safety',
-    shortAnswer: 'The top 5 healthiest dog foods in 2026 are: 1) Veterinary-formulated homemade fresh food, 2) The Farmer\'s Dog / JustFoodForDogs fresh meals, 3) Stella & Chewy\'s Freeze-Dried Raw, 4) Open Farm RawMix / Gently Cooked, and 5) Orijen High-Protein Kibble.',
+    shortAnswer: 'The top 5 healthiest dog foods in 2026 are: 1) Balanced homemade fresh food, 2) The Farmer\'s Dog / JustFoodForDogs fresh meals, 3) Stella & Chewy\'s Freeze-Dried Raw, 4) Open Farm RawMix / Gently Cooked, and 5) Orijen High-Protein Kibble.',
     fullAnswerHtml: `
       <p>Ranked by human-grade sourcing, biological digestibility, and minimal heat processing:</p>
       <ol>
@@ -776,7 +776,7 @@ export const FAQS_DATA: FaqItem[] = [
     category: 'Diet & Nutrition',
     shortAnswer: 'Yes, dogs can survive on complete and balanced dry food alone, but they thrive significantly better when dry kibble is rehydrated with water or bone broth and supplemented with fresh foods to prevent chronic sub-clinical dehydration.',
     fullAnswerHtml: `
-      <p>While millions of dogs live full lifespans on commercial dry kibble alone, veterinary nutritionists highlight key physiological realities:</p>
+      <p>While millions of dogs live full lifespans on commercial dry kibble alone, canine nutritionists highlight key physiological realities:</p>
       <ul>
         <li><strong>Chronic Dehydration Burden:</strong> Dry kibble contains only 8-10% water. In the wild, canines consume prey containing 70% moisture. Dogs rarely drink enough water from their bowls to fully compensate for dry food, putting continuous mild stress on kidneys and bladder.</li>
         <li><strong>High Carbohydrate Proportion:</strong> Most dry kibbles require 40% to 55% starch (corn, wheat, potato, peas) to pass through extrusion machinery, which can promote dental plaque and insulin spikes.</li>
@@ -793,7 +793,7 @@ export const FAQS_DATA: FaqItem[] = [
     category: 'Glossary & Terms',
     shortAnswer: 'Fixed (spayed or neutered) dogs burn about 10% fewer resting calories due to the reduction of gonadal reproductive hormones. Knowing your dog\'s reproductive status allows us to adjust daily calorie and portion sizes so your dog maintains a lean, healthy weight without gaining excess body fat.',
     fullAnswerHtml: `
-      <p>In canine clinical nutrition, reproductive status is one of the most critical variables when calculating daily portion sizes and caloric needs.</p>
+      <p>In canine nutrition, reproductive status is one of the most critical variables when calculating daily portion sizes and caloric needs.</p>
       
       <h4>Why This Matters for Your Dog's Bowl:</h4>
       <p><strong>Fixed dogs burn about 10% fewer resting calories</strong> than biologically intact dogs. When a dog is spayed or neutered, gonadal hormone production (estrogen in females, testosterone in males) stops. Because these hormones naturally stimulate metabolic activity, physical restlessness, and roaming behavior, removing them reduces your dog's Resting Energy Requirement (RER). If you feed a fixed dog the same caloric portion as an intact dog, the surplus energy is stored directly as adipose fat, increasing the risk of obesity, arthritis, and diabetes.</p>
@@ -818,7 +818,7 @@ export const FAQS_DATA: FaqItem[] = [
         </li>
       </ul>
 
-      <h4>Clinical Feeding Math Comparison:</h4>
+      <h4>Feeding Math Comparison:</h4>
       <p>For a 50 lb (22.7 kg) adult canine with a baseline Resting Energy Requirement (RER) of 728 kcal/day:</p>
       <ul>
         <li><strong>Fixed Adult (Spayed / Neutered):</strong> <code>728 × 1.6 = 1,165 calories/day</code></li>
@@ -836,7 +836,7 @@ export const FAQS_DATA: FaqItem[] = [
     category: 'Glossary & Terms',
     shortAnswer: 'Canine nutrition relies on scientific terminology: RER is resting calories, MER is daily maintenance calories, BCS evaluates body fat (1-9 scale), DMB calculates nutrients without water, and cranial morphology categorizes skull shape for chewing mechanics and bloat risk.',
     fullAnswerHtml: `
-      <p>Navigating pet food bags and veterinary feeding guidelines often involves technical acronyms. Here is the clinical glossary explaining every major canine nutritional term in plain language:</p>
+      <p>Navigating pet food bags and commercial feeding guidelines often involves technical acronyms. Here is the nutrition glossary explaining every major canine nutritional term in plain language:</p>
 
       <h4>Energy & Portion Calculations:</h4>
       <ul>
@@ -872,7 +872,7 @@ export const FAQS_DATA: FaqItem[] = [
   {
     id: 'what-are-dog-food-planner-website-terms-and-disclaimers',
     slug: 'what-are-dog-food-planner-website-terms-and-disclaimers',
-    question: 'What do DogFoodPlanner.com\'s website terms, veterinary disclaimers, and privacy policies mean?',
+    question: 'What do DogFoodPlanner.com\'s website terms, nutrition disclaimers, and privacy policies mean?',
     category: 'Glossary & Terms',
     shortAnswer: 'Our website terms establish that DogFoodPlanner provides educational canine nutritional calculations based on published NRC/AAFCO formulas, not veterinary medical diagnosis. All calculators, breed scanner tools, and recipes are free for personal, non-commercial pet care.',
     fullAnswerHtml: `
@@ -894,7 +894,7 @@ export const FAQS_DATA: FaqItem[] = [
       <h4>5. The 2-to-3 Week Weight Check Rule:</h4>
       <p>Because baseline formulas predict average requirements, we advise all dog owners to weigh their dog every 14 to 21 days after adjusting meals. If your dog gains unwanted fat or loses lean mass, adjust the daily portion up or down by 5% to 10% until steady maintenance weight is reached.</p>
     `,
-    tags: ['website terms', 'disclaimer', 'privacy', 'veterinary guidance', 'legal', 'license'],
+    tags: ['website terms', 'disclaimer', 'privacy', 'nutrition guidance', 'legal', 'license'],
     relatedSlugs: ['what-does-spayed-neutered-intact-gender-mean-for-dogs', 'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb', 'how-much-food-should-i-feed-my-dog']
   }
 ];

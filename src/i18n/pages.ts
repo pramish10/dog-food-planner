@@ -4,11 +4,11 @@ export const PAGE_TRANSLATIONS = {
   en: {
   "about": {
     "heroTitle": "About Us",
-    "heroSubtitle": "Learn about DogFoodPlanner.com. Our mission, veterinary nutritional methodology, NRC standards, and open-source commitment to healthy dog food.",
-    "missionBadge": "OUR MISSION // CLINICAL CANINE NUTRITION",
+    "heroSubtitle": "Learn about DogFoodPlanner.com. Our mission, nutritional methodology, NRC standards, and open-source commitment to healthy dog food.",
+    "missionBadge": "OUR MISSION // CANINE NUTRITION",
     "whyTitle": "Why DogFoodPlanner Was Created",
     "whyP1": "For decades, the commercial pet food market has operated as a black box. Commercial dry kibble formulas regularly undergo ultra-high heat extrusion (exceeding 400°F), stripping out natural vitamins, oxidising essential omega fatty acids, and padding bag weight with up to 60% high-glycemic starches.",
-    "whyP2": "Meanwhile, fresh-food subscription startups charge upwards of $300 to $450 per month for basic lean meats and vegetables. DogFoodPlanner bridges this gap. We provide the exact mathematical algorithms used by clinical canine nutritionists so dog parents can prepare balanced fresh meals, raw BARF ratios, or superfood toppers cost-effectively at home.",
+    "whyP2": "Meanwhile, fresh-food subscription startups charge upwards of $300 to $450 per month for basic lean meats and vegetables. DogFoodPlanner bridges this gap. We provide the exact mathematical algorithms so dog parents can prepare balanced fresh meals, raw BARF ratios, or superfood toppers cost-effectively at home.",
     "methodTitle": "Our Nutritional Methodology",
     "pillars": [
       {
@@ -28,7 +28,7 @@ export const PAGE_TRANSLATIONS = {
       }
     ],
     "ctaTitle": "Ready to Calculate Your Dog's Nutritional Needs?",
-    "ctaDesc": "Try our interactive calculator, explore our canine allergy guides, and view our veterinary food reviews.",
+    "ctaDesc": "Try our interactive calculator, explore our canine allergy guides, and view our dog food reviews.",
     "ctaBtn": "Launch Free Nutrition Calculator →"
   },
   "contact": {
@@ -43,7 +43,7 @@ export const PAGE_TRANSLATIONS = {
       {
         "icon": "🐾",
         "title": "Nutrition Research",
-        "desc": "Veterinary formula inquiries:",
+        "desc": "Formula inquiries:",
         "email": "research@dogfoodplanner.com"
       },
       {
@@ -83,7 +83,7 @@ export const PAGE_TRANSLATIONS = {
     "sections": [
       {
         "title": "1. Information We Do Not Collect",
-        "content": "We believe your pet’s health data belongs to you. We do not require account registration, passwords, or credit cards to use our veterinary nutrition engine. Dog profiles, body weights, and meal selections entered into the calculator are processed client-side in your browser and are not saved to external databases."
+        "content": "We believe your pet’s health data belongs to you. We do not require account registration, passwords, or credit cards to use our nutrition engine. Dog profiles, body weights, and meal selections entered into the calculator are processed client-side in your browser and are not saved to external databases."
       },
       {
         "title": "2. Anonymous Technical Data",
@@ -134,12 +134,12 @@ export const PAGE_TRANSLATIONS = {
       },
       {
         "title": "6. Limitation of Liability",
-        "content": "In no event shall DogFoodPlanner.com, its authors, veterinary advisors, or operators be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the information and tools provided on this website."
+        "content": "In no event shall DogFoodPlanner.com, its authors, editorial team, or operators be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the information and tools provided on this website."
       }
     ]
   },
   "bestFood": {
-    "eyebrow": "PILLAR GUIDE // CLINICAL CANINE RANKING 2026",
+    "eyebrow": "PILLAR GUIDE // CANINE NUTRITION RANKING 2026",
     "rankingsTitle": "What Are the Top 5 Healthiest Dog Foods in 2026?",
     "rankingsIntro": "Canine nutritional longevity research confirms that minimal heat processing and high biological moisture are the two strongest predictors of canine vitality, kidney health, and disease resistance.",
     "readMoreLabel": "Read more →",
@@ -225,7 +225,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "recipes": {
     "eyebrow": "RECIPE ARCHIVE // NRC & AAFCO NUTRITION BLUEPRINTS",
-    "heroTitle": "Veterinary Homemade Dog Food Recipes",
+    "heroTitle": "Healthy Homemade Dog Food Recipes",
     "heroSubtitle": "Step-by-step blueprints for preparing healthy, complete, and balanced gently cooked meals and ancestral 80-10-10 raw BARF diets at home.",
     "calciumWarningTitle": "The #1 Rule of Homemade Dog Food: Calcium Balancing",
     "calciumWarningDesc": "Muscle meat is naturally very high in phosphorus and low in calcium (1:20 ratio). Feeding plain chicken, beef, and rice without added calcium will cause severe metabolic bone disease and skeletal demineralization within months. Always add 1/2 teaspoon of pure powdered eggshell (approx. 900mg elemental calcium) per pound of boneless meat to achieve the essential 1.2:1 Calcium-to-Phosphorus ratio.",
@@ -365,7 +365,7 @@ export const PAGE_TRANSLATIONS = {
   "brands": {
     "eyebrow": "INDEPENDENT ANALYSIS // BRAND REVIEWS & RECALL LOG",
     "heroTitle": "Dog Food Brand Reviews & Recall History",
-    "heroSubtitle": "Unbiased, veterinarian-informed reviews of major pet food brands, AAFCO labeling rules, and recall tracking to protect your canine companion.",
+    "heroSubtitle": "Unbiased reviews of major pet food brands, AAFCO labeling rules, and recall tracking to protect your canine companion.",
     "brandsList": [
       {
         "name": "Blue Buffalo",
@@ -426,9 +426,9 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "allergies": {
-    "eyebrow": "CLINICAL DERMATOLOGY // CANINE ALLERGIES & DIGESTION",
+    "eyebrow": "NUTRITIONAL GUIDE // CANINE ALLERGIES & DIGESTION",
     "heroTitle": "Best Dog Food for Allergies & Sensitive Stomachs",
-    "heroSubtitle": "Veterinary dermatology guide to food allergies, single-source novel proteins, and 8-week elimination diet protocols.",
+    "heroSubtitle": "Practical guide to food allergies, single-source novel proteins, and 8-week elimination diet protocols.",
     "allergensTitle": "The Top 5 Most Common Canine Food Allergens",
     "allergensIntro": "Canine food allergies are immune-mediated hypersensitivity reactions to specific dietary proteins. In order of clinical frequency:",
     "allergensList": [
@@ -453,7 +453,7 @@ export const PAGE_TRANSLATIONS = {
         "desc": "Common cheap filler proteins that can impair gut barrier function and thyroid health."
       }
     ],
-    "eliminationTitle": "The 8-Week Veterinary Elimination Diet Protocol",
+    "eliminationTitle": "The 8-Week Elimination Diet Protocol",
     "eliminationSteps": [
       {
         "step": "Phase 1",
@@ -495,7 +495,7 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "100% FREE // CANINE NUTRITION GUIDELINES",
     "noticeTitle": "Notice:",
     "noticeText": "For general & educational guidance only. Not a diagnostic tool or medical substitute.",
-    "heroTitle": "Veterinary Dog Feeding & Calorie Calculator",
+    "heroTitle": "Dog Feeding & Calorie Calculator",
     "heroSubtitle": "Determine your dog’s exact daily caloric needs (RER & MER) and calculate custom gram meal portions based on weight, age, activity level, and body condition score."
   },
   "breeds": {
@@ -517,9 +517,9 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "Answers to portion questions, feeding frequency, and best foods."
   },
   "comparisonTable": {
-    "eyebrow": "CLINICAL COMPARISON // FRESH FOOD VS. KIBBLE",
+    "eyebrow": "NUTRITIONAL COMPARISON // FRESH FOOD VS. KIBBLE",
     "title": "Why Whole Food Biologically Outperforms Kibble",
-    "subtitle": "A side-by-side clinical breakdown of processing heat, portion accuracy, and true monthly cost — the same variables a 5-year longevity study linked to dogs living up to 32 months longer on fresh whole food.",
+    "subtitle": "A side-by-side nutritional breakdown of processing heat, portion accuracy, and true monthly cost — the same variables a 5-year longevity study linked to dogs living up to 32 months longer on fresh whole food.",
     "scrollHint": "↔ Scroll table horizontally",
     "colMetric": "Nutritional Metric",
     "colDfp": "✨ DogFoodPlanner",
@@ -575,21 +575,21 @@ export const PAGE_TRANSLATIONS = {
     "exploreHubsTitle": "Explore Dedicated Canine Nutrition Hubs",
     "exploreHubsSubtitle": "Deep-dive into specialized guides created for dog parents seeking optimal health.",
     "cardBestFood": "Comparison of fresh, raw, high-protein kibble, and specialized formulas for small and sensitive dogs.",
-    "cardCalc": "Scientific RER and MER calorie calculator delivering exact gram and cup meal portions.",
+    "cardCalc": "RER and MER calorie calculator delivering exact gram and cup meal portions.",
     "cardRecipes": "Balanced gently cooked and 80-10-10 raw BARF recipes with essential calcium balancing.",
     "cardAllergies": "Novel protein selection, elimination diets, and soothing gut microbiome protocols.",
     "cardToxic": "Complete index of dangerous human foods, safe fruits, vegetables, and chemical additives.",
     "cardBrands": "Unbiased reviews for Blue Buffalo, Nutrish, Pure Balance, Ollie, and Open Farm."
   },
   "faqSingle": {
-    "reviewedBy": "Reviewed by: Veterinary Canine Nutritionist",
+    "reviewedBy": "Reviewed by: DogFoodPlanner Editorial Team",
     "updated": "Updated: 2026",
     "directQuickAnswer": "Direct Quick Answer",
-    "clinicalAnalysis": "Detailed Nutritional & Clinical Analysis",
+    "clinicalAnalysis": "Detailed Nutritional Analysis",
     "topics": "Topics:",
     "ctaBadge": "🐾 Free Canine Nutrition Engine",
     "ctaTitle": "Calculate Exact Daily Calories & Meal Portions For Your Dog",
-    "ctaSubtitle": "Use our free veterinary calculator to determine your dog’s exact metabolic burn (RER/MER) and get custom fresh or raw food recipe grams.",
+    "ctaSubtitle": "Use our free dog feeding calculator to determine your dog’s exact metabolic burn (RER/MER) and get custom fresh or raw food recipe grams.",
     "ctaBtn": "Calculate Portions Now →",
     "relatedTitle": "Related Canine Nutrition Questions",
     "readAnswer": "Read Answer →",
@@ -598,7 +598,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "bestFoodSingle": {
     "rankBadge": "TOP 5 HEALTHIEST DOG FOODS // RANK",
-    "reviewedBy": "Reviewed by: Veterinary Canine Nutritionist",
+    "reviewedBy": "Reviewed by: DogFoodPlanner Editorial Team",
     "nutritionalScore": "Nutritional Score",
     "strengths": "Strengths",
     "tradeoffs": "Tradeoffs",
@@ -613,8 +613,8 @@ export const PAGE_TRANSLATIONS = {
   es: {
   "about": {
     "heroTitle": "Sobre Nosotros",
-    "heroSubtitle": "Conoce DogFoodPlanner.com: nuestra misión, metodología nutricional veterinaria bajo estándares NRC y compromiso con la alimentación saludable para perros.",
-    "missionBadge": "NUESTRA MISIÓN // NUTRICIÓN CANINA CLÍNICA",
+    "heroSubtitle": "Conoce DogFoodPlanner.com: nuestra misión, metodología nutricional bajo estándares NRC y compromiso con la alimentación saludable para perros.",
+    "missionBadge": "NUESTRA MISIÓN // NUTRICIÓN CANINA",
     "whyTitle": "Por Qué se Creó DogFoodPlanner",
     "whyP1": "Durante décadas, la industria de alimentos comerciales para mascotas ha funcionado como una caja negra. El pienso seco extruido a más de 200°C destruye vitaminas naturales, oxida los ácidos grasos omega esenciales y rellena el saco con hasta un 60% de almidones de alto índice glucémico.",
     "whyP2": "Al mismo tiempo, las suscripciones de comida fresca cobran más de 300€ al mes por carnes magras y verduras básicas. DogFoodPlanner elimina esa barrera. Ofrecemos los algoritmos matemáticos exactos que emplean los nutricionistas caninos clínicos para que cualquier dueño prepare menús cocinados al vapor, dietas BARF o toppers caseros a una fracción de su coste.",
@@ -637,7 +637,7 @@ export const PAGE_TRANSLATIONS = {
       }
     ],
     "ctaTitle": "¿Listo para Calcular las Necesidades Nutricionales de tu Perro?",
-    "ctaDesc": "Utiliza nuestra calculadora interactiva, explora las guías de alergias caninas y consulta nuestros análisis veterinarios de alimentos.",
+    "ctaDesc": "Utiliza nuestra calculadora interactiva, explora las guías de alergias caninas y consulta nuestros análisis de alimentos.",
     "ctaBtn": "Abrir Calculadora Nutricional Gratuita →"
   },
   "contact": {
@@ -652,7 +652,7 @@ export const PAGE_TRANSLATIONS = {
       {
         "icon": "🐾",
         "title": "Investigación Nutricional",
-        "desc": "Fórmulas y consultas veterinarias:",
+        "desc": "Consultas sobre fórmulas:",
         "email": "research@dogfoodplanner.com"
       },
       {
@@ -833,8 +833,8 @@ export const PAGE_TRANSLATIONS = {
     "ctaBtn": "Calcular Ración Diaria Ahora →"
   },
   "recipes": {
-    "eyebrow": "RECETAS VETERINARIAS // BLUEPRINTS NRC Y AAFCO",
-    "heroTitle": "Recetas Caseras Veterinarias para Perros",
+    "eyebrow": "RECETAS CASERAS // BLUEPRINTS NRC Y AAFCO",
+    "heroTitle": "Recetas Caseras y Saludables para Perros",
     "heroSubtitle": "Guías paso a paso para elaborar menús caseros cocinados al vapor y dietas BARF crudas 80-10-10 completas y equilibradas.",
     "calciumWarningTitle": "La Regla de Oro de la Comida Casera: El Equilibrio de Calcio",
     "calciumWarningDesc": "La carne muscular es naturalmente rica en fósforo y muy pobre en calcio (relación 1:20). Alimentar a un perro únicamente con pollo, ternera y arroz sin añadir calcio provoca descalcificación ósea severa en pocos meses. Añade siempre media cucharadita rasa de cáscara de huevo en polvo (aprox. 900 mg de calcio elemental) por cada 450 g de carne sin hueso para lograr la proporción óptima de Calcio-Fósforo de 1.2:1.",
@@ -974,7 +974,7 @@ export const PAGE_TRANSLATIONS = {
   "brands": {
     "eyebrow": "ANÁLISIS INDEPENDIENTE // REVISIÓN DE MARCAS Y ALERTAS FDA",
     "heroTitle": "Análisis de Marcas de Pienso y Registro de Retiradas",
-    "heroSubtitle": "Revisiones objetivas informadas por veterinarios sobre ingredientes, etiquetado AAFCO y retiradas del mercado para proteger a tu perro.",
+    "heroSubtitle": "Revisiones objetivas sobre ingredientes, etiquetado AAFCO y retiradas del mercado para proteger a tu perro.",
     "brandsList": [
       {
         "name": "Blue Buffalo",
@@ -1035,9 +1035,9 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "allergies": {
-    "eyebrow": "DERMATOLOGÍA CLÍNICA // ALERGIAS Y DIGESTIÓN CANINA",
+    "eyebrow": "GUÍA NUTRICIONAL // ALERGIAS Y DIGESTIÓN CANINA",
     "heroTitle": "Mejor Comida para Perros con Alergias y Estómago Sensible",
-    "heroSubtitle": "Guía dermatológica veterinaria sobre intolerancias alimentarias, proteínas noveles hipoalergénicas y dietas de descarte de 8 semanas.",
+    "heroSubtitle": "Guía práctica sobre intolerancias alimentarias, proteínas noveles hipoalergénicas y dietas de descarte de 8 semanas.",
     "allergensTitle": "Los 5 Alérgenos Alimentarios Más Frecuentes en Perros",
     "allergensIntro": "Las alergias alimentarias caninas son reacciones de hipersensibilidad inmunitaria frente a determinadas proteínas dietéticas. Por orden de frecuencia clínica:",
     "allergensList": [
@@ -1062,7 +1062,7 @@ export const PAGE_TRANSLATIONS = {
         "desc": "Rellenos proteicos económicos que alteran la barrera digestiva y provocan gases y prurito."
       }
     ],
-    "eliminationTitle": "Protocolo Veterinario de Dieta de Eliminación de 8 Semanas",
+    "eliminationTitle": "Protocolo de Dieta de Eliminación de 8 Semanas",
     "eliminationSteps": [
       {
         "step": "Fase 1",
@@ -1104,11 +1104,11 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "100% GRATIS // PAUTAS DE NUTRICIÓN CANINA",
     "noticeTitle": "Aviso:",
     "noticeText": "Para orientación general y educativa. No constituye una herramienta de diagnóstico médico veterinario.",
-    "heroTitle": "Calculadora Veterinaria de Ración y Calorías para Perros",
+    "heroTitle": "Calculadora de Ración y Calorías para Perros",
     "heroSubtitle": "Determina las necesidades energéticas exactas de tu perro (RER y MER) y calcula las porciones precisas en gramos según peso, edad, nivel de actividad y condición corporal."
   },
   "breeds": {
-    "eyebrow": "NUTRICIÓN POR RAZA // GUÍA VETERINARIA",
+    "eyebrow": "NUTRICIÓN POR RAZA // GUÍA NUTRICIONAL",
     "targetWeight": "Peso Ideal",
     "dailyCalories": "Calorías Diarias",
     "freshDaily": "Comida Fresca al Día",
@@ -1126,9 +1126,9 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "Respuestas sobre cálculo de raciones, número de tomas y mejores alimentos."
   },
   "comparisonTable": {
-    "eyebrow": "COMPARATIVA CLÍNICA // COMIDA FRESCA VS PIENSO SECO",
+    "eyebrow": "COMPARATIVA NUTRICIONAL // COMIDA FRESCA VS PIENSO SECO",
     "title": "Por Qué la Comida Real Supera Biológicamente al Pienso",
-    "subtitle": "Un análisis clínico comparativo de calor de procesado, precisión de las raciones y coste mensual real: las mismas variables asociadas en un estudio de longevidad de 5 años con hasta 32 meses más de vida en perros alimentados con comida natural fresca.",
+    "subtitle": "Un análisis comparativo de calor de procesado, precisión de las raciones y coste mensual real: las mismas variables asociadas en un estudio de longevidad de 5 años con hasta 32 meses más de vida en perros alimentados con comida natural fresca.",
     "scrollHint": "↔ Desliza la tabla horizontalmente",
     "colMetric": "Métrica Nutricional",
     "colDfp": "✨ DogFoodPlanner",
@@ -1180,7 +1180,7 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "faqPage": {
-    "badge": "BASE DE CONOCIMIENTO // MÁS DE 40 RESPUESTAS VETERINARIAS",
+    "badge": "BASE DE CONOCIMIENTO // MÁS DE 40 RESPUESTAS",
     "exploreHubsTitle": "Explora Nuestras Guías Especializadas en Nutrición Canina",
     "exploreHubsSubtitle": "Profundiza en artículos técnicos diseñados para dueños comprometidos con la salud y longevidad de su perro.",
     "cardBestFood": "Comparativa de comida fresca, BARF, piensos de alta proteína y fórmulas para perros con estómago sensible.",
@@ -1191,14 +1191,14 @@ export const PAGE_TRANSLATIONS = {
     "cardBrands": "Análisis independientes de Blue Buffalo, Nutrish, Pure Balance, Ollie y Open Farm."
   },
   "faqSingle": {
-    "reviewedBy": "Revisado por: Nutricionista Canino Veterinario",
+    "reviewedBy": "Revisado por: Equipo Editorial de DogFoodPlanner",
     "updated": "Actualizado: 2026",
     "directQuickAnswer": "Respuesta Rápida Directa",
-    "clinicalAnalysis": "Análisis Nutricional y Clínico Detallado",
+    "clinicalAnalysis": "Análisis Nutricional Detallado",
     "topics": "Temas:",
     "ctaBadge": "🐾 Motor de Nutrición Canina Gratuito",
     "ctaTitle": "Calcula las Calorías y Porciones Diarias Exactas para tu Perro",
-    "ctaSubtitle": "Usa nuestra calculadora veterinaria para obtener el gasto metabólico exacto (RER/MER) y los gramos para menús frescos o crudos.",
+    "ctaSubtitle": "Usa nuestra calculadora para obtener el gasto metabólico exacto (RER/MER) y los gramos para menús frescos o crudos.",
     "ctaBtn": "Calcular Ración Diaria Ahora →",
     "relatedTitle": "Preguntas Frecuentes Relacionadas",
     "readAnswer": "Leer Respuesta Completa →",
@@ -1207,7 +1207,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "bestFoodSingle": {
     "rankBadge": "TOP 5 ALIMENTOS MÁS SALUDABLES // PUESTO",
-    "reviewedBy": "Revisado por: Nutricionista Canino Veterinario",
+    "reviewedBy": "Revisado por: Equipo Editorial de DogFoodPlanner",
     "nutritionalScore": "Puntuación Nutricional",
     "strengths": "Puntos Fuertes",
     "tradeoffs": "Contrapartidas",
@@ -1223,7 +1223,7 @@ export const PAGE_TRANSLATIONS = {
   "about": {
     "heroTitle": "当サイトについて",
     "heroSubtitle": "DogFoodPlanner.comのミッション、NRC基準に基づく獣医栄養学アルゴリズム、愛犬の健康を第一に考えた取り組みについて。",
-    "missionBadge": "私たちの使命 // 臨床犬栄養学",
+    "missionBadge": "私たちの使命 // 犬の栄養管理",
     "whyTitle": "DogFoodPlannerが設立された理由",
     "whyP1": "何十年もの間、市販のペットフード市場は不透明なブラックボックスとして運営されてきました。200℃以上の超高温で押し出し成形される一般的なドライフードは、熱に弱い天然ビタミンを破壊し、必須オメガ脂肪酸を酸化させ、袋の重さの最大60％を高GI値のデンプンでかさ増ししています。",
     "whyP2": "その一方で、フレッシュフードの定期購入サービスは、基本的な赤身肉や野菜だけで月額3万円〜5万円以上も請求します。DogFoodPlannerはこの格差を解消します。私たちは臨床犬栄養士が使用する正確な科学的計算アルゴリズムを完全無料で提供し、愛犬家が自宅で手頃なコストで栄養バランスの取れた手作り食や生肉BARF食、スーパーフードトッピングを作れるよう支援します。",
@@ -1246,7 +1246,7 @@ export const PAGE_TRANSLATIONS = {
       }
     ],
     "ctaTitle": "愛犬に必要な適正カロリーと食事量を計算してみませんか？",
-    "ctaDesc": "無料の対話型給餌計算機や犬のアレルギー対策ガイド、獣医学的なフード評価レビューをご活用ください。",
+    "ctaDesc": "無料の対話型給餌計算機や犬のアレルギー対策ガイド、フード評価レビューをご活用ください。",
     "ctaBtn": "無料の栄養計算機を起動する →"
   },
   "contact": {
@@ -1442,8 +1442,8 @@ export const PAGE_TRANSLATIONS = {
     "ctaBtn": "今すぐ適正給餌量を計算する →"
   },
   "recipes": {
-    "eyebrow": "獣医師監修レシピ // NRC＆AAFCO基準の手作り食",
-    "heroTitle": "愛犬のための獣医師監修 手作り食レシピ",
+    "eyebrow": "手作り食レシピ // NRC＆AAFCO基準",
+    "heroTitle": "愛犬のための手作り健康食レシピ",
     "heroSubtitle": "完全な栄養バランスを満たした低温調理フードと、自然の摂理に沿った80-10-10生肉BARF食を自宅で作るためのステップバイステップ・ガイド。",
     "calciumWarningTitle": "手作り犬ごはんの絶対鉄則：カルシウムとリンのバランス",
     "calciumWarningDesc": "動物の筋肉肉はリンが極めて多く、カルシウムがほとんど含まれていません（比率1:20）。カルシウムを足さずに肉と白米だけを与え続けると、数ヶ月で骨軟化症や骨の脱灰（スカスカになる病気）を引き起こします。骨なし肉450gあたり、必ず純粋な卵殻パウダー小さじ半分（元素カルシウム約900mg）を加えて、安全な「カルシウム：リン＝1.2：1」の比率を保ってください。",
@@ -1583,7 +1583,7 @@ export const PAGE_TRANSLATIONS = {
   "brands": {
     "eyebrow": "ブランド分析 // 人気ドッグフードの評価とリコール履歴",
     "heroTitle": "有名ドッグフードの客観的評価とリコール履歴",
-    "heroSubtitle": "獣医師の視点に基づき、主要ブランドの原材料品質、AAFCO表示基準の適合性、過去のリコール記録を忖度なしで検証します。",
+    "heroSubtitle": "主要ブランドの原材料品質、AAFCO表示基準の適合性、過去のリコール記録を忖度なしで検証します。",
     "brandsList": [
       {
         "name": "ブルーバッファロー（Blue Buffalo）",
@@ -1644,9 +1644,9 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "allergies": {
-    "eyebrow": "皮膚・アレルギー科 // 食物アレルギーと低アレルゲン食",
+    "eyebrow": "アレルギー対策ガイド // 食物アレルギーと低アレルゲン食",
     "heroTitle": "アレルギー・皮膚炎・お腹が弱い犬のためのフードガイド",
-    "heroSubtitle": "食物アレルギーのメカニズム、単一タンパク質（新奇タンパク質）の選び方、8週間の除去食試験プロトコルを獣医学的に解説。",
+    "heroSubtitle": "食物アレルギーのメカニズム、単一タンパク質（新奇タンパク質）の選び方、8週間の除去食試験プロトコルを詳しく解説。",
     "allergensTitle": "犬に最も多い食物アレルゲンTOP5",
     "allergensIntro": "犬の食物アレルギーは、特定のタンパク質に対する免疫過剰反応です。臨床報告の多い順に以下の通りです：",
     "allergensList": [
@@ -1671,7 +1671,7 @@ export const PAGE_TRANSLATIONS = {
         "desc": "安価な増量材として使われる植物性タンパク質ですが、消化不良やガス発生の原因になります。"
       }
     ],
-    "eliminationTitle": "獣医学的「8週間 除去食試験（エリミネーション）」の手順",
+    "eliminationTitle": "「8週間 除去食試験（エリミネーション）」の手順",
     "eliminationSteps": [
       {
         "step": "ステップ1",
@@ -1710,10 +1710,10 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "calculator": {
-    "eyebrow": "完全無料 // 獣医学的給餌量＆カロリー計算機",
+    "eyebrow": "完全無料 // 給餌量＆カロリー計算機",
     "noticeTitle": "重要なお知らせ：",
     "noticeText": "本ツールは一般的な栄養学および教育目的で提供されています。獣医師の診断や医療処置に代わるものではありません。",
-    "heroTitle": "獣医推奨 犬の給餌量＆適正カロリー計算機",
+    "heroTitle": "愛犬の給餌量＆適正カロリー計算機",
     "heroSubtitle": "愛犬の体重、年齢区分、活動レベル、体型スコア（BCS）を入力するだけで、正確な必要エネルギー量（RER・MER）と1食あたりのグラム数を瞬時に算出します。"
   },
   "breeds": {
@@ -1735,7 +1735,7 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "給餌回数、適正体重の維持、おすすめの食材について。"
   },
   "comparisonTable": {
-    "eyebrow": "臨床比較 // フレッシュフード VS ドライフード",
+    "eyebrow": "栄養比較 // フレッシュフード VS ドライフード",
     "title": "ホールフード（自然食）が生化学的にドライフードより優れている理由",
     "subtitle": "加熱加工温度、給餌量の精度、実際の月額コストを徹底比較 — 5年間の長寿研究において新鮮な自然食を食べた犬が最大32か月長く生きたことと直結する臨床変数です。",
     "scrollHint": "↔ 横にスクロールしてご覧ください",
@@ -1800,10 +1800,10 @@ export const PAGE_TRANSLATIONS = {
     "cardBrands": "ブルーバッファロー、オリジン、オリーなどの客観的レビューとリコール履歴。"
   },
   "faqSingle": {
-    "reviewedBy": "監修：獣医臨床栄養士",
+    "reviewedBy": "確認：DogFoodPlanner編集チーム",
     "updated": "最終更新：2026年",
     "directQuickAnswer": "結論・要約回答",
-    "clinicalAnalysis": "獣医学的・臨床栄養学的な詳細解説",
+    "clinicalAnalysis": "詳細な栄養分析・解説",
     "topics": "関連タグ：",
     "ctaBadge": "🐾 無料の犬栄養計算エンジン",
     "ctaTitle": "愛犬に必要な1日のカロリーと食事量を今すぐ計算",
@@ -1816,7 +1816,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "bestFoodSingle": {
     "rankBadge": "健康フードTOP5 // 順位",
-    "reviewedBy": "監修：獣医臨床栄養士",
+    "reviewedBy": "確認：DogFoodPlanner編集チーム",
     "nutritionalScore": "栄養スコア",
     "strengths": "メリット",
     "tradeoffs": "デメリット",
@@ -1832,7 +1832,7 @@ export const PAGE_TRANSLATIONS = {
   "about": {
     "heroTitle": "À Propos",
     "heroSubtitle": "Découvrez DogFoodPlanner.com, notre mission, notre méthodologie nutritionnelle conforme aux normes NRC et notre engagement pour la santé canine.",
-    "missionBadge": "NOTRE MISSION // NUTRITION CLINIQUE CANINE",
+    "missionBadge": "NOTRE MISSION // NUTRITION CANINE",
     "whyTitle": "Pourquoi DogFoodPlanner a été Créé",
     "whyP1": "Pendant des décennies, l’industrie des aliments pour animaux a fonctionné comme une boîte noire. Les croquettes industrielles extrudées à plus de 200°C détruisent les vitamines naturelles, oxydent les acides gras oméga essentiels et alourdissent les sacs avec jusqu’à 60% d’amidons hautement glycémiques.",
     "whyP2": "En parallèle, les abonnements de ration ménagère facturent plus de 300€ par mois pour de la viande maigre et des légumes basiques. DogFoodPlanner comble ce fossé. Nous mettons à disposition gratuitement les algorithmes mathématiques exacts des nutritionnistes vétérinaires afin que chaque maître puisse préparer à domicile des repas frais, des rations BARF ou des garnitures riches à une fraction du coût.",
@@ -1855,7 +1855,7 @@ export const PAGE_TRANSLATIONS = {
       }
     ],
     "ctaTitle": "Prêt à Calculer les Besoins Nutritionnels de Votre Chien ?",
-    "ctaDesc": "Utilisez notre calculateur interactif, découvrez nos guides sur les allergies et consultez nos analyses vétérinaires impartiales.",
+    "ctaDesc": "Utilisez notre calculateur interactif, découvrez nos guides sur les allergies et consultez nos analyses impartiales.",
     "ctaBtn": "Lancer le Calculateur Nutritionnel Gratuit →"
   },
   "contact": {
@@ -2051,8 +2051,8 @@ export const PAGE_TRANSLATIONS = {
     "ctaBtn": "Calculer les Portions Maintenant →"
   },
   "recipes": {
-    "eyebrow": "RECETTES MAISON VÉTÉRINAIRES // NORMES NRC & AAFCO",
-    "heroTitle": "Recettes Vétérinaires de Repas Maison pour Chien",
+    "eyebrow": "RECETTES MAISON ÉQUILIBRÉES // NORMES NRC & AAFCO",
+    "heroTitle": "Recettes Équilibrées de Repas Maison pour Chien",
     "heroSubtitle": "Des guides détaillés pour préparer à la maison des rations ménagères cuites à basse température et des menus BARF 80-10-10 complets et équilibrés.",
     "calciumWarningTitle": "La Règle Absolue du Fait-Maison : L’Équilibre en Calcium",
     "calciumWarningDesc": "La viande musculaire est naturellement riche en phosphore et très pauvre en calcium (ratio 1:20). Nourrir un chien exclusivement de viande et de riz sans complément calcique provoque une décalcification osseuse sévère en quelques mois. Ajoutez toujours 1/2 cuillère à café rase de poudre de coquille d’œuf pure (environ 900 mg de calcium élémentaire) pour 450 g de viande désossée afin de respecter le ratio optimal Calcium/Phosphore de 1.2:1.",
@@ -2192,7 +2192,7 @@ export const PAGE_TRANSLATIONS = {
   "brands": {
     "eyebrow": "AVIS MARQUES DE CROQUETTES & HISTORIQUE DES RAPPELS",
     "heroTitle": "Avis sur les Marques d’Aliments pour Chien et Rappels Sanitaires",
-    "heroSubtitle": "Analyses objectives et avis vétérinaires sur la qualité des ingrédients, le respect des étiquettes et les historiques de retraits de lots.",
+    "heroSubtitle": "Analyses objectives sur la qualité des ingrédients, le respect des étiquettes et les historiques de retraits de lots.",
     "brandsList": [
       {
         "name": "Blue Buffalo",
@@ -2253,9 +2253,9 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "allergies": {
-    "eyebrow": "DERMATOLOGIE CLINIQUE // ALLERGIES ALIMENTAIRES ET DIGESTION",
+    "eyebrow": "GUIDE PRATIQUE // ALLERGIES ALIMENTAIRES ET DIGESTION",
     "heroTitle": "Meilleure Alimentation pour Chien Allergique et Estomac Sensible",
-    "heroSubtitle": "Guide dermatologique vétérinaire sur les intolérances, le choix des protéines nouvelles et le protocole d’éviction de 8 semaines.",
+    "heroSubtitle": "Guide pratique sur les intolérances, le choix des protéines nouvelles et le protocole d’éviction de 8 semaines.",
     "allergensTitle": "Les 5 Allergènes Alimentaires les Plus Courants chez le Chien",
     "allergensIntro": "Les allergies alimentaires canines sont des réactions immunitaires d’hypersensibilité à des protéines spécifiques. Par ordre de prévalence clinique :",
     "allergensList": [
@@ -2280,7 +2280,7 @@ export const PAGE_TRANSLATIONS = {
         "desc": "Substituts protéiques industriels provoquant une fermentation intestinale anormale et du prurit."
       }
     ],
-    "eliminationTitle": "Le Protocole Vétérinaire d’Éviction sur 8 Semaines",
+    "eliminationTitle": "Le Protocole d’Éviction sur 8 Semaines",
     "eliminationSteps": [
       {
         "step": "Phase 1",
@@ -2319,10 +2319,10 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "calculator": {
-    "eyebrow": "100% GRATUIT // CALCULATEUR DE PORTIONS VÉTÉRINAIRE",
+    "eyebrow": "100% GRATUIT // CALCULATEUR DE PORTIONS",
     "noticeTitle": "Avertissement :",
     "noticeText": "Fourni à titre indicatif et éducatif. Ne remplace pas une consultation ou un diagnostic vétérinaire.",
-    "heroTitle": "Calculateur Vétérinaire de Ration et Calories pour Chien",
+    "heroTitle": "Calculateur de Ration et Calories pour Chien",
     "heroSubtitle": "Calculez le besoin énergétique précis de votre chien (RER et MER) et obtenez ses rations exactes en grammes selon son poids, âge, activité et note corporelle."
   },
   "breeds": {
@@ -2344,9 +2344,9 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "Quantités recommandées, fréquence des repas et meilleurs choix d’ingrédients."
   },
   "comparisonTable": {
-    "eyebrow": "COMPARAISON CLINIQUE // ALIMENTATION FRAÎCHE VS CROQUETTES",
+    "eyebrow": "COMPARAISON NUTRITIONNELLE // ALIMENTATION FRAÎCHE VS CROQUETTES",
     "title": "Pourquoi les Aliments Entiers Surpassent Biologiquement les Croquettes",
-    "subtitle": "Une analyse clinique comparative de la température de cuisson, de la précision des portions et du coût mensuel réel — les variables qu'une étude de longévité sur 5 ans a associées à une espérance de vie accrue jusqu'à 32 mois chez les chiens nourris aux aliments frais.",
+    "subtitle": "Une analyse comparative de la température de cuisson, de la précision des portions et du coût mensuel réel — les variables qu'une étude de longévité sur 5 ans a associées à une espérance de vie accrue jusqu'à 32 mois chez les chiens nourris aux aliments frais.",
     "scrollHint": "↔ Faites défiler le tableau horizontalement",
     "colMetric": "Critère Nutritionnel",
     "colDfp": "✨ DogFoodPlanner",
@@ -2402,30 +2402,30 @@ export const PAGE_TRANSLATIONS = {
     "exploreHubsTitle": "Explorez Nos Guides Vétérinaires Spécialisés",
     "exploreHubsSubtitle": "Des dossiers approfondis pour les maîtres soucieux de la longévité et du bien-être de leur compagnon.",
     "cardBestFood": "Comparatif ration fraîche, BARF, croquettes riches en viande et digestion délicate.",
-    "cardCalc": "Calculateur scientifique RER et MER pour obtenir les rations au gramme près.",
+    "cardCalc": "Calculateur RER et MER pour obtenir les rations au gramme près.",
     "cardRecipes": "Recettes maison équilibrées et formules BARF 80-10-10 avec apport calcique maîtrisé.",
     "cardAllergies": "Choix des protéines hypoallergéniques, régimes d’éviction et microbiote.",
     "cardToxic": "Liste complète des aliments dangereux, fruits et légumes sains et additifs à fuir.",
     "cardBrands": "Avis indépendants sur Blue Buffalo, Nutrish, Pure Balance, Ollie et Open Farm."
   },
   "faqSingle": {
-    "reviewedBy": "Vérifié par : Nutritionniste Vétérinaire Canin",
+    "reviewedBy": "Vérifié par : Équipe Rédactionnelle DogFoodPlanner",
     "updated": "Mis à jour : 2026",
     "directQuickAnswer": "Réponse Directe Résumée",
-    "clinicalAnalysis": "Analyse Clinique et Nutritionnelle Détaillée",
+    "clinicalAnalysis": "Analyse Nutritionnelle Détaillée",
     "topics": "Thèmes associés :",
     "ctaBadge": "🐾 Moteur Nutritionnel Canin Gratuit",
     "ctaTitle": "Calculez les Calories et Portions Journalières pour Votre Chien",
-    "ctaSubtitle": "Utilisez notre calculateur vétérinaire pour définir les besoins métaboliques (RER/MER) et les grammes de repas frais ou crus.",
+    "ctaSubtitle": "Utilisez notre calculateur pour définir les besoins métaboliques (RER/MER) et les grammes de repas frais ou crus.",
     "ctaBtn": "Calculer la Ration Maintenant →",
-    "relatedTitle": "Questions Vétérinaires Similaires",
+    "relatedTitle": "Questions Similaires sur l'Alimentation",
     "readAnswer": "Lire la Réponse Complète →",
       "referencedInAnswer": "In dieser Antwort referenziert",
       "buyNow": "Jetzt kaufen"
   },
   "bestFoodSingle": {
     "rankBadge": "TOP 5 MEILLEURS ALIMENTS POUR CHIEN // RANG",
-    "reviewedBy": "Vérifié par : Nutritionniste Vétérinaire Canin",
+    "reviewedBy": "Vérifié par : Équipe Rédactionnelle DogFoodPlanner",
     "nutritionalScore": "Score nutritionnel",
     "strengths": "Points forts",
     "tradeoffs": "Compromis",
@@ -2441,7 +2441,7 @@ export const PAGE_TRANSLATIONS = {
   "about": {
     "heroTitle": "Über Uns",
     "heroSubtitle": "Erfahren Sie mehr über DogFoodPlanner.com: Unsere tierärztliche Methodik, NRC-Standards und freie Ernährungsrechner für Hunde.",
-    "missionBadge": "UNSERE MISSION // TIERÄRZTLICHE HUNDEERNÄHRUNG",
+    "missionBadge": "UNSERE MISSION // HUNDEERNÄHRUNG",
     "whyTitle": "Warum DogFoodPlanner gegründet wurde",
     "whyP1": "Seit Jahrzehnten agiert die Heimtierfutter-Industrie als undurchsichtige Blackbox. Herkömmliches Trockenfutter wird bei über 200°C extrem erhitzt und extrudiert, wodurch natürliche Vitamine zerstört, lebenswichtige Omega-Fettsäuren oxidiert und bis zu 60% des Beutels mit billigen Stärkefüllern aufgefüllt werden.",
     "whyP2": "Gleichzeitig verlangen Start-ups für Frischfutter-Abonnements 300€ bis 450€ pro Monat für einfaches Muskelfleisch und Gemüse. DogFoodPlanner schließt diese Lücke. Wir stellen die exakten mathematischen Berechnungsformeln klinischer Tierernährungsberater kostenlos bereit, damit Hundehalter ausgewogene gekochte Mahlzeiten, 80-10-10 BARF-Rationen oder nährstoffreiche Topper kostengünstig zu Hause zubereiten können.",
@@ -2660,8 +2660,8 @@ export const PAGE_TRANSLATIONS = {
     "ctaBtn": "Tagesportion jetzt berechnen →"
   },
   "recipes": {
-    "eyebrow": "TIERÄRZTLICHE REZEPTE // NRC & AAFCO RICHTLINIEN",
-    "heroTitle": "Tierärztliche Rezepte für selbstgemachtes Hundefutter",
+    "eyebrow": "AUSGEWOGENE REZEPTE // NRC & AAFCO RICHTLINIEN",
+    "heroTitle": "Ausgewogene Rezepte für selbstgemachtes Hundefutter",
     "heroSubtitle": "Schritt-für-Schritt-Anleitungen zur Zubereitung ausgewogener, schonend gegarter Mahlzeiten und artgerechter 80-10-10 BARF-Rationen.",
     "calciumWarningTitle": "Die oberste Regel beim Selberkochen: Der Kalziumausgleich",
     "calciumWarningDesc": "Reines Muskelfleisch enthält von Natur aus extrem viel Phosphor und fast kein Kalzium (Verhältnis 1:20). Werden Hunde nur mit Fleisch und Reis gefüttert, führt dies innerhalb weniger Monate zu schweren Skeletterkrankungen. Fügen Sie pro 500 g reinem Fleisch ohne Knochen stets 1/2 gestrichenen Teelöffel reines Eierschalenpulver (ca. 900 mg elementares Kalzium) hinzu, um das lebensnotwendige Kalzium-Phosphor-Verhältnis von 1.2:1 zu sichern.",
@@ -2801,7 +2801,7 @@ export const PAGE_TRANSLATIONS = {
   "brands": {
     "eyebrow": "HUNDEFUTTER-MARKEN IM TEST & RÜCKRUF-HISTORIE",
     "heroTitle": "Hundefutter-Marken im Test & Rückruf-Historie",
-    "heroSubtitle": "Unabhängige, tierärztlich fundierte Analysen von Inhaltsstoffen, Deklarationen und behördlichen Rückrufen für maximale Futtersicherheit.",
+    "heroSubtitle": "Unabhängige Analysen von Inhaltsstoffen, Deklarationen und behördlichen Rückrufen für maximale Futtersicherheit.",
     "brandsList": [
       {
         "name": "Blue Buffalo",
@@ -2862,9 +2862,9 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "allergies": {
-    "eyebrow": "KLINISCHE DERMATOLOGIE // ALLERGIEN & AUSSCHLUSSDIÄT",
+    "eyebrow": "ERNÄHRUNGS-RATGEBER // ALLERGIEN & AUSSCHLUSSDIÄT",
     "heroTitle": "Bestes Futter für Hunde mit Allergien & empfindlichem Magen",
-    "heroSubtitle": "Dermatologischer Leitfaden zu Futtermittelallergien, Monoprotein-Sorten und der 8-wöchigen Eliminationsdiät.",
+    "heroSubtitle": "Praktischer Leitfaden zu Futtermittelallergien, Monoprotein-Sorten und der 8-wöchigen Eliminationsdiät.",
     "allergensTitle": "Die 5 häufigsten Futtermittelallergene beim Hund",
     "allergensIntro": "Futtermittelallergien sind immunologische Überreaktionen auf bestimmte Nahrungsproteine. Nach klinischer Häufigkeit geordnet:",
     "allergensList": [
@@ -2889,7 +2889,7 @@ export const PAGE_TRANSLATIONS = {
         "desc": "Günstige pflanzliche Eiweißquellen, die häufig zu Fehlgärungen und Juckreiz führen."
       }
     ],
-    "eliminationTitle": "Die 8-wöchige tierärztliche Ausschlussdiät (Eliminationsdiät)",
+    "eliminationTitle": "Die 8-wöchige Ausschlussdiät (Eliminationsdiät)",
     "eliminationSteps": [
       {
         "step": "Phase 1",
@@ -2928,10 +2928,10 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "calculator": {
-    "eyebrow": "100% KOSTENLOS // TIERÄRZTLICHER FUTTERRECHNER",
+    "eyebrow": "100% KOSTENLOS // FUTTERRECHNER",
     "noticeTitle": "Wichtiger Hinweis:",
     "noticeText": "Dient allgemeinen Bildungs- und Informationszwecken. Kein Ersatz für eine tierärztliche Diagnose.",
-    "heroTitle": "Tierärztlicher Futter- und Kalorienrechner für Hunde",
+    "heroTitle": "Futter- und Kalorienrechner für Hunde",
     "heroSubtitle": "Ermitteln Sie den exakten täglichen Energiebedarf (RER & MER) und berechnen Sie grammgenaue Mahlzeiten-Portionen basierend auf Gewicht, Alter, Aktivität und Körperzustand."
   },
   "breeds": {
@@ -2953,9 +2953,9 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "Portionsgrößen, Fütterungszeiten und optimale Zutaten."
   },
   "comparisonTable": {
-    "eyebrow": "KLINISCHER VERGLEICH // FRISCHFUTTER VS. TROCKENFUTTER",
+    "eyebrow": "NÄHRWERT-VERGLEICH // FRISCHFUTTER VS. TROCKENFUTTER",
     "title": "Warum echte Vollwertnahrung Trockenfutter biologisch übertrifft",
-    "subtitle": "Ein direkter klinischer Vergleich von Verarbeitungshitze, Portionsgenauigkeit und tatsächlichen monatlichen Futterkosten — genau die Faktoren, die eine 5-jährige Langlebigkeitsstudie mit einer bis zu 32 Monate längeren Lebensdauer bei Frischfütterung in Verbindung brachte.",
+    "subtitle": "Ein direkter Vergleich von Verarbeitungshitze, Portionsgenauigkeit und tatsächlichen monatlichen Futterkosten — genau die Faktoren, die eine 5-jährige Langlebigkeitsstudie mit einer bis zu 32 Monate längeren Lebensdauer bei Frischfütterung in Verbindung brachte.",
     "scrollHint": "↔ Tabelle horizontal scrollen",
     "colMetric": "Ernährungskriterium",
     "colDfp": "✨ DogFoodPlanner",
@@ -3018,14 +3018,14 @@ export const PAGE_TRANSLATIONS = {
     "cardBrands": "Unabhängige Analysen zu Blue Buffalo, Nutrish, Pure Balance, Ollie und Open Farm."
   },
   "faqSingle": {
-    "reviewedBy": "Geprüft von: Fachtierarzt für Tierernährung",
+    "reviewedBy": "Geprüft von: DogFoodPlanner Redaktionsteam",
     "updated": "Stand: 2026",
     "directQuickAnswer": "Direkte Kurzantwort",
-    "clinicalAnalysis": "Ausführliche tierärztliche und klinische Analyse",
+    "clinicalAnalysis": "Ausführliche Ernährungsanalyse",
     "topics": "Themengebiete:",
     "ctaBadge": "🐾 Kostenloser Ernährungsrechner",
     "ctaTitle": "Berechnen Sie den exakten Tagesbedarf für Ihren Hund",
-    "ctaSubtitle": "Nutzen Sie unseren kostenlosen Tierarzt-Rechner zur Bestimmung des Kalorienbedarfs und der exakten Grammmengen.",
+    "ctaSubtitle": "Nutzen Sie unseren kostenlosen Futterrechner zur Bestimmung des Kalorienbedarfs und der exakten Grammmengen.",
     "ctaBtn": "Portionen jetzt berechnen →",
     "relatedTitle": "Verwandte Fragen zur Hundeernährung",
     "readAnswer": "Antwort vollständig lesen →",
@@ -3034,7 +3034,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "bestFoodSingle": {
     "rankBadge": "TOP 5 GESÜNDESTE HUNDEFUTTER // PLATZ",
-    "reviewedBy": "Geprüft von: Fachtierarzt für Tierernährung",
+    "reviewedBy": "Geprüft von: DogFoodPlanner Redaktionsteam",
     "nutritionalScore": "Nährwert-Score",
     "strengths": "Stärken",
     "tradeoffs": "Kompromisse",
@@ -3050,7 +3050,7 @@ export const PAGE_TRANSLATIONS = {
   "about": {
     "heroTitle": "Sobre Nós",
     "heroSubtitle": "Conheça o DogFoodPlanner.com: nossa missão, metodologia nutricional com base no NRC e compromisso com a alimentação canina de verdade.",
-    "missionBadge": "NOSSA MISSÃO // NUTRIÇÃO CANINA CLÍNICA",
+    "missionBadge": "NOSSA MISSÃO // NUTRIÇÃO CANINA",
     "whyTitle": "Por Que o DogFoodPlanner Foi Criado",
     "whyP1": "Por décadas, a indústria comercial de alimentos para pets operou como uma caixa preta. A ração seca extrudada a mais de 200°C degrada vitaminas naturais, oxida ácidos graxos ômega essenciais e preenche os sacos com até 60% de amidos de alto índice glicêmico.",
     "whyP2": "Ao mesmo tempo, empresas de alimentação natural cobram mensalidades superiores a R$ 1.500 / 300€ por carnes magras e vegetais simples. O DogFoodPlanner elimina essa barreira. Disponibilizamos gratuitamente os algoritmos matemáticos exatos usados por nutrólogos veterinários para que qualquer tutor prepare em casa dietas cozidas no vapor, BARF crua ou enriquecedores nutritivos a uma fração do custo.",
@@ -3073,7 +3073,7 @@ export const PAGE_TRANSLATIONS = {
       }
     ],
     "ctaTitle": "Pronto para Calcular as Necessidades Nutricionais do Seu Cão?",
-    "ctaDesc": "Acesse nossa calculadora interativa, explore guias de alergia canina e veja nossas avaliações veterinárias de marcas.",
+    "ctaDesc": "Acesse nossa calculadora interativa, explore guias de alergia canina e veja nossas avaliações de marcas.",
     "ctaBtn": "Iniciar Calculadora Nutricional Gratuita →"
   },
   "contact": {
@@ -3270,7 +3270,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "recipes": {
     "eyebrow": "RECEITAS CASEIRAS BALANCEADAS // PADRÕES NRC E AAFCO",
-    "heroTitle": "Receitas Caseiras Veterinárias para Cães",
+    "heroTitle": "Receitas Caseiras Equilibradas para Cães",
     "heroSubtitle": "Orientações práticas para preparar em casa refeições cozidas no vapor e dietas cruas BARF 80-10-10 completas e saudáveis.",
     "calciumWarningTitle": "A Regra Mais Importante da Comida Caseira: O Equilíbrio do Cálcio",
     "calciumWarningDesc": "A carne muscular possui alto teor de fósforo e quase nenhum cálcio (proporção 1:20). Alimentar cães apenas com carne e arroz sem adicionar cálcio provoca descalcificação óssea e hiperparatireoidismo em poucos meses. Adicione sempre 1/2 colher de chá rasa de pó de casca de ovo (aprox. 900 mg de cálcio elementar) para cada 450 g de carne sem ossos para atingir o ratio ideal Cálcio/Fósforo de 1.2:1.",
@@ -3471,9 +3471,9 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "allergies": {
-    "eyebrow": "DERMATOLOGIA CANINA // ALERGIAS E DIETA DE ELIMINAÇÃO",
+    "eyebrow": "GUIA NUTRICIONAL // ALERGIAS E DIETA DE ELIMINAÇÃO",
     "heroTitle": "Melhor Alimentação para Cães Alérgicos e com Estômago Sensível",
-    "heroSubtitle": "Guia veterinário sobre hipersensibilidade alimentar, proteínas nobres únicas e dieta de eliminação de 8 semanas.",
+    "heroSubtitle": "Guia prático sobre hipersensibilidade alimentar, proteínas nobres únicas e dieta de eliminação de 8 semanas.",
     "allergensTitle": "Os 5 Alérgenos Mais Frequentes na Alimentação Canina",
     "allergensIntro": "Alergias alimentares em cães são respostas imunes anormais a certas proteínas. Por ordem de incidência clínica:",
     "allergensList": [
@@ -3498,7 +3498,7 @@ export const PAGE_TRANSLATIONS = {
         "desc": "Fontes vegetais de baixo custo que causam fermentação digestiva e dermatites."
       }
     ],
-    "eliminationTitle": "O Protocolo Veterinário da Dieta de Eliminação de 8 Semanas",
+    "eliminationTitle": "O Protocolo da Dieta de Eliminação de 8 Semanas",
     "eliminationSteps": [
       {
         "step": "Fase 1",
@@ -3540,7 +3540,7 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "100% GRATUITO // CALCULADORA DE RAÇÃO E CALORIAS",
     "noticeTitle": "Aviso Importante:",
     "noticeText": "Para orientação educativa geral. Não substitui consulta, diagnóstico ou tratamento médico veterinário.",
-    "heroTitle": "Calculadora Veterinária de Ração e Calorias para Cães",
+    "heroTitle": "Calculadora de Ração e Calorias para Cães",
     "heroSubtitle": "Descubra a demanda calórica exata do seu cão (RER e MER) e obtenha as porções diárias em gramas com base no peso, idade, nível de atividade e escore corporal."
   },
   "breeds": {
@@ -3562,9 +3562,9 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "Quantidades diárias, divisão de horários e melhores opções de alimentos."
   },
   "comparisonTable": {
-    "eyebrow": "COMPARAÇÃO CLÍNICA // COMIDA NATURAL VS RAÇÃO SECA",
+    "eyebrow": "COMPARAÇÃO NUTRICIONAL // COMIDA NATURAL VS RAÇÃO SECA",
     "title": "Por Que Alimentos Integrais Naturais Superam Biologicamente a Ração Seca",
-    "subtitle": "Um comparativo clínico lado a lado sobre temperatura de processamento, precisão da porção e custo mensal real — as mesmas variáveis associadas em um estudo de longevidade de 5 anos a até 32 meses a mais de vida em cães alimentados com comida fresca.",
+    "subtitle": "Um comparativo lado a lado sobre temperatura de processamento, precisão da porção e custo mensal real — as mesmas variáveis associadas em um estudo de longevidade de 5 anos a até 32 meses a mais de vida em cães alimentados com comida fresca.",
     "scrollHint": "↔ Deslize a tabela horizontalmente",
     "colMetric": "Critério Nutricional",
     "colDfp": "✨ DogFoodPlanner",
@@ -3627,23 +3627,23 @@ export const PAGE_TRANSLATIONS = {
     "cardBrands": "Avaliações de Blue Buffalo, Nutrish, Pure Balance, Ollie e Open Farm."
   },
   "faqSingle": {
-    "reviewedBy": "Revisado por: Nutricionista Veterinário Canino",
+    "reviewedBy": "Revisado por: Equipe Editorial do DogFoodPlanner",
     "updated": "Atualizado em: 2026",
     "directQuickAnswer": "Resposta Rápida Resumida",
-    "clinicalAnalysis": "Análise Nutricional e Clínica Detalhada",
+    "clinicalAnalysis": "Análise Nutricional Detallada",
     "topics": "Tópicos associados:",
     "ctaBadge": "🐾 Motor Gratuito de Nutrição Canina",
     "ctaTitle": "Calcule as Calorias e Gramas Diárias para o Seu Cão",
-    "ctaSubtitle": "Use nossa calculadora veterinária para obter o gasto metabólico (RER/MER) e as gramas para refeições frescas ou cruas.",
+    "ctaSubtitle": "Use nossa calculadora de alimentação para obter o gasto metabólico (RER/MER) e as gramas para refeições frescas ou cruas.",
     "ctaBtn": "Calcular Porções Agora →",
-    "relatedTitle": "Dúvidas Veterinárias Relacionadas",
+    "relatedTitle": "Dúvidas Relacionadas sobre Nutrição",
     "readAnswer": "Ler Resposta Completa →",
       "referencedInAnswer": "この回答で参照されている商品",
       "buyNow": "今すぐ購入"
   },
   "bestFoodSingle": {
     "rankBadge": "TOP 5 ALIMENTOS MAIS SAUDÁVEIS // RANKING",
-    "reviewedBy": "Revisado por: Nutricionista Veterinário Canino",
+    "reviewedBy": "Revisado por: Equipe Editorial do DogFoodPlanner",
     "nutritionalScore": "Pontuação Nutricional",
     "strengths": "Pontos Fortes",
     "tradeoffs": "Desvantagens",
@@ -3659,7 +3659,7 @@ export const PAGE_TRANSLATIONS = {
   "about": {
     "heroTitle": "회사 소개",
     "heroSubtitle": "DogFoodPlanner.com의 비전, 미국 NRC 영양 기준에 맞춘 정밀 알고리즘 및 반려동물 건강 식단 연구 소개.",
-    "missionBadge": "우리의 사명 // 임상 반려견 영양학",
+    "missionBadge": "우리의 사명 // 반려견 맞춤 영양학",
     "whyTitle": "DogFoodPlanner의 설립 취지",
     "whyP1": "수십 년 동안 상업용 펫푸드 시장은 깜깜이 정보 속에서 소비자를 기만해 왔습니다. 200℃ 이상의 고온 압출 성형을 거치는 시중 건식 사료(키블)는 열에 약한 천연 비타민을 파괴하고, 필수 오메가 지방산을 산화시키며, 사료 포대의 최대 60%를 고혈당 탄수화물 증량제로 채웁니다.",
     "whyP2": "반면 맞춤형 자연화식 정기구독 서비스는 단순한 살코기와 채소만으로 월 30~50만 원이라는 과도한 비용을 청구합니다. DogFoodPlanner는 이 불합리한 장벽을 허물고자 합니다. 수의 임상 영양학에서 사용하는 정밀한 대사 계산 알고리즘을 100% 무료로 공개하여, 보호자가 가정에서 저렴한 비용으로 균형 잡힌 저온 조리 화식이나 80-10-10 생식, 항산화 토핑을 직접 만들 수 있도록 돕습니다.",
@@ -3682,7 +3682,7 @@ export const PAGE_TRANSLATIONS = {
       }
     ],
     "ctaTitle": "우리 강아지에게 필요한 정확한 영양과 칼로리를 계산해 보세요",
-    "ctaDesc": "대화형 급여량 계산기와 식이 알레르기 관리 가이드, 객관적인 수의학 사료 리뷰를 지금 확인하세요.",
+    "ctaDesc": "대화형 급여량 계산기와 식이 알레르기 관리 가이드, 객관적인 사료 리뷰를 지금 확인하세요.",
     "ctaBtn": "무료 영양 계산기 실행하기 →"
   },
   "contact": {
@@ -3878,8 +3878,8 @@ export const PAGE_TRANSLATIONS = {
     "ctaBtn": "맞춤 급여량 계산하기 →"
   },
   "recipes": {
-    "eyebrow": "수의 영양사 맞춤 수제 자연식 & 생식 레시피",
-    "heroTitle": "수의사 검증 강아지 수제 자연식 레시피",
+    "eyebrow": "맞춤 수제 자연식 & 생식 레시피",
+    "heroTitle": "강아지 수제 건강 자연식 레시피",
     "heroSubtitle": "가정에서 손쉽게 조리할 수 있는 영양 균형 저온 화식과 자연의 법칙에 맞춘 80-10-10 생식 가이드.",
     "calciumWarningTitle": "수제 사료 조리의 절대 원칙: 칼슘과 인의 균형",
     "calciumWarningDesc": "순수 살코기는 인 함량이 매우 높고 칼슘은 거의 없습니다(비율 1:20). 칼슘 보충 없이 고기와 밥만 지속해서 먹이면 수개월 내에 심각한 골다공증과 뼈 탈회 질환이 발생합니다. 뼈 없는 살코기 450g당 반드시 순수 난각가루(계란껍질 분말) 반 티스푼(원소 칼슘 약 900mg)을 첨가하여 1.2:1의 칼슘:인 비율을 맞춰주세요.",
@@ -4019,7 +4019,7 @@ export const PAGE_TRANSLATIONS = {
   "brands": {
     "eyebrow": "사료 브랜드 객관적 리뷰 및 리콜 이력",
     "heroTitle": "인기 사료 브랜드 검증 및 안전 리콜 기록",
-    "heroSubtitle": "수의 임상 기준에 따라 주요 상업용 사료의 원료 성분, AAFCO 표기 준수 여부, 리콜 이력을 엄격하게 검증합니다.",
+    "heroSubtitle": "엄격한 영양 기준에 따라 주요 상업용 사료의 원료 성분, AAFCO 표기 준수 여부, 리콜 이력을 엄격하게 검증합니다.",
     "brandsList": [
       {
         "name": "블루 버팔로 (Blue Buffalo)",
@@ -4080,9 +4080,9 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "allergies": {
-    "eyebrow": "임상 피부과 // 반려견 식이 알레르기 및 제한 급여",
+    "eyebrow": "식이 알레르기 가이드 // 알레르기 및 제한 급여",
     "heroTitle": "알레르기 및 민감성 장을 가진 강아지를 위한 사료 가이드",
-    "heroSubtitle": "수의 피부과 전문의가 제시하는 단일 단백질(노벨 프로틴) 선택법과 8주간의 배제 식이 시험 프로토콜.",
+    "heroSubtitle": "단일 단백질(노벨 프로틴) 선택법과 8주간의 배제 식이 시험 프로토콜 안내.",
     "allergensTitle": "강아지에게 가장 흔한 5대 식이 알레르겐",
     "allergensIntro": "개의 음식 알레르기는 특정 단백질 분자에 대한 면역계의 과민 반응입니다. 임상 빈도순으로 나열하면 다음과 같습니다:",
     "allergensList": [
@@ -4107,7 +4107,7 @@ export const PAGE_TRANSLATIONS = {
         "desc": "저가 충전재로 자주 쓰이지만 장내 이상 발효와 피부 가려움증을 유발합니다."
       }
     ],
-    "eliminationTitle": "수의학 표준 8주 배제 식이 시험 (엘리미네이션 다이어트)",
+    "eliminationTitle": "표준 8주 배제 식이 시험 (엘리미네이션 다이어트)",
     "eliminationSteps": [
       {
         "step": "1단계",
@@ -4146,10 +4146,10 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "calculator": {
-    "eyebrow": "100% 무료 // 수의학적 급여량 & 칼로리 계산기",
+    "eyebrow": "100% 무료 // 급여량 & 칼로리 계산기",
     "noticeTitle": "안내사항:",
     "noticeText": "본 계산기는 영양학적 교육 및 참고용입니다. 수의사의 임상 진료를 대신할 수 없습니다.",
-    "heroTitle": "수의 영양 맞춤 강아지 일일 급여량 및 칼로리 계산기",
+    "heroTitle": "강아지 일일 사료 급여량 및 칼로리 계산기",
     "heroSubtitle": "반려견의 체중, 연령, 활동량, 체형(BCS)을 입력하여 과학적 휴지기 대사량(RER)과 유지 에너지 요구량(MER), 끼니별 정밀 급여량(g)을 확인하세요."
   },
   "breeds": {
@@ -4171,7 +4171,7 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "적정 식사 횟수, 체중 관리법, 추천 식재료 안내."
   },
   "comparisonTable": {
-    "eyebrow": "임상 비교 // 자연 화식 VS 일반 건식 사료",
+    "eyebrow": "영양 비교 // 자연 화식 VS 일반 건식 사료",
     "title": "자연 원물 식단이 건식 사료보다 생물학적으로 우수한 이유",
     "subtitle": "가공 열처리 온도, 급여량의 정밀도, 실제 월간 사료비를 임상적으로 비교 분석 — 5년간의 반려견 수명 연구에서 신선한 자연식을 급여한 반려견이 최대 32개월 더 오래 생존한 핵심 원인 변수들입니다.",
     "scrollHint": "↔ 표를 좌우로 스크롤하여 확인하세요",
@@ -4236,23 +4236,23 @@ export const PAGE_TRANSLATIONS = {
     "cardBrands": "블루 버팔로, 뉴트리쉬, 퓨어밸런스, 올리 등 인기 사료 브랜드 객관적 리뷰."
   },
   "faqSingle": {
-    "reviewedBy": "검증: 수의 임상 영양사",
+    "reviewedBy": "검증: DogFoodPlanner 편집팀",
     "updated": "최신 업데이트: 2026년",
     "directQuickAnswer": "핵심 요약 답변",
-    "clinicalAnalysis": "수의 임상 영양학적 상세 분석",
+    "clinicalAnalysis": "상세 영양학적 분석",
     "topics": "관련 주제:",
     "ctaBadge": "🐾 무료 반려견 영양 엔진",
     "ctaTitle": "우리 강아지에게 필요한 정확한 칼로리와 식사량을 계산하세요",
-    "ctaSubtitle": "수의학 계산기를 사용하여 대사 소비량(RER/MER)을 확인하고 맞춤 화식 또는 생식 급여량을 확인해 보세요.",
+    "ctaSubtitle": "사료량 계산기를 사용하여 대사 소비량(RER/MER)을 확인하고 맞춤 화식 또는 생식 급여량을 확인해 보세요.",
     "ctaBtn": "지금 급여량 계산하기 →",
-    "relatedTitle": "관련 수의 영양학 Q&A",
+    "relatedTitle": "관련 반려견 영양 Q&A",
     "readAnswer": "답변 전체 읽기 →",
       "referencedInAnswer": "이 답변에서 참조된 제품",
       "buyNow": "지금 구매"
   },
   "bestFoodSingle": {
     "rankBadge": "건강 사료 TOP 5 // 순위",
-    "reviewedBy": "검증: 수의 임상 영양사",
+    "reviewedBy": "검증: DogFoodPlanner 편집팀",
     "nutritionalScore": "영양 점수",
     "strengths": "장점",
     "tradeoffs": "단점",
@@ -4268,10 +4268,10 @@ export const PAGE_TRANSLATIONS = {
   "about": {
     "heroTitle": "Chi Siamo",
     "heroSubtitle": "Scopri DogFoodPlanner.com: la nostra missione, gli standard nutrizionali NRC e il nostro impegno per la sana alimentazione dei cani.",
-    "missionBadge": "LA NOSTRA MISSION // NUTRIZIONE CANINA CLINICA",
+    "missionBadge": "LA NOSTRA MISSION // NUTRIZIONE CANINA",
     "whyTitle": "Perché è Nato DogFoodPlanner",
     "whyP1": "Per decenni il mercato industriale del pet food ha operato come una scatola nera. Le crocchette estruse a oltre 200°C distruggono vitamine naturali, ossidano gli acidi grassi essenziali omega e riempiono i sacchi con fino al 60% di amidi ad alto indice glicemico.",
-    "whyP2": "Allo stesso tempo, i servizi di cibo fresco in abbonamento chiedono oltre 300€ al mese per semplici tagli di carne e verdure. DogFoodPlanner supera questo ostacolo. Offriamo gratuitamente gli esatti algoritmi matematici utilizzati dai nutrizionisti veterinari affinché ogni proprietario possa preparare a casa razioni fresche cotte a vapore, diete BARF o topper nutrienti a una frazione del costo.",
+    "whyP2": "Allo stesso tempo, i servizi di cibo fresco in abbonamento chiedono oltre 300€ al mese per semplici tagli di carne e verdure. DogFoodPlanner supera questo ostacolo. Offriamo gratuitamente gli esatti algoritmi matematici affinché ogni proprietario possa preparare a casa razioni fresche cotte a vapore, diete BARF o topper nutrienti a una frazione del costo.",
     "methodTitle": "La Nostra Metodologia Nutrizionale",
     "pillars": [
       {
@@ -4291,7 +4291,7 @@ export const PAGE_TRANSLATIONS = {
       }
     ],
     "ctaTitle": "Pronto a Calcolare i Fabbisogni del Tuo Cane?",
-    "ctaDesc": "Usa il nostro calcolatore interattivo, consulta le guide sulle allergie ed esplora le nostre recensioni veterinarie indipendenti.",
+    "ctaDesc": "Usa il nostro calcolatore interattivo, consulta le guide sulle allergie ed esplora le nostre recensioni indipendenti.",
     "ctaBtn": "Avvia il Calcolatore Gratuito →"
   },
   "contact": {
@@ -4316,7 +4316,7 @@ export const PAGE_TRANSLATIONS = {
         "email": "legal@dogfoodplanner.com"
       }
     ],
-    "formTitle": "Invia un Messaggio al Nostro Team Nutrizionale Veterinario",
+    "formTitle": "Invia un Messaggio al Nostro Team Nutrizionale",
     "formDesc": "Hai dubbi sulle formule caloriche NRC o desideri un chiarimento su una ricetta BARF? Rispondiamo entro 24 ore lavorative.",
     "nameLabel": "Il Tuo Nome",
     "namePlaceholder": "es. Marco Rossi",
@@ -4334,7 +4334,7 @@ export const PAGE_TRANSLATIONS = {
     "submitBtn": "Invia Messaggio →",
     "notice": "Avviso di Emergenza Veterinaria: Se il tuo cane manifesta sintomi acuti di avvelenamento o sofferenza severa, contatta immediatamente il pronto soccorso veterinario più vicino.",
     "faqTitle": "Cerchi risposte immediate?",
-    "faqDesc": "Consulta la nostra raccolta di oltre 40 risposte veterinarie su inappetenza, dieta BARF, cibo per gatti e marche industriali.",
+    "faqDesc": "Consulta la nostra raccolta di oltre 40 risposte su inappetenza, dieta BARF, cibo per gatti e marche industriali.",
     "faqBtn": "Consulta Tutte le FAQ →",
     "successTitle": "✓ Messaggio preparato — invio a hello@dogfoodplanner.com",
     "successDesc": "Il tuo client di posta dovrebbe aprirsi con un messaggio pre-compilato indirizzato a hello@dogfoodplanner.com. Premi semplicemente Invia nella tua app di posta e arriverà nella nostra casella di posta."
@@ -4488,7 +4488,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "recipes": {
     "eyebrow": "RICETTE CASALINGHE PER CANI // FORMULE NRC E AAFCO",
-    "heroTitle": "Ricette Veterinarie per Cibo Casalingo per Cani",
+    "heroTitle": "Ricette Casalinghe Equilibrate per Cani",
     "heroSubtitle": "Istruzioni dettagliate passo-passo per preparare a casa razioni cotte a vapore bilanciate e diete crude ancestrali BARF 80-10-10.",
     "calciumWarningTitle": "La Regola d’Oro del Fatto in Casa: Il Bilanciamento del Calcio",
     "calciumWarningDesc": "La polpa muscolare è ricca di fosforo e quasi priva di calcio (rapporto 1:20). Alimentare un cane solo con carne e riso senza calcio provoca demineralizzazione scheletrica severa in pochi mesi. Aggiungi sempre 1/2 cucchiaino raso di polvere di guscio d’uovo purificata (circa 900 mg di calcio elementare) ogni 450 g di carne senza ossa per garantire il rapporto ottimale Calcio/Fosforo di 1.2:1.",
@@ -4628,7 +4628,7 @@ export const PAGE_TRANSLATIONS = {
   "brands": {
     "eyebrow": "RECENSIONI MARCHE CROCCHETTE E STORICO RICHIAMI",
     "heroTitle": "Analisi delle Marche di Cibo per Cani e Storico Richiami",
-    "heroSubtitle": "Recensioni imparziali formulate da esperti veterinari su trasparenza degli ingredienti, conformità delle etichette e ritiri dal commercio.",
+    "heroSubtitle": "Recensioni imparziali su trasparenza degli ingredienti, conformità delle etichette e ritiri dal commercio.",
     "brandsList": [
       {
         "name": "Blue Buffalo",
@@ -4689,9 +4689,9 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "allergies": {
-    "eyebrow": "DERMATOLOGIA CLINICA // ALLERGIE ALIMENTARI E DIETE AD ESCLUSIONE",
+    "eyebrow": "GUIDA NUTRIZIONALE // ALLERGIE ALIMENTARI E DIETE AD ESCLUSIONE",
     "heroTitle": "Miglior Cibo per Cani con Allergie e Stomaco Sensibile",
-    "heroSubtitle": "Guida dermatologica veterinaria a intolleranze alimentari, proteine novità ipoallergeniche e dieta di esclusione di 8 settimane.",
+    "heroSubtitle": "Guida pratica a intolleranze alimentari, proteine novità ipoallergeniche e dieta di esclusione di 8 settimane.",
     "allergensTitle": "I 5 Più Comuni Allergeni Alimentari nel Cane",
     "allergensIntro": "Le allergie alimentari canine sono reazioni immunitarie anomale scatenate da proteine dietetiche. In ordine di frequenza clinica:",
     "allergensList": [
@@ -4716,7 +4716,7 @@ export const PAGE_TRANSLATIONS = {
         "desc": "Riempitivi proteici a basso costo che causano fermentazioni anomale e prurito."
       }
     ],
-    "eliminationTitle": "Il Protocollo Veterinario della Dieta ad Esclusione di 8 Settimane",
+    "eliminationTitle": "Il Protocollo della Dieta ad Esclusione di 8 Settimane",
     "eliminationSteps": [
       {
         "step": "Fase 1",
@@ -4758,11 +4758,11 @@ export const PAGE_TRANSLATIONS = {
     "eyebrow": "100% GRATUITO // CALCOLATORE DEL FABBISOGNO CALORICO",
     "noticeTitle": "Nota Importante:",
     "noticeText": "Fornito a scopo informativo ed educativo. Non sostituisce una consulenza o diagnosi veterinaria.",
-    "heroTitle": "Calcolatore Veterinario del Fabbisogno Calorico per Cani",
+    "heroTitle": "Calcolatore del Fabbisogno Calorico per Cani",
     "heroSubtitle": "Determina l’esatto fabbisogno calorico giornaliero del tuo cane (RER e MER) e calcola i grammi raccomandati per pasto in base a peso, età, attività e silhouette."
   },
   "breeds": {
-    "eyebrow": "GUIDA NUTRIZIONALE PER RAZZA // LINEE GUIDA VETERINARIE",
+    "eyebrow": "GUIDA NUTRIZIONALE PER RAZZA // LINEE GUIDA NUTRIZIONALI",
     "targetWeight": "Peso Ideale",
     "dailyCalories": "Calorie Giornaliere",
     "freshDaily": "Cibo Fresco / Giorno",
@@ -4780,9 +4780,9 @@ export const PAGE_TRANSLATIONS = {
     "faqSubtitle": "Dosi consigliate, numero di pasti e ingredienti ottimali."
   },
   "comparisonTable": {
-    "eyebrow": "CONFRONTO CLINICO // CIBO FRESCO NATURALE VS CROCCHETTE",
+    "eyebrow": "CONFRONTO NUTRIZIONALE // CIBO FRESCO NATURALE VS CROCCHETTE",
     "title": "Perché il Cibo Naturale Supera Biologicamente le Crocchette",
-    "subtitle": "Un confronto clinico dettagliato tra calore di lavorazione, precisione delle porzioni e costo mensile reale — gli stessi fattori che uno studio di 5 anni sulla longevità ha correlato a una vita fino a 32 mesi più lunga nei cani nutriti con cibo fresco.",
+    "subtitle": "Un confronto nutrizionale dettagliato tra calore di lavorazione, precisione delle porzioni e costo mensile reale — gli stessi fattori che uno studio di 5 anni sulla longevità ha correlato a una vita fino a 32 mesi più lunga nei cani nutriti con cibo fresco.",
     "scrollHint": "↔ Scorri la tabella in orizzontale",
     "colMetric": "Parametro Nutrizionale",
     "colDfp": "✨ DogFoodPlanner",
@@ -4834,34 +4834,34 @@ export const PAGE_TRANSLATIONS = {
     ]
   },
   "faqPage": {
-    "badge": "ARCHIVIO CONOSCENZE // OLTRE 40 RISPOSTE VETERINARIE",
+    "badge": "ARCHIVIO CONOSCENZE // OLTRE 40 RISPOSTE",
     "exploreHubsTitle": "Esplora i Nostri Dossier di Nutrizione Canina",
     "exploreHubsSubtitle": "Guide di approfondimento create per i proprietari attenti al benessere e alla longevità del loro cane.",
     "cardBestFood": "Confronto tra cibo fresco, BARF, crocchette ad alto tenore di carne e formule delicate.",
-    "cardCalc": "Calcolatore scientifico RER e MER per calcolare le porzioni giornaliere in grammi.",
+    "cardCalc": "Calcolatore RER e MER per calcolare le porzioni giornaliere in grammi.",
     "cardRecipes": "Ricette casalinghe cotte e BARF 80-10-10 con apporto controllato e sicuro di calcio.",
     "cardAllergies": "Scelta delle proteine ipoallergeniche, diete ad esclusione e flora batterica intestinale.",
     "cardToxic": "Elenco completo dei cibi tossici da evitare, frutta e verdura sicure e additivi dannosi.",
     "cardBrands": "Recensioni imparziali su Blue Buffalo, Nutrish, Pure Balance, Ollie e Open Farm."
   },
   "faqSingle": {
-    "reviewedBy": "Revisionato da: Nutrizionista Veterinario Canino",
+    "reviewedBy": "Revisionato da: Team Editoriale di DogFoodPlanner",
     "updated": "Aggiornato al: 2026",
     "directQuickAnswer": "Risposta Rapida Diretta",
-    "clinicalAnalysis": "Analisi Clinica e Nutrizionale Approfondita",
+    "clinicalAnalysis": "Analisi Nutrizionale Approfondita",
     "topics": "Argomenti correlati:",
     "ctaBadge": "🐾 Motore Nutrizionale Canino Gratuito",
     "ctaTitle": "Calcola le Calorie e i Grammi Giornalieri per il Tuo Cane",
-    "ctaSubtitle": "Usa il nostro calcolatore veterinario per conoscere il dispendio metabolico (RER/MER) e i grammi per pasti freschi o crudi.",
+    "ctaSubtitle": "Usa il nostro calcolatore per conoscere il dispendio metabolico (RER/MER) e i grammi per pasti freschi o crudi.",
     "ctaBtn": "Calcola le Dosi Ora →",
-    "relatedTitle": "Domande Veterinarie Correlate",
+    "relatedTitle": "Domande Nutrizionali Correlate",
     "readAnswer": "Leggi la Risposta Completa →",
       "referencedInAnswer": "Referenziato in questa risposta",
       "buyNow": "Acquista ora"
   },
   "bestFoodSingle": {
     "rankBadge": "TOP 5 CIBI PIÙ SANI // POSIZIONE",
-    "reviewedBy": "Revisionato da: Nutrizionista Veterinario Canino",
+    "reviewedBy": "Revisionato da: Team Editoriale di DogFoodPlanner",
     "nutritionalScore": "Punteggio Nutrizionale",
     "strengths": "Punti di Forza",
     "tradeoffs": "Compromessi",

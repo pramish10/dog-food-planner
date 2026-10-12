@@ -5,7 +5,7 @@ export const enBlueprints: RecipeBlueprint[] = [
   {
     slug: 'turkey-pumpkin-maintenance',
     name: 'Gently Cooked Lean Turkey & Pumpkin Adult Maintenance Blueprint',
-    shortDesc: 'A clinical 65/10/10/8/4/3 whole-food recipe engineered for adult maintenance with 93/7 lean turkey, heart-protective organ taurine, digestive pumpkin fiber, and balanced eggshell calcium.',
+    shortDesc: 'A balanced 65/10/10/8/4/3 whole-food recipe engineered for adult maintenance with 93/7 lean turkey, heart-protective organ taurine, digestive pumpkin fiber, and balanced eggshell calcium.',
     badge: 'Flagship Adult Maintenance',
     targetAudience: 'Adult Canines (1-7 Years) // Maintenance & Sensitive Digestion',
     colorTheme: '#0070f3',
@@ -74,7 +74,7 @@ export const enBlueprints: RecipeBlueprint[] = [
       },
     ],
     executiveSummary:
-      'A veterinary-engineered, whole-food flagship formula designed to deliver complete adult canine maintenance while resting the digestive tract. Built on ultra-lean USDA ground turkey, cardioprotective organ taurine, microbiome-stimulating pumpkin pectin, and scientifically balanced eggshell calcium.',
+      'A balanced, whole-food flagship formula designed to deliver complete adult canine maintenance while resting the digestive tract. Built on ultra-lean USDA ground turkey, cardioprotective organ taurine, microbiome-stimulating pumpkin pectin, and scientifically balanced eggshell calcium.',
     clinicalRationale: [
       {
         title: '1. Why 93/7 Lean Turkey Over Chicken or Beef?',
@@ -193,7 +193,7 @@ export const enBlueprints: RecipeBlueprint[] = [
   {
     slug: 'beef-sweet-potato-vitality',
     name: 'Gently Cooked Grass-Fed Beef & Sweet Potato Vitality Blueprint',
-    shortDesc: 'A high-stamina 62/10/12/8/4/4 clinical formula featuring 90/10 grass-fed beef, nutrient-dense liver & heart, slow-burning sweet potato carbohydrates, and antioxidant-rich steamed broccoli for active dogs.',
+    shortDesc: 'A high-stamina 62/10/12/8/4/4 formula featuring 90/10 grass-fed beef, nutrient-dense liver & heart, slow-burning sweet potato carbohydrates, and antioxidant-rich steamed broccoli for active dogs.',
     badge: 'Active Muscle & Vitality',
     targetAudience: 'Active, Working & Agility Dogs // High Caloric Burn & Muscle Density',
     colorTheme: '#7928ca',
@@ -426,7 +426,7 @@ export const enBlueprints: RecipeBlueprint[] = [
       },
     ],
     executiveSummary:
-      'A clinical anti-inflammatory whole-food formulation designed for dogs with joint stiffness, mobility decline, chronic skin allergies, or dull coats. High doses of marine EPA/DHA from wild salmon work in synergy with green-lipped mussel glycosaminoglycans and cold-pressed hemp oil to lubricate joints and soothe dermal pruritus.',
+      'An anti-inflammatory whole-food formulation designed for dogs with joint stiffness, mobility decline, chronic skin allergies, or dull coats. High doses of marine EPA/DHA from wild salmon work in synergy with green-lipped mussel glycosaminoglycans and cold-pressed hemp oil to lubricate joints and soothe dermal pruritus.',
     clinicalRationale: [
       {
         title: '1. The Marine EPA & DHA Cascade for Joints & Skin',
@@ -586,7 +586,7 @@ export const enBlueprints: RecipeBlueprint[] = [
       },
     ],
     executiveSummary:
-      'A targeted hypoallergenic clinical formula engineered for dogs plagued by chronic soft stools, food intolerances to chicken or beef, gas, or recurrent urinary tract irritation. Pasture-raised lamb provides a clean novel red protein source, while butternut squash and pure cranberries deliver soothing pectin and urinary protective proanthocyanidins.',
+      'A targeted hypoallergenic whole-food formula engineered for dogs plagued by chronic soft stools, food intolerances to chicken or beef, gas, or recurrent urinary tract irritation. Pasture-raised lamb provides a clean novel red protein source, while butternut squash and pure cranberries deliver soothing pectin and urinary protective proanthocyanidins.',
     clinicalRationale: [
       {
         title: '1. Why Pasture Lamb for Chronic Food Sensitivities?',

@@ -28,7 +28,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
   en: {
     eyebrow: '02 // SAFETY & TOXICITY LOOKUP',
     title: 'Canine Ingredient Safety & Toxicity Lookup',
-    subtitle: 'Search any whole food to check clinical safety, bioavailability, and dangerous household toxins before introducing it to your dog\'s bowl.',
+    subtitle: 'Search any whole food to check safety, nutritional value, and dangerous household toxins before introducing it to your dog\'s bowl.',
     searchPlaceholder: 'Search food (e.g. pumpkin, salmon, xylitol...)',
     filterAll: 'ALL',
     filterSafe: 'SAFE & SUPERFOODS',
@@ -37,7 +37,7 @@ export const INGREDIENT_UI: Record<Lang, IngredientCheckerUI> = {
     statusCaution: 'Caution / Limit',
     statusDanger: 'Fatal Danger',
     servingTitle: 'Serving Advice:',
-    keyNutrientsTitle: 'Key Nutrients & Clinical Profile:',
+    keyNutrientsTitle: 'Key Nutrients & Safety Profile:',
     noResultsTitle: 'No ingredients found.',
     noResultsDesc: 'Try searching for common foods like "salmon", "pumpkin", "grapes", or "chocolate".',
     readMoreBtn: 'Read More',

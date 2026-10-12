@@ -153,7 +153,7 @@ export const RECIPES: MealRecipe[] = [
     name: 'Ancestral BARF 80/10/10 Grass-Fed Beef & Bone',
     dietType: 'raw-barf',
     primaryProtein: 'Beef',
-    headline: 'Veterinary-balanced Biologically Appropriate Raw Food (BARF) formula mimicking natural canine ancestral ecology.',
+    headline: 'Nutritionally-balanced Biologically Appropriate Raw Food (BARF) formula mimicking natural canine ancestral ecology.',
     description: '70% pasture-raised muscle meat, 10% raw soft edible bone, 10% secreting organs (liver & spleen/kidney), and 10% living organic plant matter and fermented probiotics.',
     macroProfile: {
       proteinPct: 56,

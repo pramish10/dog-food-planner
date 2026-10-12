@@ -41,7 +41,7 @@ const kibbleCups = (dailyCalories / 380).toFixed(1);
 
 <Layout 
   title={`Best Dog Food for ${breed.name}s 2026: Calorie & Feeding Guide | DogFoodPlanner.com`}
-  description={`Veterinary nutrition guide for ${breed.name}s. Average weight (${breed.avgWeightLbs[0]}-${breed.avgWeightLbs[1]} lbs), daily calories (~${dailyCalories} kcal), portion cups, and health predispositions.`}
+  description={`Nutrition and feeding guide for ${breed.name}s. Average weight (${breed.avgWeightLbs[0]}-${breed.avgWeightLbs[1]} lbs), daily calories (~${dailyCalories} kcal), portion cups, and health predispositions.`}
   canonicalUrl={`https://dogfoodplanner.com/breeds/${Astro.params.breed}`}
 >
   <Navbar />
@@ -65,7 +65,7 @@ const kibbleCups = (dailyCalories / 380).toFixed(1);
           Best Dog Food & Feeding Guide for {breed.name}s
         </h1>
         <p class="text-sm sm:text-base text-[#4d4d4d] dark:text-[#a1a1a1] max-w-2xl mx-auto leading-relaxed">
-          Veterinary metabolic guidelines, exact daily calories, portion sizes, and key dietary predispositions for {breed.name}s.
+          Daily calorie guidelines, portion sizes, and key dietary considerations for {breed.name}s.
         </p>
       </div>
     </section>

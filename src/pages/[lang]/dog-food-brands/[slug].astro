@@ -51,13 +51,13 @@ const pageDescription = `${item.overview.slice(0, 150)}... ${item.name}`;
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'MedicalWebPage',
+  '@type': 'Article',
   headline: `${item.name} - ${i18n.clinicalAuditTitle}`,
   description: pageDescription,
   name: `${item.name} | ${t('nav.brands')}`,
   author: {
     '@type': 'Organization',
-    name: i18n.reviewedBy || 'Dog Food Planner Veterinary Nutrition Team',
+    name: i18n.reviewedBy || 'Dog Food Planner Editorial Team',
     url: 'https://dogfoodplanner.com',
   },
   publisher: {

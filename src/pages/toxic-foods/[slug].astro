@@ -44,13 +44,13 @@ const pageDescription = item.summary.slice(0, 155);
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
-  '@type': isToxic ? 'MedicalWebPage' : 'Article',
+  '@type': 'Article',
   headline: pageTitle,
   description: pageDescription,
   name: item.name,
   author: {
     '@type': 'Organization',
-    name: 'Dog Food Planner Veterinary Toxicology Team',
+    name: 'Dog Food Planner Editorial Team',
     url: 'https://dogfoodplanner.com',
   },
   publisher: {
@@ -366,7 +366,7 @@ const articleJsonLd = {
           <div class="flex items-center gap-2 mb-4">
             <span class="text-lg">⭐</span>
             <h2 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8]">
-              {p.recommendedProductTitle || 'Clinical Product Recommendation'}
+              {p.recommendedProductTitle || 'Product Recommendation'}
             </h2>
           </div>
           <div class="p-5 sm:p-6 rounded-xl bg-white/90 dark:bg-[#181109] border border-[#f0d5a8]/80 dark:border-amber-950/70 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
