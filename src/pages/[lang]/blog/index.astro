@@ -1,0 +1,318 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Footer from '../../../components/Footer.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import { BLOG_POSTS } from '../../../data/blog';
+import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../../i18n/utils';
+import { ui, type Lang } from '../../../i18n/ui';
+import { BLOG_UI_STRINGS } from '../../../i18n/blog';
+
+export function getStaticPaths() {
+  return getLangStaticPaths();
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const currentStrings = ui[lang] || ui.en;
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
+
+const featuredPost = BLOG_POSTS.find(p => p.featured) || BLOG_POSTS[0];
+const regularPosts = BLOG_POSTS.filter(p => p.id !== featuredPost.id);
+---
+
+<Layout 
+  lang={lang}
+  title={currentStrings['blog.title']}
+  description={currentStrings['blog.desc']}
+>
+  <Navbar />
+
+  <main class="min-h-screen page-warm-bg pb-16">
+
+    <!-- ── Top Header Bar: Breadcrumbs & Search on Top Right below Plan Meal ── -->
+    <div class="border-b border-[#f0d5a8]/60 dark:border-[#3a2510] bg-[#fff8f0]/70 dark:bg-[#150d04]/70 backdrop-blur-xs">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        
+        <!-- Left: Breadcrumbs -->
+        <div class="min-w-0">
+          <Breadcrumbs 
+            items={[
+              { name: t('nav.brand'), url: translatePath('/') },
+              { name: t('nav.blog') }
+            ]}
+          />
+        </div>
+
+        <!-- Right: Live Search Bar (positioned on top right, below Plan Meal) -->
+        <div class="w-full sm:w-72 md:w-80 shrink-0 self-end sm:self-center">
+          <div class="relative flex items-center rounded-full bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] focus-within:border-[#c47a2b] dark:focus-within:border-[#e8a44a] focus-within:ring-2 focus-within:ring-[#c47a2b]/20 transition-all shadow-2xs">
+            <span class="pl-3.5 pr-1.5 text-[#8f5e35] dark:text-[#a87c54] shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"></path>
+              </svg>
+            </span>
+            <input 
+              type="text" 
+              id="blog-search-input" 
+              placeholder={uiStrings.searchPlaceholder}
+              class="w-full py-2 pr-3 text-xs sm:text-sm bg-transparent text-[#1c0f00] dark:text-[#fde8c8] placeholder-[#9a7b56] dark:placeholder-[#785b3b] focus:outline-none"
+            />
+            <button 
+              type="button" 
+              id="blog-clear-search" 
+              class="hidden mr-2.5 p-0.5 rounded-full text-[#8f5e35] hover:bg-[#f0d5a8]/50 dark:hover:bg-[#3a2510] transition-colors cursor-pointer"
+              aria-label="Clear search input"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Featured Post Spotlight ────────────────────────────────────── -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-10" id="featured-section">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#c47a2b]"></span>
+        <h2 class="text-xs font-mono font-bold tracking-wider uppercase text-[#92400e] dark:text-[#f59e0b]">
+          {uiStrings.featuredTag}
+        </h2>
+      </div>
+
+      <div class="featured-card-wrapper" data-post-title={featuredPost.title.toLowerCase()} data-post-tags={featuredPost.tags.join(' ').toLowerCase()} data-post-excerpt={featuredPost.excerpt.toLowerCase()}>
+        <BlogCard post={featuredPost} lang={lang} featured={true} />
+      </div>
+    </section>
+
+    <!-- ── Main Articles Grid ─────────────────────────────────────────── -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-12">
+      <div class="flex items-center justify-between gap-4 mb-6 pb-3 border-b border-[#f0d5a8]/60 dark:border-[#3a2510]">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight">
+            Latest Articles
+          </h2>
+          <p class="text-xs text-[#8f5e35] dark:text-[#a87c54] mt-0.5">
+            Showing <span id="visible-post-count">{BLOG_POSTS.length}</span> guides
+          </p>
+        </div>
+
+        <div class="text-xs font-mono text-[#8f5e35] dark:text-[#a87c54] hidden sm:block">
+          ✓ Canine Nutrition & Health
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div 
+        id="blog-posts-grid" 
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
+      >
+        {regularPosts.map(post => (
+          <div 
+            class="blog-post-item" 
+            data-post-title={post.title.toLowerCase()}
+            data-post-tags={post.tags.join(' ').toLowerCase()}
+            data-post-excerpt={post.excerpt.toLowerCase()}
+          >
+            <BlogCard post={post} lang={lang} />
+          </div>
+        ))}
+      </div>
+
+      <!-- Zero Results Empty State -->
+      <div 
+        id="no-results-state" 
+        class="hidden py-16 px-6 text-center rounded-2xl bg-white/70 dark:bg-[#1a1106]/70 border border-dashed border-[#f0d5a8] dark:border-[#3a2510] my-8"
+      >
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-[#fcead2] dark:bg-[#2a1a08] flex items-center justify-center text-3xl">
+          🔍
+        </div>
+        <h3 class="text-lg font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-1">
+          {uiStrings.noResultsTitle}
+        </h3>
+        <p class="text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a] max-w-md mx-auto mb-5 leading-relaxed">
+          {uiStrings.noResultsDesc}
+        </p>
+        <button 
+          type="button" 
+          id="reset-filter-btn"
+          class="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#c47a2b] hover:bg-[#a86520] transition-colors shadow-sm cursor-pointer"
+        >
+          {uiStrings.resetFilters}
+        </button>
+      </div>
+    </section>
+
+    <!-- ── Newsletter / Weekly Guide Signup ───────────────────────────── -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 pt-16">
+      <div class="rounded-2xl p-6 sm:p-8 text-center bg-white/90 dark:bg-[#1a1106]/90 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs">
+        <div class="text-3xl mb-3">📬</div>
+        <h3 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-2">
+          {uiStrings.newsletterTitle}
+        </h3>
+        <p class="text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a] max-w-xl mx-auto mb-6 leading-relaxed">
+          {uiStrings.newsletterDesc}
+        </p>
+
+        <form id="newsletter-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-2.5">
+          <input 
+            type="email" 
+            required 
+            placeholder={uiStrings.newsletterPlaceholder}
+            class="flex-1 px-4 py-2.5 rounded-xl text-xs bg-[#fff8f0] dark:bg-[#150d04] border border-[#f0d5a8] dark:border-[#3a2510] text-[#1c0f00] dark:text-[#fde8c8] placeholder-[#9a7b56] dark:placeholder-[#785b3b] focus:outline-none focus:border-[#c47a2b]"
+          />
+          <button 
+            type="submit" 
+            class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-[#c47a2b] hover:bg-[#a86520] transition-colors shadow-xs shrink-0 cursor-pointer"
+          >
+            {uiStrings.newsletterBtn}
+          </button>
+        </form>
+        <p id="newsletter-success-msg" class="hidden text-xs text-emerald-600 dark:text-emerald-400 font-semibold mt-3">
+          {uiStrings.newsletterSuccess}
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script is:inline>
+  function setupBlogFiltering() {
+    const searchInput = document.getElementById('blog-search-input');
+    const clearBtn = document.getElementById('blog-clear-search');
+    const postItems = document.querySelectorAll('.blog-post-item');
+    const featuredCard = document.querySelector('.featured-card-wrapper');
+    const featuredSection = document.getElementById('featured-section');
+    const noResults = document.getElementById('no-results-state');
+    const countDisplay = document.getElementById('visible-post-count');
+    const resetBtn = document.getElementById('reset-filter-btn');
+
+    let searchQuery = '';
+
+    function filterPosts() {
+      let visibleCount = 0;
+      const q = searchQuery.toLowerCase().trim();
+
+      // Check featured card
+      let featuredVisible = false;
+      if (featuredCard) {
+        const title = featuredCard.getAttribute('data-post-title') || '';
+        const tags = featuredCard.getAttribute('data-post-tags') || '';
+        const excerpt = featuredCard.getAttribute('data-post-excerpt') || '';
+
+        const matchesQuery = !q || title.includes(q) || tags.includes(q) || excerpt.includes(q);
+
+        if (matchesQuery) {
+          featuredVisible = true;
+          featuredCard.style.display = 'block';
+          visibleCount++;
+        } else {
+          featuredCard.style.display = 'none';
+        }
+      }
+
+      if (featuredSection) {
+        featuredSection.style.display = featuredVisible ? 'block' : 'none';
+      }
+
+      // Check regular posts
+      postItems.forEach(item => {
+        const title = item.getAttribute('data-post-title') || '';
+        const tags = item.getAttribute('data-post-tags') || '';
+        const excerpt = item.getAttribute('data-post-excerpt') || '';
+
+        const matchesQuery = !q || title.includes(q) || tags.includes(q) || excerpt.includes(q);
+
+        if (matchesQuery) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (countDisplay) {
+        countDisplay.textContent = visibleCount.toString();
+      }
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    }
+
+    // Search input
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        if (clearBtn) {
+          if (searchQuery.length > 0) {
+            clearBtn.classList.remove('hidden');
+          } else {
+            clearBtn.classList.add('hidden');
+          }
+        }
+        filterPosts();
+      });
+    }
+
+    // Clear search button
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          searchQuery = '';
+          clearBtn.classList.add('hidden');
+          filterPosts();
+        }
+      });
+    }
+
+    // Reset filters
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        searchQuery = '';
+        if (clearBtn) clearBtn.classList.add('hidden');
+        filterPosts();
+      });
+    }
+
+    // Newsletter fake submit
+    const newsletterForm = document.getElementById('newsletter-form');
+    const successMsg = document.getElementById('newsletter-success-msg');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (successMsg) {
+          successMsg.classList.remove('hidden');
+          newsletterForm.reset();
+        }
+      });
+    }
+  }
+
+  setupBlogFiltering();
+  document.addEventListener('astro:page-load', setupBlogFiltering);
+</script>
+
+<style>
+  .page-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 60%, #fff0e6 100%);
+  }
+  html.dark .page-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import type { BlogPost } from '../data/blog';
+import { useTranslatedPath } from '../i18n/utils';
+import { BLOG_CATEGORY_TRANSLATIONS, BLOG_UI_STRINGS } from '../i18n/blog';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  post: BlogPost;
+  lang?: Lang;
+  featured?: boolean;
+}
+
+const { post, lang = 'en', featured = false } = Astro.props;
+const translatePath = useTranslatedPath(lang);
+const categoryName = BLOG_CATEGORY_TRANSLATIONS[lang]?.[post.category] || post.category;
+const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
+const articleUrl = translatePath(`/blog/${post.slug}`);
+---
+
+<article 
+  class:list={[
+    "group relative flex flex-col rounded-2xl overflow-hidden transition-all duration-300",
+    "bg-white/90 dark:bg-[#1a1106]/90 backdrop-blur-sm",
+    "border border-[#f0d5a8] dark:border-[#3a2510]",
+    "hover:border-[#c47a2b] dark:hover:border-[#e8a44a] hover:shadow-xl hover:-translate-y-1",
+    featured ? "lg:flex-row lg:items-stretch lg:col-span-full" : "h-full"
+  ]}
+>
+  <!-- Card Header Accent Banner -->
+  <div 
+    class:list={[
+      "relative overflow-hidden shrink-0 flex items-center justify-center p-6 sm:p-8",
+      featured ? "lg:w-2/5 min-h-[220px] lg:min-h-full" : "h-44 sm:h-48"
+    ]}
+    style={`background: linear-gradient(135deg, ${post.gradient.from}18 0%, ${post.gradient.to}35 100%);`}
+  >
+    <!-- Background subtle radial glow -->
+    <div 
+      class="absolute inset-0 opacity-40 pointer-events-none group-hover:scale-110 transition-transform duration-500"
+      style={`background: radial-gradient(circle at 50% 50%, ${post.gradient.to}40 0%, transparent 70%);`}
+    ></div>
+
+    <!-- Center Icon / Badge Illustration -->
+    <div class="relative z-10 flex flex-col items-center text-center">
+      <div 
+        class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center shadow-lg text-3xl sm:text-4xl bg-white/95 dark:bg-[#1c1208]/95 border border-[#f0d5a8]/80 dark:border-[#3a2510] group-hover:scale-105 group-hover:rotate-2 transition-all duration-300"
+      >
+        <span>{post.gradient.icon}</span>
+      </div>
+      <span class="mt-3 px-3 py-1 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider bg-white/90 dark:bg-[#1c1208]/90 text-[#92400e] dark:text-[#fde8c8] border border-[#f0d5a8]/60 dark:border-[#3a2510] shadow-2xs">
+        {categoryName}
+      </span>
+    </div>
+
+    <!-- Top-left tag if featured -->
+    {featured && (
+      <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase bg-[#c47a2b] text-white shadow-sm">
+        ★ {uiStrings.featuredTag}
+      </span>
+    )}
+  </div>
+
+  <!-- Card Body -->
+  <div class="flex-1 flex flex-col p-5 sm:p-6 justify-between min-w-0">
+    <div>
+      <!-- Meta Row: Read time & Date -->
+      <div class="flex flex-wrap items-center gap-2 text-xs text-[#8f5e35] dark:text-[#a87c54] font-mono mb-3">
+        <span class="inline-flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-[#c47a2b]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"></path>
+          </svg>
+          {post.readTime}
+        </span>
+        <span class="text-[#f0d5a8] dark:text-[#3a2510]">•</span>
+        <time datetime={post.publishedDate}>{post.publishedDate}</time>
+      </div>
+
+      <!-- Title -->
+      <h3 class:list={[
+        "font-bold text-[#1c0f00] dark:text-[#fde8c8] group-hover:text-[#c47a2b] dark:group-hover:text-[#f59e0b] transition-colors leading-snug tracking-tight mb-2.5",
+        featured ? "text-xl sm:text-2xl lg:text-3xl" : "text-base sm:text-lg"
+      ]}>
+        <a href={articleUrl} class="focus:outline-none focus:underline">
+          {post.title}
+        </a>
+      </h3>
+
+      <!-- Excerpt -->
+      <p class:list={[
+        "text-[#6b4226] dark:text-[#c4956a] leading-relaxed line-clamp-3 mb-4",
+        featured ? "text-sm sm:text-base line-clamp-4" : "text-xs sm:text-sm"
+      ]}>
+        {post.excerpt}
+      </p>
+
+      <!-- Tags preview (top 3) -->
+      <div class="flex flex-wrap gap-1.5 mb-5">
+        {post.tags.slice(0, 3).map(tag => (
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#fff8f0] dark:bg-[#201408] text-[#8f5e35] dark:text-[#d4a373] border border-[#f0d5a8]/70 dark:border-[#3a2510]">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom Row: CTA Button -->
+    <div class="pt-4 mt-auto border-t border-[#f0d5a8]/60 dark:border-[#3a2510] flex items-center justify-end">
+      <!-- Arrow Link -->
+      <a 
+        href={articleUrl}
+        aria-label={`Read article: ${post.title}`}
+        class="inline-flex items-center gap-1.5 text-xs font-bold text-[#c47a2b] dark:text-[#e8a44a] group-hover:translate-x-1 transition-transform shrink-0 whitespace-nowrap"
+      >
+        <span>Read Guide</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>

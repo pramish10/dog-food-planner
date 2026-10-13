@@ -54,7 +54,7 @@ function serializeSitemapItem(item) {
   if (unprefixed === '/') {
     item.priority = 1.0;
     item.changefreq = ChangeFreqEnum.DAILY;
-  } else if (['/best-dog-food', '/feeding-calculator', '/faq'].includes(unprefixed)) {
+  } else if (['/best-dog-food', '/feeding-calculator', '/faq', '/blog'].includes(unprefixed)) {
     item.priority = 0.9;
     item.changefreq = ChangeFreqEnum.WEEKLY;
   } else if (
@@ -66,6 +66,7 @@ function serializeSitemapItem(item) {
     item.changefreq = ChangeFreqEnum.WEEKLY;
   } else if (
     unprefixed.startsWith('/faq/') ||
+    unprefixed.startsWith('/blog/') ||
     unprefixed.startsWith('/breeds/') ||
     unprefixed.startsWith('/best-dog-food/')
   ) {

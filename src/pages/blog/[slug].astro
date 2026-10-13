@@ -1,0 +1,549 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Footer from '../../components/Footer.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { BLOG_POSTS, getBlogPostBySlug, getRelatedBlogPosts } from '../../data/blog';
+import { useTranslations, useTranslatedPath } from '../../i18n/utils';
+import { ui } from '../../i18n/ui';
+import { BLOG_CATEGORY_TRANSLATIONS, BLOG_UI_STRINGS } from '../../i18n/blog';
+
+export function getStaticPaths() {
+  return BLOG_POSTS.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+
+if (!post) {
+  return Astro.redirect('/blog');
+}
+
+const lang = 'en';
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+const uiStrings = BLOG_UI_STRINGS[lang];
+const categoryName = BLOG_CATEGORY_TRANSLATIONS[lang]?.[post.category] || post.category;
+const relatedPosts = getRelatedBlogPosts(post.slug, 3);
+
+// Canonical and Schema URLs
+const canonicalUrl = `https://dogfoodplanner.com/blog/${post.slug}`;
+const shareUrl = encodeURIComponent(canonicalUrl);
+const shareTitle = encodeURIComponent(post.title);
+
+// Schema.org BlogPosting
+const schemaOrgBlogPosting = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl
+  },
+  "headline": post.title,
+  "description": post.excerpt,
+  "image": "https://dogfoodplanner.com/og-image.jpg",
+  "author": {
+    "@type": "Person",
+    "name": post.author.name,
+    "jobTitle": post.author.role,
+    "description": post.author.credentials
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DogFoodPlanner",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dogfoodplanner.com/logo.svg"
+    }
+  },
+  "datePublished": new Date(post.publishedDate).toISOString(),
+  "dateModified": new Date(post.updatedDate).toISOString(),
+  "keywords": post.tags.join(', ')
+};
+---
+
+<Layout 
+  lang={lang}
+  title={`${post.title} | DogFoodPlanner Blog`}
+  description={post.excerpt}
+  canonicalUrl={canonicalUrl}
+>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#c47a2b] to-[#e8a44a] z-[100] transition-all duration-75" style="width: 0%;"></div>
+
+  <Navbar />
+
+  <main class="min-h-screen page-warm-bg pb-20">
+    <Breadcrumbs 
+      items={[
+        { name: t('nav.brand'), url: translatePath('/') },
+        { name: t('nav.blog'), url: translatePath('/blog') },
+        { name: post.title }
+      ]}
+    />
+
+    <!-- ── Article Header ─────────────────────────────────────────────── -->
+    <header class="relative py-10 sm:py-14 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+      <!-- Warm glow background -->
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[650px] h-52 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.18) 0%, transparent 70%); filter: blur(40px);"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+        <!-- Back link -->
+        <a 
+          href={translatePath('/blog')} 
+          class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8f5e35] dark:text-[#a87c54] hover:text-[#c47a2b] dark:hover:text-[#f59e0b] mb-6 transition-colors"
+        >
+          {uiStrings.backToAll}
+        </a>
+
+        <!-- Category & Read time badges -->
+        <div class="flex flex-wrap items-center gap-2.5 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-[#fff8f0] dark:bg-[#1c1208] text-[#92400e] dark:text-[#fde8c8] border border-[#f0d5a8] dark:border-[#3a2510] shadow-2xs">
+            {post.gradient.icon} {categoryName}
+          </span>
+          <span class="inline-flex items-center gap-1 text-xs font-mono text-[#8f5e35] dark:text-[#a87c54]">
+            <svg class="w-3.5 h-3.5 text-[#c47a2b]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"></path>
+            </svg>
+            {post.readTime}
+          </span>
+          <span class="text-[#f0d5a8] dark:text-[#3a2510]">•</span>
+          <span class="text-xs font-mono text-[#8f5e35] dark:text-[#a87c54]">
+            Updated {post.updatedDate}
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-2xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight leading-tight mb-4 text-balance">
+          {post.title}
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base sm:text-lg text-[#6b4226] dark:text-[#c4956a] leading-relaxed mb-8 text-pretty">
+          {post.subtitle}
+        </p>
+
+        <!-- Share Bar -->
+        <div class="pt-6 border-t border-[#f0d5a8]/70 dark:border-[#3a2510] flex items-center justify-end gap-1.5">
+          <span class="text-xs font-mono text-[#8f5e35] dark:text-[#a87c54] mr-1 hidden sm:inline">Share:</span>
+            
+            <!-- Copy Link -->
+            <button 
+              type="button" 
+              id="copy-link-btn" 
+              class="relative p-2 rounded-xl bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] text-[#6b4226] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer shadow-2xs"
+              aria-label="Copy article link"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+              </svg>
+              <span id="copy-tooltip" class="hidden absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-[#1c0f00] text-white text-[10px] font-mono whitespace-nowrap shadow-md">
+                {uiStrings.copiedText}
+              </span>
+            </button>
+
+            <!-- X / Twitter -->
+            <a 
+              href={`https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="p-2 rounded-xl bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] text-[#6b4226] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all shadow-2xs"
+              aria-label="Share on X"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a 
+              href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="p-2 rounded-xl bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] text-[#6b4226] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all shadow-2xs"
+              aria-label="Share on Facebook"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+
+            <!-- Print / PDF -->
+            <button 
+              type="button" 
+              onclick="window.print()" 
+              class="p-2 rounded-xl bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] text-[#6b4226] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer shadow-2xs"
+              aria-label="Print article"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+    </header>
+
+    <!-- ── Article Main Container (Layout + Sidebar) ────────────────── -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        <!-- Left / Main Article Column (8 cols) -->
+        <article class="lg:col-span-8 min-w-0">
+
+          <!-- Key Takeaways Box (Modern Editorial TL;DR) -->
+          <div class="p-6 sm:p-7 rounded-2xl bg-white/95 dark:bg-[#1c1208]/95 border-2 border-[#e8a44a]/40 dark:border-[#92400e]/40 shadow-sm mb-10">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-xl">💡</span>
+              <h2 class="text-sm sm:text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight uppercase font-mono">
+                {uiStrings.keyTakeawaysTitle}
+              </h2>
+            </div>
+            <ul class="space-y-3">
+              {post.keyTakeaways.map(takeaway => (
+                <li class="flex items-start gap-2.5 text-xs sm:text-sm text-[#5c371d] dark:text-[#e4be99] leading-relaxed">
+                  <span class="w-4 h-4 rounded-full bg-[#c47a2b]/20 dark:bg-[#c47a2b]/30 text-[#c47a2b] flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">✓</span>
+                  <span>{takeaway}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Mobile Collapsible Table of Contents -->
+          <div class="lg:hidden p-5 rounded-2xl bg-white/90 dark:bg-[#1a1106]/90 border border-[#f0d5a8] dark:border-[#3a2510] mb-8">
+            <details class="group">
+              <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-sm text-[#1c0f00] dark:text-[#fde8c8]">
+                <span class="flex items-center gap-2">
+                  <span>📖</span>
+                  <span>{uiStrings.tocTitle}</span>
+                </span>
+                <span class="transition group-open:rotate-180">
+                  <svg class="w-4 h-4 text-[#8f5e35]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </span>
+              </summary>
+              <nav class="mt-4 pt-3 border-t border-[#f0d5a8]/60 dark:border-[#3a2510] space-y-2 text-xs">
+                {post.tableOfContents.map(item => (
+                  <a 
+                    href={`#${item.id}`} 
+                    class="block py-1 text-[#6b4226] dark:text-[#c4956a] hover:text-[#c47a2b] dark:hover:text-[#f59e0b] transition-colors"
+                  >
+                    {item.title}
+                  </a>
+                ))}
+              </nav>
+            </details>
+          </div>
+
+          <!-- Article HTML Body -->
+          <div class="prose-canine text-[#4a2e18] dark:text-[#d6b797]">
+            <Fragment set:html={post.contentHtml} />
+          </div>
+
+
+
+
+          <!-- Medical Disclaimer Notice -->
+          <div class="mt-8 p-4 rounded-xl bg-[#fff8f0]/80 dark:bg-[#150d04]/80 border border-[#f0d5a8]/60 dark:border-[#3a2510] text-[11px] text-[#8f5e35] dark:text-[#a87c54] leading-relaxed">
+            <strong>Medical Notice:</strong> {uiStrings.disclaimer}
+          </div>
+
+        </article>
+
+        <!-- Right / Sticky Table of Contents & Tools (4 cols) -->
+        <aside class="hidden lg:block lg:col-span-4 min-w-0">
+          <div class="sticky top-24 space-y-6">
+
+            <!-- Desktop Table of Contents -->
+            <div class="p-6 rounded-2xl bg-white/90 dark:bg-[#1a1106]/90 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs">
+              <h3 class="text-xs font-mono font-bold tracking-wider uppercase text-[#92400e] dark:text-[#fde8c8] mb-4 flex items-center gap-2">
+                <span>📖</span>
+                <span>{uiStrings.tocTitle}</span>
+              </h3>
+              <nav class="space-y-2 text-xs">
+                {post.tableOfContents.map(item => (
+                  <a 
+                    href={`#${item.id}`} 
+                    class="toc-nav-link block py-1.5 px-2.5 rounded-lg text-[#6b4226] dark:text-[#c4956a] hover:text-[#c47a2b] dark:hover:text-[#f59e0b] hover:bg-[#fff8f0] dark:hover:bg-[#25170a] transition-all leading-snug"
+                  >
+                    {item.title}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+
+            <!-- Tags Card -->
+            <div class="p-5 rounded-2xl bg-white/90 dark:bg-[#1a1106]/90 border border-[#f0d5a8] dark:border-[#3a2510]">
+              <h4 class="text-xs font-mono font-bold uppercase text-[#92400e] dark:text-[#fde8c8] mb-3">
+                Article Topics
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                {post.tags.map(tag => (
+                  <span class="text-[11px] font-mono px-2.5 py-1 rounded-md bg-[#fff8f0] dark:bg-[#201408] text-[#8f5e35] dark:text-[#d4a373] border border-[#f0d5a8]/60 dark:border-[#3a2510]">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- ── Related Articles Section ───────────────────────────────────── -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-20">
+      <div class="flex items-center justify-between gap-4 mb-8 pb-3 border-b border-[#f0d5a8]/70 dark:border-[#3a2510]">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight">
+            {uiStrings.relatedArticlesTitle}
+          </h2>
+          <p class="text-xs text-[#8f5e35] dark:text-[#a87c54] mt-0.5">
+            Continue learning about canine dietetics and whole-food wellness
+          </p>
+        </div>
+        <a 
+          href={translatePath('/blog')} 
+          class="text-xs font-bold text-[#c47a2b] dark:text-[#e8a44a] hover:underline"
+        >
+          View all guides →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        {relatedPosts.map(relPost => (
+          <BlogCard post={relPost} lang={lang} />
+        ))}
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrgBlogPosting)} />
+</Layout>
+
+<script is:inline>
+  function setupArticleInteractions() {
+    // Reading progress bar
+    const progressBar = document.getElementById('reading-progress-bar');
+    window.addEventListener('scroll', () => {
+      const totalScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (windowHeight > 0 && progressBar) {
+        const scrolled = (totalScroll / windowHeight) * 100;
+        progressBar.style.width = `${scrolled}%`;
+      }
+    });
+
+    // Copy link button
+    const copyBtn = document.getElementById('copy-link-btn');
+    const tooltip = document.getElementById('copy-tooltip');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          if (tooltip) {
+            tooltip.classList.remove('hidden');
+            setTimeout(() => {
+              tooltip.classList.add('hidden');
+            }, 2000);
+          }
+        } catch (err) {
+          console.error('Failed to copy URL: ', err);
+        }
+      });
+    }
+
+    // Active TOC highlighting
+    const tocLinks = document.querySelectorAll('.toc-nav-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href')?.replace('#', '');
+      return id ? document.getElementById(id) : null;
+    }).filter(Boolean);
+
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+      const scrollPos = window.scrollY + 140;
+
+      sections.forEach(sec => {
+        if (sec && sec.offsetTop <= scrollPos) {
+          currentSectionId = sec.id;
+        }
+      });
+
+      tocLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentSectionId}`) {
+          link.classList.add('bg-[#fcead2]', 'dark:bg-[#3a2510]', 'text-[#c47a2b]', 'dark:text-[#f59e0b]', 'font-semibold');
+        } else {
+          link.classList.remove('bg-[#fcead2]', 'dark:bg-[#3a2510]', 'text-[#c47a2b]', 'dark:text-[#f59e0b]', 'font-semibold');
+        }
+      });
+    });
+  }
+
+  setupArticleInteractions();
+  document.addEventListener('astro:page-load', setupArticleInteractions);
+</script>
+
+<style>
+  .page-warm-bg {
+    background: linear-gradient(160deg, #fff8f0 0%, #fef3e2 60%, #fff0e6 100%);
+  }
+  html.dark .page-warm-bg {
+    background: linear-gradient(160deg, #150d04 0%, #1c1005 60%, #1a0e04 100%);
+  }
+
+  /* Custom Prose styling tailored to project theme */
+  .prose-canine {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .prose-canine p {
+    margin-bottom: 1.35rem;
+  }
+  .prose-canine .lead {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #1c0f00;
+    margin-bottom: 1.75rem;
+  }
+  html.dark .prose-canine .lead {
+    color: #fde8c8;
+  }
+  .prose-canine h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+    color: #1c0f00;
+    letter-spacing: -0.025em;
+    scroll-margin-top: 5rem;
+  }
+  html.dark .prose-canine h2 {
+    color: #fde8c8;
+  }
+  .prose-canine h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: #1c0f00;
+    scroll-margin-top: 5rem;
+  }
+  html.dark .prose-canine h3 {
+    color: #fde8c8;
+  }
+  .prose-canine ul, .prose-canine ol {
+    margin-top: 0.5rem;
+    margin-bottom: 1.35rem;
+    padding-left: 1.25rem;
+  }
+  .prose-canine ul {
+    list-style-type: disc;
+  }
+  .prose-canine ol {
+    list-style-type: decimal;
+  }
+  .prose-canine li {
+    margin-bottom: 0.6rem;
+  }
+  .prose-canine strong {
+    font-weight: 700;
+    color: #1c0f00;
+  }
+  html.dark .prose-canine strong {
+    color: #fde8c8;
+  }
+  .prose-canine code {
+    font-family: monospace;
+    font-size: 0.85em;
+    background: #f0d5a8/40;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    color: #92400e;
+  }
+  html.dark .prose-canine code {
+    background: #3a2510;
+    color: #f59e0b;
+  }
+
+  /* Custom Editorial Callout Boxes */
+  .callout {
+    margin: 1.75rem 0;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 0.925rem;
+    line-height: 1.65;
+  }
+  .callout-title {
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .callout-vet {
+    background: rgba(196, 122, 43, 0.08);
+    border: 1px solid rgba(196, 122, 43, 0.3);
+    color: #4a2e18;
+  }
+  html.dark .callout-vet {
+    background: rgba(196, 122, 43, 0.12);
+    border-color: rgba(196, 122, 43, 0.4);
+    color: #e8b584;
+  }
+  .callout-vet .callout-title {
+    color: #92400e;
+  }
+  html.dark .callout-vet .callout-title {
+    color: #f59e0b;
+  }
+
+  .callout-tip {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #134e4a;
+  }
+  html.dark .callout-tip {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #99f6e4;
+  }
+  .callout-tip .callout-title {
+    color: #047857;
+  }
+  html.dark .callout-tip .callout-title {
+    color: #34d399;
+  }
+
+  .callout-warning {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #7f1d1d;
+  }
+  html.dark .callout-warning {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+  }
+  .callout-warning .callout-title {
+    color: #b91c1c;
+  }
+  html.dark .callout-warning .callout-title {
+    color: #f87171;
+  }
+</style>
