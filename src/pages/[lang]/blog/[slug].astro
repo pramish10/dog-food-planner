@@ -79,6 +79,17 @@ if (hasProduct) {
   beforeHtml = beforeHtml.replace(/<!--\s*AFFILIATE_PRODUCT\s*-->/g, '');
 }
 
+function formatAmazonLinks(html: string): string {
+  return html.replace(
+    /<AmazonLink\s+url="([^"]+)">([\s\S]*?)<\/AmazonLink>/gi,
+    (_, url, label) =>
+      `<a href="${url}" target="_blank" rel="sponsored nofollow noopener" class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded-lg transition-all active:scale-95 touch-manipulation bg-[#0070f3] hover:bg-[#005ac2] text-white shadow-xs no-underline mx-1 align-baseline"><svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg><span>${label}</span></a>`
+  );
+}
+
+beforeHtml = formatAmazonLinks(beforeHtml);
+afterHtml = formatAmazonLinks(afterHtml);
+
 // Canonical and Schema URLs
 const canonicalUrl = `https://dogfoodplanner.com/${lang}/blog/${post.slug}`;
 const shareUrl = encodeURIComponent(canonicalUrl);
@@ -121,6 +132,7 @@ const schemaOrgBlogPosting = {
   title={`${post.title} | DogFoodPlanner Blog`}
   description={post.excerpt}
   canonicalUrl={canonicalUrl}
+  ogImage={"https://dogfoodplanner.com" + post.image}
 >
   <!-- Reading Progress Bar -->
   <div id="reading-progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#c47a2b] to-[#e8a44a] z-[100] transition-all duration-75" style="width: 0%;"></div>

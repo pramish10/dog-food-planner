@@ -1,0 +1,31 @@
+---
+/**
+ * AmazonLink — Component for sponsored Amazon affiliate links.
+ * Complies with FTC & Amazon Associates disclosure guidelines:
+ * target="_blank", rel="sponsored nofollow noopener"
+ */
+interface Props {
+  url: string;
+  label?: string;
+  class?: string;
+}
+
+const {
+  url,
+  label = 'Buy Now',
+  class: extraClass = '',
+} = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="sponsored nofollow noopener"
+  class={`inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded-lg transition-all active:scale-95 touch-manipulation bg-[#0070f3] hover:bg-[#005ac2] text-white shadow-xs no-underline mx-1 align-baseline ${extraClass}`}
+  aria-label={`${label} on Amazon`}
+>
+  <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+  </svg>
+  <span>{label}</span>
+</a>

@@ -60,6 +60,87 @@ export type BlogCategory = typeof BLOG_CATEGORIES[number];
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'dry-vs-wet-dog-food',
+    slug: 'dry-vs-wet-dog-food',
+    title: 'Dry vs Wet Dog Food: How to Choose for Your Dog',
+    subtitle: 'Not sure whether to feed dry or wet food? Learn the differences, how to choose by size, age, and teeth, and explore popular vet-recommended options.',
+    category: 'Canine Nutrition & Diets',
+    categorySlug: 'canine-nutrition-diets',
+    excerpt: 'Not sure whether to feed dry or wet food? Learn the differences, how to choose by size, age, and teeth, and see popular options.',
+    image: '/images/blog/dry-vs-wet-dog-food.jpg',
+    imageAlt: 'Happy dog eating from a food bowl',
+    featured: true,
+    publishedDate: 'October 13, 2026',
+    updatedDate: 'October 13, 2026',
+    readTime: '6 min read',
+    author: {
+      name: 'Dr. Maya Lin, DVM',
+      role: 'Veterinary Nutrition Researcher',
+      avatar: '🥣',
+      credentials: 'DVM, CVA, Member of the American Academy of Veterinary Nutrition (AAVN)'
+    },
+    reviewedBy: {
+      name: 'Dr. Aris Thorne, DVM',
+      role: 'Board-Certified Veterinary Nutritionist',
+      credentials: 'DACVIM (Nutrition)'
+    },
+    tags: ['Dry Dog Food', 'Wet Dog Food', 'Kibble vs Canned', 'Canine Nutrition', 'Picky Eaters', 'Dental Health'],
+    gradient: {
+      from: '#0ea5e9',
+      to: '#38bdf8',
+      badgeBg: 'rgba(14,165,233,0.12)',
+      badgeText: '#0369a1',
+      icon: '🥣'
+    },
+    keyTakeaways: [
+      'Dry food offers maximum convenience, portion control, and cost-effectiveness, while wet food delivers superior hydration and intense aroma for picky eaters.',
+      'Small breed dogs benefit from smaller kibble size tailored to petite jaws, while senior dogs thrive on softer textures or life-stage specific formulas.',
+      'Combining dry and wet food as a daily meal topper provides the benefits of both worlds while managing dietary costs.',
+      'When transitioning between dry and wet foods, introduce changes gradually over 7 to 10 days to protect your dog\'s digestive microbiome.'
+    ],
+    tableOfContents: [
+      { id: 'dry-dog-food-kibble', title: '1. Dry Dog Food (Kibble)' },
+      { id: 'wet-dog-food-canned', title: '2. Wet Dog Food (Canned)' },
+      { id: 'how-to-choose-for-your-dog', title: '3. How to Choose for Your Dog' },
+      { id: 'dental-chews', title: '4. Dental Chews' }
+    ],
+    contentHtml: `
+      <p class="lead">Choosing between dry and wet food is one of the most common questions dog owners ask. Both can be part of a healthy feeding plan. The right pick depends on your dog's size, age, appetite, and teeth. Here is how they compare, and a few popular options for each.</p>
+
+      <h2 id="dry-dog-food-kibble">1. Dry Dog Food (Kibble)</h2>
+      <p>Dry food is the most popular choice because it is convenient and easy to store. It is simple to measure, stays fresh in the pantry, and usually costs less per day than wet food. Many formulas come in small bites for small breeds or are made for older dogs. The downside is that some picky dogs find kibble less appealing, and it holds less moisture than canned food.</p>
+
+      <h3 id="for-senior-small-dogs">For senior small dogs</h3>
+      <p>Older small dogs often do better with smaller bites and a formula made for their life stage. <a href="https://link.amazon/B0dsA0VsH" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">Hill's Science Diet Adult 7+ Small Bites Dry Dog Food</a>, made with chicken meal, barley, and rice, is designed for adult dogs 7 and older in a small-bite size.</p>
+
+      <h3 id="for-small-breeds">For small breeds</h3>
+      <p>Small dogs have small mouths, so kibble size matters. <a href="https://link.amazon/B020buGuj" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">IAMS Proactive Health Small Breed Dry Dog Food</a> uses a small kibble made for small mouths and lists chicken as its first ingredient.</p>
+
+      <h3 id="for-active-adult-dogs">For active adult dogs</h3>
+      <p>Active dogs burn more energy, so look for a higher-protein formula and always measure portions using the feeding guide on the bag. <a href="https://link.amazon/B0fo3nFjO" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">Blue Buffalo Wilderness Chicken & Wholesome Grains Adult Dry Dog Food</a> is a higher-protein option with chicken as its first ingredient.</p>
+
+      <h2 id="wet-dog-food-canned">2. Wet Dog Food (Canned)</h2>
+      <p>Wet food has a strong smell and soft texture that many dogs love. It is a good fit for picky eaters, dogs with a low appetite, and dogs with sensitive or missing teeth. It also has more moisture than kibble and works well as a topper mixed over dry food. The downsides are a higher cost per meal, and opened cans must be covered and refrigerated.</p>
+
+      <h3 id="variety-packs-to-rotate-flavors">Variety packs to rotate flavors</h3>
+      <p>A variety pack lets you rotate flavors and see which one your dog prefers. <a href="https://link.amazon/B041LREUS" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">Blue Buffalo Homestyle Recipe Adult Wet Dog Food</a> comes in a Turkey and Lamb Dinner Variety Pack, a soft homestyle recipe that works as a full meal or a topper. If your dog prefers other flavors, the same recipe line also has a <a href="https://link.amazon/B0eXydVse" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">Chicken and Beef Dinner Variety Pack</a>.</p>
+
+      <h2 id="how-to-choose-for-your-dog">3. How to Choose for Your Dog</h2>
+      <ul>
+        <li><strong>Small breeds:</strong> pick small kibble sized for small mouths.</li>
+        <li><strong>Senior dogs:</strong> choose a formula made for older dogs, and talk with your vet about their needs.</li>
+        <li><strong>Picky eaters:</strong> try wet food, or use it as a topper over dry food.</li>
+        <li><strong>Active dogs:</strong> match the food to their energy needs and measure portions.</li>
+        <li><strong>Budget:</strong> dry food usually costs less, while adding a little wet food gives variety.</li>
+      </ul>
+      <p>Whatever you choose, switch foods slowly over 7 to 10 days, and measure portions instead of free feeding.</p>
+
+      <h2 id="dental-chews">4. Dental Chews</h2>
+      <p>Food type affects teeth, but daily dental care matters most. Some owners add a daily dental chew to help with plaque and tartar. When choosing one, look for products accepted by the Veterinary Oral Health Council (VOHC), and still brush your dog's teeth when you can. <a href="https://link.amazon/B028wbkaS" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">C.E.T. VeggieDent Fr3sh Plaque and Tartar Control Chews for large dogs</a> are a plant-based daily chew listed by the maker as VOHC accepted.</p>
+    `,
+    relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'the-science-of-canine-macros', 'senior-dog-nutrition-diet-adjustments'],
+  },
+  {
     id: 'science-of-canine-macros',
     slug: 'the-science-of-canine-macros',
     title: 'The Science of Canine Macros: How Much Protein, Fat, and Carbs Does Your Dog Actually Need?',
@@ -69,7 +150,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: 'Understanding your dog\'s macronutrient split is the foundation of long-term vitality. Discover the biological role of animal-based protein, healthy essential fatty acids (Omega-3 & 6), and how to read the Guaranteed Analysis on a dry matter basis.',
     image: '/images/blog/science-of-canine-macros.jpg',
     imageAlt: 'Ceramic dog food bowl with fresh beef cuts, salmon, and nutritious spinach on a wooden table',
-    featured: true,
+    featured: false,
     publishedDate: 'March 28, 2026',
     updatedDate: 'April 6, 2026',
     readTime: '8 min read',

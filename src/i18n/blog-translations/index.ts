@@ -10,6 +10,7 @@ import { seniorDogNutritionTranslations } from './senior-dog-nutrition';
 import { understandingRecallsTranslations } from './understanding-recalls';
 import { gutHealthAllergiesTranslations } from './gut-health-allergies';
 import { rotationalFeedingTranslations } from './rotational-feeding';
+import { dryVsWetDogFoodTranslations } from './dry-vs-wet-dog-food';
 
 export * from './types';
 
@@ -30,6 +31,7 @@ export const BLOG_POST_TRANSLATIONS: Record<string, BlogPostLocalizedRecord> = {
   'understanding-dog-food-recalls': understandingRecallsTranslations,
   'canine-gut-health-and-allergies': gutHealthAllergiesTranslations,
   'rotational-feeding-benefits-guide': rotationalFeedingTranslations,
+  'dry-vs-wet-dog-food': dryVsWetDogFoodTranslations,
 };
 
 /**
