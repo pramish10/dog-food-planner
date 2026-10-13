@@ -81,7 +81,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "LEGAL // DATA PROTECTION & PRIVACY",
-    "lastUpdated": "Updated: October 12, 2026",
+    "lastUpdated": "Updated: October 13, 2026",
     "intro": "At DogFoodPlanner.com, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, process, and safeguard information when you use our website.",
     "sections": [
       {
@@ -647,7 +647,8 @@ export const PAGE_TRANSLATIONS = {
     ],
     "ctaTitle": "¿Listo para Calcular las Necesidades Nutricionales de tu Perro?",
     "ctaDesc": "Utiliza nuestra calculadora interactiva, explora las guías de alergias caninas y lee nuestras guías de comida para perros.",
-    "ctaBtn": "Abrir Calculadora Nutricional Gratuita →"
+    "ctaBtn": "Abrir Calculadora Nutricional Gratuita →",
+    "amazonDisclaimer": "Como afiliados de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables."
   },
   "contact": {
     "eyebrow": "ATENCIÓN Y SOPORTE // CONSULTAS DIRECTAS",
@@ -696,7 +697,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "LEGAL // PROTECCIÓN DE DATOS Y PRIVACIDAD",
-    "lastUpdated": "Actualizado: 12 de octubre de 2026",
+    "lastUpdated": "Actualizado: 13 de octubre de 2026",
     "intro": "En DogFoodPlanner.com respetamos tu privacidad y nos comprometemos a proteger los datos personales. Esta política explica cómo tratamos y protegemos tu información.",
     "sections": [
       {
@@ -1262,7 +1263,8 @@ export const PAGE_TRANSLATIONS = {
     ],
     "ctaTitle": "愛犬に必要な適正カロリーと食事量を計算してみませんか？",
     "ctaDesc": "対話型計算ツールを試し、愛犬のアレルギー対策ガイドを確認し、ドッグフードガイドをお読みください。",
-    "ctaBtn": "無料の栄養計算機を起動する →"
+    "ctaBtn": "無料の栄養計算機を起動する →",
+    "amazonDisclaimer": "Amazonアソシエイトとして、適格販売により収入を得ています。"
   },
   "contact": {
     "eyebrow": "サポート＆お問い合わせ // 直接相談窓口",
@@ -1311,7 +1313,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "利用規約・プライバシー // 個人情報保護方針",
-    "lastUpdated": "最終更新日：2026年10月12日",
+    "lastUpdated": "最終更新日：2026年10月13日",
     "intro": "DogFoodPlanner.com（以下「当サイト」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、当サイトにおける情報の取り扱いについて説明します。",
     "sections": [
       {
@@ -1877,7 +1879,8 @@ export const PAGE_TRANSLATIONS = {
     ],
     "ctaTitle": "Prêt à Calculer les Besoins Nutritionnels de Votre Chien ?",
     "ctaDesc": "Essayez notre calculateur interactif, découvrez nos guides sur les allergies canines et lisez nos guides sur l'alimentation pour chien.",
-    "ctaBtn": "Lancer le Calculateur Nutritionnel Gratuit →"
+    "ctaBtn": "Lancer le Calculateur Nutritionnel Gratuit →",
+    "amazonDisclaimer": "En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises."
   },
   "contact": {
     "eyebrow": "SUPPORT & CONTACT // DEMANDES DIRECTES",
@@ -1926,7 +1929,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "MENTIONS LÉGALES // POLITIQUE DE CONFIDENTIALITÉ",
-    "lastUpdated": "Mis à jour : 12 octobre 2026",
+    "lastUpdated": "Mis à jour : 13 octobre 2026",
     "intro": "Sur DogFoodPlanner.com, nous respectons votre vie privée. Cette politique détaille comment vos données sont traitées et protégées.",
     "sections": [
       {
@@ -2492,7 +2495,8 @@ export const PAGE_TRANSLATIONS = {
     ],
     "ctaTitle": "Bereit, den Nährstoffbedarf Ihres Hundes zu berechnen?",
     "ctaDesc": "Nutzen Sie unseren interaktiven Rechner, erkunden Sie unsere Allergie-Ratgeber und lesen Sie unsere Hundefutter-Ratgeber.",
-    "ctaBtn": "Kostenlosen Futterrechner starten →"
+    "ctaBtn": "Kostenlosen Futterrechner starten →",
+    "amazonDisclaimer": "Als Amazon-Partner verdienen wir an qualifizierten Verkäufen."
   },
   "contact": {
     "eyebrow": "SUPPORT & KONTAKT // DIREKTE ANFRAGEN",
@@ -2541,7 +2545,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "RECHTLICHES // DATENSCHUTZERKLÄRUNG",
-    "lastUpdated": "Stand: 12. Oktober 2026",
+    "lastUpdated": "Stand: 13. Oktober 2026",
     "intro": "Auf DogFoodPlanner.com nehmen wir den Schutz Ihrer Daten sehr ernst. Diese Erklärung erläutert, wie wir Daten erheben und schützen.",
     "sections": [
       {
@@ -3107,7 +3111,8 @@ export const PAGE_TRANSLATIONS = {
     ],
     "ctaTitle": "Pronto para Calcular as Necessidades Nutricionais do Seu Cão?",
     "ctaDesc": "Experimente nossa calculadora interativa, explore nossos guias de alergias e leia nossos guias de alimentação canina.",
-    "ctaBtn": "Iniciar Calculadora Nutricional Gratuita →"
+    "ctaBtn": "Iniciar Calculadora Nutricional Gratuita →",
+    "amazonDisclaimer": "Como Associado da Amazon, recebemos remuneração por compras qualificadas."
   },
   "contact": {
     "eyebrow": "SUPORTE E CONTATO // ATENDIMENTO DIRETO",
@@ -3156,7 +3161,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "LEGAL // POLÍTICA DE PRIVACIDADE",
-    "lastUpdated": "Atualizado em: 12 de outubro de 2026",
+    "lastUpdated": "Atualizado em: 13 de outubro de 2026",
     "intro": "No DogFoodPlanner.com respeitamos a sua privacidade e garantimos a proteção dos seus dados. Esta política explica como as informações são tratadas.",
     "sections": [
       {
@@ -3722,7 +3727,8 @@ export const PAGE_TRANSLATIONS = {
     ],
     "ctaTitle": "우리 강아지에게 필요한 정확한 영양과 칼로리를 계산해 보세요",
     "ctaDesc": "간편한 계산기를 사용해보고, 알레르기 케어 가이드를 확인하며, 강아지 사료 가이드를 읽어보세요.",
-    "ctaBtn": "무료 영양 계산기 실행하기 →"
+    "ctaBtn": "무료 영양 계산기 실행하기 →",
+    "amazonDisclaimer": "Amazon 어소시에이트 활동의 일환으로 적격 구매를 통해 수수료를 제공받을 수 있습니다."
   },
   "contact": {
     "eyebrow": "고객 지원 및 문의 // 직접 문의 창구",
@@ -3771,7 +3777,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "개인정보 처리방침 // 데이터 보호 정책",
-    "lastUpdated": "최종 수정일: 2026년 10월 12일",
+    "lastUpdated": "최종 수정일: 2026년 10월 13일",
     "intro": "DogFoodPlanner.com은 이용자의 개인정보를 소중히 여기며 관련 법령을 준수합니다. 본 방침은 웹사이트 이용 시 정보가 어떻게 취급되는지 안내합니다.",
     "sections": [
       {
@@ -4337,7 +4343,8 @@ export const PAGE_TRANSLATIONS = {
     ],
     "ctaTitle": "Pronto a Calcolare i Fabbisogni del Tuo Cane?",
     "ctaDesc": "Prova il nostro calcolatore interattivo, consulta le guide sulle allergie canine e leggi le nostre guide sul cibo per cani.",
-    "ctaBtn": "Avvia il Calcolatore Gratuito →"
+    "ctaBtn": "Avvia il Calcolatore Gratuito →",
+    "amazonDisclaimer": "In qualità di Affiliato Amazon, riceviamo un guadagno dagli acquisti idonei."
   },
   "contact": {
     "eyebrow": "SUPPORTO E CONTATTO // RICHIESTE DIRETTE",
@@ -4386,7 +4393,7 @@ export const PAGE_TRANSLATIONS = {
   },
   "privacy": {
     "eyebrow": "INFORMATIVA SULLA PRIVACY // PROTEZIONE DATI",
-    "lastUpdated": "Aggiornato al: 12 ottobre 2026",
+    "lastUpdated": "Aggiornato al: 13 ottobre 2026",
     "intro": "Su DogFoodPlanner.com rispettiamo la tua privacy e proteggiamo i tuoi dati personali. Questa informativa descrive come gestiamo le informazioni.",
     "sections": [
       {
