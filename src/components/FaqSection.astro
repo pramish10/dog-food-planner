@@ -11,6 +11,7 @@ interface Props {
   category?: string;
   showSearch?: boolean;
   viewAllLink?: boolean;
+  asH1?: boolean;
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -24,6 +25,7 @@ const {
   category,
   showSearch = true,
   viewAllLink = false,
+  asH1 = false,
 } = Astro.props;
 
 let faqs = getLocalizedFaqs(lang);
@@ -40,9 +42,15 @@ const faqJsonLd = generateFaqJsonLd(faqs);
     
     <!-- Section Header -->
     <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-3">
-        {title}
-      </h2>
+      {asH1 ? (
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-3">
+          {title}
+        </h1>
+      ) : (
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-3">
+          {title}
+        </h2>
+      )}
       <p class="text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed">
         {subtitle}
       </p>

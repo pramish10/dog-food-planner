@@ -4,11 +4,9 @@ import Navbar from '../../../components/Navbar.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import FaqSection from '../../../components/FaqSection.astro';
 import Footer from '../../../components/Footer.astro';
-import { FAQ_CATEGORIES } from '../../../data/faqs';
 import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
 import { getPageTranslations } from '../../../i18n/pages';
-import { FAQ_CATEGORY_TRANSLATIONS } from '../../../i18n/faqs';
 
 export function getStaticPaths() {
   return getLangStaticPaths();
@@ -19,7 +17,6 @@ const currentStrings = ui[lang] || ui.en;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 const p = getPageTranslations(lang).faqPage;
-const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
 ---
 
 <Layout 
@@ -37,39 +34,12 @@ const categories = FAQ_CATEGORY_TRANSLATIONS[lang];
       ]}
     />
 
-    <!-- Hero Header with Warm Glow -->
-    <section class="relative py-12 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
-      <!-- Warm glow -->
-      <div class="absolute inset-0 pointer-events-none z-0">
-        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[600px] h-52 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.18) 0%, transparent 70%); filter: blur(40px);"></div>
-      </div>
-      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
-        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-4 text-balance leading-tight">
-          {currentStrings['faqs.title']}
-        </h1>
-        <p class="text-sm sm:text-base text-[#6b4226] dark:text-[#c4956a] max-w-2xl mx-auto leading-relaxed">
-          {currentStrings['faqs.desc']}
-        </p>
-
-        <!-- Topic Badges -->
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
-          {FAQ_CATEGORIES.slice(1).map(category => (
-            <a 
-              href={`${translatePath('/faq')}?category=${encodeURIComponent(category)}#faq-section`}
-              class="px-3 py-1.5 text-xs font-mono bg-white/85 dark:bg-[#1c1208]/85 text-[#8f5e35] dark:text-[#e8b584] hover:bg-[#92400e] dark:hover:bg-[#f59e0b] hover:text-white dark:hover:text-[#1c0f00] border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg transition-colors shadow-2xs"
-            >
-              # {categories[category] || category}
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <!-- Master FAQ Section with Search and JSON-LD -->
     <FaqSection 
       title={currentStrings['faqs.title']}
       subtitle={p.exploreHubsSubtitle}
       showSearch={true}
+      asH1={true}
     />
 
     <!-- Quick Navigation to Specialized Nutrition Hubs -->
