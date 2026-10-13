@@ -6,6 +6,8 @@ export interface BlogPost {
   category: string;
   categorySlug: string;
   excerpt: string;
+  image: string;
+  imageAlt: string;
   featured?: boolean;
   publishedDate: string;
   updatedDate: string;
@@ -59,6 +61,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Canine Nutrition & Diets',
     categorySlug: 'canine-nutrition-diets',
     excerpt: 'Understanding your dog\'s macronutrient split is the foundation of long-term vitality. Discover the biological role of animal-based protein, healthy essential fatty acids (Omega-3 & 6), and how to read the Guaranteed Analysis on a dry matter basis.',
+    image: '/images/blog/science-of-canine-macros.jpg',
+    imageAlt: 'Ceramic dog food bowl with fresh beef cuts, salmon, and nutritious spinach on a wooden table',
     featured: true,
     publishedDate: 'March 28, 2026',
     updatedDate: 'April 6, 2026',
@@ -199,6 +203,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Fresh & Raw Feeding',
     categorySlug: 'fresh-raw-feeding',
     excerpt: 'Switching your dog\'s diet too quickly is the #1 cause of acute gastrointestinal upset. Learn the proven 10-day transition timeline, digestive enzyme buffering, and how to read your dog\'s stool quality throughout the switch.',
+    image: '/images/blog/transition-dog-to-fresh-food.jpg',
+    imageAlt: 'Comparison of dry kibble and gently cooked fresh dog food with chicken, sweet potatoes, and pureed pumpkin',
     featured: false,
     publishedDate: 'March 22, 2026',
     updatedDate: 'April 2, 2026',
@@ -316,6 +322,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Safe Ingredients & Superfoods',
     categorySlug: 'safe-ingredients-superfoods',
     excerpt: 'Even adding 10-20% whole foods to your dog\'s bowl provides live enzymes, antioxidants, and bioavailable micronutrients missing from processed pet food. Discover 7 vet-approved superfoods you can buy at any grocery store.',
+    image: '/images/blog/superfoods-for-dogs-bowl.jpg',
+    imageAlt: 'Healthy canine superfoods bowl with blueberries, fresh pumpkin slices, raw egg yolk, wild sardines, and broccoli',
     featured: false,
     publishedDate: 'March 16, 2026',
     updatedDate: 'April 1, 2026',
@@ -396,6 +404,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Puppy & Senior Care',
     categorySlug: 'puppy-senior-care',
     excerpt: 'Puppies grow faster in their first 12 months than humans do in their first 15 years. Learn how to calculate precise puppy caloric requirements, protect growing joint plates, and avoid over-supplementation.',
+    image: '/images/blog/puppy-feeding-roadmap.jpg',
+    imageAlt: 'Golden retriever puppy sitting by a ceramic bowl with veterinarian-designed puppy food',
     featured: false,
     publishedDate: 'March 10, 2026',
     updatedDate: 'March 30, 2026',
@@ -470,6 +480,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Puppy & Senior Care',
     categorySlug: 'puppy-senior-care',
     excerpt: 'For decades, pet owners were told to reduce protein for senior dogs. Modern veterinary research proves the exact opposite: older dogs need higher protein quality to maintain muscle mass and immune resilience.',
+    image: '/images/blog/senior-dog-nutrition.jpg',
+    imageAlt: 'Senior Golden Retriever resting comfortably next to an elevated ceramic bowl with warm nutritious dog stew',
     featured: false,
     publishedDate: 'March 04, 2026',
     updatedDate: 'March 25, 2026',
@@ -539,6 +551,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Commercial Food & Recalls',
     categorySlug: 'commercial-food-recalls',
     excerpt: 'Pet food recalls can feel terrifying. Discover the top reasons foods are pulled from shelves, the difference between FDA Class I and Class II recalls, and the exact steps to protect your dog if their food is affected.',
+    image: '/images/blog/understanding-dog-food-recalls.jpg',
+    imageAlt: 'Natural pet food bag on a counter with fresh ingredients, magnifying glass, and veterinary quality checklist',
     featured: false,
     publishedDate: 'February 26, 2026',
     updatedDate: 'March 18, 2026',
@@ -625,6 +639,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Digestion & Gut Health',
     categorySlug: 'digestion-gut-health',
     excerpt: 'Over 70% of your dog\'s immune system is located in their gut. When the intestinal mucosal barrier breaks down, food proteins trigger chronic skin flare-ups. Learn how to diagnose and heal leaky gut with targeted nutrition.',
+    image: '/images/blog/canine-gut-health-allergies.jpg',
+    imageAlt: 'Happy healthy French Bulldog with a hypoallergenic bowl of dog food, kefir, and steamed green vegetables',
     featured: false,
     publishedDate: 'February 19, 2026',
     updatedDate: 'March 14, 2026',
@@ -698,6 +714,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Fresh & Raw Feeding',
     categorySlug: 'fresh-raw-feeding',
     excerpt: 'In the wild, canines never ate identical, processed nuggets for years on end. Discover how rotational feeding builds a diverse gut microbiome, mitigates heavy metal exposure, and keeps mealtime exciting.',
+    image: '/images/blog/rotational-feeding-benefits.jpg',
+    imageAlt: 'Three bowls showing protein rotational variety with fresh lamb, turkey, cranberries, and salmon on a slate table',
     featured: false,
     publishedDate: 'February 12, 2026',
     updatedDate: 'March 08, 2026',

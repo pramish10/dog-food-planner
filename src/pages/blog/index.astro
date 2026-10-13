@@ -92,15 +92,15 @@ const regularPosts = BLOG_POSTS.filter(p => p.id !== featuredPost.id);
       <div class="flex items-center justify-between gap-4 mb-6 pb-3 border-b border-[#f0d5a8]/60 dark:border-[#3a2510]">
         <div>
           <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight">
-            Latest Articles
+            {uiStrings.latestArticles}
           </h2>
           <p class="text-xs text-[#8f5e35] dark:text-[#a87c54] mt-0.5">
-            Showing <span id="visible-post-count">{BLOG_POSTS.length}</span> guides
+            {uiStrings.showingGuides.split('{count}')[0]}<span id="visible-post-count">{BLOG_POSTS.length}</span>{uiStrings.showingGuides.split('{count}')[1] || ''}
           </p>
         </div>
 
         <div class="text-xs font-mono text-[#8f5e35] dark:text-[#a87c54] hidden sm:block">
-          ✓ Canine Nutrition & Health
+          {uiStrings.canineNutritionTag}
         </div>
       </div>
 

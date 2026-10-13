@@ -44,7 +44,7 @@ const schemaOrgBlogPosting = {
   },
   "headline": post.title,
   "description": post.excerpt,
-  "image": "https://dogfoodplanner.com/og-image.jpg",
+  "image": "https://dogfoodplanner.com" + post.image,
   "author": {
     "@type": "Person",
     "name": post.author.name,
@@ -112,7 +112,7 @@ const schemaOrgBlogPosting = {
           </span>
           <span class="text-[#f0d5a8] dark:text-[#3a2510]">•</span>
           <span>
-            Updated {post.updatedDate}
+            {uiStrings.updatedLabel} {post.updatedDate}
           </span>
         </div>
 
@@ -134,6 +134,19 @@ const schemaOrgBlogPosting = {
 
         <!-- Left / Main Article Column (8 cols) -->
         <article class="lg:col-span-8 min-w-0">
+
+          <!-- ── Article Hero Image (Exact Same Image as Card Preview) ── -->
+          <div class="mb-8 sm:mb-10 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#f0d5a8] dark:border-[#3a2510] shadow-md bg-white dark:bg-[#1a1106]">
+            <div class="relative aspect-[16/9] w-full overflow-hidden">
+              <img 
+                src={post.image} 
+                alt={post.imageAlt}
+                class="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
 
           <!-- Key Takeaways Box (Modern Editorial TL;DR) -->
           <div class="p-6 sm:p-7 rounded-2xl bg-white/95 dark:bg-[#1c1208]/95 border-2 border-[#e8a44a]/40 dark:border-[#92400e]/40 shadow-sm mb-10">
@@ -315,14 +328,14 @@ const schemaOrgBlogPosting = {
             {uiStrings.relatedArticlesTitle}
           </h2>
           <p class="text-xs text-[#8f5e35] dark:text-[#a87c54] mt-0.5">
-            Continue learning about canine dietetics and whole-food wellness
+            {uiStrings.relatedArticlesSubtitle || 'Continue learning about canine dietetics and whole-food wellness'}
           </p>
         </div>
         <a 
           href={translatePath('/blog')} 
           class="text-xs font-bold text-[#c47a2b] dark:text-[#e8a44a] hover:underline"
         >
-          View all guides →
+          {uiStrings.viewAllArticles || 'View all articles →'}
         </a>
       </div>
 

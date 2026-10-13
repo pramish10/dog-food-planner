@@ -4,10 +4,9 @@ import Navbar from '../../../components/Navbar.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import Footer from '../../../components/Footer.astro';
 import BlogCard from '../../../components/BlogCard.astro';
-import { BLOG_POSTS } from '../../../data/blog';
+import { getLocalizedBlogPosts, BLOG_UI_STRINGS } from '../../../i18n/blog';
 import { getLangStaticPaths, useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
-import { BLOG_UI_STRINGS } from '../../../i18n/blog';
 
 export function getStaticPaths() {
   return getLangStaticPaths();
@@ -19,8 +18,9 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 
-const featuredPost = BLOG_POSTS.find(p => p.featured) || BLOG_POSTS[0];
-const regularPosts = BLOG_POSTS.filter(p => p.id !== featuredPost.id);
+const posts = getLocalizedBlogPosts(lang);
+const featuredPost = posts.find(p => p.featured) || posts[0];
+const regularPosts = posts.filter(p => p.id !== featuredPost.id);
 ---
 
 <Layout 
@@ -96,15 +96,15 @@ const regularPosts = BLOG_POSTS.filter(p => p.id !== featuredPost.id);
       <div class="flex items-center justify-between gap-4 mb-6 pb-3 border-b border-[#f0d5a8]/60 dark:border-[#3a2510]">
         <div>
           <h2 class="text-xl sm:text-2xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight">
-            Latest Articles
+            {uiStrings.latestArticles}
           </h2>
           <p class="text-xs text-[#8f5e35] dark:text-[#a87c54] mt-0.5">
-            Showing <span id="visible-post-count">{BLOG_POSTS.length}</span> guides
+            {uiStrings.showingGuides.split('{count}')[0]}<span id="visible-post-count">{posts.length}</span>{uiStrings.showingGuides.split('{count}')[1] || ''}
           </p>
         </div>
 
         <div class="text-xs font-mono text-[#8f5e35] dark:text-[#a87c54] hidden sm:block">
-          ✓ Canine Nutrition & Health
+          {uiStrings.canineNutritionTag}
         </div>
       </div>
 

@@ -4,37 +4,43 @@ import Navbar from '../../../components/Navbar.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import Footer from '../../../components/Footer.astro';
 import BlogCard from '../../../components/BlogCard.astro';
-import { BLOG_POSTS, getBlogPostBySlug, getRelatedBlogPosts } from '../../../data/blog';
+import { BLOG_POSTS } from '../../../data/blog';
 import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
-import { BLOG_CATEGORY_TRANSLATIONS, BLOG_UI_STRINGS } from '../../../i18n/blog';
+import { 
+  BLOG_CATEGORY_TRANSLATIONS, 
+  BLOG_UI_STRINGS, 
+  getLocalizedBlogPost, 
+  getLocalizedRelatedBlogPosts 
+} from '../../../i18n/blog';
 
 export function getStaticPaths() {
   const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
   return targetLangs.flatMap(lang => 
     BLOG_POSTS.map(post => ({
       params: { lang, slug: post.slug },
-      props: { post, lang }
+      props: { rawPost: post, lang }
     }))
   );
 }
 
 interface Props {
-  post: (typeof BLOG_POSTS)[number];
+  rawPost: (typeof BLOG_POSTS)[number];
   lang: Lang;
 }
 
-const { post, lang } = Astro.props;
+const { rawPost, lang } = Astro.props;
 
-if (!post) {
+if (!rawPost) {
   return Astro.redirect(`/${lang}/blog`);
 }
 
+const post = getLocalizedBlogPost(rawPost.slug, lang);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 const categoryName = BLOG_CATEGORY_TRANSLATIONS[lang]?.[post.category] || post.category;
-const relatedPosts = getRelatedBlogPosts(post.slug, 3);
+const relatedPosts = getLocalizedRelatedBlogPosts(post.slug, lang, 3);
 
 // Canonical and Schema URLs
 const canonicalUrl = `https://dogfoodplanner.com/${lang}/blog/${post.slug}`;
@@ -51,7 +57,7 @@ const schemaOrgBlogPosting = {
   },
   "headline": post.title,
   "description": post.excerpt,
-  "image": "https://dogfoodplanner.com/og-image.jpg",
+  "image": "https://dogfoodplanner.com" + post.image,
   "inLanguage": lang,
   "author": {
     "@type": "Person",
@@ -120,7 +126,7 @@ const schemaOrgBlogPosting = {
           </span>
           <span class="text-[#f0d5a8] dark:text-[#3a2510]">•</span>
           <span>
-            Updated {post.updatedDate}
+            {uiStrings.updatedLabel} {post.updatedDate}
           </span>
         </div>
 
@@ -142,6 +148,19 @@ const schemaOrgBlogPosting = {
 
         <!-- Left / Main Article Column (8 cols) -->
         <article class="lg:col-span-8 min-w-0">
+
+          <!-- ── Article Hero Image (Exact Same Image as Card Preview) ── -->
+          <div class="mb-8 sm:mb-10 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#f0d5a8] dark:border-[#3a2510] shadow-md bg-white dark:bg-[#1a1106]">
+            <div class="relative aspect-[16/9] w-full overflow-hidden">
+              <img 
+                src={post.image} 
+                alt={post.imageAlt}
+                class="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
 
           <!-- Key Takeaways Box (Modern Editorial TL;DR) -->
           <div class="p-6 sm:p-7 rounded-2xl bg-white/95 dark:bg-[#1c1208]/95 border-2 border-[#e8a44a]/40 dark:border-[#92400e]/40 shadow-sm mb-10">
@@ -323,14 +342,14 @@ const schemaOrgBlogPosting = {
             {uiStrings.relatedArticlesTitle}
           </h2>
           <p class="text-xs text-[#8f5e35] dark:text-[#a87c54] mt-0.5">
-            Continue learning about canine dietetics and whole-food wellness
+            {uiStrings.relatedArticlesSubtitle || 'Continue learning about canine dietetics and whole-food wellness'}
           </p>
         </div>
         <a 
           href={translatePath('/blog')} 
           class="text-xs font-bold text-[#c47a2b] dark:text-[#e8a44a] hover:underline"
         >
-          View all guides →
+          {uiStrings.viewAllArticles || 'View all articles →'}
         </a>
       </div>
 
