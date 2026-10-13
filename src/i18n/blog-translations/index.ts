@@ -66,6 +66,7 @@ export function getLocalizedBlogPost(slug: string, lang: Lang): BlogPost {
     keyTakeaways: localized.keyTakeaways || basePost.keyTakeaways,
     tableOfContents: localized.tableOfContents || basePost.tableOfContents,
     contentHtml: localized.contentHtml || basePost.contentHtml,
+    affiliateProduct: localized.affiliateProduct || basePost.affiliateProduct,
   };
 }
 

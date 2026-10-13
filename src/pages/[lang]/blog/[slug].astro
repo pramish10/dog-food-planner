@@ -4,6 +4,7 @@ import Navbar from '../../../components/Navbar.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import Footer from '../../../components/Footer.astro';
 import BlogCard from '../../../components/BlogCard.astro';
+import AffiliateButton from '../../../components/AffiliateButton.astro';
 import { BLOG_POSTS } from '../../../data/blog';
 import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
@@ -41,6 +42,42 @@ const translatePath = useTranslatedPath(lang);
 const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 const categoryName = BLOG_CATEGORY_TRANSLATIONS[lang]?.[post.category] || post.category;
 const relatedPosts = getLocalizedRelatedBlogPosts(post.slug, lang, 3);
+
+// Split content for inline affiliate product insertion if product exists
+const hasProduct = Boolean(post.affiliateProduct && post.affiliateProduct.url);
+let beforeHtml = post.contentHtml;
+let afterHtml = '';
+
+if (hasProduct) {
+  if (post.contentHtml.includes('<!-- AFFILIATE_PRODUCT -->')) {
+    const parts = post.contentHtml.split('<!-- AFFILIATE_PRODUCT -->');
+    beforeHtml = parts[0];
+    afterHtml = parts.slice(1).join('');
+  } else {
+    // Find natural insertion point in the text: before 3rd <h2>, or 2nd <h2>, or 2nd </p>
+    const h2Matches = [...post.contentHtml.matchAll(/<h2[^>]*>/gi)];
+    if (h2Matches.length >= 3) {
+      const idx = h2Matches[2].index!;
+      beforeHtml = post.contentHtml.slice(0, idx);
+      afterHtml = post.contentHtml.slice(idx);
+    } else if (h2Matches.length >= 2) {
+      const idx = h2Matches[1].index!;
+      beforeHtml = post.contentHtml.slice(0, idx);
+      afterHtml = post.contentHtml.slice(idx);
+    } else {
+      const pMatches = [...post.contentHtml.matchAll(/<\/p>/gi)];
+      if (pMatches.length >= 2) {
+        const targetP = pMatches[Math.min(2, pMatches.length - 1)];
+        const idx = targetP.index! + targetP[0].length;
+        beforeHtml = post.contentHtml.slice(0, idx);
+        afterHtml = post.contentHtml.slice(idx);
+      }
+    }
+  }
+} else {
+  // If no product, strip any stray marker and leave completely blank
+  beforeHtml = beforeHtml.replace(/<!--\s*AFFILIATE_PRODUCT\s*-->/g, '');
+}
 
 // Canonical and Schema URLs
 const canonicalUrl = `https://dogfoodplanner.com/${lang}/blog/${post.slug}`;
@@ -209,7 +246,34 @@ const schemaOrgBlogPosting = {
 
           <!-- Article HTML Body -->
           <div class="prose-canine text-[#4a2e18] dark:text-[#d6b797]">
-            <Fragment set:html={post.contentHtml} />
+            <Fragment set:html={beforeHtml} />
+
+            {hasProduct && post.affiliateProduct && (
+              <div class="not-prose my-8 p-4 sm:p-5 rounded-2xl bg-[#fffbf6] dark:bg-[#1e1308] border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-[#c47a2b]/60 dark:hover:border-[#c47a2b]/60">
+                <div class="flex items-center gap-3.5 min-w-0">
+                  <div class="w-10 h-10 rounded-xl bg-[#c47a2b]/10 dark:bg-[#c47a2b]/20 text-[#c47a2b] dark:text-[#f59e0b] flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                  </div>
+                  <div class="min-w-0">
+                    <p class="text-sm sm:text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] leading-snug">
+                      {post.affiliateProduct.name}
+                    </p>
+                  </div>
+                </div>
+                <div class="shrink-0 self-start sm:self-center">
+                  <AffiliateButton 
+                    url={post.affiliateProduct.url} 
+                    label={uiStrings.buyNow || 'Buy Now'} 
+                    size="sm" 
+                    class="w-full sm:w-auto shadow-xs font-bold"
+                  />
+                </div>
+              </div>
+            )}
+
+            {afterHtml && <Fragment set:html={afterHtml} />}
           </div>
 
           <!-- Share Article (At End of Post) -->

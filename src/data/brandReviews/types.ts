@@ -91,6 +91,7 @@ export interface BrandReviewsPageI18n {
   noAffiliateTitle: string;
   noAffiliateNotice: string;
   buyOnAmazon: string;
+  buyNow: string;
   backToBrands: string;
   readMoreBtn: string;
   prevBrand: string;

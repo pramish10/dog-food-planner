@@ -38,6 +38,12 @@ export interface BlogPost {
   }[];
   contentHtml: string;
   relatedSlugs: string[];
+  affiliateProduct?: BlogAffiliateProduct;
+}
+
+export interface BlogAffiliateProduct {
+  name: string;
+  url: string;
 }
 
 export const BLOG_CATEGORIES = [
@@ -193,7 +199,11 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="vet-summary-and-action-steps">7. Summary & Actionable Recommendations</h2>
       <p>To optimize your dog's daily bowl today, focus on nutrient density over marketing buzzwords. Calculate your dog's daily Resting Energy Requirements (RER), aim for real animal proteins within the first 3 ingredients, and consider topping meals with marine omega-3s to optimize their anti-inflammatory balance.</p>
     `,
-    relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'top-vet-approved-superfoods-for-dogs', 'gut-health-and-chronic-allergies']
+    relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'top-vet-approved-superfoods-for-dogs', 'gut-health-and-chronic-allergies'],
+    affiliateProduct: {
+      name: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz',
+      url: 'https://amzn.to/46HCJdW',
+    },
   },
   {
     id: 'transition-dog-to-fresh-food',
@@ -312,7 +322,11 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="when-to-pause-and-call-the-vet">6. When to Pause and Call the Vet</h2>
       <p>If your dog vomits more than once, shows acute lethargy, or has bloody diarrhea, stop the new food immediately. While dietary transition upset is usually benign, preexisting pancreatitis or true protein allergies must be ruled out by your veterinarian.</p>
     `,
-    relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'rotational-feeding-benefits']
+    relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'rotational-feeding-benefits'],
+    affiliateProduct: {
+      name: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz',
+      url: 'https://amzn.to/4zSd7Zb',
+    },
   },
   {
     id: 'superfoods-for-dogs-bowl',
@@ -394,7 +408,11 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="7-organic-simmered-bone-broth">8. Organic Simmered Bone Broth</h2>
       <p>Slowly simmering marrow bones and cartilage with a splash of apple cider vinegar extracts collagen, gelatin, glycine, and glucosamine. It is the ultimate hydration booster for dogs reluctant to drink from their water bowl.</p>
     `,
-    relatedSlugs: ['the-science-of-canine-macros', 'gut-health-and-chronic-allergies', 'how-to-transition-dog-to-fresh-food']
+    relatedSlugs: ['the-science-of-canine-macros', 'gut-health-and-chronic-allergies', 'how-to-transition-dog-to-fresh-food'],
+    affiliateProduct: {
+      name: 'Wild Planet Wild Sardines in Water, No Salt Added, 4.4oz (Pack of 12)',
+      url: 'https://amzn.to/4xg3W2h',
+    },
   },
   {
     id: 'puppy-feeding-growth-milestones',
@@ -541,7 +559,11 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="hydration-strategies-for-aging-kidneys">5. Hydration Strategies for Aging Kidneys</h2>
       <p>Older dogs often lose their thirst drive and may avoid drinking because walking to the bowl is painful. Rehydrating meals with warm, low-sodium bone broth ensures optimal blood volume and flushes metabolic waste through the kidneys.</p>
     `,
-    relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'puppy-feeding-roadmap-growth-curves']
+    relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'puppy-feeding-roadmap-growth-curves'],
+    affiliateProduct: {
+      name: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz',
+      url: 'https://amzn.to/46HCJdW',
+    },
   },
   {
     id: 'dog-food-recalls-guide',
@@ -629,7 +651,11 @@ export const BLOG_POSTS: BlogPost[] = [
         <li><strong>Disinfect Bowls and Bins:</strong> Wash all feeding bowls, scoops, and storage containers with hot soapy water and bleach solution.</li>
       </ol>
     `,
-    relatedSlugs: ['the-science-of-canine-macros', 'how-to-transition-dog-to-fresh-food', 'gut-health-and-chronic-allergies']
+    relatedSlugs: ['the-science-of-canine-macros', 'how-to-transition-dog-to-fresh-food', 'gut-health-and-chronic-allergies'],
+    affiliateProduct: {
+      name: 'ORIJEN Grain-Free WHOLEPREY Dry Dog Food Original Recipe, 23.5lb',
+      url: 'https://amzn.to/4xF5aFr',
+    },
   },
   {
     id: 'canine-gut-health-and-allergies',
@@ -704,7 +730,11 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="conducting-a-flawless-elimination-diet">5. Conducting a Flawless Elimination Diet</h2>
       <p>To accurately identify food triggers, feed a single novel protein that your dog has never consumed in their life (such as venison, kangaroo, or bison). Maintain this strictly for 8 to 12 weeks. One single flavored treat, rawhide, or dental chew containing hidden chicken or beef will reset the immunological clock back to day one.</p>
     `,
-    relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'rotational-feeding-benefits']
+    relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'rotational-feeding-benefits'],
+    affiliateProduct: {
+      name: 'Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb',
+      url: 'https://amzn.to/4ykV9Nk',
+    },
   },
   {
     id: 'rotational-feeding-benefits',
@@ -779,7 +809,11 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="who-should-not-rotate-proteins">5. Who Should NOT Rotate Proteins?</h2>
       <p>Dogs diagnosed with severe chronic inflammatory bowel disease (IBD), active pancreatitis, or those undergoing an active veterinary elimination diet should remain on their specialized prescription or single-protein regimen until their mucosal lining is stabilized.</p>
     `,
-    relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'the-science-of-canine-macros', 'canine-gut-health-and-allergies']
+    relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'the-science-of-canine-macros', 'canine-gut-health-and-allergies'],
+    affiliateProduct: {
+      name: "Stella & Chewy's Freeze-Dried Raw Dinner Patties – Variety Pack (5 Proteins)",
+      url: 'https://amzn.to/4gCgdJp',
+    },
   }
 ];
 

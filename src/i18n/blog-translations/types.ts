@@ -3,6 +3,11 @@ import type { BlogPost } from '../../data/blog';
 
 export type NonEnglishLang = Exclude<Lang, 'en'>; // 'es' | 'ja' | 'fr' | 'de' | 'pt' | 'ko' | 'it'
 
+export interface BlogAffiliateProduct {
+  name: string;
+  url: string;
+}
+
 export interface BlogPostTranslation {
   title: string;
   subtitle: string;
@@ -12,6 +17,7 @@ export interface BlogPostTranslation {
   keyTakeaways: string[];
   tableOfContents: { id: string; title: string }[];
   contentHtml: string;
+  affiliateProduct?: BlogAffiliateProduct;
 }
 
 /**
