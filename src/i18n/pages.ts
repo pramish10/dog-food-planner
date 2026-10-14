@@ -1,4934 +1,4998 @@
 import type { Lang } from './ui';
 
 export const PAGE_TRANSLATIONS = {
-  en: {
-  "about": {
-    "heroTitle": "About DogFoodPlanner: Dog Meal Planning Made Simple",
-    "heroSubtitle": "Learn about DogFoodPlanner.com, our mission, and how our free dog feeding calculator works.",
-    "missionBadge": "OUR MISSION // CANINE MEAL PLANNING",
-    "whyTitle": "Why DogFoodPlanner Was Created",
-    "whyP1": "We built DogFoodPlanner to help dog owners plan meals and feeding portions with confidence. We research publicly available guidance and turn it into simple, free tools and guides.",
-    "whyP2": "",
-    "whoTitle": "Who We Are",
-    "whoContent": "DogFoodPlanner is an independent website run by dog-loving researchers and writers. We are not veterinarians. Always consult your veterinarian before changing your dog's diet, especially for puppies, seniors, or dogs with health conditions.",
-    "methodTitle": "Our Nutritional Methodology",
-    "pillars": [
-      {
-        "tag": "01 // CALORIE ESTIMATES",
-        "title": "Calorie Estimates",
-        "desc": "Our calculator uses the standard Resting Energy Requirement formula (70 × body weight in kg^0.75) and common activity multipliers to estimate daily calories."
-      },
-      {
-        "tag": "02 // REFERENCE SOURCES",
-        "title": "Reference Sources",
-        "desc": "We refer to published guidance from sources such as AAFCO and the National Research Council. Our content is educational and does not replace professional advice."
-      },
-      {
-        "tag": "03 // TRANSPARENT",
-        "title": "Transparent",
-        "desc": "Some pages contain affiliate links, including Amazon Associates links. If you buy through them we may earn a small commission at no extra cost to you. This never changes our recommendations."
-      }
-    ],
-    "ctaTitle": "Ready to Calculate Your Dog's Nutritional Needs?",
-    "ctaDesc": "Try our interactive calculator, explore our canine allergy guides, and read our dog food guides.",
-    "ctaBtn": "Launch Free Nutrition Calculator →",
-    "amazonDisclaimer": "As an Amazon Associate we earn from qualifying purchases."
-  },
-  "contact": {
-    "eyebrow": "SUPPORT & FEEDBACK // DIRECT INQUIRIES",
-    "cards": [
-      {
-        "icon": "📧",
-        "title": "Email Inquiries",
-        "desc": "General questions & feedback:",
-        "email": "hello@dogfoodplanner.com"
-      },
-      {
-        "icon": "🐾",
-        "title": "Nutrition Research",
-        "desc": "Formula inquiries:",
-        "email": "research@dogfoodplanner.com"
-      },
-      {
-        "icon": "🛡️",
-        "title": "Technical & Data",
-        "desc": "Bug reports & calculator queries:",
-        "email": "legal@dogfoodplanner.com"
-      }
-    ],
-    "formTitle": "Send Our Canine Nutrition Team a Message",
-    "formDesc": "Have questions regarding our NRC calorie formulas or need help with a custom raw recipe? We reply within 24 business hours.",
-    "nameLabel": "Your Name",
-    "namePlaceholder": "e.g. Sarah Jenkins",
-    "emailLabel": "Your Email Address",
-    "emailPlaceholder": "sarah@example.com",
-    "subjectLabel": "Inquiry Topic",
-    "subjectOptions": [
-      "General Question / Feedback",
-      "Canine Nutrition & Recipe Inquiry",
-      "Calculator Formula Question",
-      "Bug Report / Technical Issue"
-    ],
-    "messageLabel": "Your Message",
-    "messagePlaceholder": "Tell us about your dog (breed, weight, age) and how we can assist...",
-    "submitBtn": "Send Message →",
-    "notice": "Veterinary Emergency Notice: If your pet is exhibiting acute symptoms of poisoning or severe distress, contact your emergency veterinarian or the ASPCA Poison Control hotline immediately.",
-    "faqTitle": "Looking for fast answers?",
-    "faqDesc": "Check our comprehensive veterinary FAQ knowledge base covering picky eating, raw diets, cat food, and commercial dog food brands.",
-    "faqBtn": "Browse All FAQs →",
-    "successTitle": "✓ Message prepared — sending to hello@dogfoodplanner.com",
-    "successDesc": "Your email client should open with a pre-drafted message addressed to hello@dogfoodplanner.com. Just hit Send in your email app and it will arrive in our inbox."
-  },
-  "privacy": {
-    "eyebrow": "LEGAL // DATA PROTECTION & PRIVACY",
-    "lastUpdated": "Updated: October 13, 2026",
-    "intro": "At DogFoodPlanner.com, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, process, and safeguard information when you use our website.",
-    "sections": [
-      {
-        "title": "1. Information We Do Not Collect",
-        "content": "We believe your pet’s health data belongs to you. We do not require account registration, passwords, or credit cards to use our dog feeding calculator. Dog profiles, body weights, and meal selections entered into the calculator are processed client-side in your browser and are not saved to external databases."
-      },
-      {
-        "title": "2. Anonymous Technical Data",
-        "content": "Like most modern websites, our CDN servers automatically record standard anonymous request data, including IP address (anonymized), browser type, referring URL, and page timestamps to maintain site security, detect DDoS attacks, and deliver fast global performance."
-      },
-      {
-        "title": "3. Browser Cookies & Local Storage",
-        "content": "We use localStorage to remember your language and meal plan on your device. If you click an affiliate link, the third-party site (such as Amazon) may set its own cookies."
-      },
-      {
-        "title": "4. Third-Party Links",
-        "content": "Our site contains reference links to published research, AAFCO standards, NRC databases, and external resources. We are not responsible for the privacy practices or content of third-party websites."
-      },
-      {
-        "title": "5. Affiliate Disclosure",
-        "content": "DogFoodPlanner participates in the Amazon Services LLC Associates Program. As an Amazon Associate we earn from qualifying purchases, at no extra cost to you."
-      },
-      {
-        "title": "6. Children’s Privacy",
-        "content": "Our website is intended for general audiences and adult pet owners. We do not knowingly collect or solicit personal information from children under the age of 13."
-      },
-      {
-        "title": "7. Policy Updates & Contact",
-        "content": "We may periodically update this policy to reflect enhancements to our tools. Any changes will be posted directly to this page. If you have questions regarding this policy, please contact privacy@dogfoodplanner.com."
-      }
-    ]
-  },
-  "terms": {
-    "eyebrow": "LEGAL // TERMS OF SERVICE",
-    "lastUpdated": "Updated: January 2026",
-    "intro": "Please review these Terms of Service carefully before utilizing DogFoodPlanner.com. By using this website, you acknowledge and agree to these terms.",
-    "sections": [
-      {
-        "title": "1. Acceptance of Terms",
-        "content": "By accessing and utilizing DogFoodPlanner.com (the \"Site\" or \"Service\"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any portion of these terms, please discontinue use immediately."
-      },
-      {
-        "title": "2. Veterinary & Medical Disclaimer",
-        "content": "The information, calculators, and recipe guidelines provided on DogFoodPlanner.com are developed for educational and informational purposes only. The content is based on published National Research Council (NRC) and AAFCO nutritional models, but it does NOT constitute professional veterinary medical advice, clinical diagnosis, or personalized treatment. Always consult a licensed veterinarian or board-certified veterinary nutritionist (DACVN) before significantly altering your pet’s diet, especially for puppies, pregnant dogs, or dogs with chronic renal, cardiac, or metabolic disorders."
-      },
-      {
-        "title": "3. Use of Interactive Calculators",
-        "content": "All energy requirement calculations (RER and MER) and gram portion estimates are mathematical starting baselines. Individual canine metabolisms vary widely based on genetics, neuter status, environmental temperatures, and underlying health. Pet owners must regularly assess their dog’s Body Condition Score (BCS) and adjust intake accordingly."
-      },
-      {
-        "title": "4. Homemade Diet Safety & Calcium Balancing",
-        "content": "Feeding a homemade or raw diet requires strict adherence to complete micronutrient profiles. In particular, feeding boneless meat without adequate calcium supplementation causes severe metabolic bone disease and hypocalcemia. Users assume full responsibility for appropriately measuring and balancing all ingredients."
-      },
-      {
-        "title": "5. Intellectual Property Rights",
-        "content": "All content, proprietary calculator code, visual interface designs, infographics, and written articles on DogFoodPlanner.com are the exclusive intellectual property of DogFoodPlanner and protected by copyright and international intellectual property laws."
-      },
-      {
-        "title": "6. Limitation of Liability",
-        "content": "In no event shall DogFoodPlanner.com, its authors, editorial team, or operators be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the information and tools provided on this website."
-      }
-    ]
-  },
-  "bestFood": {
-    "eyebrow": "PILLAR GUIDE // CANINE NUTRITION RANKING 2026",
-    "rankingsTitle": "What Are the Top 5 Healthiest Dog Foods in 2026?",
-    "rankingsIntro": "Canine nutritional longevity research confirms that minimal heat processing and high biological moisture are the two strongest predictors of canine vitality, kidney health, and disease resistance.",
-    "readMoreLabel": "Read more →",
-    "readLessLabel": "Show less ↑",
-    "rankings": [
-      {
-        "rank": "01",
-        "title": "Gently Cooked Human-Grade Fresh Food",
-        "score": "98/100",
-        "pros": "Real USDA meats and vegetables cooked at low temperatures (160°F). Retains 70%+ natural moisture, live enzymes, and bioavailable vitamins.",
-        "cons": "Requires freezer or refrigerator storage. Slightly higher cost than commercial kibble.",
-        "readMore": "Gently cooked fresh food sits at the top of the ranking because it mimics a home-cooked meal without sacrificing food safety. Ingredients are sourced from USDA-inspected human food facilities, then cooked just long enough at low heat (around 160°F) to kill pathogens while preserving delicate proteins, taurine, and water-soluble B-vitamins that high-heat extrusion destroys.\n\nBecause the food already carries 70%+ moisture, it takes pressure off the kidneys and lowers the chronic low-grade dehydration common in kibble-only diets. It's an especially strong fit for dogs recovering from illness, seniors with a reduced thirst drive, or breeds prone to food sensitivities, since recipes are typically single-protein and free of rendered meat meals or synthetic preservatives.\n\nThe main tradeoff is logistics: it needs fridge or freezer space, and portions must be thawed ahead of feeding time. If you're not ready to cook it yourself, several USDA-kitchen brands sell shelf-stable versions of the same gently-cooked format, which is a low-effort way to try the category before committing to a full homemade routine.",
-        "productKey": "justfoodfordogs-chicken-white-rice",
-        "productNote": "A shelf-stable way to try this category:"
-      },
-      {
-        "rank": "02",
-        "title": "Ancestral 80-10-10 Raw BARF Diets",
-        "score": "95/100",
-        "pros": "Biologically appropriate balance: 80% muscle meat, 10% bone, 10% organ. Promotes optimal dental health and lean muscle tone.",
-        "cons": "Requires strict safe food handling and careful calcium balancing.",
-        "readMore": "The 80-10-10 ratio (80% muscle meat, 10% raw edible bone, 10% secreting organ) is built to replicate what a wild canine ancestor would get from a whole prey animal. Done correctly, it delivers naturally balanced calcium-to-phosphorus ratios straight from the bone content, supports lean muscle mass, and the mechanical action of chewing raw bone helps scrape tartar off teeth.\n\nBecause nothing is cooked, enzymes and heat-sensitive amino acids stay fully intact. The catch is precision: sourcing safe raw bone and hitting the ratio exactly both require real discipline, since miscalculating the bone percentage is the most common mistake that leads to constipation or, over time, skeletal issues in growing puppies. Raw meat also needs to be handled with the same hygiene as any raw human food (separate cutting boards, refrigeration, prompt cleanup).\n\nMost households find it easier to start with a professionally-formulated raw product that already hits the ratio before graduating to fully custom raw meals sourced and weighed at home.",
-        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-        "productNote": "A pre-balanced raw option that removes the guesswork:"
-      },
-      {
-        "rank": "03",
-        "title": "Air-Dried & Freeze-Dried Raw Dog Food",
-        "score": "91/100",
-        "pros": "Delivers raw nutritional integrity with ambient shelf stability. Excellent convenient topper for picky eaters.",
-        "cons": "Must be rehydrated with warm water or bone broth for optimal kidney function.",
-        "readMore": "Air-drying and freeze-drying both pull moisture out of raw meat at low temperatures, keeping the nutrient and enzyme profile close to raw while making the food shelf-stable at room temperature, so no freezer is required. Freeze-drying uses a cold vacuum process that tends to preserve nutrients even better than air-drying, though it usually costs more per pound.\n\nBoth formats travel well and work great as a raw topper mixed into kibble to boost palatability. Rehydrating with warm water or bone broth before serving helps restore moisture closer to a dog's ancestral wild diet, and is especially worthwhile for dogs prone to urinary crystals or kidney strain.\n\nThe main consideration is cost-per-calorie: since the water weight is removed, you're paying for concentrated nutrition, which is why it's often used as a topper or rotational diet rather than a large dog's sole daily feed.",
-        "productKey": "ziwi-peak-beef-chicken-bundle",
-        "productNote": "A well-reviewed air-dried option:"
-      },
-      {
-        "rank": "04",
-        "title": "High-Protein Grain-Free & Ancient Grain Kibble",
-        "score": "78/100",
-        "pros": "Convenient, shelf-stable, and budget-accessible for large and multi-dog households.",
-        "cons": "Undergoes 400°F extrusion, only 8-10% moisture, contains 40-50% high-glycemic starches.",
-        "readMore": "Premium kibble remains the most practical option for many households: it's shelf-stable for up to a year, easy to portion with an automatic feeder, and significantly cheaper per calorie than fresh or raw diets.\n\nThe best formulas in this tier lead with a named animal protein rather than a vague \"meat meal\", keep starches to ancient grains like oats and sorghum instead of heavy corn or wheat fillers, and undergo third-party lab testing for heavy metals.\n\nThe tradeoff is the extrusion process itself: exposure to temperatures above 400°F destroys some heat-sensitive vitamins and reduces moisture to roughly 10%, which is why vets often recommend adding a splash of bone broth or a raw topper to kibble-only diets, especially for dogs prone to urinary crystals.",
-        "productKey": "orijen-original-grain-free-23lb",
-        "productNote": "A high-protein, WholePrey formula in this category:"
-      },
-      {
-        "rank": "05",
-        "title": "Prescription Therapeutic Diets",
-        "score": "72/100",
-        "pros": "Formulated specifically for clinical renal failure, liver disease, or struvite bladder stones.",
-        "cons": "Often utilizes lower-grade carbohydrate fillers and requires veterinary prescription.",
-        "readMore": "Therapeutic diets are engineered to manage one specific diagnosed condition: reduced protein and phosphorus for kidney disease, hydrolyzed proteins the immune system can't react to for severe food allergies, or controlled magnesium and pH for struvite bladder stones.\n\nThey rank lower on a general \"healthiest\" scale only because they're deliberately restrictive rather than optimized for an average healthy dog; a formula built to spare failing kidneys, for example, is intentionally not the most protein-dense food on the market.\n\nThese diets require veterinary sign-off and periodic bloodwork to confirm they're working, and should never be fed to a healthy dog without a clinical reason, since restricting nutrients a healthy dog actually needs can cause harm over time.",
-        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-        "productNote": "A common vet-prescribed kidney-support formula:"
-      }
-    ],
-    "buyerGuideTitle": "4 Golden Rules for Choosing the Best Dog Food",
-    "buyerRules": [
-      {
-        "title": "1. Named Animal Protein First",
-        "desc": "Look for \"Deboned Turkey\", \"Beef\", or \"Wild Salmon\" as the primary ingredient rather than ambiguous generic \"meat meal\".",
-        "readMore": "Ingredients are listed by pre-cooking weight on commercial pet food labels. Whole named meats (such as 'Deboned Turkey' or 'Fresh Beef') supply essential amino acids like taurine, arginine, and carnitine in their most bioavailable form. Avoid generic terms like 'animal derivatives', 'poultry meal', or 'meat and bone meal', which allow manufacturers to blend low-grade rendered waste from unspecified animal species.\n\nBe mindful of 'ingredient splitting' as well: brands frequently split carbohydrates into separate entries (e.g. peas, pea flour, pea protein) so that the meat appears first on the list, even when carbohydrates make up the majority of the food.\n\nConcentrated named meals—such as 'Dehydrated Lamb Meal' or 'Wild Salmon Meal'—are acceptable when transparently named, as their moisture has already been removed before cooking, providing a dense source of animal protein."
-      },
-      {
-        "title": "2. High Biological Moisture (>70%)",
-        "desc": "Dry kibble (8-10% moisture) causes chronic low-grade dehydration. Always add fresh toppers or rehydrate with warm bone broth.",
-        "readMore": "In the wild, canine ancestral prey animals consist of 70% to 75% water. Dogs have an evolutionary low thirst reflex because their physiology expects to absorb hydration directly through their food. Relying entirely on dry kibble (which contains only 8–10% moisture) leaves dogs in a persistent state of low-grade dehydration.\n\nOver years, concentrated urine places intense strain on the kidneys and creates an ideal environment for struvite and calcium oxalate bladder stones to form.\n\nIf you feed kibble, always incorporate moisture: rehydrate meals 1:1 with warm low-sodium bone broth, filtered water, or plain kefir, or top kibble with fresh steamed meats and organ puree to safeguard kidney function."
-      },
-      {
-        "title": "3. Zero Synthetic Preservatives",
-        "desc": "Strictly avoid BHA, BHT, ethoxyquin, propylene glycol, and artificial food colorings.",
-        "readMore": "To achieve 18–24 month shelf lives, budget pet foods rely on chemical antioxidants like BHA (butylated hydroxyanisole), BHT (butylated hydroxytoluene), and ethoxyquin. Scientific studies have flagged BHA and BHT as potential endocrine disruptors and carcinogens, while ethoxyquin—originally designed as a pesticide—has been tied to liver toxicity and allergies.\n\nAdditionally, artificial dyes like Red 40, Yellow 5, and Blue 2 serve purely cosmetic purposes for human pet owners while triggering dermatitis, chronic itching, and gastrointestinal inflammation in sensitive dogs.\n\nPrioritize foods preserved strictly with natural antioxidants: mixed tocopherols (Vitamin E), rosemary extract, and citric acid. These keep fats fresh safely without systemic toxicity."
-      },
-      {
-        "title": "4. Controlled Carbohydrates (<25%)",
-        "desc": "Dogs lack salivary amylase. High-starch diets overtax the pancreas and accelerate obesity.",
-        "readMore": "Dogs are facultative carnivores with zero biological requirement for refined carbohydrates. Unlike humans, dogs produce no salivary amylase to start breaking down starches during chewing; their pancreas must shoulder the entire enzymatic load of digesting complex carbohydrates.\n\nBecause pet food regulations do not mandate carbohydrate disclosure on guaranteed analysis panels, many commercial kibbles quietly hide 45% to 60% starch from corn, wheat, white potatoes, or tapioca simply to bind dry pellets together.\n\nExcessive glycemic loads trigger rapid insulin spikes, systemic inflammation, chronic ear infections, and accelerate canine obesity. Calculate carb content using the Nitrogen-Free Extract formula: 100% minus (Protein + Fat + Fiber + Moisture + Ash). Strive for foods under 25% total carbohydrates."
-      }
-    ],
-    "ctaTitle": "Calculate Exact Portions for Your Dog’s Ideal Food",
-    "ctaDesc": "Whether you choose fresh, raw, or premium kibble, get your dog’s exact daily grams and calorie target.",
-    "ctaBtn": "Calculate Meal Portions Now →"
-  },
-  "recipes": {
-    "eyebrow": "RECIPE ARCHIVE // NRC & AAFCO NUTRITION BLUEPRINTS",
-    "heroTitle": "Healthy Homemade Dog Food Recipes",
-    "heroSubtitle": "Step-by-step blueprints for preparing healthy, complete, and balanced gently cooked meals and ancestral 80-10-10 raw BARF diets at home.",
-    "calciumWarningTitle": "The #1 Rule of Homemade Dog Food: Calcium Balancing",
-    "calciumWarningDesc": "Muscle meat is naturally very high in phosphorus and low in calcium (1:20 ratio). Feeding plain chicken, beef, and rice without added calcium will cause severe metabolic bone disease and skeletal demineralization within months. Always add 1/2 teaspoon of pure powdered eggshell (approx. 900mg elemental calcium) per pound of boneless meat to achieve the essential 1.2:1 Calcium-to-Phosphorus ratio.",
-    "recipesList": [
-      {
-        "tag": "GENTLY COOKED",
-        "title": "Recipe 1: Gently Cooked Turkey & Prebiotic Pumpkin (Sensitive Stomach Friendly)",
-        "desc": "Ideal for dogs with sensitive digestion, loose stools, or poultry allergies to factory chicken.",
-        "ingredients": [
-          "USDA Ground Turkey (93/7) — 65% (approx. 2 lbs)",
-          "Turkey or Beef Hearts (Natural Taurine) — 10% (approx. 5 oz)",
-          "Pure Canned Pumpkin Puree (Digestive Fiber) — 10% (approx. 5 oz)",
-          "Steamed Baby Spinach & Diced Zucchini — 10% (approx. 5 oz)",
-          "Wild Alaskan Salmon Oil (EPA/DHA) — 2% (1.5 tbsp)",
-          "Clean Eggshell Powder (Elemental Calcium) — 3% (1 full tsp)"
-        ],
-        "prep": "Sauté turkey and hearts on medium-low heat until lightly cooked (160°F). Steam vegetables, blend with pumpkin, and fold into cooked meats. Let cool completely before stirring in salmon oil and eggshell powder. Store in meal-sized portions."
-      },
-      {
-        "tag": "RAW BARF",
-        "title": "Recipe 2: Ancestral 80-10-10 Raw BARF Beef & Duck",
-        "desc": "Biologically balanced raw ancestral diet for healthy adult dogs with strong digestive acids.",
-        "ingredients": [
-          "Lean Grass-Fed Beef Muscle Meat & Trimmings — 70%",
-          "Beef Heart (Rich in L-Carnitine & CoQ10) — 10%",
-          "Raw Edible Duck Necks or Chicken Frames — 10% (Natural Bone & Calcium)",
-          "Beef Liver (Vitamin A & B-Complex) — 5%",
-          "Beef Kidney or Spleen (Essential Secreting Organ) — 5%"
-        ],
-        "prep": "Dice beef muscle and heart into bite-sized chunks. Thaw raw edible bone pieces. Weigh organs precisely using a digital gram scale. Freeze all portions for at least 3 weeks at -4°F (-20°C) prior to feeding."
-      },
-      {
-        "tag": "SUPERFOOD TOPPER",
-        "title": "Recipe 3: 80/20 Antioxidant Superfood Kibble Topper",
-        "desc": "Cost-effective fresh food booster designed to replace 20% of your dog’s dry kibble calories.",
-        "ingredients": [
-          "Gently Poached Pastured Eggs — 40%",
-          "Steamed Broccoli Sprouts & Wild Blueberries — 30%",
-          "Simmered Grass-Fed Beef Bone Broth — 20%",
-          "Kelp Powder & Organic Hemp Seeds — 10%"
-        ],
-        "prep": "Lightly soft-boil eggs. Steam green veggies for 3 minutes. Blend with warm bone broth and organic berries. Pour 2-4 tablespoons over your dog’s standard kibble bowl daily."
-      }
-    ],
-    "calciumGuideTitle": "Safe Calcium Sources for Homemade Dog Diets",
-    "calciumGuideItems": [
-      {
-        "title": "Eggshell Powder",
-        "ratio": "1/2 tsp per 1 lb boneless meat",
-        "desc": "95% pure calcium carbonate. Easy to grind at home from washed, baked eggshells. Safe and neutral."
-      },
-      {
-        "title": "Raw Edible Meaty Bones",
-        "ratio": "10% of total diet weight",
-        "desc": "Duck necks, chicken wings, or turkey necks. Never feed cooked bones, which become brittle and splinter."
-      },
-      {
-        "title": "Veterinary Bone Meal",
-        "ratio": "Follow manufacturer specifications",
-        "desc": "Microcrystalline hydroxyapatite delivering calcium and phosphorus in a natural, bioavailable 2:1 ratio."
-      }
-    ]
-  },
-  "toxic": {
-    "eyebrow": "CRITICAL SAFETY // CANINE INGREDIENT TOXICITY",
-    "dangerTitle": "The Most Dangerous Household Foods for Dogs",
-    "dangerIntro": "Certain human foods contain biochemical compounds that canine metabolisms cannot break down, causing acute organ failure or toxicity.",
-    "dangerList": [
-      {
-        "name": "Chocolate & Cocoa",
-        "toxin": "Theobromine & Caffeine",
-        "symptoms": "Vomiting, rapid panting, tachycardia, muscle tremors, seizures, cardiac arrest.",
-        "risk": "HIGH TO FATAL"
-      },
-      {
-        "name": "Grapes, Raisins & Currants",
-        "toxin": "Tartaric Acid",
-        "symptoms": "Lethargy, dehydration, acute irreversible kidney (renal) failure within 24-72 hours.",
-        "risk": "EXTREMELY FATAL"
-      },
-      {
-        "name": "Xylitol (Birch Sugar / E967)",
-        "toxin": "Synthetic Sugar Alcohol",
-        "symptoms": "Massive insulin surge, profound hypoglycemia, ataxia, acute liver necrosis within hours.",
-        "risk": "CRITICAL EMERGENCY"
-      },
-      {
-        "name": "Onions, Garlic, Leeks & Chives",
-        "toxin": "N-propyl Disulfide",
-        "symptoms": "Destroys red blood cells, hemolytic anemia, pale gums, dark red/brown urine, weakness.",
-        "risk": "HIGH CUMULATIVE"
-      },
-      {
-        "name": "Macadamia Nuts",
-        "toxin": "Unknown Neurotoxic Factor",
-        "symptoms": "Hind-limb weakness, hypothermia or high fever, vomiting, muscle stiffness.",
-        "risk": "MODERATE TO SEVERE"
-      },
-      {
-        "name": "Cooked Bones of Any Kind",
-        "toxin": "Physical Splinter Hazard",
-        "symptoms": "Gastrointestinal perforation, internal bleeding, peritonitis, fatal bowel blockage.",
-        "risk": "SURGICAL EMERGENCY"
-      }
-    ],
-    "emergencyTitle": "What to Do in a Pet Poisoning Emergency",
-    "emergencySteps": [
-      "1. Act Immediately: Identify the exact substance, packaging, estimated amount ingested, and the time.",
-      "2. Do NOT Induce Vomiting without Veterinary Instruction: Caustic chemicals, petroleum products, and sharp objects cause secondary burns and esophageal tearing if regurgitated.",
-      "3. Call Animal Emergency Services Immediately: Contact your 24/7 veterinary clinic or ASPCA Animal Poison Control (888-426-4435)."
-    ],
-    "safeTitle": "100% Safe Canine Fruits & Vegetables",
-    "safeIntro": "These dog-friendly whole foods provide natural antioxidants, soluble prebiotic fiber, and vitamins when added to your dog’s bowl:",
-    "safeFoods": [
-      {
-        "name": "Blueberries",
-        "benefit": "Packed with anthocyanins, polyphenols, and cellular antioxidants."
-      },
-      {
-        "name": "Pure Pumpkin",
-        "benefit": "Rich soluble fiber that naturally relieves both diarrhea and constipation."
-      },
-      {
-        "name": "Carrots",
-        "benefit": "Low-calorie crunchy treat rich in beta-carotene and helps clean teeth."
-      },
-      {
-        "name": "Green Beans",
-        "benefit": "Excellent low-glycemic bulking vegetable for weight-management diets."
-      },
-      {
-        "name": "Apples (No Seeds)",
-        "benefit": "Natural source of vitamin C, vitamin A, and prebiotic pectin."
-      }
-    ]
-  },
-  "brands": {
-    "eyebrow": "INDEPENDENT ANALYSIS // BRAND REVIEWS & RECALL LOG",
-    "heroTitle": "Dog Food Brand Reviews & Recall History",
-    "heroSubtitle": "Unbiased reviews of major pet food brands, AAFCO labeling rules, and recall tracking to protect your canine companion.",
-    "brandsList": [
-      {
-        "name": "Blue Buffalo",
-        "grade": "Grade: B+",
-        "pros": "Real deboned meat is ingredient #1; no corn, wheat, or soy; cold-formed LifeSource Bits provide vitamins.",
-        "cons": "High carbohydrate load (45-50%); historical FDA recalls for moisture/mold and elevated Vitamin D.",
-        "verdict": "Above-average commercial kibble. Consider adding 20% fresh whole food toppers to improve moisture."
-      },
-      {
-        "name": "Rachael Ray Nutrish",
-        "grade": "Grade: C+ / B-",
-        "pros": "Budget-friendly and widely available; Peak and Dish lines feature improved real meat inclusion.",
-        "cons": "Standard lines rely heavily on pea protein and corn gluten fillers; past FDA DCM investigation inclusion.",
-        "verdict": "Acceptable budget option in higher-tier lines, but inspect ingredient labels carefully for legume splitting."
-      },
-      {
-        "name": "Pure Balance (Walmart)",
-        "grade": "Grade: B (Best Budget)",
-        "pros": "Exceptional price-to-quality ratio; meat-first recipes free from corn, wheat, soy, and artificial colors.",
-        "cons": "Manufactured by contract co-packers; moderate carbohydrate levels.",
-        "verdict": "One of the best value supermarket brands available on the commercial dry dog food market."
-      },
-      {
-        "name": "Ollie Fresh Dog Food",
-        "grade": "Grade: A",
-        "pros": "100% human-grade USDA meats and produce; gently cooked at low temperatures; precision pre-portioned packs.",
-        "cons": "Premium monthly subscription cost ($180-$350/month); requires dedicated freezer storage.",
-        "verdict": "Gold standard for canine metabolic health, coat vitality, and digestive longevity."
-      },
-      {
-        "name": "Open Farm",
-        "grade": "Grade: A-",
-        "pros": "Exceptional sourcing transparency; 100% certified humane meats and wild ocean-wise fish; ancient grain options.",
-        "cons": "Premium price point; limited retail store availability.",
-        "verdict": "Top choice for pet parents seeking ethical sourcing, high meat inclusion, and zero poultry by-products."
-      }
-    ],
-    "recallsTitle": "Understanding FDA Pet Food Recalls",
-    "recallsDesc": "Pet food recalls fall into three distinct FDA classes: Class I (dangerous health hazard with risk of death, e.g. Salmonella, lethal aflatoxins, excessive Vitamin D), Class II (temporary adverse health effect), and Class III (minor labeling or weight violation). Always register your lot numbers and check the FDA recall database periodically.",
-    "methodTitle": "Our 4-Point Brand Evaluation Standard",
-    "methodPillars": [
-      {
-        "title": "1. Named Animal Protein",
-        "desc": "Deboned whole muscle meats vs ambiguous byproduct meal."
-      },
-      {
-        "title": "2. Carbohydrate Fraction",
-        "desc": "Keeping starches under 40% to prevent metabolic obesity."
-      },
-      {
-        "title": "3. Sourcing Transparency",
-        "desc": "Traceable humane farms and non-GMO produce."
-      },
-      {
-        "title": "4. Clean Recall Record",
-        "desc": "Independent laboratory testing and rigorous plant safety."
-      }
-    ]
-  },
-  "allergies": {
-    "eyebrow": "NUTRITIONAL GUIDE // CANINE ALLERGIES & DIGESTION",
-    "heroTitle": "Best Dog Food for Allergies & Sensitive Stomachs",
-    "heroSubtitle": "Practical guide to food allergies, single-source novel proteins, and 8-week elimination diet protocols.",
-    "allergensTitle": "The Top 5 Most Common Canine Food Allergens",
-    "allergensIntro": "Canine food allergies are immune-mediated hypersensitivity reactions to specific dietary proteins. In order of clinical frequency:",
-    "allergensList": [
-      {
-        "name": "1. Factory Chicken (60% of cases)",
-        "desc": "Due to extreme overexposure across commercial pet food, chicken is the #1 canine allergen."
-      },
-      {
-        "name": "2. Commercial Beef (30% of cases)",
-        "desc": "Widely used red meat that triggers severe skin itching and ear infections in sensitive dogs."
-      },
-      {
-        "name": "3. Dairy Products",
-        "desc": "Adult dogs naturally lack lactase enzymes, causing explosive diarrhea and gas."
-      },
-      {
-        "name": "4. Wheat & Corn Gluten",
-        "desc": "High-glycemic grain proteins that trigger chronic inflammation and yeast overgrowth."
-      },
-      {
-        "name": "5. Soy & Legumes",
-        "desc": "Common cheap filler proteins that can impair gut barrier function and thyroid health."
-      }
-    ],
-    "eliminationTitle": "The 8-Week Elimination Diet Protocol",
-    "eliminationSteps": [
-      {
-        "step": "Phase 1",
-        "title": "Select One Pure Novel Protein",
-        "desc": "Switch your dog to a single novel protein they have never consumed before (e.g. Venison, Rabbit, or Kangaroo) paired with a single digestible carbohydrate like pumpkin or sweet potato."
-      },
-      {
-        "step": "Phase 2",
-        "title": "Zero Contamination (Strict 8 Weeks)",
-        "desc": "For 8 consecutive weeks, feed exclusively the novel diet. Zero commercial treats, table scraps, flavored medications, or rawhide chews."
-      },
-      {
-        "step": "Phase 3",
-        "title": "Controlled Single-Ingredient Rechallenge",
-        "desc": "If itching and gastrointestinal issues resolve, introduce one suspected protein (e.g. chicken) for 7 days. If symptoms return, you have confirmed the allergy."
-      }
-    ],
-    "novelTitle": "Top Recommended Novel & Hypoallergenic Proteins",
-    "novelProteins": [
-      {
-        "name": "Venison (Deer)",
-        "desc": "Lean, nutrient-dense red meat that sensitive dogs rarely have antibodies against."
-      },
-      {
-        "name": "Rabbit",
-        "desc": "Extremely hypoallergenic novel protein with an ideal ratio of essential amino acids."
-      },
-      {
-        "name": "Duck",
-        "desc": "Excellent flavorful alternative for dogs with severe factory chicken intolerance."
-      },
-      {
-        "name": "Kangaroo",
-        "desc": "One of the leanest, cleanest wild proteins in veterinary dermatology."
-      }
-    ]
-  },
-  "calculator": {
-    "eyebrow": "100% FREE // CANINE NUTRITION GUIDELINES",
-    "noticeTitle": "Notice:",
-    "noticeText": "For general & educational guidance only. Not a diagnostic tool or medical substitute.",
-    "heroTitle": "Dog Feeding & Calorie Calculator",
-    "heroSubtitle": "Determine your dog’s exact daily caloric needs (RER & MER) and calculate custom gram meal portions based on weight, age, activity level, and body condition score."
-  },
-  "breeds": {
-    "eyebrow": "BREED NUTRITION // CANINE GUIDELINES",
-    "targetWeight": "Target Weight",
-    "dailyCalories": "Daily Calories",
-    "freshDaily": "Fresh Food Daily",
-    "kibbleDaily": "Kibble Daily",
-    "cups": "cups",
-    "reqsTitle": "Nutritional Requirements for {name}s",
-    "reqsIntro": "As a {category} dog with an average weight of {w0}–{w1} lbs, the {name} requires a tailored nutrient ratio:",
-    "predispositionsTitle": "Key Health & Dietary Predispositions:",
-    "feedingRoutineTitle": "Feeding Routine Recommendation:",
-    "feedingRoutineDesc": "Feed your adult {name} twice daily (50% in the morning and 50% in the evening). Always ensure clean filtered water is available. If feeding dry kibble, rehydrate with warm bone broth or water to support kidney longevity.",
-    "ctaTitle": "Customize Your {name}’s Exact Meal Plan",
-    "ctaSubtitle": "Adjust for your dog’s exact age (puppy, adult, senior), exact weight, activity level, and body condition score with our free calculator.",
-    "ctaBtn": "Launch {name} Calculator →",
-    "faqTitle": "Common Feeding FAQs for {name}s",
-    "faqSubtitle": "Answers to portion questions, feeding frequency, and best foods."
-  },
-  "comparisonTable": {
-    "eyebrow": "NUTRITIONAL COMPARISON // FRESH FOOD VS. KIBBLE",
-    "title": "Why Whole Food Biologically Outperforms Kibble",
-    "subtitle": "A side-by-side nutritional breakdown of processing heat, portion accuracy, and true monthly cost — the same variables a 5-year longevity study linked to dogs living up to 32 months longer on fresh whole food.",
-    "scrollHint": "↔ Scroll table horizontally",
-    "colMetric": "Nutritional Metric",
-    "colDfp": "✨ DogFoodPlanner",
-    "colSubs": "Subscriptions",
-    "colKibble": "Dry Kibble",
-    "rows": [
-      {
-        "metric": "Processing Method",
-        "dfp": "Gently Cooked (~165°F) or Raw — Enzymes Intact",
-        "subs": "Sous-Vide Cooked & Flash-Frozen",
-        "kibble": "High-Heat Extrusion (400°F+)"
-      },
-      {
-        "metric": "Portion Accuracy",
-        "dfp": "Exact grams via RER/MER metabolic math, personalized to weight, age & activity",
-        "subs": "Fixed weight-range feeding chart",
-        "kibble": "Generic bag chart — overestimates portions by 20–30%"
-      },
-      {
-        "metric": "Net Carbohydrates",
-        "dfp": "< 5% (vegetables only, zero fillers)",
-        "subs": "10% – 20%",
-        "kibble": "45% – 60% (corn, wheat & pea starch fillers)"
-      },
-      {
-        "metric": "Biological Moisture",
-        "dfp": "70% – 75% (supports renal & urinary hydration)",
-        "subs": "70% – 75%",
-        "kibble": "8% – 10% (chronic sub-clinical dehydration)"
-      },
-      {
-        "metric": "Nutrient Integrity",
-        "dfp": "Minimal oxidation — omega-3s & enzymes preserved",
-        "subs": "Moderate — some heat-sensitive nutrients degraded",
-        "kibble": "Fat oxidation & AGE formation from extrusion heat"
-      },
-      {
-        "metric": "Ingredient Transparency",
-        "dfp": "100% disclosed grams & percentages — you control every gram",
-        "subs": "Proprietary blend (exact ratios withheld)",
-        "kibble": "Split ingredients & vague \"meat meal\" sourcing"
-      },
-      {
-        "metric": "Avg. Monthly Cost (50 lb dog)",
-        "dfp": "$80 – $130 (home-prepared ingredients only)",
-        "subs": "$250 – $450 / month",
-        "kibble": "$60 – $95 / month"
-      }
-    ]
-  },
-  "faqPage": {
-    "badge": "KNOWLEDGE BASE // VERIFIED CANINE ANSWERS",
-    "exploreHubsTitle": "Explore Dedicated Canine Nutrition Hubs",
-    "exploreHubsSubtitle": "Deep-dive into specialized guides created for dog parents seeking optimal health.",
-    "cardBestFood": "Comparison of fresh, raw, high-protein kibble, and specialized formulas for small and sensitive dogs.",
-    "cardCalc": "RER and MER calorie calculator delivering exact gram and cup meal portions.",
-    "cardRecipes": "Balanced gently cooked and 80-10-10 raw BARF recipes with essential calcium balancing.",
-    "cardAllergies": "Novel protein selection, elimination diets, and soothing gut microbiome protocols.",
-    "cardToxic": "Complete index of dangerous human foods, safe fruits, vegetables, and chemical additives.",
-    "cardBrands": "Unbiased reviews for Blue Buffalo, Nutrish, Pure Balance, Ollie, and Open Farm."
-  },
-  "faqSingle": {
-    "reviewedBy": "Reviewed by: DogFoodPlanner Editorial Team",
-    "updated": "Updated: 2026",
-    "directQuickAnswer": "Direct Quick Answer",
-    "clinicalAnalysis": "Detailed Nutritional Analysis",
-    "topics": "Topics:",
-    "ctaBadge": "🐾 Free Canine Nutrition Engine",
-    "ctaTitle": "Calculate Exact Daily Calories & Meal Portions For Your Dog",
-    "ctaSubtitle": "Use our free dog feeding calculator to determine your dog’s exact metabolic burn (RER/MER) and get custom fresh or raw food recipe grams.",
-    "ctaBtn": "Calculate Portions Now →",
-    "relatedTitle": "Related Canine Nutrition Questions",
-    "readAnswer": "Read Answer →",
+  "en": {
+    "about": {
+      "heroTitle": "About DogFoodPlanner: Dog Meal Planning Made Simple",
+      "heroSubtitle": "Learn about DogFoodPlanner.com, our mission, and how our free dog feeding calculator works.",
+      "missionBadge": "OUR MISSION // CANINE MEAL PLANNING",
+      "whyTitle": "Why DogFoodPlanner Was Created",
+      "whyP1": "We built DogFoodPlanner to help dog owners plan meals and feeding portions with confidence. We research publicly available guidance and turn it into simple, free tools and guides.",
+      "whyP2": "",
+      "whoTitle": "Who We Are",
+      "whoContent": "DogFoodPlanner is an independent website run by dog-loving researchers and writers. We are not veterinarians. Always consult your veterinarian before changing your dog's diet, especially for puppies, seniors, or dogs with health conditions.",
+      "methodTitle": "Our Nutritional Methodology",
+      "pillars": [
+        {
+          "tag": "01 // CALORIE ESTIMATES",
+          "title": "Calorie Estimates",
+          "desc": "Our calculator uses the standard Resting Energy Requirement formula (70 × body weight in kg^0.75) and common activity multipliers to estimate daily calories."
+        },
+        {
+          "tag": "02 // REFERENCE SOURCES",
+          "title": "Reference Sources",
+          "desc": "We refer to published guidance from sources such as AAFCO and the National Research Council. Our content is educational and does not replace professional advice."
+        },
+        {
+          "tag": "03 // TRANSPARENT",
+          "title": "Transparent",
+          "desc": "Some pages contain affiliate links, including Amazon Associates links. If you buy through them we may earn a small commission at no extra cost to you. This never changes our recommendations."
+        }
+      ],
+      "ctaTitle": "Ready to Calculate Your Dog's Nutritional Needs?",
+      "ctaDesc": "Try our interactive calculator, explore our canine allergy guides, and read our dog food guides.",
+      "ctaBtn": "Launch Free Nutrition Calculator →",
+      "amazonDisclaimer": "As an Amazon Associate we earn from qualifying purchases."
+    },
+    "contact": {
+      "eyebrow": "SUPPORT & FEEDBACK // DIRECT INQUIRIES",
+      "cards": [
+        {
+          "icon": "📧",
+          "title": "Email Inquiries",
+          "desc": "General questions & feedback:",
+          "email": "hello@dogfoodplanner.com"
+        },
+        {
+          "icon": "🐾",
+          "title": "Nutrition Research",
+          "desc": "Formula inquiries:",
+          "email": "research@dogfoodplanner.com"
+        },
+        {
+          "icon": "🛡️",
+          "title": "Technical & Data",
+          "desc": "Bug reports & calculator queries:",
+          "email": "legal@dogfoodplanner.com"
+        }
+      ],
+      "formTitle": "Send Our Canine Nutrition Team a Message",
+      "formDesc": "Have questions regarding our NRC calorie formulas or need help with a custom raw recipe? We reply within 24 business hours.",
+      "nameLabel": "Your Name",
+      "namePlaceholder": "e.g. Sarah Jenkins",
+      "emailLabel": "Your Email Address",
+      "emailPlaceholder": "sarah@example.com",
+      "subjectLabel": "Inquiry Topic",
+      "subjectOptions": [
+        "General Question / Feedback",
+        "Canine Nutrition & Recipe Inquiry",
+        "Calculator Formula Question",
+        "Bug Report / Technical Issue"
+      ],
+      "messageLabel": "Your Message",
+      "messagePlaceholder": "Tell us about your dog (breed, weight, age) and how we can assist...",
+      "submitBtn": "Send Message →",
+      "notice": "Veterinary Emergency Notice: If your pet is exhibiting acute symptoms of poisoning or severe distress, contact your emergency veterinarian or the ASPCA Poison Control hotline immediately.",
+      "faqTitle": "Looking for fast answers?",
+      "faqDesc": "Check our comprehensive veterinary FAQ knowledge base covering picky eating, raw diets, cat food, and commercial dog food brands.",
+      "faqBtn": "Browse All FAQs →",
+      "successTitle": "✓ Message prepared — sending to hello@dogfoodplanner.com",
+      "successDesc": "Your email client should open with a pre-drafted message addressed to hello@dogfoodplanner.com. Just hit Send in your email app and it will arrive in our inbox."
+    },
+    "privacy": {
+      "eyebrow": "LEGAL // DATA PROTECTION & PRIVACY",
+      "lastUpdated": "Updated: October 14, 2026",
+      "intro": "At DogFoodPlanner.com, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, process, and safeguard information when you use our website.",
+      "sections": [
+        {
+          "title": "1. Information We Do Not Collect",
+          "content": "We believe your pet’s health data belongs to you. We do not require account registration, passwords, or credit cards to use our dog feeding calculator. Dog profiles, body weights, and meal selections entered into the calculator are processed client-side in your browser and are not saved to external databases."
+        },
+        {
+          "title": "2. Email Collection & Newsletter",
+          "content": "When you subscribe to our newsletter, we collect your email address to send you dog nutrition guides, recall alerts, and feeding tips. We use EmailOctopus to securely manage our email list. We never sell, rent, or spam your email. You can unsubscribe at any time with one click using the link at the bottom of every email."
+        },
+        {
+          "title": "3. Anonymous Technical Data",
+          "content": "Like most modern websites, our CDN servers automatically record standard anonymous request data, including IP address (anonymized), browser type, referring URL, and page timestamps to maintain site security, detect DDoS attacks, and deliver fast global performance."
+        },
+        {
+          "title": "4. Browser Cookies & Local Storage",
+          "content": "We use localStorage to remember your language and meal plan on your device. If you click an affiliate link, the third-party site (such as Amazon) may set its own cookies."
+        },
+        {
+          "title": "5. Third-Party Links",
+          "content": "Our site contains reference links to published research, AAFCO standards, NRC databases, and external resources. We are not responsible for the privacy practices or content of third-party websites."
+        },
+        {
+          "title": "6. Affiliate Disclosure",
+          "content": "DogFoodPlanner participates in the Amazon Services LLC Associates Program. As an Amazon Associate we earn from qualifying purchases, at no extra cost to you."
+        },
+        {
+          "title": "7. Children’s Privacy",
+          "content": "Our website is intended for general audiences and adult pet owners. We do not knowingly collect or solicit personal information from children under the age of 13."
+        },
+        {
+          "title": "8. Policy Updates & Contact",
+          "content": "We may periodically update this policy to reflect enhancements to our tools. Any changes will be posted directly to this page. If you have questions regarding this policy, please contact privacy@dogfoodplanner.com."
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "LEGAL // TERMS OF SERVICE",
+      "lastUpdated": "Updated: October 14, 2026",
+      "intro": "Please review these Terms of Service carefully before utilizing DogFoodPlanner.com. By using this website, you acknowledge and agree to these terms.",
+      "sections": [
+        {
+          "title": "1. Acceptance of Terms",
+          "content": "By accessing and utilizing DogFoodPlanner.com (the \"Site\" or \"Service\"), you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any portion of these terms, please discontinue use immediately."
+        },
+        {
+          "title": "2. Veterinary & Medical Disclaimer",
+          "content": "The information, calculators, and recipe guidelines provided on DogFoodPlanner.com are developed for educational and informational purposes only. The content is based on published National Research Council (NRC) and AAFCO nutritional models, but it does NOT constitute professional veterinary medical advice, clinical diagnosis, or personalized treatment. Always consult a licensed veterinarian or board-certified veterinary nutritionist (DACVN) before significantly altering your pet’s diet, especially for puppies, pregnant dogs, or dogs with chronic renal, cardiac, or metabolic disorders."
+        },
+        {
+          "title": "3. Use of Interactive Calculators",
+          "content": "All energy requirement calculations (RER and MER) and gram portion estimates are mathematical starting baselines. Individual canine metabolisms vary widely based on genetics, neuter status, environmental temperatures, and underlying health. Pet owners must regularly assess their dog’s Body Condition Score (BCS) and adjust intake accordingly."
+        },
+        {
+          "title": "4. Homemade Diet Safety & Calcium Balancing",
+          "content": "Feeding a homemade or raw diet requires strict adherence to complete micronutrient profiles. In particular, feeding boneless meat without adequate calcium supplementation causes severe metabolic bone disease and hypocalcemia. Users assume full responsibility for appropriately measuring and balancing all ingredients."
+        },
+        {
+          "title": "5. Intellectual Property Rights",
+          "content": "All content, proprietary calculator code, visual interface designs, infographics, and written articles on DogFoodPlanner.com are the exclusive intellectual property of DogFoodPlanner and protected by copyright and international intellectual property laws."
+        },
+        {
+          "title": "6. Limitation of Liability",
+          "content": "In no event shall DogFoodPlanner.com, its authors, editorial team, or operators be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the information and tools provided on this website."
+        },
+        {
+          "title": "7. Email Subscriptions & Communications",
+          "content": "By subscribing to our newsletter, you agree to receive educational canine nutrition guides and website updates. You may opt out at any time by clicking the unsubscribe link in any email. We reserve the right to manage or discontinue newsletter distributions at our discretion."
+        }
+      ]
+    },
+    "bestFood": {
+      "eyebrow": "PILLAR GUIDE // CANINE NUTRITION RANKING 2026",
+      "rankingsTitle": "What Are the Top 5 Healthiest Dog Foods in 2026?",
+      "rankingsIntro": "Canine nutritional longevity research confirms that minimal heat processing and high biological moisture are the two strongest predictors of canine vitality, kidney health, and disease resistance.",
+      "readMoreLabel": "Read more →",
+      "readLessLabel": "Show less ↑",
+      "rankings": [
+        {
+          "rank": "01",
+          "title": "Gently Cooked Human-Grade Fresh Food",
+          "score": "98/100",
+          "pros": "Real USDA meats and vegetables cooked at low temperatures (160°F). Retains 70%+ natural moisture, live enzymes, and bioavailable vitamins.",
+          "cons": "Requires freezer or refrigerator storage. Slightly higher cost than commercial kibble.",
+          "readMore": "Gently cooked fresh food sits at the top of the ranking because it mimics a home-cooked meal without sacrificing food safety. Ingredients are sourced from USDA-inspected human food facilities, then cooked just long enough at low heat (around 160°F) to kill pathogens while preserving delicate proteins, taurine, and water-soluble B-vitamins that high-heat extrusion destroys.\n\nBecause the food already carries 70%+ moisture, it takes pressure off the kidneys and lowers the chronic low-grade dehydration common in kibble-only diets. It's an especially strong fit for dogs recovering from illness, seniors with a reduced thirst drive, or breeds prone to food sensitivities, since recipes are typically single-protein and free of rendered meat meals or synthetic preservatives.\n\nThe main tradeoff is logistics: it needs fridge or freezer space, and portions must be thawed ahead of feeding time. If you're not ready to cook it yourself, several USDA-kitchen brands sell shelf-stable versions of the same gently-cooked format, which is a low-effort way to try the category before committing to a full homemade routine.",
+          "productKey": "justfoodfordogs-chicken-white-rice",
+          "productNote": "A shelf-stable way to try this category:"
+        },
+        {
+          "rank": "02",
+          "title": "Ancestral 80-10-10 Raw BARF Diets",
+          "score": "95/100",
+          "pros": "Biologically appropriate balance: 80% muscle meat, 10% bone, 10% organ. Promotes optimal dental health and lean muscle tone.",
+          "cons": "Requires strict safe food handling and careful calcium balancing.",
+          "readMore": "The 80-10-10 ratio (80% muscle meat, 10% raw edible bone, 10% secreting organ) is built to replicate what a wild canine ancestor would get from a whole prey animal. Done correctly, it delivers naturally balanced calcium-to-phosphorus ratios straight from the bone content, supports lean muscle mass, and the mechanical action of chewing raw bone helps scrape tartar off teeth.\n\nBecause nothing is cooked, enzymes and heat-sensitive amino acids stay fully intact. The catch is precision: sourcing safe raw bone and hitting the ratio exactly both require real discipline, since miscalculating the bone percentage is the most common mistake that leads to constipation or, over time, skeletal issues in growing puppies. Raw meat also needs to be handled with the same hygiene as any raw human food (separate cutting boards, refrigeration, prompt cleanup).\n\nMost households find it easier to start with a professionally-formulated raw product that already hits the ratio before graduating to fully custom raw meals sourced and weighed at home.",
+          "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+          "productNote": "A pre-balanced raw option that removes the guesswork:"
+        },
+        {
+          "rank": "03",
+          "title": "Air-Dried & Freeze-Dried Raw Dog Food",
+          "score": "91/100",
+          "pros": "Delivers raw nutritional integrity with ambient shelf stability. Excellent convenient topper for picky eaters.",
+          "cons": "Must be rehydrated with warm water or bone broth for optimal kidney function.",
+          "readMore": "Air-drying and freeze-drying both pull moisture out of raw meat at low temperatures, keeping the nutrient and enzyme profile close to raw while making the food shelf-stable at room temperature, so no freezer is required. Freeze-drying uses a cold vacuum process that tends to preserve nutrients even better than air-drying, though it usually costs more per pound.\n\nBoth formats travel well and work great as a raw topper mixed into kibble to boost palatability. Rehydrating with warm water or bone broth before serving helps restore moisture closer to a dog's ancestral wild diet, and is especially worthwhile for dogs prone to urinary crystals or kidney strain.\n\nThe main consideration is cost-per-calorie: since the water weight is removed, you're paying for concentrated nutrition, which is why it's often used as a topper or rotational diet rather than a large dog's sole daily feed.",
+          "productKey": "ziwi-peak-beef-chicken-bundle",
+          "productNote": "A well-reviewed air-dried option:"
+        },
+        {
+          "rank": "04",
+          "title": "High-Protein Grain-Free & Ancient Grain Kibble",
+          "score": "78/100",
+          "pros": "Convenient, shelf-stable, and budget-accessible for large and multi-dog households.",
+          "cons": "Undergoes 400°F extrusion, only 8-10% moisture, contains 40-50% high-glycemic starches.",
+          "readMore": "Premium kibble remains the most practical option for many households: it's shelf-stable for up to a year, easy to portion with an automatic feeder, and significantly cheaper per calorie than fresh or raw diets.\n\nThe best formulas in this tier lead with a named animal protein rather than a vague \"meat meal\", keep starches to ancient grains like oats and sorghum instead of heavy corn or wheat fillers, and undergo third-party lab testing for heavy metals.\n\nThe tradeoff is the extrusion process itself: exposure to temperatures above 400°F destroys some heat-sensitive vitamins and reduces moisture to roughly 10%, which is why vets often recommend adding a splash of bone broth or a raw topper to kibble-only diets, especially for dogs prone to urinary crystals.",
+          "productKey": "orijen-original-grain-free-23lb",
+          "productNote": "A high-protein, WholePrey formula in this category:"
+        },
+        {
+          "rank": "05",
+          "title": "Prescription Therapeutic Diets",
+          "score": "72/100",
+          "pros": "Formulated specifically for clinical renal failure, liver disease, or struvite bladder stones.",
+          "cons": "Often utilizes lower-grade carbohydrate fillers and requires veterinary prescription.",
+          "readMore": "Therapeutic diets are engineered to manage one specific diagnosed condition: reduced protein and phosphorus for kidney disease, hydrolyzed proteins the immune system can't react to for severe food allergies, or controlled magnesium and pH for struvite bladder stones.\n\nThey rank lower on a general \"healthiest\" scale only because they're deliberately restrictive rather than optimized for an average healthy dog; a formula built to spare failing kidneys, for example, is intentionally not the most protein-dense food on the market.\n\nThese diets require veterinary sign-off and periodic bloodwork to confirm they're working, and should never be fed to a healthy dog without a clinical reason, since restricting nutrients a healthy dog actually needs can cause harm over time.",
+          "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+          "productNote": "A common vet-prescribed kidney-support formula:"
+        }
+      ],
+      "buyerGuideTitle": "4 Golden Rules for Choosing the Best Dog Food",
+      "buyerRules": [
+        {
+          "title": "1. Named Animal Protein First",
+          "desc": "Look for \"Deboned Turkey\", \"Beef\", or \"Wild Salmon\" as the primary ingredient rather than ambiguous generic \"meat meal\".",
+          "readMore": "Ingredients are listed by pre-cooking weight on commercial pet food labels. Whole named meats (such as 'Deboned Turkey' or 'Fresh Beef') supply essential amino acids like taurine, arginine, and carnitine in their most bioavailable form. Avoid generic terms like 'animal derivatives', 'poultry meal', or 'meat and bone meal', which allow manufacturers to blend low-grade rendered waste from unspecified animal species.\n\nBe mindful of 'ingredient splitting' as well: brands frequently split carbohydrates into separate entries (e.g. peas, pea flour, pea protein) so that the meat appears first on the list, even when carbohydrates make up the majority of the food.\n\nConcentrated named meals—such as 'Dehydrated Lamb Meal' or 'Wild Salmon Meal'—are acceptable when transparently named, as their moisture has already been removed before cooking, providing a dense source of animal protein."
+        },
+        {
+          "title": "2. High Biological Moisture (>70%)",
+          "desc": "Dry kibble (8-10% moisture) causes chronic low-grade dehydration. Always add fresh toppers or rehydrate with warm bone broth.",
+          "readMore": "In the wild, canine ancestral prey animals consist of 70% to 75% water. Dogs have an evolutionary low thirst reflex because their physiology expects to absorb hydration directly through their food. Relying entirely on dry kibble (which contains only 8–10% moisture) leaves dogs in a persistent state of low-grade dehydration.\n\nOver years, concentrated urine places intense strain on the kidneys and creates an ideal environment for struvite and calcium oxalate bladder stones to form.\n\nIf you feed kibble, always incorporate moisture: rehydrate meals 1:1 with warm low-sodium bone broth, filtered water, or plain kefir, or top kibble with fresh steamed meats and organ puree to safeguard kidney function."
+        },
+        {
+          "title": "3. Zero Synthetic Preservatives",
+          "desc": "Strictly avoid BHA, BHT, ethoxyquin, propylene glycol, and artificial food colorings.",
+          "readMore": "To achieve 18–24 month shelf lives, budget pet foods rely on chemical antioxidants like BHA (butylated hydroxyanisole), BHT (butylated hydroxytoluene), and ethoxyquin. Scientific studies have flagged BHA and BHT as potential endocrine disruptors and carcinogens, while ethoxyquin—originally designed as a pesticide—has been tied to liver toxicity and allergies.\n\nAdditionally, artificial dyes like Red 40, Yellow 5, and Blue 2 serve purely cosmetic purposes for human pet owners while triggering dermatitis, chronic itching, and gastrointestinal inflammation in sensitive dogs.\n\nPrioritize foods preserved strictly with natural antioxidants: mixed tocopherols (Vitamin E), rosemary extract, and citric acid. These keep fats fresh safely without systemic toxicity."
+        },
+        {
+          "title": "4. Controlled Carbohydrates (<25%)",
+          "desc": "Dogs lack salivary amylase. High-starch diets overtax the pancreas and accelerate obesity.",
+          "readMore": "Dogs are facultative carnivores with zero biological requirement for refined carbohydrates. Unlike humans, dogs produce no salivary amylase to start breaking down starches during chewing; their pancreas must shoulder the entire enzymatic load of digesting complex carbohydrates.\n\nBecause pet food regulations do not mandate carbohydrate disclosure on guaranteed analysis panels, many commercial kibbles quietly hide 45% to 60% starch from corn, wheat, white potatoes, or tapioca simply to bind dry pellets together.\n\nExcessive glycemic loads trigger rapid insulin spikes, systemic inflammation, chronic ear infections, and accelerate canine obesity. Calculate carb content using the Nitrogen-Free Extract formula: 100% minus (Protein + Fat + Fiber + Moisture + Ash). Strive for foods under 25% total carbohydrates."
+        }
+      ],
+      "ctaTitle": "Calculate Exact Portions for Your Dog’s Ideal Food",
+      "ctaDesc": "Whether you choose fresh, raw, or premium kibble, get your dog’s exact daily grams and calorie target.",
+      "ctaBtn": "Calculate Meal Portions Now →"
+    },
+    "recipes": {
+      "eyebrow": "RECIPE ARCHIVE // NRC & AAFCO NUTRITION BLUEPRINTS",
+      "heroTitle": "Healthy Homemade Dog Food Recipes",
+      "heroSubtitle": "Step-by-step blueprints for preparing healthy, complete, and balanced gently cooked meals and ancestral 80-10-10 raw BARF diets at home.",
+      "calciumWarningTitle": "The #1 Rule of Homemade Dog Food: Calcium Balancing",
+      "calciumWarningDesc": "Muscle meat is naturally very high in phosphorus and low in calcium (1:20 ratio). Feeding plain chicken, beef, and rice without added calcium will cause severe metabolic bone disease and skeletal demineralization within months. Always add 1/2 teaspoon of pure powdered eggshell (approx. 900mg elemental calcium) per pound of boneless meat to achieve the essential 1.2:1 Calcium-to-Phosphorus ratio.",
+      "recipesList": [
+        {
+          "tag": "GENTLY COOKED",
+          "title": "Recipe 1: Gently Cooked Turkey & Prebiotic Pumpkin (Sensitive Stomach Friendly)",
+          "desc": "Ideal for dogs with sensitive digestion, loose stools, or poultry allergies to factory chicken.",
+          "ingredients": [
+            "USDA Ground Turkey (93/7) — 65% (approx. 2 lbs)",
+            "Turkey or Beef Hearts (Natural Taurine) — 10% (approx. 5 oz)",
+            "Pure Canned Pumpkin Puree (Digestive Fiber) — 10% (approx. 5 oz)",
+            "Steamed Baby Spinach & Diced Zucchini — 10% (approx. 5 oz)",
+            "Wild Alaskan Salmon Oil (EPA/DHA) — 2% (1.5 tbsp)",
+            "Clean Eggshell Powder (Elemental Calcium) — 3% (1 full tsp)"
+          ],
+          "prep": "Sauté turkey and hearts on medium-low heat until lightly cooked (160°F). Steam vegetables, blend with pumpkin, and fold into cooked meats. Let cool completely before stirring in salmon oil and eggshell powder. Store in meal-sized portions."
+        },
+        {
+          "tag": "RAW BARF",
+          "title": "Recipe 2: Ancestral 80-10-10 Raw BARF Beef & Duck",
+          "desc": "Biologically balanced raw ancestral diet for healthy adult dogs with strong digestive acids.",
+          "ingredients": [
+            "Lean Grass-Fed Beef Muscle Meat & Trimmings — 70%",
+            "Beef Heart (Rich in L-Carnitine & CoQ10) — 10%",
+            "Raw Edible Duck Necks or Chicken Frames — 10% (Natural Bone & Calcium)",
+            "Beef Liver (Vitamin A & B-Complex) — 5%",
+            "Beef Kidney or Spleen (Essential Secreting Organ) — 5%"
+          ],
+          "prep": "Dice beef muscle and heart into bite-sized chunks. Thaw raw edible bone pieces. Weigh organs precisely using a digital gram scale. Freeze all portions for at least 3 weeks at -4°F (-20°C) prior to feeding."
+        },
+        {
+          "tag": "SUPERFOOD TOPPER",
+          "title": "Recipe 3: 80/20 Antioxidant Superfood Kibble Topper",
+          "desc": "Cost-effective fresh food booster designed to replace 20% of your dog’s dry kibble calories.",
+          "ingredients": [
+            "Gently Poached Pastured Eggs — 40%",
+            "Steamed Broccoli Sprouts & Wild Blueberries — 30%",
+            "Simmered Grass-Fed Beef Bone Broth — 20%",
+            "Kelp Powder & Organic Hemp Seeds — 10%"
+          ],
+          "prep": "Lightly soft-boil eggs. Steam green veggies for 3 minutes. Blend with warm bone broth and organic berries. Pour 2-4 tablespoons over your dog’s standard kibble bowl daily."
+        }
+      ],
+      "calciumGuideTitle": "Safe Calcium Sources for Homemade Dog Diets",
+      "calciumGuideItems": [
+        {
+          "title": "Eggshell Powder",
+          "ratio": "1/2 tsp per 1 lb boneless meat",
+          "desc": "95% pure calcium carbonate. Easy to grind at home from washed, baked eggshells. Safe and neutral."
+        },
+        {
+          "title": "Raw Edible Meaty Bones",
+          "ratio": "10% of total diet weight",
+          "desc": "Duck necks, chicken wings, or turkey necks. Never feed cooked bones, which become brittle and splinter."
+        },
+        {
+          "title": "Veterinary Bone Meal",
+          "ratio": "Follow manufacturer specifications",
+          "desc": "Microcrystalline hydroxyapatite delivering calcium and phosphorus in a natural, bioavailable 2:1 ratio."
+        }
+      ]
+    },
+    "toxic": {
+      "eyebrow": "CRITICAL SAFETY // CANINE INGREDIENT TOXICITY",
+      "dangerTitle": "The Most Dangerous Household Foods for Dogs",
+      "dangerIntro": "Certain human foods contain biochemical compounds that canine metabolisms cannot break down, causing acute organ failure or toxicity.",
+      "dangerList": [
+        {
+          "name": "Chocolate & Cocoa",
+          "toxin": "Theobromine & Caffeine",
+          "symptoms": "Vomiting, rapid panting, tachycardia, muscle tremors, seizures, cardiac arrest.",
+          "risk": "HIGH TO FATAL"
+        },
+        {
+          "name": "Grapes, Raisins & Currants",
+          "toxin": "Tartaric Acid",
+          "symptoms": "Lethargy, dehydration, acute irreversible kidney (renal) failure within 24-72 hours.",
+          "risk": "EXTREMELY FATAL"
+        },
+        {
+          "name": "Xylitol (Birch Sugar / E967)",
+          "toxin": "Synthetic Sugar Alcohol",
+          "symptoms": "Massive insulin surge, profound hypoglycemia, ataxia, acute liver necrosis within hours.",
+          "risk": "CRITICAL EMERGENCY"
+        },
+        {
+          "name": "Onions, Garlic, Leeks & Chives",
+          "toxin": "N-propyl Disulfide",
+          "symptoms": "Destroys red blood cells, hemolytic anemia, pale gums, dark red/brown urine, weakness.",
+          "risk": "HIGH CUMULATIVE"
+        },
+        {
+          "name": "Macadamia Nuts",
+          "toxin": "Unknown Neurotoxic Factor",
+          "symptoms": "Hind-limb weakness, hypothermia or high fever, vomiting, muscle stiffness.",
+          "risk": "MODERATE TO SEVERE"
+        },
+        {
+          "name": "Cooked Bones of Any Kind",
+          "toxin": "Physical Splinter Hazard",
+          "symptoms": "Gastrointestinal perforation, internal bleeding, peritonitis, fatal bowel blockage.",
+          "risk": "SURGICAL EMERGENCY"
+        }
+      ],
+      "emergencyTitle": "What to Do in a Pet Poisoning Emergency",
+      "emergencySteps": [
+        "1. Act Immediately: Identify the exact substance, packaging, estimated amount ingested, and the time.",
+        "2. Do NOT Induce Vomiting without Veterinary Instruction: Caustic chemicals, petroleum products, and sharp objects cause secondary burns and esophageal tearing if regurgitated.",
+        "3. Call Animal Emergency Services Immediately: Contact your 24/7 veterinary clinic or ASPCA Animal Poison Control (888-426-4435)."
+      ],
+      "safeTitle": "100% Safe Canine Fruits & Vegetables",
+      "safeIntro": "These dog-friendly whole foods provide natural antioxidants, soluble prebiotic fiber, and vitamins when added to your dog’s bowl:",
+      "safeFoods": [
+        {
+          "name": "Blueberries",
+          "benefit": "Packed with anthocyanins, polyphenols, and cellular antioxidants."
+        },
+        {
+          "name": "Pure Pumpkin",
+          "benefit": "Rich soluble fiber that naturally relieves both diarrhea and constipation."
+        },
+        {
+          "name": "Carrots",
+          "benefit": "Low-calorie crunchy treat rich in beta-carotene and helps clean teeth."
+        },
+        {
+          "name": "Green Beans",
+          "benefit": "Excellent low-glycemic bulking vegetable for weight-management diets."
+        },
+        {
+          "name": "Apples (No Seeds)",
+          "benefit": "Natural source of vitamin C, vitamin A, and prebiotic pectin."
+        }
+      ]
+    },
+    "brands": {
+      "eyebrow": "INDEPENDENT ANALYSIS // BRAND REVIEWS & RECALL LOG",
+      "heroTitle": "Dog Food Brand Reviews & Recall History",
+      "heroSubtitle": "Unbiased reviews of major pet food brands, AAFCO labeling rules, and recall tracking to protect your canine companion.",
+      "brandsList": [
+        {
+          "name": "Blue Buffalo",
+          "grade": "Grade: B+",
+          "pros": "Real deboned meat is ingredient #1; no corn, wheat, or soy; cold-formed LifeSource Bits provide vitamins.",
+          "cons": "High carbohydrate load (45-50%); historical FDA recalls for moisture/mold and elevated Vitamin D.",
+          "verdict": "Above-average commercial kibble. Consider adding 20% fresh whole food toppers to improve moisture."
+        },
+        {
+          "name": "Rachael Ray Nutrish",
+          "grade": "Grade: C+ / B-",
+          "pros": "Budget-friendly and widely available; Peak and Dish lines feature improved real meat inclusion.",
+          "cons": "Standard lines rely heavily on pea protein and corn gluten fillers; past FDA DCM investigation inclusion.",
+          "verdict": "Acceptable budget option in higher-tier lines, but inspect ingredient labels carefully for legume splitting."
+        },
+        {
+          "name": "Pure Balance (Walmart)",
+          "grade": "Grade: B (Best Budget)",
+          "pros": "Exceptional price-to-quality ratio; meat-first recipes free from corn, wheat, soy, and artificial colors.",
+          "cons": "Manufactured by contract co-packers; moderate carbohydrate levels.",
+          "verdict": "One of the best value supermarket brands available on the commercial dry dog food market."
+        },
+        {
+          "name": "Ollie Fresh Dog Food",
+          "grade": "Grade: A",
+          "pros": "100% human-grade USDA meats and produce; gently cooked at low temperatures; precision pre-portioned packs.",
+          "cons": "Premium monthly subscription cost ($180-$350/month); requires dedicated freezer storage.",
+          "verdict": "Gold standard for canine metabolic health, coat vitality, and digestive longevity."
+        },
+        {
+          "name": "Open Farm",
+          "grade": "Grade: A-",
+          "pros": "Exceptional sourcing transparency; 100% certified humane meats and wild ocean-wise fish; ancient grain options.",
+          "cons": "Premium price point; limited retail store availability.",
+          "verdict": "Top choice for pet parents seeking ethical sourcing, high meat inclusion, and zero poultry by-products."
+        }
+      ],
+      "recallsTitle": "Understanding FDA Pet Food Recalls",
+      "recallsDesc": "Pet food recalls fall into three distinct FDA classes: Class I (dangerous health hazard with risk of death, e.g. Salmonella, lethal aflatoxins, excessive Vitamin D), Class II (temporary adverse health effect), and Class III (minor labeling or weight violation). Always register your lot numbers and check the FDA recall database periodically.",
+      "methodTitle": "Our 4-Point Brand Evaluation Standard",
+      "methodPillars": [
+        {
+          "title": "1. Named Animal Protein",
+          "desc": "Deboned whole muscle meats vs ambiguous byproduct meal."
+        },
+        {
+          "title": "2. Carbohydrate Fraction",
+          "desc": "Keeping starches under 40% to prevent metabolic obesity."
+        },
+        {
+          "title": "3. Sourcing Transparency",
+          "desc": "Traceable humane farms and non-GMO produce."
+        },
+        {
+          "title": "4. Clean Recall Record",
+          "desc": "Independent laboratory testing and rigorous plant safety."
+        }
+      ]
+    },
+    "allergies": {
+      "eyebrow": "NUTRITIONAL GUIDE // CANINE ALLERGIES & DIGESTION",
+      "heroTitle": "Best Dog Food for Allergies & Sensitive Stomachs",
+      "heroSubtitle": "Practical guide to food allergies, single-source novel proteins, and 8-week elimination diet protocols.",
+      "allergensTitle": "The Top 5 Most Common Canine Food Allergens",
+      "allergensIntro": "Canine food allergies are immune-mediated hypersensitivity reactions to specific dietary proteins. In order of clinical frequency:",
+      "allergensList": [
+        {
+          "name": "1. Factory Chicken (60% of cases)",
+          "desc": "Due to extreme overexposure across commercial pet food, chicken is the #1 canine allergen."
+        },
+        {
+          "name": "2. Commercial Beef (30% of cases)",
+          "desc": "Widely used red meat that triggers severe skin itching and ear infections in sensitive dogs."
+        },
+        {
+          "name": "3. Dairy Products",
+          "desc": "Adult dogs naturally lack lactase enzymes, causing explosive diarrhea and gas."
+        },
+        {
+          "name": "4. Wheat & Corn Gluten",
+          "desc": "High-glycemic grain proteins that trigger chronic inflammation and yeast overgrowth."
+        },
+        {
+          "name": "5. Soy & Legumes",
+          "desc": "Common cheap filler proteins that can impair gut barrier function and thyroid health."
+        }
+      ],
+      "eliminationTitle": "The 8-Week Elimination Diet Protocol",
+      "eliminationSteps": [
+        {
+          "step": "Phase 1",
+          "title": "Select One Pure Novel Protein",
+          "desc": "Switch your dog to a single novel protein they have never consumed before (e.g. Venison, Rabbit, or Kangaroo) paired with a single digestible carbohydrate like pumpkin or sweet potato."
+        },
+        {
+          "step": "Phase 2",
+          "title": "Zero Contamination (Strict 8 Weeks)",
+          "desc": "For 8 consecutive weeks, feed exclusively the novel diet. Zero commercial treats, table scraps, flavored medications, or rawhide chews."
+        },
+        {
+          "step": "Phase 3",
+          "title": "Controlled Single-Ingredient Rechallenge",
+          "desc": "If itching and gastrointestinal issues resolve, introduce one suspected protein (e.g. chicken) for 7 days. If symptoms return, you have confirmed the allergy."
+        }
+      ],
+      "novelTitle": "Top Recommended Novel & Hypoallergenic Proteins",
+      "novelProteins": [
+        {
+          "name": "Venison (Deer)",
+          "desc": "Lean, nutrient-dense red meat that sensitive dogs rarely have antibodies against."
+        },
+        {
+          "name": "Rabbit",
+          "desc": "Extremely hypoallergenic novel protein with an ideal ratio of essential amino acids."
+        },
+        {
+          "name": "Duck",
+          "desc": "Excellent flavorful alternative for dogs with severe factory chicken intolerance."
+        },
+        {
+          "name": "Kangaroo",
+          "desc": "One of the leanest, cleanest wild proteins in veterinary dermatology."
+        }
+      ]
+    },
+    "calculator": {
+      "eyebrow": "100% FREE // CANINE NUTRITION GUIDELINES",
+      "noticeTitle": "Notice:",
+      "noticeText": "For general & educational guidance only. Not a diagnostic tool or medical substitute.",
+      "heroTitle": "Dog Feeding & Calorie Calculator",
+      "heroSubtitle": "Determine your dog’s exact daily caloric needs (RER & MER) and calculate custom gram meal portions based on weight, age, activity level, and body condition score."
+    },
+    "breeds": {
+      "eyebrow": "BREED NUTRITION // CANINE GUIDELINES",
+      "targetWeight": "Target Weight",
+      "dailyCalories": "Daily Calories",
+      "freshDaily": "Fresh Food Daily",
+      "kibbleDaily": "Kibble Daily",
+      "cups": "cups",
+      "reqsTitle": "Nutritional Requirements for {name}s",
+      "reqsIntro": "As a {category} dog with an average weight of {w0}–{w1} lbs, the {name} requires a tailored nutrient ratio:",
+      "predispositionsTitle": "Key Health & Dietary Predispositions:",
+      "feedingRoutineTitle": "Feeding Routine Recommendation:",
+      "feedingRoutineDesc": "Feed your adult {name} twice daily (50% in the morning and 50% in the evening). Always ensure clean filtered water is available. If feeding dry kibble, rehydrate with warm bone broth or water to support kidney longevity.",
+      "ctaTitle": "Customize Your {name}’s Exact Meal Plan",
+      "ctaSubtitle": "Adjust for your dog’s exact age (puppy, adult, senior), exact weight, activity level, and body condition score with our free calculator.",
+      "ctaBtn": "Launch {name} Calculator →",
+      "faqTitle": "Common Feeding FAQs for {name}s",
+      "faqSubtitle": "Answers to portion questions, feeding frequency, and best foods."
+    },
+    "comparisonTable": {
+      "eyebrow": "NUTRITIONAL COMPARISON // FRESH FOOD VS. KIBBLE",
+      "title": "Why Whole Food Biologically Outperforms Kibble",
+      "subtitle": "A side-by-side nutritional breakdown of processing heat, portion accuracy, and true monthly cost — the same variables a 5-year longevity study linked to dogs living up to 32 months longer on fresh whole food.",
+      "scrollHint": "↔ Scroll table horizontally",
+      "colMetric": "Nutritional Metric",
+      "colDfp": "✨ DogFoodPlanner",
+      "colSubs": "Subscriptions",
+      "colKibble": "Dry Kibble",
+      "rows": [
+        {
+          "metric": "Processing Method",
+          "dfp": "Gently Cooked (~165°F) or Raw — Enzymes Intact",
+          "subs": "Sous-Vide Cooked & Flash-Frozen",
+          "kibble": "High-Heat Extrusion (400°F+)"
+        },
+        {
+          "metric": "Portion Accuracy",
+          "dfp": "Exact grams via RER/MER metabolic math, personalized to weight, age & activity",
+          "subs": "Fixed weight-range feeding chart",
+          "kibble": "Generic bag chart — overestimates portions by 20–30%"
+        },
+        {
+          "metric": "Net Carbohydrates",
+          "dfp": "< 5% (vegetables only, zero fillers)",
+          "subs": "10% – 20%",
+          "kibble": "45% – 60% (corn, wheat & pea starch fillers)"
+        },
+        {
+          "metric": "Biological Moisture",
+          "dfp": "70% – 75% (supports renal & urinary hydration)",
+          "subs": "70% – 75%",
+          "kibble": "8% – 10% (chronic sub-clinical dehydration)"
+        },
+        {
+          "metric": "Nutrient Integrity",
+          "dfp": "Minimal oxidation — omega-3s & enzymes preserved",
+          "subs": "Moderate — some heat-sensitive nutrients degraded",
+          "kibble": "Fat oxidation & AGE formation from extrusion heat"
+        },
+        {
+          "metric": "Ingredient Transparency",
+          "dfp": "100% disclosed grams & percentages — you control every gram",
+          "subs": "Proprietary blend (exact ratios withheld)",
+          "kibble": "Split ingredients & vague \"meat meal\" sourcing"
+        },
+        {
+          "metric": "Avg. Monthly Cost (50 lb dog)",
+          "dfp": "$80 – $130 (home-prepared ingredients only)",
+          "subs": "$250 – $450 / month",
+          "kibble": "$60 – $95 / month"
+        }
+      ]
+    },
+    "faqPage": {
+      "badge": "KNOWLEDGE BASE // VERIFIED CANINE ANSWERS",
+      "exploreHubsTitle": "Explore Dedicated Canine Nutrition Hubs",
+      "exploreHubsSubtitle": "Deep-dive into specialized guides created for dog parents seeking optimal health.",
+      "cardBestFood": "Comparison of fresh, raw, high-protein kibble, and specialized formulas for small and sensitive dogs.",
+      "cardCalc": "RER and MER calorie calculator delivering exact gram and cup meal portions.",
+      "cardRecipes": "Balanced gently cooked and 80-10-10 raw BARF recipes with essential calcium balancing.",
+      "cardAllergies": "Novel protein selection, elimination diets, and soothing gut microbiome protocols.",
+      "cardToxic": "Complete index of dangerous human foods, safe fruits, vegetables, and chemical additives.",
+      "cardBrands": "Unbiased reviews for Blue Buffalo, Nutrish, Pure Balance, Ollie, and Open Farm."
+    },
+    "faqSingle": {
+      "reviewedBy": "Reviewed by: DogFoodPlanner Editorial Team",
+      "updated": "Updated: 2026",
+      "directQuickAnswer": "Direct Quick Answer",
+      "clinicalAnalysis": "Detailed Nutritional Analysis",
+      "topics": "Topics:",
+      "ctaBadge": "🐾 Free Canine Nutrition Engine",
+      "ctaTitle": "Calculate Exact Daily Calories & Meal Portions For Your Dog",
+      "ctaSubtitle": "Use our free dog feeding calculator to determine your dog’s exact metabolic burn (RER/MER) and get custom fresh or raw food recipe grams.",
+      "ctaBtn": "Calculate Portions Now →",
+      "relatedTitle": "Related Canine Nutrition Questions",
+      "readAnswer": "Read Answer →",
       "referencedInAnswer": "Referenced in this answer",
       "buyNow": "Buy Now"
+    },
+    "bestFoodSingle": {
+      "rankBadge": "TOP 5 HEALTHIEST DOG FOODS // RANK",
+      "reviewedBy": "Reviewed by: DogFoodPlanner Editorial Team",
+      "nutritionalScore": "Nutritional Score",
+      "strengths": "Strengths",
+      "tradeoffs": "Tradeoffs",
+      "fullBreakdown": "Full Breakdown",
+      "exampleProduct": "Example product in this category",
+      "previousRank": "Previous rank",
+      "nextRank": "Next rank",
+      "backToRanking": "Back to the Full Top 5 Ranking",
+      "viewOnAmazon": "View on Amazon"
+    }
   },
-  "bestFoodSingle": {
-    "rankBadge": "TOP 5 HEALTHIEST DOG FOODS // RANK",
-    "reviewedBy": "Reviewed by: DogFoodPlanner Editorial Team",
-    "nutritionalScore": "Nutritional Score",
-    "strengths": "Strengths",
-    "tradeoffs": "Tradeoffs",
-    "fullBreakdown": "Full Breakdown",
-    "exampleProduct": "Example product in this category",
-    "previousRank": "Previous rank",
-    "nextRank": "Next rank",
-    "backToRanking": "Back to the Full Top 5 Ranking",
-    "viewOnAmazon": "View on Amazon"
-  }
-},
-  es: {
-  "about": {
-    "heroTitle": "Sobre DogFoodPlanner: Planificación de Comidas Caninas Hecha Simple",
-    "heroSubtitle": "Conoce DogFoodPlanner.com, nuestra misión y cómo funciona nuestra calculadora gratuita de alimentación canina.",
-    "missionBadge": "NUESTRA MISIÓN // PLANIFICACIÓN DE COMIDAS CANINAS",
-    "whyTitle": "Por Qué se Creó DogFoodPlanner",
-    "whyP1": "Creamos DogFoodPlanner para ayudar a los dueños de perros a planificar las comidas y las porciones con total confianza. Investigamos las recomendaciones públicas disponibles y las convertimos en guías y herramientas gratuitas y sencillas.",
-    "whyP2": "",
-    "whoTitle": "Quiénes Somos",
-    "whoContent": "DogFoodPlanner es un sitio web independiente gestionado por investigadores y redactores apasionados por los perros. No somos veterinarios. Consulta siempre con tu veterinario antes de cambiar la dieta de tu perro, especialmente en el caso de cachorros, perros mayores o perros con problemas de salud.",
-    "methodTitle": "Nuestra Metodología Nutricional",
-    "pillars": [
-      {
-        "tag": "01 // ESTIMACIONES CALÓRICAS",
-        "title": "Estimaciones Calóricas",
-        "desc": "Nuestra calculadora utiliza la fórmula estándar de Requerimiento Energético en Reposo (70 × peso corporal en kg^0.75) y multiplicadores habituales de actividad para estimar las calorías diarias."
-      },
-      {
-        "tag": "02 // FUENTES DE REFERENCIA",
-        "title": "Fuentes de Referencia",
-        "desc": "Nos basamos en guías publicadas por entidades como la AAFCO y el National Research Council. Nuestro contenido es educativo y no reemplaza el asesoramiento profesional."
-      },
-      {
-        "tag": "03 // TRANSPARENTE",
-        "title": "Transparente",
-        "desc": "Algunas páginas contienen enlaces de afiliados, incluidos los de Amazon Afiliados. Si compras a través de ellos, podemos recibir una pequeña comisión sin coste adicional para ti. Esto nunca altera nuestras recomendaciones."
-      }
-    ],
-    "ctaTitle": "¿Listo para Calcular las Necesidades Nutricionales de tu Perro?",
-    "ctaDesc": "Utiliza nuestra calculadora interactiva, explora las guías de alergias caninas y lee nuestras guías de comida para perros.",
-    "ctaBtn": "Abrir Calculadora Nutricional Gratuita →",
-    "amazonDisclaimer": "Como afiliados de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables."
-  },
-  "contact": {
-    "eyebrow": "ATENCIÓN Y SOPORTE // CONSULTAS DIRECTAS",
-    "cards": [
-      {
-        "icon": "📧",
-        "title": "Consultas Generales",
-        "desc": "Dudas y comentarios generales:",
-        "email": "hello@dogfoodplanner.com"
-      },
-      {
-        "icon": "🐾",
-        "title": "Investigación Nutricional",
-        "desc": "Consultas sobre fórmulas:",
-        "email": "research@dogfoodplanner.com"
-      },
-      {
-        "icon": "🛡️",
-        "title": "Soporte Técnico",
-        "desc": "Errores y sugerencias de la web:",
-        "email": "legal@dogfoodplanner.com"
-      }
-    ],
-    "formTitle": "Envía un Mensaje a Nuestro Equipo de Nutrición Canina",
-    "formDesc": "¿Tienes dudas sobre las fórmulas calóricas NRC o necesitas ayuda con una receta cruda? Respondemos en menos de 24 horas laborales.",
-    "nameLabel": "Tu Nombre",
-    "namePlaceholder": "ej. Carlos Mendoza",
-    "emailLabel": "Tu Correo Electrónico",
-    "emailPlaceholder": "carlos@ejemplo.com",
-    "subjectLabel": "Motivo de la Consulta",
-    "subjectOptions": [
-      "Pregunta General / Comentarios",
-      "Consulta de Nutrición y Recetas",
-      "Duda sobre Fórmulas de la Calculadora",
-      "Informe de Error Técnico"
-    ],
-    "messageLabel": "Tu Mensaje",
-    "messagePlaceholder": "Cuéntanos sobre tu perro (raza, peso, edad) y cómo podemos ayudarte...",
-    "submitBtn": "Enviar Mensaje →",
-    "notice": "Aviso de Emergencia Veterinaria: Si tu mascota presenta síntomas agudos de envenenamiento o malestar grave, acude inmediatamente a un hospital veterinario de urgencias.",
-    "faqTitle": "¿Buscas respuestas rápidas?",
-    "faqDesc": "Consulta nuestra base de conocimiento con más de 40 preguntas veterinarias sobre inapetencia, dieta BARF, comida de gato y marcas comerciales.",
-    "faqBtn": "Ver Todas las Preguntas Frecuentes →",
-    "successTitle": "✓ Mensaje preparado — enviando a hello@dogfoodplanner.com",
-    "successDesc": "Tu cliente de correo debería abrirse con un mensaje predactado dirigido a hello@dogfoodplanner.com. Solo pulsa Enviar en tu app de correo y llegará a nuestra bandeja de entrada."
-  },
-  "privacy": {
-    "eyebrow": "LEGAL // PROTECCIÓN DE DATOS Y PRIVACIDAD",
-    "lastUpdated": "Actualizado: 13 de octubre de 2026",
-    "intro": "En DogFoodPlanner.com respetamos tu privacidad y nos comprometemos a proteger los datos personales. Esta política explica cómo tratamos y protegemos tu información.",
-    "sections": [
-      {
-        "title": "1. Información Que No Recopilamos",
-        "content": "Los datos de salud de tu mascota te pertenecen. No requerimos registro, contraseñas ni tarjetas bancarias para usar nuestra calculadora de comida para perros. Los perfiles caninos, pesos y selecciones de dieta introducidos en la calculadora se procesan en tu navegador (lado del cliente) y no se guardan en bases de datos externas."
-      },
-      {
-        "title": "2. Datos Técnicos Anónimos",
-        "content": "Como la mayoría de plataformas web modernas, nuestros servidores CDN registran datos técnicos anónimos habituales (dirección IP anonimizada, navegador, página de origen y fecha) con fines de seguridad y prevención de ciberataques."
-      },
-      {
-        "title": "3. Cookies y Almacenamiento Local",
-        "content": "Utilizamos localStorage para recordar tu idioma y plan de comida en tu dispositivo. Si haces clic en un enlace de afiliados, el sitio web de terceros (como Amazon) puede instalar sus propias cookies."
-      },
-      {
-        "title": "4. Enlaces a Terceros",
-        "content": "Nuestro sitio contiene enlaces de referencia a investigaciones publicadas, estándares AAFCO, bases de datos del NRC y recursos externos. No nos hacemos responsables de las prácticas de privacidad ni del contenido de sitios web de terceros."
-      },
-      {
-        "title": "5. Declaración de Afiliados",
-        "content": "DogFoodPlanner participa en el Programa de Afiliados de Amazon Services LLC. Como afiliados de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables, sin ningún coste adicional para ti."
-      },
-      {
-        "title": "6. Privacidad de Menores",
-        "content": "Nuestros contenidos y herramientas están dirigidos a adultos responsables de mascotas. No recopilamos conscientemente datos de menores de 13 años."
-      },
-      {
-        "title": "7. Actualizaciones y Contacto",
-        "content": "Podemos actualizar periódicamente esta política para reflejar mejoras técnicas. Las novedades se publicarán en esta página. Para cualquier consulta, escribe a privacy@dogfoodplanner.com."
-      }
-    ]
-  },
-  "terms": {
-    "eyebrow": "LEGAL // CONDICIONES DEL SERVICIO",
-    "lastUpdated": "Actualizado: Enero de 2026",
-    "intro": "Por favor, lee atentamente estos Términos y Condiciones antes de utilizar DogFoodPlanner.com. Al acceder a esta web, aceptas quedar vinculado por los mismos.",
-    "sections": [
-      {
-        "title": "1. Aceptación de las Condiciones",
-        "content": "Al acceder y utilizar DogFoodPlanner.com (el \"Sitio\"), confirmas haber leído, comprendido y aceptado íntegramente estas Condiciones de Servicio. Si no estás de acuerdo con alguna parte, suspende su uso."
-      },
-      {
-        "title": "2. Descargo de Responsabilidad Veterinaria y Médica",
-        "content": "La información, calculadoras y recetas de DogFoodPlanner.com se proporcionan únicamente con fines educativos e informativos sobre modelos NRC y AAFCO. NO constituyen asesoramiento veterinario profesional, diagnóstico clínico ni tratamiento prescrito. Consulta siempre a un veterinario colegiado o especialista en nutrición animal (DACVN) antes de realizar cambios sustanciales en la alimentación de tu perro."
-      },
-      {
-        "title": "3. Uso de las Calculadoras Interactivas",
-        "content": "Los cálculos de calorías (RER y MER) y los gramos de comida constituyen puntos de partida matemáticos. Cada perro posee una tasa metabólica particular según su genética, castración, clima y actividad. El propietario debe vigilar la Condición Corporal (BCS) y ajustar la ingesta según corresponda."
-      },
-      {
-        "title": "4. Seguridad en Dietas Caseras y Balance de Calcio",
-        "content": "Elaborar comida casera o cruda exige cumplir estrictamente con los perfiles nutricionales completos. En particular, ofrecer carne sin hueso carente de suplementación cálcica provoca osteoporosis y desmineralización ósea severa en pocos meses. El usuario asume toda la responsabilidad en la preparación de las raciones."
-      },
-      {
-        "title": "5. Propiedad Intelectual",
-        "content": "Todos los contenidos, algoritmos de cálculo, diseño de interfaz, gráficos interactivos y textos de DogFoodPlanner.com son propiedad exclusiva de DogFoodPlanner y están protegidos por leyes de derechos de autor."
-      },
-      {
-        "title": "6. Limitación de Responsabilidad",
-        "content": "Bajo ninguna circunstancia DogFoodPlanner.com o sus colaboradores serán responsables por daños directos o indirectos derivados del uso de la información y herramientas facilitadas en esta web."
-      }
-    ]
-  },
-  "bestFood": {
-    "eyebrow": "GUÍA CLÍNICA // RANKING CANINO 2026",
-    "rankingsTitle": "¿Cuáles Son los 5 Alimentos Más Saludables para Perros en 2026?",
-    "rankingsIntro": "La investigación veterinaria sobre longevidad canina confirma que el procesamiento térmico mínimo y una hidratación biológica elevada son los dos factores predictivos más determinantes de vitalidad y salud renal.",
-    "readMoreLabel": "Leer más →",
-    "readLessLabel": "Mostrar menos ↑",
-    "rankings": [
-      {
-        "rank": "01",
-        "title": "Comida Fresca Grado Humano Cocinada a Fuego Lento",
-        "score": "98/100",
-        "pros": "Carnes y verduras reales cocinadas a baja temperatura (70°C). Mantiene más del 70% de humedad natural, enzimas activas y vitaminas biodisponibles.",
-        "cons": "Requiere conservación en nevera o congelador. Coste algo superior al pienso convencional.",
-        "readMore": "La comida fresca cocinada suavemente ocupa el primer puesto del ranking porque imita una comida casera sin sacrificar la seguridad alimentaria. Los ingredientes proceden de instalaciones de alimentos de grado humano inspeccionadas por el USDA, y se cocinan justo el tiempo necesario a baja temperatura (unos 71 °C) para eliminar patógenos mientras se preservan las proteínas delicadas, la taurina y las vitaminas B hidrosolubles que la extrusión a alta temperatura destruye.\n\nComo este alimento ya aporta más de un 70% de humedad, reduce la presión sobre los riñones y disminuye la deshidratación crónica de bajo grado habitual en las dietas basadas únicamente en pienso. Es especialmente adecuado para perros en recuperación de una enfermedad, perros senior con menor impulso de sed, o razas propensas a sensibilidades alimentarias, ya que las recetas suelen ser de proteína única y están libres de harinas de carne procesadas o conservantes sintéticos.\n\nLa principal contrapartida es la logística: necesita espacio en el frigorífico o el congelador, y las raciones deben descongelarse antes de servirse. Si no estás preparado para cocinarlo tú mismo, varias marcas con cocinas certificadas por el USDA venden versiones de larga duración de este mismo formato cocinado suavemente, una forma de bajo esfuerzo para probar esta categoría antes de comprometerte con una rutina casera completa.",
-        "productKey": "justfoodfordogs-chicken-white-rice",
-        "productNote": "Una opción de larga duración para probar esta categoría:"
-      },
-      {
-        "rank": "02",
-        "title": "Dieta Cruda Ancestral BARF 80-10-10",
-        "score": "95/100",
-        "pros": "Proporción biológica carnívora: 80% carne muscular, 10% hueso carnoso, 10% vísceras. Excelente para salud dental y musculatura magra.",
-        "cons": "Requiere higiene rigurosa en la manipulación y un estricto equilibrio del calcio.",
-        "readMore": "La proporción 80-10-10 (80% carne muscular, 10% hueso crudo comestible, 10% órgano secretor) está diseñada para replicar lo que un ancestro canino salvaje obtendría de una presa entera. Bien formulada, aporta de forma natural una relación calcio-fósforo equilibrada procedente directamente del contenido óseo, favorece la masa muscular magra, y la acción mecánica de masticar hueso crudo ayuda a raspar el sarro de los dientes.\n\nComo no se cocina nada, las enzimas y los aminoácidos sensibles al calor permanecen totalmente intactos. El inconveniente está en la precisión: obtener hueso crudo seguro y respetar exactamente la proporción requieren verdadera disciplina, ya que calcular mal el porcentaje de hueso es el error más común, y puede provocar estreñimiento o, con el tiempo, problemas esqueléticos en cachorros en crecimiento. La carne cruda también debe manipularse con la misma higiene que cualquier alimento crudo de consumo humano (tablas de corte separadas, refrigeración, limpieza inmediata).\n\nLa mayoría de los hogares encuentran más sencillo empezar con un producto crudo formulado profesionalmente que ya cumple la proporción, antes de pasar a comidas crudas completamente personalizadas, obtenidas y pesadas en casa.",
-        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-        "productNote": "Una opción cruda ya equilibrada que elimina las conjeturas:"
-      },
-      {
-        "rank": "03",
-        "title": "Comida Cruda Liofilizada y Deshidratada al Aire",
-        "score": "91/100",
-        "pros": "Aporta la calidad nutricional de la comida cruda con la comodidad de almacenarse a temperatura ambiente.",
-        "cons": "Es imprescindible rehidratar con agua tibia o caldo de huesos antes de servir.",
-        "readMore": "Tanto el secado al aire como la liofilización eliminan la humedad de la carne cruda a baja temperatura, manteniendo el perfil de nutrientes y enzimas cercano al de un alimento crudo, a la vez que hacen el alimento estable a temperatura ambiente, por lo que no se necesita congelador. La liofilización utiliza un proceso de vacío en frío que tiende a preservar los nutrientes aún mejor que el secado al aire, aunque suele costar más por kilo.\n\nAmbos formatos se transportan bien y funcionan muy bien como topping crudo mezclado con el pienso para mejorar la palatabilidad. Rehidratar con agua templada o caldo de huesos antes de servir ayuda a restaurar una humedad más cercana a la dieta ancestral salvaje del perro, y es especialmente recomendable para perros propensos a cristales urinarios o con insuficiencia renal.\n\nLa principal consideración es el coste por caloría: al eliminarse el peso del agua, se paga por nutrición concentrada, por lo que suele usarse como topping o dieta rotacional, más que como el alimento diario único de un perro de gran tamaño.",
-        "productKey": "ziwi-peak-beef-chicken-bundle",
-        "productNote": "Una opción de secado al aire con buenas valoraciones:"
-      },
-      {
-        "rank": "04",
-        "title": "Pienso Seco Alto en Proteína Sin Granos o con Granos Ancestrales",
-        "score": "78/100",
-        "pros": "Cómodo, no perecedero y económicamente viable para hogares con perros grandes o múltiples mascotas.",
-        "cons": "Sometido a extrusión a 200°C, solo 8-10% de humedad y 40-50% de carbohidratos amiláceos.",
-        "readMore": "El pienso premium sigue siendo la opción más práctica para muchos hogares: es estable hasta un año, fácil de dosificar con un comedero automático, y notablemente más económico por caloría que las dietas frescas o crudas.\n\nLas mejores fórmulas de esta categoría encabezan la lista de ingredientes con una proteína animal identificada en lugar de una \"harina de carne\" genérica, limitan los almidones a granos ancestrales como la avena y el sorgo en vez de rellenos pesados de maíz o trigo, y se someten a análisis de laboratorio independientes para detectar metales pesados.\n\nLa contrapartida es el propio proceso de extrusión: la exposición a temperaturas superiores a 200 °C destruye algunas vitaminas sensibles al calor y reduce la humedad hasta aproximadamente un 10%, por lo que los veterinarios suelen recomendar añadir un poco de caldo de huesos o un topping crudo a las dietas basadas únicamente en pienso, especialmente en perros propensos a cristales urinarios.",
-        "productKey": "orijen-original-grain-free-23lb",
-        "productNote": "Una fórmula alta en proteína, tipo WholePrey, en esta categoría:"
-      },
-      {
-        "rank": "05",
-        "title": "Dietas Terapéuticas de Prescripción Veterinaria",
-        "score": "72/100",
-        "pros": "Formuladas para patologías clínicas específicas (insuficiencia renal, hepática o cálculos urinarios).",
-        "cons": "A menudo recurren a subproductos vegetales y requieren receta veterinaria.",
-        "readMore": "Las dietas terapéuticas están diseñadas para controlar una afección específica diagnosticada: proteína y fósforo reducidos en caso de insuficiencia renal, proteínas hidrolizadas ante las que el sistema inmunitario no puede reaccionar en alergias alimentarias graves, o magnesio y pH controlados para prevenir cálculos vesicales de estruvita.\n\nOcupan un puesto más bajo en una escala general de \"más saludable\" únicamente porque son deliberadamente restrictivas en lugar de estar optimizadas para un perro sano medio; una fórmula diseñada para proteger unos riñones deteriorados, por ejemplo, no busca intencionadamente ser el alimento más denso en proteína del mercado.\n\nEstas dietas requieren la aprobación de un veterinario y análisis de sangre periódicos para confirmar que están funcionando, y nunca deben administrarse a un perro sano sin una razón clínica, ya que restringir nutrientes que un perro sano realmente necesita puede causar daño con el tiempo.",
-        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-        "productNote": "Una fórmula habitual de apoyo renal recetada por veterinarios:"
-      }
-    ],
-    "buyerGuideTitle": "4 Reglas de Oro para Elegir el Mejor Alimento Canino",
-    "buyerRules": [
-      {
-        "title": "1. Proteína Animal Específica en Primer Lugar",
-        "desc": "Busca \"Pavo Deshuesado\", \"Ternera\" o \"Salmón Fresco\" en lugar de harinas cárnicas anónimas.",
-        "readMore": "Los ingredientes en el etiquetado de alimentos para mascotas se ordenan por peso antes de la cocción. Las carnes enteras y claramente identificadas (como «Pavo deshuesado» o «Ternera fresca») aportan aminoácidos esenciales como taurina, arginina y carnitina en su forma más biodisponible. Evita términos ambiguos como «derivados de origen animal», «harina de carne» o «subproductos de ave», que permiten a los fabricantes usar despojos y restos de procedencia indefinida.\n\nTen cuidado con la «división de ingredientes» (ingredient splitting): algunas marcas desglosan los carbohidratos en varios componentes (guisantes, almidón de guisante y proteína de guisante) para que la carne figure engañosamente en primer lugar.\n\nLas harinas de carne con nombre específico —como «Harina de cordero» o «Harina de salmón deshidratado»— son aceptables si son transparentes, ya que se pesan sin agua y aportan una alta concentración de proteína animal real."
-      },
-      {
-        "title": "2. Humedad Biológica Alta (>70%)",
-        "desc": "El pienso seco causa deshidratación crónica subclínica. Añade siempre toppers frescos o caldos nutritivos.",
-        "readMore": "En la naturaleza, las presas de las que descienden los perros contienen entre un 70% y un 75% de agua. Los perros tienen un reflejo de sed instintivamente bajo, ya que su organismo espera hidratarse principalmente a través de la comida. Alimentarlos exclusivamente con pienso seco (que solo contiene un 8-10% de humedad) los somete a un estado constante de deshidratación subclínica.\n\nCon los años, una orina excesivamente concentrada sobrecarga los riñones e incrementa de forma drástica el riesgo de cálculos vesicales de estruvita y oxalato de calcio.\n\nSi das pienso, incorpora siempre humedad: rehidrata la ración en proporción 1:1 con caldo de huesos tibio (sin sal ni cebolla), agua filtrada o kéfir natural, o añade toppers de carne fresca para proteger su salud renal."
-      },
-      {
-        "title": "3. Cero Conservantes Sintéticos",
-        "desc": "Evita rotundamente aditivos químicos como BHA, BHT, etoxiquina y colorantes artificiales.",
-        "readMore": "Para lograr una caducidad de 18 a 24 meses, muchos piensos industriales emplean antioxidantes químicos como el BHA (butilhidroxianisol), el BHT (butilhidroxitolueno) y la etoxiquina. Estudios científicos han catalogado al BHA y BHT como posibles disruptores endocrinos y cancerígenos, mientras que la etoxiquina (diseñada originalmente como pesticida) se asocia con daños hepáticos y reacciones alérgicas.\n\nAdemás, los colorantes artificiales (como Rojo 40 o Amarillo 5) solo buscan hacer el producto visualmente atractivo para el dueño, pero provocan dermatitis, picor crónico e inflamación gastrointestinal en perros sensibles.\n\nElige siempre marcas conservadas con antioxidantes naturales: tocoferoles mixtos (Vitamina E), extracto de romero y ácido cítrico. Protegen las grasas de forma inocua sin poner en riesgo la salud de tu perro."
-      },
-      {
-        "title": "4. Carbohidratos Controlados (<25%)",
-        "desc": "Los perros carecen de amilasa salival. El exceso de almidón sobrecarga el páncreas y causa obesidad.",
-        "readMore": "Los perros son carnívoros facultativos y no tienen un requerimiento nutricional biológico de carbohidratos refinados. A diferencia de las personas, los perros no producen amilasa salival para descomponer los almidones en la boca; todo el trabajo enzimático recae directamente sobre su páncreas.\n\nComo la normativa no exige indicar el porcentaje de carbohidratos en la etiqueta, muchos piensos comerciales ocultan entre un 45% y un 60% de almidón procedente de maíz, trigo o tapioca solo para dar consistencia a la croqueta.\n\nLas dietas altas en índice glucémico causan picos continuos de insulina, inflamación sistémica, otitis crónicas y favorecen la obesidad canina. Puedes calcular los carbohidratos restando a 100 la suma de proteína, grasa, fibra, humedad y cenizas. Prioriza siempre fórmulas con menos del 25% de carbohidratos."
-      }
-    ],
-    "ctaTitle": "Calcula las Raciones Exactas del Mejor Alimento para tu Perro",
-    "ctaDesc": "Tanto si eliges comida fresca, dieta BARF o pienso premium, obtén los gramos diarios y las calorías que tu perro necesita.",
-    "ctaBtn": "Calcular Ración Diaria Ahora →"
-  },
-  "recipes": {
-    "eyebrow": "RECETAS CASERAS // BLUEPRINTS NRC Y AAFCO",
-    "heroTitle": "Recetas Caseras y Saludables para Perros",
-    "heroSubtitle": "Guías paso a paso para elaborar menús caseros cocinados al vapor y dietas BARF crudas 80-10-10 completas y equilibradas.",
-    "calciumWarningTitle": "La Regla de Oro de la Comida Casera: El Equilibrio de Calcio",
-    "calciumWarningDesc": "La carne muscular es naturalmente rica en fósforo y muy pobre en calcio (relación 1:20). Alimentar a un perro únicamente con pollo, ternera y arroz sin añadir calcio provoca descalcificación ósea severa en pocos meses. Añade siempre media cucharadita rasa de cáscara de huevo en polvo (aprox. 900 mg de calcio elemental) por cada 450 g de carne sin hueso para lograr la proporción óptima de Calcio-Fósforo de 1.2:1.",
-    "recipesList": [
-      {
-        "tag": "COCINADO AL VAPOR",
-        "title": "Receta 1: Pavo a Fuego Lento y Calabaza Prebiótica (Apta para Estómagos Sensibles)",
-        "desc": "Perfecta para perros con digestiones delicadas, heces blandas o intolerancia al pollo industrial.",
-        "ingredients": [
-          "Pavo Picado Magro (93/7) — 65% (aprox. 900 g)",
-          "Corazones de Pavo o Ternera (Taurina Natural) — 10% (aprox. 140 g)",
-          "Puré Puro de Calabaza (Fibra Digestiva) — 10% (aprox. 140 g)",
-          "Espinacas Baby y Calabacín al Vapor — 10% (aprox. 140 g)",
-          "Aceite de Salmón Salvaje de Alaska (EPA/DHA) — 2% (1.5 cucharadas)",
-          "Cáscara de Huevo Molida (Calcio Elemental) — 3% (1 cucharadita)"
-        ],
-        "prep": "Saltea el pavo y los corazones a fuego medio-bajo hasta que estén cocinados sin quemarse (70°C). Cuece las verduras al vapor y tritúralas con la calabaza. Mezcla todo y deja enfriar por completo antes de incorporar el aceite de salmón y el calcio. Congela en raciones diarias."
-      },
-      {
-        "tag": "DIETA BARF",
-        "title": "Receta 2: Dieta BARF Ancestral 80-10-10 de Ternera y Pato",
-        "desc": "Menú crudo biológicamente apropiado para perros adultos sanos con pH estomacal ácido normal.",
-        "ingredients": [
-          "Carne Magra de Ternera de Pasto — 70%",
-          "Corazón de Ternera (Rico en L-Carnitina y CoQ10) — 10%",
-          "Cuellos de Pato o Carcasas Crudas — 10% (Hueso Comestible y Calcio)",
-          "Hígado de Ternera (Vitamina A y Complejo B) — 5%",
-          "Riñón o Bazo de Ternera (Víscera Secretora) — 5%"
-        ],
-        "prep": "Corta la carne y los corazones en trozos adecuados a la mandíbula del perro. Pesa los órganos con báscula digital. Congela previamente todas las porciones durante al menos 3 semanas a -20°C antes de descongelar y servir."
-      },
-      {
-        "tag": "TOPPER SUPERALIMENTO",
-        "title": "Receta 3: Topper Antioxidante 80/20 para Enriquecer el Pienso",
-        "desc": "Potenciador de alimentos frescos diseñado para sustituir el 20% de las calorías del pienso seco habitual.",
-        "ingredients": [
-          "Huevos Camperos Ligeramente Escalfados — 40%",
-          "Brotes de Brócoli al Vapor y Arándanos Azules — 30%",
-          "Caldo de Huesos de Ternera a Fuego Lento — 20%",
-          "Semillas de Cáñamo y Algas Kelp en Polvo — 10%"
-        ],
-        "prep": "Hierve suavemente los huevos durante 4 minutos. Pasa las verduras por el vapor 3 minutos. Tritura con el caldo templado y los arándanos. Vierte de 2 a 4 cucharadas soperas diarias sobre su cuenco de pienso."
-      }
-    ],
-    "calciumGuideTitle": "Fuentes Seguras de Calcio para Comida Casera Canina",
-    "calciumGuideItems": [
-      {
-        "title": "Cáscara de Huevo en Polvo",
-        "ratio": "1/2 cucharadita por cada 450 g de carne deshuesada",
-        "desc": "95% carbonato cálcico puro. Fácil de preparar en casa lavando, horneando y moliendo cáscaras finamente."
-      },
-      {
-        "title": "Huesos Carnosos Comestibles Crudos",
-        "ratio": "10% del peso total de la dieta",
-        "desc": "Cuellos de pato, alas de pollo o carcasas crudas. Nunca cocinados para evitar que se astillen."
-      },
-      {
-        "title": "Harina de Hueso Veterinaria (Bone Meal)",
-        "ratio": "Según indicación del fabricante",
-        "desc": "Hidroxiapatita microcristalina que aporta calcio y fósforo en una proporción biodisponible de 2:1."
-      }
-    ]
-  },
-  "toxic": {
-    "eyebrow": "SEGURIDAD CRÍTICA // TOXICIDAD EN INGREDIENTES",
-    "dangerTitle": "Los Alimentos Domésticos Más Peligrosos para Perros",
-    "dangerIntro": "Ciertos alimentos comunes contienen sustancias químicas que el metabolismo del perro no puede procesar, causando fallo orgánico agudo o muerte.",
-    "dangerList": [
-      {
-        "name": "Chocolate y Cacao",
-        "toxin": "Teobromina y Cafeína",
-        "symptoms": "Vómitos, jadeo acelerado, taquicardia, temblores musculares, convulsiones y fallo cardíaco.",
-        "risk": "MUY ALTO A MORTAL"
-      },
-      {
-        "name": "Uvas, Pasas y Grosellas",
-        "toxin": "Ácido Tartárico",
-        "symptoms": "Letargo, deshidratación e insuficiencia renal aguda irreversible en 24 a 72 horas.",
-        "risk": "EXTREMADAMENTE LETAL"
-      },
-      {
-        "name": "Xilitol (Azúcar de Abedul / E967)",
-        "toxin": "Polialcohol Sintético",
-        "symptoms": "Pico masivo de insulina, hipoglucemia profunda, ataxia y necrosis hepática aguda en pocas horas.",
-        "risk": "URGENCIA VITAL MÁXIMA"
-      },
-      {
-        "name": "Cebolla, Ajo, Puerro y Cebollino",
-        "toxin": "Disulfuro de N-propilo",
-        "symptoms": "Destrucción de glóbulos rojos, anemia hemolítica, encías pálidas, orina oscura y debilidad.",
-        "risk": "EFECTO ACUMULATIVO ALTO"
-      },
-      {
-        "name": "Nueces de Macadamia",
-        "toxin": "Neurotoxina no identificada",
-        "symptoms": "Debilidad en patas traseras, hipertermia, vómitos y rigidez muscular dolorosa.",
-        "risk": "MODERADO A GRAVE"
-      },
-      {
-        "name": "Huesos Cocinados de Cualquier Animal",
-        "toxin": "Riesgo Físico de Astillamiento",
-        "symptoms": "Perforación gastrointestinal, hemorragia interna, peritonitis y obstrucción intestinal letal.",
-        "risk": "EMERGENCIA QUIRÚRGICA"
-      }
-    ],
-    "emergencyTitle": "Qué Hacer en Caso de Emergencia por Intoxicación",
-    "emergencySteps": [
-      "1. Actúa de Inmediato: Identifica el alimento exacto ingerido, el envase, la cantidad aproximada y la hora del consumo.",
-      "2. NO Provoques el Vómito sin Orden Veterinaria: Sustancias corrosivas o huesos astillados causan quemaduras y desgarros esofágicos al subir.",
-      "3. Contacta con Urgencias Veterinarias Inmediatamente: Llama a tu clínica veterinaria 24 horas o al centro de toxicología animal más cercano."
-    ],
-    "safeTitle": "Frutas y Verduras 100% Seguras y Beneficiosas",
-    "safeIntro": "Estos alimentos naturales aportan antioxidantes celulares, fibra prebiótica soluble y vitaminas al cuenco de tu perro:",
-    "safeFoods": [
-      {
-        "name": "Arándanos Azules",
-        "benefit": "Repletos de antocianinas, polifenoles y antioxidantes protectores."
-      },
-      {
-        "name": "Calabaza Pura",
-        "benefit": "Rica en fibra soluble que alivia tanto la diarrea como el estreñimiento."
-      },
-      {
-        "name": "Zanahorias",
-        "benefit": "Premio crujiente bajo en calorías, rico en betacaroteno y útil para la higiene dental."
-      },
-      {
-        "name": "Judías Verdes",
-        "benefit": "Excelente vegetal saciante y bajo en calorías para perros con sobrepeso."
-      },
-      {
-        "name": "Manzanas (Sin Semillas)",
-        "benefit": "Aporte natural de vitamina C, vitamina A y pectina beneficiosa para la microbiota."
-      }
-    ]
-  },
-  "brands": {
-    "eyebrow": "ANÁLISIS INDEPENDIENTE // REVISIÓN DE MARCAS Y ALERTAS FDA",
-    "heroTitle": "Análisis de Marcas de Pienso y Registro de Retiradas",
-    "heroSubtitle": "Revisiones objetivas sobre ingredientes, etiquetado AAFCO y retiradas del mercado para proteger a tu perro.",
-    "brandsList": [
-      {
-        "name": "Blue Buffalo",
-        "grade": "Nota: B+",
-        "pros": "Carne desgrasada real como primer ingrediente; sin maíz ni trigo; croquetas LifeSource Bits ricas en antioxidantes.",
-        "cons": "Elevado nivel de carbohidratos (45-50%); retiradas históricas por moho y exceso de Vitamina D.",
-        "verdict": "Pienso comercial por encima de la media. Recomendamos enriquecerlo con un 20% de comida fresca para aportar hidratación."
-      },
-      {
-        "name": "Rachael Ray Nutrish",
-        "grade": "Nota: C+ / B-",
-        "pros": "Económico y fácil de encontrar; las gamas Peak y Dish contienen mayor proporción de carne auténtica.",
-        "cons": "Las líneas básicas emplean concentrado de proteína de guisante y gluten de maíz; investigado previamente por la FDA.",
-        "verdict": "Opción económica aceptable solo en sus líneas superiores, comprobando que no fraccione legumbres en la etiqueta."
-      },
-      {
-        "name": "Pure Balance (Walmart)",
-        "grade": "Nota: B (Mejor Opción Asequible)",
-        "pros": "Excelente relación calidad-precio; recetas cárnicas sin maíz, trigo, soja ni colorantes artificiales.",
-        "cons": "Fabricado por terceros bajo marca blanca; porcentaje medio de carbohidratos.",
-        "verdict": "Una de las opciones más equilibradas y honestas dentro del segmento de supermercado."
-      },
-      {
-        "name": "Comida Fresca Ollie",
-        "grade": "Nota: A (Sobresaliente)",
-        "pros": "100% carnes e ingredientes de grado humano; cocinado suave a baja temperatura; raciones personalizadas envasadas al vacío.",
-        "cons": "Coste mensual elevado (180€-350€/mes); requiere espacio en el congelador.",
-        "verdict": "El estándar de oro para salud metabólica, brillo en el pelaje y longevidad digestiva."
-      },
-      {
-        "name": "Open Farm",
-        "grade": "Nota: A-",
-        "pros": "Transparencia total en el origen de las materias primas; carnes de granjas con certificación de bienestar animal y pescado salvaje sostenible.",
-        "cons": "Precio elevado; menor disponibilidad en tiendas físicas habituales.",
-        "verdict": "La mejor elección para quienes buscan ganadería ética, alta proporción de carne y ausencia total de subproductos."
-      }
-    ],
-    "recallsTitle": "Cómo Interpretar las Retiradas de Alimentos (Recalls)",
-    "recallsDesc": "Las alertas sanitarias de la FDA se clasifican en tres niveles: Clase I (riesgo grave o mortal, ej. Salmonella o exceso de Vitamina D), Clase II (efectos adversos temporales sobre la salud) y Clase III (defectos menores de etiquetado). Comprueba siempre el número de lote de tu saco.",
-    "methodTitle": "Nuestros 4 Criterios de Evaluación de Marcas",
-    "methodPillars": [
-      {
-        "title": "1. Calidad de la Proteína",
-        "desc": "Carne muscular entera identificada frente a harinas de subproductos anónimas."
-      },
-      {
-        "title": "2. Porcentaje de Carbohidratos",
-        "desc": "Mantener los almidones por debajo del 40% para prevenir la obesidad."
-      },
-      {
-        "title": "3. Trazabilidad del Origen",
-        "desc": "Ingredientes de granjas con bienestar animal y vegetales libres de transgénicos."
-      },
-      {
-        "title": "4. Historial Sanitario Limpio",
-        "desc": "Control bacteriológico de laboratorio e instalaciones con certificación de inocuidad."
-      }
-    ]
-  },
-  "allergies": {
-    "eyebrow": "GUÍA NUTRICIONAL // ALERGIAS Y DIGESTIÓN CANINA",
-    "heroTitle": "Mejor Comida para Perros con Alergias y Estómago Sensible",
-    "heroSubtitle": "Guía práctica sobre intolerancias alimentarias, proteínas noveles hipoalergénicas y dietas de descarte de 8 semanas.",
-    "allergensTitle": "Los 5 Alérgenos Alimentarios Más Frecuentes en Perros",
-    "allergensIntro": "Las alergias alimentarias caninas son reacciones de hipersensibilidad inmunitaria frente a determinadas proteínas dietéticas. Por orden de frecuencia clínica:",
-    "allergensList": [
-      {
-        "name": "1. Pollo Industrial (60% de los casos)",
-        "desc": "Debido a su sobreexposición masiva en los piensos comerciales, el pollo es el alérgeno canino número uno."
-      },
-      {
-        "name": "2. Ternera Comercial (30% de los casos)",
-        "desc": "Proteína roja habitual que suele desencadenar picor cutáneo intenso e infecciones de oído recurrentes."
-      },
-      {
-        "name": "3. Lácteos y Quesos",
-        "desc": "Los perros adultos carecen de lactasa suficiente, provocando diarrea osmótica y cólicos."
-      },
-      {
-        "name": "4. Gluten de Trigo y Maíz",
-        "desc": "Proteínas vegetales que dañan la mucosa intestinal y favorecen la proliferación de levaduras."
-      },
-      {
-        "name": "5. Soja y Leguminosas",
-        "desc": "Rellenos proteicos económicos que alteran la barrera digestiva y provocan gases y prurito."
-      }
-    ],
-    "eliminationTitle": "Protocolo de Dieta de Eliminación de 8 Semanas",
-    "eliminationSteps": [
-      {
-        "step": "Fase 1",
-        "title": "Selecciona una Única Proteína Novel",
-        "desc": "Cambia a tu perro a una proteína pura que jamás haya comido (ej. Ciervo, Conejo o Canguro) junto con un carbohidrato digestivo como calabaza o batata."
-      },
-      {
-        "step": "Fase 2",
-        "title": "Cero Contaminación Cruzada (8 Semanas)",
-        "desc": "Durante 8 semanas completas debe comer exclusivamente la nueva dieta. Prohibidas las golosinas comerciales, sobras de comida y premios masticables."
-      },
-      {
-        "step": "Fase 3",
-        "title": "Reintroducción Controlada",
-        "desc": "Si los picores y problemas digestivos remiten, reintroduce un ingrediente sospechoso durante 7 días para verificar con certeza la causa de la alergia."
-      }
-    ],
-    "novelTitle": "Proteínas Noveles Hipoalergénicas Recomendadas",
-    "novelProteins": [
-      {
-        "name": "Carne de Ciervo / Venado",
-        "desc": "Carne roja magra y muy digestible frente a la cual los perros casi nunca han desarrollado anticuerpos."
-      },
-      {
-        "name": "Carne de Conejo",
-        "desc": "Proteína hipoalergénica de alto valor biológico y óptimo perfil de aminoácidos."
-      },
-      {
-        "name": "Carne de Pato",
-        "desc": "Excelente alternativa sabrosa para perros intolerantes a las aves de corral comunes."
-      },
-      {
-        "name": "Carne de Canguro",
-        "desc": "Una de las carnes silvestres más puras y magras utilizadas en dermatología veterinaria."
-      }
-    ]
-  },
-  "calculator": {
-    "eyebrow": "100% GRATIS // PAUTAS DE NUTRICIÓN CANINA",
-    "noticeTitle": "Aviso:",
-    "noticeText": "Para orientación general y educativa. No constituye una herramienta de diagnóstico médico veterinario.",
-    "heroTitle": "Calculadora de Ración y Calorías para Perros",
-    "heroSubtitle": "Determina las necesidades energéticas exactas de tu perro (RER y MER) y calcula las porciones precisas en gramos según peso, edad, nivel de actividad y condición corporal."
-  },
-  "breeds": {
-    "eyebrow": "NUTRICIÓN POR RAZA // GUÍA NUTRICIONAL",
-    "targetWeight": "Peso Ideal",
-    "dailyCalories": "Calorías Diarias",
-    "freshDaily": "Comida Fresca al Día",
-    "kibbleDaily": "Pienso Seco al Día",
-    "cups": "tazas",
-    "reqsTitle": "Requerimientos Nutricionales para {name}",
-    "reqsIntro": "Como perro de categoría {category} con un peso medio de {w0}–{w1} lbs, el {name} requiere un equilibrio nutricional específico:",
-    "predispositionsTitle": "Predisposiciones de Salud y Dieta Clave:",
-    "feedingRoutineTitle": "Pauta de Alimentación Recomendada:",
-    "feedingRoutineDesc": "Alimenta a tu {name} adulto dos veces al día (50% por la mañana y 50% por la noche). Mantén siempre agua limpia a su disposición. Si le das pienso seco, hidrátalo con caldo de huesos tibio para proteger sus riñones.",
-    "ctaTitle": "Personaliza el Plan de Comida Exacto para tu {name}",
-    "ctaSubtitle": "Ajusta según la edad exacta (cachorro, adulto o senior), peso real, actividad física y condición corporal con nuestra calculadora.",
-    "ctaBtn": "Abrir Calculadora para {name} →",
-    "faqTitle": "Preguntas Frecuentes sobre la Alimentación del {name}",
-    "faqSubtitle": "Respuestas sobre cálculo de raciones, número de tomas y mejores alimentos."
-  },
-  "comparisonTable": {
-    "eyebrow": "COMPARATIVA NUTRICIONAL // COMIDA FRESCA VS PIENSO SECO",
-    "title": "Por Qué la Comida Real Supera Biológicamente al Pienso",
-    "subtitle": "Un análisis comparativo de calor de procesado, precisión de las raciones y coste mensual real: las mismas variables asociadas en un estudio de longevidad de 5 años con hasta 32 meses más de vida en perros alimentados con comida natural fresca.",
-    "scrollHint": "↔ Desliza la tabla horizontalmente",
-    "colMetric": "Métrica Nutricional",
-    "colDfp": "✨ DogFoodPlanner",
-    "colSubs": "Suscripciones Comerciales",
-    "colKibble": "Pienso Seco Extruido",
-    "rows": [
-      {
-        "metric": "Método de Procesamiento",
-        "dfp": "Cocinada a Fuego Lento (~74°C) o Cruda — Enzimas Intactas",
-        "subs": "Cocinado al Vacío (Sous-Vide) y Ultracongelado",
-        "kibble": "Extrusión a Ultra-Alta Temperatura (200°C+)"
-      },
-      {
-        "metric": "Precisión de la Ración",
-        "dfp": "Gramos exactos mediante cálculo metabólico RER/MER, personalizado por peso, edad y actividad",
-        "subs": "Tabla fija por rangos de peso",
-        "kibble": "Tabla genérica del saco — sobreestima las porciones un 20–30%"
-      },
-      {
-        "metric": "Carbohidratos Netos",
-        "dfp": "< 5% (solo verduras seleccionadas, cero rellenos)",
-        "subs": "10% – 20%",
-        "kibble": "45% – 60% (rellenos de maíz, trigo y almidón de guisante)"
-      },
-      {
-        "metric": "Humedad Biológica",
-        "dfp": "70% – 75% (favorece la hidratación renal y urinaria)",
-        "subs": "70% – 75%",
-        "kibble": "8% – 10% (deshidratación subclínica crónica)"
-      },
-      {
-        "metric": "Integridad Nutricional",
-        "dfp": "Mínima oxidación — omega-3 y enzimas preservados",
-        "subs": "Moderada — algunos nutrientes termosensibles degradados",
-        "kibble": "Oxidación lipídica y formación de compuestos AGE por calor de extrusión"
-      },
-      {
-        "metric": "Transparencia de Ingredientes",
-        "dfp": "100% gramos y porcentajes declarados — tú controlas cada gramo",
-        "subs": "Fórmula patentada (proporciones exactas ocultas)",
-        "kibble": "Ingredientes fraccionados y harinas cárnicas genéricas"
-      },
-      {
-        "metric": "Coste Medio Mensual (Perro de 23 kg)",
-        "dfp": "75€ – 120€ (solo ingredientes caseros)",
-        "subs": "240€ – 420€ / mes",
-        "kibble": "55€ – 90€ / mes"
-      }
-    ]
-  },
-  "faqPage": {
-    "badge": "BASE DE CONOCIMIENTO // MÁS DE 40 RESPUESTAS",
-    "exploreHubsTitle": "Explora Nuestras Guías Especializadas en Nutrición Canina",
-    "exploreHubsSubtitle": "Profundiza en artículos técnicos diseñados para dueños comprometidos con la salud y longevidad de su perro.",
-    "cardBestFood": "Comparativa de comida fresca, BARF, piensos de alta proteína y fórmulas para perros con estómago sensible.",
-    "cardCalc": "Calculadora científica de calorías RER y MER que proporciona raciones exactas en gramos y tazas.",
-    "cardRecipes": "Recetas caseras cocinadas y dietas BARF 80-10-10 con aporte correcto y seguro de calcio.",
-    "cardAllergies": "Selección de proteínas noveles, dietas de eliminación y cuidado del microbioma intestinal.",
-    "cardToxic": "Índice exhaustivo de alimentos humanos venenosos, frutas y verduras seguras y aditivos a evitar.",
-    "cardBrands": "Análisis independientes de Blue Buffalo, Nutrish, Pure Balance, Ollie y Open Farm."
-  },
-  "faqSingle": {
-    "reviewedBy": "Revisado por: Equipo Editorial de DogFoodPlanner",
-    "updated": "Actualizado: 2026",
-    "directQuickAnswer": "Respuesta Rápida Directa",
-    "clinicalAnalysis": "Análisis Nutricional Detallado",
-    "topics": "Temas:",
-    "ctaBadge": "🐾 Motor de Nutrición Canina Gratuito",
-    "ctaTitle": "Calcula las Calorías y Porciones Diarias Exactas para tu Perro",
-    "ctaSubtitle": "Usa nuestra calculadora para obtener el gasto metabólico exacto (RER/MER) y los gramos para menús frescos o crudos.",
-    "ctaBtn": "Calcular Ración Diaria Ahora →",
-    "relatedTitle": "Preguntas Frecuentes Relacionadas",
-    "readAnswer": "Leer Respuesta Completa →",
+  "es": {
+    "about": {
+      "heroTitle": "Sobre DogFoodPlanner: Planificación de Comidas Caninas Hecha Simple",
+      "heroSubtitle": "Conoce DogFoodPlanner.com, nuestra misión y cómo funciona nuestra calculadora gratuita de alimentación canina.",
+      "missionBadge": "NUESTRA MISIÓN // PLANIFICACIÓN DE COMIDAS CANINAS",
+      "whyTitle": "Por Qué se Creó DogFoodPlanner",
+      "whyP1": "Creamos DogFoodPlanner para ayudar a los dueños de perros a planificar las comidas y las porciones con total confianza. Investigamos las recomendaciones públicas disponibles y las convertimos en guías y herramientas gratuitas y sencillas.",
+      "whyP2": "",
+      "whoTitle": "Quiénes Somos",
+      "whoContent": "DogFoodPlanner es un sitio web independiente gestionado por investigadores y redactores apasionados por los perros. No somos veterinarios. Consulta siempre con tu veterinario antes de cambiar la dieta de tu perro, especialmente en el caso de cachorros, perros mayores o perros con problemas de salud.",
+      "methodTitle": "Nuestra Metodología Nutricional",
+      "pillars": [
+        {
+          "tag": "01 // ESTIMACIONES CALÓRICAS",
+          "title": "Estimaciones Calóricas",
+          "desc": "Nuestra calculadora utiliza la fórmula estándar de Requerimiento Energético en Reposo (70 × peso corporal en kg^0.75) y multiplicadores habituales de actividad para estimar las calorías diarias."
+        },
+        {
+          "tag": "02 // FUENTES DE REFERENCIA",
+          "title": "Fuentes de Referencia",
+          "desc": "Nos basamos en guías publicadas por entidades como la AAFCO y el National Research Council. Nuestro contenido es educativo y no reemplaza el asesoramiento profesional."
+        },
+        {
+          "tag": "03 // TRANSPARENTE",
+          "title": "Transparente",
+          "desc": "Algunas páginas contienen enlaces de afiliados, incluidos los de Amazon Afiliados. Si compras a través de ellos, podemos recibir una pequeña comisión sin coste adicional para ti. Esto nunca altera nuestras recomendaciones."
+        }
+      ],
+      "ctaTitle": "¿Listo para Calcular las Necesidades Nutricionales de tu Perro?",
+      "ctaDesc": "Utiliza nuestra calculadora interactiva, explora las guías de alergias caninas y lee nuestras guías de comida para perros.",
+      "ctaBtn": "Abrir Calculadora Nutricional Gratuita →",
+      "amazonDisclaimer": "Como afiliados de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables."
+    },
+    "contact": {
+      "eyebrow": "ATENCIÓN Y SOPORTE // CONSULTAS DIRECTAS",
+      "cards": [
+        {
+          "icon": "📧",
+          "title": "Consultas Generales",
+          "desc": "Dudas y comentarios generales:",
+          "email": "hello@dogfoodplanner.com"
+        },
+        {
+          "icon": "🐾",
+          "title": "Investigación Nutricional",
+          "desc": "Consultas sobre fórmulas:",
+          "email": "research@dogfoodplanner.com"
+        },
+        {
+          "icon": "🛡️",
+          "title": "Soporte Técnico",
+          "desc": "Errores y sugerencias de la web:",
+          "email": "legal@dogfoodplanner.com"
+        }
+      ],
+      "formTitle": "Envía un Mensaje a Nuestro Equipo de Nutrición Canina",
+      "formDesc": "¿Tienes dudas sobre las fórmulas calóricas NRC o necesitas ayuda con una receta cruda? Respondemos en menos de 24 horas laborales.",
+      "nameLabel": "Tu Nombre",
+      "namePlaceholder": "ej. Carlos Mendoza",
+      "emailLabel": "Tu Correo Electrónico",
+      "emailPlaceholder": "carlos@ejemplo.com",
+      "subjectLabel": "Motivo de la Consulta",
+      "subjectOptions": [
+        "Pregunta General / Comentarios",
+        "Consulta de Nutrición y Recetas",
+        "Duda sobre Fórmulas de la Calculadora",
+        "Informe de Error Técnico"
+      ],
+      "messageLabel": "Tu Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu perro (raza, peso, edad) y cómo podemos ayudarte...",
+      "submitBtn": "Enviar Mensaje →",
+      "notice": "Aviso de Emergencia Veterinaria: Si tu mascota presenta síntomas agudos de envenenamiento o malestar grave, acude inmediatamente a un hospital veterinario de urgencias.",
+      "faqTitle": "¿Buscas respuestas rápidas?",
+      "faqDesc": "Consulta nuestra base de conocimiento con más de 40 preguntas veterinarias sobre inapetencia, dieta BARF, comida de gato y marcas comerciales.",
+      "faqBtn": "Ver Todas las Preguntas Frecuentes →",
+      "successTitle": "✓ Mensaje preparado — enviando a hello@dogfoodplanner.com",
+      "successDesc": "Tu cliente de correo debería abrirse con un mensaje predactado dirigido a hello@dogfoodplanner.com. Solo pulsa Enviar en tu app de correo y llegará a nuestra bandeja de entrada."
+    },
+    "privacy": {
+      "eyebrow": "LEGAL // PROTECCIÓN DE DATOS Y PRIVACIDAD",
+      "lastUpdated": "Actualizado: 14 de octubre de 2026",
+      "intro": "En DogFoodPlanner.com respetamos tu privacidad y nos comprometemos a proteger los datos personales. Esta política explica cómo tratamos y protegemos tu información.",
+      "sections": [
+        {
+          "title": "1. Información Que No Recopilamos",
+          "content": "Los datos de salud de tu mascota te pertenecen. No requerimos registro, contraseñas ni tarjetas bancarias para usar nuestra calculadora de comida para perros. Los perfiles caninos, pesos y selecciones de dieta introducidos en la calculadora se procesan en tu navegador (lado del cliente) y no se guardan en bases de datos externas."
+        },
+        {
+          "title": "2. Recopilación de Correos y Boletín",
+          "content": "Cuando te suscribes a nuestro boletín, recopilamos tu correo electrónico para enviarte guías de nutrición canina, alertas de retiradas de alimentos y consejos. Utilizamos EmailOctopus para gestionar nuestra lista de forma segura. Nunca vendemos ni compartimos tu correo. Puedes darte de baja en cualquier momento con un solo clic usando el enlace al final de cada correo."
+        },
+        {
+          "title": "3. Datos Técnicos Anónimos",
+          "content": "Como la mayoría de plataformas web modernas, nuestros servidores CDN registran datos técnicos anónimos habituales (dirección IP anonimizada, navegador, página de origen y fecha) con fines de seguridad y prevención de ciberataques."
+        },
+        {
+          "title": "4. Cookies y Almacenamiento Local",
+          "content": "Utilizamos localStorage para recordar tu idioma y plan de comida en tu dispositivo. Si haces clic en un enlace de afiliados, el sitio web de terceros (como Amazon) puede instalar sus propias cookies."
+        },
+        {
+          "title": "5. Enlaces a Terceros",
+          "content": "Nuestro sitio contiene enlaces de referencia a investigaciones publicadas, estándares AAFCO, bases de datos del NRC y recursos externos. No nos hacemos responsables de las prácticas de privacidad ni del contenido de sitios web de terceros."
+        },
+        {
+          "title": "6. Declaración de Afiliados",
+          "content": "DogFoodPlanner participa en el Programa de Afiliados de Amazon Services LLC. Como afiliados de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables, sin ningún coste adicional para ti."
+        },
+        {
+          "title": "7. Privacidad de Menores",
+          "content": "Nuestros contenidos y herramientas están dirigidos a adultos responsables de mascotas. No recopilamos conscientemente datos de menores de 13 años."
+        },
+        {
+          "title": "8. Actualizaciones y Contacto",
+          "content": "Podemos actualizar periódicamente esta política para reflejar mejoras técnicas. Las novedades se publicarán en esta página. Para cualquier consulta, escribe a privacy@dogfoodplanner.com."
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "LEGAL // CONDICIONES DEL SERVICIO",
+      "lastUpdated": "Actualizado: 14 de octubre de 2026",
+      "intro": "Por favor, lee atentamente estos Términos y Condiciones antes de utilizar DogFoodPlanner.com. Al acceder a esta web, aceptas quedar vinculado por los mismos.",
+      "sections": [
+        {
+          "title": "1. Aceptación de las Condiciones",
+          "content": "Al acceder y utilizar DogFoodPlanner.com (el \"Sitio\"), confirmas haber leído, comprendido y aceptado íntegramente estas Condiciones de Servicio. Si no estás de acuerdo con alguna parte, suspende su uso."
+        },
+        {
+          "title": "2. Descargo de Responsabilidad Veterinaria y Médica",
+          "content": "La información, calculadoras y recetas de DogFoodPlanner.com se proporcionan únicamente con fines educativos e informativos sobre modelos NRC y AAFCO. NO constituyen asesoramiento veterinario profesional, diagnóstico clínico ni tratamiento prescrito. Consulta siempre a un veterinario colegiado o especialista en nutrición animal (DACVN) antes de realizar cambios sustanciales en la alimentación de tu perro."
+        },
+        {
+          "title": "3. Uso de las Calculadoras Interactivas",
+          "content": "Los cálculos de calorías (RER y MER) y los gramos de comida constituyen puntos de partida matemáticos. Cada perro posee una tasa metabólica particular según su genética, castración, clima y actividad. El propietario debe vigilar la Condición Corporal (BCS) y ajustar la ingesta según corresponda."
+        },
+        {
+          "title": "4. Seguridad en Dietas Caseras y Balance de Calcio",
+          "content": "Elaborar comida casera o cruda exige cumplir estrictamente con los perfiles nutricionales completos. En particular, ofrecer carne sin hueso carente de suplementación cálcica provoca osteoporosis y desmineralización ósea severa en pocos meses. El usuario asume toda la responsabilidad en la preparación de las raciones."
+        },
+        {
+          "title": "5. Propiedad Intelectual",
+          "content": "Todos los contenidos, algoritmos de cálculo, diseño de interfaz, gráficos interactivos y textos de DogFoodPlanner.com son propiedad exclusiva de DogFoodPlanner y están protegidos por leyes de derechos de autor."
+        },
+        {
+          "title": "6. Limitación de Responsabilidad",
+          "content": "Bajo ninguna circunstancia DogFoodPlanner.com o sus colaboradores serán responsables por daños directos o indirectos derivados del uso de la información y herramientas facilitadas en esta web."
+        },
+        {
+          "title": "7. Suscripciones por Correo Electrónico",
+          "content": "Al suscribirte a nuestro boletín, aceptas recibir guías educativas sobre nutrición canina y novedades de la web. Puedes darte de baja en cualquier momento haciendo clic en el enlace de cancelación de cada correo. Nos reservamos el derecho de modificar o suspender el boletín a nuestra discreción."
+        }
+      ]
+    },
+    "bestFood": {
+      "eyebrow": "GUÍA CLÍNICA // RANKING CANINO 2026",
+      "rankingsTitle": "¿Cuáles Son los 5 Alimentos Más Saludables para Perros en 2026?",
+      "rankingsIntro": "La investigación veterinaria sobre longevidad canina confirma que el procesamiento térmico mínimo y una hidratación biológica elevada son los dos factores predictivos más determinantes de vitalidad y salud renal.",
+      "readMoreLabel": "Leer más →",
+      "readLessLabel": "Mostrar menos ↑",
+      "rankings": [
+        {
+          "rank": "01",
+          "title": "Comida Fresca Grado Humano Cocinada a Fuego Lento",
+          "score": "98/100",
+          "pros": "Carnes y verduras reales cocinadas a baja temperatura (70°C). Mantiene más del 70% de humedad natural, enzimas activas y vitaminas biodisponibles.",
+          "cons": "Requiere conservación en nevera o congelador. Coste algo superior al pienso convencional.",
+          "readMore": "La comida fresca cocinada suavemente ocupa el primer puesto del ranking porque imita una comida casera sin sacrificar la seguridad alimentaria. Los ingredientes proceden de instalaciones de alimentos de grado humano inspeccionadas por el USDA, y se cocinan justo el tiempo necesario a baja temperatura (unos 71 °C) para eliminar patógenos mientras se preservan las proteínas delicadas, la taurina y las vitaminas B hidrosolubles que la extrusión a alta temperatura destruye.\n\nComo este alimento ya aporta más de un 70% de humedad, reduce la presión sobre los riñones y disminuye la deshidratación crónica de bajo grado habitual en las dietas basadas únicamente en pienso. Es especialmente adecuado para perros en recuperación de una enfermedad, perros senior con menor impulso de sed, o razas propensas a sensibilidades alimentarias, ya que las recetas suelen ser de proteína única y están libres de harinas de carne procesadas o conservantes sintéticos.\n\nLa principal contrapartida es la logística: necesita espacio en el frigorífico o el congelador, y las raciones deben descongelarse antes de servirse. Si no estás preparado para cocinarlo tú mismo, varias marcas con cocinas certificadas por el USDA venden versiones de larga duración de este mismo formato cocinado suavemente, una forma de bajo esfuerzo para probar esta categoría antes de comprometerte con una rutina casera completa.",
+          "productKey": "justfoodfordogs-chicken-white-rice",
+          "productNote": "Una opción de larga duración para probar esta categoría:"
+        },
+        {
+          "rank": "02",
+          "title": "Dieta Cruda Ancestral BARF 80-10-10",
+          "score": "95/100",
+          "pros": "Proporción biológica carnívora: 80% carne muscular, 10% hueso carnoso, 10% vísceras. Excelente para salud dental y musculatura magra.",
+          "cons": "Requiere higiene rigurosa en la manipulación y un estricto equilibrio del calcio.",
+          "readMore": "La proporción 80-10-10 (80% carne muscular, 10% hueso crudo comestible, 10% órgano secretor) está diseñada para replicar lo que un ancestro canino salvaje obtendría de una presa entera. Bien formulada, aporta de forma natural una relación calcio-fósforo equilibrada procedente directamente del contenido óseo, favorece la masa muscular magra, y la acción mecánica de masticar hueso crudo ayuda a raspar el sarro de los dientes.\n\nComo no se cocina nada, las enzimas y los aminoácidos sensibles al calor permanecen totalmente intactos. El inconveniente está en la precisión: obtener hueso crudo seguro y respetar exactamente la proporción requieren verdadera disciplina, ya que calcular mal el porcentaje de hueso es el error más común, y puede provocar estreñimiento o, con el tiempo, problemas esqueléticos en cachorros en crecimiento. La carne cruda también debe manipularse con la misma higiene que cualquier alimento crudo de consumo humano (tablas de corte separadas, refrigeración, limpieza inmediata).\n\nLa mayoría de los hogares encuentran más sencillo empezar con un producto crudo formulado profesionalmente que ya cumple la proporción, antes de pasar a comidas crudas completamente personalizadas, obtenidas y pesadas en casa.",
+          "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+          "productNote": "Una opción cruda ya equilibrada que elimina las conjeturas:"
+        },
+        {
+          "rank": "03",
+          "title": "Comida Cruda Liofilizada y Deshidratada al Aire",
+          "score": "91/100",
+          "pros": "Aporta la calidad nutricional de la comida cruda con la comodidad de almacenarse a temperatura ambiente.",
+          "cons": "Es imprescindible rehidratar con agua tibia o caldo de huesos antes de servir.",
+          "readMore": "Tanto el secado al aire como la liofilización eliminan la humedad de la carne cruda a baja temperatura, manteniendo el perfil de nutrientes y enzimas cercano al de un alimento crudo, a la vez que hacen el alimento estable a temperatura ambiente, por lo que no se necesita congelador. La liofilización utiliza un proceso de vacío en frío que tiende a preservar los nutrientes aún mejor que el secado al aire, aunque suele costar más por kilo.\n\nAmbos formatos se transportan bien y funcionan muy bien como topping crudo mezclado con el pienso para mejorar la palatabilidad. Rehidratar con agua templada o caldo de huesos antes de servir ayuda a restaurar una humedad más cercana a la dieta ancestral salvaje del perro, y es especialmente recomendable para perros propensos a cristales urinarios o con insuficiencia renal.\n\nLa principal consideración es el coste por caloría: al eliminarse el peso del agua, se paga por nutrición concentrada, por lo que suele usarse como topping o dieta rotacional, más que como el alimento diario único de un perro de gran tamaño.",
+          "productKey": "ziwi-peak-beef-chicken-bundle",
+          "productNote": "Una opción de secado al aire con buenas valoraciones:"
+        },
+        {
+          "rank": "04",
+          "title": "Pienso Seco Alto en Proteína Sin Granos o con Granos Ancestrales",
+          "score": "78/100",
+          "pros": "Cómodo, no perecedero y económicamente viable para hogares con perros grandes o múltiples mascotas.",
+          "cons": "Sometido a extrusión a 200°C, solo 8-10% de humedad y 40-50% de carbohidratos amiláceos.",
+          "readMore": "El pienso premium sigue siendo la opción más práctica para muchos hogares: es estable hasta un año, fácil de dosificar con un comedero automático, y notablemente más económico por caloría que las dietas frescas o crudas.\n\nLas mejores fórmulas de esta categoría encabezan la lista de ingredientes con una proteína animal identificada en lugar de una \"harina de carne\" genérica, limitan los almidones a granos ancestrales como la avena y el sorgo en vez de rellenos pesados de maíz o trigo, y se someten a análisis de laboratorio independientes para detectar metales pesados.\n\nLa contrapartida es el propio proceso de extrusión: la exposición a temperaturas superiores a 200 °C destruye algunas vitaminas sensibles al calor y reduce la humedad hasta aproximadamente un 10%, por lo que los veterinarios suelen recomendar añadir un poco de caldo de huesos o un topping crudo a las dietas basadas únicamente en pienso, especialmente en perros propensos a cristales urinarios.",
+          "productKey": "orijen-original-grain-free-23lb",
+          "productNote": "Una fórmula alta en proteína, tipo WholePrey, en esta categoría:"
+        },
+        {
+          "rank": "05",
+          "title": "Dietas Terapéuticas de Prescripción Veterinaria",
+          "score": "72/100",
+          "pros": "Formuladas para patologías clínicas específicas (insuficiencia renal, hepática o cálculos urinarios).",
+          "cons": "A menudo recurren a subproductos vegetales y requieren receta veterinaria.",
+          "readMore": "Las dietas terapéuticas están diseñadas para controlar una afección específica diagnosticada: proteína y fósforo reducidos en caso de insuficiencia renal, proteínas hidrolizadas ante las que el sistema inmunitario no puede reaccionar en alergias alimentarias graves, o magnesio y pH controlados para prevenir cálculos vesicales de estruvita.\n\nOcupan un puesto más bajo en una escala general de \"más saludable\" únicamente porque son deliberadamente restrictivas en lugar de estar optimizadas para un perro sano medio; una fórmula diseñada para proteger unos riñones deteriorados, por ejemplo, no busca intencionadamente ser el alimento más denso en proteína del mercado.\n\nEstas dietas requieren la aprobación de un veterinario y análisis de sangre periódicos para confirmar que están funcionando, y nunca deben administrarse a un perro sano sin una razón clínica, ya que restringir nutrientes que un perro sano realmente necesita puede causar daño con el tiempo.",
+          "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+          "productNote": "Una fórmula habitual de apoyo renal recetada por veterinarios:"
+        }
+      ],
+      "buyerGuideTitle": "4 Reglas de Oro para Elegir el Mejor Alimento Canino",
+      "buyerRules": [
+        {
+          "title": "1. Proteína Animal Específica en Primer Lugar",
+          "desc": "Busca \"Pavo Deshuesado\", \"Ternera\" o \"Salmón Fresco\" en lugar de harinas cárnicas anónimas.",
+          "readMore": "Los ingredientes en el etiquetado de alimentos para mascotas se ordenan por peso antes de la cocción. Las carnes enteras y claramente identificadas (como «Pavo deshuesado» o «Ternera fresca») aportan aminoácidos esenciales como taurina, arginina y carnitina en su forma más biodisponible. Evita términos ambiguos como «derivados de origen animal», «harina de carne» o «subproductos de ave», que permiten a los fabricantes usar despojos y restos de procedencia indefinida.\n\nTen cuidado con la «división de ingredientes» (ingredient splitting): algunas marcas desglosan los carbohidratos en varios componentes (guisantes, almidón de guisante y proteína de guisante) para que la carne figure engañosamente en primer lugar.\n\nLas harinas de carne con nombre específico —como «Harina de cordero» o «Harina de salmón deshidratado»— son aceptables si son transparentes, ya que se pesan sin agua y aportan una alta concentración de proteína animal real."
+        },
+        {
+          "title": "2. Humedad Biológica Alta (>70%)",
+          "desc": "El pienso seco causa deshidratación crónica subclínica. Añade siempre toppers frescos o caldos nutritivos.",
+          "readMore": "En la naturaleza, las presas de las que descienden los perros contienen entre un 70% y un 75% de agua. Los perros tienen un reflejo de sed instintivamente bajo, ya que su organismo espera hidratarse principalmente a través de la comida. Alimentarlos exclusivamente con pienso seco (que solo contiene un 8-10% de humedad) los somete a un estado constante de deshidratación subclínica.\n\nCon los años, una orina excesivamente concentrada sobrecarga los riñones e incrementa de forma drástica el riesgo de cálculos vesicales de estruvita y oxalato de calcio.\n\nSi das pienso, incorpora siempre humedad: rehidrata la ración en proporción 1:1 con caldo de huesos tibio (sin sal ni cebolla), agua filtrada o kéfir natural, o añade toppers de carne fresca para proteger su salud renal."
+        },
+        {
+          "title": "3. Cero Conservantes Sintéticos",
+          "desc": "Evita rotundamente aditivos químicos como BHA, BHT, etoxiquina y colorantes artificiales.",
+          "readMore": "Para lograr una caducidad de 18 a 24 meses, muchos piensos industriales emplean antioxidantes químicos como el BHA (butilhidroxianisol), el BHT (butilhidroxitolueno) y la etoxiquina. Estudios científicos han catalogado al BHA y BHT como posibles disruptores endocrinos y cancerígenos, mientras que la etoxiquina (diseñada originalmente como pesticida) se asocia con daños hepáticos y reacciones alérgicas.\n\nAdemás, los colorantes artificiales (como Rojo 40 o Amarillo 5) solo buscan hacer el producto visualmente atractivo para el dueño, pero provocan dermatitis, picor crónico e inflamación gastrointestinal en perros sensibles.\n\nElige siempre marcas conservadas con antioxidantes naturales: tocoferoles mixtos (Vitamina E), extracto de romero y ácido cítrico. Protegen las grasas de forma inocua sin poner en riesgo la salud de tu perro."
+        },
+        {
+          "title": "4. Carbohidratos Controlados (<25%)",
+          "desc": "Los perros carecen de amilasa salival. El exceso de almidón sobrecarga el páncreas y causa obesidad.",
+          "readMore": "Los perros son carnívoros facultativos y no tienen un requerimiento nutricional biológico de carbohidratos refinados. A diferencia de las personas, los perros no producen amilasa salival para descomponer los almidones en la boca; todo el trabajo enzimático recae directamente sobre su páncreas.\n\nComo la normativa no exige indicar el porcentaje de carbohidratos en la etiqueta, muchos piensos comerciales ocultan entre un 45% y un 60% de almidón procedente de maíz, trigo o tapioca solo para dar consistencia a la croqueta.\n\nLas dietas altas en índice glucémico causan picos continuos de insulina, inflamación sistémica, otitis crónicas y favorecen la obesidad canina. Puedes calcular los carbohidratos restando a 100 la suma de proteína, grasa, fibra, humedad y cenizas. Prioriza siempre fórmulas con menos del 25% de carbohidratos."
+        }
+      ],
+      "ctaTitle": "Calcula las Raciones Exactas del Mejor Alimento para tu Perro",
+      "ctaDesc": "Tanto si eliges comida fresca, dieta BARF o pienso premium, obtén los gramos diarios y las calorías que tu perro necesita.",
+      "ctaBtn": "Calcular Ración Diaria Ahora →"
+    },
+    "recipes": {
+      "eyebrow": "RECETAS CASERAS // BLUEPRINTS NRC Y AAFCO",
+      "heroTitle": "Recetas Caseras y Saludables para Perros",
+      "heroSubtitle": "Guías paso a paso para elaborar menús caseros cocinados al vapor y dietas BARF crudas 80-10-10 completas y equilibradas.",
+      "calciumWarningTitle": "La Regla de Oro de la Comida Casera: El Equilibrio de Calcio",
+      "calciumWarningDesc": "La carne muscular es naturalmente rica en fósforo y muy pobre en calcio (relación 1:20). Alimentar a un perro únicamente con pollo, ternera y arroz sin añadir calcio provoca descalcificación ósea severa en pocos meses. Añade siempre media cucharadita rasa de cáscara de huevo en polvo (aprox. 900 mg de calcio elemental) por cada 450 g de carne sin hueso para lograr la proporción óptima de Calcio-Fósforo de 1.2:1.",
+      "recipesList": [
+        {
+          "tag": "COCINADO AL VAPOR",
+          "title": "Receta 1: Pavo a Fuego Lento y Calabaza Prebiótica (Apta para Estómagos Sensibles)",
+          "desc": "Perfecta para perros con digestiones delicadas, heces blandas o intolerancia al pollo industrial.",
+          "ingredients": [
+            "Pavo Picado Magro (93/7) — 65% (aprox. 900 g)",
+            "Corazones de Pavo o Ternera (Taurina Natural) — 10% (aprox. 140 g)",
+            "Puré Puro de Calabaza (Fibra Digestiva) — 10% (aprox. 140 g)",
+            "Espinacas Baby y Calabacín al Vapor — 10% (aprox. 140 g)",
+            "Aceite de Salmón Salvaje de Alaska (EPA/DHA) — 2% (1.5 cucharadas)",
+            "Cáscara de Huevo Molida (Calcio Elemental) — 3% (1 cucharadita)"
+          ],
+          "prep": "Saltea el pavo y los corazones a fuego medio-bajo hasta que estén cocinados sin quemarse (70°C). Cuece las verduras al vapor y tritúralas con la calabaza. Mezcla todo y deja enfriar por completo antes de incorporar el aceite de salmón y el calcio. Congela en raciones diarias."
+        },
+        {
+          "tag": "DIETA BARF",
+          "title": "Receta 2: Dieta BARF Ancestral 80-10-10 de Ternera y Pato",
+          "desc": "Menú crudo biológicamente apropiado para perros adultos sanos con pH estomacal ácido normal.",
+          "ingredients": [
+            "Carne Magra de Ternera de Pasto — 70%",
+            "Corazón de Ternera (Rico en L-Carnitina y CoQ10) — 10%",
+            "Cuellos de Pato o Carcasas Crudas — 10% (Hueso Comestible y Calcio)",
+            "Hígado de Ternera (Vitamina A y Complejo B) — 5%",
+            "Riñón o Bazo de Ternera (Víscera Secretora) — 5%"
+          ],
+          "prep": "Corta la carne y los corazones en trozos adecuados a la mandíbula del perro. Pesa los órganos con báscula digital. Congela previamente todas las porciones durante al menos 3 semanas a -20°C antes de descongelar y servir."
+        },
+        {
+          "tag": "TOPPER SUPERALIMENTO",
+          "title": "Receta 3: Topper Antioxidante 80/20 para Enriquecer el Pienso",
+          "desc": "Potenciador de alimentos frescos diseñado para sustituir el 20% de las calorías del pienso seco habitual.",
+          "ingredients": [
+            "Huevos Camperos Ligeramente Escalfados — 40%",
+            "Brotes de Brócoli al Vapor y Arándanos Azules — 30%",
+            "Caldo de Huesos de Ternera a Fuego Lento — 20%",
+            "Semillas de Cáñamo y Algas Kelp en Polvo — 10%"
+          ],
+          "prep": "Hierve suavemente los huevos durante 4 minutos. Pasa las verduras por el vapor 3 minutos. Tritura con el caldo templado y los arándanos. Vierte de 2 a 4 cucharadas soperas diarias sobre su cuenco de pienso."
+        }
+      ],
+      "calciumGuideTitle": "Fuentes Seguras de Calcio para Comida Casera Canina",
+      "calciumGuideItems": [
+        {
+          "title": "Cáscara de Huevo en Polvo",
+          "ratio": "1/2 cucharadita por cada 450 g de carne deshuesada",
+          "desc": "95% carbonato cálcico puro. Fácil de preparar en casa lavando, horneando y moliendo cáscaras finamente."
+        },
+        {
+          "title": "Huesos Carnosos Comestibles Crudos",
+          "ratio": "10% del peso total de la dieta",
+          "desc": "Cuellos de pato, alas de pollo o carcasas crudas. Nunca cocinados para evitar que se astillen."
+        },
+        {
+          "title": "Harina de Hueso Veterinaria (Bone Meal)",
+          "ratio": "Según indicación del fabricante",
+          "desc": "Hidroxiapatita microcristalina que aporta calcio y fósforo en una proporción biodisponible de 2:1."
+        }
+      ]
+    },
+    "toxic": {
+      "eyebrow": "SEGURIDAD CRÍTICA // TOXICIDAD EN INGREDIENTES",
+      "dangerTitle": "Los Alimentos Domésticos Más Peligrosos para Perros",
+      "dangerIntro": "Ciertos alimentos comunes contienen sustancias químicas que el metabolismo del perro no puede procesar, causando fallo orgánico agudo o muerte.",
+      "dangerList": [
+        {
+          "name": "Chocolate y Cacao",
+          "toxin": "Teobromina y Cafeína",
+          "symptoms": "Vómitos, jadeo acelerado, taquicardia, temblores musculares, convulsiones y fallo cardíaco.",
+          "risk": "MUY ALTO A MORTAL"
+        },
+        {
+          "name": "Uvas, Pasas y Grosellas",
+          "toxin": "Ácido Tartárico",
+          "symptoms": "Letargo, deshidratación e insuficiencia renal aguda irreversible en 24 a 72 horas.",
+          "risk": "EXTREMADAMENTE LETAL"
+        },
+        {
+          "name": "Xilitol (Azúcar de Abedul / E967)",
+          "toxin": "Polialcohol Sintético",
+          "symptoms": "Pico masivo de insulina, hipoglucemia profunda, ataxia y necrosis hepática aguda en pocas horas.",
+          "risk": "URGENCIA VITAL MÁXIMA"
+        },
+        {
+          "name": "Cebolla, Ajo, Puerro y Cebollino",
+          "toxin": "Disulfuro de N-propilo",
+          "symptoms": "Destrucción de glóbulos rojos, anemia hemolítica, encías pálidas, orina oscura y debilidad.",
+          "risk": "EFECTO ACUMULATIVO ALTO"
+        },
+        {
+          "name": "Nueces de Macadamia",
+          "toxin": "Neurotoxina no identificada",
+          "symptoms": "Debilidad en patas traseras, hipertermia, vómitos y rigidez muscular dolorosa.",
+          "risk": "MODERADO A GRAVE"
+        },
+        {
+          "name": "Huesos Cocinados de Cualquier Animal",
+          "toxin": "Riesgo Físico de Astillamiento",
+          "symptoms": "Perforación gastrointestinal, hemorragia interna, peritonitis y obstrucción intestinal letal.",
+          "risk": "EMERGENCIA QUIRÚRGICA"
+        }
+      ],
+      "emergencyTitle": "Qué Hacer en Caso de Emergencia por Intoxicación",
+      "emergencySteps": [
+        "1. Actúa de Inmediato: Identifica el alimento exacto ingerido, el envase, la cantidad aproximada y la hora del consumo.",
+        "2. NO Provoques el Vómito sin Orden Veterinaria: Sustancias corrosivas o huesos astillados causan quemaduras y desgarros esofágicos al subir.",
+        "3. Contacta con Urgencias Veterinarias Inmediatamente: Llama a tu clínica veterinaria 24 horas o al centro de toxicología animal más cercano."
+      ],
+      "safeTitle": "Frutas y Verduras 100% Seguras y Beneficiosas",
+      "safeIntro": "Estos alimentos naturales aportan antioxidantes celulares, fibra prebiótica soluble y vitaminas al cuenco de tu perro:",
+      "safeFoods": [
+        {
+          "name": "Arándanos Azules",
+          "benefit": "Repletos de antocianinas, polifenoles y antioxidantes protectores."
+        },
+        {
+          "name": "Calabaza Pura",
+          "benefit": "Rica en fibra soluble que alivia tanto la diarrea como el estreñimiento."
+        },
+        {
+          "name": "Zanahorias",
+          "benefit": "Premio crujiente bajo en calorías, rico en betacaroteno y útil para la higiene dental."
+        },
+        {
+          "name": "Judías Verdes",
+          "benefit": "Excelente vegetal saciante y bajo en calorías para perros con sobrepeso."
+        },
+        {
+          "name": "Manzanas (Sin Semillas)",
+          "benefit": "Aporte natural de vitamina C, vitamina A y pectina beneficiosa para la microbiota."
+        }
+      ]
+    },
+    "brands": {
+      "eyebrow": "ANÁLISIS INDEPENDIENTE // REVISIÓN DE MARCAS Y ALERTAS FDA",
+      "heroTitle": "Análisis de Marcas de Pienso y Registro de Retiradas",
+      "heroSubtitle": "Revisiones objetivas sobre ingredientes, etiquetado AAFCO y retiradas del mercado para proteger a tu perro.",
+      "brandsList": [
+        {
+          "name": "Blue Buffalo",
+          "grade": "Nota: B+",
+          "pros": "Carne desgrasada real como primer ingrediente; sin maíz ni trigo; croquetas LifeSource Bits ricas en antioxidantes.",
+          "cons": "Elevado nivel de carbohidratos (45-50%); retiradas históricas por moho y exceso de Vitamina D.",
+          "verdict": "Pienso comercial por encima de la media. Recomendamos enriquecerlo con un 20% de comida fresca para aportar hidratación."
+        },
+        {
+          "name": "Rachael Ray Nutrish",
+          "grade": "Nota: C+ / B-",
+          "pros": "Económico y fácil de encontrar; las gamas Peak y Dish contienen mayor proporción de carne auténtica.",
+          "cons": "Las líneas básicas emplean concentrado de proteína de guisante y gluten de maíz; investigado previamente por la FDA.",
+          "verdict": "Opción económica aceptable solo en sus líneas superiores, comprobando que no fraccione legumbres en la etiqueta."
+        },
+        {
+          "name": "Pure Balance (Walmart)",
+          "grade": "Nota: B (Mejor Opción Asequible)",
+          "pros": "Excelente relación calidad-precio; recetas cárnicas sin maíz, trigo, soja ni colorantes artificiales.",
+          "cons": "Fabricado por terceros bajo marca blanca; porcentaje medio de carbohidratos.",
+          "verdict": "Una de las opciones más equilibradas y honestas dentro del segmento de supermercado."
+        },
+        {
+          "name": "Comida Fresca Ollie",
+          "grade": "Nota: A (Sobresaliente)",
+          "pros": "100% carnes e ingredientes de grado humano; cocinado suave a baja temperatura; raciones personalizadas envasadas al vacío.",
+          "cons": "Coste mensual elevado (180€-350€/mes); requiere espacio en el congelador.",
+          "verdict": "El estándar de oro para salud metabólica, brillo en el pelaje y longevidad digestiva."
+        },
+        {
+          "name": "Open Farm",
+          "grade": "Nota: A-",
+          "pros": "Transparencia total en el origen de las materias primas; carnes de granjas con certificación de bienestar animal y pescado salvaje sostenible.",
+          "cons": "Precio elevado; menor disponibilidad en tiendas físicas habituales.",
+          "verdict": "La mejor elección para quienes buscan ganadería ética, alta proporción de carne y ausencia total de subproductos."
+        }
+      ],
+      "recallsTitle": "Cómo Interpretar las Retiradas de Alimentos (Recalls)",
+      "recallsDesc": "Las alertas sanitarias de la FDA se clasifican en tres niveles: Clase I (riesgo grave o mortal, ej. Salmonella o exceso de Vitamina D), Clase II (efectos adversos temporales sobre la salud) y Clase III (defectos menores de etiquetado). Comprueba siempre el número de lote de tu saco.",
+      "methodTitle": "Nuestros 4 Criterios de Evaluación de Marcas",
+      "methodPillars": [
+        {
+          "title": "1. Calidad de la Proteína",
+          "desc": "Carne muscular entera identificada frente a harinas de subproductos anónimas."
+        },
+        {
+          "title": "2. Porcentaje de Carbohidratos",
+          "desc": "Mantener los almidones por debajo del 40% para prevenir la obesidad."
+        },
+        {
+          "title": "3. Trazabilidad del Origen",
+          "desc": "Ingredientes de granjas con bienestar animal y vegetales libres de transgénicos."
+        },
+        {
+          "title": "4. Historial Sanitario Limpio",
+          "desc": "Control bacteriológico de laboratorio e instalaciones con certificación de inocuidad."
+        }
+      ]
+    },
+    "allergies": {
+      "eyebrow": "GUÍA NUTRICIONAL // ALERGIAS Y DIGESTIÓN CANINA",
+      "heroTitle": "Mejor Comida para Perros con Alergias y Estómago Sensible",
+      "heroSubtitle": "Guía práctica sobre intolerancias alimentarias, proteínas noveles hipoalergénicas y dietas de descarte de 8 semanas.",
+      "allergensTitle": "Los 5 Alérgenos Alimentarios Más Frecuentes en Perros",
+      "allergensIntro": "Las alergias alimentarias caninas son reacciones de hipersensibilidad inmunitaria frente a determinadas proteínas dietéticas. Por orden de frecuencia clínica:",
+      "allergensList": [
+        {
+          "name": "1. Pollo Industrial (60% de los casos)",
+          "desc": "Debido a su sobreexposición masiva en los piensos comerciales, el pollo es el alérgeno canino número uno."
+        },
+        {
+          "name": "2. Ternera Comercial (30% de los casos)",
+          "desc": "Proteína roja habitual que suele desencadenar picor cutáneo intenso e infecciones de oído recurrentes."
+        },
+        {
+          "name": "3. Lácteos y Quesos",
+          "desc": "Los perros adultos carecen de lactasa suficiente, provocando diarrea osmótica y cólicos."
+        },
+        {
+          "name": "4. Gluten de Trigo y Maíz",
+          "desc": "Proteínas vegetales que dañan la mucosa intestinal y favorecen la proliferación de levaduras."
+        },
+        {
+          "name": "5. Soja y Leguminosas",
+          "desc": "Rellenos proteicos económicos que alteran la barrera digestiva y provocan gases y prurito."
+        }
+      ],
+      "eliminationTitle": "Protocolo de Dieta de Eliminación de 8 Semanas",
+      "eliminationSteps": [
+        {
+          "step": "Fase 1",
+          "title": "Selecciona una Única Proteína Novel",
+          "desc": "Cambia a tu perro a una proteína pura que jamás haya comido (ej. Ciervo, Conejo o Canguro) junto con un carbohidrato digestivo como calabaza o batata."
+        },
+        {
+          "step": "Fase 2",
+          "title": "Cero Contaminación Cruzada (8 Semanas)",
+          "desc": "Durante 8 semanas completas debe comer exclusivamente la nueva dieta. Prohibidas las golosinas comerciales, sobras de comida y premios masticables."
+        },
+        {
+          "step": "Fase 3",
+          "title": "Reintroducción Controlada",
+          "desc": "Si los picores y problemas digestivos remiten, reintroduce un ingrediente sospechoso durante 7 días para verificar con certeza la causa de la alergia."
+        }
+      ],
+      "novelTitle": "Proteínas Noveles Hipoalergénicas Recomendadas",
+      "novelProteins": [
+        {
+          "name": "Carne de Ciervo / Venado",
+          "desc": "Carne roja magra y muy digestible frente a la cual los perros casi nunca han desarrollado anticuerpos."
+        },
+        {
+          "name": "Carne de Conejo",
+          "desc": "Proteína hipoalergénica de alto valor biológico y óptimo perfil de aminoácidos."
+        },
+        {
+          "name": "Carne de Pato",
+          "desc": "Excelente alternativa sabrosa para perros intolerantes a las aves de corral comunes."
+        },
+        {
+          "name": "Carne de Canguro",
+          "desc": "Una de las carnes silvestres más puras y magras utilizadas en dermatología veterinaria."
+        }
+      ]
+    },
+    "calculator": {
+      "eyebrow": "100% GRATIS // PAUTAS DE NUTRICIÓN CANINA",
+      "noticeTitle": "Aviso:",
+      "noticeText": "Para orientación general y educativa. No constituye una herramienta de diagnóstico médico veterinario.",
+      "heroTitle": "Calculadora de Ración y Calorías para Perros",
+      "heroSubtitle": "Determina las necesidades energéticas exactas de tu perro (RER y MER) y calcula las porciones precisas en gramos según peso, edad, nivel de actividad y condición corporal."
+    },
+    "breeds": {
+      "eyebrow": "NUTRICIÓN POR RAZA // GUÍA NUTRICIONAL",
+      "targetWeight": "Peso Ideal",
+      "dailyCalories": "Calorías Diarias",
+      "freshDaily": "Comida Fresca al Día",
+      "kibbleDaily": "Pienso Seco al Día",
+      "cups": "tazas",
+      "reqsTitle": "Requerimientos Nutricionales para {name}",
+      "reqsIntro": "Como perro de categoría {category} con un peso medio de {w0}–{w1} lbs, el {name} requiere un equilibrio nutricional específico:",
+      "predispositionsTitle": "Predisposiciones de Salud y Dieta Clave:",
+      "feedingRoutineTitle": "Pauta de Alimentación Recomendada:",
+      "feedingRoutineDesc": "Alimenta a tu {name} adulto dos veces al día (50% por la mañana y 50% por la noche). Mantén siempre agua limpia a su disposición. Si le das pienso seco, hidrátalo con caldo de huesos tibio para proteger sus riñones.",
+      "ctaTitle": "Personaliza el Plan de Comida Exacto para tu {name}",
+      "ctaSubtitle": "Ajusta según la edad exacta (cachorro, adulto o senior), peso real, actividad física y condición corporal con nuestra calculadora.",
+      "ctaBtn": "Abrir Calculadora para {name} →",
+      "faqTitle": "Preguntas Frecuentes sobre la Alimentación del {name}",
+      "faqSubtitle": "Respuestas sobre cálculo de raciones, número de tomas y mejores alimentos."
+    },
+    "comparisonTable": {
+      "eyebrow": "COMPARATIVA NUTRICIONAL // COMIDA FRESCA VS PIENSO SECO",
+      "title": "Por Qué la Comida Real Supera Biológicamente al Pienso",
+      "subtitle": "Un análisis comparativo de calor de procesado, precisión de las raciones y coste mensual real: las mismas variables asociadas en un estudio de longevidad de 5 años con hasta 32 meses más de vida en perros alimentados con comida natural fresca.",
+      "scrollHint": "↔ Desliza la tabla horizontalmente",
+      "colMetric": "Métrica Nutricional",
+      "colDfp": "✨ DogFoodPlanner",
+      "colSubs": "Suscripciones Comerciales",
+      "colKibble": "Pienso Seco Extruido",
+      "rows": [
+        {
+          "metric": "Método de Procesamiento",
+          "dfp": "Cocinada a Fuego Lento (~74°C) o Cruda — Enzimas Intactas",
+          "subs": "Cocinado al Vacío (Sous-Vide) y Ultracongelado",
+          "kibble": "Extrusión a Ultra-Alta Temperatura (200°C+)"
+        },
+        {
+          "metric": "Precisión de la Ración",
+          "dfp": "Gramos exactos mediante cálculo metabólico RER/MER, personalizado por peso, edad y actividad",
+          "subs": "Tabla fija por rangos de peso",
+          "kibble": "Tabla genérica del saco — sobreestima las porciones un 20–30%"
+        },
+        {
+          "metric": "Carbohidratos Netos",
+          "dfp": "< 5% (solo verduras seleccionadas, cero rellenos)",
+          "subs": "10% – 20%",
+          "kibble": "45% – 60% (rellenos de maíz, trigo y almidón de guisante)"
+        },
+        {
+          "metric": "Humedad Biológica",
+          "dfp": "70% – 75% (favorece la hidratación renal y urinaria)",
+          "subs": "70% – 75%",
+          "kibble": "8% – 10% (deshidratación subclínica crónica)"
+        },
+        {
+          "metric": "Integridad Nutricional",
+          "dfp": "Mínima oxidación — omega-3 y enzimas preservados",
+          "subs": "Moderada — algunos nutrientes termosensibles degradados",
+          "kibble": "Oxidación lipídica y formación de compuestos AGE por calor de extrusión"
+        },
+        {
+          "metric": "Transparencia de Ingredientes",
+          "dfp": "100% gramos y porcentajes declarados — tú controlas cada gramo",
+          "subs": "Fórmula patentada (proporciones exactas ocultas)",
+          "kibble": "Ingredientes fraccionados y harinas cárnicas genéricas"
+        },
+        {
+          "metric": "Coste Medio Mensual (Perro de 23 kg)",
+          "dfp": "75€ – 120€ (solo ingredientes caseros)",
+          "subs": "240€ – 420€ / mes",
+          "kibble": "55€ – 90€ / mes"
+        }
+      ]
+    },
+    "faqPage": {
+      "badge": "BASE DE CONOCIMIENTO // MÁS DE 40 RESPUESTAS",
+      "exploreHubsTitle": "Explora Nuestras Guías Especializadas en Nutrición Canina",
+      "exploreHubsSubtitle": "Profundiza en artículos técnicos diseñados para dueños comprometidos con la salud y longevidad de su perro.",
+      "cardBestFood": "Comparativa de comida fresca, BARF, piensos de alta proteína y fórmulas para perros con estómago sensible.",
+      "cardCalc": "Calculadora científica de calorías RER y MER que proporciona raciones exactas en gramos y tazas.",
+      "cardRecipes": "Recetas caseras cocinadas y dietas BARF 80-10-10 con aporte correcto y seguro de calcio.",
+      "cardAllergies": "Selección de proteínas noveles, dietas de eliminación y cuidado del microbioma intestinal.",
+      "cardToxic": "Índice exhaustivo de alimentos humanos venenosos, frutas y verduras seguras y aditivos a evitar.",
+      "cardBrands": "Análisis independientes de Blue Buffalo, Nutrish, Pure Balance, Ollie y Open Farm."
+    },
+    "faqSingle": {
+      "reviewedBy": "Revisado por: Equipo Editorial de DogFoodPlanner",
+      "updated": "Actualizado: 2026",
+      "directQuickAnswer": "Respuesta Rápida Directa",
+      "clinicalAnalysis": "Análisis Nutricional Detallado",
+      "topics": "Temas:",
+      "ctaBadge": "🐾 Motor de Nutrición Canina Gratuito",
+      "ctaTitle": "Calcula las Calorías y Porciones Diarias Exactas para tu Perro",
+      "ctaSubtitle": "Usa nuestra calculadora para obtener el gasto metabólico exacto (RER/MER) y los gramos para menús frescos o crudos.",
+      "ctaBtn": "Calcular Ración Diaria Ahora →",
+      "relatedTitle": "Preguntas Frecuentes Relacionadas",
+      "readAnswer": "Leer Respuesta Completa →",
       "referencedInAnswer": "Referenciado en esta respuesta",
       "buyNow": "Comprar ahora"
+    },
+    "bestFoodSingle": {
+      "rankBadge": "TOP 5 ALIMENTOS MÁS SALUDABLES // PUESTO",
+      "reviewedBy": "Revisado por: Equipo Editorial de DogFoodPlanner",
+      "nutritionalScore": "Puntuación Nutricional",
+      "strengths": "Puntos Fuertes",
+      "tradeoffs": "Contrapartidas",
+      "fullBreakdown": "Análisis Completo",
+      "exampleProduct": "Producto de ejemplo en esta categoría",
+      "previousRank": "Puesto anterior",
+      "nextRank": "Puesto siguiente",
+      "backToRanking": "Volver al Ranking Top 5 Completo",
+      "viewOnAmazon": "Ver en Amazon"
+    }
   },
-  "bestFoodSingle": {
-    "rankBadge": "TOP 5 ALIMENTOS MÁS SALUDABLES // PUESTO",
-    "reviewedBy": "Revisado por: Equipo Editorial de DogFoodPlanner",
-    "nutritionalScore": "Puntuación Nutricional",
-    "strengths": "Puntos Fuertes",
-    "tradeoffs": "Contrapartidas",
-    "fullBreakdown": "Análisis Completo",
-    "exampleProduct": "Producto de ejemplo en esta categoría",
-    "previousRank": "Puesto anterior",
-    "nextRank": "Puesto siguiente",
-    "backToRanking": "Volver al Ranking Top 5 Completo",
-    "viewOnAmazon": "Ver en Amazon"
-  }
-},
-  ja: {
-  "about": {
-    "heroTitle": "DogFoodPlannerについて：愛犬の食事管理をシンプルに",
-    "heroSubtitle": "DogFoodPlanner.comのミッションと無料の給餌量計算ツールの仕組みをご紹介します。",
-    "missionBadge": "私たちの使命 // 愛犬の食事計画",
-    "whyTitle": "DogFoodPlannerが設立された理由",
-    "whyP1": "DogFoodPlannerは、愛犬家が自信を持って食事や給餌量を計画できるように作られました。公表されている信頼できるガイドラインを調査し、シンプルで使いやすい無料のツールとガイドとしてお届けしています。",
-    "whyP2": "",
-    "whoTitle": "運営者について",
-    "whoContent": "DogFoodPlannerは、犬を愛するリサーチャーとライターによって運営されている独立系ウェブサイトです。私たちは獣医師ではありません。愛犬の食事を変更する前、特に子犬、シニア犬、または健康上の不安がある犬の場合は、必ずかかりつけの獣医師にご相談ください。",
-    "methodTitle": "私たちの栄養計算アプローチ",
-    "pillars": [
-      {
-        "tag": "01 // カロリー推定",
-        "title": "カロリー推定",
-        "desc": "計算ツールでは、標準的な安静時エネルギー要求量（RER）計算式（70 × 体重kg^0.75）と一般的な活動係数を使用して1日の必要カロリーを算出します。"
-      },
-      {
-        "tag": "02 // 参考ガイドライン",
-        "title": "参考ガイドライン",
-        "desc": "AAFCO（米国飼料検査官協会）やNRC（全米研究評議会）などが公表している指針を参照しています。本サイトの内容は教育目的であり、専門家のアドバイスに代わるものではありません。"
-      },
-      {
-        "tag": "03 // 透明性の確保",
-        "title": "透明性の確保",
-        "desc": "一部のページにはAmazonアソシエイトなどのアフィリエイトリンクが含まれています。リンク経由で商品を購入された場合、お客様に追加費用が発生することなく少額の紹介料を得ることがありますが、これによって推奨内容が変わることはありません。"
-      }
-    ],
-    "ctaTitle": "愛犬に必要な適正カロリーと食事量を計算してみませんか？",
-    "ctaDesc": "対話型計算ツールを試し、愛犬のアレルギー対策ガイドを確認し、ドッグフードガイドをお読みください。",
-    "ctaBtn": "無料の栄養計算機を起動する →",
-    "amazonDisclaimer": "Amazonアソシエイトとして、適格販売により収入を得ています。"
-  },
-  "contact": {
-    "eyebrow": "サポート＆お問い合わせ // 直接相談窓口",
-    "cards": [
-      {
-        "icon": "📧",
-        "title": "一般的なお問い合わせ",
-        "desc": "サイトへのご意見・ご質問：",
-        "email": "hello@dogfoodplanner.com"
-      },
-      {
-        "icon": "🐾",
-        "title": "栄養学・計算式に関する質問",
-        "desc": "獣医師監修フォーミュラについて：",
-        "email": "research@dogfoodplanner.com"
-      },
-      {
-        "icon": "🛡️",
-        "title": "技術サポート・不具合報告",
-        "desc": "計算機の不具合・表示エラー：",
-        "email": "legal@dogfoodplanner.com"
-      }
-    ],
-    "formTitle": "犬の栄養学専門チームへメッセージを送信",
-    "formDesc": "NRCカロリー計算式に関するご質問や、手作り食・生食レシピの調整に関するご相談は、24営業時間以内に返信いたします。",
-    "nameLabel": "お名前",
-    "namePlaceholder": "例：山田 太郎",
-    "emailLabel": "メールアドレス",
-    "emailPlaceholder": "yamada@example.com",
-    "subjectLabel": "お問い合わせの種類",
-    "subjectOptions": [
-      "一般的なご質問・ご意見",
-      "犬の栄養学・レシピに関するお問い合わせ",
-      "計算機の計算式・アルゴリズムについて",
-      "不具合報告・技術的なエラー"
-    ],
-    "messageLabel": "お問い合わせ内容",
-    "messagePlaceholder": "愛犬の情報（犬種、体重、年齢）とご相談内容をご記入ください...",
-    "submitBtn": "メッセージを送信する →",
-    "notice": "獣医師救急に関するご注意：愛犬が誤飲・中毒症状や急性疾患を起こしている場合は、直ちにお近くの夜間救急動物病院へご連絡ください。",
-    "faqTitle": "よくある質問をご確認ください",
-    "faqDesc": "偏食・食べムラ対策、生食BARF、キャットフードの危険性、市販ドッグフードの評価など、40件以上の専門Q&Aをご用意しています。",
-    "faqBtn": "すべてのFAQを見る →",
-    "successTitle": "✓ メッセージを準備しました — hello@dogfoodplanner.com に送信中",
-    "successDesc": "メールアプリが開き、hello@dogfoodplanner.com 宛の下書きメッセージが表示されます。メールアプリで「送信」を押すだけで届きます。"
-  },
-  "privacy": {
-    "eyebrow": "利用規約・プライバシー // 個人情報保護方針",
-    "lastUpdated": "最終更新日：2026年10月13日",
-    "intro": "DogFoodPlanner.com（以下「当サイト」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、当サイトにおける情報の取り扱いについて説明します。",
-    "sections": [
-      {
-        "title": "1. 当サイトが収集しない個人情報",
-        "content": "愛犬の健康データはお客様自身のものです。当サイトの犬の給餌量計算ツールを利用するにあたり、会員登録、パスワード設定、クレジットカード情報の入力は一切不要です。計算機に入力された愛犬のプロフィール、体重、食事スタイルなどのデータはお使いのブラウザ内（クライアントサイド）でのみ処理され、外部データベースに保存されることはありません。"
-      },
-      {
-        "title": "2. 匿名技術データとアクセスログ",
-        "content": "一般的なウェブサイトと同様に、当サイトのCDNサーバーはセキュリティ維持およびDDoS攻撃防御のため、匿名化されたIPアドレス、ブラウザ種別、リファラーURL、アクセス日時などの技術的ログを自動的に記録します。"
-      },
-      {
-        "title": "3. Cookieおよびローカルストレージ（localStorage）",
-        "content": "お使いの端末で選択した言語とお食事プランを保持するためにlocalStorageを使用しています。アフィリエイトリンクをクリックした場合、第三者の外部サイト（Amazonなど）が独自のクッキーを設定することがあります。"
-      },
-      {
-        "title": "4. サードパーティへのリンク",
-        "content": "当サイトには、公表された研究、AAFCO基準、NRCデータベース、および外部リソースへの参考リンクが含まれています。当サイトは第三者のウェブサイトにおけるプライバシー保護の取り組みやコンテンツについて責任を負いません。"
-      },
-      {
-        "title": "5. アフィリエイトに関する開示",
-        "content": "DogFoodPlannerはAmazon Services LLCアソシエイト・プログラムに参加しています。Amazonアソシエイトとして、適格販売により収入を得ています。お客様への追加費用は一切かかりません。"
-      },
-      {
-        "title": "6. 未成年者のプライバシー",
-        "content": "当サイトのサービスは成人した愛犬家を対象としています。13歳未満の児童から意図的に個人情報を収集することはありません。"
-      },
-      {
-        "title": "7. ポリシーの改定とお問い合わせ",
-        "content": "本ポリシーは機能向上等に伴い改定されることがあります。ご不明な点がございましたら privacy@dogfoodplanner.com までご連絡ください。"
-      }
-    ]
-  },
-  "terms": {
-    "eyebrow": "利用規約 // サービス利用条件",
-    "lastUpdated": "最終改訂：2026年1月",
-    "intro": "DogFoodPlanner.comをご利用いただく前に、本利用規約を必ずお読みください。当サイトをご利用いただくことで、本規約に同意されたものとみなされます。",
-    "sections": [
-      {
-        "title": "1. 規約への同意",
-        "content": "DogFoodPlanner.com（以下「当サイト」）にアクセスしサービスを利用することにより、本利用規約を読み、理解し、遵守することに同意したものとみなされます。不同意の場合は、当サイトのご利用をお控えください。"
-      },
-      {
-        "title": "2. 獣医学的および医療に関する免責事項",
-        "content": "当サイトで提供される情報、計算機、手作り食レシピは、米国学術研究会議（NRC）および全米飼料検査官協会（AAFCO）の公開モデルに基づく一般的な教育および情報提供のみを目的としています。これらは専門の獣医師による医学的診断、治療、個別指導に代わるものではありません。愛犬の食事を大幅に変更する前、特に子犬期、妊娠中、慢性腎不全や心臓病などの疾患を持つ犬の場合は、必ずかかりつけ獣医師にご相談ください。"
-      },
-      {
-        "title": "3. インタラクティブ計算機の利用について",
-        "content": "エネルギー要求量（RER・MER）および給餌量（グラム数）の計算結果は統計的な目安です。個々の犬の代謝率は遺伝、不妊去勢手術の有無、飼育環境の気温により大きく異なります。飼い主様は定期的に愛犬のボディコンディションスコア（BCS）を確認し、適宜給餌量を調整してください。"
-      },
-      {
-        "title": "4. 手作り食・生食の安全性とカルシウム配合義務",
-        "content": "手作り食や生肉食（BARF）を与える際は、完全な微量栄養素バランスを維持する必要があります。特に、カルシウムを添加せずに骨なし肉のみを与え続けると、数ヶ月で重篤な骨粗鬆症や低カルシウム血症を引き起こします。食材の正確な計量およびカルシウム補給は利用者の自己責任となります。"
-      },
-      {
-        "title": "5. 知的財産権",
-        "content": "当サイト内のすべての独自計算アルゴリズム、UIデザイン、グラフィック、解説記事はDogFoodPlannerに帰属し、著作権法および国際知的財産権法により保護されています。"
-      },
-      {
-        "title": "6. 責任の制限",
-        "content": "当サイトに掲載された情報およびツールの利用または利用不能に起因するいかなる直接的・間接的損害に対しても、当サイト運営者および監修者は一切の責任を負いません。"
-      }
-    ]
-  },
-  "bestFood": {
-    "eyebrow": "総合ガイド // 2026年最新ドッグフード評価・ランキング",
-    "rankingsTitle": "【2026年最新】愛犬の健康寿命を延ばすフードランキングTOP5",
-    "rankingsIntro": "近年の獣医栄養学研究において、「加熱処理の最小化」と「70％以上の自然な水分含有量」が、愛犬の活力維持、腎臓病予防、抗病性の鍵であることが立証されています。",
-    "readMoreLabel": "続きを読む →",
-    "readLessLabel": "折りたたむ ↑",
-    "rankings": [
-      {
-        "rank": "01",
-        "title": "ヒューマングレード 低温スチーム調理フレッシュフード",
-        "score": "98/100",
-        "pros": "人間用基準の安全な肉と野菜を70℃の低温で加熱。天然の水分（70％以上）、生きた消化酵素、微量ビタミンが損なわれず保持されます。",
-        "cons": "冷凍庫や冷蔵庫での保管が必要。ドライフードと比較してコストが高め。",
-        "readMore": "低温スチーム調理のフレッシュフードがランキング上位に位置するのは、食品安全性を犠牲にすることなく手作り食に近い品質を再現できるからです。原材料はUSDA検査済みのヒューマングレード食品工場から調達され、その後、病原菌を死滅させるのに必要な最小限の時間だけ約71℃という低温で加熱調理されます。これにより、高温での押し出し成形(エクストルージョン)で失われがちな繊細なタンパク質、タウリン、水溶性ビタミンB群が保持されます。\n\nこのフードはもともと70％以上の水分を含んでいるため、腎臓への負担が軽減され、キブルのみの食事でよく見られる慢性的な軽度脱水のリスクを下げることができます。レシピは基本的に単一タンパク源で、レンダリング処理された副産物ミールや合成保存料を含まないため、病後の回復期にある犬、飲水量が減りがちなシニア犬、食物過敏症になりやすい犬種に特に適しています。\n\n主なデメリットは取り扱いの手間です。冷蔵または冷凍のスペースが必要で、給餌前に解凍する必要があります。自分で調理する準備がまだ整っていない場合は、USDA認定キッチンを持つ複数のブランドが同じ低温調理製法による常温保存可能なバージョンを販売しているので、本格的な手作り食に移行する前に、まずはこのカテゴリーを気軽に試すことができます。",
-        "productKey": "justfoodfordogs-chicken-white-rice",
-        "productNote": "常温保存が可能でこのカテゴリーを気軽に試せる製品:"
-      },
-      {
-        "rank": "02",
-        "title": "先祖伝来の80-10-10 生肉BARFダイエット",
-        "score": "95/100",
-        "pros": "肉食動物本来の黄金比率（肉80％、生骨10％、内臓10％）。歯石の沈着を防ぎ、引き締まった筋肉を維持します。",
-        "cons": "徹底した衛生管理と正確なカルシウム比率の把握が不可欠。",
-        "readMore": "80-10-10比率(筋肉80％、生の可食骨10％、内臓10％)は、野生の犬の祖先が獲物一頭からまるごと摂取していた栄養バランスを再現するために組み立てられています。正しく実践すれば、骨に含まれるカルシウムとリンが自然な比率で摂取でき、引き締まった筋肉量の維持を助け、生骨を嚙むという物理的な動作が歯の歯石を削り落とす効果も期待できます。\n\n一切加熱しないため、酵素や熱に弱いアミノ酸がそのまま保たれます。ただし注意すべきは精度の高さが求められる点です。安全な生骨の調達と正確な比率の実現には相応の知識と規律が必要で、骨の割合の計算を誤ることが便秘、さらには成長期の子犬における骨格異常につながる最も一般的な失敗要因です。生肉の取り扱いにも、人間用の生食と同様の衛生管理(専用のまな板、冷蔵保存、速やかな後片付け)が求められます。\n\n多くの家庭では、自宅で食材を調達・計量して完全にカスタムの生食メニューを組む段階に進む前に、まずはこの比率をあらかじめ満たしたプロ設計の生食製品から始める方が取り組みやすいでしょう。",
-        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-        "productNote": "面倒な比率計算が不要な、あらかじめバランス調整済みの生食製品:"
-      },
-      {
-        "rank": "03",
-        "title": "エアドライ＆フリーズドライ生ドッグフード",
-        "score": "91/100",
-        "pros": "生肉の優れた栄養価を常温保存できる利便性を両立。偏食な愛犬のトッピングにも最適。",
-        "cons": "腎臓への負担を避けるため、ぬるま湯や骨スープで戻してから与える必要があります。",
-        "readMore": "エアドライとフリーズドライは、いずれも低温で生肉から水分を取り除く製法で、栄養素と酵素のプロファイルを生食に近い状態に保ちながら、冷凍庫を必要としない常温保存を可能にします。フリーズドライは低温真空プロセスを使用するため、一般的にエアドライよりもさらに栄養素を保持しやすい一方、1ポンドあたりのコストは高くなる傾向があります。\n\nどちらの形状も持ち運びに優れており、キブルに混ぜて嗜好性を高めるための生食トッパーとしても非常に優秀です。給餌前にぬるま湯やボーンブロスで戻すことで、犬の祖先が野生で摂取していた水分量に近づけることができ、尿路結石(ストルバイト結晶など)になりやすい犬や腎臓に負担をかけたくない犬にとって特に価値があります。\n\n主な検討ポイントはカロリーあたりのコストです。水分が取り除かれている分、栄養が凝縮された状態にお金を払うことになるため、大型犬の主食として毎日大量に与えるよりも、トッパーやローテーション食として使われることが多い製法です。",
-        "productKey": "ziwi-peak-beef-chicken-bundle",
-        "productNote": "評価の高いエアドライ製品:"
-      },
-      {
-        "rank": "04",
-        "title": "高タンパク質 グレインフリー＆古代穀物ドライフード",
-        "score": "78/100",
-        "pros": "常温で長期保存が可能。多頭飼育や大型犬のご家庭でも経済的な選択肢。",
-        "cons": "200℃以上の超高温加工が施され、水分がわずか8〜10％しかなく、炭水化物が40〜50％含まれます。",
-        "readMore": "プレミアムキブルは、多くの家庭にとって依然として最も実用的な選択肢です。最長で1年ほど常温保存が可能で、自動給餌器での計量もしやすく、フレッシュフードや生食と比べてカロリーあたりのコストも大幅に抑えられます。\n\nこのカテゴリーで優れた処方は、あいまいな「ミートミール」ではなく具体的な動物性タンパク源を主原料とし、でんぷん源はトウモロコシや小麦などの重いフィラーではなく、オーツや高粱(ソルガム)といった古代穀物を使用し、さらに重金属について第三者機関による検査を受けています。\n\nトレードオフとなるのは押し出し成形(エクストルージョン)そのものの工程です。200℃を超える高温にさらされることで熱に弱いビタミンの一部が失われ、水分量もおよそ10％まで下がります。そのため獣医師は、キブルのみの食事にボーンブロスを少量加えたり生食トッパーを併用したりすることを勧めることが多く、これは特に尿路結石になりやすい犬にとって有効です。",
-        "productKey": "orijen-original-grain-free-23lb",
-        "productNote": "このカテゴリーに該当する高タンパク質・ホールプレイ処方の製品:"
-      },
-      {
-        "rank": "05",
-        "title": "獣医師専任 処方療法食",
-        "score": "72/100",
-        "pros": "進行した慢性腎不全、肝不全、ストルバイト結石症などの疾患管理に特化。",
-        "cons": "穀物由来の増量材が多く使われる傾向があり、獣医師の診断書・指示が必要です。",
-        "readMore": "療法食は、診断済みの特定の病態を管理するために設計されています。腎臓病であればタンパク質とリンを制限し、重度の食物アレルギーであれば免疫系が反応しない加水分解タンパク質を使用し、ストルバイト膀胱結石であればマグネシウムとpHを厳密にコントロールする、といった具合です。\n\n総合的な「健康度」ランキングで順位が下がるのは、平均的な健康な犬向けに最適化されているのではなく、意図的に成分が制限されているためです。例えば、機能が低下した腎臓をいたわるために設計された処方は、市場で最もタンパク質密度が高いフードにはあえてしていません。\n\nこれらの療法食は獣医師の処方と、効果を確認するための定期的な血液検査を必要とし、臨床的な理由がない健康な犬に与えるべきではありません。健康な犬に本来必要な栄養素を制限してしまうと、長期的に害を及ぼす可能性があるためです。",
-        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-        "productNote": "獣医師の処方でよく使われる腎臓ケア療法食:"
-      }
-    ],
-    "buyerGuideTitle": "最高のドッグフードを選ぶための4大原則",
-    "buyerRules": [
-      {
-        "title": "1. 原材料の筆頭が明確な動物性生肉であること",
-        "desc": "「肉副産物粉末」や「家禽ミール」などの曖昧な表記ではなく、「生骨抜き七面鳥肉」「牛肉」「生サーモン」と具体的に明記されたものを選びましょう。",
-        "readMore": "ペットフードの原材料表示は、調理前の重量が多い順に記載されます。「生骨抜き七面鳥」や「新鮮な牛肉」のように具体的な動物名が記載された肉は、タウリンやアルギニン、カルニチンといった必須アミノ酸を最も消化吸収しやすい形で供給します。「動物性油脂」「肉副産物粉末」「家禽ミール」といった曖昧な総称表記は、由来不明の低品質なレンダリング肉が使われている恐れがあるため避けてください。\n\nまた「原材料の分割表記(イングリディエント・スプリッティング)」にも注意が必要です。エンドウ豆、エンドウ豆デンプン、エンドウ豆タンパク質のように炭水化物を細分化して記載することで、実質的には炭水化物が多いにもかかわらず肉を筆頭に見せかける手法があります。\n\n「乾燥ラム肉粉」や「サーモンミール」のように動物名が明記されたミールは、水分を除去した高濃度なタンパク源となるため、透明性の高い良質な製品であれば問題ありません。"
-      },
-      {
-        "title": "2. 70％以上の自然な水分を確保すること",
-        "desc": "水分8〜10％のドライフードのみを食べている犬は慢性的な水分不足になりがちです。必ずウェットフードや骨スープを足しましょう。",
-        "readMore": "犬の祖先が野生で捕食していた獲物の肉は、約70〜75％が水分で構成されていました。そのため犬は水分を食事から摂取することに適応しており、水分を自発的にたくさん飲む反射が本質的に強くありません。水分が8〜10％しか含まれないドライフードのみを与え続けると、慢性的な軽度脱水状態が常態化してしまいます。\n\n尿が長期間濃縮されると腎臓に多大な負担がかかり、ストルバイト結石やシュウ酸カルシウム結石などの尿路結石リスクが劇的に高まります。\n\nドライフードを主食にする場合は、塩分・ネギ類不使用の温かいボーンブロスやぬるま湯を1:1で加えてふやかすか、水分の多いウェットフードや蒸した肉のトッパーを加えて腎臓を保護してください。"
-      },
-      {
-        "title": "3. 合成酸化防止剤・着色料の完全排除",
-        "desc": "BHA、BHT、エトキシキン、プロピレングリコール、赤色○号などの発がん性・毒性が懸念される化学添加物は絶対に避けてください。",
-        "readMore": "賞味期限を1〜2年と長く保つため、安価なペットフードにはBHA(ブチルヒドロキシアニソール)、BHT(ジブチルヒドロキシトルエン)、エトキシキンといった合成化学抗酸化剤が添加されることがあります。これらは発がん性や内分泌かく乱作用(環境ホルモン)、肝機能障害との関連性が数多くの研究で指摘されています。\n\nさらに赤色40号や黄色5号などの合成着色料は、飼い主の購買意欲をそそるためだけに使われており、犬にとっては不要なばかりかアレルギー性皮膚炎や消化器症状の引き金になります。\n\nミックストコフェロール(ビタミンE)、ローズマリー抽出物、クエン酸など、天然由来の酸化防止剤で保存されている安全なフードを必ず選んでください。"
-      },
-      {
-        "title": "4. 炭水化物を25％未満に抑えること",
-        "desc": "犬の唾液には炭水化物を分解するアミラーゼがありません。過剰なデンプンはすい臓に負担をかけ肥満を引き起こします。",
-        "readMore": "犬は広義の肉食動物(通性肉食動物)であり、精製された炭水化物を必須とする生物学的理由はありません。人間と異なり、犬の唾液には口の中でデンプンを分解する消化酵素「アミラーゼ」が含まれておらず、デンプンの分解負担はすべてすい臓に集中します。\n\nペットフードの成分保証値には炭水化物量の表示義務がないため、多くのドライキブルは粒を固める製造上の都合から、トウモロコシや小麦、タピオカなどの炭水化物を45〜60％も含んでいるのが実態です。\n\n高血糖を引き起こす高デンプン食はインスリンの急上昇を招き、肥満、慢性炎症、外耳炎、すい炎のリスクを高めます。「100 − (粗タンパク質 ＋ 粗脂肪 ＋ 粗繊維 ＋ 水分 ＋ 粗灰分)」の計算式で炭水化物割合を算出し、25％未満に抑えられたフードを選びましょう。"
-      }
-    ],
-    "ctaTitle": "愛犬に最適なフードの正確な給餌量を計算する",
-    "ctaDesc": "フレッシュフード、生肉BARF食、プレミアムカリカリのいずれを選んでも、愛犬に最適な日々の給餌グラム数とカロリーがすぐに分かります。",
-    "ctaBtn": "今すぐ適正給餌量を計算する →"
-  },
-  "recipes": {
-    "eyebrow": "手作り食レシピ // NRC＆AAFCO基準",
-    "heroTitle": "愛犬のための手作り健康食レシピ",
-    "heroSubtitle": "完全な栄養バランスを満たした低温調理フードと、自然の摂理に沿った80-10-10生肉BARF食を自宅で作るためのステップバイステップ・ガイド。",
-    "calciumWarningTitle": "手作り犬ごはんの絶対鉄則：カルシウムとリンのバランス",
-    "calciumWarningDesc": "動物の筋肉肉はリンが極めて多く、カルシウムがほとんど含まれていません（比率1:20）。カルシウムを足さずに肉と白米だけを与え続けると、数ヶ月で骨軟化症や骨の脱灰（スカスカになる病気）を引き起こします。骨なし肉450gあたり、必ず純粋な卵殻パウダー小さじ半分（元素カルシウム約900mg）を加えて、安全な「カルシウム：リン＝1.2：1」の比率を保ってください。",
-    "recipesList": [
-      {
-        "tag": "低温スチーム調理",
-        "title": "レシピ1：七面鳥とプレバイオティクス南瓜のやさしいごはん（胃腸が弱い犬用）",
-        "desc": "消化器系が敏感な犬、軟便になりやすい犬、市販チキンにアレルギーがある犬に最適です。",
-        "ingredients": [
-          "七面鳥ひき肉（赤身93/7） — 65%（約900g）",
-          "牛または七面鳥のハツ（心臓・天然タウリン源） — 10%（約140g）",
-          "無添加カボチャピュレ（水溶性食物繊維） — 10%（約140g）",
-          "蒸しホウレンソウ＆細かく刻んだズッキーニ — 10%（約140g）",
-          "天然アラスカ産サーモンオイル（EPA/DHA） — 2%（大さじ1.5）",
-          "微粉末卵殻パウダー（天然カルシウム） — 3%（小さじ1杯強）"
-        ],
-        "prep": "七面鳥ひき肉とハツをフライパンで弱火で軽く炒めます（中心温度70℃を目安に加熱しすぎない）。野菜を蒸してカボチャピュレと混ぜ、粗熱を完全にとります。最後にサーモンオイルと卵殻パウダーを均一に混ぜ込み、1食分ずつ小分けして冷凍保存します。"
-      },
-      {
-        "tag": "生食BARF",
-        "title": "レシピ2：牛肉と鴨肉の先祖伝来80-10-10 生肉BARF食",
-        "desc": "消化機能が健全で胃酸分泌が活発な成犬のための、生物学的に適正な生食メニュー。",
-        "ingredients": [
-          "牧草牛（グラスフェッド）赤身角切り肉 — 70%",
-          "牛ハツ（L-カルニチンとコエンザイムQ10が豊富） — 10%",
-          "生の可食鴨ネックまたは鶏ガラ — 10%（天然の生骨とカルシウム）",
-          "牛レバー（肝臓・ビタミンAとB群） — 5%",
-          "牛キドニー（腎臓）または脾臓（分泌内臓器官） — 5%"
-        ],
-        "prep": "赤身肉とハツを一口大にカットします。生骨は愛犬が丸呑みしない適切なサイズを選びます。内臓はデジタルキッチンスケールで正確に計量します。寄生虫対策として、給餌前にマイナス20℃以下で最低3週間以上冷凍庫で凍結保存してください。"
-      },
-      {
-        "tag": "スーパーフードトッピング",
-        "title": "レシピ3：抗酸化スーパーフード トッピング（カリカリの栄養強化）",
-        "desc": "市販のドライフードの20％を新鮮な自然食材に置き換えるための高機能トッパー。",
-        "ingredients": [
-          "放し飼い有精卵（半熟ポーチドエッグ） — 40%",
-          "蒸しブロッコリースプラウト＆ワイルドブルーベリー — 30%",
-          "じっくり煮出した牛骨ボーンブロススープ — 20%",
-          "オーガニックヘンプシード＆ケルプパウダー — 10%"
-        ],
-        "prep": "卵を4分間軽く茹でて半熟にします。スプラウトをさっと蒸し、温めたボーンブロスとブルーベリーと一緒に軽く潰します。普段のドライフードに大さじ2〜4杯を毎食トッピングしてください。"
-      }
-    ],
-    "calciumGuideTitle": "手作り犬ごはんで安全に使えるカルシウム源",
-    "calciumGuideItems": [
-      {
-        "title": "微粉末卵殻パウダー",
-        "ratio": "骨なし肉450gに対して小さじ1/2",
-        "desc": "純度95％の炭酸カルシウム。水洗いして天日干しまたは加熱殺菌した卵の殻をミルで細かく粉砕して使用します。"
-      },
-      {
-        "title": "生の可食生肉骨（絶対に加熱しない）",
-        "ratio": "食事全体の重量の10％",
-        "desc": "鴨ネック、鶏手羽先など。加熱した骨は硬化して縦に裂け、食道や腸を突き破る致命的な危険があるため絶対に生で与えてください。"
-      },
-      {
-        "title": "獣医用ボーンミール（骨粉サプリ）",
-        "ratio": "製品ラベルの指示に従う",
-        "desc": "微小結晶性ヒドロキシアパタイト。カルシウムとリンが天然の2:1比率で含まれており生体利用効率に優れます。"
-      }
-    ]
-  },
-  "toxic": {
-    "eyebrow": "危険食材 // 犬が食べてはいけない危険な食べ物",
-    "dangerTitle": "家庭内にある犬にとって猛毒な危険食材",
-    "dangerIntro": "人間の食べ物に含まれる特定の化学成分は、犬の代謝酵素では無毒化できず、急性臓器不全や突然死を引き起こします。",
-    "dangerList": [
-      {
-        "name": "チョコレート・ココア",
-        "toxin": "テオブロミンおよびカフェイン",
-        "symptoms": "激しい嘔吐、パンティング（過呼吸）、不整脈、筋肉の硬直、けいれん発作、心不全。",
-        "risk": "高危険度・致死性あり"
-      },
-      {
-        "name": "ブドウ・レーズン・マスカット",
-        "toxin": "酒石酸（酒石酸塩）",
-        "symptoms": "無気力、脱水症状、摂取後24〜72時間以内に急性腎不全（乏尿・無尿）を発症。",
-        "risk": "極めて猛毒・命の危険"
-      },
-      {
-        "name": "キシリトール（白樺糖 / 合成甘味料）",
-        "toxin": "合成糖アルコール",
-        "symptoms": "インスリンの急激な大量放出による重度の低血糖発作、虚脱、数時間以内の急性肝壊死。",
-        "risk": "最高度の緊急事態"
-      },
-      {
-        "name": "タマネギ・長ネギ・ニンニク・ニラ",
-        "toxin": "有機硫黄化合物（アリルプロピルジスルフィド）",
-        "symptoms": "赤血球のヘモグロビン破壊、ハインツ小体性溶血性貧血、赤褐色尿、チアノーゼ。",
-        "risk": "蓄積毒性・極めて危険"
-      },
-      {
-        "name": "マカダミアナッツ",
-        "toxin": "未同定の神経毒性物質",
-        "symptoms": "後ろ足の麻痺・ふらつき、高体温、嘔吐、関節の激痛。",
-        "risk": "中等度〜重篤"
-      },
-      {
-        "name": "加熱した鳥や魚の骨全般",
-        "toxin": "物理的な鋭利破片による穿孔",
-        "symptoms": "消化管の裂傷、大量の体内出血、腹膜炎、閉塞性イレウス。",
-        "risk": "緊急開腹手術が必要"
-      }
-    ],
-    "emergencyTitle": "誤飲・誤食中毒が疑われる場合の緊急対処法",
-    "emergencySteps": [
-      "1. 直ちに愛犬の口から取り出す：何を、どのくらいの量、何時何分に食べたか、パッケージを確保してください。",
-      "2. 獣医師の指示なしに無理に吐かせない：オキシドール等で無理に吐かせると、腐食性物質や骨の破片が食道を破壊し二次災害を起こします。",
-      "3. 直ちに動物病院に電話する：夜間救急動物病院またはかかりつけ医へ直ちに連絡し、指示を仰いでください。"
-    ],
-    "safeTitle": "愛犬に与えても100％安全で健康に良い野菜・果物",
-    "safeIntro": "以下の食材は、抗酸化物質、水溶性食物繊維、ビタミンを豊富に含み、安全に毎日のトッピングとして活用できます：",
-    "safeFoods": [
-      {
-        "name": "ブルーベリー",
-        "benefit": "抗酸化作用を持つアントシアニンとポリフェノールが細胞の老化を防ぎます。"
-      },
-      {
-        "name": "蒸しカボチャ",
-        "benefit": "豊富な水溶性食物繊維が腸内環境を整え、下痢と便秘の両方を改善します。"
-      },
-      {
-        "name": "ニンジン",
-        "benefit": "低カロリーでβカロテンが豊富。シャキシャキした食感で歯の清掃にも役立ちます。"
-      },
-      {
-        "name": "サヤエンドウ・サヤインゲン",
-        "benefit": "食物繊維が豊富で低GI。肥満気味の愛犬の満足感を高める減量食に最適。"
-      },
-      {
-        "name": "リンゴ（※種と芯を完全に取り除く）",
-        "benefit": "水溶性ペクチンとビタミンCが腸内善玉菌を増やします。"
-      }
-    ]
-  },
-  "brands": {
-    "eyebrow": "ブランド分析 // 人気ドッグフードの評価とリコール履歴",
-    "heroTitle": "有名ドッグフードの客観的評価とリコール履歴",
-    "heroSubtitle": "主要ブランドの原材料品質、AAFCO表示基準の適合性、過去のリコール記録を忖度なしで検証します。",
-    "brandsList": [
-      {
-        "name": "ブルーバッファロー（Blue Buffalo）",
-        "grade": "評価：B+",
-        "pros": "第一原材料が生肉。トウモロコシ・小麦・大豆不使用。ビタミンを守る冷圧成形「ライフソースビッツ」配合。",
-        "cons": "炭水化物比率が45〜50％と高め。過去に水分過剰によるカビやビタミンD過剰配合での自主回収履歴あり。",
-        "verdict": "市販ドライフードの中では上位水準。新鮮な水分を補うためフレッシュトッピングの併用を推奨します。"
-      },
-      {
-        "name": "レイチェルレイ ニュートリッシュ",
-        "grade": "評価：C+ / B-",
-        "pros": "手頃な価格で入手しやすい。上位ライン（Peak/Dish）は生肉の含有割合が高く設計されています。",
-        "cons": "普及グレードではエンドウ豆タンパクやコーングルテンミールでのかさ増しが見られ、過去のFDA調査対象に含まれました。",
-        "verdict": "予算重視の場合は上位ラインを選択し、原材料表示の「豆類の分割表記」に注意してください。"
-      },
-      {
-        "name": "ピュアバランス（Pure Balance）",
-        "grade": "評価：B（コスパ優秀）",
-        "pros": "プライベートブランドながら第一原材料に肉を使用し、人工着色料や小麦不使用で極めてコストパフォーマンスが高い。",
-        "cons": "外部OEM委託製造。炭水化物比率は標準的。",
-        "verdict": "一般量販店やスーパーで購入できる市販フードの中では最も良心的な選択肢のひとつ。"
-      },
-      {
-        "name": "オリー（Ollie）フレッシュフード",
-        "grade": "評価：A（最高評価）",
-        "pros": "100％ヒューマングレードの高品質な肉と野菜。低温加熱で個包装パウチ。栄養素の吸収率が抜群。",
-        "cons": "月額費用が高価（月2万〜4万円）。冷凍庫の保管スペースが必要。",
-        "verdict": "代謝機能、毛並みの艶、消化器の健康寿命を最優先に考える飼い主様にとってのゴールドスタンダード。"
-      },
-      {
-        "name": "オープンファーム（Open Farm）",
-        "grade": "評価：A-",
-        "pros": "すべての原材料の産地と人道的農場基準（ヒューメイン認証）を完全公開。持続可能な魚介類を採用。",
-        "cons": "プレミアム価格帯。取り扱い実店舗が限定的。",
-        "verdict": "エシカルな調達基準と確かな肉質、副産物ミール完全不使用を重視する方に最適。"
-      }
-    ],
-    "recallsTitle": "ペットフードのリコール（回収）情報の見方",
-    "recallsDesc": "米FDAのリコール基準は3段階に分かれます：クラスI（サルモネラ菌感染やビタミンD過剰など死亡リスクのある重大事態）、クラスII（一時的な健康被害）、クラスIII（表示違反等）。袋のロット番号を確認する習慣をつけましょう。",
-    "methodTitle": "当サイトのフード評価における4つの基準",
-    "methodPillars": [
-      {
-        "title": "1. タンパク質源の透明性",
-        "desc": "「肉類」「家禽ミール」ではなく、明確な部位名が記載された骨抜き生肉であること。"
-      },
-      {
-        "title": "2. 炭水化物比率の抑制",
-        "desc": "犬の代謝に適した健康維持のため、デンプン質を40％未満に抑えていること。"
-      },
-      {
-        "title": "3. 原産地と調達の透明性",
-        "desc": "遺伝子組み換え不使用や人道的農場基準など、トレーサビリティが確保されていること。"
-      },
-      {
-        "title": "4. 安全基準とリコール実績",
-        "desc": "第三者機関による菌検査の実施やクリーンな安全管理体制が敷かれていること。"
-      }
-    ]
-  },
-  "allergies": {
-    "eyebrow": "アレルギー対策ガイド // 食物アレルギーと低アレルゲン食",
-    "heroTitle": "アレルギー・皮膚炎・お腹が弱い犬のためのフードガイド",
-    "heroSubtitle": "食物アレルギーのメカニズム、単一タンパク質（新奇タンパク質）の選び方、8週間の除去食試験プロトコルを詳しく解説。",
-    "allergensTitle": "犬に最も多い食物アレルゲンTOP5",
-    "allergensIntro": "犬の食物アレルギーは、特定のタンパク質に対する免疫過剰反応です。臨床報告の多い順に以下の通りです：",
-    "allergensList": [
-      {
-        "name": "1. 市販ブロイラーチキン（全体の約60％）",
-        "desc": "市販ペットフードに極めて多用されているため、最も抗体が作られやすいアレルゲンです。"
-      },
-      {
-        "name": "2. 牛肉（全体の約30％）",
-        "desc": "赤身肉アレルギーを持つ犬では、激しい皮膚の痒みや外耳炎の主な原因となります。"
-      },
-      {
-        "name": "3. 乳製品・チーズ",
-        "desc": "犬は成犬になるとラクターゼ酵素が失われるため、乳糖不耐症による下痢や腹鳴を引き起こします。"
-      },
-      {
-        "name": "4. 小麦・トウモロコシのグルテン",
-        "desc": "腸粘膜バリアを荒らし、体内の慢性炎症や皮膚のマラセチア酵母菌の増殖を助長します。"
-      },
-      {
-        "name": "5. 大豆・豆類プロテイン",
-        "desc": "安価な増量材として使われる植物性タンパク質ですが、消化不良やガス発生の原因になります。"
-      }
-    ],
-    "eliminationTitle": "「8週間 除去食試験（エリミネーション）」の手順",
-    "eliminationSteps": [
-      {
-        "step": "ステップ1",
-        "title": "一度も食べたことのない新奇タンパク質を1種類選ぶ",
-        "desc": "鹿肉（ベニソン）、カンガルー肉、ウサギ肉など、愛犬が過去に一度も口にしたことのないタンパク質とカボチャなど消化の良い単一炭水化物に限定します。"
-      },
-      {
-        "step": "ステップ2",
-        "title": "完全なコンタミネーション防止（厳格な8週間）",
-        "desc": "8週間、指定された食事と水以外は絶対に与えてはいけません。市販のおやつ、人間の食事のおすそ分け、フレーバー付きの薬も禁止です。"
-      },
-      {
-        "step": "ステップ3",
-        "title": "1食材ずつの負荷試験（原因物質の特定）",
-        "desc": "痒みや下痢が完全に治まったら、疑わしい食材（例：鶏肉）を1種類だけ7日間与えて反応を観察します。症状が再発すればアレルゲン確定です。"
-      }
-    ],
-    "novelTitle": "おすすめの新奇タンパク質（低アレルゲン肉）",
-    "novelProteins": [
-      {
-        "name": "鹿肉（ベニソン）",
-        "desc": "高タンパク低脂質でビタミンB群が豊富。抗体を持っている犬が極めて少ない優秀な赤身肉。"
-      },
-      {
-        "name": "ウサギ肉（ラビット）",
-        "desc": "必須アミノ酸バランスに優れ、消化吸収率が高く、漢方医学でも体を温め炎症を鎮める肉とされます。"
-      },
-      {
-        "name": "鴨肉（ダック）",
-        "desc": "鶏肉アレルギーの犬にとって安全な鳥肉代替品。鉄分と不飽和脂肪酸が豊富。"
-      },
-      {
-        "name": "カンガルー肉",
-        "desc": "オーストラリアの大自然で育った天然野生肉。脂肪分が約2％と極めて低く最もクリーンな肉。"
-      }
-    ]
-  },
-  "calculator": {
-    "eyebrow": "完全無料 // 給餌量＆カロリー計算機",
-    "noticeTitle": "重要なお知らせ：",
-    "noticeText": "本ツールは一般的な栄養学および教育目的で提供されています。獣医師の診断や医療処置に代わるものではありません。",
-    "heroTitle": "愛犬の給餌量＆適正カロリー計算機",
-    "heroSubtitle": "愛犬の体重、年齢区分、活動レベル、体型スコア（BCS）を入力するだけで、正確な必要エネルギー量（RER・MER）と1食あたりのグラム数を瞬時に算出します。"
-  },
-  "breeds": {
-    "eyebrow": "犬種別栄養ガイド // 獣医師推奨給餌基準",
-    "targetWeight": "理想体重",
-    "dailyCalories": "1日の推定カロリー",
-    "freshDaily": "手作り食の1日量",
-    "kibbleDaily": "ドライフードの1日量",
-    "cups": "カップ",
-    "reqsTitle": "{name}に必要な栄養基準と食事の特徴",
-    "reqsIntro": "{category}犬種に分類され、平均体重が{w0}〜{w1}ポンド（約{Math.round(w0*0.453)}〜{Math.round(w1*0.453)}kg）の{name}には、体質に合わせた栄養設計が必要です：",
-    "predispositionsTitle": "気をつけたい体質と食事管理：",
-    "feedingRoutineTitle": "おすすめの給餌スケジュール：",
-    "feedingRoutineDesc": "成犬の{name}には、1日2回（朝50％・夕方50％）に分けて与えるのが理想的です。常に清潔な新鮮水を用意してください。ドライフードを与える場合は、ぬるま湯や骨スープでふやかすと腎臓の健康維持につながります。",
-    "ctaTitle": "{name}専用の食事プランを作成する",
-    "ctaSubtitle": "子犬期・成犬・シニア犬、正確な体重、運動量、去勢・避妊の有無に合わせて精密な給餌量を計算します。",
-    "ctaBtn": "{name}の計算機を起動する →",
-    "faqTitle": "{name}の食事に関するよくある質問",
-    "faqSubtitle": "給餌回数、適正体重の維持、おすすめの食材について。"
-  },
-  "comparisonTable": {
-    "eyebrow": "栄養比較 // フレッシュフード VS ドライフード",
-    "title": "ホールフード（自然食）が生化学的にドライフードより優れている理由",
-    "subtitle": "加熱加工温度、給餌量の精度、実際の月額コストを徹底比較 — 5年間の長寿研究において新鮮な自然食を食べた犬が最大32か月長く生きたことと直結する臨床変数です。",
-    "scrollHint": "↔ 横にスクロールしてご覧ください",
-    "colMetric": "栄養・臨床評価項目",
-    "colDfp": "✨ DogFoodPlanner",
-    "colSubs": "定期便フレッシュフード",
-    "colKibble": "市販ドライフード（カリカリ）",
-    "rows": [
-      {
-        "metric": "加工・調理方法",
-        "dfp": "低温スチーム（約70℃）または生食 — 酵素が活性状態",
-        "subs": "真空調理（低温調理）後に急速冷凍",
-        "kibble": "200℃以上の超高温エクストルーダー加工"
-      },
-      {
-        "metric": "給餌量の精度",
-        "dfp": "体重・年齢・活動量に応じたRER/MER代謝計算による厳密なグラム単位",
-        "subs": "大まかな体重範囲による固定給餌チャート",
-        "kibble": "パッケージ記載の標準給餌表 — 20〜30％過剰になりがち"
-      },
-      {
-        "metric": "純炭水化物割合",
-        "dfp": "5％未満（必要な野菜繊維のみ・増量剤ゼロ）",
-        "subs": "10％〜20％",
-        "kibble": "45％〜60％（トウモロコシ・小麦・エンドウ豆デンプン等）"
-      },
-      {
-        "metric": "生物学的水分量",
-        "dfp": "70％〜75％（腎臓・泌尿器の健康を支える生体水分）",
-        "subs": "70％〜75%",
-        "kibble": "8％〜10％（慢性的・潜在的な脱水リスク）"
-      },
-      {
-        "metric": "栄養素の完全性",
-        "dfp": "酸化を最小限に抑制 — オメガ3や酵素を保持",
-        "subs": "中程度 — 一部の熱に弱い栄養素が変性",
-        "kibble": "高温加工による脂質酸化および終末糖化産物（AGEs）の生成"
-      },
-      {
-        "metric": "原材料の透明性",
-        "dfp": "100％グラム数と配合比率を完全公開 — 全てを飼い主が管理",
-        "subs": "独自ブレンド（詳細な配合比率は非公開）",
-        "kibble": "曖昧な肉粉（ミール）表記や原材料の分割記載"
-      },
-      {
-        "metric": "月々の平均食費（体重23kgの犬）",
-        "dfp": "約12,000円〜19,000円（食材のみ・自宅調達）",
-        "subs": "約38,000円〜68,000円 / 月",
-        "kibble": "約9,000円〜15,000円 / 月"
-      }
-    ]
-  },
-  "faqPage": {
-    "badge": "ナレッジベース // 獣医師監修40以上のQ&A",
-    "exploreHubsTitle": "目的別の専門栄養ガイドを探す",
-    "exploreHubsSubtitle": "愛犬の健康と長寿を願う飼い主様のために作成された深掘り特集ガイド。",
-    "cardBestFood": "手作り食、生肉BARF食、高タンパクカリカリ、お腹が弱い犬用フードの徹底比較。",
-    "cardCalc": "愛犬の安静時代謝量（RER）と1日の適正給餌グラム数を導き出す計算機。",
-    "cardRecipes": "必須カルシウムを完全に補正した低温調理ごはん＆80-10-10生肉BARFレシピ。",
-    "cardAllergies": "新奇タンパク質（低アレルゲン肉）の選び方と8週間の除去食試験手順。",
-    "cardToxic": "犬が誤飲すると命に関わる危険食材一覧、安全な果物・野菜の適正量。",
-    "cardBrands": "ブルーバッファロー、オリジン、オリーなどの客観的レビューとリコール履歴。"
-  },
-  "faqSingle": {
-    "reviewedBy": "確認：DogFoodPlanner編集チーム",
-    "updated": "最終更新：2026年",
-    "directQuickAnswer": "結論・要約回答",
-    "clinicalAnalysis": "詳細な栄養分析・解説",
-    "topics": "関連タグ：",
-    "ctaBadge": "🐾 無料の犬栄養計算エンジン",
-    "ctaTitle": "愛犬に必要な1日のカロリーと食事量を今すぐ計算",
-    "ctaSubtitle": "体重、年齢、運動量に応じた正確な代謝量（RER/MER）と、手作り食・生食の給餌グラム数を瞬時に算出します。",
-    "ctaBtn": "今すぐ適正給餌量を計算する →",
-    "relatedTitle": "関連する犬の栄養・食事Q&A",
-    "readAnswer": "回答全文を読む →",
+  "ja": {
+    "about": {
+      "heroTitle": "DogFoodPlannerについて：愛犬の食事管理をシンプルに",
+      "heroSubtitle": "DogFoodPlanner.comのミッションと無料の給餌量計算ツールの仕組みをご紹介します。",
+      "missionBadge": "私たちの使命 // 愛犬の食事計画",
+      "whyTitle": "DogFoodPlannerが設立された理由",
+      "whyP1": "DogFoodPlannerは、愛犬家が自信を持って食事や給餌量を計画できるように作られました。公表されている信頼できるガイドラインを調査し、シンプルで使いやすい無料のツールとガイドとしてお届けしています。",
+      "whyP2": "",
+      "whoTitle": "運営者について",
+      "whoContent": "DogFoodPlannerは、犬を愛するリサーチャーとライターによって運営されている独立系ウェブサイトです。私たちは獣医師ではありません。愛犬の食事を変更する前、特に子犬、シニア犬、または健康上の不安がある犬の場合は、必ずかかりつけの獣医師にご相談ください。",
+      "methodTitle": "私たちの栄養計算アプローチ",
+      "pillars": [
+        {
+          "tag": "01 // カロリー推定",
+          "title": "カロリー推定",
+          "desc": "計算ツールでは、標準的な安静時エネルギー要求量（RER）計算式（70 × 体重kg^0.75）と一般的な活動係数を使用して1日の必要カロリーを算出します。"
+        },
+        {
+          "tag": "02 // 参考ガイドライン",
+          "title": "参考ガイドライン",
+          "desc": "AAFCO（米国飼料検査官協会）やNRC（全米研究評議会）などが公表している指針を参照しています。本サイトの内容は教育目的であり、専門家のアドバイスに代わるものではありません。"
+        },
+        {
+          "tag": "03 // 透明性の確保",
+          "title": "透明性の確保",
+          "desc": "一部のページにはAmazonアソシエイトなどのアフィリエイトリンクが含まれています。リンク経由で商品を購入された場合、お客様に追加費用が発生することなく少額の紹介料を得ることがありますが、これによって推奨内容が変わることはありません。"
+        }
+      ],
+      "ctaTitle": "愛犬に必要な適正カロリーと食事量を計算してみませんか？",
+      "ctaDesc": "対話型計算ツールを試し、愛犬のアレルギー対策ガイドを確認し、ドッグフードガイドをお読みください。",
+      "ctaBtn": "無料の栄養計算機を起動する →",
+      "amazonDisclaimer": "Amazonアソシエイトとして、適格販売により収入を得ています。"
+    },
+    "contact": {
+      "eyebrow": "サポート＆お問い合わせ // 直接相談窓口",
+      "cards": [
+        {
+          "icon": "📧",
+          "title": "一般的なお問い合わせ",
+          "desc": "サイトへのご意見・ご質問：",
+          "email": "hello@dogfoodplanner.com"
+        },
+        {
+          "icon": "🐾",
+          "title": "栄養学・計算式に関する質問",
+          "desc": "獣医師監修フォーミュラについて：",
+          "email": "research@dogfoodplanner.com"
+        },
+        {
+          "icon": "🛡️",
+          "title": "技術サポート・不具合報告",
+          "desc": "計算機の不具合・表示エラー：",
+          "email": "legal@dogfoodplanner.com"
+        }
+      ],
+      "formTitle": "犬の栄養学専門チームへメッセージを送信",
+      "formDesc": "NRCカロリー計算式に関するご質問や、手作り食・生食レシピの調整に関するご相談は、24営業時間以内に返信いたします。",
+      "nameLabel": "お名前",
+      "namePlaceholder": "例：山田 太郎",
+      "emailLabel": "メールアドレス",
+      "emailPlaceholder": "yamada@example.com",
+      "subjectLabel": "お問い合わせの種類",
+      "subjectOptions": [
+        "一般的なご質問・ご意見",
+        "犬の栄養学・レシピに関するお問い合わせ",
+        "計算機の計算式・アルゴリズムについて",
+        "不具合報告・技術的なエラー"
+      ],
+      "messageLabel": "お問い合わせ内容",
+      "messagePlaceholder": "愛犬の情報（犬種、体重、年齢）とご相談内容をご記入ください...",
+      "submitBtn": "メッセージを送信する →",
+      "notice": "獣医師救急に関するご注意：愛犬が誤飲・中毒症状や急性疾患を起こしている場合は、直ちにお近くの夜間救急動物病院へご連絡ください。",
+      "faqTitle": "よくある質問をご確認ください",
+      "faqDesc": "偏食・食べムラ対策、生食BARF、キャットフードの危険性、市販ドッグフードの評価など、40件以上の専門Q&Aをご用意しています。",
+      "faqBtn": "すべてのFAQを見る →",
+      "successTitle": "✓ メッセージを準備しました — hello@dogfoodplanner.com に送信中",
+      "successDesc": "メールアプリが開き、hello@dogfoodplanner.com 宛の下書きメッセージが表示されます。メールアプリで「送信」を押すだけで届きます。"
+    },
+    "privacy": {
+      "eyebrow": "利用規約・プライバシー // 個人情報保護方針",
+      "lastUpdated": "最終更新：2026年10月14日",
+      "intro": "DogFoodPlanner.com（以下「当サイト」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、当サイトにおける情報の取り扱いについて説明します。",
+      "sections": [
+        {
+          "title": "1. 当サイトが収集しない個人情報",
+          "content": "愛犬の健康データはお客様自身のものです。当サイトの犬の給餌量計算ツールを利用するにあたり、会員登録、パスワード設定、クレジットカード情報の入力は一切不要です。計算機に入力された愛犬のプロフィール、体重、食事スタイルなどのデータはお使いのブラウザ内（クライアントサイド）でのみ処理され、外部データベースに保存されることはありません。"
+        },
+        {
+          "title": "2. メールアドレスの収集とメルマガ配信",
+          "content": "メルマガにご登録いただく際、犬の栄養ガイド、フードリコール速報、給餌のヒントをお届けするためにメールアドレスを収集します。メール配信には安全なEmailOctopusを利用しています。個人情報を第三者に販売・譲渡することは一切ありません。配信解除は各メール末尾のリンクからいつでも1クリックで行えます。"
+        },
+        {
+          "title": "3. 匿名技術データとアクセスログ",
+          "content": "一般的なウェブサイトと同様に、当サイトのCDNサーバーはセキュリティ維持およびDDoS攻撃防御のため、匿名化されたIPアドレス、ブラウザ種別、リファラーURL、アクセス日時などの技術的ログを自動的に記録します。"
+        },
+        {
+          "title": "4. Cookieおよびローカルストレージ（localStorage）",
+          "content": "お使いの端末で選択した言語とお食事プランを保持するためにlocalStorageを使用しています。アフィリエイトリンクをクリックした場合、第三者の外部サイト（Amazonなど）が独自のクッキーを設定することがあります。"
+        },
+        {
+          "title": "5. サードパーティへのリンク",
+          "content": "当サイトには、公表された研究、AAFCO基準、NRCデータベース、および外部リソースへの参考リンクが含まれています。当サイトは第三者のウェブサイトにおけるプライバシー保護の取り組みやコンテンツについて責任を負いません。"
+        },
+        {
+          "title": "6. アフィリエイトに関する開示",
+          "content": "DogFoodPlannerはAmazon Services LLCアソシエイト・プログラムに参加しています。Amazonアソシエイトとして、適格販売により収入を得ています。お客様への追加費用は一切かかりません。"
+        },
+        {
+          "title": "7. 未成年者のプライバシー",
+          "content": "当サイトのサービスは成人した愛犬家を対象としています。13歳未満の児童から意図的に個人情報を収集することはありません。"
+        },
+        {
+          "title": "8. ポリシーの改定とお問い合わせ",
+          "content": "本ポリシーは機能向上等に伴い改定されることがあります。ご不明な点がございましたら privacy@dogfoodplanner.com までご連絡ください。"
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "利用規約 // サービス利用条件",
+      "lastUpdated": "最終更新：2026年10月14日",
+      "intro": "DogFoodPlanner.comをご利用いただく前に、本利用規約を必ずお読みください。当サイトをご利用いただくことで、本規約に同意されたものとみなされます。",
+      "sections": [
+        {
+          "title": "1. 規約への同意",
+          "content": "DogFoodPlanner.com（以下「当サイト」）にアクセスしサービスを利用することにより、本利用規約を読み、理解し、遵守することに同意したものとみなされます。不同意の場合は、当サイトのご利用をお控えください。"
+        },
+        {
+          "title": "2. 獣医学的および医療に関する免責事項",
+          "content": "当サイトで提供される情報、計算機、手作り食レシピは、米国学術研究会議（NRC）および全米飼料検査官協会（AAFCO）の公開モデルに基づく一般的な教育および情報提供のみを目的としています。これらは専門の獣医師による医学的診断、治療、個別指導に代わるものではありません。愛犬の食事を大幅に変更する前、特に子犬期、妊娠中、慢性腎不全や心臓病などの疾患を持つ犬の場合は、必ずかかりつけ獣医師にご相談ください。"
+        },
+        {
+          "title": "3. インタラクティブ計算機の利用について",
+          "content": "エネルギー要求量（RER・MER）および給餌量（グラム数）の計算結果は統計的な目安です。個々の犬の代謝率は遺伝、不妊去勢手術の有無、飼育環境の気温により大きく異なります。飼い主様は定期的に愛犬のボディコンディションスコア（BCS）を確認し、適宜給餌量を調整してください。"
+        },
+        {
+          "title": "4. 手作り食・生食の安全性とカルシウム配合義務",
+          "content": "手作り食や生肉食（BARF）を与える際は、完全な微量栄養素バランスを維持する必要があります。特に、カルシウムを添加せずに骨なし肉のみを与え続けると、数ヶ月で重篤な骨粗鬆症や低カルシウム血症を引き起こします。食材の正確な計量およびカルシウム補給は利用者の自己責任となります。"
+        },
+        {
+          "title": "5. 知的財産権",
+          "content": "当サイト内のすべての独自計算アルゴリズム、UIデザイン、グラフィック、解説記事はDogFoodPlannerに帰属し、著作権法および国際知的財産権法により保護されています。"
+        },
+        {
+          "title": "6. 責任の制限",
+          "content": "当サイトに掲載された情報およびツールの利用または利用不能に起因するいかなる直接的・間接的損害に対しても、当サイト運営者および監修者は一切の責任を負いません。"
+        },
+        {
+          "title": "7. メールマガジンおよび各種通知",
+          "content": "メルマガに登録することにより、犬の栄養に関する教育情報やサイト更新情報を受信することに同意したものとみなされます。配信停止はいつでもメール内の配信解除リンクから行えます。当サイトは独自の判断でメルマガ配信を変更または停止する権利を有します。"
+        }
+      ]
+    },
+    "bestFood": {
+      "eyebrow": "総合ガイド // 2026年最新ドッグフード評価・ランキング",
+      "rankingsTitle": "【2026年最新】愛犬の健康寿命を延ばすフードランキングTOP5",
+      "rankingsIntro": "近年の獣医栄養学研究において、「加熱処理の最小化」と「70％以上の自然な水分含有量」が、愛犬の活力維持、腎臓病予防、抗病性の鍵であることが立証されています。",
+      "readMoreLabel": "続きを読む →",
+      "readLessLabel": "折りたたむ ↑",
+      "rankings": [
+        {
+          "rank": "01",
+          "title": "ヒューマングレード 低温スチーム調理フレッシュフード",
+          "score": "98/100",
+          "pros": "人間用基準の安全な肉と野菜を70℃の低温で加熱。天然の水分（70％以上）、生きた消化酵素、微量ビタミンが損なわれず保持されます。",
+          "cons": "冷凍庫や冷蔵庫での保管が必要。ドライフードと比較してコストが高め。",
+          "readMore": "低温スチーム調理のフレッシュフードがランキング上位に位置するのは、食品安全性を犠牲にすることなく手作り食に近い品質を再現できるからです。原材料はUSDA検査済みのヒューマングレード食品工場から調達され、その後、病原菌を死滅させるのに必要な最小限の時間だけ約71℃という低温で加熱調理されます。これにより、高温での押し出し成形(エクストルージョン)で失われがちな繊細なタンパク質、タウリン、水溶性ビタミンB群が保持されます。\n\nこのフードはもともと70％以上の水分を含んでいるため、腎臓への負担が軽減され、キブルのみの食事でよく見られる慢性的な軽度脱水のリスクを下げることができます。レシピは基本的に単一タンパク源で、レンダリング処理された副産物ミールや合成保存料を含まないため、病後の回復期にある犬、飲水量が減りがちなシニア犬、食物過敏症になりやすい犬種に特に適しています。\n\n主なデメリットは取り扱いの手間です。冷蔵または冷凍のスペースが必要で、給餌前に解凍する必要があります。自分で調理する準備がまだ整っていない場合は、USDA認定キッチンを持つ複数のブランドが同じ低温調理製法による常温保存可能なバージョンを販売しているので、本格的な手作り食に移行する前に、まずはこのカテゴリーを気軽に試すことができます。",
+          "productKey": "justfoodfordogs-chicken-white-rice",
+          "productNote": "常温保存が可能でこのカテゴリーを気軽に試せる製品:"
+        },
+        {
+          "rank": "02",
+          "title": "先祖伝来の80-10-10 生肉BARFダイエット",
+          "score": "95/100",
+          "pros": "肉食動物本来の黄金比率（肉80％、生骨10％、内臓10％）。歯石の沈着を防ぎ、引き締まった筋肉を維持します。",
+          "cons": "徹底した衛生管理と正確なカルシウム比率の把握が不可欠。",
+          "readMore": "80-10-10比率(筋肉80％、生の可食骨10％、内臓10％)は、野生の犬の祖先が獲物一頭からまるごと摂取していた栄養バランスを再現するために組み立てられています。正しく実践すれば、骨に含まれるカルシウムとリンが自然な比率で摂取でき、引き締まった筋肉量の維持を助け、生骨を嚙むという物理的な動作が歯の歯石を削り落とす効果も期待できます。\n\n一切加熱しないため、酵素や熱に弱いアミノ酸がそのまま保たれます。ただし注意すべきは精度の高さが求められる点です。安全な生骨の調達と正確な比率の実現には相応の知識と規律が必要で、骨の割合の計算を誤ることが便秘、さらには成長期の子犬における骨格異常につながる最も一般的な失敗要因です。生肉の取り扱いにも、人間用の生食と同様の衛生管理(専用のまな板、冷蔵保存、速やかな後片付け)が求められます。\n\n多くの家庭では、自宅で食材を調達・計量して完全にカスタムの生食メニューを組む段階に進む前に、まずはこの比率をあらかじめ満たしたプロ設計の生食製品から始める方が取り組みやすいでしょう。",
+          "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+          "productNote": "面倒な比率計算が不要な、あらかじめバランス調整済みの生食製品:"
+        },
+        {
+          "rank": "03",
+          "title": "エアドライ＆フリーズドライ生ドッグフード",
+          "score": "91/100",
+          "pros": "生肉の優れた栄養価を常温保存できる利便性を両立。偏食な愛犬のトッピングにも最適。",
+          "cons": "腎臓への負担を避けるため、ぬるま湯や骨スープで戻してから与える必要があります。",
+          "readMore": "エアドライとフリーズドライは、いずれも低温で生肉から水分を取り除く製法で、栄養素と酵素のプロファイルを生食に近い状態に保ちながら、冷凍庫を必要としない常温保存を可能にします。フリーズドライは低温真空プロセスを使用するため、一般的にエアドライよりもさらに栄養素を保持しやすい一方、1ポンドあたりのコストは高くなる傾向があります。\n\nどちらの形状も持ち運びに優れており、キブルに混ぜて嗜好性を高めるための生食トッパーとしても非常に優秀です。給餌前にぬるま湯やボーンブロスで戻すことで、犬の祖先が野生で摂取していた水分量に近づけることができ、尿路結石(ストルバイト結晶など)になりやすい犬や腎臓に負担をかけたくない犬にとって特に価値があります。\n\n主な検討ポイントはカロリーあたりのコストです。水分が取り除かれている分、栄養が凝縮された状態にお金を払うことになるため、大型犬の主食として毎日大量に与えるよりも、トッパーやローテーション食として使われることが多い製法です。",
+          "productKey": "ziwi-peak-beef-chicken-bundle",
+          "productNote": "評価の高いエアドライ製品:"
+        },
+        {
+          "rank": "04",
+          "title": "高タンパク質 グレインフリー＆古代穀物ドライフード",
+          "score": "78/100",
+          "pros": "常温で長期保存が可能。多頭飼育や大型犬のご家庭でも経済的な選択肢。",
+          "cons": "200℃以上の超高温加工が施され、水分がわずか8〜10％しかなく、炭水化物が40〜50％含まれます。",
+          "readMore": "プレミアムキブルは、多くの家庭にとって依然として最も実用的な選択肢です。最長で1年ほど常温保存が可能で、自動給餌器での計量もしやすく、フレッシュフードや生食と比べてカロリーあたりのコストも大幅に抑えられます。\n\nこのカテゴリーで優れた処方は、あいまいな「ミートミール」ではなく具体的な動物性タンパク源を主原料とし、でんぷん源はトウモロコシや小麦などの重いフィラーではなく、オーツや高粱(ソルガム)といった古代穀物を使用し、さらに重金属について第三者機関による検査を受けています。\n\nトレードオフとなるのは押し出し成形(エクストルージョン)そのものの工程です。200℃を超える高温にさらされることで熱に弱いビタミンの一部が失われ、水分量もおよそ10％まで下がります。そのため獣医師は、キブルのみの食事にボーンブロスを少量加えたり生食トッパーを併用したりすることを勧めることが多く、これは特に尿路結石になりやすい犬にとって有効です。",
+          "productKey": "orijen-original-grain-free-23lb",
+          "productNote": "このカテゴリーに該当する高タンパク質・ホールプレイ処方の製品:"
+        },
+        {
+          "rank": "05",
+          "title": "獣医師専任 処方療法食",
+          "score": "72/100",
+          "pros": "進行した慢性腎不全、肝不全、ストルバイト結石症などの疾患管理に特化。",
+          "cons": "穀物由来の増量材が多く使われる傾向があり、獣医師の診断書・指示が必要です。",
+          "readMore": "療法食は、診断済みの特定の病態を管理するために設計されています。腎臓病であればタンパク質とリンを制限し、重度の食物アレルギーであれば免疫系が反応しない加水分解タンパク質を使用し、ストルバイト膀胱結石であればマグネシウムとpHを厳密にコントロールする、といった具合です。\n\n総合的な「健康度」ランキングで順位が下がるのは、平均的な健康な犬向けに最適化されているのではなく、意図的に成分が制限されているためです。例えば、機能が低下した腎臓をいたわるために設計された処方は、市場で最もタンパク質密度が高いフードにはあえてしていません。\n\nこれらの療法食は獣医師の処方と、効果を確認するための定期的な血液検査を必要とし、臨床的な理由がない健康な犬に与えるべきではありません。健康な犬に本来必要な栄養素を制限してしまうと、長期的に害を及ぼす可能性があるためです。",
+          "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+          "productNote": "獣医師の処方でよく使われる腎臓ケア療法食:"
+        }
+      ],
+      "buyerGuideTitle": "最高のドッグフードを選ぶための4大原則",
+      "buyerRules": [
+        {
+          "title": "1. 原材料の筆頭が明確な動物性生肉であること",
+          "desc": "「肉副産物粉末」や「家禽ミール」などの曖昧な表記ではなく、「生骨抜き七面鳥肉」「牛肉」「生サーモン」と具体的に明記されたものを選びましょう。",
+          "readMore": "ペットフードの原材料表示は、調理前の重量が多い順に記載されます。「生骨抜き七面鳥」や「新鮮な牛肉」のように具体的な動物名が記載された肉は、タウリンやアルギニン、カルニチンといった必須アミノ酸を最も消化吸収しやすい形で供給します。「動物性油脂」「肉副産物粉末」「家禽ミール」といった曖昧な総称表記は、由来不明の低品質なレンダリング肉が使われている恐れがあるため避けてください。\n\nまた「原材料の分割表記(イングリディエント・スプリッティング)」にも注意が必要です。エンドウ豆、エンドウ豆デンプン、エンドウ豆タンパク質のように炭水化物を細分化して記載することで、実質的には炭水化物が多いにもかかわらず肉を筆頭に見せかける手法があります。\n\n「乾燥ラム肉粉」や「サーモンミール」のように動物名が明記されたミールは、水分を除去した高濃度なタンパク源となるため、透明性の高い良質な製品であれば問題ありません。"
+        },
+        {
+          "title": "2. 70％以上の自然な水分を確保すること",
+          "desc": "水分8〜10％のドライフードのみを食べている犬は慢性的な水分不足になりがちです。必ずウェットフードや骨スープを足しましょう。",
+          "readMore": "犬の祖先が野生で捕食していた獲物の肉は、約70〜75％が水分で構成されていました。そのため犬は水分を食事から摂取することに適応しており、水分を自発的にたくさん飲む反射が本質的に強くありません。水分が8〜10％しか含まれないドライフードのみを与え続けると、慢性的な軽度脱水状態が常態化してしまいます。\n\n尿が長期間濃縮されると腎臓に多大な負担がかかり、ストルバイト結石やシュウ酸カルシウム結石などの尿路結石リスクが劇的に高まります。\n\nドライフードを主食にする場合は、塩分・ネギ類不使用の温かいボーンブロスやぬるま湯を1:1で加えてふやかすか、水分の多いウェットフードや蒸した肉のトッパーを加えて腎臓を保護してください。"
+        },
+        {
+          "title": "3. 合成酸化防止剤・着色料の完全排除",
+          "desc": "BHA、BHT、エトキシキン、プロピレングリコール、赤色○号などの発がん性・毒性が懸念される化学添加物は絶対に避けてください。",
+          "readMore": "賞味期限を1〜2年と長く保つため、安価なペットフードにはBHA(ブチルヒドロキシアニソール)、BHT(ジブチルヒドロキシトルエン)、エトキシキンといった合成化学抗酸化剤が添加されることがあります。これらは発がん性や内分泌かく乱作用(環境ホルモン)、肝機能障害との関連性が数多くの研究で指摘されています。\n\nさらに赤色40号や黄色5号などの合成着色料は、飼い主の購買意欲をそそるためだけに使われており、犬にとっては不要なばかりかアレルギー性皮膚炎や消化器症状の引き金になります。\n\nミックストコフェロール(ビタミンE)、ローズマリー抽出物、クエン酸など、天然由来の酸化防止剤で保存されている安全なフードを必ず選んでください。"
+        },
+        {
+          "title": "4. 炭水化物を25％未満に抑えること",
+          "desc": "犬の唾液には炭水化物を分解するアミラーゼがありません。過剰なデンプンはすい臓に負担をかけ肥満を引き起こします。",
+          "readMore": "犬は広義の肉食動物(通性肉食動物)であり、精製された炭水化物を必須とする生物学的理由はありません。人間と異なり、犬の唾液には口の中でデンプンを分解する消化酵素「アミラーゼ」が含まれておらず、デンプンの分解負担はすべてすい臓に集中します。\n\nペットフードの成分保証値には炭水化物量の表示義務がないため、多くのドライキブルは粒を固める製造上の都合から、トウモロコシや小麦、タピオカなどの炭水化物を45〜60％も含んでいるのが実態です。\n\n高血糖を引き起こす高デンプン食はインスリンの急上昇を招き、肥満、慢性炎症、外耳炎、すい炎のリスクを高めます。「100 − (粗タンパク質 ＋ 粗脂肪 ＋ 粗繊維 ＋ 水分 ＋ 粗灰分)」の計算式で炭水化物割合を算出し、25％未満に抑えられたフードを選びましょう。"
+        }
+      ],
+      "ctaTitle": "愛犬に最適なフードの正確な給餌量を計算する",
+      "ctaDesc": "フレッシュフード、生肉BARF食、プレミアムカリカリのいずれを選んでも、愛犬に最適な日々の給餌グラム数とカロリーがすぐに分かります。",
+      "ctaBtn": "今すぐ適正給餌量を計算する →"
+    },
+    "recipes": {
+      "eyebrow": "手作り食レシピ // NRC＆AAFCO基準",
+      "heroTitle": "愛犬のための手作り健康食レシピ",
+      "heroSubtitle": "完全な栄養バランスを満たした低温調理フードと、自然の摂理に沿った80-10-10生肉BARF食を自宅で作るためのステップバイステップ・ガイド。",
+      "calciumWarningTitle": "手作り犬ごはんの絶対鉄則：カルシウムとリンのバランス",
+      "calciumWarningDesc": "動物の筋肉肉はリンが極めて多く、カルシウムがほとんど含まれていません（比率1:20）。カルシウムを足さずに肉と白米だけを与え続けると、数ヶ月で骨軟化症や骨の脱灰（スカスカになる病気）を引き起こします。骨なし肉450gあたり、必ず純粋な卵殻パウダー小さじ半分（元素カルシウム約900mg）を加えて、安全な「カルシウム：リン＝1.2：1」の比率を保ってください。",
+      "recipesList": [
+        {
+          "tag": "低温スチーム調理",
+          "title": "レシピ1：七面鳥とプレバイオティクス南瓜のやさしいごはん（胃腸が弱い犬用）",
+          "desc": "消化器系が敏感な犬、軟便になりやすい犬、市販チキンにアレルギーがある犬に最適です。",
+          "ingredients": [
+            "七面鳥ひき肉（赤身93/7） — 65%（約900g）",
+            "牛または七面鳥のハツ（心臓・天然タウリン源） — 10%（約140g）",
+            "無添加カボチャピュレ（水溶性食物繊維） — 10%（約140g）",
+            "蒸しホウレンソウ＆細かく刻んだズッキーニ — 10%（約140g）",
+            "天然アラスカ産サーモンオイル（EPA/DHA） — 2%（大さじ1.5）",
+            "微粉末卵殻パウダー（天然カルシウム） — 3%（小さじ1杯強）"
+          ],
+          "prep": "七面鳥ひき肉とハツをフライパンで弱火で軽く炒めます（中心温度70℃を目安に加熱しすぎない）。野菜を蒸してカボチャピュレと混ぜ、粗熱を完全にとります。最後にサーモンオイルと卵殻パウダーを均一に混ぜ込み、1食分ずつ小分けして冷凍保存します。"
+        },
+        {
+          "tag": "生食BARF",
+          "title": "レシピ2：牛肉と鴨肉の先祖伝来80-10-10 生肉BARF食",
+          "desc": "消化機能が健全で胃酸分泌が活発な成犬のための、生物学的に適正な生食メニュー。",
+          "ingredients": [
+            "牧草牛（グラスフェッド）赤身角切り肉 — 70%",
+            "牛ハツ（L-カルニチンとコエンザイムQ10が豊富） — 10%",
+            "生の可食鴨ネックまたは鶏ガラ — 10%（天然の生骨とカルシウム）",
+            "牛レバー（肝臓・ビタミンAとB群） — 5%",
+            "牛キドニー（腎臓）または脾臓（分泌内臓器官） — 5%"
+          ],
+          "prep": "赤身肉とハツを一口大にカットします。生骨は愛犬が丸呑みしない適切なサイズを選びます。内臓はデジタルキッチンスケールで正確に計量します。寄生虫対策として、給餌前にマイナス20℃以下で最低3週間以上冷凍庫で凍結保存してください。"
+        },
+        {
+          "tag": "スーパーフードトッピング",
+          "title": "レシピ3：抗酸化スーパーフード トッピング（カリカリの栄養強化）",
+          "desc": "市販のドライフードの20％を新鮮な自然食材に置き換えるための高機能トッパー。",
+          "ingredients": [
+            "放し飼い有精卵（半熟ポーチドエッグ） — 40%",
+            "蒸しブロッコリースプラウト＆ワイルドブルーベリー — 30%",
+            "じっくり煮出した牛骨ボーンブロススープ — 20%",
+            "オーガニックヘンプシード＆ケルプパウダー — 10%"
+          ],
+          "prep": "卵を4分間軽く茹でて半熟にします。スプラウトをさっと蒸し、温めたボーンブロスとブルーベリーと一緒に軽く潰します。普段のドライフードに大さじ2〜4杯を毎食トッピングしてください。"
+        }
+      ],
+      "calciumGuideTitle": "手作り犬ごはんで安全に使えるカルシウム源",
+      "calciumGuideItems": [
+        {
+          "title": "微粉末卵殻パウダー",
+          "ratio": "骨なし肉450gに対して小さじ1/2",
+          "desc": "純度95％の炭酸カルシウム。水洗いして天日干しまたは加熱殺菌した卵の殻をミルで細かく粉砕して使用します。"
+        },
+        {
+          "title": "生の可食生肉骨（絶対に加熱しない）",
+          "ratio": "食事全体の重量の10％",
+          "desc": "鴨ネック、鶏手羽先など。加熱した骨は硬化して縦に裂け、食道や腸を突き破る致命的な危険があるため絶対に生で与えてください。"
+        },
+        {
+          "title": "獣医用ボーンミール（骨粉サプリ）",
+          "ratio": "製品ラベルの指示に従う",
+          "desc": "微小結晶性ヒドロキシアパタイト。カルシウムとリンが天然の2:1比率で含まれており生体利用効率に優れます。"
+        }
+      ]
+    },
+    "toxic": {
+      "eyebrow": "危険食材 // 犬が食べてはいけない危険な食べ物",
+      "dangerTitle": "家庭内にある犬にとって猛毒な危険食材",
+      "dangerIntro": "人間の食べ物に含まれる特定の化学成分は、犬の代謝酵素では無毒化できず、急性臓器不全や突然死を引き起こします。",
+      "dangerList": [
+        {
+          "name": "チョコレート・ココア",
+          "toxin": "テオブロミンおよびカフェイン",
+          "symptoms": "激しい嘔吐、パンティング（過呼吸）、不整脈、筋肉の硬直、けいれん発作、心不全。",
+          "risk": "高危険度・致死性あり"
+        },
+        {
+          "name": "ブドウ・レーズン・マスカット",
+          "toxin": "酒石酸（酒石酸塩）",
+          "symptoms": "無気力、脱水症状、摂取後24〜72時間以内に急性腎不全（乏尿・無尿）を発症。",
+          "risk": "極めて猛毒・命の危険"
+        },
+        {
+          "name": "キシリトール（白樺糖 / 合成甘味料）",
+          "toxin": "合成糖アルコール",
+          "symptoms": "インスリンの急激な大量放出による重度の低血糖発作、虚脱、数時間以内の急性肝壊死。",
+          "risk": "最高度の緊急事態"
+        },
+        {
+          "name": "タマネギ・長ネギ・ニンニク・ニラ",
+          "toxin": "有機硫黄化合物（アリルプロピルジスルフィド）",
+          "symptoms": "赤血球のヘモグロビン破壊、ハインツ小体性溶血性貧血、赤褐色尿、チアノーゼ。",
+          "risk": "蓄積毒性・極めて危険"
+        },
+        {
+          "name": "マカダミアナッツ",
+          "toxin": "未同定の神経毒性物質",
+          "symptoms": "後ろ足の麻痺・ふらつき、高体温、嘔吐、関節の激痛。",
+          "risk": "中等度〜重篤"
+        },
+        {
+          "name": "加熱した鳥や魚の骨全般",
+          "toxin": "物理的な鋭利破片による穿孔",
+          "symptoms": "消化管の裂傷、大量の体内出血、腹膜炎、閉塞性イレウス。",
+          "risk": "緊急開腹手術が必要"
+        }
+      ],
+      "emergencyTitle": "誤飲・誤食中毒が疑われる場合の緊急対処法",
+      "emergencySteps": [
+        "1. 直ちに愛犬の口から取り出す：何を、どのくらいの量、何時何分に食べたか、パッケージを確保してください。",
+        "2. 獣医師の指示なしに無理に吐かせない：オキシドール等で無理に吐かせると、腐食性物質や骨の破片が食道を破壊し二次災害を起こします。",
+        "3. 直ちに動物病院に電話する：夜間救急動物病院またはかかりつけ医へ直ちに連絡し、指示を仰いでください。"
+      ],
+      "safeTitle": "愛犬に与えても100％安全で健康に良い野菜・果物",
+      "safeIntro": "以下の食材は、抗酸化物質、水溶性食物繊維、ビタミンを豊富に含み、安全に毎日のトッピングとして活用できます：",
+      "safeFoods": [
+        {
+          "name": "ブルーベリー",
+          "benefit": "抗酸化作用を持つアントシアニンとポリフェノールが細胞の老化を防ぎます。"
+        },
+        {
+          "name": "蒸しカボチャ",
+          "benefit": "豊富な水溶性食物繊維が腸内環境を整え、下痢と便秘の両方を改善します。"
+        },
+        {
+          "name": "ニンジン",
+          "benefit": "低カロリーでβカロテンが豊富。シャキシャキした食感で歯の清掃にも役立ちます。"
+        },
+        {
+          "name": "サヤエンドウ・サヤインゲン",
+          "benefit": "食物繊維が豊富で低GI。肥満気味の愛犬の満足感を高める減量食に最適。"
+        },
+        {
+          "name": "リンゴ（※種と芯を完全に取り除く）",
+          "benefit": "水溶性ペクチンとビタミンCが腸内善玉菌を増やします。"
+        }
+      ]
+    },
+    "brands": {
+      "eyebrow": "ブランド分析 // 人気ドッグフードの評価とリコール履歴",
+      "heroTitle": "有名ドッグフードの客観的評価とリコール履歴",
+      "heroSubtitle": "主要ブランドの原材料品質、AAFCO表示基準の適合性、過去のリコール記録を忖度なしで検証します。",
+      "brandsList": [
+        {
+          "name": "ブルーバッファロー（Blue Buffalo）",
+          "grade": "評価：B+",
+          "pros": "第一原材料が生肉。トウモロコシ・小麦・大豆不使用。ビタミンを守る冷圧成形「ライフソースビッツ」配合。",
+          "cons": "炭水化物比率が45〜50％と高め。過去に水分過剰によるカビやビタミンD過剰配合での自主回収履歴あり。",
+          "verdict": "市販ドライフードの中では上位水準。新鮮な水分を補うためフレッシュトッピングの併用を推奨します。"
+        },
+        {
+          "name": "レイチェルレイ ニュートリッシュ",
+          "grade": "評価：C+ / B-",
+          "pros": "手頃な価格で入手しやすい。上位ライン（Peak/Dish）は生肉の含有割合が高く設計されています。",
+          "cons": "普及グレードではエンドウ豆タンパクやコーングルテンミールでのかさ増しが見られ、過去のFDA調査対象に含まれました。",
+          "verdict": "予算重視の場合は上位ラインを選択し、原材料表示の「豆類の分割表記」に注意してください。"
+        },
+        {
+          "name": "ピュアバランス（Pure Balance）",
+          "grade": "評価：B（コスパ優秀）",
+          "pros": "プライベートブランドながら第一原材料に肉を使用し、人工着色料や小麦不使用で極めてコストパフォーマンスが高い。",
+          "cons": "外部OEM委託製造。炭水化物比率は標準的。",
+          "verdict": "一般量販店やスーパーで購入できる市販フードの中では最も良心的な選択肢のひとつ。"
+        },
+        {
+          "name": "オリー（Ollie）フレッシュフード",
+          "grade": "評価：A（最高評価）",
+          "pros": "100％ヒューマングレードの高品質な肉と野菜。低温加熱で個包装パウチ。栄養素の吸収率が抜群。",
+          "cons": "月額費用が高価（月2万〜4万円）。冷凍庫の保管スペースが必要。",
+          "verdict": "代謝機能、毛並みの艶、消化器の健康寿命を最優先に考える飼い主様にとってのゴールドスタンダード。"
+        },
+        {
+          "name": "オープンファーム（Open Farm）",
+          "grade": "評価：A-",
+          "pros": "すべての原材料の産地と人道的農場基準（ヒューメイン認証）を完全公開。持続可能な魚介類を採用。",
+          "cons": "プレミアム価格帯。取り扱い実店舗が限定的。",
+          "verdict": "エシカルな調達基準と確かな肉質、副産物ミール完全不使用を重視する方に最適。"
+        }
+      ],
+      "recallsTitle": "ペットフードのリコール（回収）情報の見方",
+      "recallsDesc": "米FDAのリコール基準は3段階に分かれます：クラスI（サルモネラ菌感染やビタミンD過剰など死亡リスクのある重大事態）、クラスII（一時的な健康被害）、クラスIII（表示違反等）。袋のロット番号を確認する習慣をつけましょう。",
+      "methodTitle": "当サイトのフード評価における4つの基準",
+      "methodPillars": [
+        {
+          "title": "1. タンパク質源の透明性",
+          "desc": "「肉類」「家禽ミール」ではなく、明確な部位名が記載された骨抜き生肉であること。"
+        },
+        {
+          "title": "2. 炭水化物比率の抑制",
+          "desc": "犬の代謝に適した健康維持のため、デンプン質を40％未満に抑えていること。"
+        },
+        {
+          "title": "3. 原産地と調達の透明性",
+          "desc": "遺伝子組み換え不使用や人道的農場基準など、トレーサビリティが確保されていること。"
+        },
+        {
+          "title": "4. 安全基準とリコール実績",
+          "desc": "第三者機関による菌検査の実施やクリーンな安全管理体制が敷かれていること。"
+        }
+      ]
+    },
+    "allergies": {
+      "eyebrow": "アレルギー対策ガイド // 食物アレルギーと低アレルゲン食",
+      "heroTitle": "アレルギー・皮膚炎・お腹が弱い犬のためのフードガイド",
+      "heroSubtitle": "食物アレルギーのメカニズム、単一タンパク質（新奇タンパク質）の選び方、8週間の除去食試験プロトコルを詳しく解説。",
+      "allergensTitle": "犬に最も多い食物アレルゲンTOP5",
+      "allergensIntro": "犬の食物アレルギーは、特定のタンパク質に対する免疫過剰反応です。臨床報告の多い順に以下の通りです：",
+      "allergensList": [
+        {
+          "name": "1. 市販ブロイラーチキン（全体の約60％）",
+          "desc": "市販ペットフードに極めて多用されているため、最も抗体が作られやすいアレルゲンです。"
+        },
+        {
+          "name": "2. 牛肉（全体の約30％）",
+          "desc": "赤身肉アレルギーを持つ犬では、激しい皮膚の痒みや外耳炎の主な原因となります。"
+        },
+        {
+          "name": "3. 乳製品・チーズ",
+          "desc": "犬は成犬になるとラクターゼ酵素が失われるため、乳糖不耐症による下痢や腹鳴を引き起こします。"
+        },
+        {
+          "name": "4. 小麦・トウモロコシのグルテン",
+          "desc": "腸粘膜バリアを荒らし、体内の慢性炎症や皮膚のマラセチア酵母菌の増殖を助長します。"
+        },
+        {
+          "name": "5. 大豆・豆類プロテイン",
+          "desc": "安価な増量材として使われる植物性タンパク質ですが、消化不良やガス発生の原因になります。"
+        }
+      ],
+      "eliminationTitle": "「8週間 除去食試験（エリミネーション）」の手順",
+      "eliminationSteps": [
+        {
+          "step": "ステップ1",
+          "title": "一度も食べたことのない新奇タンパク質を1種類選ぶ",
+          "desc": "鹿肉（ベニソン）、カンガルー肉、ウサギ肉など、愛犬が過去に一度も口にしたことのないタンパク質とカボチャなど消化の良い単一炭水化物に限定します。"
+        },
+        {
+          "step": "ステップ2",
+          "title": "完全なコンタミネーション防止（厳格な8週間）",
+          "desc": "8週間、指定された食事と水以外は絶対に与えてはいけません。市販のおやつ、人間の食事のおすそ分け、フレーバー付きの薬も禁止です。"
+        },
+        {
+          "step": "ステップ3",
+          "title": "1食材ずつの負荷試験（原因物質の特定）",
+          "desc": "痒みや下痢が完全に治まったら、疑わしい食材（例：鶏肉）を1種類だけ7日間与えて反応を観察します。症状が再発すればアレルゲン確定です。"
+        }
+      ],
+      "novelTitle": "おすすめの新奇タンパク質（低アレルゲン肉）",
+      "novelProteins": [
+        {
+          "name": "鹿肉（ベニソン）",
+          "desc": "高タンパク低脂質でビタミンB群が豊富。抗体を持っている犬が極めて少ない優秀な赤身肉。"
+        },
+        {
+          "name": "ウサギ肉（ラビット）",
+          "desc": "必須アミノ酸バランスに優れ、消化吸収率が高く、漢方医学でも体を温め炎症を鎮める肉とされます。"
+        },
+        {
+          "name": "鴨肉（ダック）",
+          "desc": "鶏肉アレルギーの犬にとって安全な鳥肉代替品。鉄分と不飽和脂肪酸が豊富。"
+        },
+        {
+          "name": "カンガルー肉",
+          "desc": "オーストラリアの大自然で育った天然野生肉。脂肪分が約2％と極めて低く最もクリーンな肉。"
+        }
+      ]
+    },
+    "calculator": {
+      "eyebrow": "完全無料 // 給餌量＆カロリー計算機",
+      "noticeTitle": "重要なお知らせ：",
+      "noticeText": "本ツールは一般的な栄養学および教育目的で提供されています。獣医師の診断や医療処置に代わるものではありません。",
+      "heroTitle": "愛犬の給餌量＆適正カロリー計算機",
+      "heroSubtitle": "愛犬の体重、年齢区分、活動レベル、体型スコア（BCS）を入力するだけで、正確な必要エネルギー量（RER・MER）と1食あたりのグラム数を瞬時に算出します。"
+    },
+    "breeds": {
+      "eyebrow": "犬種別栄養ガイド // 獣医師推奨給餌基準",
+      "targetWeight": "理想体重",
+      "dailyCalories": "1日の推定カロリー",
+      "freshDaily": "手作り食の1日量",
+      "kibbleDaily": "ドライフードの1日量",
+      "cups": "カップ",
+      "reqsTitle": "{name}に必要な栄養基準と食事の特徴",
+      "reqsIntro": "{category}犬種に分類され、平均体重が{w0}〜{w1}ポンド（約{Math.round(w0*0.453)}〜{Math.round(w1*0.453)}kg）の{name}には、体質に合わせた栄養設計が必要です：",
+      "predispositionsTitle": "気をつけたい体質と食事管理：",
+      "feedingRoutineTitle": "おすすめの給餌スケジュール：",
+      "feedingRoutineDesc": "成犬の{name}には、1日2回（朝50％・夕方50％）に分けて与えるのが理想的です。常に清潔な新鮮水を用意してください。ドライフードを与える場合は、ぬるま湯や骨スープでふやかすと腎臓の健康維持につながります。",
+      "ctaTitle": "{name}専用の食事プランを作成する",
+      "ctaSubtitle": "子犬期・成犬・シニア犬、正確な体重、運動量、去勢・避妊の有無に合わせて精密な給餌量を計算します。",
+      "ctaBtn": "{name}の計算機を起動する →",
+      "faqTitle": "{name}の食事に関するよくある質問",
+      "faqSubtitle": "給餌回数、適正体重の維持、おすすめの食材について。"
+    },
+    "comparisonTable": {
+      "eyebrow": "栄養比較 // フレッシュフード VS ドライフード",
+      "title": "ホールフード（自然食）が生化学的にドライフードより優れている理由",
+      "subtitle": "加熱加工温度、給餌量の精度、実際の月額コストを徹底比較 — 5年間の長寿研究において新鮮な自然食を食べた犬が最大32か月長く生きたことと直結する臨床変数です。",
+      "scrollHint": "↔ 横にスクロールしてご覧ください",
+      "colMetric": "栄養・臨床評価項目",
+      "colDfp": "✨ DogFoodPlanner",
+      "colSubs": "定期便フレッシュフード",
+      "colKibble": "市販ドライフード（カリカリ）",
+      "rows": [
+        {
+          "metric": "加工・調理方法",
+          "dfp": "低温スチーム（約70℃）または生食 — 酵素が活性状態",
+          "subs": "真空調理（低温調理）後に急速冷凍",
+          "kibble": "200℃以上の超高温エクストルーダー加工"
+        },
+        {
+          "metric": "給餌量の精度",
+          "dfp": "体重・年齢・活動量に応じたRER/MER代謝計算による厳密なグラム単位",
+          "subs": "大まかな体重範囲による固定給餌チャート",
+          "kibble": "パッケージ記載の標準給餌表 — 20〜30％過剰になりがち"
+        },
+        {
+          "metric": "純炭水化物割合",
+          "dfp": "5％未満（必要な野菜繊維のみ・増量剤ゼロ）",
+          "subs": "10％〜20％",
+          "kibble": "45％〜60％（トウモロコシ・小麦・エンドウ豆デンプン等）"
+        },
+        {
+          "metric": "生物学的水分量",
+          "dfp": "70％〜75％（腎臓・泌尿器の健康を支える生体水分）",
+          "subs": "70％〜75%",
+          "kibble": "8％〜10％（慢性的・潜在的な脱水リスク）"
+        },
+        {
+          "metric": "栄養素の完全性",
+          "dfp": "酸化を最小限に抑制 — オメガ3や酵素を保持",
+          "subs": "中程度 — 一部の熱に弱い栄養素が変性",
+          "kibble": "高温加工による脂質酸化および終末糖化産物（AGEs）の生成"
+        },
+        {
+          "metric": "原材料の透明性",
+          "dfp": "100％グラム数と配合比率を完全公開 — 全てを飼い主が管理",
+          "subs": "独自ブレンド（詳細な配合比率は非公開）",
+          "kibble": "曖昧な肉粉（ミール）表記や原材料の分割記載"
+        },
+        {
+          "metric": "月々の平均食費（体重23kgの犬）",
+          "dfp": "約12,000円〜19,000円（食材のみ・自宅調達）",
+          "subs": "約38,000円〜68,000円 / 月",
+          "kibble": "約9,000円〜15,000円 / 月"
+        }
+      ]
+    },
+    "faqPage": {
+      "badge": "ナレッジベース // 獣医師監修40以上のQ&A",
+      "exploreHubsTitle": "目的別の専門栄養ガイドを探す",
+      "exploreHubsSubtitle": "愛犬の健康と長寿を願う飼い主様のために作成された深掘り特集ガイド。",
+      "cardBestFood": "手作り食、生肉BARF食、高タンパクカリカリ、お腹が弱い犬用フードの徹底比較。",
+      "cardCalc": "愛犬の安静時代謝量（RER）と1日の適正給餌グラム数を導き出す計算機。",
+      "cardRecipes": "必須カルシウムを完全に補正した低温調理ごはん＆80-10-10生肉BARFレシピ。",
+      "cardAllergies": "新奇タンパク質（低アレルゲン肉）の選び方と8週間の除去食試験手順。",
+      "cardToxic": "犬が誤飲すると命に関わる危険食材一覧、安全な果物・野菜の適正量。",
+      "cardBrands": "ブルーバッファロー、オリジン、オリーなどの客観的レビューとリコール履歴。"
+    },
+    "faqSingle": {
+      "reviewedBy": "確認：DogFoodPlanner編集チーム",
+      "updated": "最終更新：2026年",
+      "directQuickAnswer": "結論・要約回答",
+      "clinicalAnalysis": "詳細な栄養分析・解説",
+      "topics": "関連タグ：",
+      "ctaBadge": "🐾 無料の犬栄養計算エンジン",
+      "ctaTitle": "愛犬に必要な1日のカロリーと食事量を今すぐ計算",
+      "ctaSubtitle": "体重、年齢、運動量に応じた正確な代謝量（RER/MER）と、手作り食・生食の給餌グラム数を瞬時に算出します。",
+      "ctaBtn": "今すぐ適正給餌量を計算する →",
+      "relatedTitle": "関連する犬の栄養・食事Q&A",
+      "readAnswer": "回答全文を読む →",
       "referencedInAnswer": "Référencé dans cette réponse",
       "buyNow": "Acheter maintenant"
+    },
+    "bestFoodSingle": {
+      "rankBadge": "健康フードTOP5 // 順位",
+      "reviewedBy": "確認：DogFoodPlanner編集チーム",
+      "nutritionalScore": "栄養スコア",
+      "strengths": "メリット",
+      "tradeoffs": "デメリット",
+      "fullBreakdown": "詳細解説",
+      "exampleProduct": "このカテゴリーの製品例",
+      "previousRank": "前の順位",
+      "nextRank": "次の順位",
+      "backToRanking": "TOP5ランキング一覧に戻る",
+      "viewOnAmazon": "Amazonで見る"
+    }
   },
-  "bestFoodSingle": {
-    "rankBadge": "健康フードTOP5 // 順位",
-    "reviewedBy": "確認：DogFoodPlanner編集チーム",
-    "nutritionalScore": "栄養スコア",
-    "strengths": "メリット",
-    "tradeoffs": "デメリット",
-    "fullBreakdown": "詳細解説",
-    "exampleProduct": "このカテゴリーの製品例",
-    "previousRank": "前の順位",
-    "nextRank": "次の順位",
-    "backToRanking": "TOP5ランキング一覧に戻る",
-    "viewOnAmazon": "Amazonで見る"
-  }
-},
-  fr: {
-  "about": {
-    "heroTitle": "À Propos de DogFoodPlanner : Les Repas Canins en Toute Simplicité",
-    "heroSubtitle": "Découvrez DogFoodPlanner.com, notre mission et le fonctionnement de notre calculateur de ration pour chien 100% gratuit.",
-    "missionBadge": "NOTRE MISSION // PLANIFICATION DES REPAS",
-    "whyTitle": "Pourquoi DogFoodPlanner a été Créé",
-    "whyP1": "Nous avons créé DogFoodPlanner pour aider les propriétaires de chiens à planifier les repas et les rations en toute confiance. Nous étudions les recommandations publiques disponibles pour les transformer en guides et outils gratuits et faciles d'accès.",
-    "whyP2": "",
-    "whoTitle": "Qui Sommes-Nous",
-    "whoContent": "DogFoodPlanner est un site indépendant géré par des passionnés de chiens, chercheurs et rédacteurs. Nous ne sommes pas vétérinaires. Consultez toujours votre vétérinaire avant de modifier l'alimentation de votre chien, en particulier pour les chiots, les chiens seniors ou les animaux ayant des problèmes de santé.",
-    "methodTitle": "Notre Méthodologie Nutritionnelle",
-    "pillars": [
-      {
-        "tag": "01 // ESTIMATION DES CALORIES",
-        "title": "Estimation des Calories",
-        "desc": "Notre calculateur utilise la formule standard du Besoin Énergétique au Repos (70 × poids en kg^0,75) et des coefficients d'activité courants pour estimer les calories quotidiennes."
-      },
-      {
-        "tag": "02 // SOURCES DE RÉFÉRENCE",
-        "title": "Sources de Référence",
-        "desc": "Nous nous référons aux recommandations publiées par des organismes tels que l'AAFCO et le National Research Council. Notre contenu est éducatif et ne remplace pas l'avis d'un professionnel."
-      },
-      {
-        "tag": "03 // TRANSPARENCE",
-        "title": "Transparence",
-        "desc": "Certaines pages contiennent des liens d'affiliation, notamment des liens Partenaires Amazon. Si vous effectuez un achat via ces liens, nous pouvons percevoir une petite commission sans aucun surcoût pour vous. Cela n'influence jamais nos recommandations."
-      }
-    ],
-    "ctaTitle": "Prêt à Calculer les Besoins Nutritionnels de Votre Chien ?",
-    "ctaDesc": "Essayez notre calculateur interactif, découvrez nos guides sur les allergies canines et lisez nos guides sur l'alimentation pour chien.",
-    "ctaBtn": "Lancer le Calculateur Nutritionnel Gratuit →",
-    "amazonDisclaimer": "En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises."
-  },
-  "contact": {
-    "eyebrow": "SUPPORT & CONTACT // DEMANDES DIRECTES",
-    "cards": [
-      {
-        "icon": "📧",
-        "title": "Questions Générales",
-        "desc": "Commentaires et demandes générales :",
-        "email": "hello@dogfoodplanner.com"
-      },
-      {
-        "icon": "🐾",
-        "title": "Recherche Nutritionnelle",
-        "desc": "Formules et questions vétérinaires :",
-        "email": "research@dogfoodplanner.com"
-      },
-      {
-        "icon": "🛡️",
-        "title": "Support Technique",
-        "desc": "Signalement de bugs et calculs :",
-        "email": "legal@dogfoodplanner.com"
-      }
-    ],
-    "formTitle": "Envoyez un Message à Notre Équipe Vétérinaire",
-    "formDesc": "Une question sur nos formules calorigènes NRC ou besoin d’aide pour une ration BARF ? Nous répondons sous 24 heures ouvrées.",
-    "nameLabel": "Votre Nom",
-    "namePlaceholder": "ex. Thomas Martin",
-    "emailLabel": "Votre Adresse Email",
-    "emailPlaceholder": "thomas@example.com",
-    "subjectLabel": "Objet de la Demande",
-    "subjectOptions": [
-      "Question Générale / Avis",
-      "Nutrition Canine & Recettes",
-      "Formule du Calculateur Vétérinaire",
-      "Signalement de Bug"
-    ],
-    "messageLabel": "Votre Message",
-    "messagePlaceholder": "Parlez-nous de votre chien (race, poids, âge) et de la manière dont nous pouvons vous aider...",
-    "submitBtn": "Envoyer le Message →",
-    "notice": "Urgence Vétérinaire : Si votre animal présente des symptômes aigus d’intoxication ou de détresse sévère, contactez sans attendre une clinique vétérinaire d’urgence.",
-    "faqTitle": "Vous cherchez une réponse rapide ?",
-    "faqDesc": "Consultez notre base de connaissances de plus de 40 réponses vétérinaires sur le manque d’appétit, le BARF, la nourriture pour chat et les marques de croquettes.",
-    "faqBtn": "Consulter Toute la FAQ →",
-    "successTitle": "✓ Message préparé — envoi à hello@dogfoodplanner.com",
-    "successDesc": "Votre client de messagerie devrait s'ouvrir avec un message pré-rédigé adressé à hello@dogfoodplanner.com. Cliquez simplement sur Envoyer dans votre application mail et il arrivera dans notre boîte de réception."
-  },
-  "privacy": {
-    "eyebrow": "MENTIONS LÉGALES // POLITIQUE DE CONFIDENTIALITÉ",
-    "lastUpdated": "Mis à jour : 13 octobre 2026",
-    "intro": "Sur DogFoodPlanner.com, nous respectons votre vie privée. Cette politique détaille comment vos données sont traitées et protégées.",
-    "sections": [
-      {
-        "title": "1. Informations Que Nous Ne Collectons Pas",
-        "content": "Les données de santé de votre animal vous appartiennent. L’utilisation de notre calculateur de ration pour chien ne requiert aucune inscription, mot de passe ou carte bancaire. Les profils canins, poids et choix de repas saisis dans le calculateur sont traités localement sur votre navigateur (côté client) et ne sont jamais enregistrés sur des bases de données externes."
-      },
-      {
-        "title": "2. Données Techniques Anonymes",
-        "content": "Comme la plupart des plateformes web modernes, nos serveurs CDN collectent des données techniques anonymisées courantes (adresse IP masquée, navigateur, page de provenance et horodatage) pour sécuriser l’infrastructure et prévenir les attaques."
-      },
-      {
-        "title": "3. Cookies et Stockage Local (localStorage)",
-        "content": "Nous utilisons le localStorage pour mémoriser votre langue et votre plan de repas sur votre appareil. Si vous cliquez sur un lien d'affiliation, le site tiers (comme Amazon) peut déposer ses propres cookies."
-      },
-      {
-        "title": "4. Liens Vers des Tiers",
-        "content": "Notre site contient des liens de référence vers des recherches publiées, les normes de l'AAFCO, les bases de données du NRC et des ressources externes. Nous ne sommes pas responsables des pratiques de confidentialité ou du contenu des sites tiers."
-      },
-      {
-        "title": "5. Divulgation d'Affiliation",
-        "content": "DogFoodPlanner participe au Programme Partenaires d’Amazon Services LLC. En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises, sans aucun surcoût pour vous."
-      },
-      {
-        "title": "6. Protection des Mineurs",
-        "content": "Nos outils sont destinés aux adultes propriétaires d’animaux de compagnie. Nous ne collectons pas sciemment de données relatives aux mineurs de moins de 13 ans."
-      },
-      {
-        "title": "7. Mises à Jour et Contact",
-        "content": "Cette politique peut être mise à jour pour refléter l’évolution du service. Pour toute question, écrivez à privacy@dogfoodplanner.com."
-      }
-    ]
-  },
-  "terms": {
-    "eyebrow": "MENTIONS LÉGALES // CONDITIONS GÉNÉRALES D’UTILISATION",
-    "lastUpdated": "Mise à jour : Janvier 2026",
-    "intro": "Veuillez lire attentivement ces conditions générales avant d’utiliser DogFoodPlanner.com. L’accès au site vaut acceptation pleine et entière de celles-ci.",
-    "sections": [
-      {
-        "title": "1. Acceptation des Conditions",
-        "content": "En naviguant sur DogFoodPlanner.com, vous reconnaissez avoir pris connaissance et accepté sans réserve les présentes conditions d’utilisation. Si vous êtes en désaccord, veuillez cesser toute utilisation."
-      },
-      {
-        "title": "2. Avertissement Vétérinaire et Médical",
-        "content": "Les informations, calculateurs et recettes proposés sur DogFoodPlanner.com sont fournis à des fins purement éducatives et informatives sur la base des modèles NRC et FEDIAF. Ils NE constituent EN AUCUN CAS un avis médical vétérinaire, un diagnostic ou une prescription personnalisée. Consultez systématiquement un vétérinaire ou un spécialiste en nutrition animale (DACVN) avant tout changement alimentaire majeur."
-      },
-      {
-        "title": "3. Utilisation des Calculateurs Interactifs",
-        "content": "Les résultats caloriques (RER et MER) et les rations en grammes sont des points de départ théoriques. Le métabolisme varie selon la stérilisation, l’activité, l’environnement et la génétique. Il appartient au maître d’évaluer la note d’état corporel (BCS) et d’ajuster les portions."
-      },
-      {
-        "title": "4. Sécurité des Rations Ménagères et Équilibre en Calcium",
-        "content": "L’alimentation maison ou crue impose une couverture stricte de l’ensemble des micronutriments. Distribuer de la viande sans os sans complément calcique adapté entraîne en quelques mois une déminéralisation osseuse grave. L’utilisateur assume l’entière responsabilité de l’équilibre de ses préparations."
-      },
-      {
-        "title": "5. Propriété Intellectuelle",
-        "content": "L’ensemble des contenus, algorithmes, interfaces graphiques et textes présents sur DogFoodPlanner.com sont protégés par le droit d’auteur et demeurent la propriété exclusive de DogFoodPlanner."
-      },
-      {
-        "title": "6. Limitation de Responsabilité",
-        "content": "DogFoodPlanner.com et ses contributeurs ne sauraient être tenus responsables des dommages directs ou indirects consécutifs à l’utilisation ou à l’impossibilité d’utiliser les outils mis à disposition."
-      }
-    ]
-  },
-  "bestFood": {
-    "eyebrow": "GUIDE CLINIQUE // CLASSEMENT ALIMENTATION CANINE 2026",
-    "rankingsTitle": "Quels Sont les 5 Meilleurs Aliments pour Chien en 2026 ?",
-    "rankingsIntro": "Les recherches sur la longevité canine confirment qu’une cuisson minimale et une hydratation biologique supérieure à 70% sont les deux facteurs les plus déterminants de la vitalité et de la santé rénale.",
-    "readMoreLabel": "Lire la suite →",
-    "readLessLabel": "Afficher moins ↑",
-    "rankings": [
-      {
-        "rank": "01",
-        "title": "Ration Ménagère Fraîche Cuite à Basse Température",
-        "score": "98/100",
-        "pros": "Viandes et légumes réels cuits doucement à 70°C. Préserve plus de 70% d’humidité naturelle, les enzymes actives et les vitamines intactes.",
-        "cons": "Nécessite une conservation au congélateur ou réfrigérateur. Coût supérieur aux croquettes bas de gamme.",
-        "readMore": "La ration fraîche cuite à basse température arrive en tête du classement car elle imite un repas fait maison sans sacrifier la sécurité alimentaire. Les ingrédients proviennent d'installations agréées USDA pour l'alimentation humaine, puis sont cuits juste assez longtemps à basse température (environ 71 °C) pour éliminer les pathogènes tout en préservant les protéines fragiles, la taurine et les vitamines B hydrosolubles que l'extrusion à haute température détruit.\n\nComme cet aliment contient déjà plus de 70 % d'humidité, il soulage les reins et réduit la déshydratation chronique légère fréquente chez les chiens nourris exclusivement aux croquettes. Il convient particulièrement bien aux chiens en convalescence, aux seniors dont la sensation de soif diminue, ou aux races sujettes aux sensibilités alimentaires, car les recettes sont généralement à protéine unique et exemptes de farines de viande transformée ou de conservateurs synthétiques.\n\nLe principal compromis reste logistique : elle nécessite de la place au réfrigérateur ou au congélateur, et les portions doivent être décongelées avant chaque repas. Si vous n'êtes pas prêt à cuisiner vous-même, plusieurs marques disposant de cuisines agréées USDA proposent des versions longue conservation de ce même format cuit en douceur, une façon simple de tester cette catégorie avant de vous engager dans une routine entièrement faite maison.",
-        "productKey": "justfoodfordogs-chicken-white-rice",
-        "productNote": "Une option longue conservation pour tester cette catégorie :"
-      },
-      {
-        "rank": "02",
-        "title": "Alimentation Crue Ancestrale BARF 80-10-10",
-        "score": "95/100",
-        "pros": "Équilibre biologique adapté aux carnivores : 80% muscle, 10% os charnu, 10% abats. Prévient le tartre et développe une masse musculaire sèche.",
-        "cons": "Exige une hygiène rigoureuse et un équilibrage précis du calcium.",
-        "readMore": "Le ratio 80-10-10 (80 % de viande musculaire, 10 % d'os cru comestible, 10 % d'organes sécrétants) est conçu pour reproduire ce qu'un ancêtre canin sauvage obtiendrait d'une proie entière. Correctement appliqué, il fournit un rapport calcium-phosphore naturellement équilibré directement issu de l'os, soutient la masse musculaire maigre, et l'action mécanique de la mastication d'os crus aide à détacher le tartre des dents.\n\nComme rien n'est cuit, les enzymes et les acides aminés sensibles à la chaleur restent parfaitement intacts. Le défi réside dans la précision : trouver des os crus sûrs et respecter exactement le ratio exigent une véritable discipline, car une mauvaise estimation du pourcentage d'os est l'erreur la plus courante, pouvant entraîner constipation ou, à terme, des troubles squelettiques chez les chiots en croissance. La viande crue doit également être manipulée avec la même hygiène que tout aliment cru destiné à l'homme (planches à découper séparées, réfrigération, nettoyage rapide).\n\nLa plupart des foyers trouvent plus simple de commencer avec un produit cru formulé par des professionnels qui respecte déjà ce ratio, avant de passer à des repas crus entièrement personnalisés, sourcés et pesés à la maison.",
-        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-        "productNote": "Une option crue déjà équilibrée qui évite les calculs :"
-      },
-      {
-        "rank": "03",
-        "title": "Nourriture Crue Lyophilisée & Déshydratée à l’Air",
-        "score": "91/100",
-        "pros": "Offre la qualité nutritionnelle du cru avec la facilité de conservation à température ambiante.",
-        "cons": "Doit impérativement être réhydratée à l’eau tiède ou au bouillon d’os avant distribution.",
-        "readMore": "Le séchage à l'air et la lyophilisation retirent tous deux l'humidité de la viande crue à basse température, préservant un profil nutritionnel et enzymatique proche du cru tout en rendant l'aliment stable à température ambiante, sans besoin de congélateur. La lyophilisation utilise un procédé de vide à froid qui tend à mieux préserver les nutriments que le séchage à l'air, bien qu'elle coûte généralement plus cher au kilo.\n\nCes deux formats se transportent bien et fonctionnent parfaitement comme topping cru mélangé aux croquettes pour en améliorer l'appétence. Réhydrater avec de l'eau tiède ou un bouillon d'os avant de servir aide à restaurer une humidité plus proche du régime ancestral sauvage du chien, ce qui est particulièrement bénéfique pour les chiens sujets aux cristaux urinaires ou aux reins fragiles.\n\nLa principale considération est le coût par calorie : comme le poids en eau est retiré, vous payez pour une nutrition concentrée, ce qui explique pourquoi ce format est souvent utilisé en complément ou en alimentation rotative plutôt que comme unique ration quotidienne d'un grand chien.",
-        "productKey": "ziwi-peak-beef-chicken-bundle",
-        "productNote": "Une option séchée à l'air très bien notée :"
-      },
-      {
-        "rank": "04",
-        "title": "Croquettes Riches en Protéines Sans Céréales ou Grains Anciens",
-        "score": "78/100",
-        "pros": "Pratiques, longue conservation et accessibles pour les foyers ayant de grands chiens.",
-        "cons": "Extrudées à 200°C, seulement 8 à 10% d’humidité et 40 à 50% de glucides complexes.",
-        "readMore": "Les croquettes premium restent l'option la plus pratique pour de nombreux foyers : elles se conservent jusqu'à un an, se portionnent facilement avec un distributeur automatique, et coûtent nettement moins cher par calorie que les régimes frais ou crus.\n\nLes meilleures formules de cette catégorie mettent en avant une protéine animale nommée plutôt qu'une vague « farine de viande », limitent les féculents à des céréales anciennes comme l'avoine et le sorgho plutôt qu'à des charges lourdes de maïs ou de blé, et sont soumises à des analyses de laboratoire tierces pour détecter les métaux lourds.\n\nLe compromis réside dans le procédé d'extrusion lui-même : l'exposition à des températures supérieures à 200 °C détruit certaines vitamines sensibles à la chaleur et réduit l'humidité à environ 10 %, ce qui explique pourquoi les vétérinaires recommandent souvent d'ajouter un peu de bouillon d'os ou un topping cru aux régimes composés uniquement de croquettes, en particulier pour les chiens sujets aux cristaux urinaires.",
-        "productKey": "orijen-original-grain-free-23lb",
-        "productNote": "Une formule riche en protéines, de type WholePrey, dans cette catégorie :"
-      },
-      {
-        "rank": "05",
-        "title": "Aliments Thérapeutiques Vétérinaires Spécialisés",
-        "score": "72/100",
-        "pros": "Formulés pour les pathologies avérées (insuffisance rénale chronique, calculs de struvite, troubles hépatiques).",
-        "cons": "Composés fréquemment de sous-produits végétaux et nécessitent une ordonnance.",
-        "readMore": "Les aliments thérapeutiques sont conçus pour gérer une seule pathologie diagnostiquée précise : protéines et phosphore réduits pour l'insuffisance rénale, protéines hydrolysées auxquelles le système immunitaire ne peut pas réagir en cas d'allergies alimentaires sévères, ou magnésium et pH contrôlés pour les calculs vésicaux de struvite.\n\nIls se classent plus bas sur une échelle générale de « santé optimale » simplement parce qu'ils sont délibérément restrictifs plutôt qu'optimisés pour un chien sain moyen ; une formule conçue pour ménager des reins défaillants, par exemple, n'est volontairement pas l'aliment le plus riche en protéines du marché.\n\nCes régimes nécessitent l'aval d'un vétérinaire et des bilans sanguins périodiques pour confirmer leur efficacité, et ne doivent jamais être donnés à un chien en bonne santé sans raison clinique, car restreindre des nutriments dont un chien sain a réellement besoin peut nuire à sa santé à long terme.",
-        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-        "productNote": "Une formule courante de soutien rénal prescrite par les vétérinaires :"
-      }
-    ],
-    "buyerGuideTitle": "4 Règles d’Or pour Choisir le Meilleur Aliment",
-    "buyerRules": [
-      {
-        "title": "1. Protéine Animale Nommée en Premier Ingrédient",
-        "desc": "Exigez « Dinde désossée », « Bœuf » ou « Saumon frais » plutôt que de vagues « farines de viandes ».",
-        "readMore": "Sur l'étiquette des aliments pour animaux, les ingrédients sont ordonnés par ordre de poids avant cuisson. Les viandes entières clairement identifiées (comme « Dinde désossée » ou « Bœuf frais ») apportent les acides aminés essentiels tels que la taurine, l'arginine et la carnitine sous leur forme la plus biodisponible. Évitez absolument les dénominations floues telles que « sous-produits animaux », « farines de viandes » ou « graisses animales », qui masquent souvent des chutes d'abattoir de qualité médiocre.\n\nMéfiez-vous également du fractionnement des ingrédients (« ingredient splitting ») : certains fabricants divisent les glucides en plusieurs mentions (pois, farine de pois, protéines de pois) pour positionner artificiellement la viande en tête de liste.\n\nLes farines nommées avec précision — comme la « farine de saumon déshydraté » ou la « farine d'agneau » — restent tout à fait acceptables lorsqu'elles sont transparentes, car l'eau a déjà été retirée, offrant une excellente densité en protéines animales."
-      },
-      {
-        "title": "2. Humidité Biologique Élevée (>70%)",
-        "desc": "Les croquettes sèches provoquent une déshydratation chronique. Réhydratez toujours ou ajoutez des garnitures fraîches.",
-        "readMore": "Dans la nature, les proies dont descendent les canidés contiennent 70 à 75 % d'humidité. Les chiens ont un réflexe de soif naturellement faible car leur physiologie est programmée pour s'hydrater directement par leur nourriture. Ne consommer que des croquettes sèches (qui ne renferment que 8 à 10 % d'eau) installe le chien dans un état de déshydratation chronique insidieuse.\n\nÀ long terme, des urines constamment trop concentrées épuisent les reins et créent un terrain propice à la formation de calculs urinaires de struvite ou d'oxalate de calcium.\n\nSi vous donnez des croquettes, apportez systématiquement de l'humidité : réhydratez la ration à parts égales avec un bouillon d'os tiède non salé, de l'eau tiède filtrée ou du kéfir, ou complétez avec des garnitures fraîches riches en eau pour préserver la fonction rénale."
-      },
-      {
-        "title": "3. Zéro Conservateur Chimique Synthétique",
-        "desc": "Bannissez fermement le BHA, le BHT, l’éthoxyquine et les colorants artificiels.",
-        "readMore": "Pour garantir une conservation de 18 à 24 mois, de nombreux aliments industriels font appel à des antioxydants chimiques de synthèse comme le BHA (butylhydroxyanisol), le BHT (butylhydroxytoluène) et l'éthoxyquine. De nombreuses études scientifiques ont mis en évidence le potentiel cancérigène et perturbateur endocrinien du BHA/BHT, tandis que l'éthoxyquine (un ancien pesticide) est suspectée de toxicité hépatique.\n\nDe même, les colorants artificiels (Rouge 40, Jaune 5) ne servent qu'à séduire l'œil du maître tout en favorisant démangeaisons chroniques et intolérances digestives chez le chien.\n\nPrivilégiez exclusivement les formules conservées naturellement avec des tocophérols mixtes (Vitamine E), de l'extrait de romarin et de l'acide citrique. Ils protègent les graisses de l'oxydation en toute innocuité."
-      },
-      {
-        "title": "4. Teneur en Glucides Réduite (<25%)",
-        "desc": "Le chien ne possède pas d’amylase salivaire. Trop d’amidon fatigue le pancréas et favorise l’obésité.",
-        "readMore": "Le chien est un carnivore opportuniste sans aucun besoin biologique en glucides raffinés. Contrairement aux humains, sa salive ne contient pas d'amylase pour amorcer la digestion des féculents dans la gueule ; l'intégralité du travail enzymatique repose donc sur son pancréas.\n\nComme la réglementation n'impose pas d'afficher le taux de glucides sur les paquets, beaucoup de croquettes conventionnelles en dissimulent 45 à 60 % (maïs, blé, fécule de pomme de terre ou tapioca) simplement pour agglomérer les croquettes lors de l'extrusion.\n\nCette surcharge en amidon à indice glycémique élevé provoque des pics d'insuline répétés, de l'inflammation systémique, des otites chroniques et favorise l'obésité. Calculez les glucides selon la formule de l'ENA : 100 % moins (Protéines + Matières grasses + Fibres + Humidité + Cendres). Visez impérativement moins de 25 % de glucides."
-      }
-    ],
-    "ctaTitle": "Calculez la Ration Exacte pour Votre Chien",
-    "ctaDesc": "Que vous choisissiez la ration fraîche, le BARF ou des croquettes premium, obtenez les grammes et calories précis au quotidien.",
-    "ctaBtn": "Calculer les Portions Maintenant →"
-  },
-  "recipes": {
-    "eyebrow": "RECETTES MAISON ÉQUILIBRÉES // NORMES NRC & AAFCO",
-    "heroTitle": "Recettes Équilibrées de Repas Maison pour Chien",
-    "heroSubtitle": "Des guides détaillés pour préparer à la maison des rations ménagères cuites à basse température et des menus BARF 80-10-10 complets et équilibrés.",
-    "calciumWarningTitle": "La Règle Absolue du Fait-Maison : L’Équilibre en Calcium",
-    "calciumWarningDesc": "La viande musculaire est naturellement riche en phosphore et très pauvre en calcium (ratio 1:20). Nourrir un chien exclusivement de viande et de riz sans complément calcique provoque une décalcification osseuse sévère en quelques mois. Ajoutez toujours 1/2 cuillère à café rase de poudre de coquille d’œuf pure (environ 900 mg de calcium élémentaire) pour 450 g de viande désossée afin de respecter le ratio optimal Calcium/Phosphore de 1.2:1.",
-    "recipesList": [
-      {
-        "tag": "CUISSON DOUCE",
-        "title": "Recette 1 : Dinde à Basse Température & Purée de Courge (Digestion Sensible)",
-        "desc": "Idéale pour les chiens à l’estomac délicat, ayant des selles molles ou allergiques au poulet industriel.",
-        "ingredients": [
-          "Haché de dinde maigre — 65% (env. 900 g)",
-          "Cœurs de dinde ou de bœuf (Taurine naturelle) — 10% (env. 140 g)",
-          "Purée de courge ou potiron pure (Fibres solubles) — 10% (env. 140 g)",
-          "Épinards et courgettes vapeur mixés — 10% (env. 140 g)",
-          "Huile de saumon sauvage d’Alaska (EPA/DHA) — 2% (1.5 c. à soupe)",
-          "Poudre de coquille d’œuf (Calcium élémentaire) — 3% (1 c. à café rase)"
-        ],
-        "prep": "Faites revenir la dinde et les cœurs à feu doux jusqu’à cuisson complète mais tendre (70°C). Cuisez les légumes à la vapeur et mixez avec la courge. Mélangez l’ensemble et laissez refroidir totalement avant d’incorporer l’huile de saumon et le calcium. Congelez en portions journalières."
-      },
-      {
-        "tag": "BARF CRU",
-        "title": "Recette 2 : Menu BARF Ancestral 80-10-10 Bœuf & Canard",
-        "desc": "Régime cru biologiquement adapté pour chiens adultes sains dotés d’un suc gastrique acide performant.",
-        "ingredients": [
-          "Viande musculaire de bœuf de pâturage — 70%",
-          "Cœur de bœuf (Riche en L-Carnitine et CoQ10) — 10%",
-          "Cou de canard cru ou carcasse — 10% (Os charnu comestible et calcium)",
-          "Foie de bœuf (Vitamines A et groupe B) — 5%",
-          "Rein ou rate de bœuf (Organe sécréteur essentiel) — 5%"
-        ],
-        "prep": "Coupez la viande et le cœur en morceaux adaptés. Pesez rigoureusement les abats sur balance électronique. Congelez impérativement les rations au moins 3 semaines à -20°C avant décongélation et distribution."
-      },
-      {
-        "tag": "TOPPER SUPERFOOD",
-        "title": "Recette 3 : Topper Antioxydant 80/20 pour Enrichir les Croquettes",
-        "desc": "Booster d’aliments frais conçu pour remplacer 20% des calories des croquettes habituelles.",
-        "ingredients": [
-          "Œufs fermiers pochés mollets — 40%",
-          "Pousses de brocolis vapeur et myrtilles sauvages — 30%",
-          "Bouillon d’os de bœuf mijoté — 20%",
-          "Graines de chanvre bio et poudre de kelp — 10%"
-        ],
-        "prep": "Pochez légèrement les œufs 4 minutes. Cuisez les légumes à la vapeur 3 minutes. Mixez avec le bouillon tiède et les myrtilles. Versez 2 à 4 cuillères à soupe quotidiennes sur la gamelle de croquettes."
-      }
-    ],
-    "calciumGuideTitle": "Sources Sécurisées de Calcium pour Repas Maison",
-    "calciumGuideItems": [
-      {
-        "title": "Poudre de Coquille d’Œuf",
-        "ratio": "1/2 c. à café pour 450 g de viande sans os",
-        "desc": "95% de carbonate de calcium pur. Facile à réaliser en lavant, séchant au four et broyant des coquilles d’œufs."
-      },
-      {
-        "title": "Os Charnus Crus Comestibles",
-        "ratio": "10% du poids total de la ration",
-        "desc": "Cous de canard ou ailes de poulet crues. Ne jamais cuire les os, qui deviennent cassants et perforants."
-      },
-      {
-        "title": "Poudre d’Os Vétérinaire (Bone Meal)",
-        "ratio": "Selon indications du fabricant",
-        "desc": "Hydroxyapatite microcristalline apportant calcium et phosphore selon un ratio naturel et équilibré de 2:1."
-      }
-    ]
-  },
-  "toxic": {
-    "eyebrow": "ALIMENTS TOXIQUES POUR CHIENS // RISQUES ET PROTOCOLES",
-    "dangerTitle": "Les Aliments Domestiques les Plus Dangereux pour le Chien",
-    "dangerIntro": "Plusieurs aliments du quotidien contiennent des molécules que le métabolisme canin ne peut éliminer, provoquant une défaillance organique fatale.",
-    "dangerList": [
-      {
-        "name": "Chocolat & Cacao",
-        "toxin": "Théobromine et Caféine",
-        "symptoms": "Vomissements, halètement intense, tachycardie, tremblements musculaires, convulsions, arrêt cardiaque.",
-        "risk": "TRÈS ÉLEVÉ À MORTEL"
-      },
-      {
-        "name": "Raisins Frais, Secs et de Corinthe",
-        "toxin": "Acide Tartrique",
-        "symptoms": "Léthargie, déshydratation, insuffisance rénale aiguë irréversible en 24 à 72 heures.",
-        "risk": "EXTRÊMEMENT LÉTAL"
-      },
-      {
-        "name": "Xylitol (Sucre de Bouleau / E967)",
-        "toxin": "Édulcorant Synthétique",
-        "symptoms": "Sécrétion massive d’insuline, hypoglycémie foudroyante, ataxie, nécrose hépatique aiguë en quelques heures.",
-        "risk": "URGENCE VITALE ABSOLUE"
-      },
-      {
-        "name": "Oignons, Ail, Poireaux & Échalotes",
-        "toxin": "Disulfure de N-propyle",
-        "symptoms": "Destruction des globules rouges, anémie hémolytique, gencives pâles, urines brunâtres, faiblesse.",
-        "risk": "TOXICITÉ CUMULATIVE FORTE"
-      },
-      {
-        "name": "Noix de Macadamia",
-        "toxin": "Molécule neurotoxique inconnue",
-        "symptoms": "Faiblesse du train arrière, fièvre ou hypothermie, vomissements, raideur musculaire douloureuse.",
-        "risk": "MODÉRÉ À SÉVÈRE"
-      },
-      {
-        "name": "Os Cuits de Toute Origine",
-        "toxin": "Danger Physique d’Esquilles",
-        "symptoms": "Perforation de l’estomac ou de l’intestin, hémorragie interne, péritonite, occlusion chirurgicale.",
-        "risk": "URGENCE CHIRURGICALE"
-      }
-    ],
-    "emergencyTitle": "Que Faire en Cas d’Intoxication Alimentaire ?",
-    "emergencySteps": [
-      "1. Agissez Immédiatement : Notez précisément l’aliment ingéré, son emballage, la quantité approximative et l’heure.",
-      "2. Ne Faites PAS Vomir sans Avis Vétérinaire : Les produits corrosifs ou les os cassants brûlent et lacèrent l’œsophage lors du reflux.",
-      "3. Appelez d’Urgence un Vétérinaire : Contactez immédiatement votre clinique de garde ou le centre antipoison vétérinaire (CNITV / CAPAE)."
-    ],
-    "safeTitle": "Fruits et Légumes 100% Sains et Bénéfiques",
-    "safeIntro": "Ces végétaux apportent des antioxydants naturels, des fibres prébiotiques et des vitamines indispensables à la gamelle de votre chien :",
-    "safeFoods": [
-      {
-        "name": "Myrtilles",
-        "benefit": "Concentrées en anthocyanes et polyphénols protecteurs des cellules."
-      },
-      {
-        "name": "Purée de Courge / Potiron",
-        "benefit": "Fibres solubles régulant le transit aussi bien en cas de diarrhée que de constipation."
-      },
-      {
-        "name": "Carottes",
-        "benefit": "Friandise croquante hypocalorique riche en bêta-carotène favorisant l’hygiène dentaire."
-      },
-      {
-        "name": "Haricots Verts",
-        "benefit": "Légume vert rassasiant idéal pour la gestion du poids des chiens en surpoids."
-      },
-      {
-        "name": "Pommes (Sans Pépins)",
-        "benefit": "Source naturelle de vitamine C et de pectine bénéfique pour la flore intestinale."
-      }
-    ]
-  },
-  "brands": {
-    "eyebrow": "AVIS MARQUES DE CROQUETTES & HISTORIQUE DES RAPPELS",
-    "heroTitle": "Avis sur les Marques d’Aliments pour Chien et Rappels Sanitaires",
-    "heroSubtitle": "Analyses objectives sur la qualité des ingrédients, le respect des étiquettes et les historiques de retraits de lots.",
-    "brandsList": [
-      {
-        "name": "Blue Buffalo",
-        "grade": "Note : B+",
-        "pros": "Viande désossée en premier ingrédient ; sans maïs, blé ni soja ; bouchées LifeSource Bits riches en vitamines.",
-        "cons": "Taux élevé de glucides (45-50%) ; rappels par le passé pour humidité excessive et excès de vitamine D.",
-        "verdict": "Croquettes de niveau supérieur à la moyenne. Nous recommandons d’ajouter 20% d’aliments frais pour l’hydratation."
-      },
-      {
-        "name": "Rachael Ray Nutrish",
-        "grade": "Note : C+ / B-",
-        "pros": "Abordable et facile à trouver ; les gammes Peak et Dish intègrent davantage de viande véritable.",
-        "cons": "Les formules d’entrée de gamme abusent de protéines de pois et de gluten de maïs ; citée dans une enquête de la FDA.",
-        "verdict": "Option économique acceptable dans ses gammes supérieures, en inspectant bien l’absence de légumineuses scindées."
-      },
-      {
-        "name": "Pure Balance",
-        "grade": "Note : B (Meilleur Rapport Qualité/Prix)",
-        "pros": "Très bon rapport qualité-prix ; recettes riches en viande sans colorants artificiels ni céréales bas de gamme.",
-        "cons": "Fabrication sous-traitée ; taux de glucides modéré.",
-        "verdict": "L’une des options les plus honnêtes dans les rayons de supermarché."
-      },
-      {
-        "name": "Ollie Fresh Dog Food",
-        "grade": "Note : A (Excellence)",
-        "pros": "Ingrédients 100% de qualité humaine ; cuisson douce sous vide ; portions pré-calculées sur mesure.",
-        "cons": "Abonnement onéreux (180€-350€/mois) ; nécessite de l’espace au congélateur.",
-        "verdict": "La référence absolue pour la santé métabolique, l’éclat du pelage et la longévité digestive."
-      },
-      {
-        "name": "Open Farm",
-        "grade": "Note : A-",
-        "pros": "Transparence totale des approvisionnements ; viandes certifiées bien-être animal et poissons sauvages durables.",
-        "cons": "Prix haut de gamme ; distribution limitée en magasins physiques.",
-        "verdict": "Le meilleur choix pour une éthique irréprochable et l’absence totale de sous-produits de volaille."
-      }
-    ],
-    "recallsTitle": "Comprendre les Rappels de Lots (Recalls)",
-    "recallsDesc": "Les alertes sanitaires vétérinaires se divisent en trois classes : Classe I (danger grave ou mortel, ex. Salmonelle, aflatoxines ou surdosage en Vitamine D), Classe II (troubles passagers) et Classe III (défaut d’étiquetage). Vérifiez toujours le numéro de lot inscrit sur le sac.",
-    "methodTitle": "Nos 4 Critères d’Évaluation des Aliments",
-    "methodPillars": [
-      {
-        "title": "1. Clarté des Protéines",
-        "desc": "Viandes musculaires identifiées plutôt que farines animales anonymes."
-      },
-      {
-        "title": "2. Taux de Glucides",
-        "desc": "Maintenir les amidons sous 40% pour lutter contre l’obésité et le diabète."
-      },
-      {
-        "title": "3. Traçabilité des Filières",
-        "desc": "Élevages respectueux et absence d’OGM."
-      },
-      {
-        "title": "4. Rigueur Sanitaire",
-        "desc": "Contrôles microbiologiques en laboratoire indépendant et usines certifiées."
-      }
-    ]
-  },
-  "allergies": {
-    "eyebrow": "GUIDE PRATIQUE // ALLERGIES ALIMENTAIRES ET DIGESTION",
-    "heroTitle": "Meilleure Alimentation pour Chien Allergique et Estomac Sensible",
-    "heroSubtitle": "Guide pratique sur les intolérances, le choix des protéines nouvelles et le protocole d’éviction de 8 semaines.",
-    "allergensTitle": "Les 5 Allergènes Alimentaires les Plus Courants chez le Chien",
-    "allergensIntro": "Les allergies alimentaires canines sont des réactions immunitaires d’hypersensibilité à des protéines spécifiques. Par ordre de prévalence clinique :",
-    "allergensList": [
-      {
-        "name": "1. Poulet Industriel (60% des cas)",
-        "desc": "Omniprésent dans les croquettes de grande consommation, le poulet est l’allergène canin numéro un."
-      },
-      {
-        "name": "2. Bœuf Commercial (30% des cas)",
-        "desc": "Protéine rouge fréquente provoquant de fortes démangeaisons cutanées et des otites chroniques."
-      },
-      {
-        "name": "3. Produits Laitiers et Fromages",
-        "desc": "Les chiens adultes manquent d’enzymes lactases, causant diarrhées et flatulences douloureuses."
-      },
-      {
-        "name": "4. Gluten de Blé et de Maïs",
-        "desc": "Protéines végétales pro-inflammatoires fragilisant la muqueuse intestinale."
-      },
-      {
-        "name": "5. Soja et Légumineuses",
-        "desc": "Substituts protéiques industriels provoquant une fermentation intestinale anormale et du prurit."
-      }
-    ],
-    "eliminationTitle": "Le Protocole d’Éviction sur 8 Semaines",
-    "eliminationSteps": [
-      {
-        "step": "Phase 1",
-        "title": "Choisir une Seule Protéine Nouvelle",
-        "desc": "Passez votre chien à une source de protéine qu’il n’a jamais consommée (Cerf, Lapin ou Kangourou) avec un légume digeste comme la courge."
-      },
-      {
-        "step": "Phase 2",
-        "title": "Zéro Contamination (8 Semaines Strictes)",
-        "desc": "Durant 8 semaines consécutives, donnez exclusivement cette ration. Interdiction absolue des friandises industrielles et des restes de table."
-      },
-      {
-        "step": "Phase 3",
-        "title": "Test de Réintroduction Contrôlé",
-        "desc": "Si les démangeaisons ont disparu, réintroduisez un ingrédient suspect pendant 7 jours. Si les rougeurs réapparaissent, l’allergie est confirmée."
-      }
-    ],
-    "novelTitle": "Protéines Nouvelles Recommandées par les Vétérinaires",
-    "novelProteins": [
-      {
-        "name": "Viande de Cerf / Chevreuil",
-        "desc": "Viande rouge maigre et très digeste contre laquelle l’organisme canin n’a généralement pas d’anticorps."
-      },
-      {
-        "name": "Viande de Lapin",
-        "desc": "Protéine hypoallergénique d’excellence possédant un remarquable profil en acides aminés."
-      },
-      {
-        "name": "Viande de Canard",
-        "desc": "Alternative très appétente pour les chiens intolérants au poulet d’élevage."
-      },
-      {
-        "name": "Viande de Kangourou",
-        "desc": "L’une des viandes sauvages les plus pures et pauvres en matières grasses."
-      }
-    ]
-  },
-  "calculator": {
-    "eyebrow": "100% GRATUIT // CALCULATEUR DE PORTIONS",
-    "noticeTitle": "Avertissement :",
-    "noticeText": "Fourni à titre indicatif et éducatif. Ne remplace pas une consultation ou un diagnostic vétérinaire.",
-    "heroTitle": "Calculateur de Ration et Calories pour Chien",
-    "heroSubtitle": "Calculez le besoin énergétique précis de votre chien (RER et MER) et obtenez ses rations exactes en grammes selon son poids, âge, activité et note corporelle."
-  },
-  "breeds": {
-    "eyebrow": "GUIDE NUTRITIONNEL PAR RACE // DIRECTIVES VÉTÉRINAIRES",
-    "targetWeight": "Poids Idéal",
-    "dailyCalories": "Calories par Jour",
-    "freshDaily": "Ration Fraîche / Jour",
-    "kibbleDaily": "Croquettes / Jour",
-    "cups": "gobelets",
-    "reqsTitle": "Besoins Nutritionnels pour le {name}",
-    "reqsIntro": "En tant que chien de catégorie {category} avec un poids moyen de {w0} à {w1} lbs (env. {Math.round(w0*0.453)} à {Math.round(w1*0.453)} kg), le {name} exige une balance nutritionnelle spécifique :",
-    "predispositionsTitle": "Prédispositions et Sensibilités à Surveiller :",
-    "feedingRoutineTitle": "Recommandation de Distribution des Repas :",
-    "feedingRoutineDesc": "Nourrissez votre {name} adulte deux fois par jour (50% le matin et 50% le soir). Laissez toujours de l’eau propre à volonté. Si vous donnez des croquettes, réhydratez-les avec un bouillon tiède pour préserver ses reins.",
-    "ctaTitle": "Personnaliser la Ration Exacte pour Votre {name}",
-    "ctaSubtitle": "Ajustez selon l’âge exact (chiot, adulte, senior), le poids réel, l’activité et la silhouette avec notre calculateur.",
-    "ctaBtn": "Calculer pour mon {name} →",
-    "faqTitle": "Questions Fréquentes sur l’Alimentation du {name}",
-    "faqSubtitle": "Quantités recommandées, fréquence des repas et meilleurs choix d’ingrédients."
-  },
-  "comparisonTable": {
-    "eyebrow": "COMPARAISON NUTRITIONNELLE // ALIMENTATION FRAÎCHE VS CROQUETTES",
-    "title": "Pourquoi les Aliments Entiers Surpassent Biologiquement les Croquettes",
-    "subtitle": "Une analyse comparative de la température de cuisson, de la précision des portions et du coût mensuel réel — les variables qu'une étude de longévité sur 5 ans a associées à une espérance de vie accrue jusqu'à 32 mois chez les chiens nourris aux aliments frais.",
-    "scrollHint": "↔ Faites défiler le tableau horizontalement",
-    "colMetric": "Critère Nutritionnel",
-    "colDfp": "✨ DogFoodPlanner",
-    "colSubs": "Abonnements Frais",
-    "colKibble": "Croquettes Sèches",
-    "rows": [
-      {
-        "metric": "Méthode de Cuisson",
-        "dfp": "Cuisson Douce (~74°C) ou Cru — Enzymes Intactes",
-        "subs": "Cuit Sous-Vide et Surgelé",
-        "kibble": "Extrusion à Très Haute Température (200°C+)"
-      },
-      {
-        "metric": "Précision des Portions",
-        "dfp": "Grammes exacts via calcul métabolique RER/MER, personnalisé au poids, à l'âge et à l'activité",
-        "subs": "Tableau de rationnement par tranche de poids fixe",
-        "kibble": "Tableau générique sur le sac — surestime les rations de 20 à 30%"
-      },
-      {
-        "metric": "Glucides Nets",
-        "dfp": "< 5% (légumes uniquement, zéro agent de remplissage)",
-        "subs": "10% – 20%",
-        "kibble": "45% – 60% (amidons de maïs, de blé et de pois)"
-      },
-      {
-        "metric": "Humidité Biologique",
-        "dfp": "70% – 75% (maintient l'hydratation rénale et urinaire)",
-        "subs": "70% – 75%",
-        "kibble": "8% – 10% (déshydratation subclinique chronique)"
-      },
-      {
-        "metric": "Intégrité des Nutriments",
-        "dfp": "Oxydation minime — oméga-3 et enzymes préservés",
-        "subs": "Modérée — altération de certains nutriments thermosensibles",
-        "kibble": "Oxydation des graisses et formation d'AGEs par l'extrusion thermique"
-      },
-      {
-        "metric": "Transparence des Ingrédients",
-        "dfp": "100% de grammes et pourcentages divulgués — vous contrôlez chaque gramme",
-        "subs": "Mélange exclusif (ratios exacts gardés secrets)",
-        "kibble": "Ingrédients fractionnés et farines animales génériques"
-      },
-      {
-        "metric": "Coût Moyen Mensuel (Chien de 23 kg)",
-        "dfp": "75€ – 120€ (ingrédients bruts préparés à la maison)",
-        "subs": "240€ – 420€ / mois",
-        "kibble": "55€ – 90€ / mois"
-      }
-    ]
-  },
-  "faqPage": {
-    "badge": "BASE DE CONNAISSANCES // RÉPONSES VÉTÉRINAIRES",
-    "exploreHubsTitle": "Explorez Nos Guides Vétérinaires Spécialisés",
-    "exploreHubsSubtitle": "Des dossiers approfondis pour les maîtres soucieux de la longévité et du bien-être de leur compagnon.",
-    "cardBestFood": "Comparatif ration fraîche, BARF, croquettes riches en viande et digestion délicate.",
-    "cardCalc": "Calculateur RER et MER pour obtenir les rations au gramme près.",
-    "cardRecipes": "Recettes maison équilibrées et formules BARF 80-10-10 avec apport calcique maîtrisé.",
-    "cardAllergies": "Choix des protéines hypoallergéniques, régimes d’éviction et microbiote.",
-    "cardToxic": "Liste complète des aliments dangereux, fruits et légumes sains et additifs à fuir.",
-    "cardBrands": "Avis indépendants sur Blue Buffalo, Nutrish, Pure Balance, Ollie et Open Farm."
-  },
-  "faqSingle": {
-    "reviewedBy": "Vérifié par : Équipe Rédactionnelle DogFoodPlanner",
-    "updated": "Mis à jour : 2026",
-    "directQuickAnswer": "Réponse Directe Résumée",
-    "clinicalAnalysis": "Analyse Nutritionnelle Détaillée",
-    "topics": "Thèmes associés :",
-    "ctaBadge": "🐾 Moteur Nutritionnel Canin Gratuit",
-    "ctaTitle": "Calculez les Calories et Portions Journalières pour Votre Chien",
-    "ctaSubtitle": "Utilisez notre calculateur pour définir les besoins métaboliques (RER/MER) et les grammes de repas frais ou crus.",
-    "ctaBtn": "Calculer la Ration Maintenant →",
-    "relatedTitle": "Questions Similaires sur l'Alimentation",
-    "readAnswer": "Lire la Réponse Complète →",
+  "fr": {
+    "about": {
+      "heroTitle": "À Propos de DogFoodPlanner : Les Repas Canins en Toute Simplicité",
+      "heroSubtitle": "Découvrez DogFoodPlanner.com, notre mission et le fonctionnement de notre calculateur de ration pour chien 100% gratuit.",
+      "missionBadge": "NOTRE MISSION // PLANIFICATION DES REPAS",
+      "whyTitle": "Pourquoi DogFoodPlanner a été Créé",
+      "whyP1": "Nous avons créé DogFoodPlanner pour aider les propriétaires de chiens à planifier les repas et les rations en toute confiance. Nous étudions les recommandations publiques disponibles pour les transformer en guides et outils gratuits et faciles d'accès.",
+      "whyP2": "",
+      "whoTitle": "Qui Sommes-Nous",
+      "whoContent": "DogFoodPlanner est un site indépendant géré par des passionnés de chiens, chercheurs et rédacteurs. Nous ne sommes pas vétérinaires. Consultez toujours votre vétérinaire avant de modifier l'alimentation de votre chien, en particulier pour les chiots, les chiens seniors ou les animaux ayant des problèmes de santé.",
+      "methodTitle": "Notre Méthodologie Nutritionnelle",
+      "pillars": [
+        {
+          "tag": "01 // ESTIMATION DES CALORIES",
+          "title": "Estimation des Calories",
+          "desc": "Notre calculateur utilise la formule standard du Besoin Énergétique au Repos (70 × poids en kg^0,75) et des coefficients d'activité courants pour estimer les calories quotidiennes."
+        },
+        {
+          "tag": "02 // SOURCES DE RÉFÉRENCE",
+          "title": "Sources de Référence",
+          "desc": "Nous nous référons aux recommandations publiées par des organismes tels que l'AAFCO et le National Research Council. Notre contenu est éducatif et ne remplace pas l'avis d'un professionnel."
+        },
+        {
+          "tag": "03 // TRANSPARENCE",
+          "title": "Transparence",
+          "desc": "Certaines pages contiennent des liens d'affiliation, notamment des liens Partenaires Amazon. Si vous effectuez un achat via ces liens, nous pouvons percevoir une petite commission sans aucun surcoût pour vous. Cela n'influence jamais nos recommandations."
+        }
+      ],
+      "ctaTitle": "Prêt à Calculer les Besoins Nutritionnels de Votre Chien ?",
+      "ctaDesc": "Essayez notre calculateur interactif, découvrez nos guides sur les allergies canines et lisez nos guides sur l'alimentation pour chien.",
+      "ctaBtn": "Lancer le Calculateur Nutritionnel Gratuit →",
+      "amazonDisclaimer": "En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises."
+    },
+    "contact": {
+      "eyebrow": "SUPPORT & CONTACT // DEMANDES DIRECTES",
+      "cards": [
+        {
+          "icon": "📧",
+          "title": "Questions Générales",
+          "desc": "Commentaires et demandes générales :",
+          "email": "hello@dogfoodplanner.com"
+        },
+        {
+          "icon": "🐾",
+          "title": "Recherche Nutritionnelle",
+          "desc": "Formules et questions vétérinaires :",
+          "email": "research@dogfoodplanner.com"
+        },
+        {
+          "icon": "🛡️",
+          "title": "Support Technique",
+          "desc": "Signalement de bugs et calculs :",
+          "email": "legal@dogfoodplanner.com"
+        }
+      ],
+      "formTitle": "Envoyez un Message à Notre Équipe Vétérinaire",
+      "formDesc": "Une question sur nos formules calorigènes NRC ou besoin d’aide pour une ration BARF ? Nous répondons sous 24 heures ouvrées.",
+      "nameLabel": "Votre Nom",
+      "namePlaceholder": "ex. Thomas Martin",
+      "emailLabel": "Votre Adresse Email",
+      "emailPlaceholder": "thomas@example.com",
+      "subjectLabel": "Objet de la Demande",
+      "subjectOptions": [
+        "Question Générale / Avis",
+        "Nutrition Canine & Recettes",
+        "Formule du Calculateur Vétérinaire",
+        "Signalement de Bug"
+      ],
+      "messageLabel": "Votre Message",
+      "messagePlaceholder": "Parlez-nous de votre chien (race, poids, âge) et de la manière dont nous pouvons vous aider...",
+      "submitBtn": "Envoyer le Message →",
+      "notice": "Urgence Vétérinaire : Si votre animal présente des symptômes aigus d’intoxication ou de détresse sévère, contactez sans attendre une clinique vétérinaire d’urgence.",
+      "faqTitle": "Vous cherchez une réponse rapide ?",
+      "faqDesc": "Consultez notre base de connaissances de plus de 40 réponses vétérinaires sur le manque d’appétit, le BARF, la nourriture pour chat et les marques de croquettes.",
+      "faqBtn": "Consulter Toute la FAQ →",
+      "successTitle": "✓ Message préparé — envoi à hello@dogfoodplanner.com",
+      "successDesc": "Votre client de messagerie devrait s'ouvrir avec un message pré-rédigé adressé à hello@dogfoodplanner.com. Cliquez simplement sur Envoyer dans votre application mail et il arrivera dans notre boîte de réception."
+    },
+    "privacy": {
+      "eyebrow": "MENTIONS LÉGALES // POLITIQUE DE CONFIDENTIALITÉ",
+      "lastUpdated": "Mis à jour : 14 octobre 2026",
+      "intro": "Sur DogFoodPlanner.com, nous respectons votre vie privée. Cette politique détaille comment vos données sont traitées et protégées.",
+      "sections": [
+        {
+          "title": "1. Informations Que Nous Ne Collectons Pas",
+          "content": "Les données de santé de votre animal vous appartiennent. L’utilisation de notre calculateur de ration pour chien ne requiert aucune inscription, mot de passe ou carte bancaire. Les profils canins, poids et choix de repas saisis dans le calculateur sont traités localement sur votre navigateur (côté client) et ne sont jamais enregistrés sur des bases de données externes."
+        },
+        {
+          "title": "2. Collecte d’Emails et Newsletter",
+          "content": "Lorsque vous vous inscrivez à notre newsletter, nous recueillons votre adresse e-mail pour vous envoyer des guides de nutrition canine, des alertes de rappel d’aliments et des conseils pratiques. Nous utilisons EmailOctopus pour gérer nos listes en toute sécurité. Nous ne vendons ni ne partageons jamais vos données. Vous pouvez vous désabonner à tout moment en un clic via le lien situé au bas de chaque e-mail."
+        },
+        {
+          "title": "3. Données Techniques Anonymes",
+          "content": "Comme la plupart des plateformes web modernes, nos serveurs CDN collectent des données techniques anonymisées courantes (adresse IP masquée, navigateur, page de provenance et horodatage) pour sécuriser l’infrastructure et prévenir les attaques."
+        },
+        {
+          "title": "4. Cookies et Stockage Local (localStorage)",
+          "content": "Nous utilisons le localStorage pour mémoriser votre langue et votre plan de repas sur votre appareil. Si vous cliquez sur un lien d'affiliation, le site tiers (comme Amazon) peut déposer ses propres cookies."
+        },
+        {
+          "title": "5. Liens Vers des Tiers",
+          "content": "Notre site contient des liens de référence vers des recherches publiées, les normes de l'AAFCO, les bases de données du NRC et des ressources externes. Nous ne sommes pas responsables des pratiques de confidentialité ou du contenu des sites tiers."
+        },
+        {
+          "title": "6. Divulgation d'Affiliation",
+          "content": "DogFoodPlanner participe au Programme Partenaires d’Amazon Services LLC. En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises, sans aucun surcoût pour vous."
+        },
+        {
+          "title": "7. Protection des Mineurs",
+          "content": "Nos outils sont destinés aux adultes propriétaires d’animaux de compagnie. Nous ne collectons pas sciemment de données relatives aux mineurs de moins de 13 ans."
+        },
+        {
+          "title": "8. Mises à Jour et Contact",
+          "content": "Cette politique peut être mise à jour pour refléter l’évolution du service. Pour toute question, écrivez à privacy@dogfoodplanner.com."
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "MENTIONS LÉGALES // CONDITIONS GÉNÉRALES D’UTILISATION",
+      "lastUpdated": "Mis à jour : 14 octobre 2026",
+      "intro": "Veuillez lire attentivement ces conditions générales avant d’utiliser DogFoodPlanner.com. L’accès au site vaut acceptation pleine et entière de celles-ci.",
+      "sections": [
+        {
+          "title": "1. Acceptation des Conditions",
+          "content": "En naviguant sur DogFoodPlanner.com, vous reconnaissez avoir pris connaissance et accepté sans réserve les présentes conditions d’utilisation. Si vous êtes en désaccord, veuillez cesser toute utilisation."
+        },
+        {
+          "title": "2. Avertissement Vétérinaire et Médical",
+          "content": "Les informations, calculateurs et recettes proposés sur DogFoodPlanner.com sont fournis à des fins purement éducatives et informatives sur la base des modèles NRC et FEDIAF. Ils NE constituent EN AUCUN CAS un avis médical vétérinaire, un diagnostic ou une prescription personnalisée. Consultez systématiquement un vétérinaire ou un spécialiste en nutrition animale (DACVN) avant tout changement alimentaire majeur."
+        },
+        {
+          "title": "3. Utilisation des Calculateurs Interactifs",
+          "content": "Les résultats caloriques (RER et MER) et les rations en grammes sont des points de départ théoriques. Le métabolisme varie selon la stérilisation, l’activité, l’environnement et la génétique. Il appartient au maître d’évaluer la note d’état corporel (BCS) et d’ajuster les portions."
+        },
+        {
+          "title": "4. Sécurité des Rations Ménagères et Équilibre en Calcium",
+          "content": "L’alimentation maison ou crue impose une couverture stricte de l’ensemble des micronutriments. Distribuer de la viande sans os sans complément calcique adapté entraîne en quelques mois une déminéralisation osseuse grave. L’utilisateur assume l’entière responsabilité de l’équilibre de ses préparations."
+        },
+        {
+          "title": "5. Propriété Intellectuelle",
+          "content": "L’ensemble des contenus, algorithmes, interfaces graphiques et textes présents sur DogFoodPlanner.com sont protégés par le droit d’auteur et demeurent la propriété exclusive de DogFoodPlanner."
+        },
+        {
+          "title": "6. Limitation de Responsabilité",
+          "content": "DogFoodPlanner.com et ses contributeurs ne sauraient être tenus responsables des dommages directs ou indirects consécutifs à l’utilisation ou à l’impossibilité d’utiliser les outils mis à disposition."
+        },
+        {
+          "title": "7. Abonnements par E-mail et Communications",
+          "content": "En vous abonnant à notre newsletter, vous acceptez de recevoir nos guides éducatifs sur la nutrition canine et les actualités du site. Vous pouvez vous désinscrire à tout moment grâce au lien présent dans chaque message. Nous nous réservons le droit de modifier ou d’interrompre l’envoi de la newsletter à tout moment."
+        }
+      ]
+    },
+    "bestFood": {
+      "eyebrow": "GUIDE CLINIQUE // CLASSEMENT ALIMENTATION CANINE 2026",
+      "rankingsTitle": "Quels Sont les 5 Meilleurs Aliments pour Chien en 2026 ?",
+      "rankingsIntro": "Les recherches sur la longevité canine confirment qu’une cuisson minimale et une hydratation biologique supérieure à 70% sont les deux facteurs les plus déterminants de la vitalité et de la santé rénale.",
+      "readMoreLabel": "Lire la suite →",
+      "readLessLabel": "Afficher moins ↑",
+      "rankings": [
+        {
+          "rank": "01",
+          "title": "Ration Ménagère Fraîche Cuite à Basse Température",
+          "score": "98/100",
+          "pros": "Viandes et légumes réels cuits doucement à 70°C. Préserve plus de 70% d’humidité naturelle, les enzymes actives et les vitamines intactes.",
+          "cons": "Nécessite une conservation au congélateur ou réfrigérateur. Coût supérieur aux croquettes bas de gamme.",
+          "readMore": "La ration fraîche cuite à basse température arrive en tête du classement car elle imite un repas fait maison sans sacrifier la sécurité alimentaire. Les ingrédients proviennent d'installations agréées USDA pour l'alimentation humaine, puis sont cuits juste assez longtemps à basse température (environ 71 °C) pour éliminer les pathogènes tout en préservant les protéines fragiles, la taurine et les vitamines B hydrosolubles que l'extrusion à haute température détruit.\n\nComme cet aliment contient déjà plus de 70 % d'humidité, il soulage les reins et réduit la déshydratation chronique légère fréquente chez les chiens nourris exclusivement aux croquettes. Il convient particulièrement bien aux chiens en convalescence, aux seniors dont la sensation de soif diminue, ou aux races sujettes aux sensibilités alimentaires, car les recettes sont généralement à protéine unique et exemptes de farines de viande transformée ou de conservateurs synthétiques.\n\nLe principal compromis reste logistique : elle nécessite de la place au réfrigérateur ou au congélateur, et les portions doivent être décongelées avant chaque repas. Si vous n'êtes pas prêt à cuisiner vous-même, plusieurs marques disposant de cuisines agréées USDA proposent des versions longue conservation de ce même format cuit en douceur, une façon simple de tester cette catégorie avant de vous engager dans une routine entièrement faite maison.",
+          "productKey": "justfoodfordogs-chicken-white-rice",
+          "productNote": "Une option longue conservation pour tester cette catégorie :"
+        },
+        {
+          "rank": "02",
+          "title": "Alimentation Crue Ancestrale BARF 80-10-10",
+          "score": "95/100",
+          "pros": "Équilibre biologique adapté aux carnivores : 80% muscle, 10% os charnu, 10% abats. Prévient le tartre et développe une masse musculaire sèche.",
+          "cons": "Exige une hygiène rigoureuse et un équilibrage précis du calcium.",
+          "readMore": "Le ratio 80-10-10 (80 % de viande musculaire, 10 % d'os cru comestible, 10 % d'organes sécrétants) est conçu pour reproduire ce qu'un ancêtre canin sauvage obtiendrait d'une proie entière. Correctement appliqué, il fournit un rapport calcium-phosphore naturellement équilibré directement issu de l'os, soutient la masse musculaire maigre, et l'action mécanique de la mastication d'os crus aide à détacher le tartre des dents.\n\nComme rien n'est cuit, les enzymes et les acides aminés sensibles à la chaleur restent parfaitement intacts. Le défi réside dans la précision : trouver des os crus sûrs et respecter exactement le ratio exigent une véritable discipline, car une mauvaise estimation du pourcentage d'os est l'erreur la plus courante, pouvant entraîner constipation ou, à terme, des troubles squelettiques chez les chiots en croissance. La viande crue doit également être manipulée avec la même hygiène que tout aliment cru destiné à l'homme (planches à découper séparées, réfrigération, nettoyage rapide).\n\nLa plupart des foyers trouvent plus simple de commencer avec un produit cru formulé par des professionnels qui respecte déjà ce ratio, avant de passer à des repas crus entièrement personnalisés, sourcés et pesés à la maison.",
+          "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+          "productNote": "Une option crue déjà équilibrée qui évite les calculs :"
+        },
+        {
+          "rank": "03",
+          "title": "Nourriture Crue Lyophilisée & Déshydratée à l’Air",
+          "score": "91/100",
+          "pros": "Offre la qualité nutritionnelle du cru avec la facilité de conservation à température ambiante.",
+          "cons": "Doit impérativement être réhydratée à l’eau tiède ou au bouillon d’os avant distribution.",
+          "readMore": "Le séchage à l'air et la lyophilisation retirent tous deux l'humidité de la viande crue à basse température, préservant un profil nutritionnel et enzymatique proche du cru tout en rendant l'aliment stable à température ambiante, sans besoin de congélateur. La lyophilisation utilise un procédé de vide à froid qui tend à mieux préserver les nutriments que le séchage à l'air, bien qu'elle coûte généralement plus cher au kilo.\n\nCes deux formats se transportent bien et fonctionnent parfaitement comme topping cru mélangé aux croquettes pour en améliorer l'appétence. Réhydrater avec de l'eau tiède ou un bouillon d'os avant de servir aide à restaurer une humidité plus proche du régime ancestral sauvage du chien, ce qui est particulièrement bénéfique pour les chiens sujets aux cristaux urinaires ou aux reins fragiles.\n\nLa principale considération est le coût par calorie : comme le poids en eau est retiré, vous payez pour une nutrition concentrée, ce qui explique pourquoi ce format est souvent utilisé en complément ou en alimentation rotative plutôt que comme unique ration quotidienne d'un grand chien.",
+          "productKey": "ziwi-peak-beef-chicken-bundle",
+          "productNote": "Une option séchée à l'air très bien notée :"
+        },
+        {
+          "rank": "04",
+          "title": "Croquettes Riches en Protéines Sans Céréales ou Grains Anciens",
+          "score": "78/100",
+          "pros": "Pratiques, longue conservation et accessibles pour les foyers ayant de grands chiens.",
+          "cons": "Extrudées à 200°C, seulement 8 à 10% d’humidité et 40 à 50% de glucides complexes.",
+          "readMore": "Les croquettes premium restent l'option la plus pratique pour de nombreux foyers : elles se conservent jusqu'à un an, se portionnent facilement avec un distributeur automatique, et coûtent nettement moins cher par calorie que les régimes frais ou crus.\n\nLes meilleures formules de cette catégorie mettent en avant une protéine animale nommée plutôt qu'une vague « farine de viande », limitent les féculents à des céréales anciennes comme l'avoine et le sorgho plutôt qu'à des charges lourdes de maïs ou de blé, et sont soumises à des analyses de laboratoire tierces pour détecter les métaux lourds.\n\nLe compromis réside dans le procédé d'extrusion lui-même : l'exposition à des températures supérieures à 200 °C détruit certaines vitamines sensibles à la chaleur et réduit l'humidité à environ 10 %, ce qui explique pourquoi les vétérinaires recommandent souvent d'ajouter un peu de bouillon d'os ou un topping cru aux régimes composés uniquement de croquettes, en particulier pour les chiens sujets aux cristaux urinaires.",
+          "productKey": "orijen-original-grain-free-23lb",
+          "productNote": "Une formule riche en protéines, de type WholePrey, dans cette catégorie :"
+        },
+        {
+          "rank": "05",
+          "title": "Aliments Thérapeutiques Vétérinaires Spécialisés",
+          "score": "72/100",
+          "pros": "Formulés pour les pathologies avérées (insuffisance rénale chronique, calculs de struvite, troubles hépatiques).",
+          "cons": "Composés fréquemment de sous-produits végétaux et nécessitent une ordonnance.",
+          "readMore": "Les aliments thérapeutiques sont conçus pour gérer une seule pathologie diagnostiquée précise : protéines et phosphore réduits pour l'insuffisance rénale, protéines hydrolysées auxquelles le système immunitaire ne peut pas réagir en cas d'allergies alimentaires sévères, ou magnésium et pH contrôlés pour les calculs vésicaux de struvite.\n\nIls se classent plus bas sur une échelle générale de « santé optimale » simplement parce qu'ils sont délibérément restrictifs plutôt qu'optimisés pour un chien sain moyen ; une formule conçue pour ménager des reins défaillants, par exemple, n'est volontairement pas l'aliment le plus riche en protéines du marché.\n\nCes régimes nécessitent l'aval d'un vétérinaire et des bilans sanguins périodiques pour confirmer leur efficacité, et ne doivent jamais être donnés à un chien en bonne santé sans raison clinique, car restreindre des nutriments dont un chien sain a réellement besoin peut nuire à sa santé à long terme.",
+          "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+          "productNote": "Une formule courante de soutien rénal prescrite par les vétérinaires :"
+        }
+      ],
+      "buyerGuideTitle": "4 Règles d’Or pour Choisir le Meilleur Aliment",
+      "buyerRules": [
+        {
+          "title": "1. Protéine Animale Nommée en Premier Ingrédient",
+          "desc": "Exigez « Dinde désossée », « Bœuf » ou « Saumon frais » plutôt que de vagues « farines de viandes ».",
+          "readMore": "Sur l'étiquette des aliments pour animaux, les ingrédients sont ordonnés par ordre de poids avant cuisson. Les viandes entières clairement identifiées (comme « Dinde désossée » ou « Bœuf frais ») apportent les acides aminés essentiels tels que la taurine, l'arginine et la carnitine sous leur forme la plus biodisponible. Évitez absolument les dénominations floues telles que « sous-produits animaux », « farines de viandes » ou « graisses animales », qui masquent souvent des chutes d'abattoir de qualité médiocre.\n\nMéfiez-vous également du fractionnement des ingrédients (« ingredient splitting ») : certains fabricants divisent les glucides en plusieurs mentions (pois, farine de pois, protéines de pois) pour positionner artificiellement la viande en tête de liste.\n\nLes farines nommées avec précision — comme la « farine de saumon déshydraté » ou la « farine d'agneau » — restent tout à fait acceptables lorsqu'elles sont transparentes, car l'eau a déjà été retirée, offrant une excellente densité en protéines animales."
+        },
+        {
+          "title": "2. Humidité Biologique Élevée (>70%)",
+          "desc": "Les croquettes sèches provoquent une déshydratation chronique. Réhydratez toujours ou ajoutez des garnitures fraîches.",
+          "readMore": "Dans la nature, les proies dont descendent les canidés contiennent 70 à 75 % d'humidité. Les chiens ont un réflexe de soif naturellement faible car leur physiologie est programmée pour s'hydrater directement par leur nourriture. Ne consommer que des croquettes sèches (qui ne renferment que 8 à 10 % d'eau) installe le chien dans un état de déshydratation chronique insidieuse.\n\nÀ long terme, des urines constamment trop concentrées épuisent les reins et créent un terrain propice à la formation de calculs urinaires de struvite ou d'oxalate de calcium.\n\nSi vous donnez des croquettes, apportez systématiquement de l'humidité : réhydratez la ration à parts égales avec un bouillon d'os tiède non salé, de l'eau tiède filtrée ou du kéfir, ou complétez avec des garnitures fraîches riches en eau pour préserver la fonction rénale."
+        },
+        {
+          "title": "3. Zéro Conservateur Chimique Synthétique",
+          "desc": "Bannissez fermement le BHA, le BHT, l’éthoxyquine et les colorants artificiels.",
+          "readMore": "Pour garantir une conservation de 18 à 24 mois, de nombreux aliments industriels font appel à des antioxydants chimiques de synthèse comme le BHA (butylhydroxyanisol), le BHT (butylhydroxytoluène) et l'éthoxyquine. De nombreuses études scientifiques ont mis en évidence le potentiel cancérigène et perturbateur endocrinien du BHA/BHT, tandis que l'éthoxyquine (un ancien pesticide) est suspectée de toxicité hépatique.\n\nDe même, les colorants artificiels (Rouge 40, Jaune 5) ne servent qu'à séduire l'œil du maître tout en favorisant démangeaisons chroniques et intolérances digestives chez le chien.\n\nPrivilégiez exclusivement les formules conservées naturellement avec des tocophérols mixtes (Vitamine E), de l'extrait de romarin et de l'acide citrique. Ils protègent les graisses de l'oxydation en toute innocuité."
+        },
+        {
+          "title": "4. Teneur en Glucides Réduite (<25%)",
+          "desc": "Le chien ne possède pas d’amylase salivaire. Trop d’amidon fatigue le pancréas et favorise l’obésité.",
+          "readMore": "Le chien est un carnivore opportuniste sans aucun besoin biologique en glucides raffinés. Contrairement aux humains, sa salive ne contient pas d'amylase pour amorcer la digestion des féculents dans la gueule ; l'intégralité du travail enzymatique repose donc sur son pancréas.\n\nComme la réglementation n'impose pas d'afficher le taux de glucides sur les paquets, beaucoup de croquettes conventionnelles en dissimulent 45 à 60 % (maïs, blé, fécule de pomme de terre ou tapioca) simplement pour agglomérer les croquettes lors de l'extrusion.\n\nCette surcharge en amidon à indice glycémique élevé provoque des pics d'insuline répétés, de l'inflammation systémique, des otites chroniques et favorise l'obésité. Calculez les glucides selon la formule de l'ENA : 100 % moins (Protéines + Matières grasses + Fibres + Humidité + Cendres). Visez impérativement moins de 25 % de glucides."
+        }
+      ],
+      "ctaTitle": "Calculez la Ration Exacte pour Votre Chien",
+      "ctaDesc": "Que vous choisissiez la ration fraîche, le BARF ou des croquettes premium, obtenez les grammes et calories précis au quotidien.",
+      "ctaBtn": "Calculer les Portions Maintenant →"
+    },
+    "recipes": {
+      "eyebrow": "RECETTES MAISON ÉQUILIBRÉES // NORMES NRC & AAFCO",
+      "heroTitle": "Recettes Équilibrées de Repas Maison pour Chien",
+      "heroSubtitle": "Des guides détaillés pour préparer à la maison des rations ménagères cuites à basse température et des menus BARF 80-10-10 complets et équilibrés.",
+      "calciumWarningTitle": "La Règle Absolue du Fait-Maison : L’Équilibre en Calcium",
+      "calciumWarningDesc": "La viande musculaire est naturellement riche en phosphore et très pauvre en calcium (ratio 1:20). Nourrir un chien exclusivement de viande et de riz sans complément calcique provoque une décalcification osseuse sévère en quelques mois. Ajoutez toujours 1/2 cuillère à café rase de poudre de coquille d’œuf pure (environ 900 mg de calcium élémentaire) pour 450 g de viande désossée afin de respecter le ratio optimal Calcium/Phosphore de 1.2:1.",
+      "recipesList": [
+        {
+          "tag": "CUISSON DOUCE",
+          "title": "Recette 1 : Dinde à Basse Température & Purée de Courge (Digestion Sensible)",
+          "desc": "Idéale pour les chiens à l’estomac délicat, ayant des selles molles ou allergiques au poulet industriel.",
+          "ingredients": [
+            "Haché de dinde maigre — 65% (env. 900 g)",
+            "Cœurs de dinde ou de bœuf (Taurine naturelle) — 10% (env. 140 g)",
+            "Purée de courge ou potiron pure (Fibres solubles) — 10% (env. 140 g)",
+            "Épinards et courgettes vapeur mixés — 10% (env. 140 g)",
+            "Huile de saumon sauvage d’Alaska (EPA/DHA) — 2% (1.5 c. à soupe)",
+            "Poudre de coquille d’œuf (Calcium élémentaire) — 3% (1 c. à café rase)"
+          ],
+          "prep": "Faites revenir la dinde et les cœurs à feu doux jusqu’à cuisson complète mais tendre (70°C). Cuisez les légumes à la vapeur et mixez avec la courge. Mélangez l’ensemble et laissez refroidir totalement avant d’incorporer l’huile de saumon et le calcium. Congelez en portions journalières."
+        },
+        {
+          "tag": "BARF CRU",
+          "title": "Recette 2 : Menu BARF Ancestral 80-10-10 Bœuf & Canard",
+          "desc": "Régime cru biologiquement adapté pour chiens adultes sains dotés d’un suc gastrique acide performant.",
+          "ingredients": [
+            "Viande musculaire de bœuf de pâturage — 70%",
+            "Cœur de bœuf (Riche en L-Carnitine et CoQ10) — 10%",
+            "Cou de canard cru ou carcasse — 10% (Os charnu comestible et calcium)",
+            "Foie de bœuf (Vitamines A et groupe B) — 5%",
+            "Rein ou rate de bœuf (Organe sécréteur essentiel) — 5%"
+          ],
+          "prep": "Coupez la viande et le cœur en morceaux adaptés. Pesez rigoureusement les abats sur balance électronique. Congelez impérativement les rations au moins 3 semaines à -20°C avant décongélation et distribution."
+        },
+        {
+          "tag": "TOPPER SUPERFOOD",
+          "title": "Recette 3 : Topper Antioxydant 80/20 pour Enrichir les Croquettes",
+          "desc": "Booster d’aliments frais conçu pour remplacer 20% des calories des croquettes habituelles.",
+          "ingredients": [
+            "Œufs fermiers pochés mollets — 40%",
+            "Pousses de brocolis vapeur et myrtilles sauvages — 30%",
+            "Bouillon d’os de bœuf mijoté — 20%",
+            "Graines de chanvre bio et poudre de kelp — 10%"
+          ],
+          "prep": "Pochez légèrement les œufs 4 minutes. Cuisez les légumes à la vapeur 3 minutes. Mixez avec le bouillon tiède et les myrtilles. Versez 2 à 4 cuillères à soupe quotidiennes sur la gamelle de croquettes."
+        }
+      ],
+      "calciumGuideTitle": "Sources Sécurisées de Calcium pour Repas Maison",
+      "calciumGuideItems": [
+        {
+          "title": "Poudre de Coquille d’Œuf",
+          "ratio": "1/2 c. à café pour 450 g de viande sans os",
+          "desc": "95% de carbonate de calcium pur. Facile à réaliser en lavant, séchant au four et broyant des coquilles d’œufs."
+        },
+        {
+          "title": "Os Charnus Crus Comestibles",
+          "ratio": "10% du poids total de la ration",
+          "desc": "Cous de canard ou ailes de poulet crues. Ne jamais cuire les os, qui deviennent cassants et perforants."
+        },
+        {
+          "title": "Poudre d’Os Vétérinaire (Bone Meal)",
+          "ratio": "Selon indications du fabricant",
+          "desc": "Hydroxyapatite microcristalline apportant calcium et phosphore selon un ratio naturel et équilibré de 2:1."
+        }
+      ]
+    },
+    "toxic": {
+      "eyebrow": "ALIMENTS TOXIQUES POUR CHIENS // RISQUES ET PROTOCOLES",
+      "dangerTitle": "Les Aliments Domestiques les Plus Dangereux pour le Chien",
+      "dangerIntro": "Plusieurs aliments du quotidien contiennent des molécules que le métabolisme canin ne peut éliminer, provoquant une défaillance organique fatale.",
+      "dangerList": [
+        {
+          "name": "Chocolat & Cacao",
+          "toxin": "Théobromine et Caféine",
+          "symptoms": "Vomissements, halètement intense, tachycardie, tremblements musculaires, convulsions, arrêt cardiaque.",
+          "risk": "TRÈS ÉLEVÉ À MORTEL"
+        },
+        {
+          "name": "Raisins Frais, Secs et de Corinthe",
+          "toxin": "Acide Tartrique",
+          "symptoms": "Léthargie, déshydratation, insuffisance rénale aiguë irréversible en 24 à 72 heures.",
+          "risk": "EXTRÊMEMENT LÉTAL"
+        },
+        {
+          "name": "Xylitol (Sucre de Bouleau / E967)",
+          "toxin": "Édulcorant Synthétique",
+          "symptoms": "Sécrétion massive d’insuline, hypoglycémie foudroyante, ataxie, nécrose hépatique aiguë en quelques heures.",
+          "risk": "URGENCE VITALE ABSOLUE"
+        },
+        {
+          "name": "Oignons, Ail, Poireaux & Échalotes",
+          "toxin": "Disulfure de N-propyle",
+          "symptoms": "Destruction des globules rouges, anémie hémolytique, gencives pâles, urines brunâtres, faiblesse.",
+          "risk": "TOXICITÉ CUMULATIVE FORTE"
+        },
+        {
+          "name": "Noix de Macadamia",
+          "toxin": "Molécule neurotoxique inconnue",
+          "symptoms": "Faiblesse du train arrière, fièvre ou hypothermie, vomissements, raideur musculaire douloureuse.",
+          "risk": "MODÉRÉ À SÉVÈRE"
+        },
+        {
+          "name": "Os Cuits de Toute Origine",
+          "toxin": "Danger Physique d’Esquilles",
+          "symptoms": "Perforation de l’estomac ou de l’intestin, hémorragie interne, péritonite, occlusion chirurgicale.",
+          "risk": "URGENCE CHIRURGICALE"
+        }
+      ],
+      "emergencyTitle": "Que Faire en Cas d’Intoxication Alimentaire ?",
+      "emergencySteps": [
+        "1. Agissez Immédiatement : Notez précisément l’aliment ingéré, son emballage, la quantité approximative et l’heure.",
+        "2. Ne Faites PAS Vomir sans Avis Vétérinaire : Les produits corrosifs ou les os cassants brûlent et lacèrent l’œsophage lors du reflux.",
+        "3. Appelez d’Urgence un Vétérinaire : Contactez immédiatement votre clinique de garde ou le centre antipoison vétérinaire (CNITV / CAPAE)."
+      ],
+      "safeTitle": "Fruits et Légumes 100% Sains et Bénéfiques",
+      "safeIntro": "Ces végétaux apportent des antioxydants naturels, des fibres prébiotiques et des vitamines indispensables à la gamelle de votre chien :",
+      "safeFoods": [
+        {
+          "name": "Myrtilles",
+          "benefit": "Concentrées en anthocyanes et polyphénols protecteurs des cellules."
+        },
+        {
+          "name": "Purée de Courge / Potiron",
+          "benefit": "Fibres solubles régulant le transit aussi bien en cas de diarrhée que de constipation."
+        },
+        {
+          "name": "Carottes",
+          "benefit": "Friandise croquante hypocalorique riche en bêta-carotène favorisant l’hygiène dentaire."
+        },
+        {
+          "name": "Haricots Verts",
+          "benefit": "Légume vert rassasiant idéal pour la gestion du poids des chiens en surpoids."
+        },
+        {
+          "name": "Pommes (Sans Pépins)",
+          "benefit": "Source naturelle de vitamine C et de pectine bénéfique pour la flore intestinale."
+        }
+      ]
+    },
+    "brands": {
+      "eyebrow": "AVIS MARQUES DE CROQUETTES & HISTORIQUE DES RAPPELS",
+      "heroTitle": "Avis sur les Marques d’Aliments pour Chien et Rappels Sanitaires",
+      "heroSubtitle": "Analyses objectives sur la qualité des ingrédients, le respect des étiquettes et les historiques de retraits de lots.",
+      "brandsList": [
+        {
+          "name": "Blue Buffalo",
+          "grade": "Note : B+",
+          "pros": "Viande désossée en premier ingrédient ; sans maïs, blé ni soja ; bouchées LifeSource Bits riches en vitamines.",
+          "cons": "Taux élevé de glucides (45-50%) ; rappels par le passé pour humidité excessive et excès de vitamine D.",
+          "verdict": "Croquettes de niveau supérieur à la moyenne. Nous recommandons d’ajouter 20% d’aliments frais pour l’hydratation."
+        },
+        {
+          "name": "Rachael Ray Nutrish",
+          "grade": "Note : C+ / B-",
+          "pros": "Abordable et facile à trouver ; les gammes Peak et Dish intègrent davantage de viande véritable.",
+          "cons": "Les formules d’entrée de gamme abusent de protéines de pois et de gluten de maïs ; citée dans une enquête de la FDA.",
+          "verdict": "Option économique acceptable dans ses gammes supérieures, en inspectant bien l’absence de légumineuses scindées."
+        },
+        {
+          "name": "Pure Balance",
+          "grade": "Note : B (Meilleur Rapport Qualité/Prix)",
+          "pros": "Très bon rapport qualité-prix ; recettes riches en viande sans colorants artificiels ni céréales bas de gamme.",
+          "cons": "Fabrication sous-traitée ; taux de glucides modéré.",
+          "verdict": "L’une des options les plus honnêtes dans les rayons de supermarché."
+        },
+        {
+          "name": "Ollie Fresh Dog Food",
+          "grade": "Note : A (Excellence)",
+          "pros": "Ingrédients 100% de qualité humaine ; cuisson douce sous vide ; portions pré-calculées sur mesure.",
+          "cons": "Abonnement onéreux (180€-350€/mois) ; nécessite de l’espace au congélateur.",
+          "verdict": "La référence absolue pour la santé métabolique, l’éclat du pelage et la longévité digestive."
+        },
+        {
+          "name": "Open Farm",
+          "grade": "Note : A-",
+          "pros": "Transparence totale des approvisionnements ; viandes certifiées bien-être animal et poissons sauvages durables.",
+          "cons": "Prix haut de gamme ; distribution limitée en magasins physiques.",
+          "verdict": "Le meilleur choix pour une éthique irréprochable et l’absence totale de sous-produits de volaille."
+        }
+      ],
+      "recallsTitle": "Comprendre les Rappels de Lots (Recalls)",
+      "recallsDesc": "Les alertes sanitaires vétérinaires se divisent en trois classes : Classe I (danger grave ou mortel, ex. Salmonelle, aflatoxines ou surdosage en Vitamine D), Classe II (troubles passagers) et Classe III (défaut d’étiquetage). Vérifiez toujours le numéro de lot inscrit sur le sac.",
+      "methodTitle": "Nos 4 Critères d’Évaluation des Aliments",
+      "methodPillars": [
+        {
+          "title": "1. Clarté des Protéines",
+          "desc": "Viandes musculaires identifiées plutôt que farines animales anonymes."
+        },
+        {
+          "title": "2. Taux de Glucides",
+          "desc": "Maintenir les amidons sous 40% pour lutter contre l’obésité et le diabète."
+        },
+        {
+          "title": "3. Traçabilité des Filières",
+          "desc": "Élevages respectueux et absence d’OGM."
+        },
+        {
+          "title": "4. Rigueur Sanitaire",
+          "desc": "Contrôles microbiologiques en laboratoire indépendant et usines certifiées."
+        }
+      ]
+    },
+    "allergies": {
+      "eyebrow": "GUIDE PRATIQUE // ALLERGIES ALIMENTAIRES ET DIGESTION",
+      "heroTitle": "Meilleure Alimentation pour Chien Allergique et Estomac Sensible",
+      "heroSubtitle": "Guide pratique sur les intolérances, le choix des protéines nouvelles et le protocole d’éviction de 8 semaines.",
+      "allergensTitle": "Les 5 Allergènes Alimentaires les Plus Courants chez le Chien",
+      "allergensIntro": "Les allergies alimentaires canines sont des réactions immunitaires d’hypersensibilité à des protéines spécifiques. Par ordre de prévalence clinique :",
+      "allergensList": [
+        {
+          "name": "1. Poulet Industriel (60% des cas)",
+          "desc": "Omniprésent dans les croquettes de grande consommation, le poulet est l’allergène canin numéro un."
+        },
+        {
+          "name": "2. Bœuf Commercial (30% des cas)",
+          "desc": "Protéine rouge fréquente provoquant de fortes démangeaisons cutanées et des otites chroniques."
+        },
+        {
+          "name": "3. Produits Laitiers et Fromages",
+          "desc": "Les chiens adultes manquent d’enzymes lactases, causant diarrhées et flatulences douloureuses."
+        },
+        {
+          "name": "4. Gluten de Blé et de Maïs",
+          "desc": "Protéines végétales pro-inflammatoires fragilisant la muqueuse intestinale."
+        },
+        {
+          "name": "5. Soja et Légumineuses",
+          "desc": "Substituts protéiques industriels provoquant une fermentation intestinale anormale et du prurit."
+        }
+      ],
+      "eliminationTitle": "Le Protocole d’Éviction sur 8 Semaines",
+      "eliminationSteps": [
+        {
+          "step": "Phase 1",
+          "title": "Choisir une Seule Protéine Nouvelle",
+          "desc": "Passez votre chien à une source de protéine qu’il n’a jamais consommée (Cerf, Lapin ou Kangourou) avec un légume digeste comme la courge."
+        },
+        {
+          "step": "Phase 2",
+          "title": "Zéro Contamination (8 Semaines Strictes)",
+          "desc": "Durant 8 semaines consécutives, donnez exclusivement cette ration. Interdiction absolue des friandises industrielles et des restes de table."
+        },
+        {
+          "step": "Phase 3",
+          "title": "Test de Réintroduction Contrôlé",
+          "desc": "Si les démangeaisons ont disparu, réintroduisez un ingrédient suspect pendant 7 jours. Si les rougeurs réapparaissent, l’allergie est confirmée."
+        }
+      ],
+      "novelTitle": "Protéines Nouvelles Recommandées par les Vétérinaires",
+      "novelProteins": [
+        {
+          "name": "Viande de Cerf / Chevreuil",
+          "desc": "Viande rouge maigre et très digeste contre laquelle l’organisme canin n’a généralement pas d’anticorps."
+        },
+        {
+          "name": "Viande de Lapin",
+          "desc": "Protéine hypoallergénique d’excellence possédant un remarquable profil en acides aminés."
+        },
+        {
+          "name": "Viande de Canard",
+          "desc": "Alternative très appétente pour les chiens intolérants au poulet d’élevage."
+        },
+        {
+          "name": "Viande de Kangourou",
+          "desc": "L’une des viandes sauvages les plus pures et pauvres en matières grasses."
+        }
+      ]
+    },
+    "calculator": {
+      "eyebrow": "100% GRATUIT // CALCULATEUR DE PORTIONS",
+      "noticeTitle": "Avertissement :",
+      "noticeText": "Fourni à titre indicatif et éducatif. Ne remplace pas une consultation ou un diagnostic vétérinaire.",
+      "heroTitle": "Calculateur de Ration et Calories pour Chien",
+      "heroSubtitle": "Calculez le besoin énergétique précis de votre chien (RER et MER) et obtenez ses rations exactes en grammes selon son poids, âge, activité et note corporelle."
+    },
+    "breeds": {
+      "eyebrow": "GUIDE NUTRITIONNEL PAR RACE // DIRECTIVES VÉTÉRINAIRES",
+      "targetWeight": "Poids Idéal",
+      "dailyCalories": "Calories par Jour",
+      "freshDaily": "Ration Fraîche / Jour",
+      "kibbleDaily": "Croquettes / Jour",
+      "cups": "gobelets",
+      "reqsTitle": "Besoins Nutritionnels pour le {name}",
+      "reqsIntro": "En tant que chien de catégorie {category} avec un poids moyen de {w0} à {w1} lbs (env. {Math.round(w0*0.453)} à {Math.round(w1*0.453)} kg), le {name} exige une balance nutritionnelle spécifique :",
+      "predispositionsTitle": "Prédispositions et Sensibilités à Surveiller :",
+      "feedingRoutineTitle": "Recommandation de Distribution des Repas :",
+      "feedingRoutineDesc": "Nourrissez votre {name} adulte deux fois par jour (50% le matin et 50% le soir). Laissez toujours de l’eau propre à volonté. Si vous donnez des croquettes, réhydratez-les avec un bouillon tiède pour préserver ses reins.",
+      "ctaTitle": "Personnaliser la Ration Exacte pour Votre {name}",
+      "ctaSubtitle": "Ajustez selon l’âge exact (chiot, adulte, senior), le poids réel, l’activité et la silhouette avec notre calculateur.",
+      "ctaBtn": "Calculer pour mon {name} →",
+      "faqTitle": "Questions Fréquentes sur l’Alimentation du {name}",
+      "faqSubtitle": "Quantités recommandées, fréquence des repas et meilleurs choix d’ingrédients."
+    },
+    "comparisonTable": {
+      "eyebrow": "COMPARAISON NUTRITIONNELLE // ALIMENTATION FRAÎCHE VS CROQUETTES",
+      "title": "Pourquoi les Aliments Entiers Surpassent Biologiquement les Croquettes",
+      "subtitle": "Une analyse comparative de la température de cuisson, de la précision des portions et du coût mensuel réel — les variables qu'une étude de longévité sur 5 ans a associées à une espérance de vie accrue jusqu'à 32 mois chez les chiens nourris aux aliments frais.",
+      "scrollHint": "↔ Faites défiler le tableau horizontalement",
+      "colMetric": "Critère Nutritionnel",
+      "colDfp": "✨ DogFoodPlanner",
+      "colSubs": "Abonnements Frais",
+      "colKibble": "Croquettes Sèches",
+      "rows": [
+        {
+          "metric": "Méthode de Cuisson",
+          "dfp": "Cuisson Douce (~74°C) ou Cru — Enzymes Intactes",
+          "subs": "Cuit Sous-Vide et Surgelé",
+          "kibble": "Extrusion à Très Haute Température (200°C+)"
+        },
+        {
+          "metric": "Précision des Portions",
+          "dfp": "Grammes exacts via calcul métabolique RER/MER, personnalisé au poids, à l'âge et à l'activité",
+          "subs": "Tableau de rationnement par tranche de poids fixe",
+          "kibble": "Tableau générique sur le sac — surestime les rations de 20 à 30%"
+        },
+        {
+          "metric": "Glucides Nets",
+          "dfp": "< 5% (légumes uniquement, zéro agent de remplissage)",
+          "subs": "10% – 20%",
+          "kibble": "45% – 60% (amidons de maïs, de blé et de pois)"
+        },
+        {
+          "metric": "Humidité Biologique",
+          "dfp": "70% – 75% (maintient l'hydratation rénale et urinaire)",
+          "subs": "70% – 75%",
+          "kibble": "8% – 10% (déshydratation subclinique chronique)"
+        },
+        {
+          "metric": "Intégrité des Nutriments",
+          "dfp": "Oxydation minime — oméga-3 et enzymes préservés",
+          "subs": "Modérée — altération de certains nutriments thermosensibles",
+          "kibble": "Oxydation des graisses et formation d'AGEs par l'extrusion thermique"
+        },
+        {
+          "metric": "Transparence des Ingrédients",
+          "dfp": "100% de grammes et pourcentages divulgués — vous contrôlez chaque gramme",
+          "subs": "Mélange exclusif (ratios exacts gardés secrets)",
+          "kibble": "Ingrédients fractionnés et farines animales génériques"
+        },
+        {
+          "metric": "Coût Moyen Mensuel (Chien de 23 kg)",
+          "dfp": "75€ – 120€ (ingrédients bruts préparés à la maison)",
+          "subs": "240€ – 420€ / mois",
+          "kibble": "55€ – 90€ / mois"
+        }
+      ]
+    },
+    "faqPage": {
+      "badge": "BASE DE CONNAISSANCES // RÉPONSES VÉTÉRINAIRES",
+      "exploreHubsTitle": "Explorez Nos Guides Vétérinaires Spécialisés",
+      "exploreHubsSubtitle": "Des dossiers approfondis pour les maîtres soucieux de la longévité et du bien-être de leur compagnon.",
+      "cardBestFood": "Comparatif ration fraîche, BARF, croquettes riches en viande et digestion délicate.",
+      "cardCalc": "Calculateur RER et MER pour obtenir les rations au gramme près.",
+      "cardRecipes": "Recettes maison équilibrées et formules BARF 80-10-10 avec apport calcique maîtrisé.",
+      "cardAllergies": "Choix des protéines hypoallergéniques, régimes d’éviction et microbiote.",
+      "cardToxic": "Liste complète des aliments dangereux, fruits et légumes sains et additifs à fuir.",
+      "cardBrands": "Avis indépendants sur Blue Buffalo, Nutrish, Pure Balance, Ollie et Open Farm."
+    },
+    "faqSingle": {
+      "reviewedBy": "Vérifié par : Équipe Rédactionnelle DogFoodPlanner",
+      "updated": "Mis à jour : 2026",
+      "directQuickAnswer": "Réponse Directe Résumée",
+      "clinicalAnalysis": "Analyse Nutritionnelle Détaillée",
+      "topics": "Thèmes associés :",
+      "ctaBadge": "🐾 Moteur Nutritionnel Canin Gratuit",
+      "ctaTitle": "Calculez les Calories et Portions Journalières pour Votre Chien",
+      "ctaSubtitle": "Utilisez notre calculateur pour définir les besoins métaboliques (RER/MER) et les grammes de repas frais ou crus.",
+      "ctaBtn": "Calculer la Ration Maintenant →",
+      "relatedTitle": "Questions Similaires sur l'Alimentation",
+      "readAnswer": "Lire la Réponse Complète →",
       "referencedInAnswer": "In dieser Antwort referenziert",
       "buyNow": "Jetzt kaufen"
+    },
+    "bestFoodSingle": {
+      "rankBadge": "TOP 5 MEILLEURS ALIMENTS POUR CHIEN // RANG",
+      "reviewedBy": "Vérifié par : Équipe Rédactionnelle DogFoodPlanner",
+      "nutritionalScore": "Score nutritionnel",
+      "strengths": "Points forts",
+      "tradeoffs": "Compromis",
+      "fullBreakdown": "Analyse complète",
+      "exampleProduct": "Exemple de produit dans cette catégorie",
+      "previousRank": "Rang précédent",
+      "nextRank": "Rang suivant",
+      "backToRanking": "Retour au classement complet du Top 5",
+      "viewOnAmazon": "Voir sur Amazon"
+    }
   },
-  "bestFoodSingle": {
-    "rankBadge": "TOP 5 MEILLEURS ALIMENTS POUR CHIEN // RANG",
-    "reviewedBy": "Vérifié par : Équipe Rédactionnelle DogFoodPlanner",
-    "nutritionalScore": "Score nutritionnel",
-    "strengths": "Points forts",
-    "tradeoffs": "Compromis",
-    "fullBreakdown": "Analyse complète",
-    "exampleProduct": "Exemple de produit dans cette catégorie",
-    "previousRank": "Rang précédent",
-    "nextRank": "Rang suivant",
-    "backToRanking": "Retour au classement complet du Top 5",
-    "viewOnAmazon": "Voir sur Amazon"
-  }
-},
-  de: {
-  "about": {
-    "heroTitle": "Über DogFoodPlanner: Hunde-Futterplanung einfach gemacht",
-    "heroSubtitle": "Erfahren Sie mehr über DogFoodPlanner.com, unsere Mission und wie unser kostenloser Hundefutter-Rechner funktioniert.",
-    "missionBadge": "UNSERE MISSION // FUTTERPLANUNG FÜR HUNDE",
-    "whyTitle": "Warum DogFoodPlanner gegründet wurde",
-    "whyP1": "Wir haben DogFoodPlanner entwickelt, damit Hundebesitzer Mahlzeiten und Futterportionen mit gutem Gefühl planen können. Wir recherchieren öffentlich zugängliche Richtlinien und machen daraus einfache, kostenlose Tools und Ratgeber.",
-    "whyP2": "",
-    "whoTitle": "Wer Wir Sind",
-    "whoContent": "DogFoodPlanner ist eine unabhängige Website, die von hundebegeisterten Rechercheuren und Autoren betrieben wird. Wir sind keine Tierärzte. Konsultieren Sie immer Ihren Tierarzt, bevor Sie die Ernährung Ihres Hundes umstellen – insbesondere bei Welpen, Senioren oder Hunden mit Vorerkrankungen.",
-    "methodTitle": "Unsere Ernährungsmethodik",
-    "pillars": [
-      {
-        "tag": "01 // KALORIENSCHÄTZUNG",
-        "title": "Kalorienschätzung",
-        "desc": "Unser Rechner nutzt die Standardformel für den Ruheenergiebedarf (70 × Körpergewicht in kg^0,75) und gängige Aktivitätsfaktoren, um den täglichen Kalorienbedarf zu schätzen."
-      },
-      {
-        "tag": "02 // REFERENZQUELLEN",
-        "title": "Referenzquellen",
-        "desc": "Wir orientieren uns an veröffentlichten Leitlinien von Organisationen wie AAFCO und dem National Research Council. Unsere Inhalte dienen Bildungszwecken und ersetzen keine fachliche Beratung."
-      },
-      {
-        "tag": "03 // TRANSPARENZ",
-        "title": "Transparenz",
-        "desc": "Einige Seiten enthalten Affiliate-Links, einschließlich Links des Amazon-Partnerprogramms. Wenn Sie darüber einkaufen, erhalten wir möglicherweise eine kleine Provision – ohne zusätzliche Kosten für Sie. Dies hat keinerlei Einfluss auf unsere Empfehlungen."
-      }
-    ],
-    "ctaTitle": "Bereit, den Nährstoffbedarf Ihres Hundes zu berechnen?",
-    "ctaDesc": "Nutzen Sie unseren interaktiven Rechner, erkunden Sie unsere Allergie-Ratgeber und lesen Sie unsere Hundefutter-Ratgeber.",
-    "ctaBtn": "Kostenlosen Futterrechner starten →",
-    "amazonDisclaimer": "Als Amazon-Partner verdienen wir an qualifizierten Verkäufen."
-  },
-  "contact": {
-    "eyebrow": "SUPPORT & KONTAKT // DIREKTE ANFRAGEN",
-    "cards": [
-      {
-        "icon": "📧",
-        "title": "Allgemeine Anfragen",
-        "desc": "Fragen und Feedback:",
-        "email": "hello@dogfoodplanner.com"
-      },
-      {
-        "icon": "🐾",
-        "title": "Ernährungsberatung",
-        "desc": "Fragen zu NRC-Formeln und Rezepten:",
-        "email": "research@dogfoodplanner.com"
-      },
-      {
-        "icon": "🛡️",
-        "title": "Technischer Support",
-        "desc": "Fehlerberichte und Anregungen:",
-        "email": "legal@dogfoodplanner.com"
-      }
-    ],
-    "formTitle": "Nachricht an unser tierärztliches Ernährungsteam senden",
-    "formDesc": "Haben Sie Fragen zu unseren Kalorienberechnungen oder benötigen Sie Unterstützung bei einer BARF-Ration? Wir antworten innerhalb von 24 Geschäftsstunden.",
-    "nameLabel": "Ihr Name",
-    "namePlaceholder": "z. B. Michael Schmidt",
-    "emailLabel": "Ihre E-Mail-Adresse",
-    "emailPlaceholder": "michael@example.de",
-    "subjectLabel": "Thema der Anfrage",
-    "subjectOptions": [
-      "Allgemeine Frage / Feedback",
-      "Ernährung & Rezeptberatung",
-      "Frage zum Futterrechner",
-      "Technischer Fehlerbericht"
-    ],
-    "messageLabel": "Ihre Nachricht",
-    "messagePlaceholder": "Beschreiben Sie Ihren Hund (Rasse, Gewicht, Alter) und Ihr Anliegen...",
-    "submitBtn": "Nachricht absenden →",
-    "notice": "Tierärztlicher Notfall-Hinweis: Bei akuten Vergiftungssymptomen oder schwerer Atemnot wenden Sie sich bitte sofort an Ihre örtliche Tiernotklinik.",
-    "faqTitle": "Suchen Sie schnelle Antworten?",
-    "faqDesc": "Besuchen Sie unsere Wissensdatenbank mit über 40 tierärztlichen Antworten zu Futtermäkeligkeit, BARF, Katzenfutter und Trockenfutter-Marken.",
-    "faqBtn": "Alle FAQs ansehen →",
-    "successTitle": "✓ Nachricht vorbereitet — wird an hello@dogfoodplanner.com gesendet",
-    "successDesc": "Ihr E-Mail-Programm sollte sich mit einer vorbereiteten Nachricht an hello@dogfoodplanner.com öffnen. Klicken Sie einfach auf Senden in Ihrer Mail-App und sie wird in unserem Posteingang ankommen."
-  },
-  "privacy": {
-    "eyebrow": "RECHTLICHES // DATENSCHUTZERKLÄRUNG",
-    "lastUpdated": "Stand: 13. Oktober 2026",
-    "intro": "Auf DogFoodPlanner.com nehmen wir den Schutz Ihrer Daten sehr ernst. Diese Erklärung erläutert, wie wir Daten erheben und schützen.",
-    "sections": [
-      {
-        "title": "1. Daten, die wir nicht erfassen",
-        "content": "Die Gesundheitsdaten Ihres Hundes gehören Ihnen. Für die Nutzung unseres Hundefutter-Rechners ist keine Registrierung, kein Passwort und keine Zahlungsangabe erforderlich. Eingegebene Hundeprofile, Gewichte und Mahlzeitenauswahlen werden clientseitig in Ihrem Browser verarbeitet und nicht in externen Datenbanken gespeichert."
-      },
-      {
-        "title": "2. Anonyme technische Serverdaten",
-        "content": "Wie fast alle Webseiten erfassen unsere CDN-Server standardmäßige anonymisierte Verbindungsdaten (anonymisierte IP-Adresse, Browsertyp, Referrer-URL, Zeitstempel), um die Sicherheit zu gewährleisten und Cyberangriffe abzuwehren."
-      },
-      {
-        "title": "3. Cookies und lokaler Speicher (localStorage)",
-        "content": "Wir nutzen den lokalen Speicher (localStorage), um Ihre Spracheinstellung und Ihren Futterplan auf Ihrem Gerät zu speichern. Wenn Sie auf einen Affiliate-Link klicken, kann die Website des Drittanbieters (z. B. Amazon) eigene Cookies setzen."
-      },
-      {
-        "title": "4. Links zu Drittanbietern",
-        "content": "Unsere Website enthält Referenz-Links zu veröffentlichten Studien, AAFCO-Standards, NRC-Datenbanken und externen Ressourcen. Wir sind nicht verantwortlich für die Datenschutzpraktiken oder den Inhalt von Websites Dritter."
-      },
-      {
-        "title": "5. Affiliate-Offenlegung",
-        "content": "DogFoodPlanner ist Teilnehmer des Partnerprogramms von Amazon Services LLC. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen – ganz ohne zusätzliche Kosten für Sie."
-      },
-      {
-        "title": "6. Schutz von Minderjährigen",
-        "content": "Unsere Inhalte und Werkzeuge richten sich an volljährige Hundehalter. Wir erfassen wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren."
-      },
-      {
-        "title": "7. Aktualisierungen und Kontakt",
-        "content": "Diese Datenschutzerklärung kann gelegentlich aktualisiert werden. Bei Fragen erreichen Sie uns unter privacy@dogfoodplanner.com."
-      }
-    ]
-  },
-  "terms": {
-    "eyebrow": "RECHTLICHES // ALLGEMEINE GESCHÄFTSBEDINGUNGEN",
-    "lastUpdated": "Stand: Januar 2026",
-    "intro": "Bitte lesen Sie diese Nutzungsbedingungen aufmerksam durch, bevor Sie DogFoodPlanner.com verwenden. Durch die Nutzung erklären Sie sich mit ihnen einverstanden.",
-    "sections": [
-      {
-        "title": "1. Geltungsbereich",
-        "content": "Durch den Zugriff auf DogFoodPlanner.com akzeptieren Sie diese Nutzungsbedingungen in vollem Umfang. Wenn Sie diesen Bedingungen nicht zustimmen, sehen Sie bitte von der Nutzung ab."
-      },
-      {
-        "title": "2. Tierärztlicher und medizinischer Haftungsausschluss",
-        "content": "Die auf DogFoodPlanner.com bereitgestellten Inhalte, Rechner und Rezeptvorschläge dienen ausschließlich allgemeinen Bildungs- und Informationszwecken nach NRC-Modellen. Sie stellen KEINE tierärztliche Beratung, Diagnose oder Behandlung dar. Konsultieren Sie vor wesentlichen Futterumstellungen stets einen Tierarzt oder Fachtierarzt für Tierernährung (DACVN), insbesondere bei Welpen oder chronisch kranken Hunden."
-      },
-      {
-        "title": "3. Nutzung des Futterrechners",
-        "content": "Alle berechneten Kalorienwerte (RER und MER) und Grammmengen sind mathematische Richtwerte. Der reale Stoffwechsel hängt von Kastration, Haltungstemperatur und Genetik ab. Hundehalter sind verpflichtet, die Körperkondition (BCS) regelmäßig zu überprüfen und Portionen anzupassen."
-      },
-      {
-        "title": "4. Sicherheit bei BARF & Kalziumausgleich",
-        "content": "Die Zubereitung von BARF oder Kochfutter erfordert die lückenlose Zufuhr aller Mikronährstoffe. Die ausschließliche Fütterung von reinem Muskelfleisch ohne Kalziumzusatz führt unweigerlich zu schweren Knochenentkalkungen. Der Nutzer trägt die alleinige Verantwortung für eine ausgewogene Rationsgestaltung."
-      },
-      {
-        "title": "5. Urheberrecht und geistiges Eigentum",
-        "content": "Sämtliche Algorithmen, Interface-Designs, Rechner-Logiken und Fachartikel auf DogFoodPlanner.com sind urheberrechtlich geschützt und Eigentum von DogFoodPlanner."
-      },
-      {
-        "title": "6. Haftungsbeschränkung",
-        "content": "DogFoodPlanner.com und die beteiligten Autoren haften nicht für direkte oder indirekte Schäden, die aus der Nutzung der zur Verfügung gestellten Informationen resultieren."
-      }
-    ]
-  },
-  "bestFood": {
-    "eyebrow": "LEITFADEN // DIE BESTEN HUNDEFUTTER 2026",
-    "rankingsTitle": "Welche sind die 5 gesündesten Hundefutter im Jahr 2026?",
-    "rankingsIntro": "Aktuelle veterinärmedizinische Studien belegen: Minimale Hitzebehandlung und ein biologischer Feuchtigkeitsgehalt von über 70% sind die wichtigsten Faktoren für Vitalität und gesunde Nieren.",
-    "readMoreLabel": "Mehr erfahren →",
-    "readLessLabel": "Weniger anzeigen ↑",
-    "rankings": [
-      {
-        "rank": "01",
-        "title": "Schonend dampfgegartes Frischfutter in Lebensmittelqualität",
-        "score": "98/100",
-        "pros": "Echtes Muskelfleisch und Gemüse bei milden 70°C gegart. Erhält über 70% natürliche Feuchtigkeit, aktive Enzyme und hitzeempfindliche Vitamine.",
-        "cons": "Muss gekühlt oder tiefgefroren gelagert werden. Höhere Kosten als billiges Supermarktfutter.",
-        "readMore": "Schonend gegartes Frischfutter steht an der Spitze des Rankings, weil es einer hausgemachten Mahlzeit nahekommt, ohne bei der Lebensmittelsicherheit Abstriche zu machen. Die Zutaten stammen aus USDA-zertifizierten Lebensmittelbetrieben und werden anschließend nur so lange bei niedriger Temperatur (rund 71 °C bzw. 160 °F) erhitzt, dass Krankheitserreger abgetötet werden, während empfindliche Proteine, Taurin und wasserlösliche B-Vitamine erhalten bleiben, die bei der Hochtemperatur-Extrusion verloren gehen.\n\nDa das Futter bereits einen Feuchtegehalt von über 70 % besitzt, entlastet es die Nieren und verringert die chronische, leichte Dehydrierung, die bei reiner Trockenfutterernährung häufig auftritt. Es eignet sich besonders gut für Hunde in der Rekonvaleszenz, Senioren mit vermindertem Durstgefühl oder Rassen mit einer Tendenz zu Futterunverträglichkeiten, da die Rezepte meist auf ein einziges Protein setzen und ohne tierische Mehle oder synthetische Konservierungsstoffe auskommen.\n\nDer größte Kompromiss liegt in der Logistik: Es benötigt Kühl- oder Gefrierraum, und Portionen müssen vor der Fütterung aufgetaut werden. Wer nicht selbst kochen möchte, findet bei mehreren Marken mit USDA-zugelassenen Küchen auch lang haltbare Varianten desselben schonend gegarten Formats – ein unkomplizierter Einstieg in diese Kategorie, bevor man sich für eine vollständige selbstgekochte Routine entscheidet.",
-        "productKey": "justfoodfordogs-chicken-white-rice",
-        "productNote": "Eine lange haltbare Möglichkeit, diese Kategorie auszuprobieren:"
-      },
-      {
-        "rank": "02",
-        "title": "Artgerechte 80-10-10 BARF Rohfütterung",
-        "score": "95/100",
-        "pros": "Natürliches Beutetier-Prinzip: 80% Fleisch, 10% fleischige Knochen, 10% Innereien. Perfekt für Zahnhygiene und kräftige Muskulatur.",
-        "cons": "Erfordert strikte Hygiene bei der Fleischverarbeitung und präzisen Kalziumausgleich.",
-        "readMore": "Das 80-10-10-Verhältnis (80 % Muskelfleisch, 10 % roher, essbarer Knochen, 10 % Innereien mit Drüsenfunktion) wurde entwickelt, um nachzubilden, was ein wildlebender Hundevorfahre von einem vollständigen Beutetier erhalten würde. Richtig umgesetzt liefert es ein natürlich ausgewogenes Calcium-Phosphor-Verhältnis direkt aus dem Knochenanteil, unterstützt die Muskelmasse, und das Kauen roher Knochen hilft mechanisch, Zahnstein von den Zähnen zu lösen.\n\nDa nichts erhitzt wird, bleiben Enzyme und hitzeempfindliche Aminosäuren vollständig erhalten. Der Haken liegt in der Präzision: Sichere Rohknochen zu beziehen und das Verhältnis exakt einzuhalten erfordert echte Disziplin, denn ein falsch berechneter Knochenanteil ist der häufigste Fehler, der zu Verstopfung oder – bei wachsenden Welpen – langfristig zu Skelettproblemen führen kann. Rohes Fleisch muss außerdem mit derselben Hygiene behandelt werden wie jedes andere rohe Lebensmittel für Menschen (getrennte Schneidebretter, Kühlung, sofortige Reinigung).\n\nDie meisten Haushalte finden es einfacher, mit einem professionell formulierten Rohfutterprodukt zu beginnen, das das Verhältnis bereits korrekt abbildet, bevor sie zu vollständig individuell zusammengestellten und zu Hause abgewogenen Rohmahlzeiten übergehen.",
-        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-        "productNote": "Eine bereits ausgewogene Rohfutter-Option, die Rätselraten erspart:"
-      },
-      {
-        "rank": "03",
-        "title": "Luftgetrocknetes & Gefriergetrocknetes Rohfutter",
-        "score": "91/100",
-        "pros": "Kombiniert die Nährstoffdichte von Rohfleisch mit der Bequemlichkeit normaler Trockenlagerung.",
-        "cons": "Sollte vor dem Füttern unbedingt mit lauwarmem Wasser oder Knochenbrühe eingeweicht werden.",
-        "readMore": "Sowohl luftgetrocknetes als auch gefriergetrocknetes Futter entziehen rohem Fleisch bei niedrigen Temperaturen Feuchtigkeit, wodurch das Nährstoff- und Enzymprofil nahe am Rohzustand bleibt, während das Futter bei Raumtemperatur lagerfähig wird – ein Gefrierschrank ist nicht nötig. Gefriertrocknung nutzt ein kaltes Vakuumverfahren, das Nährstoffe meist noch besser bewahrt als die Lufttrocknung, ist dafür aber pro Kilogramm meist teurer.\n\nBeide Varianten sind gut transportierbar und eignen sich hervorragend als Rohfutter-Topping, das über Trockenfutter gemischt die Akzeptanz erhöht. Das Einweichen in warmem Wasser oder Knochenbrühe vor dem Servieren stellt einen Feuchtegehalt wieder her, der näher an der ursprünglichen Wildnahrung des Hundes liegt, und ist besonders sinnvoll für Hunde mit Neigung zu Harnkristallen oder Nierenbelastung.\n\nDer wichtigste Aspekt ist der Preis pro Kalorie: Da das Wassergewicht entfernt wurde, bezahlt man für konzentrierte Nährstoffe – deshalb wird diese Form meist als Topping oder im Rotationsplan eingesetzt und seltener als alleinige Tagesration für einen großen Hund.",
-        "productKey": "ziwi-peak-beef-chicken-bundle",
-        "productNote": "Eine gut bewertete, luftgetrocknete Option:"
-      },
-      {
-        "rank": "04",
-        "title": "Proteinreiches Trockenfutter ohne Getreide oder mit Urgetreide",
-        "score": "78/100",
-        "pros": "Lange haltbar, unkompliziert und budgetfreundlich bei großen Hunderassen.",
-        "cons": "Extrusion bei 200°C, nur 8–10% Restfeuchte und 40–50% verarbeitete Stärkekohlenhydrate.",
-        "readMore": "Hochwertiges Trockenfutter bleibt für viele Haushalte die praktischste Option: Es ist bis zu ein Jahr lagerfähig, lässt sich mit einem automatischen Futterspender einfach portionieren und ist pro Kalorie deutlich günstiger als Frisch- oder Rohfutter.\n\nDie besten Formulierungen dieser Kategorie führen eine namentlich benannte Tierproteinquelle statt eines vagen „Fleischmehls“ an, setzen bei den Kohlenhydraten auf Urgetreide wie Hafer und Sorghum statt auf schwere Mais- oder Weizenfüllstoffe und werden von unabhängigen Laboren auf Schwermetalle getestet.\n\nDer Kompromiss liegt im Extrusionsverfahren selbst: Temperaturen über 200 °C (400 °F) zerstören einige hitzeempfindliche Vitamine und senken den Feuchtegehalt auf etwa 10 %. Deshalb empfehlen Tierärzte bei reiner Trockenfutterernährung oft, einen Schuss Knochenbrühe oder ein Rohfutter-Topping zuzugeben – besonders bei Hunden mit Neigung zu Harnkristallen.",
-        "productKey": "orijen-original-grain-free-23lb",
-        "productNote": "Eine proteinreiche WholePrey-Formel dieser Kategorie:"
-      },
-      {
-        "rank": "05",
-        "title": "Veterinärmedizinische Spezial-Diäten",
-        "score": "72/100",
-        "pros": "Speziell formuliert für Niereninsuffizienz, Lebererkrankungen oder Struvitsteine.",
-        "cons": "Enthält oft minderwertige Getreidenebenprodukte; rezeptpflichtig.",
-        "readMore": "Therapeutische Diäten sind gezielt darauf ausgelegt, eine einzelne, ärztlich diagnostizierte Erkrankung zu behandeln: reduzierter Protein- und Phosphorgehalt bei Nierenerkrankungen, hydrolysierte Proteine, auf die das Immunsystem nicht reagieren kann, bei schweren Futtermittelallergien, oder ein kontrollierter Magnesiumgehalt und pH-Wert bei Struvit-Blasensteinen.\n\nSie rangieren auf einer allgemeinen „Gesündeste-Futter“-Skala nur deshalb weiter unten, weil sie bewusst restriktiv ausgelegt sind und nicht auf einen durchschnittlich gesunden Hund optimiert wurden; eine Formulierung, die geschwächte Nieren schonen soll, ist beispielsweise absichtlich nicht das proteinreichste Futter auf dem Markt.\n\nDiese Diäten erfordern eine tierärztliche Freigabe und regelmäßige Blutkontrollen, um ihre Wirksamkeit zu bestätigen, und sollten einem gesunden Hund niemals ohne klinischen Grund gefüttert werden, da die Einschränkung von Nährstoffen, die ein gesunder Hund tatsächlich benötigt, auf Dauer schaden kann.",
-        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-        "productNote": "Eine gängige, tierärztlich verordnete Nieren-Diät:"
-      }
-    ],
-    "buyerGuideTitle": "4 goldene Regeln für die Futterauswahl",
-    "buyerRules": [
-      {
-        "title": "1. Eindeutig deklariertes Fleisch an 1. Stelle",
-        "desc": "Achten Sie auf „Frische Pute“, „Rindfleisch“ oder „Lachs“ statt diffuser „Fleischmehle“.",
-        "readMore": "Auf Tierfutteretiketten werden Zutaten nach ihrem Gewicht vor dem Kochen sortiert. Eindeutig deklariertes Frischfleisch (wie „Entbeinte Pute“ oder „Frisches Rindfleisch“) liefert lebenswichtige Aminosäuren wie Taurin, Arginin und Carnitin in höchster Bioverfügbarkeit. Vermeiden Sie schwammige Sammelbegriffe wie „tierische Nebenerzeugnisse“, „Fleischmehl“ oder „Geflügelmehl“, hinter denen sich minderwertige Schlachtabfälle undefinierter Tierarten verbergen können.\n\nAchten Sie zudem auf den Trick des „Zutaten-Splittings“: Hersteller teilen Kohlenhydrate oft in mehrere Einzelposten auf (z. B. Erbsen, Erbsenmehl und Erbsenprotein), damit das Fleisch auf dem Papier an erster Stelle steht, obwohl Kohlenhydrate den Hauptteil ausmachen.\n\nPräzise benannte Fleischmehle – wie „Getrocknetes Lammfleischmehl“ oder „Lachsmehl“ – sind bei transparenter Deklaration unbedenklich, da ihnen vor der Verarbeitung das Wasser entzogen wurde und sie konzentriertes tierisches Protein liefern."
-      },
-      {
-        "title": "2. Hohe biologische Feuchtigkeit (>70%)",
-        "desc": "Reines Trockenfutter führt zu schleichender Dehydration. Immer mit Brühe anfeuchten oder frische Topper ergänzen.",
-        "readMore": "In freier Natur besteht die Nahrung wilder Caniden zu 70 bis 75 % aus Wasser. Hunde besitzen evolutionär bedingt ein schwaches Durstgefühl, da ihr Organismus darauf ausgelegt ist, Feuchtigkeit direkt über die Nahrung aufzunehmen. Die ausschließliche Fütterung von Trockenfutter (mit nur 8–10 % Restfeuchte) führt zu einer dauerhaften, leichten Dehydration.\n\nÜber Jahre hinweg überlastet hochkonzentrierter Urin die Nieren und begünstigt drastisch die Bildung von schmerzhaften Struvit- und Calciumoxalat-Blasensteinen.\n\nWenn Sie Trockenfutter füttern, fügen Sie immer Flüssigkeit hinzu: Weichen Sie die Kroketten im Verhältnis 1:1 mit lauwarmer, ungewürzter Knochenbrühe oder Wasser ein, oder ergänzen Sie die Mahlzeit mit frischen Fleischtoppern, um die Nierenfunktion zu schützen."
-      },
-      {
-        "title": "3. Verzicht auf synthetische Konservierungsstoffe",
-        "desc": "Meiden Sie BHA, BHT, Ethoxyquin, Propylenglykol und künstliche Farbstoffe.",
-        "readMore": "Um eine Haltbarkeit von bis zu zwei Jahren zu gewährleisten, greifen Billigfutter oft zu synthetischen Antioxidantien wie BHA (Butylhydroxyanisol), BHT (Butylhydroxytoluol) und Ethoxyquin. Wissenschaftliche Untersuchungen stufen BHA und BHT als potenziell krebserregend und hormonell wirksam ein; Ethoxyquin (ursprünglich ein Pestizid) steht im Verdacht, Leberschäden auszulösen.\n\nAuch künstliche Farbstoffe dienen ausschließlich dem menschlichen Auge, belasten jedoch den Hundeorganismus und provozieren allergischen Juckreiz sowie Magen-Darm-Entzündungen.\n\nWählen Sie Futter, das ausschließlich mit natürlichen Antioxidantien haltbar gemacht wird: gemischte Tocopherole (Vitamin E), Rosmarinextrakt und Zitronensäure. Diese schützen Fette schonend ohne giftige Nebenwirkungen."
-      },
-      {
-        "title": "4. Geringer Kohlenhydratanteil (<25%)",
-        "desc": "Hunde besitzen keine Speichelamylase. Hohe Stärkemengen überlasten die Bauchspeicheldrüse.",
-        "readMore": "Hunde sind fakultative Karnivoren ohne biologischen Bedarf an isolierten Kohlenhydraten. Im Gegensatz zum Menschen enthält der Speichel des Hundes keine Amylase, um Stärke bereits im Maul aufzuspalten; die gesamte enzymatische Verdauung lastet allein auf der Bauchspeicheldrüse.\n\nDa Hersteller den Kohlenhydratgehalt nicht auf der Packung angeben müssen, enthalten herkömmliche Trockenfutter oft 45 bis 60 % Stärke aus Mais, Weizen oder Tapioka, nur um den Kroketten bei der Extrusion Form zu geben.\n\nHohe Stärkemengen verursachen Blutzuckerspitzen, chronische Entzündungen, Ohrenentzündungen und fördern rasant Übergewicht. Berechnen Sie den Kohlenhydratanteil mit der NfE-Formel: 100 % minus (Rohprotein + Rohfett + Rohfaser + Feuchtigkeit + Rohasche). Bevorzugen Sie Futter mit unter 25 % Kohlenhydraten."
-      }
-    ],
-    "ctaTitle": "Berechnen Sie die exakte Futtermenge für Ihren Hund",
-    "ctaDesc": "Ob gekochtes Frischfutter, Rohfütterung oder Trockenfutter: Ermitteln Sie die grammgenaue Tagesportion und Kalorien.",
-    "ctaBtn": "Tagesportion jetzt berechnen →"
-  },
-  "recipes": {
-    "eyebrow": "AUSGEWOGENE REZEPTE // NRC & AAFCO RICHTLINIEN",
-    "heroTitle": "Ausgewogene Rezepte für selbstgemachtes Hundefutter",
-    "heroSubtitle": "Schritt-für-Schritt-Anleitungen zur Zubereitung ausgewogener, schonend gegarter Mahlzeiten und artgerechter 80-10-10 BARF-Rationen.",
-    "calciumWarningTitle": "Die oberste Regel beim Selberkochen: Der Kalziumausgleich",
-    "calciumWarningDesc": "Reines Muskelfleisch enthält von Natur aus extrem viel Phosphor und fast kein Kalzium (Verhältnis 1:20). Werden Hunde nur mit Fleisch und Reis gefüttert, führt dies innerhalb weniger Monate zu schweren Skeletterkrankungen. Fügen Sie pro 500 g reinem Fleisch ohne Knochen stets 1/2 gestrichenen Teelöffel reines Eierschalenpulver (ca. 900 mg elementares Kalzium) hinzu, um das lebensnotwendige Kalzium-Phosphor-Verhältnis von 1.2:1 zu sichern.",
-    "recipesList": [
-      {
-        "tag": "SCHONEND GEKOCHT",
-        "title": "Rezept 1: Milde Pute & Kürbis-Püree (Ideal bei sensiblem Magen)",
-        "desc": "Optimal für Hunde mit empfindlicher Verdauung, Neigung zu Durchfall oder Huhn-Unverträglichkeit.",
-        "ingredients": [
-          "Mageres Putenhackfleisch — 65% (ca. 900 g)",
-          "Puten- oder Rinderherzen (Natürliche Taurinquelle) — 10% (ca. 140 g)",
-          "Reines Kürbispüree ohne Zusätze (Lösliche Ballaststoffe) — 10% (ca. 140 g)",
-          "Gedünsteter Babyspinat & Zucchini — 10% (ca. 140 g)",
-          "Wildlachsöl aus Alaska (EPA/DHA) — 2% (1.5 EL)",
-          "Feines Eierschalenpulver (Kalzium) — 3% (1 gestrichener TL)"
-        ],
-        "prep": "Putenhack und Herzen bei mäßiger Hitze schonend anbraten (Kerntemperatur ca. 70°C). Gemüse dämpfen und mit Kürbis pürieren. Alles vermengen und vollständig abkühlen lassen. Erst danach Lachsöl und Eierschalenpulver unterrühren. Portionsweise einfrieren."
-      },
-      {
-        "tag": "BARF ROH",
-        "title": "Rezept 2: Ursprüngliches 80-10-10 BARF-Menü Rind & Ente",
-        "desc": "Biologisch artgerechte Rohfütterung für gesunde ausgewachsene Hunde mit starker Magensäure.",
-        "ingredients": [
-          "Mageres Rindfleisch aus Weidehaltung — 70%",
-          "Rinderherz (Reich an L-Carnitin und CoQ10) — 10%",
-          "Rohe fleischige Entenhälse — 10% (Verdaulicher Knochen & Kalzium)",
-          "Rinderleber (Vitamin A & B-Komplex) — 5%",
-          "Rinderniere oder Milz (Sekretierende Innerei) — 5%"
-        ],
-        "prep": "Muskelfleisch und Herz in maulgerechte Stücke schneiden. Innereien grammgenau auf der Küchenwaage abwiegen. Alle Fleischkomponenten vor der Fütterung mindestens 3 Wochen bei -20°C tiefkühlen."
-      },
-      {
-        "tag": "SUPERFOOD-TOPPER",
-        "title": "Rezept 3: 80/20 Antioxidantien-Topper für Trockenfutter",
-        "desc": "Frischekick, der 20% der täglichen Trockenfutter-Kalorien durch vitalstoffreiche Zutaten ersetzt.",
-        "ingredients": [
-          "Leicht pochierte Bio-Eier — 40%",
-          "Gedämpfter Brokkoli & wilde Heidelbeeren — 30%",
-          "Lange gekochte Rinderknochenbrühe — 20%",
-          "Bio-Hanfsamen & Seealgenmehl — 10%"
-        ],
-        "prep": "Eier wachsweich kochen. Gemüse kurz dünsten. Mit zimmerwarmer Knochenbrühe und Beeren pürieren. Täglich 2–4 Esslöffel über das normale Trockenfutter geben."
-      }
-    ],
-    "calciumGuideTitle": "Sichere Kalziumquellen für selbstgemachtes Futter",
-    "calciumGuideItems": [
-      {
-        "title": "Feines Eierschalenpulver",
-        "ratio": "1/2 TL pro 500 g Fleisch ohne Knochen",
-        "desc": "95% reines Kalziumkarbonat. Leicht selbst herzustellen durch Auskochen, Trocknen und feines Mahlen von Eierschalen."
-      },
-      {
-        "title": "Rohe fleischige Knochen (RFK)",
-        "ratio": "10% des Gesamtgewichts der Futterration",
-        "desc": "Entenhälse, Hühnerflügel oder Karkassen. Knochen niemals erhitzen, da sie sonst splittern und lebensgefährlich werden."
-      },
-      {
-        "title": "Futterknochenmehl (Bone Meal)",
-        "ratio": "Nach Herstellerangabe dosieren",
-        "desc": "Mikrokristallines Hydroxylapatit, das Kalzium und Phosphor im optimalen natürlichen 2:1-Verhältnis liefert."
-      }
-    ]
-  },
-  "toxic": {
-    "eyebrow": "GIFTIGE LEBENSMITTEL FÜR HUNDE // NOTFALLPROTOKOLL",
-    "dangerTitle": "Die gefährlichsten Haushalts-Lebensmittel für Hunde",
-    "dangerIntro": "Einige für Menschen harmlose Lebensmittel enthalten Giftstoffe, die der Stoffwechsel des Hundes nicht abbauen kann und die zum Tod führen können.",
-    "dangerList": [
-      {
-        "name": "Schokolade & Kakao",
-        "toxin": "Theobromin & Koffein",
-        "symptoms": "Erbrechen, Hecheln, Herzrasen, Muskelzittern, Krampfanfälle, Kreislaufversagen.",
-        "risk": "HOCH BIS TÖDLICH"
-      },
-      {
-        "name": "Weintrauben, Rosinen & Korinthen",
-        "toxin": "Weinsäure",
-        "symptoms": "Apathie, Dehydration, akutes irreversibles Nierenversagen innerhalb von 24–72 Stunden.",
-        "risk": "EXTREM TÖDLICH"
-      },
-      {
-        "name": "Xylit (Birkenzucker / E967)",
-        "toxin": "Synthetischer Zuckeraustauschstoff",
-        "symptoms": "Massive Insulinausschüttung, lebensgefährliche Unterzuckerung, Leberversagen binnen Stunden.",
-        "risk": "HÖCHSTE NOTFALLSTUFE"
-      },
-      {
-        "name": "Zwiebeln, Knoblauch, Lauch & Schnittlauch",
-        "toxin": "N-Propyldisulfid",
-        "symptoms": "Zerstörung roter Blutkörperchen, hämolytische Anämie, blasse Schleimhäute, dunkler Urin.",
-        "risk": "KUMULATIVE HOHE GIFTIGKEIT"
-      },
-      {
-        "name": "Macadamianüsse",
-        "toxin": "Unbekanntes Neurotoxin",
-        "symptoms": "Schwäche der Hinterläufe, hohes Fieber, Erbrechen, Muskelsteifheit.",
-        "risk": "MÄSSIG BIS SCHWER"
-      },
-      {
-        "name": "Gekochte Knochen aller Tierarten",
-        "toxin": "Splittergefahr",
-        "symptoms": "Magen-Darm-Perforation, innere Blutungen, Bauchfellentzündung, Darmverschluss.",
-        "risk": "NOTOPERATION ERFORDERLICH"
-      }
-    ],
-    "emergencyTitle": "Was tun im Vergiftungs-Notfall?",
-    "emergencySteps": [
-      "1. Sofort handeln: Bringen Sie in Erfahrung, was, wie viel und wann genau gefressen wurde. Verpackung sichern!",
-      "2. Niemals eigenmächtig Erbrechen auslösen: Ätzende Stoffe oder spitze Gegenstände verätzen und zerreißen die Speiseröhre beim Hochwürgen.",
-      "3. Sofort Tierklinik anrufen: Kontaktieren Sie umgehend den tierärztlichen Notdienst oder die nächste Tierklinik."
-    ],
-    "safeTitle": "100% sicheres und gesundes Obst & Gemüse",
-    "safeIntro": "Diese pflanzlichen Zutaten liefern wertvolle Antioxidantien, Ballaststoffe und Vitamine für den Napf:",
-    "safeFoods": [
-      {
-        "name": "Heidelbeeren (Blaubeeren)",
-        "benefit": "Reich an Anthocyanen und Antioxidantien zum Zellschutz."
-      },
-      {
-        "name": "Gekochter Kürbis",
-        "benefit": "Reich an löslichen Ballaststoffen, hilft sowohl bei Durchfall als auch Verstopfung."
-      },
-      {
-        "name": "Karotten (Möhren)",
-        "benefit": "Kalorienarmer Knabberspaß mit viel Beta-Carotin, fördert die Zahnpflege."
-      },
-      {
-        "name": "Grüne Bohnen (gekocht)",
-        "benefit": "Ausgezeichnetes kalorienarmes Sättigungsgemüse für übergewichtige Hunde."
-      },
-      {
-        "name": "Äpfel (ohne Kerne)",
-        "benefit": "Natürliche Quelle für Vitamin C und darmfreundliches Pektin."
-      }
-    ]
-  },
-  "brands": {
-    "eyebrow": "HUNDEFUTTER-MARKEN IM TEST & RÜCKRUF-HISTORIE",
-    "heroTitle": "Hundefutter-Marken im Test & Rückruf-Historie",
-    "heroSubtitle": "Unabhängige Analysen von Inhaltsstoffen, Deklarationen und behördlichen Rückrufen für maximale Futtersicherheit.",
-    "brandsList": [
-      {
-        "name": "Blue Buffalo",
-        "grade": "Note: B+",
-        "pros": "Echtes Fleisch an 1. Stelle; ohne Weizen, Mais oder Soja; nährstoffschonende LifeSource Bits.",
-        "cons": "Hoher Kohlenhydratgehalt (45–50%); historische FDA-Rückrufe wegen Feuchtigkeit/Schimmel und Vitamin D.",
-        "verdict": "Überdurchschnittliches Trockenfutter. Wir empfehlen die Ergänzung mit 20% Frischfutter zur Nierenentlastung."
-      },
-      {
-        "name": "Rachael Ray Nutrish",
-        "grade": "Note: C+ / B-",
-        "pros": "Günstig und weit verbreitet; Peak- und Dish-Reihen mit erhöhtem Fleischanteil.",
-        "cons": "Basislinien setzen stark auf Erbsenprotein und Maiskleber; war Teil von FDA-Untersuchungen.",
-        "verdict": "In den Premiumlinien akzeptabel, Deklaration jedoch genau auf gesplittete Hülsenfrüchte prüfen."
-      },
-      {
-        "name": "Pure Balance",
-        "grade": "Note: B (Guter Spartipp)",
-        "pros": "Sehr gutes Preis-Leistungs-Verhältnis; fleischbasierte Rezepturen ohne künstliche Farbstoffe.",
-        "cons": "Auftragsfertigung durch Lohnhersteller; moderater Kohlenhydratanteil.",
-        "verdict": "Eines der ehrlichsten und fairsten Futter im Supermarkt-Preissegment."
-      },
-      {
-        "name": "Ollie Frischfutter",
-        "grade": "Note: A (Hervorragend)",
-        "pros": "100% Lebensmittelqualität; sanft gegart; grammgenau portionsverpackt.",
-        "cons": "Hohe monatliche Abokosten (180€–350€/Monat); benötigt Platz im Tiefkühler.",
-        "verdict": "Goldstandard für Stoffwechselgesundheit, glänzendes Fell und lange Darmgesundheit."
-      },
-      {
-        "name": "Open Farm",
-        "grade": "Note: A-",
-        "pros": "Vollständige Transparenz der Tierhaltung; artgerechte Herkunftszertifikate und Wildfang-Fisch.",
-        "cons": "Gehobenes Preissegment; selten im stationären Fachhandel.",
-        "verdict": "Erstklassige Wahl für Halter, die auf Tierwohl und Null Geflügelnebenprodukte Wert legen."
-      }
-    ],
-    "recallsTitle": "Futter-Rückrufe richtig verstehen",
-    "recallsDesc": "Behördliche Produktrückrufe werden in drei Klassen unterteilt: Klasse I (ernste Gesundheitsgefahr oder Lebensgefahr, z. B. Salmonellen oder Vitamin-D-Überdosierung), Klasse II (vorübergehende Beschwerden) und Klasse III (formale Kennzeichnungsmängel). Kontrollieren Sie regelmäßig Chargennummern.",
-    "methodTitle": "Unsere 4 Bewertungs-Säulen",
-    "methodPillars": [
-      {
-        "title": "1. Klare Proteinquelle",
-        "desc": "Ganzes Muskelfleisch statt anonymer Tiermehle."
-      },
-      {
-        "title": "2. Moderater Kohlenhydratanteil",
-        "desc": "Stärkeanteile unter 40% zur Vorbeugung von Übergewicht."
-      },
-      {
-        "title": "3. Rückverfolgbare Rohstoffe",
-        "desc": "Zertifizierte Höfe und gentechnikfreie Zutaten."
-      },
-      {
-        "title": "4. Saubere Qualitätsbilanz",
-        "desc": "Ständige Laborkontrollen und einwandfreie Betriebshygiene."
-      }
-    ]
-  },
-  "allergies": {
-    "eyebrow": "ERNÄHRUNGS-RATGEBER // ALLERGIEN & AUSSCHLUSSDIÄT",
-    "heroTitle": "Bestes Futter für Hunde mit Allergien & empfindlichem Magen",
-    "heroSubtitle": "Praktischer Leitfaden zu Futtermittelallergien, Monoprotein-Sorten und der 8-wöchigen Eliminationsdiät.",
-    "allergensTitle": "Die 5 häufigsten Futtermittelallergene beim Hund",
-    "allergensIntro": "Futtermittelallergien sind immunologische Überreaktionen auf bestimmte Nahrungsproteine. Nach klinischer Häufigkeit geordnet:",
-    "allergensList": [
-      {
-        "name": "1. Masthuhn / Geflügel (ca. 60% der Fälle)",
-        "desc": "Aufgrund der massenhaften Verwendung in Fertigfuttern das häufigste Allergen überhaupt."
-      },
-      {
-        "name": "2. Rindfleisch (ca. 30% der Fälle)",
-        "desc": "Klassisches rotes Fleisch, das bei sensibilisierten Hunden extremen Juckreiz und Ohrentzündungen auslöst."
-      },
-      {
-        "name": "3. Milchprodukte & Käse",
-        "desc": "Erwachsene Hunde verlieren Laktase-Enzyme; Durchfall und Blähungen sind die Folge."
-      },
-      {
-        "name": "4. Weizen- und Maisgluten",
-        "desc": "Pflanzliche Proteine, welche die Darmschleimhaut schädigen und Entzündungen begünstigen."
-      },
-      {
-        "name": "5. Soja & Hülsenfrüchte",
-        "desc": "Günstige pflanzliche Eiweißquellen, die häufig zu Fehlgärungen und Juckreiz führen."
-      }
-    ],
-    "eliminationTitle": "Die 8-wöchige Ausschlussdiät (Eliminationsdiät)",
-    "eliminationSteps": [
-      {
-        "step": "Phase 1",
-        "title": "Eine einzige exotische Proteinquelle wählen",
-        "desc": "Stellen Sie auf ein Fleisch um, das der Hund noch nie gefressen hat (z. B. Hirsch, Kaninchen oder Känguru), kombiniert mit einer verträglichen Kohlenhydratquelle (z. B. Kürbis)."
-      },
-      {
-        "step": "Phase 2",
-        "title": "Absolute Disziplin (Strikte 8 Wochen)",
-        "desc": "8 Wochen lang darf absolut nichts anderes gefüttert werden: Keine Leckerlis, keine Kauknochen, keine Brotkrumen vom Tisch."
-      },
-      {
-        "step": "Phase 3",
-        "title": "Gezielte Provokationstestung",
-        "desc": "Sind Juckreiz und Verdauungsprobleme verschwunden, wird eine verdächtige Zutat für 7 Tage zugefüttert. Treten Symptome wieder auf, ist die Allergie bewiesen."
-      }
-    ],
-    "novelTitle": "Empfohlene hypoallergene Fleischsorten",
-    "novelProteins": [
-      {
-        "name": "Hirsch- & Rehfleisch (Venison)",
-        "desc": "Mageres, nährstoffreiches Wildfleisch mit extrem geringem Allergiepotenzial."
-      },
-      {
-        "name": "Kaninchenfleisch",
-        "desc": "Sehr bekömmliches, hypoallergenes Fleisch mit hervorragender Verdaulichkeit."
-      },
-      {
-        "name": "Entenfleisch",
-        "desc": "Sehr schmackhafte Alternative für Hunde, die auf normales Hühnerfleisch reagieren."
-      },
-      {
-        "name": "Kängurufleisch",
-        "desc": "Eines der reinsten und fettärmsten Wildfleische in der tierärztlichen Dermatologie."
-      }
-    ]
-  },
-  "calculator": {
-    "eyebrow": "100% KOSTENLOS // FUTTERRECHNER",
-    "noticeTitle": "Wichtiger Hinweis:",
-    "noticeText": "Dient allgemeinen Bildungs- und Informationszwecken. Kein Ersatz für eine tierärztliche Diagnose.",
-    "heroTitle": "Futter- und Kalorienrechner für Hunde",
-    "heroSubtitle": "Ermitteln Sie den exakten täglichen Energiebedarf (RER & MER) und berechnen Sie grammgenaue Mahlzeiten-Portionen basierend auf Gewicht, Alter, Aktivität und Körperzustand."
-  },
-  "breeds": {
-    "eyebrow": "RASSE-SPEZIFISCHE ERNÄHRUNG // TIERÄRZTLICHE RICHTLINIEN",
-    "targetWeight": "Idealgewicht",
-    "dailyCalories": "Tageskalorien",
-    "freshDaily": "Frischfutter / Tag",
-    "kibbleDaily": "Trockenfutter / Tag",
-    "cups": "Messbecher",
-    "reqsTitle": "Ernährungsanforderungen für den {name}",
-    "reqsIntro": "Als Hund der Kategorie {category} mit einem durchschnittlichen Gewicht von {w0} bis {w1} lbs (ca. {Math.round(w0*0.453)} bis {Math.round(w1*0.453)} kg) benötigt der {name} ein abgestimmtes Nährstoffprofil:",
-    "predispositionsTitle": "Wichtige Rasse- und Fütterungsmerkmale:",
-    "feedingRoutineTitle": "Empfohlene Fütterungsroutine:",
-    "feedingRoutineDesc": "Füttern Sie Ihren ausgewachsenen {name} zweimal täglich (50% morgens und 50% abends). Sorgen Sie stets für frisches Wasser. Wenn Sie Trockenfutter füttern, feuchten Sie es mit lauwarmer Knochenbrühe an, um die Nierenfunktion zu unterstützen.",
-    "ctaTitle": "Erstellen Sie den exakten Futterplan für Ihren {name}",
-    "ctaSubtitle": "Passen Sie Alter (Welpe, Adult, Senior), exaktes Gewicht, Aktivitätslevel und Körperform im kostenlosen Rechner an.",
-    "ctaBtn": "Rechner für {name} starten →",
-    "faqTitle": "Häufige Fragen zur Ernährung des {name}",
-    "faqSubtitle": "Portionsgrößen, Fütterungszeiten und optimale Zutaten."
-  },
-  "comparisonTable": {
-    "eyebrow": "NÄHRWERT-VERGLEICH // FRISCHFUTTER VS. TROCKENFUTTER",
-    "title": "Warum echte Vollwertnahrung Trockenfutter biologisch übertrifft",
-    "subtitle": "Ein direkter Vergleich von Verarbeitungshitze, Portionsgenauigkeit und tatsächlichen monatlichen Futterkosten — genau die Faktoren, die eine 5-jährige Langlebigkeitsstudie mit einer bis zu 32 Monate längeren Lebensdauer bei Frischfütterung in Verbindung brachte.",
-    "scrollHint": "↔ Tabelle horizontal scrollen",
-    "colMetric": "Ernährungskriterium",
-    "colDfp": "✨ DogFoodPlanner",
-    "colSubs": "Frische-Abos",
-    "colKibble": "Trockenfutter (Kibble)",
-    "rows": [
-      {
-        "metric": "Herstellungsverfahren",
-        "dfp": "Schonend gegart (~74°C) oder roh — Enzyme intakt",
-        "subs": "Sous-Vide gegart & schockgefrostet",
-        "kibble": "Extrusion bei extremer Hitze (200°C+)"
-      },
-      {
-        "metric": "Portionsgenauigkeit",
-        "dfp": "Exakte Gramm nach RER/MER-Stoffwechselformel, angepasst an Gewicht, Alter & Aktivität",
-        "subs": "Starrer Fütterungsplan nach groben Gewichtsbereichen",
-        "kibble": "Pauschale Sacktabelle — überschätzt Portionen um 20–30%"
-      },
-      {
-        "metric": "Netto-Kohlenhydrate",
-        "dfp": "< 5% (nur ausgewähltes Gemüse, null Füllstoffe)",
-        "subs": "10% – 20%",
-        "kibble": "45% – 60% (Mais-, Weizen- & Erbsenstärkefüllstoffe)"
-      },
-      {
-        "metric": "Biologische Feuchtigkeit",
-        "dfp": "70% – 75% (unterstützt Nieren- und Blasenhydration)",
-        "subs": "70% – 75%",
-        "kibble": "8% – 10% (chronische subklinische Dehydration)"
-      },
-      {
-        "metric": "Nährstoffintegrität",
-        "dfp": "Minimale Oxidation — Omega-3-Fettsäuren & Enzyme geschützt",
-        "subs": "Mäßig — einige hitzeempfindliche Vitalstoffe degeneriert",
-        "kibble": "Fettoxidation & AGE-Bildung durch aggressive Extrusionshitze"
-      },
-      {
-        "metric": "Zutatentransparenz",
-        "dfp": "100% offengelegte Grammzahlen & Anteile — Sie bestimmen jedes Gramm",
-        "subs": "Rezepturgeheimnis (exakte Verhältnisse verborgen)",
-        "kibble": "Zutatensplitting & undurchsichtige Tiermehlquellen"
-      },
-      {
-        "metric": "Monatl. Futterkosten (23 kg Hund)",
-        "dfp": "75€ – 120€ (nur Rohzutaten für die eigene Küche)",
-        "subs": "240€ – 420€ / Monat",
-        "kibble": "55€ – 90€ / Monat"
-      }
-    ]
-  },
-  "faqPage": {
-    "badge": "WISSENSDATENBANK // ÜBER 40 TIERÄRZTLICHE ANTWORTEN",
-    "exploreHubsTitle": "Erkunden Sie unsere spezialisierten Fachthemen",
-    "exploreHubsSubtitle": "Fundierte Ratgeber für Hundehalter, die die Gesundheit ihres Tieres aktiv optimieren möchten.",
-    "cardBestFood": "Vergleich von Frischfutter, BARF, proteinreichem Trockenfutter und Schonkost.",
-    "cardCalc": "Wissenschaftlicher RER- und MER-Kalorienrechner für exakte Grammmengen.",
-    "cardRecipes": "Ausgewogene Kochrezepte und 80-10-10 BARF mit perfektem Kalziumausgleich.",
-    "cardAllergies": "Auswahl von Monoproteinen, Ausschlussdiäten und Stärkung der Darmflora.",
-    "cardToxic": "Vollständige Liste giftiger Lebensmittel, sicheres Obst & Gemüse und schädliche Zusätze.",
-    "cardBrands": "Unabhängige Analysen zu Blue Buffalo, Nutrish, Pure Balance, Ollie und Open Farm."
-  },
-  "faqSingle": {
-    "reviewedBy": "Geprüft von: DogFoodPlanner Redaktionsteam",
-    "updated": "Stand: 2026",
-    "directQuickAnswer": "Direkte Kurzantwort",
-    "clinicalAnalysis": "Ausführliche Ernährungsanalyse",
-    "topics": "Themengebiete:",
-    "ctaBadge": "🐾 Kostenloser Ernährungsrechner",
-    "ctaTitle": "Berechnen Sie den exakten Tagesbedarf für Ihren Hund",
-    "ctaSubtitle": "Nutzen Sie unseren kostenlosen Futterrechner zur Bestimmung des Kalorienbedarfs und der exakten Grammmengen.",
-    "ctaBtn": "Portionen jetzt berechnen →",
-    "relatedTitle": "Verwandte Fragen zur Hundeernährung",
-    "readAnswer": "Antwort vollständig lesen →",
+  "de": {
+    "about": {
+      "heroTitle": "Über DogFoodPlanner: Hunde-Futterplanung einfach gemacht",
+      "heroSubtitle": "Erfahren Sie mehr über DogFoodPlanner.com, unsere Mission und wie unser kostenloser Hundefutter-Rechner funktioniert.",
+      "missionBadge": "UNSERE MISSION // FUTTERPLANUNG FÜR HUNDE",
+      "whyTitle": "Warum DogFoodPlanner gegründet wurde",
+      "whyP1": "Wir haben DogFoodPlanner entwickelt, damit Hundebesitzer Mahlzeiten und Futterportionen mit gutem Gefühl planen können. Wir recherchieren öffentlich zugängliche Richtlinien und machen daraus einfache, kostenlose Tools und Ratgeber.",
+      "whyP2": "",
+      "whoTitle": "Wer Wir Sind",
+      "whoContent": "DogFoodPlanner ist eine unabhängige Website, die von hundebegeisterten Rechercheuren und Autoren betrieben wird. Wir sind keine Tierärzte. Konsultieren Sie immer Ihren Tierarzt, bevor Sie die Ernährung Ihres Hundes umstellen – insbesondere bei Welpen, Senioren oder Hunden mit Vorerkrankungen.",
+      "methodTitle": "Unsere Ernährungsmethodik",
+      "pillars": [
+        {
+          "tag": "01 // KALORIENSCHÄTZUNG",
+          "title": "Kalorienschätzung",
+          "desc": "Unser Rechner nutzt die Standardformel für den Ruheenergiebedarf (70 × Körpergewicht in kg^0,75) und gängige Aktivitätsfaktoren, um den täglichen Kalorienbedarf zu schätzen."
+        },
+        {
+          "tag": "02 // REFERENZQUELLEN",
+          "title": "Referenzquellen",
+          "desc": "Wir orientieren uns an veröffentlichten Leitlinien von Organisationen wie AAFCO und dem National Research Council. Unsere Inhalte dienen Bildungszwecken und ersetzen keine fachliche Beratung."
+        },
+        {
+          "tag": "03 // TRANSPARENZ",
+          "title": "Transparenz",
+          "desc": "Einige Seiten enthalten Affiliate-Links, einschließlich Links des Amazon-Partnerprogramms. Wenn Sie darüber einkaufen, erhalten wir möglicherweise eine kleine Provision – ohne zusätzliche Kosten für Sie. Dies hat keinerlei Einfluss auf unsere Empfehlungen."
+        }
+      ],
+      "ctaTitle": "Bereit, den Nährstoffbedarf Ihres Hundes zu berechnen?",
+      "ctaDesc": "Nutzen Sie unseren interaktiven Rechner, erkunden Sie unsere Allergie-Ratgeber und lesen Sie unsere Hundefutter-Ratgeber.",
+      "ctaBtn": "Kostenlosen Futterrechner starten →",
+      "amazonDisclaimer": "Als Amazon-Partner verdienen wir an qualifizierten Verkäufen."
+    },
+    "contact": {
+      "eyebrow": "SUPPORT & KONTAKT // DIREKTE ANFRAGEN",
+      "cards": [
+        {
+          "icon": "📧",
+          "title": "Allgemeine Anfragen",
+          "desc": "Fragen und Feedback:",
+          "email": "hello@dogfoodplanner.com"
+        },
+        {
+          "icon": "🐾",
+          "title": "Ernährungsberatung",
+          "desc": "Fragen zu NRC-Formeln und Rezepten:",
+          "email": "research@dogfoodplanner.com"
+        },
+        {
+          "icon": "🛡️",
+          "title": "Technischer Support",
+          "desc": "Fehlerberichte und Anregungen:",
+          "email": "legal@dogfoodplanner.com"
+        }
+      ],
+      "formTitle": "Nachricht an unser tierärztliches Ernährungsteam senden",
+      "formDesc": "Haben Sie Fragen zu unseren Kalorienberechnungen oder benötigen Sie Unterstützung bei einer BARF-Ration? Wir antworten innerhalb von 24 Geschäftsstunden.",
+      "nameLabel": "Ihr Name",
+      "namePlaceholder": "z. B. Michael Schmidt",
+      "emailLabel": "Ihre E-Mail-Adresse",
+      "emailPlaceholder": "michael@example.de",
+      "subjectLabel": "Thema der Anfrage",
+      "subjectOptions": [
+        "Allgemeine Frage / Feedback",
+        "Ernährung & Rezeptberatung",
+        "Frage zum Futterrechner",
+        "Technischer Fehlerbericht"
+      ],
+      "messageLabel": "Ihre Nachricht",
+      "messagePlaceholder": "Beschreiben Sie Ihren Hund (Rasse, Gewicht, Alter) und Ihr Anliegen...",
+      "submitBtn": "Nachricht absenden →",
+      "notice": "Tierärztlicher Notfall-Hinweis: Bei akuten Vergiftungssymptomen oder schwerer Atemnot wenden Sie sich bitte sofort an Ihre örtliche Tiernotklinik.",
+      "faqTitle": "Suchen Sie schnelle Antworten?",
+      "faqDesc": "Besuchen Sie unsere Wissensdatenbank mit über 40 tierärztlichen Antworten zu Futtermäkeligkeit, BARF, Katzenfutter und Trockenfutter-Marken.",
+      "faqBtn": "Alle FAQs ansehen →",
+      "successTitle": "✓ Nachricht vorbereitet — wird an hello@dogfoodplanner.com gesendet",
+      "successDesc": "Ihr E-Mail-Programm sollte sich mit einer vorbereiteten Nachricht an hello@dogfoodplanner.com öffnen. Klicken Sie einfach auf Senden in Ihrer Mail-App und sie wird in unserem Posteingang ankommen."
+    },
+    "privacy": {
+      "eyebrow": "RECHTLICHES // DATENSCHUTZERKLÄRUNG",
+      "lastUpdated": "Aktualisiert: 14. Oktober 2026",
+      "intro": "Auf DogFoodPlanner.com nehmen wir den Schutz Ihrer Daten sehr ernst. Diese Erklärung erläutert, wie wir Daten erheben und schützen.",
+      "sections": [
+        {
+          "title": "1. Daten, die wir nicht erfassen",
+          "content": "Die Gesundheitsdaten Ihres Hundes gehören Ihnen. Für die Nutzung unseres Hundefutter-Rechners ist keine Registrierung, kein Passwort und keine Zahlungsangabe erforderlich. Eingegebene Hundeprofile, Gewichte und Mahlzeitenauswahlen werden clientseitig in Ihrem Browser verarbeitet und nicht in externen Datenbanken gespeichert."
+        },
+        {
+          "title": "2. E-Mail-Erfassung und Newsletter",
+          "content": "Wenn Sie unseren Newsletter abonnieren, erfassen wir Ihre E-Mail-Adresse, um Ihnen Leitfäden zur Hundeernährung, Futterrückruf-Warnungen und Fütterungstipps zuzusenden. Wir nutzen EmailOctopus für die sichere Verwaltung unserer Abonnentenliste. Wir verkaufen oder teilen Ihre Daten niemals. Sie können sich jederzeit mit nur einem Klick über den Abmeldelink am Ende jeder E-Mail abmelden."
+        },
+        {
+          "title": "3. Anonyme technische Serverdaten",
+          "content": "Wie fast alle Webseiten erfassen unsere CDN-Server standardmäßige anonymisierte Verbindungsdaten (anonymisierte IP-Adresse, Browsertyp, Referrer-URL, Zeitstempel), um die Sicherheit zu gewährleisten und Cyberangriffe abzuwehren."
+        },
+        {
+          "title": "4. Cookies und lokaler Speicher (localStorage)",
+          "content": "Wir nutzen den lokalen Speicher (localStorage), um Ihre Spracheinstellung und Ihren Futterplan auf Ihrem Gerät zu speichern. Wenn Sie auf einen Affiliate-Link klicken, kann die Website des Drittanbieters (z. B. Amazon) eigene Cookies setzen."
+        },
+        {
+          "title": "5. Links zu Drittanbietern",
+          "content": "Unsere Website enthält Referenz-Links zu veröffentlichten Studien, AAFCO-Standards, NRC-Datenbanken und externen Ressourcen. Wir sind nicht verantwortlich für die Datenschutzpraktiken oder den Inhalt von Websites Dritter."
+        },
+        {
+          "title": "6. Affiliate-Offenlegung",
+          "content": "DogFoodPlanner ist Teilnehmer des Partnerprogramms von Amazon Services LLC. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen – ganz ohne zusätzliche Kosten für Sie."
+        },
+        {
+          "title": "7. Schutz von Minderjährigen",
+          "content": "Unsere Inhalte und Werkzeuge richten sich an volljährige Hundehalter. Wir erfassen wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren."
+        },
+        {
+          "title": "8. Aktualisierungen und Kontakt",
+          "content": "Diese Datenschutzerklärung kann gelegentlich aktualisiert werden. Bei Fragen erreichen Sie uns unter privacy@dogfoodplanner.com."
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "RECHTLICHES // ALLGEMEINE GESCHÄFTSBEDINGUNGEN",
+      "lastUpdated": "Aktualisiert: 14. Oktober 2026",
+      "intro": "Bitte lesen Sie diese Nutzungsbedingungen aufmerksam durch, bevor Sie DogFoodPlanner.com verwenden. Durch die Nutzung erklären Sie sich mit ihnen einverstanden.",
+      "sections": [
+        {
+          "title": "1. Geltungsbereich",
+          "content": "Durch den Zugriff auf DogFoodPlanner.com akzeptieren Sie diese Nutzungsbedingungen in vollem Umfang. Wenn Sie diesen Bedingungen nicht zustimmen, sehen Sie bitte von der Nutzung ab."
+        },
+        {
+          "title": "2. Tierärztlicher und medizinischer Haftungsausschluss",
+          "content": "Die auf DogFoodPlanner.com bereitgestellten Inhalte, Rechner und Rezeptvorschläge dienen ausschließlich allgemeinen Bildungs- und Informationszwecken nach NRC-Modellen. Sie stellen KEINE tierärztliche Beratung, Diagnose oder Behandlung dar. Konsultieren Sie vor wesentlichen Futterumstellungen stets einen Tierarzt oder Fachtierarzt für Tierernährung (DACVN), insbesondere bei Welpen oder chronisch kranken Hunden."
+        },
+        {
+          "title": "3. Nutzung des Futterrechners",
+          "content": "Alle berechneten Kalorienwerte (RER und MER) und Grammmengen sind mathematische Richtwerte. Der reale Stoffwechsel hängt von Kastration, Haltungstemperatur und Genetik ab. Hundehalter sind verpflichtet, die Körperkondition (BCS) regelmäßig zu überprüfen und Portionen anzupassen."
+        },
+        {
+          "title": "4. Sicherheit bei BARF & Kalziumausgleich",
+          "content": "Die Zubereitung von BARF oder Kochfutter erfordert die lückenlose Zufuhr aller Mikronährstoffe. Die ausschließliche Fütterung von reinem Muskelfleisch ohne Kalziumzusatz führt unweigerlich zu schweren Knochenentkalkungen. Der Nutzer trägt die alleinige Verantwortung für eine ausgewogene Rationsgestaltung."
+        },
+        {
+          "title": "5. Urheberrecht und geistiges Eigentum",
+          "content": "Sämtliche Algorithmen, Interface-Designs, Rechner-Logiken und Fachartikel auf DogFoodPlanner.com sind urheberrechtlich geschützt und Eigentum von DogFoodPlanner."
+        },
+        {
+          "title": "6. Haftungsbeschränkung",
+          "content": "DogFoodPlanner.com und die beteiligten Autoren haften nicht für direkte oder indirekte Schäden, die aus der Nutzung der zur Verfügung gestellten Informationen resultieren."
+        },
+        {
+          "title": "7. E-Mail-Abonnements und Mitteilungen",
+          "content": "Mit dem Abonnieren unseres Newsletters erklären Sie sich damit einverstanden, informative Hundeernährungs-Tipps und Website-Neuigkeiten zu erhalten. Sie können den Newsletter jederzeit über den Link am Ende jeder E-Mail abbestellen. Wir behalten uns das Recht vor, den Newsletter-Service nach eigenem Ermessen zu ändern oder einzustellen."
+        }
+      ]
+    },
+    "bestFood": {
+      "eyebrow": "LEITFADEN // DIE BESTEN HUNDEFUTTER 2026",
+      "rankingsTitle": "Welche sind die 5 gesündesten Hundefutter im Jahr 2026?",
+      "rankingsIntro": "Aktuelle veterinärmedizinische Studien belegen: Minimale Hitzebehandlung und ein biologischer Feuchtigkeitsgehalt von über 70% sind die wichtigsten Faktoren für Vitalität und gesunde Nieren.",
+      "readMoreLabel": "Mehr erfahren →",
+      "readLessLabel": "Weniger anzeigen ↑",
+      "rankings": [
+        {
+          "rank": "01",
+          "title": "Schonend dampfgegartes Frischfutter in Lebensmittelqualität",
+          "score": "98/100",
+          "pros": "Echtes Muskelfleisch und Gemüse bei milden 70°C gegart. Erhält über 70% natürliche Feuchtigkeit, aktive Enzyme und hitzeempfindliche Vitamine.",
+          "cons": "Muss gekühlt oder tiefgefroren gelagert werden. Höhere Kosten als billiges Supermarktfutter.",
+          "readMore": "Schonend gegartes Frischfutter steht an der Spitze des Rankings, weil es einer hausgemachten Mahlzeit nahekommt, ohne bei der Lebensmittelsicherheit Abstriche zu machen. Die Zutaten stammen aus USDA-zertifizierten Lebensmittelbetrieben und werden anschließend nur so lange bei niedriger Temperatur (rund 71 °C bzw. 160 °F) erhitzt, dass Krankheitserreger abgetötet werden, während empfindliche Proteine, Taurin und wasserlösliche B-Vitamine erhalten bleiben, die bei der Hochtemperatur-Extrusion verloren gehen.\n\nDa das Futter bereits einen Feuchtegehalt von über 70 % besitzt, entlastet es die Nieren und verringert die chronische, leichte Dehydrierung, die bei reiner Trockenfutterernährung häufig auftritt. Es eignet sich besonders gut für Hunde in der Rekonvaleszenz, Senioren mit vermindertem Durstgefühl oder Rassen mit einer Tendenz zu Futterunverträglichkeiten, da die Rezepte meist auf ein einziges Protein setzen und ohne tierische Mehle oder synthetische Konservierungsstoffe auskommen.\n\nDer größte Kompromiss liegt in der Logistik: Es benötigt Kühl- oder Gefrierraum, und Portionen müssen vor der Fütterung aufgetaut werden. Wer nicht selbst kochen möchte, findet bei mehreren Marken mit USDA-zugelassenen Küchen auch lang haltbare Varianten desselben schonend gegarten Formats – ein unkomplizierter Einstieg in diese Kategorie, bevor man sich für eine vollständige selbstgekochte Routine entscheidet.",
+          "productKey": "justfoodfordogs-chicken-white-rice",
+          "productNote": "Eine lange haltbare Möglichkeit, diese Kategorie auszuprobieren:"
+        },
+        {
+          "rank": "02",
+          "title": "Artgerechte 80-10-10 BARF Rohfütterung",
+          "score": "95/100",
+          "pros": "Natürliches Beutetier-Prinzip: 80% Fleisch, 10% fleischige Knochen, 10% Innereien. Perfekt für Zahnhygiene und kräftige Muskulatur.",
+          "cons": "Erfordert strikte Hygiene bei der Fleischverarbeitung und präzisen Kalziumausgleich.",
+          "readMore": "Das 80-10-10-Verhältnis (80 % Muskelfleisch, 10 % roher, essbarer Knochen, 10 % Innereien mit Drüsenfunktion) wurde entwickelt, um nachzubilden, was ein wildlebender Hundevorfahre von einem vollständigen Beutetier erhalten würde. Richtig umgesetzt liefert es ein natürlich ausgewogenes Calcium-Phosphor-Verhältnis direkt aus dem Knochenanteil, unterstützt die Muskelmasse, und das Kauen roher Knochen hilft mechanisch, Zahnstein von den Zähnen zu lösen.\n\nDa nichts erhitzt wird, bleiben Enzyme und hitzeempfindliche Aminosäuren vollständig erhalten. Der Haken liegt in der Präzision: Sichere Rohknochen zu beziehen und das Verhältnis exakt einzuhalten erfordert echte Disziplin, denn ein falsch berechneter Knochenanteil ist der häufigste Fehler, der zu Verstopfung oder – bei wachsenden Welpen – langfristig zu Skelettproblemen führen kann. Rohes Fleisch muss außerdem mit derselben Hygiene behandelt werden wie jedes andere rohe Lebensmittel für Menschen (getrennte Schneidebretter, Kühlung, sofortige Reinigung).\n\nDie meisten Haushalte finden es einfacher, mit einem professionell formulierten Rohfutterprodukt zu beginnen, das das Verhältnis bereits korrekt abbildet, bevor sie zu vollständig individuell zusammengestellten und zu Hause abgewogenen Rohmahlzeiten übergehen.",
+          "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+          "productNote": "Eine bereits ausgewogene Rohfutter-Option, die Rätselraten erspart:"
+        },
+        {
+          "rank": "03",
+          "title": "Luftgetrocknetes & Gefriergetrocknetes Rohfutter",
+          "score": "91/100",
+          "pros": "Kombiniert die Nährstoffdichte von Rohfleisch mit der Bequemlichkeit normaler Trockenlagerung.",
+          "cons": "Sollte vor dem Füttern unbedingt mit lauwarmem Wasser oder Knochenbrühe eingeweicht werden.",
+          "readMore": "Sowohl luftgetrocknetes als auch gefriergetrocknetes Futter entziehen rohem Fleisch bei niedrigen Temperaturen Feuchtigkeit, wodurch das Nährstoff- und Enzymprofil nahe am Rohzustand bleibt, während das Futter bei Raumtemperatur lagerfähig wird – ein Gefrierschrank ist nicht nötig. Gefriertrocknung nutzt ein kaltes Vakuumverfahren, das Nährstoffe meist noch besser bewahrt als die Lufttrocknung, ist dafür aber pro Kilogramm meist teurer.\n\nBeide Varianten sind gut transportierbar und eignen sich hervorragend als Rohfutter-Topping, das über Trockenfutter gemischt die Akzeptanz erhöht. Das Einweichen in warmem Wasser oder Knochenbrühe vor dem Servieren stellt einen Feuchtegehalt wieder her, der näher an der ursprünglichen Wildnahrung des Hundes liegt, und ist besonders sinnvoll für Hunde mit Neigung zu Harnkristallen oder Nierenbelastung.\n\nDer wichtigste Aspekt ist der Preis pro Kalorie: Da das Wassergewicht entfernt wurde, bezahlt man für konzentrierte Nährstoffe – deshalb wird diese Form meist als Topping oder im Rotationsplan eingesetzt und seltener als alleinige Tagesration für einen großen Hund.",
+          "productKey": "ziwi-peak-beef-chicken-bundle",
+          "productNote": "Eine gut bewertete, luftgetrocknete Option:"
+        },
+        {
+          "rank": "04",
+          "title": "Proteinreiches Trockenfutter ohne Getreide oder mit Urgetreide",
+          "score": "78/100",
+          "pros": "Lange haltbar, unkompliziert und budgetfreundlich bei großen Hunderassen.",
+          "cons": "Extrusion bei 200°C, nur 8–10% Restfeuchte und 40–50% verarbeitete Stärkekohlenhydrate.",
+          "readMore": "Hochwertiges Trockenfutter bleibt für viele Haushalte die praktischste Option: Es ist bis zu ein Jahr lagerfähig, lässt sich mit einem automatischen Futterspender einfach portionieren und ist pro Kalorie deutlich günstiger als Frisch- oder Rohfutter.\n\nDie besten Formulierungen dieser Kategorie führen eine namentlich benannte Tierproteinquelle statt eines vagen „Fleischmehls“ an, setzen bei den Kohlenhydraten auf Urgetreide wie Hafer und Sorghum statt auf schwere Mais- oder Weizenfüllstoffe und werden von unabhängigen Laboren auf Schwermetalle getestet.\n\nDer Kompromiss liegt im Extrusionsverfahren selbst: Temperaturen über 200 °C (400 °F) zerstören einige hitzeempfindliche Vitamine und senken den Feuchtegehalt auf etwa 10 %. Deshalb empfehlen Tierärzte bei reiner Trockenfutterernährung oft, einen Schuss Knochenbrühe oder ein Rohfutter-Topping zuzugeben – besonders bei Hunden mit Neigung zu Harnkristallen.",
+          "productKey": "orijen-original-grain-free-23lb",
+          "productNote": "Eine proteinreiche WholePrey-Formel dieser Kategorie:"
+        },
+        {
+          "rank": "05",
+          "title": "Veterinärmedizinische Spezial-Diäten",
+          "score": "72/100",
+          "pros": "Speziell formuliert für Niereninsuffizienz, Lebererkrankungen oder Struvitsteine.",
+          "cons": "Enthält oft minderwertige Getreidenebenprodukte; rezeptpflichtig.",
+          "readMore": "Therapeutische Diäten sind gezielt darauf ausgelegt, eine einzelne, ärztlich diagnostizierte Erkrankung zu behandeln: reduzierter Protein- und Phosphorgehalt bei Nierenerkrankungen, hydrolysierte Proteine, auf die das Immunsystem nicht reagieren kann, bei schweren Futtermittelallergien, oder ein kontrollierter Magnesiumgehalt und pH-Wert bei Struvit-Blasensteinen.\n\nSie rangieren auf einer allgemeinen „Gesündeste-Futter“-Skala nur deshalb weiter unten, weil sie bewusst restriktiv ausgelegt sind und nicht auf einen durchschnittlich gesunden Hund optimiert wurden; eine Formulierung, die geschwächte Nieren schonen soll, ist beispielsweise absichtlich nicht das proteinreichste Futter auf dem Markt.\n\nDiese Diäten erfordern eine tierärztliche Freigabe und regelmäßige Blutkontrollen, um ihre Wirksamkeit zu bestätigen, und sollten einem gesunden Hund niemals ohne klinischen Grund gefüttert werden, da die Einschränkung von Nährstoffen, die ein gesunder Hund tatsächlich benötigt, auf Dauer schaden kann.",
+          "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+          "productNote": "Eine gängige, tierärztlich verordnete Nieren-Diät:"
+        }
+      ],
+      "buyerGuideTitle": "4 goldene Regeln für die Futterauswahl",
+      "buyerRules": [
+        {
+          "title": "1. Eindeutig deklariertes Fleisch an 1. Stelle",
+          "desc": "Achten Sie auf „Frische Pute“, „Rindfleisch“ oder „Lachs“ statt diffuser „Fleischmehle“.",
+          "readMore": "Auf Tierfutteretiketten werden Zutaten nach ihrem Gewicht vor dem Kochen sortiert. Eindeutig deklariertes Frischfleisch (wie „Entbeinte Pute“ oder „Frisches Rindfleisch“) liefert lebenswichtige Aminosäuren wie Taurin, Arginin und Carnitin in höchster Bioverfügbarkeit. Vermeiden Sie schwammige Sammelbegriffe wie „tierische Nebenerzeugnisse“, „Fleischmehl“ oder „Geflügelmehl“, hinter denen sich minderwertige Schlachtabfälle undefinierter Tierarten verbergen können.\n\nAchten Sie zudem auf den Trick des „Zutaten-Splittings“: Hersteller teilen Kohlenhydrate oft in mehrere Einzelposten auf (z. B. Erbsen, Erbsenmehl und Erbsenprotein), damit das Fleisch auf dem Papier an erster Stelle steht, obwohl Kohlenhydrate den Hauptteil ausmachen.\n\nPräzise benannte Fleischmehle – wie „Getrocknetes Lammfleischmehl“ oder „Lachsmehl“ – sind bei transparenter Deklaration unbedenklich, da ihnen vor der Verarbeitung das Wasser entzogen wurde und sie konzentriertes tierisches Protein liefern."
+        },
+        {
+          "title": "2. Hohe biologische Feuchtigkeit (>70%)",
+          "desc": "Reines Trockenfutter führt zu schleichender Dehydration. Immer mit Brühe anfeuchten oder frische Topper ergänzen.",
+          "readMore": "In freier Natur besteht die Nahrung wilder Caniden zu 70 bis 75 % aus Wasser. Hunde besitzen evolutionär bedingt ein schwaches Durstgefühl, da ihr Organismus darauf ausgelegt ist, Feuchtigkeit direkt über die Nahrung aufzunehmen. Die ausschließliche Fütterung von Trockenfutter (mit nur 8–10 % Restfeuchte) führt zu einer dauerhaften, leichten Dehydration.\n\nÜber Jahre hinweg überlastet hochkonzentrierter Urin die Nieren und begünstigt drastisch die Bildung von schmerzhaften Struvit- und Calciumoxalat-Blasensteinen.\n\nWenn Sie Trockenfutter füttern, fügen Sie immer Flüssigkeit hinzu: Weichen Sie die Kroketten im Verhältnis 1:1 mit lauwarmer, ungewürzter Knochenbrühe oder Wasser ein, oder ergänzen Sie die Mahlzeit mit frischen Fleischtoppern, um die Nierenfunktion zu schützen."
+        },
+        {
+          "title": "3. Verzicht auf synthetische Konservierungsstoffe",
+          "desc": "Meiden Sie BHA, BHT, Ethoxyquin, Propylenglykol und künstliche Farbstoffe.",
+          "readMore": "Um eine Haltbarkeit von bis zu zwei Jahren zu gewährleisten, greifen Billigfutter oft zu synthetischen Antioxidantien wie BHA (Butylhydroxyanisol), BHT (Butylhydroxytoluol) und Ethoxyquin. Wissenschaftliche Untersuchungen stufen BHA und BHT als potenziell krebserregend und hormonell wirksam ein; Ethoxyquin (ursprünglich ein Pestizid) steht im Verdacht, Leberschäden auszulösen.\n\nAuch künstliche Farbstoffe dienen ausschließlich dem menschlichen Auge, belasten jedoch den Hundeorganismus und provozieren allergischen Juckreiz sowie Magen-Darm-Entzündungen.\n\nWählen Sie Futter, das ausschließlich mit natürlichen Antioxidantien haltbar gemacht wird: gemischte Tocopherole (Vitamin E), Rosmarinextrakt und Zitronensäure. Diese schützen Fette schonend ohne giftige Nebenwirkungen."
+        },
+        {
+          "title": "4. Geringer Kohlenhydratanteil (<25%)",
+          "desc": "Hunde besitzen keine Speichelamylase. Hohe Stärkemengen überlasten die Bauchspeicheldrüse.",
+          "readMore": "Hunde sind fakultative Karnivoren ohne biologischen Bedarf an isolierten Kohlenhydraten. Im Gegensatz zum Menschen enthält der Speichel des Hundes keine Amylase, um Stärke bereits im Maul aufzuspalten; die gesamte enzymatische Verdauung lastet allein auf der Bauchspeicheldrüse.\n\nDa Hersteller den Kohlenhydratgehalt nicht auf der Packung angeben müssen, enthalten herkömmliche Trockenfutter oft 45 bis 60 % Stärke aus Mais, Weizen oder Tapioka, nur um den Kroketten bei der Extrusion Form zu geben.\n\nHohe Stärkemengen verursachen Blutzuckerspitzen, chronische Entzündungen, Ohrenentzündungen und fördern rasant Übergewicht. Berechnen Sie den Kohlenhydratanteil mit der NfE-Formel: 100 % minus (Rohprotein + Rohfett + Rohfaser + Feuchtigkeit + Rohasche). Bevorzugen Sie Futter mit unter 25 % Kohlenhydraten."
+        }
+      ],
+      "ctaTitle": "Berechnen Sie die exakte Futtermenge für Ihren Hund",
+      "ctaDesc": "Ob gekochtes Frischfutter, Rohfütterung oder Trockenfutter: Ermitteln Sie die grammgenaue Tagesportion und Kalorien.",
+      "ctaBtn": "Tagesportion jetzt berechnen →"
+    },
+    "recipes": {
+      "eyebrow": "AUSGEWOGENE REZEPTE // NRC & AAFCO RICHTLINIEN",
+      "heroTitle": "Ausgewogene Rezepte für selbstgemachtes Hundefutter",
+      "heroSubtitle": "Schritt-für-Schritt-Anleitungen zur Zubereitung ausgewogener, schonend gegarter Mahlzeiten und artgerechter 80-10-10 BARF-Rationen.",
+      "calciumWarningTitle": "Die oberste Regel beim Selberkochen: Der Kalziumausgleich",
+      "calciumWarningDesc": "Reines Muskelfleisch enthält von Natur aus extrem viel Phosphor und fast kein Kalzium (Verhältnis 1:20). Werden Hunde nur mit Fleisch und Reis gefüttert, führt dies innerhalb weniger Monate zu schweren Skeletterkrankungen. Fügen Sie pro 500 g reinem Fleisch ohne Knochen stets 1/2 gestrichenen Teelöffel reines Eierschalenpulver (ca. 900 mg elementares Kalzium) hinzu, um das lebensnotwendige Kalzium-Phosphor-Verhältnis von 1.2:1 zu sichern.",
+      "recipesList": [
+        {
+          "tag": "SCHONEND GEKOCHT",
+          "title": "Rezept 1: Milde Pute & Kürbis-Püree (Ideal bei sensiblem Magen)",
+          "desc": "Optimal für Hunde mit empfindlicher Verdauung, Neigung zu Durchfall oder Huhn-Unverträglichkeit.",
+          "ingredients": [
+            "Mageres Putenhackfleisch — 65% (ca. 900 g)",
+            "Puten- oder Rinderherzen (Natürliche Taurinquelle) — 10% (ca. 140 g)",
+            "Reines Kürbispüree ohne Zusätze (Lösliche Ballaststoffe) — 10% (ca. 140 g)",
+            "Gedünsteter Babyspinat & Zucchini — 10% (ca. 140 g)",
+            "Wildlachsöl aus Alaska (EPA/DHA) — 2% (1.5 EL)",
+            "Feines Eierschalenpulver (Kalzium) — 3% (1 gestrichener TL)"
+          ],
+          "prep": "Putenhack und Herzen bei mäßiger Hitze schonend anbraten (Kerntemperatur ca. 70°C). Gemüse dämpfen und mit Kürbis pürieren. Alles vermengen und vollständig abkühlen lassen. Erst danach Lachsöl und Eierschalenpulver unterrühren. Portionsweise einfrieren."
+        },
+        {
+          "tag": "BARF ROH",
+          "title": "Rezept 2: Ursprüngliches 80-10-10 BARF-Menü Rind & Ente",
+          "desc": "Biologisch artgerechte Rohfütterung für gesunde ausgewachsene Hunde mit starker Magensäure.",
+          "ingredients": [
+            "Mageres Rindfleisch aus Weidehaltung — 70%",
+            "Rinderherz (Reich an L-Carnitin und CoQ10) — 10%",
+            "Rohe fleischige Entenhälse — 10% (Verdaulicher Knochen & Kalzium)",
+            "Rinderleber (Vitamin A & B-Komplex) — 5%",
+            "Rinderniere oder Milz (Sekretierende Innerei) — 5%"
+          ],
+          "prep": "Muskelfleisch und Herz in maulgerechte Stücke schneiden. Innereien grammgenau auf der Küchenwaage abwiegen. Alle Fleischkomponenten vor der Fütterung mindestens 3 Wochen bei -20°C tiefkühlen."
+        },
+        {
+          "tag": "SUPERFOOD-TOPPER",
+          "title": "Rezept 3: 80/20 Antioxidantien-Topper für Trockenfutter",
+          "desc": "Frischekick, der 20% der täglichen Trockenfutter-Kalorien durch vitalstoffreiche Zutaten ersetzt.",
+          "ingredients": [
+            "Leicht pochierte Bio-Eier — 40%",
+            "Gedämpfter Brokkoli & wilde Heidelbeeren — 30%",
+            "Lange gekochte Rinderknochenbrühe — 20%",
+            "Bio-Hanfsamen & Seealgenmehl — 10%"
+          ],
+          "prep": "Eier wachsweich kochen. Gemüse kurz dünsten. Mit zimmerwarmer Knochenbrühe und Beeren pürieren. Täglich 2–4 Esslöffel über das normale Trockenfutter geben."
+        }
+      ],
+      "calciumGuideTitle": "Sichere Kalziumquellen für selbstgemachtes Futter",
+      "calciumGuideItems": [
+        {
+          "title": "Feines Eierschalenpulver",
+          "ratio": "1/2 TL pro 500 g Fleisch ohne Knochen",
+          "desc": "95% reines Kalziumkarbonat. Leicht selbst herzustellen durch Auskochen, Trocknen und feines Mahlen von Eierschalen."
+        },
+        {
+          "title": "Rohe fleischige Knochen (RFK)",
+          "ratio": "10% des Gesamtgewichts der Futterration",
+          "desc": "Entenhälse, Hühnerflügel oder Karkassen. Knochen niemals erhitzen, da sie sonst splittern und lebensgefährlich werden."
+        },
+        {
+          "title": "Futterknochenmehl (Bone Meal)",
+          "ratio": "Nach Herstellerangabe dosieren",
+          "desc": "Mikrokristallines Hydroxylapatit, das Kalzium und Phosphor im optimalen natürlichen 2:1-Verhältnis liefert."
+        }
+      ]
+    },
+    "toxic": {
+      "eyebrow": "GIFTIGE LEBENSMITTEL FÜR HUNDE // NOTFALLPROTOKOLL",
+      "dangerTitle": "Die gefährlichsten Haushalts-Lebensmittel für Hunde",
+      "dangerIntro": "Einige für Menschen harmlose Lebensmittel enthalten Giftstoffe, die der Stoffwechsel des Hundes nicht abbauen kann und die zum Tod führen können.",
+      "dangerList": [
+        {
+          "name": "Schokolade & Kakao",
+          "toxin": "Theobromin & Koffein",
+          "symptoms": "Erbrechen, Hecheln, Herzrasen, Muskelzittern, Krampfanfälle, Kreislaufversagen.",
+          "risk": "HOCH BIS TÖDLICH"
+        },
+        {
+          "name": "Weintrauben, Rosinen & Korinthen",
+          "toxin": "Weinsäure",
+          "symptoms": "Apathie, Dehydration, akutes irreversibles Nierenversagen innerhalb von 24–72 Stunden.",
+          "risk": "EXTREM TÖDLICH"
+        },
+        {
+          "name": "Xylit (Birkenzucker / E967)",
+          "toxin": "Synthetischer Zuckeraustauschstoff",
+          "symptoms": "Massive Insulinausschüttung, lebensgefährliche Unterzuckerung, Leberversagen binnen Stunden.",
+          "risk": "HÖCHSTE NOTFALLSTUFE"
+        },
+        {
+          "name": "Zwiebeln, Knoblauch, Lauch & Schnittlauch",
+          "toxin": "N-Propyldisulfid",
+          "symptoms": "Zerstörung roter Blutkörperchen, hämolytische Anämie, blasse Schleimhäute, dunkler Urin.",
+          "risk": "KUMULATIVE HOHE GIFTIGKEIT"
+        },
+        {
+          "name": "Macadamianüsse",
+          "toxin": "Unbekanntes Neurotoxin",
+          "symptoms": "Schwäche der Hinterläufe, hohes Fieber, Erbrechen, Muskelsteifheit.",
+          "risk": "MÄSSIG BIS SCHWER"
+        },
+        {
+          "name": "Gekochte Knochen aller Tierarten",
+          "toxin": "Splittergefahr",
+          "symptoms": "Magen-Darm-Perforation, innere Blutungen, Bauchfellentzündung, Darmverschluss.",
+          "risk": "NOTOPERATION ERFORDERLICH"
+        }
+      ],
+      "emergencyTitle": "Was tun im Vergiftungs-Notfall?",
+      "emergencySteps": [
+        "1. Sofort handeln: Bringen Sie in Erfahrung, was, wie viel und wann genau gefressen wurde. Verpackung sichern!",
+        "2. Niemals eigenmächtig Erbrechen auslösen: Ätzende Stoffe oder spitze Gegenstände verätzen und zerreißen die Speiseröhre beim Hochwürgen.",
+        "3. Sofort Tierklinik anrufen: Kontaktieren Sie umgehend den tierärztlichen Notdienst oder die nächste Tierklinik."
+      ],
+      "safeTitle": "100% sicheres und gesundes Obst & Gemüse",
+      "safeIntro": "Diese pflanzlichen Zutaten liefern wertvolle Antioxidantien, Ballaststoffe und Vitamine für den Napf:",
+      "safeFoods": [
+        {
+          "name": "Heidelbeeren (Blaubeeren)",
+          "benefit": "Reich an Anthocyanen und Antioxidantien zum Zellschutz."
+        },
+        {
+          "name": "Gekochter Kürbis",
+          "benefit": "Reich an löslichen Ballaststoffen, hilft sowohl bei Durchfall als auch Verstopfung."
+        },
+        {
+          "name": "Karotten (Möhren)",
+          "benefit": "Kalorienarmer Knabberspaß mit viel Beta-Carotin, fördert die Zahnpflege."
+        },
+        {
+          "name": "Grüne Bohnen (gekocht)",
+          "benefit": "Ausgezeichnetes kalorienarmes Sättigungsgemüse für übergewichtige Hunde."
+        },
+        {
+          "name": "Äpfel (ohne Kerne)",
+          "benefit": "Natürliche Quelle für Vitamin C und darmfreundliches Pektin."
+        }
+      ]
+    },
+    "brands": {
+      "eyebrow": "HUNDEFUTTER-MARKEN IM TEST & RÜCKRUF-HISTORIE",
+      "heroTitle": "Hundefutter-Marken im Test & Rückruf-Historie",
+      "heroSubtitle": "Unabhängige Analysen von Inhaltsstoffen, Deklarationen und behördlichen Rückrufen für maximale Futtersicherheit.",
+      "brandsList": [
+        {
+          "name": "Blue Buffalo",
+          "grade": "Note: B+",
+          "pros": "Echtes Fleisch an 1. Stelle; ohne Weizen, Mais oder Soja; nährstoffschonende LifeSource Bits.",
+          "cons": "Hoher Kohlenhydratgehalt (45–50%); historische FDA-Rückrufe wegen Feuchtigkeit/Schimmel und Vitamin D.",
+          "verdict": "Überdurchschnittliches Trockenfutter. Wir empfehlen die Ergänzung mit 20% Frischfutter zur Nierenentlastung."
+        },
+        {
+          "name": "Rachael Ray Nutrish",
+          "grade": "Note: C+ / B-",
+          "pros": "Günstig und weit verbreitet; Peak- und Dish-Reihen mit erhöhtem Fleischanteil.",
+          "cons": "Basislinien setzen stark auf Erbsenprotein und Maiskleber; war Teil von FDA-Untersuchungen.",
+          "verdict": "In den Premiumlinien akzeptabel, Deklaration jedoch genau auf gesplittete Hülsenfrüchte prüfen."
+        },
+        {
+          "name": "Pure Balance",
+          "grade": "Note: B (Guter Spartipp)",
+          "pros": "Sehr gutes Preis-Leistungs-Verhältnis; fleischbasierte Rezepturen ohne künstliche Farbstoffe.",
+          "cons": "Auftragsfertigung durch Lohnhersteller; moderater Kohlenhydratanteil.",
+          "verdict": "Eines der ehrlichsten und fairsten Futter im Supermarkt-Preissegment."
+        },
+        {
+          "name": "Ollie Frischfutter",
+          "grade": "Note: A (Hervorragend)",
+          "pros": "100% Lebensmittelqualität; sanft gegart; grammgenau portionsverpackt.",
+          "cons": "Hohe monatliche Abokosten (180€–350€/Monat); benötigt Platz im Tiefkühler.",
+          "verdict": "Goldstandard für Stoffwechselgesundheit, glänzendes Fell und lange Darmgesundheit."
+        },
+        {
+          "name": "Open Farm",
+          "grade": "Note: A-",
+          "pros": "Vollständige Transparenz der Tierhaltung; artgerechte Herkunftszertifikate und Wildfang-Fisch.",
+          "cons": "Gehobenes Preissegment; selten im stationären Fachhandel.",
+          "verdict": "Erstklassige Wahl für Halter, die auf Tierwohl und Null Geflügelnebenprodukte Wert legen."
+        }
+      ],
+      "recallsTitle": "Futter-Rückrufe richtig verstehen",
+      "recallsDesc": "Behördliche Produktrückrufe werden in drei Klassen unterteilt: Klasse I (ernste Gesundheitsgefahr oder Lebensgefahr, z. B. Salmonellen oder Vitamin-D-Überdosierung), Klasse II (vorübergehende Beschwerden) und Klasse III (formale Kennzeichnungsmängel). Kontrollieren Sie regelmäßig Chargennummern.",
+      "methodTitle": "Unsere 4 Bewertungs-Säulen",
+      "methodPillars": [
+        {
+          "title": "1. Klare Proteinquelle",
+          "desc": "Ganzes Muskelfleisch statt anonymer Tiermehle."
+        },
+        {
+          "title": "2. Moderater Kohlenhydratanteil",
+          "desc": "Stärkeanteile unter 40% zur Vorbeugung von Übergewicht."
+        },
+        {
+          "title": "3. Rückverfolgbare Rohstoffe",
+          "desc": "Zertifizierte Höfe und gentechnikfreie Zutaten."
+        },
+        {
+          "title": "4. Saubere Qualitätsbilanz",
+          "desc": "Ständige Laborkontrollen und einwandfreie Betriebshygiene."
+        }
+      ]
+    },
+    "allergies": {
+      "eyebrow": "ERNÄHRUNGS-RATGEBER // ALLERGIEN & AUSSCHLUSSDIÄT",
+      "heroTitle": "Bestes Futter für Hunde mit Allergien & empfindlichem Magen",
+      "heroSubtitle": "Praktischer Leitfaden zu Futtermittelallergien, Monoprotein-Sorten und der 8-wöchigen Eliminationsdiät.",
+      "allergensTitle": "Die 5 häufigsten Futtermittelallergene beim Hund",
+      "allergensIntro": "Futtermittelallergien sind immunologische Überreaktionen auf bestimmte Nahrungsproteine. Nach klinischer Häufigkeit geordnet:",
+      "allergensList": [
+        {
+          "name": "1. Masthuhn / Geflügel (ca. 60% der Fälle)",
+          "desc": "Aufgrund der massenhaften Verwendung in Fertigfuttern das häufigste Allergen überhaupt."
+        },
+        {
+          "name": "2. Rindfleisch (ca. 30% der Fälle)",
+          "desc": "Klassisches rotes Fleisch, das bei sensibilisierten Hunden extremen Juckreiz und Ohrentzündungen auslöst."
+        },
+        {
+          "name": "3. Milchprodukte & Käse",
+          "desc": "Erwachsene Hunde verlieren Laktase-Enzyme; Durchfall und Blähungen sind die Folge."
+        },
+        {
+          "name": "4. Weizen- und Maisgluten",
+          "desc": "Pflanzliche Proteine, welche die Darmschleimhaut schädigen und Entzündungen begünstigen."
+        },
+        {
+          "name": "5. Soja & Hülsenfrüchte",
+          "desc": "Günstige pflanzliche Eiweißquellen, die häufig zu Fehlgärungen und Juckreiz führen."
+        }
+      ],
+      "eliminationTitle": "Die 8-wöchige Ausschlussdiät (Eliminationsdiät)",
+      "eliminationSteps": [
+        {
+          "step": "Phase 1",
+          "title": "Eine einzige exotische Proteinquelle wählen",
+          "desc": "Stellen Sie auf ein Fleisch um, das der Hund noch nie gefressen hat (z. B. Hirsch, Kaninchen oder Känguru), kombiniert mit einer verträglichen Kohlenhydratquelle (z. B. Kürbis)."
+        },
+        {
+          "step": "Phase 2",
+          "title": "Absolute Disziplin (Strikte 8 Wochen)",
+          "desc": "8 Wochen lang darf absolut nichts anderes gefüttert werden: Keine Leckerlis, keine Kauknochen, keine Brotkrumen vom Tisch."
+        },
+        {
+          "step": "Phase 3",
+          "title": "Gezielte Provokationstestung",
+          "desc": "Sind Juckreiz und Verdauungsprobleme verschwunden, wird eine verdächtige Zutat für 7 Tage zugefüttert. Treten Symptome wieder auf, ist die Allergie bewiesen."
+        }
+      ],
+      "novelTitle": "Empfohlene hypoallergene Fleischsorten",
+      "novelProteins": [
+        {
+          "name": "Hirsch- & Rehfleisch (Venison)",
+          "desc": "Mageres, nährstoffreiches Wildfleisch mit extrem geringem Allergiepotenzial."
+        },
+        {
+          "name": "Kaninchenfleisch",
+          "desc": "Sehr bekömmliches, hypoallergenes Fleisch mit hervorragender Verdaulichkeit."
+        },
+        {
+          "name": "Entenfleisch",
+          "desc": "Sehr schmackhafte Alternative für Hunde, die auf normales Hühnerfleisch reagieren."
+        },
+        {
+          "name": "Kängurufleisch",
+          "desc": "Eines der reinsten und fettärmsten Wildfleische in der tierärztlichen Dermatologie."
+        }
+      ]
+    },
+    "calculator": {
+      "eyebrow": "100% KOSTENLOS // FUTTERRECHNER",
+      "noticeTitle": "Wichtiger Hinweis:",
+      "noticeText": "Dient allgemeinen Bildungs- und Informationszwecken. Kein Ersatz für eine tierärztliche Diagnose.",
+      "heroTitle": "Futter- und Kalorienrechner für Hunde",
+      "heroSubtitle": "Ermitteln Sie den exakten täglichen Energiebedarf (RER & MER) und berechnen Sie grammgenaue Mahlzeiten-Portionen basierend auf Gewicht, Alter, Aktivität und Körperzustand."
+    },
+    "breeds": {
+      "eyebrow": "RASSE-SPEZIFISCHE ERNÄHRUNG // TIERÄRZTLICHE RICHTLINIEN",
+      "targetWeight": "Idealgewicht",
+      "dailyCalories": "Tageskalorien",
+      "freshDaily": "Frischfutter / Tag",
+      "kibbleDaily": "Trockenfutter / Tag",
+      "cups": "Messbecher",
+      "reqsTitle": "Ernährungsanforderungen für den {name}",
+      "reqsIntro": "Als Hund der Kategorie {category} mit einem durchschnittlichen Gewicht von {w0} bis {w1} lbs (ca. {Math.round(w0*0.453)} bis {Math.round(w1*0.453)} kg) benötigt der {name} ein abgestimmtes Nährstoffprofil:",
+      "predispositionsTitle": "Wichtige Rasse- und Fütterungsmerkmale:",
+      "feedingRoutineTitle": "Empfohlene Fütterungsroutine:",
+      "feedingRoutineDesc": "Füttern Sie Ihren ausgewachsenen {name} zweimal täglich (50% morgens und 50% abends). Sorgen Sie stets für frisches Wasser. Wenn Sie Trockenfutter füttern, feuchten Sie es mit lauwarmer Knochenbrühe an, um die Nierenfunktion zu unterstützen.",
+      "ctaTitle": "Erstellen Sie den exakten Futterplan für Ihren {name}",
+      "ctaSubtitle": "Passen Sie Alter (Welpe, Adult, Senior), exaktes Gewicht, Aktivitätslevel und Körperform im kostenlosen Rechner an.",
+      "ctaBtn": "Rechner für {name} starten →",
+      "faqTitle": "Häufige Fragen zur Ernährung des {name}",
+      "faqSubtitle": "Portionsgrößen, Fütterungszeiten und optimale Zutaten."
+    },
+    "comparisonTable": {
+      "eyebrow": "NÄHRWERT-VERGLEICH // FRISCHFUTTER VS. TROCKENFUTTER",
+      "title": "Warum echte Vollwertnahrung Trockenfutter biologisch übertrifft",
+      "subtitle": "Ein direkter Vergleich von Verarbeitungshitze, Portionsgenauigkeit und tatsächlichen monatlichen Futterkosten — genau die Faktoren, die eine 5-jährige Langlebigkeitsstudie mit einer bis zu 32 Monate längeren Lebensdauer bei Frischfütterung in Verbindung brachte.",
+      "scrollHint": "↔ Tabelle horizontal scrollen",
+      "colMetric": "Ernährungskriterium",
+      "colDfp": "✨ DogFoodPlanner",
+      "colSubs": "Frische-Abos",
+      "colKibble": "Trockenfutter (Kibble)",
+      "rows": [
+        {
+          "metric": "Herstellungsverfahren",
+          "dfp": "Schonend gegart (~74°C) oder roh — Enzyme intakt",
+          "subs": "Sous-Vide gegart & schockgefrostet",
+          "kibble": "Extrusion bei extremer Hitze (200°C+)"
+        },
+        {
+          "metric": "Portionsgenauigkeit",
+          "dfp": "Exakte Gramm nach RER/MER-Stoffwechselformel, angepasst an Gewicht, Alter & Aktivität",
+          "subs": "Starrer Fütterungsplan nach groben Gewichtsbereichen",
+          "kibble": "Pauschale Sacktabelle — überschätzt Portionen um 20–30%"
+        },
+        {
+          "metric": "Netto-Kohlenhydrate",
+          "dfp": "< 5% (nur ausgewähltes Gemüse, null Füllstoffe)",
+          "subs": "10% – 20%",
+          "kibble": "45% – 60% (Mais-, Weizen- & Erbsenstärkefüllstoffe)"
+        },
+        {
+          "metric": "Biologische Feuchtigkeit",
+          "dfp": "70% – 75% (unterstützt Nieren- und Blasenhydration)",
+          "subs": "70% – 75%",
+          "kibble": "8% – 10% (chronische subklinische Dehydration)"
+        },
+        {
+          "metric": "Nährstoffintegrität",
+          "dfp": "Minimale Oxidation — Omega-3-Fettsäuren & Enzyme geschützt",
+          "subs": "Mäßig — einige hitzeempfindliche Vitalstoffe degeneriert",
+          "kibble": "Fettoxidation & AGE-Bildung durch aggressive Extrusionshitze"
+        },
+        {
+          "metric": "Zutatentransparenz",
+          "dfp": "100% offengelegte Grammzahlen & Anteile — Sie bestimmen jedes Gramm",
+          "subs": "Rezepturgeheimnis (exakte Verhältnisse verborgen)",
+          "kibble": "Zutatensplitting & undurchsichtige Tiermehlquellen"
+        },
+        {
+          "metric": "Monatl. Futterkosten (23 kg Hund)",
+          "dfp": "75€ – 120€ (nur Rohzutaten für die eigene Küche)",
+          "subs": "240€ – 420€ / Monat",
+          "kibble": "55€ – 90€ / Monat"
+        }
+      ]
+    },
+    "faqPage": {
+      "badge": "WISSENSDATENBANK // ÜBER 40 TIERÄRZTLICHE ANTWORTEN",
+      "exploreHubsTitle": "Erkunden Sie unsere spezialisierten Fachthemen",
+      "exploreHubsSubtitle": "Fundierte Ratgeber für Hundehalter, die die Gesundheit ihres Tieres aktiv optimieren möchten.",
+      "cardBestFood": "Vergleich von Frischfutter, BARF, proteinreichem Trockenfutter und Schonkost.",
+      "cardCalc": "Wissenschaftlicher RER- und MER-Kalorienrechner für exakte Grammmengen.",
+      "cardRecipes": "Ausgewogene Kochrezepte und 80-10-10 BARF mit perfektem Kalziumausgleich.",
+      "cardAllergies": "Auswahl von Monoproteinen, Ausschlussdiäten und Stärkung der Darmflora.",
+      "cardToxic": "Vollständige Liste giftiger Lebensmittel, sicheres Obst & Gemüse und schädliche Zusätze.",
+      "cardBrands": "Unabhängige Analysen zu Blue Buffalo, Nutrish, Pure Balance, Ollie und Open Farm."
+    },
+    "faqSingle": {
+      "reviewedBy": "Geprüft von: DogFoodPlanner Redaktionsteam",
+      "updated": "Stand: 2026",
+      "directQuickAnswer": "Direkte Kurzantwort",
+      "clinicalAnalysis": "Ausführliche Ernährungsanalyse",
+      "topics": "Themengebiete:",
+      "ctaBadge": "🐾 Kostenloser Ernährungsrechner",
+      "ctaTitle": "Berechnen Sie den exakten Tagesbedarf für Ihren Hund",
+      "ctaSubtitle": "Nutzen Sie unseren kostenlosen Futterrechner zur Bestimmung des Kalorienbedarfs und der exakten Grammmengen.",
+      "ctaBtn": "Portionen jetzt berechnen →",
+      "relatedTitle": "Verwandte Fragen zur Hundeernährung",
+      "readAnswer": "Antwort vollständig lesen →",
       "referencedInAnswer": "Referenciado nesta resposta",
       "buyNow": "Comprar agora"
+    },
+    "bestFoodSingle": {
+      "rankBadge": "TOP 5 GESÜNDESTE HUNDEFUTTER // PLATZ",
+      "reviewedBy": "Geprüft von: DogFoodPlanner Redaktionsteam",
+      "nutritionalScore": "Nährwert-Score",
+      "strengths": "Stärken",
+      "tradeoffs": "Kompromisse",
+      "fullBreakdown": "Vollständige Analyse",
+      "exampleProduct": "Beispielprodukt dieser Kategorie",
+      "previousRank": "Vorheriger Platz",
+      "nextRank": "Nächster Platz",
+      "backToRanking": "Zurück zur vollständigen Top-5-Rangliste",
+      "viewOnAmazon": "Auf Amazon ansehen"
+    }
   },
-  "bestFoodSingle": {
-    "rankBadge": "TOP 5 GESÜNDESTE HUNDEFUTTER // PLATZ",
-    "reviewedBy": "Geprüft von: DogFoodPlanner Redaktionsteam",
-    "nutritionalScore": "Nährwert-Score",
-    "strengths": "Stärken",
-    "tradeoffs": "Kompromisse",
-    "fullBreakdown": "Vollständige Analyse",
-    "exampleProduct": "Beispielprodukt dieser Kategorie",
-    "previousRank": "Vorheriger Platz",
-    "nextRank": "Nächster Platz",
-    "backToRanking": "Zurück zur vollständigen Top-5-Rangliste",
-    "viewOnAmazon": "Auf Amazon ansehen"
-  }
-},
-  pt: {
-  "about": {
-    "heroTitle": "Sobre o DogFoodPlanner: Planejamento de Refeições Caninas Descomplicado",
-    "heroSubtitle": "Conheça o DogFoodPlanner.com, nossa missão e como funciona a nossa calculadora gratuita de alimentação canina.",
-    "missionBadge": "NOSSA MISSÃO // ALIMENTAÇÃO CANINA",
-    "whyTitle": "Por Que o DogFoodPlanner Foi Criado",
-    "whyP1": "Criamos o DogFoodPlanner para ajudar tutores de cães a planejar refeições e porções com total confiança. Pesquisamos orientações públicas e as transformamos em guias e ferramentas gratuitas e fáceis de usar.",
-    "whyP2": "",
-    "whoTitle": "Quem Somos",
-    "whoContent": "O DogFoodPlanner é um site independente criado por pesquisadores e redatores apaixonados por cães. Não somos veterinários. Sempre consulte seu médico veterinário antes de alterar a dieta do seu cão, especialmente para filhotes, idosos ou cães com problemas de saúde.",
-    "methodTitle": "Nossa Metodologia Nutricional",
-    "pillars": [
-      {
-        "tag": "01 // ESTIMATIVA DE CALORIAS",
-        "title": "Estimativa de Calorias",
-        "desc": "Nossa calculadora utiliza a fórmula padrão de Necessidade Energética de Repouso (70 × peso corporal em kg^0,75) e fatores habituais de atividade para estimar as calorias diárias."
-      },
-      {
-        "tag": "02 // FONTES DE REFERÊNCIA",
-        "title": "Fontes de Referência",
-        "desc": "Baseamo-nos em diretrizes publicadas por instituições como a AAFCO e o National Research Council. Nosso conteúdo é educativo e não substitui a orientação de um profissional."
-      },
-      {
-        "tag": "03 // TRANSPARÊNCIA",
-        "title": "Transparência",
-        "desc": "Algumas páginas contêm links de afiliados, incluindo links do Programa de Associados da Amazon. Se você comprar por meio deles, podemos receber uma pequena comissão sem custo adicional para você. Isso nunca altera nossas recomendações."
-      }
-    ],
-    "ctaTitle": "Pronto para Calcular as Necessidades Nutricionais do Seu Cão?",
-    "ctaDesc": "Experimente nossa calculadora interativa, explore nossos guias de alergias e leia nossos guias de alimentação canina.",
-    "ctaBtn": "Iniciar Calculadora Nutricional Gratuita →",
-    "amazonDisclaimer": "Como Associado da Amazon, recebemos remuneração por compras qualificadas."
-  },
-  "contact": {
-    "eyebrow": "SUPORTE E CONTATO // ATENDIMENTO DIRETO",
-    "cards": [
-      {
-        "icon": "📧",
-        "title": "Dúvidas Gerais",
-        "desc": "Perguntas e sugestões:",
-        "email": "hello@dogfoodplanner.com"
-      },
-      {
-        "icon": "🐾",
-        "title": "Pesquisa Nutricional",
-        "desc": "Dúvidas sobre fórmulas veterinárias:",
-        "email": "research@dogfoodplanner.com"
-      },
-      {
-        "icon": "🛡️",
-        "title": "Suporte Técnico",
-        "desc": "Erros e sugestões do site:",
-        "email": "legal@dogfoodplanner.com"
-      }
-    ],
-    "formTitle": "Envie uma Mensagem à Nossa Equipe de Nutrição Canina",
-    "formDesc": "Tem dúvidas sobre as fórmulas calóricas NRC ou precisa de orientação para uma dieta crua? Respondemos em até 24 horas úteis.",
-    "nameLabel": "Seu Nome",
-    "namePlaceholder": "ex.: Mariana Silva",
-    "emailLabel": "Seu E-mail",
-    "emailPlaceholder": "mariana@exemplo.com",
-    "subjectLabel": "Assunto da Mensagem",
-    "subjectOptions": [
-      "Dúvida Geral / Feedback",
-      "Nutrição Canina e Receitas",
-      "Dúvida sobre Fórmulas da Calculadora",
-      "Relatório de Erro Técnico"
-    ],
-    "messageLabel": "Sua Mensagem",
-    "messagePlaceholder": "Conte-nos sobre seu cão (raça, peso, idade) e como podemos ajudar...",
-    "submitBtn": "Enviar Mensagem →",
-    "notice": "Aviso de Emergência Veterinária: Se o seu cão apresentar sintomas agudos de envenenamento ou mal-estar grave, procure imediatamente um hospital veterinário 24 horas.",
-    "faqTitle": "Procurando respostas rápidas?",
-    "faqDesc": "Acesse nossa base com mais de 40 perguntas veterinárias sobre perda de apetite, dieta BARF, ração de gatos e marcas comerciais.",
-    "faqBtn": "Ver Todas as Perguntas Frequentes →",
-    "successTitle": "✓ Mensagem preparada — enviando para hello@dogfoodplanner.com",
-    "successDesc": "Seu cliente de e-mail deve abrir com uma mensagem pré-redigida endereçada a hello@dogfoodplanner.com. Basta clicar em Enviar no seu aplicativo de e-mail e ela chegará à nossa caixa de entrada."
-  },
-  "privacy": {
-    "eyebrow": "LEGAL // POLÍTICA DE PRIVACIDADE",
-    "lastUpdated": "Atualizado em: 13 de outubro de 2026",
-    "intro": "No DogFoodPlanner.com respeitamos a sua privacidade e garantimos a proteção dos seus dados. Esta política explica como as informações são tratadas.",
-    "sections": [
-      {
-        "title": "1. Informações Que Não Coletamos",
-        "content": "Os dados de saúde do seu animal pertencem a você. O uso da nossa calculadora de alimentação canina não exige cadastro, senhas nem cartão de crédito. Perfis caninos, pesos e seleções de refeição inseridos na calculadora são processados no lado do cliente no seu navegador e não são salvos em bancos de dados externos."
-      },
-      {
-        "title": "2. Dados Técnicos Anônimos",
-        "content": "Como a maioria das plataformas web modernas, nossos servidores de CDN registram dados técnicos anônimos padrão (endereço IP anonimizado, navegador, página de origem e data/hora) para fins de segurança e proteção contra ataques."
-      },
-      {
-        "title": "3. Cookies e Armazenamento Local (localStorage)",
-        "content": "Usamos o localStorage para lembrar seu idioma e plano de refeições no seu dispositivo. Se você clicar em um link de afiliado, o site de terceiros (como a Amazon) poderá definir seus próprios cookies."
-      },
-      {
-        "title": "4. Links de Terceiros",
-        "content": "Nosso site contém links de referência para pesquisas publicadas, padrões da AAFCO, bancos de dados do NRC e recursos externos. Não nos responsabilizamos pelas práticas de privacidade ou conteúdo de sites de terceiros."
-      },
-      {
-        "title": "5. Divulgação de Afiliados",
-        "content": "O DogFoodPlanner participa do Programa de Associados da Amazon Services LLC. Como Associado da Amazon, recebemos remuneração por compras qualificadas, sem nenhum custo extra para você."
-      },
-      {
-        "title": "6. Privacidade de Menores",
-        "content": "Nossos conteúdos e ferramentas destinam-se a adultos responsáveis por animais de estimação. Não coletamos intencionalmente dados de menores de 13 anos."
-      },
-      {
-        "title": "7. Atualizações e Contato",
-        "content": "Esta política pode ser atualizada periodicamente. Em caso de dúvidas, entre em contato pelo e-mail privacy@dogfoodplanner.com."
-      }
-    ]
-  },
-  "terms": {
-    "eyebrow": "LEGAL // TERMOS E CONDIÇÕES DE USO",
-    "lastUpdated": "Atualizado em: Janeiro de 2026",
-    "intro": "Leia atentamente estes Termos de Serviço antes de utilizar o DogFoodPlanner.com. Ao acessar a plataforma, você concorda com eles.",
-    "sections": [
-      {
-        "title": "1. Aceitação dos Termos",
-        "content": "Ao utilizar o DogFoodPlanner.com (o \"Site\"), você declara ter lido, compreendido e aceitado todos os termos aqui previstos. Se discordar de qualquer cláusula, descontinue o uso imediatamente."
-      },
-      {
-        "title": "2. Isenção de Responsabilidade Médica e Veterinária",
-        "content": "As informações, calculadoras e receitas disponibilizadas no DogFoodPlanner.com têm caráter estritamente educativo e informativo, baseadas em modelos do NRC e FEDIAF. Elas NÃO constituem parecer veterinário, diagnóstico clínico ou prescrição de tratamento. Consulte sempre um médico veterinário ou nutrólogo de pequenos animais antes de alterar substancialmente a dieta do seu pet."
-      },
-      {
-        "title": "3. Utilização das Calculadoras Interativas",
-        "content": "Os cálculos energéticos (RER e MER) e as gramas diárias são pontos de partida matemáticos. O gasto calórico real varia conforme castração, temperatura e genética. O tutor deve monitorar o Escore de Condição Corporal (ECC/BCS) e ajustar a alimentação conforme necessário."
-      },
-      {
-        "title": "4. Segurança em Comida Caseira e Equilíbrio de Cálcio",
-        "content": "Oferecer alimentação caseira ou crua exige o balanceamento correto de todos os micronutrientes. Alimentar cães exclusivamente com carnes desossadas e carboidratos sem suplementação de cálcio provoca desmineralização óssea em poucos meses. O usuário assume total responsabilidade pelo preparo das refeições."
-      },
-      {
-        "title": "5. Propriedade Intelectual",
-        "content": "Todos os textos, algoritmos, identidades visuais e gráficos do DogFoodPlanner.com são protegidos por direitos autorais e pertencem exclusivamente ao DogFoodPlanner."
-      },
-      {
-        "title": "6. Limitação de Responsabilidade",
-        "content": "O DogFoodPlanner.com e seus autores não serão responsabilizados por quaisquer danos diretos ou indiretos decorrentes do uso das informações disponibilizadas."
-      }
-    ]
-  },
-  "bestFood": {
-    "eyebrow": "GUIA CLÍNICO // RANKING DAS MELHORES RAÇÕES 2026",
-    "rankingsTitle": "Quais São os 5 Alimentos Mais Saudáveis para Cães em 2026?",
-    "rankingsIntro": "Pesquisas em longevidade canina comprovam que o processamento térmico brando e a umidade biológica superior a 70% são os dois maiores indicadores de vitalidade e proteção renal.",
-    "readMoreLabel": "Leia mais →",
-    "readLessLabel": "Mostrar menos ↑",
-    "rankings": [
-      {
-        "rank": "01",
-        "title": "Alimentação Natural (AN) Cozida no Vapor de Grau Humano",
-        "score": "98/100",
-        "pros": "Carnes e vegetais reais cozidos a baixa temperatura (70°C). Preserva mais de 70% de umidade natural, enzimas e vitaminas biodisponíveis.",
-        "cons": "Exige armazenamento em geladeira ou freezer. Custo maior que rações comuns de supermercado.",
-        "readMore": "A comida fresca levemente cozida ocupa o topo do ranking porque reproduz uma refeição caseira sem abrir mão da segurança alimentar. Os ingredientes vêm de instalações de alimentos humanos inspecionadas por órgãos sanitários, e depois são cozidos apenas o tempo suficiente em baixa temperatura (cerca de 70°C) para eliminar patógenos, preservando proteínas delicadas, taurina e vitaminas do complexo B hidrossolýveis que a extrusão em alta temperatura destrói.\n\nComo o alimento já contém mais de 70% de umidade, ele reduz a sobrecarga nos rins e diminui a desidratação crônica leve comum em dietas baseadas apenas em ração seca. É uma opção especialmente indicada para cães em recuperação de doenças, idosos com menor estímulo de sede, ou raças propensas a sensibilidades alimentares, já que as receitas costumam ter uma única fonte de proteína e não contêm farinhas de carne processada nem conservantes sintéticos.\n\nA principal desvantagem é a logística: é preciso espaço na geladeira ou no freezer, e as porções precisam ser descongeladas antes do horário da refeição. Se você ainda não está pronto para cozinhar em casa, várias marcas que utilizam cozinhas certificadas vendem versões estáveis à temperatura ambiente do mesmo formato levemente cozido, uma forma prática de experimentar essa categoria antes de adotar uma rotina caseira completa.",
-        "productKey": "justfoodfordogs-chicken-white-rice",
-        "productNote": "Uma opção estável à temperatura ambiente para experimentar essa categoria:"
-      },
-      {
-        "rank": "02",
-        "title": "Dieta Crua Biologicamente Adequada BARF 80-10-10",
-        "score": "95/100",
-        "pros": "Proporção ancestral carnívora: 80% carne muscular, 10% ossos carnudos, 10% vísceras. Excelente para limpeza dental e massa magra.",
-        "cons": "Exige higiene rigorosa na manipulação e monitoramento preciso da relação cálcio-fósforo.",
-        "readMore": "A proporção 80-10-10 (80% de carne muscular, 10% de osso cru comestível, 10% de vísceras) foi criada para reproduzir o que um ancestral canino selvagem obteria de uma presa inteira. Quando feita corretamente, ela fornece uma proporção naturalmente equilibrada de cálcio e fósforo diretamente do conteúdo ósseo, favorece a massa muscular magra, e a ação mecânica de mastigar osso cru ajuda a remover o tártaro dos dentes.\n\nComo nada é cozido, enzimas e aminoácidos sensíveis ao calor permanecem totalmente intactos. O desafio está na precisão: encontrar ossos crus seguros e acertar exatamente a proporção exigem disciplina real, já que calcular mal o percentual de osso é o erro mais comum, levando à constipação ou, com o tempo, a problemas ósseos em filhotes em crescimento. A carne crua também precisa ser manuseada com o mesmo cuidado higiênico de qualquer alimento cru para consumo humano (tábuas de corte separadas, refrigeração, limpeza imediata).\n\nA maioria das famílias acha mais fácil começar com um produto cru formulado profissionalmente que já atinge essa proporção, antes de migrar para refeições cruas totalmente personalizadas, compradas e pesadas em casa.",
-        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-        "productNote": "Uma opção crua pré-balanceada que elimina o trabalho de cálculo:"
-      },
-      {
-        "rank": "03",
-        "title": "Comida Crua Liofilizada e Desidratada a Frio",
-        "score": "91/100",
-        "pros": "Mantém a pureza nutricional do alimento cru com a praticidade do armazenamento em temperatura ambiente.",
-        "cons": "Deve ser reidratada com água morna ou caldo de ossos antes do fornecimento.",
-        "readMore": "Tanto a desidratação a ar quanto a liofilização retiram a umidade da carne crua em baixas temperaturas, mantendo o perfil de nutrientes e enzimas próximo ao da comida crua, e ao mesmo tempo tornam o alimento estável à temperatura ambiente, sem necessidade de freezer. A liofilização usa um processo a vácuo e frio que costuma preservar os nutrientes ainda melhor do que a desidratação a ar, embora geralmente custe mais por quilo.\n\nOs dois formatos viajam bem e funcionam ótimo como complemento cru misturado à ração seca para aumentar a palatabilidade. Reidratar com água morna ou caldo de ossos antes de servir ajuda a restaurar a umidade, aproximando-se da dieta ancestral selvagem do cão, o que é especialmente vantajoso para cães propensos a cristais urinários ou sobrecarga renal.\n\nO principal ponto de atenção é o custo por caloria: como a água é removida, você está pagando por nutrição concentrada, motivo pelo qual esse formato costuma ser usado como complemento ou em dietas rotativas, em vez de ser a única fonte diária de alimentação para um cão de grande porte.",
-        "productKey": "ziwi-peak-beef-chicken-bundle",
-        "productNote": "Uma opção desidratada a ar bem avaliada:"
-      },
-      {
-        "rank": "04",
-        "title": "Ração Seca Super Premium sem Grãos ou com Grãos Ancestrais",
-        "score": "78/100",
-        "pros": "Prática, durável e acessível para lares com múltiplos cães ou cães de porte grande.",
-        "cons": "Processada a mais de 200°C, apenas 8 a 10% de umidade e 40 a 50% de carboidratos amiláceos.",
-        "readMore": "A ração seca premium continua sendo a opção mais prática para muitas famílias: é estável por até um ano, fácil de dosar com um alimentador automático, e significativamente mais barata por caloria do que dietas frescas ou cruas.\n\nAs melhores fórmulas dessa categoria trazem uma proteína animal nomeada, em vez de uma vaga \"farinha de carne\", limitam os amidos a grãos ancestrais como aveia e sorgo, ao invés de excesso de milho ou trigo como carga, e passam por testes laboratoriais de terceiros para detectar metais pesados.\n\nA desvantagem está no próprio processo de extrusão: a exposição a temperaturas acima de 200°C destrói algumas vitaminas sensíveis ao calor e reduz a umidade para cerca de 10%, motivo pelo qual veterinários costumam recomendar adicionar um pouco de caldo de ossos ou um complemento cru a dietas baseadas apenas em ração seca, especialmente para cães propensos a cristais urinários.",
-        "productKey": "orijen-original-grain-free-23lb",
-        "productNote": "Uma fórmula rica em proteína, no estilo WholePrey, dessa categoria:"
-      },
-      {
-        "rank": "05",
-        "title": "Dietas Terapêuticas e Medicamentosas Veterinárias",
-        "score": "72/100",
-        "pros": "Formuladas para doenças clínicas diagnosticadas (insuficiência renal, hepática ou urólitos).",
-        "cons": "Costumam conter ingredientes vegetais refinados e exigem prescrição veterinária.",
-        "readMore": "As dietas terapêuticas são desenvolvidas para controlar uma condição específica já diagnosticada: proteína e fósforo reduzidos para doença renal, proteínas hidrolisadas às quais o sistema imunológico não reage em casos de alergia alimentar grave, ou magnésio e pH controlados para cálculos de estruvita na bexiga.\n\nElas ficam em posições mais baixas em uma escala geral de \"mais saudáveis\" apenas porque são deliberadamente restritivas, e não otimizadas para um cão saudável médio; uma fórmula desenvolvida para poupar rins em declínio, por exemplo, é intencionalmente não a mais rica em proteína do mercado.\n\nEssas dietas exigem aval veterinário e exames de sangue periódicos para confirmar que estão funcionando, e nunca devem ser oferecidas a um cão saudável sem justificativa clínica, já que restringir nutrientes que um cão saudável realmente precisa pode causar danos ao longo do tempo.",
-        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-        "productNote": "Uma fórmula de suporte renal comumente prescrita por veterinários:"
-      }
-    ],
-    "buyerGuideTitle": "4 Regras de Ouro para Escolher a Melhor Alimentação",
-    "buyerRules": [
-      {
-        "title": "1. Proteína Animal Específica no 1º Lugar da Composição",
-        "desc": "Priorize «Peru Desossado», «Carne Bovina» ou «Salmão Fresco» em vez de genéricas «farinhas de subprodutos».",
-        "readMore": "No rótulo dos alimentos para cães, os ingredientes são listados por ordem de peso antes do cozimento. Carnes frescas e especificadas (como «Peru desossado» ou «Carne bovina fresca») fornecem aminoácidos essenciais cruciais como taurina, arginina e carnitina com máxima biodisponibilidade. Fuja de descrições genéricas como «subprodutos de carne», «farinha de carnes» ou «derivados animais», que permitem a inclusão de resíduos de baixa qualidade de origens desconhecidas.\n\nFique atento também à divisão de ingredientes («ingredient splitting»): marcas costumam desmembrar carboidratos (como ervilha, amido de ervilha e proteína de ervilha) para que a carne pareça o ingrediente principal na lista, mesmo quando os carboidratos formam a maior parte da receita.\n\nFarinhas com origem declarada — como «Farinha de carne de cordeiro» ou «Farinha de salmão desidratado» — são legítimas quando transparentes, pois tiveram a água removida antes do preparo e entregam alta densidade de proteína animal."
-      },
-      {
-        "title": "2. Alta Umidade Biológica (>70%)",
-        "desc": "A ração seca causa desidratação crônica de baixo grau. Sempre adicione água, caldos ou alimentos úmidos.",
-        "readMore": "Na natureza, as presas ancestrais dos canídeos contêm entre 70% e 75% de água. Cães possuem um mecanismo de sede naturalmente lento, pois sua fisiologia espera absorver hidratação prioritariamente pela comida. Oferecer somente ração seca (que possui apenas 8% a 10% de umidade) mantém o cão em um estado contínuo de desidratação subclínica.\n\nCom o passar dos anos, a urina cronicamente concentrada sobrecarrega os rins e eleva bastante o perigo de cristais e cálculos vesicais de estruvita e oxalato de cálcio.\n\nSe você utiliza ração seca, sempre acrescente umidade: hidrate na proporção 1:1 com caldo de ossos morno sem tempero, água filtrada ou kefir natural, ou complemente com toppers de carnes frescas e cozidas para preservar os rins."
-      },
-      {
-        "title": "3. Zero Conservantes Químicos Artificiais",
-        "desc": "Evite terminantemente aditivos como BHA, BHT, etoxiquina e corantes sintéticos.",
-        "readMore": "Para alcançar prazos de validade de 18 a 24 meses, alimentos industriais econômicos recorrem a antioxidantes químicos como BHA (butil-hidroxianisol), BHT (butil-hidroxitolueno) e etoxiquina. Estudos científicos associam BHA e BHT a potencial cancerígeno e desregulação hormonal, enquanto a etoxiquina (criada inicialmente como pesticida) tem vínculos com toxicidade hepática.\n\nCorantes artificiais (como Vermelho 40 e Amarelo 5) são colocados unicamente para atrair os olhos humanos, mas frequentemente desencadeiam coceiras alérgicas, dermatites e distúrbios digestivos.\n\nExija fórmulas conservadas unicamente com antioxidantes de origem natural: tocoferóis mistos (Vitamina E), extrato de alecrim e ácido cítrico. Eles conservam as gorduras saudavelmente sem agredir o organismo."
-      },
-      {
-        "title": "4. Carboidratos Controlados (<25%)",
-        "desc": "Cães não possuem amilase salivar. O excesso de amido sobrecarrega o pâncreas e acelera a obesidade.",
-        "readMore": "Cães são carnívoros facultativos e não possuem qualquer exigência biológica por carboidratos refinados. Diferente dos humanos, cães não produzem amilase salivar para iniciar a digestão de amidos na boca; toda a carga enzimática fica concentrada no pâncreas.\n\nComo as tabelas nutricionais não são obrigadas a estampar a porcentagem de carboidratos, muitas rações secas ocultam de 45% a 60% de amido derivado de milho, trigo ou mandioca para dar liga física aos grãos durante a extrusão.\n\nAlimentos de alto índice glicêmico provocam picos contínuos de insulina, inflamação crônica, infecções de ouvido e favorecem a obesidade canina. Calcule os carboidratos subtraindo de 100% a soma de proteína, gordura, fibra, umidade e matéria mineral. Busque alimentos com menos de 25% de carboidratos totais."
-      }
-    ],
-    "ctaTitle": "Calcule a Porção Diária Ideal para o Seu Cão",
-    "ctaDesc": "Seja comida natural, dieta crua BARF ou ração seca: saiba as gramas diárias exatas e a meta calórica.",
-    "ctaBtn": "Calcular Porção Diária Agora →"
-  },
-  "recipes": {
-    "eyebrow": "RECEITAS CASEIRAS BALANCEADAS // PADRÕES NRC E AAFCO",
-    "heroTitle": "Receitas Caseiras Equilibradas para Cães",
-    "heroSubtitle": "Orientações práticas para preparar em casa refeições cozidas no vapor e dietas cruas BARF 80-10-10 completas e saudáveis.",
-    "calciumWarningTitle": "A Regra Mais Importante da Comida Caseira: O Equilíbrio do Cálcio",
-    "calciumWarningDesc": "A carne muscular possui alto teor de fósforo e quase nenhum cálcio (proporção 1:20). Alimentar cães apenas com carne e arroz sem adicionar cálcio provoca descalcificação óssea e hiperparatireoidismo em poucos meses. Adicione sempre 1/2 colher de chá rasa de pó de casca de ovo (aprox. 900 mg de cálcio elementar) para cada 450 g de carne sem ossos para atingir o ratio ideal Cálcio/Fósforo de 1.2:1.",
-    "recipesList": [
-      {
-        "tag": "COZIDO NO VAPOR",
-        "title": "Receita 1: Peru no Vapor com Abóbora Prebiótica (Digestão Sensível)",
-        "desc": "Ideal para cães com estômago sensível, histórico de fezes pastosas ou intolerância ao frango comum.",
-        "ingredients": [
-          "Carne moída de peru magra — 65% (aprox. 900 g)",
-          "Corações bovinos ou de peru (Taurina natural) — 10% (aprox. 140 g)",
-          "Purê de abóbora cozida sem casca (Fibras solúveis) — 10% (aprox. 140 g)",
-          "Espinafre e abobrinha no vapor picados — 10% (aprox. 140 g)",
-          "Óleo de salmão selvagem do Alasca (EPA/DHA) — 2% (1.5 colheres de sopa)",
-          "Farinha fina de casca de ovo (Cálcio elementar) — 3% (1 colher de chá rasa)"
-        ],
-        "prep": "Refogue o peru e os corações em fogo baixo até o cozimento suave (70°C). Cozinhe os legumes no vapor e bata com a abóbora. Junte tudo e espere esfriar completamente. Adicione o óleo de salmão e o cálcio apenas com o alimento frio. Congele em porções diárias."
-      },
-      {
-        "tag": "BARF CRUA",
-        "title": "Receita 2: Dieta BARF Ancestral 80-10-10 de Carne e Pato",
-        "desc": "Alimentação crua biologicamente adequada para cães adultos saudáveis com pH gástrico normal.",
-        "ingredients": [
-          "Carne bovina magra em cubos — 70%",
-          "Coração bovino (Rico em L-Carnitina e CoQ10) — 10%",
-          "Pescoço de pato cru ou carcaça de frango — 10% (Osso carnudo e cálcio)",
-          "Fígado bovino (Vitamina A e complexo B) — 5%",
-          "Rim ou baço bovino (Víscera secretora vital) — 5%"
-        ],
-        "prep": "Pique a carne e o coração no tamanho ideal para o porte do cão. Pese as vísceras com precisão em balança digital. Congele todas as porções cruas por no mínimo 3 semanas a -20°C antes de descongelar e servir."
-      },
-      {
-        "tag": "TOPPER SUPERFOOD",
-        "title": "Receita 3: Topper Antioxidante 80/20 para Turbinar a Ração Seca",
-        "desc": "Enriquecedor fresco desenvolvido para substituir 20% das calorias diárias da ração seca habitual.",
-        "ingredients": [
-          "Ovos caipiras cozidos mollets — 40%",
-          "Broto de brócolis no vapor e mirtilos (blueberries) — 30%",
-          "Caldo de ossos bovinos cozido lentamente — 20%",
-          "Sementes de cânhamo e farinha de alga kelp — 10%"
-        ],
-        "prep": "Cozinhe os ovos por 4 minutos. Passe os vegetais pelo vapor. Triture com o caldo de ossos morno e as frutas. Adicione de 2 a 4 colheres de sopa diárias sobre o comedouro com a ração seca."
-      }
-    ],
-    "calciumGuideTitle": "Fontes Seguras de Cálcio para Dietas Caseiras",
-    "calciumGuideItems": [
-      {
-        "title": "Farinha de Casca de Ovo",
-        "ratio": "1/2 colher de chá para cada 450 g de carne sem ossos",
-        "desc": "95% carbonato de cálcio puro. Prático de fazer em casa lavando, secando e triturando cascas no liquidificador."
-      },
-      {
-        "title": "Ossos Carnudos Crus Comestíveis",
-        "ratio": "10% do peso total da dieta",
-        "desc": "Pescoços de pato ou asas de frango cruas. Jamais cozinhe ossos, pois perdem a elasticidade e perfuram o trato digestivo."
-      },
-      {
-        "title": "Farinha de Ossos Veterinária (Bone Meal)",
-        "ratio": "Conforme rótulo do fabricante",
-        "desc": "Hidroxiapatita microcristalina que fornece cálcio e fósforo na proporção fisiológica ideal de 2:1."
-      }
-    ]
-  },
-  "toxic": {
-    "eyebrow": "ALIMENTOS TÓXICOS E PERIGOSOS PARA CÃES",
-    "dangerTitle": "Os Alimentos Domésticos Mais Fatais para Cães",
-    "dangerIntro": "Determinados alimentos consumidos por humanos possuem toxinas que o metabolismo dos cães é incapaz de processar, resultando em falência de órgãos.",
-    "dangerList": [
-      {
-        "name": "Chocolate & Cacau",
-        "toxin": "Teobromina e Cafeína",
-        "symptoms": "Vômitos, respiração ofegante, arritmia cardíaca, tremores musculares, convulsões, parada cardiorrespiratória.",
-        "risk": "ALTO A FATAL"
-      },
-      {
-        "name": "Uvas, Passas e Groselhas",
-        "toxin": "Ácido Tartárico",
-        "symptoms": "Letargia, desidratação e insuficiência renal aguda irreversível em 24 a 72 horas.",
-        "risk": "EXTREMAMENTE LETAL"
-      },
-      {
-        "name": "Xilitol (Adoçante / E967)",
-        "toxin": "Poliol Sintético",
-        "symptoms": "Liberação maciça de insulina, hipoglicemia severa, desmaio e necrose hepática fulminante em poucas horas.",
-        "risk": "EMERGÊNCIA GRAVÍSSIMA"
-      },
-      {
-        "name": "Cebola, Alho, Alho-Poró e Cebolinha",
-        "toxin": "Dissulfeto de N-propila",
-        "symptoms": "Destruição de glóbulos vermelhos, anemia hemolítica, gengivas pálidas, urina escura e fraqueza.",
-        "risk": "TOXICIDADE CUMULATIVA"
-      },
-      {
-        "name": "Nozes de Macadâmia",
-        "toxin": "Neurotoxina desconhecida",
-        "symptoms": "Fraqueza dos membros posteriores, febre alta, vômitos e rigidez muscular dolorosa.",
-        "risk": "MODERADO A GRAVE"
-      },
-      {
-        "name": "Ossos Cozidos de Qualquer Tipo",
-        "toxin": "Risco Mecânico de Perfuração",
-        "symptoms": "Perfuração gástrica ou intestinal, hemorragia interna, peritonite e obstrução cirúrgica.",
-        "risk": "EMERGÊNCIA CIRÚRGICA"
-      }
-    ],
-    "emergencyTitle": "O Que Fazer em Caso de Emergência por Intoxicação",
-    "emergencySteps": [
-      "1. Aja com Rapidez: Identifique exatamente o alimento ingerido, a embalagem, a quantidade aproximada e o horário.",
-      "2. NÃO Provoque Vômito sem Instrução Veterinária: Substâncias cáusticas ou ossos afiados lesionam o esôfago durante a regurgitação.",
-      "3. Contate o Veterinário Imediatamente: Dirija-se imediatamente à clínica veterinária de urgência mais próxima."
-    ],
-    "safeTitle": "Frutas e Vegetais 100% Seguros e Saudáveis",
-    "safeIntro": "Estes alimentos fornecem antioxidantes protetores, fibras prebióticas solúveis e vitaminas essenciais:",
-    "safeFoods": [
-      {
-        "name": "Mirtilos (Blueberries)",
-        "benefit": "Repletos de antocianinas e antioxidantes que combatem o envelhecimento celular."
-      },
-      {
-        "name": "Abóbora Cozida",
-        "benefit": "Rica em fibras solúveis que auxiliam tanto no alívio de diarreias quanto de constipação."
-      },
-      {
-        "name": "Cenouras",
-        "benefit": "Petisco crocante e de baixas calorias, rico em betacaroteno e aliado da limpeza bucal."
-      },
-      {
-        "name": "Vagem no Vapor",
-        "benefit": "Excelente fonte de saciedade vegetal com baixo teor calórico para cães que precisam emagrecer."
-      },
-      {
-        "name": "Maçãs (Sem Sementes)",
-        "benefit": "Fonte natural de vitamina C, vitamina A e pectina benéfica para a microbiota intestinal."
-      }
-    ]
-  },
-  "brands": {
-    "eyebrow": "AVALIAÇÃO DE MARCAS E HISTÓRICO DE RECALLS",
-    "heroTitle": "Avaliação de Marcas de Ração e Histórico de Recalls",
-    "heroSubtitle": "Análises imparciais e fundamentadas sobre a qualidade dos ingredientes, conformidade de rótulos e histórico de recolhimentos sanitários.",
-    "brandsList": [
-      {
-        "name": "Blue Buffalo",
-        "grade": "Nota: B+",
-        "pros": "Carne desossada real em 1º lugar; sem milho, trigo ou soja; partículas LifeSource Bits preservadas a frio.",
-        "cons": "Elevado teor de carboidratos (45-50%); recalls históricos por excesso de umidade e Vitamina D elevada.",
-        "verdict": "Ração comercial acima da média. Recomendamos adicionar 20% de alimentos frescos para melhorar a hidratação."
-      },
-      {
-        "name": "Rachael Ray Nutrish",
-        "grade": "Nota: C+ / B-",
-        "pros": "Preço acessível e fácil distribuição; as linhas Peak e Dish possuem maior proporção de carnes reais.",
-        "cons": "As linhas de entrada utilizam muita proteína de ervilha e glúten de milho; já foi citada em investigações sanitárias.",
-        "verdict": "Opção de baixo custo aceitável nas linhas superiores, exigindo leitura atenta da divisão de leguminosas."
-      },
-      {
-        "name": "Pure Balance",
-        "grade": "Nota: B (Melhor Custo-Benefício)",
-        "pros": "Excelente relação custo-qualidade; receitas ricas em carnes sem corantes artificiais ou grãos alergênicos.",
-        "cons": "Produção terceirizada; teor moderado de carboidratos.",
-        "verdict": "Uma das opções mais equilibradas e honestas do segmento de supermercado."
-      },
-      {
-        "name": "Ollie Comida Natural",
-        "grade": "Nota: A (Excelente)",
-        "pros": "100% carnes e legumes de grau humano; cozimento brando a vapor; pacotes individuais sob medida.",
-        "cons": "Mensalidade de custo elevado (R$ 900 - R$ 1.800 / mês); exige espaço reservado no congelador.",
-        "verdict": "Referência em vitalidade metabólica, brilho na pelagem e longevidade digestiva."
-      },
-      {
-        "name": "Open Farm",
-        "grade": "Nota: A-",
-        "pros": "Rastreabilidade total das fazendas fornecedoras; carnes com certificado de bem-estar animal e peixes selvagens sustentáveis.",
-        "cons": "Preço elevado; disponibilidade reduzida em lojas físicas.",
-        "verdict": "A melhor alternativa para tutores focados em procedência ética e ausência de subprodutos."
-      }
-    ],
-    "recallsTitle": "Como Entender os Recalls de Ração",
-    "recallsDesc": "Recalls sanitários dividem-se em três classes: Classe I (risco grave à vida, ex.: contaminação por Salmonella ou excesso letal de Vitamina D), Classe II (efeitos adversos reversíveis) e Classe III (irregularidades formais no rótulo). Verifique sempre o número do lote impresso no saco.",
-    "methodTitle": "Nossos 4 Pilares de Avaliação de Ração",
-    "methodPillars": [
-      {
-        "title": "1. Clareza da Proteína",
-        "desc": "Carne muscular nomeada em vez de farinhas de subprodutos indeterminadas."
-      },
-      {
-        "title": "2. Fração de Carboidratos",
-        "desc": "Teor de amido inferior a 40% para evitar obesidade e resistência à insulina."
-      },
-      {
-        "title": "3. Rastreabilidade da Origem",
-        "desc": "Ingredientes de criatórios éticos e livres de organismos transgênicos."
-      },
-      {
-        "title": "4. Histórico Sanitário",
-        "desc": "Auditorias laboratoriais independentes e plantas fabris com certificação estrita."
-      }
-    ]
-  },
-  "allergies": {
-    "eyebrow": "GUIA NUTRICIONAL // ALERGIAS E DIETA DE ELIMINAÇÃO",
-    "heroTitle": "Melhor Alimentação para Cães Alérgicos e com Estômago Sensível",
-    "heroSubtitle": "Guia prático sobre hipersensibilidade alimentar, proteínas nobres únicas e dieta de eliminação de 8 semanas.",
-    "allergensTitle": "Os 5 Alérgenos Mais Frequentes na Alimentação Canina",
-    "allergensIntro": "Alergias alimentares em cães são respostas imunes anormais a certas proteínas. Por ordem de incidência clínica:",
-    "allergensList": [
-      {
-        "name": "1. Frango Industrial (60% dos casos)",
-        "desc": "Devido à superexposição contínua nas rações comerciais, o frango é o maior alérgeno alimentar canino."
-      },
-      {
-        "name": "2. Carne Bovina (30% dos casos)",
-        "desc": "Proteína comum que frequentemente deflagra coceira intensa nas patas e otites recorrentes."
-      },
-      {
-        "name": "3. Derivados de Leite e Queijo",
-        "desc": "Cães adultos perdem a enzima lactase, provocando diarreia osmótica e gases."
-      },
-      {
-        "name": "4. Glúten de Trigo e Milho",
-        "desc": "Proteínas vegetais inflamatórias que fragilizam a permeabilidade intestinal."
-      },
-      {
-        "name": "5. Soja e Proteínas Vegetais Isoladas",
-        "desc": "Fontes vegetais de baixo custo que causam fermentação digestiva e dermatites."
-      }
-    ],
-    "eliminationTitle": "O Protocolo da Dieta de Eliminação de 8 Semanas",
-    "eliminationSteps": [
-      {
-        "step": "Fase 1",
-        "title": "Escolha uma Proteína Inédita",
-        "desc": "Troque para uma carne que o cão nunca consumiu na vida (ex.: Cervo, Coelho ou Canguru) combinada com um vegetal digerível como a abóbora."
-      },
-      {
-        "step": "Fase 2",
-        "title": "Tolerância Zero (8 Semanas Consecutivas)",
-        "desc": "Por 8 semanas, forneça rigorosamente apenas essa comida. Proibidos petiscos comerciais, bifinhos e restos de comida."
-      },
-      {
-        "step": "Fase 3",
-        "title": "Reintrodução Monitorada",
-        "desc": "Se a coceira cessar, reintroduza um ingrediente suspeito por 7 dias. O retorno dos sintomas confirma a alergia."
-      }
-    ],
-    "novelTitle": "Proteínas Nobres Hipoalergênicas Indicadas",
-    "novelProteins": [
-      {
-        "name": "Carne de Cervo / Veado",
-        "desc": "Carne vermelha magra e de altíssima digestibilidade contra a qual cães raramente possuem anticorpos."
-      },
-      {
-        "name": "Carne de Coelho",
-        "desc": "Proteína hipoalergênica por excelência, leve e de fácil quebra metabólica."
-      },
-      {
-        "name": "Carne de Pato",
-        "desc": "Alternativa muito saborosa e segura para animais sensíveis à carne de frango comum."
-      },
-      {
-        "name": "Carne de Canguru",
-        "desc": "Uma das carnes selvagens mais puras e magras disponíveis na dermatologia veterinária."
-      }
-    ]
-  },
-  "calculator": {
-    "eyebrow": "100% GRATUITO // CALCULADORA DE RAÇÃO E CALORIAS",
-    "noticeTitle": "Aviso Importante:",
-    "noticeText": "Para orientação educativa geral. Não substitui consulta, diagnóstico ou tratamento médico veterinário.",
-    "heroTitle": "Calculadora de Ração e Calorias para Cães",
-    "heroSubtitle": "Descubra a demanda calórica exata do seu cão (RER e MER) e obtenha as porções diárias em gramas com base no peso, idade, nível de atividade e escore corporal."
-  },
-  "breeds": {
-    "eyebrow": "GUIA NUTRICIONAL POR RAÇA // DIRETRIZES VETERINÁRIAS",
-    "targetWeight": "Peso Ideal",
-    "dailyCalories": "Calorias Diárias",
-    "freshDaily": "Comida Natural / Dia",
-    "kibbleDaily": "Ração Seca / Dia",
-    "cups": "xícaras",
-    "reqsTitle": "Necessidades Nutricionais para o {name}",
-    "reqsIntro": "Como um cão da categoria {category} com peso médio de {w0} a {w1} lbs (aprox. {Math.round(w0*0.453)} a {Math.round(w1*0.453)} kg), o {name} requer um equilíbrio nutricional próprio:",
-    "predispositionsTitle": "Predisposições de Saúde e Alimentação:",
-    "feedingRoutineTitle": "Rotina de Alimentação Recomendada:",
-    "feedingRoutineDesc": "Alimente seu {name} adulto duas vezes ao dia (50% pela manhã e 50% à noite). Deixe sempre água limpa e fresca à disposição. Se fornecer ração seca, hidrate-a com caldo morno para proteger os rins.",
-    "ctaTitle": "Personalize o Plano Nutricional para o Seu {name}",
-    "ctaSubtitle": "Ajuste conforme a idade exata (filhote, adulto ou idoso), peso real, rotina de exercícios e porte na calculadora gratuita.",
-    "ctaBtn": "Calcular para {name} →",
-    "faqTitle": "Perguntas Frequentes sobre a Alimentação do {name}",
-    "faqSubtitle": "Quantidades diárias, divisão de horários e melhores opções de alimentos."
-  },
-  "comparisonTable": {
-    "eyebrow": "COMPARAÇÃO NUTRICIONAL // COMIDA NATURAL VS RAÇÃO SECA",
-    "title": "Por Que Alimentos Integrais Naturais Superam Biologicamente a Ração Seca",
-    "subtitle": "Um comparativo lado a lado sobre temperatura de processamento, precisão da porção e custo mensal real — as mesmas variáveis associadas em um estudo de longevidade de 5 anos a até 32 meses a mais de vida em cães alimentados com comida fresca.",
-    "scrollHint": "↔ Deslize a tabela horizontalmente",
-    "colMetric": "Critério Nutricional",
-    "colDfp": "✨ DogFoodPlanner",
-    "colSubs": "Assinaturas Naturais",
-    "colKibble": "Ração Seca Extrudada",
-    "rows": [
-      {
-        "metric": "Método de Processamento",
-        "dfp": "Cozimento Suave (~74°C) ou Cru — Enzimas Intactas",
-        "subs": "Cozimento a Vácuo (Sous-Vide) e Congelamento Rápido",
-        "kibble": "Extrusão em Altíssima Temperatura (200°C+)"
-      },
-      {
-        "metric": "Precisão da Porção",
-        "dfp": "Gramas exatos via cálculo metabólico RER/MER, ajustados para peso, idade e atividade",
-        "subs": "Tabela fixa de faixas amplas de peso",
-        "kibble": "Tabela genérica da embalagem — superestima porções em 20–30%"
-      },
-      {
-        "metric": "Carboidratos Líquidos",
-        "dfp": "< 5% (apenas vegetais funcionais, zero enchimentos)",
-        "subs": "10% – 20%",
-        "kibble": "45% – 60% (amidos de milho, trigo e ervilha)"
-      },
-      {
-        "metric": "Umidade Biológica",
-        "dfp": "70% – 75% (favorece a hidratação renal e urinária)",
-        "subs": "70% – 75%",
-        "kibble": "8% – 10% (desidratação subclínica crônica)"
-      },
-      {
-        "metric": "Integridade Nutricional",
-        "dfp": "Mínima oxidação — ômega-3 e enzimas preservados",
-        "subs": "Moderada — alguns nutrientes termossensíveis degradados",
-        "kibble": "Oxidação de gorduras e formação de compostos AGE pelo calor de extrusão"
-      },
-      {
-        "metric": "Transparência de Ingredientes",
-        "dfp": "100% de gramas e porcentagens declarados — você controla cada grama",
-        "subs": "Fórmula patenteada (proporções exatas ocultas)",
-        "kibble": "Ingredientes fracionados e farinhas residuais de carne"
-      },
-      {
-        "metric": "Custo Médio Mensal (Cão de 23 kg)",
-        "dfp": "R$ 380 – R$ 620 (ingredientes caseiros comprados in natura)",
-        "subs": "R$ 1.200 – R$ 2.100 / mês",
-        "kibble": "R$ 280 – R$ 450 / mês"
-      }
-    ]
-  },
-  "faqPage": {
-    "badge": "BASE DE CONHECIMENTO // MAIS DE 40 RESPOSTAS VETERINÁRIAS",
-    "exploreHubsTitle": "Explore Nossos Guias Especializados em Nutrição Canina",
-    "exploreHubsSubtitle": "Dossiês aprofundados para tutores comprometidos com a saúde e a longevidade dos seus cães.",
-    "cardBestFood": "Comparativo entre comida natural, BARF, rações ricas em proteína e estômagos sensíveis.",
-    "cardCalc": "Calculadora científica RER e MER que fornece porções diárias exatas em gramas.",
-    "cardRecipes": "Receitas caseiras cozidas e dietas BARF 80-10-10 com equilíbrio mineral de cálcio.",
-    "cardAllergies": "Seleção de proteínas noveles, dietas de exclusão e fortalecimento da microbiota.",
-    "cardToxic": "Lista completa de alimentos tóxicos, vegetais benéficos e aditivos prejudiciais.",
-    "cardBrands": "Avaliações de Blue Buffalo, Nutrish, Pure Balance, Ollie e Open Farm."
-  },
-  "faqSingle": {
-    "reviewedBy": "Revisado por: Equipe Editorial do DogFoodPlanner",
-    "updated": "Atualizado em: 2026",
-    "directQuickAnswer": "Resposta Rápida Resumida",
-    "clinicalAnalysis": "Análise Nutricional Detallada",
-    "topics": "Tópicos associados:",
-    "ctaBadge": "🐾 Motor Gratuito de Nutrição Canina",
-    "ctaTitle": "Calcule as Calorias e Gramas Diárias para o Seu Cão",
-    "ctaSubtitle": "Use nossa calculadora de alimentação para obter o gasto metabólico (RER/MER) e as gramas para refeições frescas ou cruas.",
-    "ctaBtn": "Calcular Porções Agora →",
-    "relatedTitle": "Dúvidas Relacionadas sobre Nutrição",
-    "readAnswer": "Ler Resposta Completa →",
+  "pt": {
+    "about": {
+      "heroTitle": "Sobre o DogFoodPlanner: Planejamento de Refeições Caninas Descomplicado",
+      "heroSubtitle": "Conheça o DogFoodPlanner.com, nossa missão e como funciona a nossa calculadora gratuita de alimentação canina.",
+      "missionBadge": "NOSSA MISSÃO // ALIMENTAÇÃO CANINA",
+      "whyTitle": "Por Que o DogFoodPlanner Foi Criado",
+      "whyP1": "Criamos o DogFoodPlanner para ajudar tutores de cães a planejar refeições e porções com total confiança. Pesquisamos orientações públicas e as transformamos em guias e ferramentas gratuitas e fáceis de usar.",
+      "whyP2": "",
+      "whoTitle": "Quem Somos",
+      "whoContent": "O DogFoodPlanner é um site independente criado por pesquisadores e redatores apaixonados por cães. Não somos veterinários. Sempre consulte seu médico veterinário antes de alterar a dieta do seu cão, especialmente para filhotes, idosos ou cães com problemas de saúde.",
+      "methodTitle": "Nossa Metodologia Nutricional",
+      "pillars": [
+        {
+          "tag": "01 // ESTIMATIVA DE CALORIAS",
+          "title": "Estimativa de Calorias",
+          "desc": "Nossa calculadora utiliza a fórmula padrão de Necessidade Energética de Repouso (70 × peso corporal em kg^0,75) e fatores habituais de atividade para estimar as calorias diárias."
+        },
+        {
+          "tag": "02 // FONTES DE REFERÊNCIA",
+          "title": "Fontes de Referência",
+          "desc": "Baseamo-nos em diretrizes publicadas por instituições como a AAFCO e o National Research Council. Nosso conteúdo é educativo e não substitui a orientação de um profissional."
+        },
+        {
+          "tag": "03 // TRANSPARÊNCIA",
+          "title": "Transparência",
+          "desc": "Algumas páginas contêm links de afiliados, incluindo links do Programa de Associados da Amazon. Se você comprar por meio deles, podemos receber uma pequena comissão sem custo adicional para você. Isso nunca altera nossas recomendações."
+        }
+      ],
+      "ctaTitle": "Pronto para Calcular as Necessidades Nutricionais do Seu Cão?",
+      "ctaDesc": "Experimente nossa calculadora interativa, explore nossos guias de alergias e leia nossos guias de alimentação canina.",
+      "ctaBtn": "Iniciar Calculadora Nutricional Gratuita →",
+      "amazonDisclaimer": "Como Associado da Amazon, recebemos remuneração por compras qualificadas."
+    },
+    "contact": {
+      "eyebrow": "SUPORTE E CONTATO // ATENDIMENTO DIRETO",
+      "cards": [
+        {
+          "icon": "📧",
+          "title": "Dúvidas Gerais",
+          "desc": "Perguntas e sugestões:",
+          "email": "hello@dogfoodplanner.com"
+        },
+        {
+          "icon": "🐾",
+          "title": "Pesquisa Nutricional",
+          "desc": "Dúvidas sobre fórmulas veterinárias:",
+          "email": "research@dogfoodplanner.com"
+        },
+        {
+          "icon": "🛡️",
+          "title": "Suporte Técnico",
+          "desc": "Erros e sugestões do site:",
+          "email": "legal@dogfoodplanner.com"
+        }
+      ],
+      "formTitle": "Envie uma Mensagem à Nossa Equipe de Nutrição Canina",
+      "formDesc": "Tem dúvidas sobre as fórmulas calóricas NRC ou precisa de orientação para uma dieta crua? Respondemos em até 24 horas úteis.",
+      "nameLabel": "Seu Nome",
+      "namePlaceholder": "ex.: Mariana Silva",
+      "emailLabel": "Seu E-mail",
+      "emailPlaceholder": "mariana@exemplo.com",
+      "subjectLabel": "Assunto da Mensagem",
+      "subjectOptions": [
+        "Dúvida Geral / Feedback",
+        "Nutrição Canina e Receitas",
+        "Dúvida sobre Fórmulas da Calculadora",
+        "Relatório de Erro Técnico"
+      ],
+      "messageLabel": "Sua Mensagem",
+      "messagePlaceholder": "Conte-nos sobre seu cão (raça, peso, idade) e como podemos ajudar...",
+      "submitBtn": "Enviar Mensagem →",
+      "notice": "Aviso de Emergência Veterinária: Se o seu cão apresentar sintomas agudos de envenenamento ou mal-estar grave, procure imediatamente um hospital veterinário 24 horas.",
+      "faqTitle": "Procurando respostas rápidas?",
+      "faqDesc": "Acesse nossa base com mais de 40 perguntas veterinárias sobre perda de apetite, dieta BARF, ração de gatos e marcas comerciais.",
+      "faqBtn": "Ver Todas as Perguntas Frequentes →",
+      "successTitle": "✓ Mensagem preparada — enviando para hello@dogfoodplanner.com",
+      "successDesc": "Seu cliente de e-mail deve abrir com uma mensagem pré-redigida endereçada a hello@dogfoodplanner.com. Basta clicar em Enviar no seu aplicativo de e-mail e ela chegará à nossa caixa de entrada."
+    },
+    "privacy": {
+      "eyebrow": "LEGAL // POLÍTICA DE PRIVACIDADE",
+      "lastUpdated": "Atualizado: 14 de outubro de 2026",
+      "intro": "No DogFoodPlanner.com respeitamos a sua privacidade e garantimos a proteção dos seus dados. Esta política explica como as informações são tratadas.",
+      "sections": [
+        {
+          "title": "1. Informações Que Não Coletamos",
+          "content": "Os dados de saúde do seu animal pertencem a você. O uso da nossa calculadora de alimentação canina não exige cadastro, senhas nem cartão de crédito. Perfis caninos, pesos e seleções de refeição inseridos na calculadora são processados no lado do cliente no seu navegador e não são salvos em bancos de dados externos."
+        },
+        {
+          "title": "2. Coleta de E-mails e Newsletter",
+          "content": "Ao assinar nossa newsletter, coletamos seu endereço de e-mail para enviar guias de nutrição canina, alertas de recalls de ração e dicas de alimentação. Utilizamos a EmailOctopus para gerenciar nossa lista com segurança. Nunca vendemos nem compartilhamos seus dados. Você pode cancelar a inscrição a qualquer momento com um clique no link ao final de cada e-mail."
+        },
+        {
+          "title": "3. Dados Técnicos Anônimos",
+          "content": "Como a maioria das plataformas web modernas, nossos servidores de CDN registram dados técnicos anônimos padrão (endereço IP anonimizado, navegador, página de origem e data/hora) para fins de segurança e proteção contra ataques."
+        },
+        {
+          "title": "4. Cookies e Armazenamento Local (localStorage)",
+          "content": "Usamos o localStorage para lembrar seu idioma e plano de refeições no seu dispositivo. Se você clicar em um link de afiliado, o site de terceiros (como a Amazon) poderá definir seus próprios cookies."
+        },
+        {
+          "title": "5. Links de Terceiros",
+          "content": "Nosso site contém links de referência para pesquisas publicadas, padrões da AAFCO, bancos de dados do NRC e recursos externos. Não nos responsabilizamos pelas práticas de privacidade ou conteúdo de sites de terceiros."
+        },
+        {
+          "title": "6. Divulgação de Afiliados",
+          "content": "O DogFoodPlanner participa do Programa de Associados da Amazon Services LLC. Como Associado da Amazon, recebemos remuneração por compras qualificadas, sem nenhum custo extra para você."
+        },
+        {
+          "title": "7. Privacidade de Menores",
+          "content": "Nossos conteúdos e ferramentas destinam-se a adultos responsáveis por animais de estimação. Não coletamos intencionalmente dados de menores de 13 anos."
+        },
+        {
+          "title": "8. Atualizações e Contato",
+          "content": "Esta política pode ser atualizada periodicamente. Em caso de dúvidas, entre em contato pelo e-mail privacy@dogfoodplanner.com."
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "LEGAL // TERMOS E CONDIÇÕES DE USO",
+      "lastUpdated": "Atualizado: 14 de outubro de 2026",
+      "intro": "Leia atentamente estes Termos de Serviço antes de utilizar o DogFoodPlanner.com. Ao acessar a plataforma, você concorda com eles.",
+      "sections": [
+        {
+          "title": "1. Aceitação dos Termos",
+          "content": "Ao utilizar o DogFoodPlanner.com (o \"Site\"), você declara ter lido, compreendido e aceitado todos os termos aqui previstos. Se discordar de qualquer cláusula, descontinue o uso imediatamente."
+        },
+        {
+          "title": "2. Isenção de Responsabilidade Médica e Veterinária",
+          "content": "As informações, calculadoras e receitas disponibilizadas no DogFoodPlanner.com têm caráter estritamente educativo e informativo, baseadas em modelos do NRC e FEDIAF. Elas NÃO constituem parecer veterinário, diagnóstico clínico ou prescrição de tratamento. Consulte sempre um médico veterinário ou nutrólogo de pequenos animais antes de alterar substancialmente a dieta do seu pet."
+        },
+        {
+          "title": "3. Utilização das Calculadoras Interativas",
+          "content": "Os cálculos energéticos (RER e MER) e as gramas diárias são pontos de partida matemáticos. O gasto calórico real varia conforme castração, temperatura e genética. O tutor deve monitorar o Escore de Condição Corporal (ECC/BCS) e ajustar a alimentação conforme necessário."
+        },
+        {
+          "title": "4. Segurança em Comida Caseira e Equilíbrio de Cálcio",
+          "content": "Oferecer alimentação caseira ou crua exige o balanceamento correto de todos os micronutrientes. Alimentar cães exclusivamente com carnes desossadas e carboidratos sem suplementação de cálcio provoca desmineralização óssea em poucos meses. O usuário assume total responsabilidade pelo preparo das refeições."
+        },
+        {
+          "title": "5. Propriedade Intelectual",
+          "content": "Todos os textos, algoritmos, identidades visuais e gráficos do DogFoodPlanner.com são protegidos por direitos autorais e pertencem exclusivamente ao DogFoodPlanner."
+        },
+        {
+          "title": "6. Limitação de Responsabilidade",
+          "content": "O DogFoodPlanner.com e seus autores não serão responsabilizados por quaisquer danos diretos ou indiretos decorrentes do uso das informações disponibilizadas."
+        },
+        {
+          "title": "7. Assinaturas de E-mail e Comunicações",
+          "content": "Ao se inscrever em nossa newsletter, você concorda em receber conteúdos educativos sobre nutrição canina e atualizações do site. Você pode cancelar o recebimento a qualquer momento pelo link de descadastro presente nos e-mails. Reservamo-nos o direito de alterar ou suspender o envio da newsletter a nosso critério."
+        }
+      ]
+    },
+    "bestFood": {
+      "eyebrow": "GUIA CLÍNICO // RANKING DAS MELHORES RAÇÕES 2026",
+      "rankingsTitle": "Quais São os 5 Alimentos Mais Saudáveis para Cães em 2026?",
+      "rankingsIntro": "Pesquisas em longevidade canina comprovam que o processamento térmico brando e a umidade biológica superior a 70% são os dois maiores indicadores de vitalidade e proteção renal.",
+      "readMoreLabel": "Leia mais →",
+      "readLessLabel": "Mostrar menos ↑",
+      "rankings": [
+        {
+          "rank": "01",
+          "title": "Alimentação Natural (AN) Cozida no Vapor de Grau Humano",
+          "score": "98/100",
+          "pros": "Carnes e vegetais reais cozidos a baixa temperatura (70°C). Preserva mais de 70% de umidade natural, enzimas e vitaminas biodisponíveis.",
+          "cons": "Exige armazenamento em geladeira ou freezer. Custo maior que rações comuns de supermercado.",
+          "readMore": "A comida fresca levemente cozida ocupa o topo do ranking porque reproduz uma refeição caseira sem abrir mão da segurança alimentar. Os ingredientes vêm de instalações de alimentos humanos inspecionadas por órgãos sanitários, e depois são cozidos apenas o tempo suficiente em baixa temperatura (cerca de 70°C) para eliminar patógenos, preservando proteínas delicadas, taurina e vitaminas do complexo B hidrossolýveis que a extrusão em alta temperatura destrói.\n\nComo o alimento já contém mais de 70% de umidade, ele reduz a sobrecarga nos rins e diminui a desidratação crônica leve comum em dietas baseadas apenas em ração seca. É uma opção especialmente indicada para cães em recuperação de doenças, idosos com menor estímulo de sede, ou raças propensas a sensibilidades alimentares, já que as receitas costumam ter uma única fonte de proteína e não contêm farinhas de carne processada nem conservantes sintéticos.\n\nA principal desvantagem é a logística: é preciso espaço na geladeira ou no freezer, e as porções precisam ser descongeladas antes do horário da refeição. Se você ainda não está pronto para cozinhar em casa, várias marcas que utilizam cozinhas certificadas vendem versões estáveis à temperatura ambiente do mesmo formato levemente cozido, uma forma prática de experimentar essa categoria antes de adotar uma rotina caseira completa.",
+          "productKey": "justfoodfordogs-chicken-white-rice",
+          "productNote": "Uma opção estável à temperatura ambiente para experimentar essa categoria:"
+        },
+        {
+          "rank": "02",
+          "title": "Dieta Crua Biologicamente Adequada BARF 80-10-10",
+          "score": "95/100",
+          "pros": "Proporção ancestral carnívora: 80% carne muscular, 10% ossos carnudos, 10% vísceras. Excelente para limpeza dental e massa magra.",
+          "cons": "Exige higiene rigorosa na manipulação e monitoramento preciso da relação cálcio-fósforo.",
+          "readMore": "A proporção 80-10-10 (80% de carne muscular, 10% de osso cru comestível, 10% de vísceras) foi criada para reproduzir o que um ancestral canino selvagem obteria de uma presa inteira. Quando feita corretamente, ela fornece uma proporção naturalmente equilibrada de cálcio e fósforo diretamente do conteúdo ósseo, favorece a massa muscular magra, e a ação mecânica de mastigar osso cru ajuda a remover o tártaro dos dentes.\n\nComo nada é cozido, enzimas e aminoácidos sensíveis ao calor permanecem totalmente intactos. O desafio está na precisão: encontrar ossos crus seguros e acertar exatamente a proporção exigem disciplina real, já que calcular mal o percentual de osso é o erro mais comum, levando à constipação ou, com o tempo, a problemas ósseos em filhotes em crescimento. A carne crua também precisa ser manuseada com o mesmo cuidado higiênico de qualquer alimento cru para consumo humano (tábuas de corte separadas, refrigeração, limpeza imediata).\n\nA maioria das famílias acha mais fácil começar com um produto cru formulado profissionalmente que já atinge essa proporção, antes de migrar para refeições cruas totalmente personalizadas, compradas e pesadas em casa.",
+          "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+          "productNote": "Uma opção crua pré-balanceada que elimina o trabalho de cálculo:"
+        },
+        {
+          "rank": "03",
+          "title": "Comida Crua Liofilizada e Desidratada a Frio",
+          "score": "91/100",
+          "pros": "Mantém a pureza nutricional do alimento cru com a praticidade do armazenamento em temperatura ambiente.",
+          "cons": "Deve ser reidratada com água morna ou caldo de ossos antes do fornecimento.",
+          "readMore": "Tanto a desidratação a ar quanto a liofilização retiram a umidade da carne crua em baixas temperaturas, mantendo o perfil de nutrientes e enzimas próximo ao da comida crua, e ao mesmo tempo tornam o alimento estável à temperatura ambiente, sem necessidade de freezer. A liofilização usa um processo a vácuo e frio que costuma preservar os nutrientes ainda melhor do que a desidratação a ar, embora geralmente custe mais por quilo.\n\nOs dois formatos viajam bem e funcionam ótimo como complemento cru misturado à ração seca para aumentar a palatabilidade. Reidratar com água morna ou caldo de ossos antes de servir ajuda a restaurar a umidade, aproximando-se da dieta ancestral selvagem do cão, o que é especialmente vantajoso para cães propensos a cristais urinários ou sobrecarga renal.\n\nO principal ponto de atenção é o custo por caloria: como a água é removida, você está pagando por nutrição concentrada, motivo pelo qual esse formato costuma ser usado como complemento ou em dietas rotativas, em vez de ser a única fonte diária de alimentação para um cão de grande porte.",
+          "productKey": "ziwi-peak-beef-chicken-bundle",
+          "productNote": "Uma opção desidratada a ar bem avaliada:"
+        },
+        {
+          "rank": "04",
+          "title": "Ração Seca Super Premium sem Grãos ou com Grãos Ancestrais",
+          "score": "78/100",
+          "pros": "Prática, durável e acessível para lares com múltiplos cães ou cães de porte grande.",
+          "cons": "Processada a mais de 200°C, apenas 8 a 10% de umidade e 40 a 50% de carboidratos amiláceos.",
+          "readMore": "A ração seca premium continua sendo a opção mais prática para muitas famílias: é estável por até um ano, fácil de dosar com um alimentador automático, e significativamente mais barata por caloria do que dietas frescas ou cruas.\n\nAs melhores fórmulas dessa categoria trazem uma proteína animal nomeada, em vez de uma vaga \"farinha de carne\", limitam os amidos a grãos ancestrais como aveia e sorgo, ao invés de excesso de milho ou trigo como carga, e passam por testes laboratoriais de terceiros para detectar metais pesados.\n\nA desvantagem está no próprio processo de extrusão: a exposição a temperaturas acima de 200°C destrói algumas vitaminas sensíveis ao calor e reduz a umidade para cerca de 10%, motivo pelo qual veterinários costumam recomendar adicionar um pouco de caldo de ossos ou um complemento cru a dietas baseadas apenas em ração seca, especialmente para cães propensos a cristais urinários.",
+          "productKey": "orijen-original-grain-free-23lb",
+          "productNote": "Uma fórmula rica em proteína, no estilo WholePrey, dessa categoria:"
+        },
+        {
+          "rank": "05",
+          "title": "Dietas Terapêuticas e Medicamentosas Veterinárias",
+          "score": "72/100",
+          "pros": "Formuladas para doenças clínicas diagnosticadas (insuficiência renal, hepática ou urólitos).",
+          "cons": "Costumam conter ingredientes vegetais refinados e exigem prescrição veterinária.",
+          "readMore": "As dietas terapêuticas são desenvolvidas para controlar uma condição específica já diagnosticada: proteína e fósforo reduzidos para doença renal, proteínas hidrolisadas às quais o sistema imunológico não reage em casos de alergia alimentar grave, ou magnésio e pH controlados para cálculos de estruvita na bexiga.\n\nElas ficam em posições mais baixas em uma escala geral de \"mais saudáveis\" apenas porque são deliberadamente restritivas, e não otimizadas para um cão saudável médio; uma fórmula desenvolvida para poupar rins em declínio, por exemplo, é intencionalmente não a mais rica em proteína do mercado.\n\nEssas dietas exigem aval veterinário e exames de sangue periódicos para confirmar que estão funcionando, e nunca devem ser oferecidas a um cão saudável sem justificativa clínica, já que restringir nutrientes que um cão saudável realmente precisa pode causar danos ao longo do tempo.",
+          "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+          "productNote": "Uma fórmula de suporte renal comumente prescrita por veterinários:"
+        }
+      ],
+      "buyerGuideTitle": "4 Regras de Ouro para Escolher a Melhor Alimentação",
+      "buyerRules": [
+        {
+          "title": "1. Proteína Animal Específica no 1º Lugar da Composição",
+          "desc": "Priorize «Peru Desossado», «Carne Bovina» ou «Salmão Fresco» em vez de genéricas «farinhas de subprodutos».",
+          "readMore": "No rótulo dos alimentos para cães, os ingredientes são listados por ordem de peso antes do cozimento. Carnes frescas e especificadas (como «Peru desossado» ou «Carne bovina fresca») fornecem aminoácidos essenciais cruciais como taurina, arginina e carnitina com máxima biodisponibilidade. Fuja de descrições genéricas como «subprodutos de carne», «farinha de carnes» ou «derivados animais», que permitem a inclusão de resíduos de baixa qualidade de origens desconhecidas.\n\nFique atento também à divisão de ingredientes («ingredient splitting»): marcas costumam desmembrar carboidratos (como ervilha, amido de ervilha e proteína de ervilha) para que a carne pareça o ingrediente principal na lista, mesmo quando os carboidratos formam a maior parte da receita.\n\nFarinhas com origem declarada — como «Farinha de carne de cordeiro» ou «Farinha de salmão desidratado» — são legítimas quando transparentes, pois tiveram a água removida antes do preparo e entregam alta densidade de proteína animal."
+        },
+        {
+          "title": "2. Alta Umidade Biológica (>70%)",
+          "desc": "A ração seca causa desidratação crônica de baixo grau. Sempre adicione água, caldos ou alimentos úmidos.",
+          "readMore": "Na natureza, as presas ancestrais dos canídeos contêm entre 70% e 75% de água. Cães possuem um mecanismo de sede naturalmente lento, pois sua fisiologia espera absorver hidratação prioritariamente pela comida. Oferecer somente ração seca (que possui apenas 8% a 10% de umidade) mantém o cão em um estado contínuo de desidratação subclínica.\n\nCom o passar dos anos, a urina cronicamente concentrada sobrecarrega os rins e eleva bastante o perigo de cristais e cálculos vesicais de estruvita e oxalato de cálcio.\n\nSe você utiliza ração seca, sempre acrescente umidade: hidrate na proporção 1:1 com caldo de ossos morno sem tempero, água filtrada ou kefir natural, ou complemente com toppers de carnes frescas e cozidas para preservar os rins."
+        },
+        {
+          "title": "3. Zero Conservantes Químicos Artificiais",
+          "desc": "Evite terminantemente aditivos como BHA, BHT, etoxiquina e corantes sintéticos.",
+          "readMore": "Para alcançar prazos de validade de 18 a 24 meses, alimentos industriais econômicos recorrem a antioxidantes químicos como BHA (butil-hidroxianisol), BHT (butil-hidroxitolueno) e etoxiquina. Estudos científicos associam BHA e BHT a potencial cancerígeno e desregulação hormonal, enquanto a etoxiquina (criada inicialmente como pesticida) tem vínculos com toxicidade hepática.\n\nCorantes artificiais (como Vermelho 40 e Amarelo 5) são colocados unicamente para atrair os olhos humanos, mas frequentemente desencadeiam coceiras alérgicas, dermatites e distúrbios digestivos.\n\nExija fórmulas conservadas unicamente com antioxidantes de origem natural: tocoferóis mistos (Vitamina E), extrato de alecrim e ácido cítrico. Eles conservam as gorduras saudavelmente sem agredir o organismo."
+        },
+        {
+          "title": "4. Carboidratos Controlados (<25%)",
+          "desc": "Cães não possuem amilase salivar. O excesso de amido sobrecarrega o pâncreas e acelera a obesidade.",
+          "readMore": "Cães são carnívoros facultativos e não possuem qualquer exigência biológica por carboidratos refinados. Diferente dos humanos, cães não produzem amilase salivar para iniciar a digestão de amidos na boca; toda a carga enzimática fica concentrada no pâncreas.\n\nComo as tabelas nutricionais não são obrigadas a estampar a porcentagem de carboidratos, muitas rações secas ocultam de 45% a 60% de amido derivado de milho, trigo ou mandioca para dar liga física aos grãos durante a extrusão.\n\nAlimentos de alto índice glicêmico provocam picos contínuos de insulina, inflamação crônica, infecções de ouvido e favorecem a obesidade canina. Calcule os carboidratos subtraindo de 100% a soma de proteína, gordura, fibra, umidade e matéria mineral. Busque alimentos com menos de 25% de carboidratos totais."
+        }
+      ],
+      "ctaTitle": "Calcule a Porção Diária Ideal para o Seu Cão",
+      "ctaDesc": "Seja comida natural, dieta crua BARF ou ração seca: saiba as gramas diárias exatas e a meta calórica.",
+      "ctaBtn": "Calcular Porção Diária Agora →"
+    },
+    "recipes": {
+      "eyebrow": "RECEITAS CASEIRAS BALANCEADAS // PADRÕES NRC E AAFCO",
+      "heroTitle": "Receitas Caseiras Equilibradas para Cães",
+      "heroSubtitle": "Orientações práticas para preparar em casa refeições cozidas no vapor e dietas cruas BARF 80-10-10 completas e saudáveis.",
+      "calciumWarningTitle": "A Regra Mais Importante da Comida Caseira: O Equilíbrio do Cálcio",
+      "calciumWarningDesc": "A carne muscular possui alto teor de fósforo e quase nenhum cálcio (proporção 1:20). Alimentar cães apenas com carne e arroz sem adicionar cálcio provoca descalcificação óssea e hiperparatireoidismo em poucos meses. Adicione sempre 1/2 colher de chá rasa de pó de casca de ovo (aprox. 900 mg de cálcio elementar) para cada 450 g de carne sem ossos para atingir o ratio ideal Cálcio/Fósforo de 1.2:1.",
+      "recipesList": [
+        {
+          "tag": "COZIDO NO VAPOR",
+          "title": "Receita 1: Peru no Vapor com Abóbora Prebiótica (Digestão Sensível)",
+          "desc": "Ideal para cães com estômago sensível, histórico de fezes pastosas ou intolerância ao frango comum.",
+          "ingredients": [
+            "Carne moída de peru magra — 65% (aprox. 900 g)",
+            "Corações bovinos ou de peru (Taurina natural) — 10% (aprox. 140 g)",
+            "Purê de abóbora cozida sem casca (Fibras solúveis) — 10% (aprox. 140 g)",
+            "Espinafre e abobrinha no vapor picados — 10% (aprox. 140 g)",
+            "Óleo de salmão selvagem do Alasca (EPA/DHA) — 2% (1.5 colheres de sopa)",
+            "Farinha fina de casca de ovo (Cálcio elementar) — 3% (1 colher de chá rasa)"
+          ],
+          "prep": "Refogue o peru e os corações em fogo baixo até o cozimento suave (70°C). Cozinhe os legumes no vapor e bata com a abóbora. Junte tudo e espere esfriar completamente. Adicione o óleo de salmão e o cálcio apenas com o alimento frio. Congele em porções diárias."
+        },
+        {
+          "tag": "BARF CRUA",
+          "title": "Receita 2: Dieta BARF Ancestral 80-10-10 de Carne e Pato",
+          "desc": "Alimentação crua biologicamente adequada para cães adultos saudáveis com pH gástrico normal.",
+          "ingredients": [
+            "Carne bovina magra em cubos — 70%",
+            "Coração bovino (Rico em L-Carnitina e CoQ10) — 10%",
+            "Pescoço de pato cru ou carcaça de frango — 10% (Osso carnudo e cálcio)",
+            "Fígado bovino (Vitamina A e complexo B) — 5%",
+            "Rim ou baço bovino (Víscera secretora vital) — 5%"
+          ],
+          "prep": "Pique a carne e o coração no tamanho ideal para o porte do cão. Pese as vísceras com precisão em balança digital. Congele todas as porções cruas por no mínimo 3 semanas a -20°C antes de descongelar e servir."
+        },
+        {
+          "tag": "TOPPER SUPERFOOD",
+          "title": "Receita 3: Topper Antioxidante 80/20 para Turbinar a Ração Seca",
+          "desc": "Enriquecedor fresco desenvolvido para substituir 20% das calorias diárias da ração seca habitual.",
+          "ingredients": [
+            "Ovos caipiras cozidos mollets — 40%",
+            "Broto de brócolis no vapor e mirtilos (blueberries) — 30%",
+            "Caldo de ossos bovinos cozido lentamente — 20%",
+            "Sementes de cânhamo e farinha de alga kelp — 10%"
+          ],
+          "prep": "Cozinhe os ovos por 4 minutos. Passe os vegetais pelo vapor. Triture com o caldo de ossos morno e as frutas. Adicione de 2 a 4 colheres de sopa diárias sobre o comedouro com a ração seca."
+        }
+      ],
+      "calciumGuideTitle": "Fontes Seguras de Cálcio para Dietas Caseiras",
+      "calciumGuideItems": [
+        {
+          "title": "Farinha de Casca de Ovo",
+          "ratio": "1/2 colher de chá para cada 450 g de carne sem ossos",
+          "desc": "95% carbonato de cálcio puro. Prático de fazer em casa lavando, secando e triturando cascas no liquidificador."
+        },
+        {
+          "title": "Ossos Carnudos Crus Comestíveis",
+          "ratio": "10% do peso total da dieta",
+          "desc": "Pescoços de pato ou asas de frango cruas. Jamais cozinhe ossos, pois perdem a elasticidade e perfuram o trato digestivo."
+        },
+        {
+          "title": "Farinha de Ossos Veterinária (Bone Meal)",
+          "ratio": "Conforme rótulo do fabricante",
+          "desc": "Hidroxiapatita microcristalina que fornece cálcio e fósforo na proporção fisiológica ideal de 2:1."
+        }
+      ]
+    },
+    "toxic": {
+      "eyebrow": "ALIMENTOS TÓXICOS E PERIGOSOS PARA CÃES",
+      "dangerTitle": "Os Alimentos Domésticos Mais Fatais para Cães",
+      "dangerIntro": "Determinados alimentos consumidos por humanos possuem toxinas que o metabolismo dos cães é incapaz de processar, resultando em falência de órgãos.",
+      "dangerList": [
+        {
+          "name": "Chocolate & Cacau",
+          "toxin": "Teobromina e Cafeína",
+          "symptoms": "Vômitos, respiração ofegante, arritmia cardíaca, tremores musculares, convulsões, parada cardiorrespiratória.",
+          "risk": "ALTO A FATAL"
+        },
+        {
+          "name": "Uvas, Passas e Groselhas",
+          "toxin": "Ácido Tartárico",
+          "symptoms": "Letargia, desidratação e insuficiência renal aguda irreversível em 24 a 72 horas.",
+          "risk": "EXTREMAMENTE LETAL"
+        },
+        {
+          "name": "Xilitol (Adoçante / E967)",
+          "toxin": "Poliol Sintético",
+          "symptoms": "Liberação maciça de insulina, hipoglicemia severa, desmaio e necrose hepática fulminante em poucas horas.",
+          "risk": "EMERGÊNCIA GRAVÍSSIMA"
+        },
+        {
+          "name": "Cebola, Alho, Alho-Poró e Cebolinha",
+          "toxin": "Dissulfeto de N-propila",
+          "symptoms": "Destruição de glóbulos vermelhos, anemia hemolítica, gengivas pálidas, urina escura e fraqueza.",
+          "risk": "TOXICIDADE CUMULATIVA"
+        },
+        {
+          "name": "Nozes de Macadâmia",
+          "toxin": "Neurotoxina desconhecida",
+          "symptoms": "Fraqueza dos membros posteriores, febre alta, vômitos e rigidez muscular dolorosa.",
+          "risk": "MODERADO A GRAVE"
+        },
+        {
+          "name": "Ossos Cozidos de Qualquer Tipo",
+          "toxin": "Risco Mecânico de Perfuração",
+          "symptoms": "Perfuração gástrica ou intestinal, hemorragia interna, peritonite e obstrução cirúrgica.",
+          "risk": "EMERGÊNCIA CIRÚRGICA"
+        }
+      ],
+      "emergencyTitle": "O Que Fazer em Caso de Emergência por Intoxicação",
+      "emergencySteps": [
+        "1. Aja com Rapidez: Identifique exatamente o alimento ingerido, a embalagem, a quantidade aproximada e o horário.",
+        "2. NÃO Provoque Vômito sem Instrução Veterinária: Substâncias cáusticas ou ossos afiados lesionam o esôfago durante a regurgitação.",
+        "3. Contate o Veterinário Imediatamente: Dirija-se imediatamente à clínica veterinária de urgência mais próxima."
+      ],
+      "safeTitle": "Frutas e Vegetais 100% Seguros e Saudáveis",
+      "safeIntro": "Estes alimentos fornecem antioxidantes protetores, fibras prebióticas solúveis e vitaminas essenciais:",
+      "safeFoods": [
+        {
+          "name": "Mirtilos (Blueberries)",
+          "benefit": "Repletos de antocianinas e antioxidantes que combatem o envelhecimento celular."
+        },
+        {
+          "name": "Abóbora Cozida",
+          "benefit": "Rica em fibras solúveis que auxiliam tanto no alívio de diarreias quanto de constipação."
+        },
+        {
+          "name": "Cenouras",
+          "benefit": "Petisco crocante e de baixas calorias, rico em betacaroteno e aliado da limpeza bucal."
+        },
+        {
+          "name": "Vagem no Vapor",
+          "benefit": "Excelente fonte de saciedade vegetal com baixo teor calórico para cães que precisam emagrecer."
+        },
+        {
+          "name": "Maçãs (Sem Sementes)",
+          "benefit": "Fonte natural de vitamina C, vitamina A e pectina benéfica para a microbiota intestinal."
+        }
+      ]
+    },
+    "brands": {
+      "eyebrow": "AVALIAÇÃO DE MARCAS E HISTÓRICO DE RECALLS",
+      "heroTitle": "Avaliação de Marcas de Ração e Histórico de Recalls",
+      "heroSubtitle": "Análises imparciais e fundamentadas sobre a qualidade dos ingredientes, conformidade de rótulos e histórico de recolhimentos sanitários.",
+      "brandsList": [
+        {
+          "name": "Blue Buffalo",
+          "grade": "Nota: B+",
+          "pros": "Carne desossada real em 1º lugar; sem milho, trigo ou soja; partículas LifeSource Bits preservadas a frio.",
+          "cons": "Elevado teor de carboidratos (45-50%); recalls históricos por excesso de umidade e Vitamina D elevada.",
+          "verdict": "Ração comercial acima da média. Recomendamos adicionar 20% de alimentos frescos para melhorar a hidratação."
+        },
+        {
+          "name": "Rachael Ray Nutrish",
+          "grade": "Nota: C+ / B-",
+          "pros": "Preço acessível e fácil distribuição; as linhas Peak e Dish possuem maior proporção de carnes reais.",
+          "cons": "As linhas de entrada utilizam muita proteína de ervilha e glúten de milho; já foi citada em investigações sanitárias.",
+          "verdict": "Opção de baixo custo aceitável nas linhas superiores, exigindo leitura atenta da divisão de leguminosas."
+        },
+        {
+          "name": "Pure Balance",
+          "grade": "Nota: B (Melhor Custo-Benefício)",
+          "pros": "Excelente relação custo-qualidade; receitas ricas em carnes sem corantes artificiais ou grãos alergênicos.",
+          "cons": "Produção terceirizada; teor moderado de carboidratos.",
+          "verdict": "Uma das opções mais equilibradas e honestas do segmento de supermercado."
+        },
+        {
+          "name": "Ollie Comida Natural",
+          "grade": "Nota: A (Excelente)",
+          "pros": "100% carnes e legumes de grau humano; cozimento brando a vapor; pacotes individuais sob medida.",
+          "cons": "Mensalidade de custo elevado (R$ 900 - R$ 1.800 / mês); exige espaço reservado no congelador.",
+          "verdict": "Referência em vitalidade metabólica, brilho na pelagem e longevidade digestiva."
+        },
+        {
+          "name": "Open Farm",
+          "grade": "Nota: A-",
+          "pros": "Rastreabilidade total das fazendas fornecedoras; carnes com certificado de bem-estar animal e peixes selvagens sustentáveis.",
+          "cons": "Preço elevado; disponibilidade reduzida em lojas físicas.",
+          "verdict": "A melhor alternativa para tutores focados em procedência ética e ausência de subprodutos."
+        }
+      ],
+      "recallsTitle": "Como Entender os Recalls de Ração",
+      "recallsDesc": "Recalls sanitários dividem-se em três classes: Classe I (risco grave à vida, ex.: contaminação por Salmonella ou excesso letal de Vitamina D), Classe II (efeitos adversos reversíveis) e Classe III (irregularidades formais no rótulo). Verifique sempre o número do lote impresso no saco.",
+      "methodTitle": "Nossos 4 Pilares de Avaliação de Ração",
+      "methodPillars": [
+        {
+          "title": "1. Clareza da Proteína",
+          "desc": "Carne muscular nomeada em vez de farinhas de subprodutos indeterminadas."
+        },
+        {
+          "title": "2. Fração de Carboidratos",
+          "desc": "Teor de amido inferior a 40% para evitar obesidade e resistência à insulina."
+        },
+        {
+          "title": "3. Rastreabilidade da Origem",
+          "desc": "Ingredientes de criatórios éticos e livres de organismos transgênicos."
+        },
+        {
+          "title": "4. Histórico Sanitário",
+          "desc": "Auditorias laboratoriais independentes e plantas fabris com certificação estrita."
+        }
+      ]
+    },
+    "allergies": {
+      "eyebrow": "GUIA NUTRICIONAL // ALERGIAS E DIETA DE ELIMINAÇÃO",
+      "heroTitle": "Melhor Alimentação para Cães Alérgicos e com Estômago Sensível",
+      "heroSubtitle": "Guia prático sobre hipersensibilidade alimentar, proteínas nobres únicas e dieta de eliminação de 8 semanas.",
+      "allergensTitle": "Os 5 Alérgenos Mais Frequentes na Alimentação Canina",
+      "allergensIntro": "Alergias alimentares em cães são respostas imunes anormais a certas proteínas. Por ordem de incidência clínica:",
+      "allergensList": [
+        {
+          "name": "1. Frango Industrial (60% dos casos)",
+          "desc": "Devido à superexposição contínua nas rações comerciais, o frango é o maior alérgeno alimentar canino."
+        },
+        {
+          "name": "2. Carne Bovina (30% dos casos)",
+          "desc": "Proteína comum que frequentemente deflagra coceira intensa nas patas e otites recorrentes."
+        },
+        {
+          "name": "3. Derivados de Leite e Queijo",
+          "desc": "Cães adultos perdem a enzima lactase, provocando diarreia osmótica e gases."
+        },
+        {
+          "name": "4. Glúten de Trigo e Milho",
+          "desc": "Proteínas vegetais inflamatórias que fragilizam a permeabilidade intestinal."
+        },
+        {
+          "name": "5. Soja e Proteínas Vegetais Isoladas",
+          "desc": "Fontes vegetais de baixo custo que causam fermentação digestiva e dermatites."
+        }
+      ],
+      "eliminationTitle": "O Protocolo da Dieta de Eliminação de 8 Semanas",
+      "eliminationSteps": [
+        {
+          "step": "Fase 1",
+          "title": "Escolha uma Proteína Inédita",
+          "desc": "Troque para uma carne que o cão nunca consumiu na vida (ex.: Cervo, Coelho ou Canguru) combinada com um vegetal digerível como a abóbora."
+        },
+        {
+          "step": "Fase 2",
+          "title": "Tolerância Zero (8 Semanas Consecutivas)",
+          "desc": "Por 8 semanas, forneça rigorosamente apenas essa comida. Proibidos petiscos comerciais, bifinhos e restos de comida."
+        },
+        {
+          "step": "Fase 3",
+          "title": "Reintrodução Monitorada",
+          "desc": "Se a coceira cessar, reintroduza um ingrediente suspeito por 7 dias. O retorno dos sintomas confirma a alergia."
+        }
+      ],
+      "novelTitle": "Proteínas Nobres Hipoalergênicas Indicadas",
+      "novelProteins": [
+        {
+          "name": "Carne de Cervo / Veado",
+          "desc": "Carne vermelha magra e de altíssima digestibilidade contra a qual cães raramente possuem anticorpos."
+        },
+        {
+          "name": "Carne de Coelho",
+          "desc": "Proteína hipoalergênica por excelência, leve e de fácil quebra metabólica."
+        },
+        {
+          "name": "Carne de Pato",
+          "desc": "Alternativa muito saborosa e segura para animais sensíveis à carne de frango comum."
+        },
+        {
+          "name": "Carne de Canguru",
+          "desc": "Uma das carnes selvagens mais puras e magras disponíveis na dermatologia veterinária."
+        }
+      ]
+    },
+    "calculator": {
+      "eyebrow": "100% GRATUITO // CALCULADORA DE RAÇÃO E CALORIAS",
+      "noticeTitle": "Aviso Importante:",
+      "noticeText": "Para orientação educativa geral. Não substitui consulta, diagnóstico ou tratamento médico veterinário.",
+      "heroTitle": "Calculadora de Ração e Calorias para Cães",
+      "heroSubtitle": "Descubra a demanda calórica exata do seu cão (RER e MER) e obtenha as porções diárias em gramas com base no peso, idade, nível de atividade e escore corporal."
+    },
+    "breeds": {
+      "eyebrow": "GUIA NUTRICIONAL POR RAÇA // DIRETRIZES VETERINÁRIAS",
+      "targetWeight": "Peso Ideal",
+      "dailyCalories": "Calorias Diárias",
+      "freshDaily": "Comida Natural / Dia",
+      "kibbleDaily": "Ração Seca / Dia",
+      "cups": "xícaras",
+      "reqsTitle": "Necessidades Nutricionais para o {name}",
+      "reqsIntro": "Como um cão da categoria {category} com peso médio de {w0} a {w1} lbs (aprox. {Math.round(w0*0.453)} a {Math.round(w1*0.453)} kg), o {name} requer um equilíbrio nutricional próprio:",
+      "predispositionsTitle": "Predisposições de Saúde e Alimentação:",
+      "feedingRoutineTitle": "Rotina de Alimentação Recomendada:",
+      "feedingRoutineDesc": "Alimente seu {name} adulto duas vezes ao dia (50% pela manhã e 50% à noite). Deixe sempre água limpa e fresca à disposição. Se fornecer ração seca, hidrate-a com caldo morno para proteger os rins.",
+      "ctaTitle": "Personalize o Plano Nutricional para o Seu {name}",
+      "ctaSubtitle": "Ajuste conforme a idade exata (filhote, adulto ou idoso), peso real, rotina de exercícios e porte na calculadora gratuita.",
+      "ctaBtn": "Calcular para {name} →",
+      "faqTitle": "Perguntas Frequentes sobre a Alimentação do {name}",
+      "faqSubtitle": "Quantidades diárias, divisão de horários e melhores opções de alimentos."
+    },
+    "comparisonTable": {
+      "eyebrow": "COMPARAÇÃO NUTRICIONAL // COMIDA NATURAL VS RAÇÃO SECA",
+      "title": "Por Que Alimentos Integrais Naturais Superam Biologicamente a Ração Seca",
+      "subtitle": "Um comparativo lado a lado sobre temperatura de processamento, precisão da porção e custo mensal real — as mesmas variáveis associadas em um estudo de longevidade de 5 anos a até 32 meses a mais de vida em cães alimentados com comida fresca.",
+      "scrollHint": "↔ Deslize a tabela horizontalmente",
+      "colMetric": "Critério Nutricional",
+      "colDfp": "✨ DogFoodPlanner",
+      "colSubs": "Assinaturas Naturais",
+      "colKibble": "Ração Seca Extrudada",
+      "rows": [
+        {
+          "metric": "Método de Processamento",
+          "dfp": "Cozimento Suave (~74°C) ou Cru — Enzimas Intactas",
+          "subs": "Cozimento a Vácuo (Sous-Vide) e Congelamento Rápido",
+          "kibble": "Extrusão em Altíssima Temperatura (200°C+)"
+        },
+        {
+          "metric": "Precisão da Porção",
+          "dfp": "Gramas exatos via cálculo metabólico RER/MER, ajustados para peso, idade e atividade",
+          "subs": "Tabela fixa de faixas amplas de peso",
+          "kibble": "Tabela genérica da embalagem — superestima porções em 20–30%"
+        },
+        {
+          "metric": "Carboidratos Líquidos",
+          "dfp": "< 5% (apenas vegetais funcionais, zero enchimentos)",
+          "subs": "10% – 20%",
+          "kibble": "45% – 60% (amidos de milho, trigo e ervilha)"
+        },
+        {
+          "metric": "Umidade Biológica",
+          "dfp": "70% – 75% (favorece a hidratação renal e urinária)",
+          "subs": "70% – 75%",
+          "kibble": "8% – 10% (desidratação subclínica crônica)"
+        },
+        {
+          "metric": "Integridade Nutricional",
+          "dfp": "Mínima oxidação — ômega-3 e enzimas preservados",
+          "subs": "Moderada — alguns nutrientes termossensíveis degradados",
+          "kibble": "Oxidação de gorduras e formação de compostos AGE pelo calor de extrusão"
+        },
+        {
+          "metric": "Transparência de Ingredientes",
+          "dfp": "100% de gramas e porcentagens declarados — você controla cada grama",
+          "subs": "Fórmula patenteada (proporções exatas ocultas)",
+          "kibble": "Ingredientes fracionados e farinhas residuais de carne"
+        },
+        {
+          "metric": "Custo Médio Mensal (Cão de 23 kg)",
+          "dfp": "R$ 380 – R$ 620 (ingredientes caseiros comprados in natura)",
+          "subs": "R$ 1.200 – R$ 2.100 / mês",
+          "kibble": "R$ 280 – R$ 450 / mês"
+        }
+      ]
+    },
+    "faqPage": {
+      "badge": "BASE DE CONHECIMENTO // MAIS DE 40 RESPOSTAS VETERINÁRIAS",
+      "exploreHubsTitle": "Explore Nossos Guias Especializados em Nutrição Canina",
+      "exploreHubsSubtitle": "Dossiês aprofundados para tutores comprometidos com a saúde e a longevidade dos seus cães.",
+      "cardBestFood": "Comparativo entre comida natural, BARF, rações ricas em proteína e estômagos sensíveis.",
+      "cardCalc": "Calculadora científica RER e MER que fornece porções diárias exatas em gramas.",
+      "cardRecipes": "Receitas caseiras cozidas e dietas BARF 80-10-10 com equilíbrio mineral de cálcio.",
+      "cardAllergies": "Seleção de proteínas noveles, dietas de exclusão e fortalecimento da microbiota.",
+      "cardToxic": "Lista completa de alimentos tóxicos, vegetais benéficos e aditivos prejudiciais.",
+      "cardBrands": "Avaliações de Blue Buffalo, Nutrish, Pure Balance, Ollie e Open Farm."
+    },
+    "faqSingle": {
+      "reviewedBy": "Revisado por: Equipe Editorial do DogFoodPlanner",
+      "updated": "Atualizado em: 2026",
+      "directQuickAnswer": "Resposta Rápida Resumida",
+      "clinicalAnalysis": "Análise Nutricional Detallada",
+      "topics": "Tópicos associados:",
+      "ctaBadge": "🐾 Motor Gratuito de Nutrição Canina",
+      "ctaTitle": "Calcule as Calorias e Gramas Diárias para o Seu Cão",
+      "ctaSubtitle": "Use nossa calculadora de alimentação para obter o gasto metabólico (RER/MER) e as gramas para refeições frescas ou cruas.",
+      "ctaBtn": "Calcular Porções Agora →",
+      "relatedTitle": "Dúvidas Relacionadas sobre Nutrição",
+      "readAnswer": "Ler Resposta Completa →",
       "referencedInAnswer": "この回答で参照されている商品",
       "buyNow": "今すぐ購入"
+    },
+    "bestFoodSingle": {
+      "rankBadge": "TOP 5 ALIMENTOS MAIS SAUDÁVEIS // RANKING",
+      "reviewedBy": "Revisado por: Equipe Editorial do DogFoodPlanner",
+      "nutritionalScore": "Pontuação Nutricional",
+      "strengths": "Pontos Fortes",
+      "tradeoffs": "Desvantagens",
+      "fullBreakdown": "Análise Completa",
+      "exampleProduct": "Exemplo de produto nessa categoria",
+      "previousRank": "Posição anterior",
+      "nextRank": "Próxima posição",
+      "backToRanking": "Voltar ao Ranking Completo do Top 5",
+      "viewOnAmazon": "Ver na Amazon"
+    }
   },
-  "bestFoodSingle": {
-    "rankBadge": "TOP 5 ALIMENTOS MAIS SAUDÁVEIS // RANKING",
-    "reviewedBy": "Revisado por: Equipe Editorial do DogFoodPlanner",
-    "nutritionalScore": "Pontuação Nutricional",
-    "strengths": "Pontos Fortes",
-    "tradeoffs": "Desvantagens",
-    "fullBreakdown": "Análise Completa",
-    "exampleProduct": "Exemplo de produto nessa categoria",
-    "previousRank": "Posição anterior",
-    "nextRank": "Próxima posição",
-    "backToRanking": "Voltar ao Ranking Completo do Top 5",
-    "viewOnAmazon": "Ver na Amazon"
-  }
-},
-  ko: {
-  "about": {
-    "heroTitle": "DogFoodPlanner 소개: 반려견 식단 관리를 더 쉽게",
-    "heroSubtitle": "DogFoodPlanner.com의 미션과 무료 반려견 사료 급여량 계산기의 작동 방식을 알아보세요.",
-    "missionBadge": "우리의 사명 // 반려견 식단 계획",
-    "whyTitle": "DogFoodPlanner의 설립 취지",
-    "whyP1": "DogFoodPlanner는 반려견 보호자가 식단과 급여량을 안심하고 계획할 수 있도록 개발되었습니다. 공개된 가이드라인을 연구하여 누구나 쉽게 활용할 수 있는 무료 도구와 유용한 가이드로 제공합니다.",
-    "whyP2": "",
-    "whoTitle": "운영진 소개",
-    "whoContent": "DogFoodPlanner는 반려견을 사랑하는 연구원과 전문 필진이 운영하는 독립 웹사이트입니다. 저희는 수의사가 아닙니다. 특히 강아지(퍼피), 노령견, 또는 건강 질환이 있는 반려견의 식단을 변경하기 전에는 반드시 담당 수의사와 상담하시기 바랍니다.",
-    "methodTitle": "영양 분석 방법론",
-    "pillars": [
-      {
-        "tag": "01 // 칼로리 추정",
-        "title": "칼로리 추정",
-        "desc": "저희 계산기는 표준 휴지기 에너지 요구량(RER) 공식(70 × 체중 kg^0.75)과 일반적인 활동 계수를 적용하여 일일 권장 칼로리를 추정합니다."
-      },
-      {
-        "tag": "02 // 참고 문헌 및 기준",
-        "title": "참고 문헌 및 기준",
-        "desc": "AAFCO 및 미국 국립연구회(NRC) 등의 공개 가이드라인을 참조합니다. 제공되는 콘텐츠는 교육 목적이며 전문가의 수의학적 조언을 대신하지 않습니다."
-      },
-      {
-        "tag": "03 // 투명한 운영",
-        "title": "투명한 운영",
-        "desc": "일부 페이지에는 아마존 어소시에이트를 포함한 제휴 링크가 포함되어 있습니다. 링크를 통해 구매하시면 추가 비용 없이 소정의 수수료를 지급받을 수 있으나, 이는 추천 내용에 일절 영향을 주지 않습니다."
-      }
-    ],
-    "ctaTitle": "우리 강아지에게 필요한 정확한 영양과 칼로리를 계산해 보세요",
-    "ctaDesc": "간편한 계산기를 사용해보고, 알레르기 케어 가이드를 확인하며, 강아지 사료 가이드를 읽어보세요.",
-    "ctaBtn": "무료 영양 계산기 실행하기 →",
-    "amazonDisclaimer": "Amazon 어소시에이트 활동의 일환으로 적격 구매를 통해 수수료를 제공받을 수 있습니다."
-  },
-  "contact": {
-    "eyebrow": "고객 지원 및 문의 // 직접 문의 창구",
-    "cards": [
-      {
-        "icon": "📧",
-        "title": "일반 문의",
-        "desc": "의견 및 일반 질문:",
-        "email": "hello@dogfoodplanner.com"
-      },
-      {
-        "icon": "🐾",
-        "title": "수의 영양학 연구",
-        "desc": "NRC 계산식 및 영양 기준 문의:",
-        "email": "research@dogfoodplanner.com"
-      },
-      {
-        "icon": "🛡️",
-        "title": "기술 지원 & 오류 제보",
-        "desc": "계산기 버그 및 웹사이트 오류:",
-        "email": "legal@dogfoodplanner.com"
-      }
-    ],
-    "formTitle": "반려견 영양 전문 연구팀에게 문의하기",
-    "formDesc": "NRC 칼로리 계산 공식에 대한 궁금증이나 맞춤 레시피에 대한 도움이 필요하신가요? 영업일 기준 24시간 이내에 답변드립니다.",
-    "nameLabel": "성함",
-    "namePlaceholder": "예: 김민수",
-    "emailLabel": "이메일 주소",
-    "emailPlaceholder": "minsu@example.com",
-    "subjectLabel": "문의 유형",
-    "subjectOptions": [
-      "일반 문의 / 사이트 피드백",
-      "반려견 영양학 및 레시피 문의",
-      "계산기 알고리즘 관련 질문",
-      "기술적 오류 / 버그 제보"
-    ],
-    "messageLabel": "문의 내용",
-    "messagePlaceholder": "반려견의 정보(견종, 체중, 나이)와 구체적인 문의 내용을 남겨주세요...",
-    "submitBtn": "문의 보내기 →",
-    "notice": "수의학 응급 안내: 반려견이 급성 중독 증상이나 호흡 곤란 등 위급한 상태를 보인다면 즉시 24시간 동물 응급센터를 방문하십시오.",
-    "faqTitle": "빠른 답변을 찾고 계신가요?",
-    "faqDesc": "편식, 생식 BARF 식단, 고양이 사료 섭취 위험, 브랜드 평가 등 40여 개 이상의 검증된 수의학 Q&A를 확인해 보세요.",
-    "faqBtn": "모든 FAQ 둘러보기 →",
-    "successTitle": "✓ 메시지 준비 완료 — hello@dogfoodplanner.com으로 전송 중",
-    "successDesc": "이메일 앱이 hello@dogfoodplanner.com 수신인으로 작성된 메시지와 함께 열립니다. 이메일 앱에서 보내기를 누르면 저희 수신함에 도착합니다."
-  },
-  "privacy": {
-    "eyebrow": "개인정보 처리방침 // 데이터 보호 정책",
-    "lastUpdated": "최종 수정일: 2026년 10월 13일",
-    "intro": "DogFoodPlanner.com은 이용자의 개인정보를 소중히 여기며 관련 법령을 준수합니다. 본 방침은 웹사이트 이용 시 정보가 어떻게 취급되는지 안내합니다.",
-    "sections": [
-      {
-        "title": "1. 수집하지 않는 개인정보",
-        "content": "반려견의 건강 데이터는 보호자의 것입니다. 당사의 반려견 사료 급여량 계산기를 이용할 때 회원가입, 비밀번호 설정, 결제 카드 정보 입력이 일절 필요하지 않습니다. 계산기에 입력된 반려견 프로필, 체중, 식단 선택 정보는 웹 브라우저 로컬(클라이언트 측)에서만 처리되며 외부 데이터베이스에 저장되지 않습니다."
-      },
-      {
-        "title": "2. 익명 기술 로그 데이터",
-        "content": "웹사이트 보안 유지 및 해킹 공격 방어를 위해, CDN 서버는 통상적인 익명 기술 로그(익명화된 IP 주소, 브라우저 종류, 접속 시간)를 시스템에 임시 기록합니다."
-      },
-      {
-        "title": "3. 브라우저 쿠키 및 로컬 스토리지(localStorage)",
-        "content": "기기에서 언어 설정과 식단 플랜을 기억하기 위해 localStorage를 사용합니다. 제휴 링크를 클릭하는 경우 제3자 사이트(예: 아마존)가 자체 쿠키를 설정할 수 있습니다."
-      },
-      {
-        "title": "4. 제3자 링크",
-        "content": "당사 웹사이트에는 발표된 연구 자료, AAFCO 기준, NRC 데이터베이스 및 외부 자료에 대한 참조 링크가 포함되어 있습니다. 당사는 제3자 웹사이트의 개인정보 보호 정책이나 콘텐츠에 대해 책임을 지지 않습니다."
-      },
-      {
-        "title": "5. 제휴 마케팅 안내",
-        "content": "DogFoodPlanner는 Amazon Services LLC Associates Program에 참여하고 있습니다. 아마존 어소시에이트로서 적격 구매를 통해 수수료를 지급받으며, 이용자에게 추가 비용이 전혀 발생하지 않습니다."
-      },
-      {
-        "title": "6. 아동의 개인정보 보호",
-        "content": "당사의 서비스는 성인 반려동물 보호자를 대상으로 하며, 만 14세 미만 아동의 개인정보를 수집하지 않습니다."
-      },
-      {
-        "title": "7. 정책 변경 및 문의",
-        "content": "개인정보 처리방침과 관련된 문의 사항은 privacy@dogfoodplanner.com으로 연락해 주시기 바랍니다."
-      }
-    ]
-  },
-  "terms": {
-    "eyebrow": "이용약관 // 서비스 이용 조건",
-    "lastUpdated": "최종 수정일: 2026년 1월",
-    "intro": "DogFoodPlanner.com을 이용하시기 전에 본 약관을 주의 깊게 읽어주시기 바랍니다. 사이트 이용 시 본 약관에 동의한 것으로 간주됩니다.",
-    "sections": [
-      {
-        "title": "1. 약관의 효력 및 동의",
-        "content": "DogFoodPlanner.com(이하 \"당사 웹사이트\")에 접속하고 계산기 및 가이드를 이용하는 것은 본 약관을 완전히 숙지하고 동의한 것으로 간주됩니다. 동의하지 않는 경우 서비스 이용을 중단해 주십시오."
-      },
-      {
-        "title": "2. 수의학적 및 의료적 면책 조항",
-        "content": "당사 웹사이트에서 제공하는 칼로리 계산, 사료 평가, 수제 식단 가이드는 NRC 및 AAFCO의 공개 학술 자료에 기반한 일반적인 교육 목적의 정보입니다. 이는 전문 수의사의 개별적인 임상 진단, 처방, 치료 행위를 대신할 수 없습니다. 질환이 있거나 자견, 임신견의 식단을 크게 변경할 때는 반드시 담당 수의사와 상담하십시오."
-      },
-      {
-        "title": "3. 대화형 계산기 사용 기준",
-        "content": "에너지 요구량(RER 및 MER)과 권장 급여 그램(g) 수는 통계적 기준치입니다. 반려견의 실제 대사율은 중성화 여부, 환경 기온, 활동량에 따라 달라집니다. 보호자는 정기적으로 신체충실지수(BCS)를 체크하여 급여량을 가감해야 합니다."
-      },
-      {
-        "title": "4. 수제 식단 안전 및 칼슘 비율 의무",
-        "content": "가정에서 자연식이나 생식을 조리할 때는 필수 미량 영양소 균형을 엄격히 맞춰야 합니다. 특히 칼슘 보충 없이 뼈 없는 살코기만 지속 급여할 경우 수개월 내에 심각한 골연화증과 저칼슘혈증이 발생합니다. 식재료의 계량과 칼슘 배합은 이용자의 책임입니다."
-      },
-      {
-        "title": "5. 지식재산권",
-        "content": "당사 웹사이트에 게재된 모든 계산 알고리즘, 인터페이스 디자인, 인포그래픽, 텍스트 콘텐츠는 저작권법의 보호를 받습니다."
-      },
-      {
-        "title": "6. 책임의 한계",
-        "content": "당사는 본 웹사이트의 정보를 바탕으로 행해진 식단 급여 결과에 대해 어떠한 직간접적 손해배상 책임도 부담하지 않습니다."
-      }
-    ]
-  },
-  "bestFood": {
-    "eyebrow": "핵심 가이드 // 2026 최고의 강아지 사료 추천 및 순위",
-    "rankingsTitle": "【2026년 최신】 반려견 건강수명을 늘려주는 사료 순위 TOP 5",
-    "rankingsIntro": "수의 임상 영양학의 장기 추적 연구에 따르면, ‘최소한의 열 가공’과 ‘70% 이상의 천연 생체 수분’이 반려견의 신장 건강과 면역력을 결정짓는 가장 핵심적인 요소임이 입증되었습니다.",
-    "readMoreLabel": "더 자세히 보기 →",
-    "readLessLabel": "간략히 보기 ↑",
-    "rankings": [
-      {
-        "rank": "01",
-        "title": "휴먼그레이드 저온 조리 화식 (자연식)",
-        "score": "98/100",
-        "pros": "사람이 먹을 수 있는 신선한 육류와 채소를 70℃ 저온에서 부드럽게 가열. 70% 이상의 천연 수분, 활성 소화 효소, 비타민이 온전히 보존됩니다.",
-        "cons": "냉장 또는 냉동 보관 필수. 시중 건식 사료에 비해 비용이 높은 편.",
-        "readMore": "저온 조리 화식(자연식)이 랭킹 최상위에 오른 이유는 식품 안전성을 희생하지 않으면서도 집에서 만든 밥과 가장 유사한 형태이기 때문입니다. 재료는 USDA 검사를 통과한 식품 가공 시설에서 공급받으며, 병원균을 사멸시키기에 충분하면서도 고온 압출 공정에서 파괴되는 민감한 단백질, 타우린, 수용성 비타민 B군은 보존할 수 있는 저온(약 71°C) 조리 방식을 사용합니다.\n\n수분 함량이 이미 70% 이상이기 때문에 신장에 가해지는 부담이 줄어들고, 건식 사료만 급여할 때 흔히 나타나는 만성적인 경미한 탈수 상태를 완화할 수 있습니다. 대부분 단일 단백질원을 사용하고 렌더링 육분이나 합성 보존제가 들어가지 않기 때문에, 회복기에 있는 반려견이나 갈증 반응이 둔해진 노령견, 음식 민감성이 있는 견종에게 특히 적합합니다.\n\n가장 큰 단점은 관리의 번거로움입니다. 냉장 또는 냉동 보관 공간이 필요하고, 급여 전 미리 해동해야 합니다. 직접 조리할 여건이 안 된다면, USDA 인증 주방에서 만든 상온 보관형 저온 조리 제품을 선택해 전체 수제식 루틴으로 전환하기 전에 이 카테고리를 부담 없이 시도해볼 수 있습니다.",
-        "productKey": "justfoodfordogs-chicken-white-rice",
-        "productNote": "이 카테고리를 상온 보관 형태로 시도해볼 수 있는 제품:"
-      },
-      {
-        "rank": "02",
-        "title": "자연의 섭리에 맞춘 80-10-10 생식 BARF 식단",
-        "score": "95/100",
-        "pros": "육식동물의 이상적 비율 (살코기 80%, 생뼈 10%, 내장 10%). 치석 형성 억제 및 탄탄한 근육 유지에 탁월.",
-        "cons": "철저한 위생 관리와 정밀한 칼슈-인 섭취 비율 계산이 요구됨.",
-        "readMore": "80-10-10 비율(근육육 80%, 생곀 10%, 내장 10%)은 야생 개과 조상이 먹이 동물 한 마리를 통채로 섭취했을 때 얻는 영양 구성을 재현하도록 설계되었습니다. 제대로 구성하면 뱐 성분에서 자연스러운 칼슈 대 인 비율을 얻을 수 있고, 탄탄한 근육량 유지에 도움이 되며, 생뱐를 쉦는 물리적 작용이 치아의 치석을 제거하는 데도 도움을 줍니다.\n\n전혀 조리하지 않기 때문에 효소와 열에 민감한 아미노산이 온전히 유지됩니다. 다만 관건은 정밀함입니다. 안전한 생뱐를 조달하고 비율을 정확히 맞추는 데는 상당한 주의가 필요하며, 뱐 비율을 잘못 계산하는 것이 변비를 유발하거나 성장기 강아지의 경우 장기적으로 계거적 문제로 이어지는 가장 흔한 실수입니다. 생고기 역시 사람이 먹는 생식품과 동일한 수준의 위생 관리(별도 도마 사용, 냉장 보관, 신속한 뒷정리)가 필요합니다.\n\n대부분의 가정에서는 재료를 직접 계량해 완전히 맞춤화된 생식을 만들기 전 단계로, 이미 비율이 맞춰진 전문 제조 생식 제품으로 시작하는 것이 더 수월합니다.",
-        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-        "productNote": "비율 계산의 수고를 덜어주는 사전 균형 생식 제품:"
-      },
-      {
-        "rank": "03",
-        "title": "에어드라이 & 동결건조 생식 사료",
-        "score": "91/100",
-        "pros": "생식의 풍부한 영양가를 상온 보관 가능한 편의성으로 구현. 입맛이 까다로운 아이들을 위한 토핑으로 훌륭함.",
-        "cons": "신장 부담을 방지하기 위해 급여 전 미온수나 뿈 육수에 반드시 불려주어야 함.",
-        "readMore": "에어드라이와 동결건조는 모두 낮은 온도에서 생고기의 수분을 제거하는 방식으로, 생식에 가까운 영양소와 효소 프로필을 유지하면서도 실온 보관이 가능하게 만들어 냉동 보관이 필요 없습니다. 동결건조는 저온 진공 공정을 사용해 에어드라이보다 영양소를 더 잘 보존하는 경향이 있지만, 파운드당 비용은 대체로 더 높습니다.\n\n두 형태 모두 휴대가 간편하고, 건식 사료에 섞어 기호성을 높이는 생식 토퍼로도 훌륭하게 활용됩니다. 급여 전 따뜻한 물이나 본브로스로 수분을 보충하면 개의 조상이 섭취했던 야생 식단에 더 가까운 수분 함량을 회복할 수 있어, 요로 결정이나 신장 부담이 우려되는 반려견에게 특히 유용합니다.\n\n가장 중요하게 고려할 점은 칼로리당 비용입니다. 수분 무게가 제거된 만큼 농축된 영양을 구매하는 셈이므로, 대형견의 유일한 주식으로 사용하기보다는 토퍼나 로테이션 식단으로 활용되는 경우가 많습니다.",
-        "productKey": "ziwi-peak-beef-chicken-bundle",
-        "productNote": "평이 좋은 에어드라이 제품:"
-      },
-      {
-        "rank": "04",
-        "title": "고단백 그레인프리 & 고대곡물 건식 사료 (키블)",
-        "score": "78/100",
-        "pros": "상온 장기 보관이 가능하며 대형견이나 다견 가정에서 경제적인 선택지.",
-        "cons": "200℃ 이상의 고온 압출 제조로 수분이 8~10%에 불과하며 전분 탄수화물이 40~50% 함유됨.",
-        "readMore": "프리미엄 건식 사료는 많은 가정에서 여전히 가장 실용적인 선택지입니다. 최대 1년까지 상온 보관이 가능하고, 자동 급식기로 급여량 조절이 쉬우며, 화식이나 생식에 비해 칼로리당 비용이 훨씬 저렴합니다.\n\n이 등급에서 가장 우수한 제품들은 모호한 '육류 부산물' 대신 구체적인 동물성 단백질원을 주원료로 내세우고, 옥수수나 밀 같은 저가 충전재 대신 귀리나 수수 같은 고대곱물로 탄수화물원을 구성하며, 중금속 검사를 위한 제3자 실험실 테스트를 거칩니다.\n\n단점은 압출 공정 자체에 있습니다. 200℃ 이상의 고온에 노출되면 열에 민감한 일부 비타민이 파괴되고 수분 함량이 약 10%까지 낮아지는데, 이 때문에 수의사들은 건식 사료만 급여하는 경우, 특히 요로 결정이 우려되는 반려견에게는 본브로스나 생식 토퍼를 소량 추가할 것을 권장하는 경우가 많습니다.",
-        "productKey": "orijen-original-grain-free-23lb",
-        "productNote": "이 카테고리의 고단백 홀프레이 제품:"
-      },
-      {
-        "rank": "05",
-        "title": "수의사 처방 전문 치료식 사료",
-        "score": "72/100",
-        "pros": "만성 신부전, 간 질환, 결석증 등 특정 임상 질환 관리에 맞춤 배합.",
-        "cons": "공물성 충전재 비율이 높고 수의사의 처방이 필요함.",
-        "readMore": "처방식은 하나의 특정 진단 질환을 관리하기 위해 설계됩니다. 신장 질환에는 단백질과 인 함량을 낮춘 제품을, 심각한 음식 알레르기에는 면역계가 반응하지 않는 가수분해 단백질을, 스트루바이트 방광 결석에는 마그네슈과 pH를 조절한 제품을 사용하는 식입니다.\n\n일반적인 '건강함' 기준으로는 순위가 낮게 매겨지는 이유는 단순합니다. 평균적으로 건강한 개에게 최적화된 것이 아니라 의도적으로 제한적인 구성을 취하기 때문입니다. 예를 들어 신장 기능 저하를 완화하도록 설계된 제품은 의도적으로 시중에서 가장 단백질 함량이 높은 사료가 아닙니다.\n\n이러한 처방식은 수의사의 승인이 필요하며, 효과를 확인하기 위한 주기적인 혈액 검사가 동반되어야 합니다. 건강한 개에게 실제로 필요한 영양소를 제한하면 시간이 지나면서 해를 끼칠 수 있으므로, 임상적인 이유 없이 건강한 반려견에게 급여해서는 안 됩니다.",
-        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-        "productNote": "수의사가 흔히 처방하는 신장 관리용 처방식:"
-      }
-    ],
-    "buyerGuideTitle": "최고의 사료를 선택하기 위한 4대 황금 원칙",
-    "buyerRules": [
-      {
-        "title": "1. 원재료 첫 번째 자리에 명확한 생육 표기",
-        "desc": "출처를 알 수 없는 ‘가금류 육골분’ 대신 ‘뼈를 바른 칠면조’, ‘소고기’, ‘생연어’가 명시되어 있는지 확인하세요.",
-        "readMore": "반려동물 사료 라벨의 원재료는 조리 전 무게가 무거운 순서대로 표기됩니다. '뼈를 바른 칠면조', '생소고기', '신선한 연어'처럼 구체적인 동물 명칭이 명시된 원육은 타우린, 아르기닌, 카르니틴 등 필수 아미노산을 가장 생체 이용률이 높은 형태로 제공합니다. '동물성 부산물', '육골분', '가금류 미ール'과 같이 모호한 일반 명칭은 출처를 알 수 없는 저급 렌더링 원료가 섞일 위험이 높으므로 피해야 합니다.\n\n또한 '원재료 쪼개기(Ingredient Splitting)' 꼼수도 주의 깊게 살펴야 합니다. 완두콩, 완두콩 전분, 완두콩 단백질처럼 탄수화물을 여러 항목으로 나누어 표기함으로써, 실제로는 탄수화물 비중이 더 높음에도 불구하고 고기가 첫 번째 성분인 것처럼 보이게 만드는 제조 방식이 있습니다.\n\n'탈수 양고기 분말'이나 '연어 미ール'처럼 구체적인 동물이 명시된 고품질 건조육은 제조 전 수분을 미리 제거한 상태이므로 투명하게 공개된 경우 훌륭한 고농축 동물성 단백질 공급원이 됩니다."
-      },
-      {
-        "title": "2. 70% 이상의 풍부한 수분 공급",
-        "desc": "수분 8~10%의 건식 사료만 먹는 개는 만성적인 미세 탈수 상태에 빠집니다. 수제 화식이나 뼈 육수를 꼭 섞어주세요.",
-        "readMore": "야생에서 개의 조상이 섭취하던 먹이 동물은 수분 함량이 70~75%에 달합니다. 개는 진화 과정에서 식사를 통해 직접 수분을 섭취해왔기 때문에 갈증을 느끼고 물을 찾아 마시는 반사 신경이 사람에 비해 둔합니다. 수분이 8~10%에 불과한 건식 사료만 급여하면 만성적인 미세 탈수 상태가 지속되기 쉽습니다.\n\n장기간 농축된 소변은 신장에 막대한 부담을 주며, 스트루바이트 및 옥살산칼슘 방광 결석이 발생하기에 가장 취약한 환경을 만듭니다.\n\n건식 사료를 먹일 때는 반드시 수분을 보충해주세요. 염분과 양파류가 없는 따뜻한 본브로스나 미온수를 1:1 비율로 붓거나, 수분이 풍부한 저온 조리 화식 토퍼를 함께 급여하면 신장과 요로 건강을 효과적으로 지킬 수 있습니다."
-      },
-      {
-        "title": "3. 화학 합성 방부제 및 인공 색소 배제",
-        "desc": "BHA, BHT, 에톡시퀸, 프로필렌글리콜 등 유해성이 지적된 합성 첨가물을 철저히 피하십시오.",
-        "readMore": "1~2년의 긴 유통기한을 확보하기 위해 저가 사료에는 BHA(부틸히드록시아니솔), BHT(부틸히드록시톨루엔), 에톡시퀸과 같은 합성 화학 산화방지제가 흔히 쓰입니다. 다수의 연구에서 BHA와 BHT는 발암 가능 물질 및 내분비계 교란 물질로 지목되었으며, 살충제 및 고무 안정제로 개발되었던 에톡시퀸은 간 손상과 심각한 알레르기 유발 위험이 보고되어 있습니다.\n\n또한 적색 40호, 황색 5호 같은 인공 색소는 사람의 시각적 만족만을 위한 불필요한 첨가물로, 민감한 개에게 피부 가려움증과 알레르기, 소화기 염증을 일으키는 주원인이 됩니다.\n\n반드시 혼합 토코페롤(비타민 E), 로즈마리 추출물, 구연산 등 천연 항산화제로 보존된 안전한 사료를 선택하십시오."
-      },
-      {
-        "title": "4. 탄수화물 함량을 25% 이하로 제어",
-        "desc": "개의 침에는 아밀라아제가 없습니다. 과도한 전분은 췌장에 무리를 주고 비만을 유발합니다.",
-        "readMore": "개는 통성 육식동물(facultative carnivore)로, 정제 탄수화물에 대한 생물학적 필수 요구량이 전혀 없습니다. 사람과 달리 개의 침에는 전분을 입안에서 분해하는 효소인 아밀라아제가 분비되지 않으므로, 섭취한 모든 탄수화물의 소화 부담은 고스란히 췌장에 집중됩니다.\n\n사료 라벨의 보증성분표에는 탄수화물 함량 표시 의무가 없기 때문에, 많은 일반 건식 사료는 알갱이(키블)를 물리적으로 팽창시키고 뭉치기 위해 옥수수, 밀, 감자 전분 등을 45~60%나 포함하고 있습니다.\n\n혈당을 급격히 높이는 고탄수화물 식단은 잦은 인슐린 분비, 만성 염증, 귓병, 췌장염 및 비만을 유발합니다. '100% − (조단백질 + 조지방 + 조섬유 + 수분 + 조회분)' 계산식을 통해 탄수화물 비율을 역산하고, 탄수화물이 25% 이하로 엄격히 관리된 사료를 고르세요."
-      }
-    ],
-    "ctaTitle": "우리 강아지 맞춤 사료의 일일 급여량을 계산해 보세요",
-    "ctaDesc": "자연 화식, 생식 BARF, 프리미엄 건식 사료 등 식단에 맞는 정확한 일일 급여량(g)과 칼로리를 확인할 수 있습니다.",
-    "ctaBtn": "맞춤 급여량 계산하기 →"
-  },
-  "recipes": {
-    "eyebrow": "맞춤 수제 자연식 & 생식 레시피",
-    "heroTitle": "강아지 수제 건강 자연식 레시피",
-    "heroSubtitle": "가정에서 손쉽게 조리할 수 있는 영양 균형 저온 화식과 자연의 법칙에 맞춘 80-10-10 생식 가이드.",
-    "calciumWarningTitle": "수제 사료 조리의 절대 원칙: 칼슘과 인의 균형",
-    "calciumWarningDesc": "순수 살코기는 인 함량이 매우 높고 칼슘은 거의 없습니다(비율 1:20). 칼슘 보충 없이 고기와 밥만 지속해서 먹이면 수개월 내에 심각한 골다공증과 뼈 탈회 질환이 발생합니다. 뼈 없는 살코기 450g당 반드시 순수 난각가루(계란껍질 분말) 반 티스푼(원소 칼슘 약 900mg)을 첨가하여 1.2:1의 칼슘:인 비율을 맞춰주세요.",
-    "recipesList": [
-      {
-        "tag": "저온 조리 화식",
-        "title": "레시피 1: 칠면조 & 프리바이오틱스 단호박 화식 (위장이 민감한 강아지용)",
-        "desc": "장 건강이 약하거나 무른 변을 자주 보는 아이, 시중 닭고기에 알레르기가 있는 강아지에게 적합합니다.",
-        "ingredients": [
-          "지방 제거 칠면조 분쇄육 (93/7) — 65% (약 900g)",
-          "칠면조 또는 소 심장 (천연 타우린 공급원) — 10% (약 140g)",
-          "순수 단호박 퓨레 (수용성 식이섬유) — 10% (약 140g)",
-          "살짝 찐 시금치 & 다진 애호박 — 10% (약 140g)",
-          "자연산 알래스카 연어오일 (EPA/DHA) — 2% (1.5 큰술)",
-          "미세 난각가루 (천연 칼슘 보충제) — 3% (1 작은술 듬뿍)"
-        ],
-        "prep": "칠면조 고기와 심장을 약불에서 살짝 익힙니다 (내부 온도 70℃ 유지). 채소를 쪄서 단호박과 함께 부드럽게 갈아줍니다. 모든 재료를 고루 섞은 후 완전히 식힙니다. 음식이 식은 후 연어오일과 난각가루를 골고루 섞어 소분 냉동합니다."
-      },
-      {
-        "tag": "생식 BARF",
-        "title": "레시피 2: 소고기 & 오리고기 80-10-10 천연 생식 식단",
-        "desc": "소화 기능이 건강하고 위산 분비가 원활한 성견을 위한 야생 비율의 완전 생식.",
-        "ingredients": [
-          "목초 사육 소고기 살코기 — 70%",
-          "소 심장 (L-카르니틴 및 코엔자임 Q10 풍부) — 10%",
-          "생 오리 목뼈 또는 닭 안심뼈 — 10% (천연 생뼈 및 칼슘)",
-          "소 간 (비타민 A 및 B군 복합체) — 5%",
-          "소 콩팥 또는 비장 (필수 분비 내장 기관) — 5%"
-        ],
-        "prep": "살코기와 심장을 강아지 한 입 크기로 자릅니다. 생뼈는 삼키지 않도록 체급에 맞게 고릅니다. 내장 기관을 주방 저울로 정밀하게 계량합니다. 모든 생식 재료는 급여 전 영하 20℃ 이하에서 최소 3주간 냉동 보관하여 기생충을 예방합니다."
-      },
-      {
-        "tag": "슈퍼푸드 토퍼",
-        "title": "레시피 3: 80/20 항산화 슈퍼푸드 사료 영양 토핑",
-        "desc": "기존 건식 사료 칼로리의 20%를 신선한 자연 식재료로 대체하여 활력을 불어넣는 토퍼.",
-        "ingredients": [
-          "방사 유정란 반숙 수란 — 40%",
-          "살짝 찐 브로콜리 새싹 & 야생 블루베리 — 30%",
-          "푹 고아낸 한우 사골 뼈 육수 — 20%",
-          "유기농 헴프씨드 & 켈프 해조 분말 — 10%"
-        ],
-        "prep": "달걀을 4분간 삶아 반숙으로 준비합니다. 채소를 3분간 살짝 찝니다. 미온의 사골 육수와 블루베리를 함께 으깬 뒤, 매 끼니 기존 사료 위에 2~4큰술을 얹어 급여합니다."
-      }
-    ],
-    "calciumGuideTitle": "수제 사료에 안전하게 사용할 수 있는 칼슘 급원",
-    "calciumGuideItems": [
-      {
-        "title": "순수 난각가루 (계란껍질 분말)",
-        "ratio": "뼈 없는 고기 450g당 1/2 작은술",
-        "desc": "순도 95%의 탄산칼슘. 세척 후 오븐에서 살균 건조하여 믹서기로 곱게 갈아 만듭니다."
-      },
-      {
-        "title": "가열하지 않은 신선한 생뼈",
-        "ratio": "전체 식단 무게의 10%",
-        "desc": "오리 목뼈, 닭 날개 등. 익힌 뼈는 단단해져 유리조각처럼 깨져 식도와 장을 찢을 수 있으므로 절대 익히지 마십시오."
-      },
-      {
-        "title": "수의사 전용 골분 영양제 (Bone Meal)",
-        "ratio": "제조사 권장량 준수",
-        "desc": "천연 2:1 비율로 칼슘과 인이 배합된 미세 결정 하이드록시아파타이트 분말."
-      }
-    ]
-  },
-  "toxic": {
-    "eyebrow": "응급 안전 // 강아지에게 치명적인 위험 음식",
-    "dangerTitle": "가정 내에서 강아지에게 가장 위험한 치명적 음식",
-    "dangerIntro": "사람에게는 안전하지만 개의 체내 효소로는 해독할 수 없어 급성 장기 부전이나 사망을 초래하는 유해 음식들입니다.",
-    "dangerList": [
-      {
-        "name": "초콜릿 및 코코아 가공품",
-        "toxin": "테오브로민 및 카페인",
-        "symptoms": "구토, 과호흡(헐떡임), 심장 빈맥, 근육 떨림, 전신 발작 및 급성 심부전.",
-        "risk": "매우 높음 / 치사율 높음"
-      },
-      {
-        "name": "포도, 건포도 및 청포도",
-        "toxin": "타르타르산 (주석산)",
-        "symptoms": "기력 저하, 탈수, 섭취 후 24~72시간 이내에 영구적인 급성 신부전 유발.",
-        "risk": "극도로 위험 / 사망 위험"
-      },
-      {
-        "name": "자일리톨 (인공 감미료 / E967)",
-        "toxin": "합성 당알코올",
-        "symptoms": "급격한 인슐린 폭발 분비로 인한 심각한 저혈당 쇼크, 몇 시간 내 급성 간 괴사.",
-        "risk": "초응급 상황"
-      },
-      {
-        "name": "양파, 마늘, 파, 부추류",
-        "toxin": "유기황 화합물 (알릴 프로필 디설파이드)",
-        "symptoms": "적혈구 헤모글로빈 파괴, 하인츠 소체 용혈성 빈혈, 붉은 혈뇨, 호흡곤란.",
-        "risk": "지속적인 축적 독성"
-      },
-      {
-        "name": "마카다미아 너트",
-        "toxin": "미확인 신경독소",
-        "symptoms": "후지(뒷다리) 마비 및 비틀거림, 고열, 구토, 극심한 관절 통증.",
-        "risk": "중등도 ~ 중증"
-      },
-      {
-        "name": "조리된 모든 종류의 뼈",
-        "toxin": "물리적 장기 파열 위험",
-        "symptoms": "식도 천공, 위장관 파열, 내부 출혈, 복막염, 급성 장폐색.",
-        "risk": "외과적 응급 개복수술 필요"
-      }
-    ],
-    "emergencyTitle": "음식 중독 사고 발생 시 응급 대처 수칙",
-    "emergencySteps": [
-      "1. 즉시 격리 및 음식물 수거: 무엇을, 언제, 얼마만큼 섭취했는지 정확한 포장지와 잔여물을 확인하십시오.",
-      "2. 수의사의 지시 없이 억지로 구토를 유도하지 마십시오: 부식성 물질이나 날카로운 뼈는 토해내는 과정에서 식도를 손상시킵니다.",
-      "3. 지체 없이 동물병원으로 이동: 인근 24시간 동물 응급센터에 전화하여 상태를 미리 알리고 즉시 내원하십시오."
-    ],
-    "safeTitle": "강아지가 먹어도 100% 안전하고 유익한 과일 & 채소",
-    "safeIntro": "다음 식재료는 천연 항산화제, 수용성 프리바이오틱스, 비타민이 풍부하여 매일 토핑으로 주기에 안전합니다:",
-    "safeFoods": [
-      {
-        "name": "블루베리",
-        "benefit": "풍부한 안토시아닌과 폴리페놀이 세포 노화를 억제하고 뇌 건강을 돕습니다."
-      },
-      {
-        "name": "찐 단호박",
-        "benefit": "풍부한 수용성 식이섬유가 설사와 변비를 모두 완화하고 소화를 돕습니다."
-      },
-      {
-        "name": "당근",
-        "benefit": "베타카로틴이 풍부한 저칼로리 간식으로 아삭한 저작 작용을 통해 치아 건강에 기여합니다."
-      },
-      {
-        "name": "삶은 껍질콩 (그린빈)",
-        "benefit": "포만감을 주는 훌륭한 저혈당 채소로 다이어트가 필요한 아이들에게 이상적입니다."
-      },
-      {
-        "name": "사과 (씨앗과 심지 완전 제거)",
-        "benefit": "비타민 C와 장내 유익균의 먹이가 되는 펙틴이 풍부합니다."
-      }
-    ]
-  },
-  "brands": {
-    "eyebrow": "사료 브랜드 객관적 리뷰 및 리콜 이력",
-    "heroTitle": "인기 사료 브랜드 검증 및 안전 리콜 기록",
-    "heroSubtitle": "엄격한 영양 기준에 따라 주요 상업용 사료의 원료 성분, AAFCO 표기 준수 여부, 리콜 이력을 엄격하게 검증합니다.",
-    "brandsList": [
-      {
-        "name": "블루 버팔로 (Blue Buffalo)",
-        "grade": "평가: B+",
-        "pros": "제1원료로 생육 사용; 옥수수·밀·대두 무첨가; 비타민을 보존하는 냉압착 라이프소스 비츠 배합.",
-        "cons": "탄수화물 비율이 45~50%로 다소 높음; 과거 수분 과다 곰팡이 및 비타민 D 초과로 인한 리콜 이력 존재.",
-        "verdict": "시중 건식 사료 중에서는 상위권. 부족한 수분을 보충하기 위해 신선한 화식 토핑을 20% 병행하는 것을 권장."
-      },
-      {
-        "name": "레이첼레이 뉴트리쉬",
-        "grade": "평가: C+ / B-",
-        "pros": "합리적인 가격대; 상위 라인업(Peak/Dish)은 실제 고기 함량을 대폭 개선함.",
-        "cons": "보급형 라인은 완두콩 단백질과 옥수수 글루텐에 과도하게 의존하며, FDA 심근병증(DCM) 조사 대상에 포함된 바 있음.",
-        "verdict": "가성비 위주 선택 시 상위 라인을 고르고 원재료 라벨의 콩류 분할 표기를 반드시 확인해야 함."
-      },
-      {
-        "name": "퓨어 밸런스 (Pure Balance)",
-        "grade": "평가: B (최고의 가성비)",
-        "pros": "탁월한 가격 대비 성능; 인공 색소나 저급 밀가루 없이 육류 중심의 기본에 충실한 배합.",
-        "cons": "OEM 외주 생산; 평균적인 탄수화물 함량.",
-        "verdict": "대형 마트에서 구할 수 있는 상업용 사료 중 가장 양심적이고 실속 있는 선택지 중 하나."
-      },
-      {
-        "name": "올리 (Ollie) 신선 맞춤 화식",
-        "grade": "평가: A (최우수)",
-        "pros": "100% 휴먼그레이드 육류와 채소; 저온 스팀 조리; 개별 체중에 맞춘 맞춤형 진공 소분 팩.",
-        "cons": "고가의 구독 비용(월 20~40만 원 상당); 냉동실 보관 공간 필요.",
-        "verdict": "대사 활력, 모질의 윤기, 소화기 건강수명을 극대화하고자 하는 보호자를 위한 최고의 기준."
-      },
-      {
-        "name": "오픈 팜 (Open Farm)",
-        "grade": "평가: A-",
-        "pros": "모든 식재료의 농장 및 어장 출처 100% 투명 공개; 동물 복지 인증 육류 및 지속 가능한 어류 사용.",
-        "cons": "프리미엄 가격대; 오프라인 매장 접근성이 낮음.",
-        "verdict": "원료의 윤리적 출처, 높은 육류 비율, 가금류 부산물 무첨가를 중요시하는 보호자에게 최적."
-      }
-    ],
-    "recallsTitle": "사료 안전 리콜 기준 바로 알기",
-    "recallsDesc": "FDA 리콜은 3단계로 나뉩니다: 클래스 I (살모넬라균 감염, 비타민 D 치사량 등 생명을 위협하는 중대 사안), 클래스 II (일시적 건강 이상), 클래스 III (단순 라벨 표기 위반). 구매한 사료 포대의 제조 로트 번호를 주기적으로 확인하세요.",
-    "methodTitle": "당사의 4대 사료 평가 기준",
-    "methodPillars": [
-      {
-        "title": "1. 단백질 원료의 투명성",
-        "desc": "모호한 ‘육골분’이 아닌 명확한 부위가 적힌 뼈를 바른 온전한 고기."
-      },
-      {
-        "title": "2. 탄수화물 함량 제한",
-        "desc": "비만과 췌장 부담을 예방하기 위해 전분 함유량을 40% 미만으로 억제."
-      },
-      {
-        "title": "3. 원산지 및 유통 추적성",
-        "desc": "비유전자변형(Non-GMO) 및 동물 복지 인증 농장 원료 확인."
-      },
-      {
-        "title": "4. 안전 검사 및 리콜 기록",
-        "desc": "공인 연구기관의 정기 미생물 검사 및 안전한 위생 공정 유지."
-      }
-    ]
-  },
-  "allergies": {
-    "eyebrow": "식이 알레르기 가이드 // 알레르기 및 제한 급여",
-    "heroTitle": "알레르기 및 민감성 장을 가진 강아지를 위한 사료 가이드",
-    "heroSubtitle": "단일 단백질(노벨 프로틴) 선택법과 8주간의 배제 식이 시험 프로토콜 안내.",
-    "allergensTitle": "강아지에게 가장 흔한 5대 식이 알레르겐",
-    "allergensIntro": "개의 음식 알레르기는 특정 단백질 분자에 대한 면역계의 과민 반응입니다. 임상 빈도순으로 나열하면 다음과 같습니다:",
-    "allergensList": [
-      {
-        "name": "1. 공장식 사육 닭고기 (전체 사례의 60%)",
-        "desc": "시중 펫푸드에 가장 흔하게 쓰이므로 체내 항체가 가장 많이 생성된 제1의 알레르겐입니다."
-      },
-      {
-        "name": "2. 상업용 소고기 (전체 사례의 30%)",
-        "desc": "예민한 아이들에게 심한 발 핥기(지간염)와 만성 외이도염을 일으키는 대표적 붉은 살코기."
-      },
-      {
-        "name": "3. 유제품 및 치즈류",
-        "desc": "성견은 젖당 분해 효소가 결핍되어 있어 삼투성 설사와 복부 팽만을 유발합니다."
-      },
-      {
-        "name": "4. 밀 및 옥수수 글루텐",
-        "desc": "장 점막 장벽을 손상시키고 체내 만성 염증과 효모균(말라세치아) 증식을 촉진합니다."
-      },
-      {
-        "name": "5. 대두 및 콩류 단백질",
-        "desc": "저가 충전재로 자주 쓰이지만 장내 이상 발효와 피부 가려움증을 유발합니다."
-      }
-    ],
-    "eliminationTitle": "표준 8주 배제 식이 시험 (엘리미네이션 다이어트)",
-    "eliminationSteps": [
-      {
-        "step": "1단계",
-        "title": "단 한 번도 먹어본 적 없는 신기 단백질 선정",
-        "desc": "사슴고기, 토끼고기, 캥거루고기 등 지금까지 한 번도 접해보지 않은 단일 육류와 단호박 같은 소화 잘되는 단일 탄수화물로 제한합니다."
-      },
-      {
-        "step": "2단계",
-        "title": "엄격한 교차 오염 차단 (연속 8주)",
-        "desc": "8주 동안 오직 지정된 단일 식단과 물만 급여합니다. 시중 간식, 식탁 잔반, 향료가 첨가된 영양제도 전면 금지합니다."
-      },
-      {
-        "step": "3단계",
-        "title": "원인 물질 단일 재도전 시험",
-        "desc": "가려움증이 완전히 가라앉으면, 의심되는 단백질(예: 닭고기)을 7일간 소량 먹여 반응을 살핍니다. 증상이 재발하면 알레르기가 확진됩니다."
-      }
-    ],
-    "novelTitle": "추천 저알레르기 신기 단백질 (Novel Proteins)",
-    "novelProteins": [
-      {
-        "name": "사슴고기 (베니슨)",
-        "desc": "지방이 적고 영양 밀도가 높으며 개들이 항체를 거의 가지고 있지 않은 훌륭한 붉은 고기."
-      },
-      {
-        "name": "토끼고기",
-        "desc": "알레르기 유발 가능성이 극히 낮고 아미노산 조성이 뛰어나며 소화 흡수율이 우수합니다."
-      },
-      {
-        "name": "오리고기",
-        "desc": "일반 닭고기에 과민 반응을 보이는 아이들을 위한 안전하고 기호성 높은 대체 조류 육류."
-      },
-      {
-        "name": "캥거루고기",
-        "desc": "야생에서 서식하여 지방 함량이 2% 내외로 극히 낮고 청정한 최고급 저알레르기 단백질."
-      }
-    ]
-  },
-  "calculator": {
-    "eyebrow": "100% 무료 // 급여량 & 칼로리 계산기",
-    "noticeTitle": "안내사항:",
-    "noticeText": "본 계산기는 영양학적 교육 및 참고용입니다. 수의사의 임상 진료를 대신할 수 없습니다.",
-    "heroTitle": "강아지 일일 사료 급여량 및 칼로리 계산기",
-    "heroSubtitle": "반려견의 체중, 연령, 활동량, 체형(BCS)을 입력하여 과학적 휴지기 대사량(RER)과 유지 에너지 요구량(MER), 끼니별 정밀 급여량(g)을 확인하세요."
-  },
-  "breeds": {
-    "eyebrow": "견종별 맞춤 영양 가이드 // 수의학 권장 급여량",
-    "targetWeight": "목표 체중",
-    "dailyCalories": "일일 권장 칼로리",
-    "freshDaily": "자연 화식 1일량",
-    "kibbleDaily": "건식 사료 1일량",
-    "cups": "컵",
-    "reqsTitle": "{name} 견종의 영양 요구량 및 특성",
-    "reqsIntro": "평균 체중이 {w0}~{w1} lbs(약 {Math.round(w0*0.453)}~{Math.round(w1*0.453)} kg)인 {category} 체급의 {name} 견종은 고유의 체질에 맞는 영양 밸런스가 필요합니다:",
-    "predispositionsTitle": "주의해야 할 체질 및 건강 소인:",
-    "feedingRoutineTitle": "권장 식사 루틴:",
-    "feedingRoutineDesc": "성견 {name}은 하루 2회(아침 50%, 저녁 50%)로 나누어 규칙적으로 급여하세요. 항상 깨끗한 물을 준비해 주시고, 건식 사료를 먹일 때는 따뜻한 뼈 육수나 미온수를 부어 불려주면 신장 결석을 예방할 수 있습니다.",
-    "ctaTitle": "{name} 맞춤형 식단 플랜 생성하기",
-    "ctaSubtitle": "자견기, 성견, 노령견 단계와 실제 체중, 활동량, 중성화 여부에 맞는 정밀 급여량을 계산해 보세요.",
-    "ctaBtn": "{name} 계산기 시작하기 →",
-    "faqTitle": "{name} 식단 관련 자주 묻는 질문",
-    "faqSubtitle": "적정 식사 횟수, 체중 관리법, 추천 식재료 안내."
-  },
-  "comparisonTable": {
-    "eyebrow": "영양 비교 // 자연 화식 VS 일반 건식 사료",
-    "title": "자연 원물 식단이 건식 사료보다 생물학적으로 우수한 이유",
-    "subtitle": "가공 열처리 온도, 급여량의 정밀도, 실제 월간 사료비를 임상적으로 비교 분석 — 5년간의 반려견 수명 연구에서 신선한 자연식을 급여한 반려견이 최대 32개월 더 오래 생존한 핵심 원인 변수들입니다.",
-    "scrollHint": "↔ 표를 좌우로 스크롤하여 확인하세요",
-    "colMetric": "영양·임상 분석 지표",
-    "colDfp": "✨ DogFoodPlanner",
-    "colSubs": "화식 정기구독 서비스",
-    "colKibble": "일반 건식 사료 (키블)",
-    "rows": [
-      {
-        "metric": "가공 및 조리 방식",
-        "dfp": "저온 스팀 조리 (~74℃) 또는 생식 — 효소 활성 유지",
-        "subs": "수비드 저온 조리 후 급속 냉동",
-        "kibble": "200℃ 이상의 초고온 압출 팽창 가공"
-      },
-      {
-        "metric": "급여량 정밀도",
-        "dfp": "체중·연령·활동량에 맞춘 RER/MER 대사 계산으로 정확한 g 단위 산출",
-        "subs": "체중 범위별 고정 급여량 차트",
-        "kibble": "사료 포장지 표준 권장량 — 권장 칼로리를 20~30% 과대평가"
-      },
-      {
-        "metric": "순 탄수화물 함량",
-        "dfp": "< 5% (필수 채소 식이섬유만, 전분 충전재 제로)",
-        "subs": "10% – 20%",
-        "kibble": "45% – 60% (옥수수·밀·완두콩 전분 충전재)"
-      },
-      {
-        "metric": "생체 수분 함유량",
-        "dfp": "70% – 75% (신장 및 비뇨기 수분 공급 최적화)",
-        "subs": "70% – 75%",
-        "kibble": "8% – 10% (만성적인 잠재적 탈수 유발)"
-      },
-      {
-        "metric": "영양소 보존율",
-        "dfp": "산화 최소화 — 오메가-3 지방산 및 천연 효소 보존",
-        "subs": "보통 수준 — 일부 열 민감성 영양소 변성",
-        "kibble": "압출 고열로 인한 지방 산패 및 최종당화산물(AGEs) 형성"
-      },
-      {
-        "metric": "원재료 투명성",
-        "dfp": "100% 정밀 그램(g) 및 배합 비율 공개 — 보호자가 직접 통제",
-        "subs": "독자 배합비 (상세 배합률 비공개)",
-        "kibble": "원재료 쪼개기 표기 및 모호한 '육골분/가금부산물' 표기"
-      },
-      {
-        "metric": "월평균 예상 식비 (23kg 성견 기준)",
-        "dfp": "약 11만 – 18만 원 (직접 장보기 식재료 기준)",
-        "subs": "약 35만 – 60만 원 / 월",
-        "kibble": "약 8만 – 14만 원 / 월"
-      }
-    ]
-  },
-  "faqPage": {
-    "badge": "나레ッジ 베이스 // 수의사 검증 40여 개 답변",
-    "exploreHubsTitle": "전문 영양 심층 가이드 살펴보기",
-    "exploreHubsSubtitle": "반려견의 건강수명과 활력을 높이고자 하는 보호자님들을 위한 전문 분야별 가이드.",
-    "cardBestFood": "자연 화식, 생식 BARF, 고단백 사료, 장이 예민한 아이를 위한 푸드 완벽 비교.",
-    "cardCalc": "반려견의 안정시 대사량(RER)과 유지 칼로리를 바탕으로 한 정밀 급여량 계산기.",
-    "cardRecipes": "필수 칼슘 균형을 완벽히 맞춘 저온 조리 화식 및 80-10-10 생식 레시피.",
-    "cardAllergies": "저알레르기 신기 단백질 선택법과 8주간의 배제 식이 시험 프로토콜.",
-    "cardToxic": "반려견에게 치명적인 위험 음식 총정리 및 안전한 과일·채소 급여 기준.",
-    "cardBrands": "블루 버팔로, 뉴트리쉬, 퓨어밸런스, 올리 등 인기 사료 브랜드 객관적 리뷰."
-  },
-  "faqSingle": {
-    "reviewedBy": "검증: DogFoodPlanner 편집팀",
-    "updated": "최신 업데이트: 2026년",
-    "directQuickAnswer": "핵심 요약 답변",
-    "clinicalAnalysis": "상세 영양학적 분석",
-    "topics": "관련 주제:",
-    "ctaBadge": "🐾 무료 반려견 영양 엔진",
-    "ctaTitle": "우리 강아지에게 필요한 정확한 칼로리와 식사량을 계산하세요",
-    "ctaSubtitle": "사료량 계산기를 사용하여 대사 소비량(RER/MER)을 확인하고 맞춤 화식 또는 생식 급여량을 확인해 보세요.",
-    "ctaBtn": "지금 급여량 계산하기 →",
-    "relatedTitle": "관련 반려견 영양 Q&A",
-    "readAnswer": "답변 전체 읽기 →",
+  "ko": {
+    "about": {
+      "heroTitle": "DogFoodPlanner 소개: 반려견 식단 관리를 더 쉽게",
+      "heroSubtitle": "DogFoodPlanner.com의 미션과 무료 반려견 사료 급여량 계산기의 작동 방식을 알아보세요.",
+      "missionBadge": "우리의 사명 // 반려견 식단 계획",
+      "whyTitle": "DogFoodPlanner의 설립 취지",
+      "whyP1": "DogFoodPlanner는 반려견 보호자가 식단과 급여량을 안심하고 계획할 수 있도록 개발되었습니다. 공개된 가이드라인을 연구하여 누구나 쉽게 활용할 수 있는 무료 도구와 유용한 가이드로 제공합니다.",
+      "whyP2": "",
+      "whoTitle": "운영진 소개",
+      "whoContent": "DogFoodPlanner는 반려견을 사랑하는 연구원과 전문 필진이 운영하는 독립 웹사이트입니다. 저희는 수의사가 아닙니다. 특히 강아지(퍼피), 노령견, 또는 건강 질환이 있는 반려견의 식단을 변경하기 전에는 반드시 담당 수의사와 상담하시기 바랍니다.",
+      "methodTitle": "영양 분석 방법론",
+      "pillars": [
+        {
+          "tag": "01 // 칼로리 추정",
+          "title": "칼로리 추정",
+          "desc": "저희 계산기는 표준 휴지기 에너지 요구량(RER) 공식(70 × 체중 kg^0.75)과 일반적인 활동 계수를 적용하여 일일 권장 칼로리를 추정합니다."
+        },
+        {
+          "tag": "02 // 참고 문헌 및 기준",
+          "title": "참고 문헌 및 기준",
+          "desc": "AAFCO 및 미국 국립연구회(NRC) 등의 공개 가이드라인을 참조합니다. 제공되는 콘텐츠는 교육 목적이며 전문가의 수의학적 조언을 대신하지 않습니다."
+        },
+        {
+          "tag": "03 // 투명한 운영",
+          "title": "투명한 운영",
+          "desc": "일부 페이지에는 아마존 어소시에이트를 포함한 제휴 링크가 포함되어 있습니다. 링크를 통해 구매하시면 추가 비용 없이 소정의 수수료를 지급받을 수 있으나, 이는 추천 내용에 일절 영향을 주지 않습니다."
+        }
+      ],
+      "ctaTitle": "우리 강아지에게 필요한 정확한 영양과 칼로리를 계산해 보세요",
+      "ctaDesc": "간편한 계산기를 사용해보고, 알레르기 케어 가이드를 확인하며, 강아지 사료 가이드를 읽어보세요.",
+      "ctaBtn": "무료 영양 계산기 실행하기 →",
+      "amazonDisclaimer": "Amazon 어소시에이트 활동의 일환으로 적격 구매를 통해 수수료를 제공받을 수 있습니다."
+    },
+    "contact": {
+      "eyebrow": "고객 지원 및 문의 // 직접 문의 창구",
+      "cards": [
+        {
+          "icon": "📧",
+          "title": "일반 문의",
+          "desc": "의견 및 일반 질문:",
+          "email": "hello@dogfoodplanner.com"
+        },
+        {
+          "icon": "🐾",
+          "title": "수의 영양학 연구",
+          "desc": "NRC 계산식 및 영양 기준 문의:",
+          "email": "research@dogfoodplanner.com"
+        },
+        {
+          "icon": "🛡️",
+          "title": "기술 지원 & 오류 제보",
+          "desc": "계산기 버그 및 웹사이트 오류:",
+          "email": "legal@dogfoodplanner.com"
+        }
+      ],
+      "formTitle": "반려견 영양 전문 연구팀에게 문의하기",
+      "formDesc": "NRC 칼로리 계산 공식에 대한 궁금증이나 맞춤 레시피에 대한 도움이 필요하신가요? 영업일 기준 24시간 이내에 답변드립니다.",
+      "nameLabel": "성함",
+      "namePlaceholder": "예: 김민수",
+      "emailLabel": "이메일 주소",
+      "emailPlaceholder": "minsu@example.com",
+      "subjectLabel": "문의 유형",
+      "subjectOptions": [
+        "일반 문의 / 사이트 피드백",
+        "반려견 영양학 및 레시피 문의",
+        "계산기 알고리즘 관련 질문",
+        "기술적 오류 / 버그 제보"
+      ],
+      "messageLabel": "문의 내용",
+      "messagePlaceholder": "반려견의 정보(견종, 체중, 나이)와 구체적인 문의 내용을 남겨주세요...",
+      "submitBtn": "문의 보내기 →",
+      "notice": "수의학 응급 안내: 반려견이 급성 중독 증상이나 호흡 곤란 등 위급한 상태를 보인다면 즉시 24시간 동물 응급센터를 방문하십시오.",
+      "faqTitle": "빠른 답변을 찾고 계신가요?",
+      "faqDesc": "편식, 생식 BARF 식단, 고양이 사료 섭취 위험, 브랜드 평가 등 40여 개 이상의 검증된 수의학 Q&A를 확인해 보세요.",
+      "faqBtn": "모든 FAQ 둘러보기 →",
+      "successTitle": "✓ 메시지 준비 완료 — hello@dogfoodplanner.com으로 전송 중",
+      "successDesc": "이메일 앱이 hello@dogfoodplanner.com 수신인으로 작성된 메시지와 함께 열립니다. 이메일 앱에서 보내기를 누르면 저희 수신함에 도착합니다."
+    },
+    "privacy": {
+      "eyebrow": "개인정보 처리방침 // 데이터 보호 정책",
+      "lastUpdated": "업데이트: 2026년 10월 14일",
+      "intro": "DogFoodPlanner.com은 이용자의 개인정보를 소중히 여기며 관련 법령을 준수합니다. 본 방침은 웹사이트 이용 시 정보가 어떻게 취급되는지 안내합니다.",
+      "sections": [
+        {
+          "title": "1. 수집하지 않는 개인정보",
+          "content": "반려견의 건강 데이터는 보호자의 것입니다. 당사의 반려견 사료 급여량 계산기를 이용할 때 회원가입, 비밀번호 설정, 결제 카드 정보 입력이 일절 필요하지 않습니다. 계산기에 입력된 반려견 프로필, 체중, 식단 선택 정보는 웹 브라우저 로컬(클라이언트 측)에서만 처리되며 외부 데이터베이스에 저장되지 않습니다."
+        },
+        {
+          "title": "2. 이메일 수집 및 뉴스레터",
+          "content": "뉴스레터를 구독하시면 반려견 영양 가이드, 사료 리콜 알림 및 맞춤형 팁을 보내드리기 위해 이메일 주소를 수집합니다. 이메일 목록은 보안이 검증된 EmailOctopus를 통해 안전하게 관리됩니다. 귀하의 개인정보를 판매하거나 제3자와 공유하지 않으며, 모든 이메일 하단의 구독 취소 링크를 통해 언제든지 클릭 한 번으로 수신을 거부하실 수 있습니다."
+        },
+        {
+          "title": "3. 익명 기술 로그 데이터",
+          "content": "웹사이트 보안 유지 및 해킹 공격 방어를 위해, CDN 서버는 통상적인 익명 기술 로그(익명화된 IP 주소, 브라우저 종류, 접속 시간)를 시스템에 임시 기록합니다."
+        },
+        {
+          "title": "4. 브라우저 쿠키 및 로컬 스토리지(localStorage)",
+          "content": "기기에서 언어 설정과 식단 플랜을 기억하기 위해 localStorage를 사용합니다. 제휴 링크를 클릭하는 경우 제3자 사이트(예: 아마존)가 자체 쿠키를 설정할 수 있습니다."
+        },
+        {
+          "title": "5. 제3자 링크",
+          "content": "당사 웹사이트에는 발표된 연구 자료, AAFCO 기준, NRC 데이터베이스 및 외부 자료에 대한 참조 링크가 포함되어 있습니다. 당사는 제3자 웹사이트의 개인정보 보호 정책이나 콘텐츠에 대해 책임을 지지 않습니다."
+        },
+        {
+          "title": "6. 제휴 마케팅 안내",
+          "content": "DogFoodPlanner는 Amazon Services LLC Associates Program에 참여하고 있습니다. 아마존 어소시에이트로서 적격 구매를 통해 수수료를 지급받으며, 이용자에게 추가 비용이 전혀 발생하지 않습니다."
+        },
+        {
+          "title": "7. 아동의 개인정보 보호",
+          "content": "당사의 서비스는 성인 반려동물 보호자를 대상으로 하며, 만 14세 미만 아동의 개인정보를 수집하지 않습니다."
+        },
+        {
+          "title": "8. 정책 변경 및 문의",
+          "content": "개인정보 처리방침과 관련된 문의 사항은 privacy@dogfoodplanner.com으로 연락해 주시기 바랍니다."
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "이용약관 // 서비스 이용 조건",
+      "lastUpdated": "업데이트: 2026년 10월 14일",
+      "intro": "DogFoodPlanner.com을 이용하시기 전에 본 약관을 주의 깊게 읽어주시기 바랍니다. 사이트 이용 시 본 약관에 동의한 것으로 간주됩니다.",
+      "sections": [
+        {
+          "title": "1. 약관의 효력 및 동의",
+          "content": "DogFoodPlanner.com(이하 \"당사 웹사이트\")에 접속하고 계산기 및 가이드를 이용하는 것은 본 약관을 완전히 숙지하고 동의한 것으로 간주됩니다. 동의하지 않는 경우 서비스 이용을 중단해 주십시오."
+        },
+        {
+          "title": "2. 수의학적 및 의료적 면책 조항",
+          "content": "당사 웹사이트에서 제공하는 칼로리 계산, 사료 평가, 수제 식단 가이드는 NRC 및 AAFCO의 공개 학술 자료에 기반한 일반적인 교육 목적의 정보입니다. 이는 전문 수의사의 개별적인 임상 진단, 처방, 치료 행위를 대신할 수 없습니다. 질환이 있거나 자견, 임신견의 식단을 크게 변경할 때는 반드시 담당 수의사와 상담하십시오."
+        },
+        {
+          "title": "3. 대화형 계산기 사용 기준",
+          "content": "에너지 요구량(RER 및 MER)과 권장 급여 그램(g) 수는 통계적 기준치입니다. 반려견의 실제 대사율은 중성화 여부, 환경 기온, 활동량에 따라 달라집니다. 보호자는 정기적으로 신체충실지수(BCS)를 체크하여 급여량을 가감해야 합니다."
+        },
+        {
+          "title": "4. 수제 식단 안전 및 칼슘 비율 의무",
+          "content": "가정에서 자연식이나 생식을 조리할 때는 필수 미량 영양소 균형을 엄격히 맞춰야 합니다. 특히 칼슘 보충 없이 뼈 없는 살코기만 지속 급여할 경우 수개월 내에 심각한 골연화증과 저칼슘혈증이 발생합니다. 식재료의 계량과 칼슘 배합은 이용자의 책임입니다."
+        },
+        {
+          "title": "5. 지식재산권",
+          "content": "당사 웹사이트에 게재된 모든 계산 알고리즘, 인터페이스 디자인, 인포그래픽, 텍스트 콘텐츠는 저작권법의 보호를 받습니다."
+        },
+        {
+          "title": "6. 책임의 한계",
+          "content": "당사는 본 웹사이트의 정보를 바탕으로 행해진 식단 급여 결과에 대해 어떠한 직간접적 손해배상 책임도 부담하지 않습니다."
+        },
+        {
+          "title": "7. 이메일 구독 및 커뮤니케이션",
+          "content": "뉴스레터를 구독함으로써 귀하는 당사가 제공하는 반려견 영양 정보 및 사이트 소식을 수신하는 데 동의하게 됩니다. 수신 거부는 이메일 내 구독 취소 링크를 통해 언제든지 가능합니다. 당사는 사전 통지 없이 뉴스레터 서비스를 변경하거나 중단할 권리를 보유합니다."
+        }
+      ]
+    },
+    "bestFood": {
+      "eyebrow": "핵심 가이드 // 2026 최고의 강아지 사료 추천 및 순위",
+      "rankingsTitle": "【2026년 최신】 반려견 건강수명을 늘려주는 사료 순위 TOP 5",
+      "rankingsIntro": "수의 임상 영양학의 장기 추적 연구에 따르면, ‘최소한의 열 가공’과 ‘70% 이상의 천연 생체 수분’이 반려견의 신장 건강과 면역력을 결정짓는 가장 핵심적인 요소임이 입증되었습니다.",
+      "readMoreLabel": "더 자세히 보기 →",
+      "readLessLabel": "간략히 보기 ↑",
+      "rankings": [
+        {
+          "rank": "01",
+          "title": "휴먼그레이드 저온 조리 화식 (자연식)",
+          "score": "98/100",
+          "pros": "사람이 먹을 수 있는 신선한 육류와 채소를 70℃ 저온에서 부드럽게 가열. 70% 이상의 천연 수분, 활성 소화 효소, 비타민이 온전히 보존됩니다.",
+          "cons": "냉장 또는 냉동 보관 필수. 시중 건식 사료에 비해 비용이 높은 편.",
+          "readMore": "저온 조리 화식(자연식)이 랭킹 최상위에 오른 이유는 식품 안전성을 희생하지 않으면서도 집에서 만든 밥과 가장 유사한 형태이기 때문입니다. 재료는 USDA 검사를 통과한 식품 가공 시설에서 공급받으며, 병원균을 사멸시키기에 충분하면서도 고온 압출 공정에서 파괴되는 민감한 단백질, 타우린, 수용성 비타민 B군은 보존할 수 있는 저온(약 71°C) 조리 방식을 사용합니다.\n\n수분 함량이 이미 70% 이상이기 때문에 신장에 가해지는 부담이 줄어들고, 건식 사료만 급여할 때 흔히 나타나는 만성적인 경미한 탈수 상태를 완화할 수 있습니다. 대부분 단일 단백질원을 사용하고 렌더링 육분이나 합성 보존제가 들어가지 않기 때문에, 회복기에 있는 반려견이나 갈증 반응이 둔해진 노령견, 음식 민감성이 있는 견종에게 특히 적합합니다.\n\n가장 큰 단점은 관리의 번거로움입니다. 냉장 또는 냉동 보관 공간이 필요하고, 급여 전 미리 해동해야 합니다. 직접 조리할 여건이 안 된다면, USDA 인증 주방에서 만든 상온 보관형 저온 조리 제품을 선택해 전체 수제식 루틴으로 전환하기 전에 이 카테고리를 부담 없이 시도해볼 수 있습니다.",
+          "productKey": "justfoodfordogs-chicken-white-rice",
+          "productNote": "이 카테고리를 상온 보관 형태로 시도해볼 수 있는 제품:"
+        },
+        {
+          "rank": "02",
+          "title": "자연의 섭리에 맞춘 80-10-10 생식 BARF 식단",
+          "score": "95/100",
+          "pros": "육식동물의 이상적 비율 (살코기 80%, 생뼈 10%, 내장 10%). 치석 형성 억제 및 탄탄한 근육 유지에 탁월.",
+          "cons": "철저한 위생 관리와 정밀한 칼슈-인 섭취 비율 계산이 요구됨.",
+          "readMore": "80-10-10 비율(근육육 80%, 생곀 10%, 내장 10%)은 야생 개과 조상이 먹이 동물 한 마리를 통채로 섭취했을 때 얻는 영양 구성을 재현하도록 설계되었습니다. 제대로 구성하면 뱐 성분에서 자연스러운 칼슈 대 인 비율을 얻을 수 있고, 탄탄한 근육량 유지에 도움이 되며, 생뱐를 쉦는 물리적 작용이 치아의 치석을 제거하는 데도 도움을 줍니다.\n\n전혀 조리하지 않기 때문에 효소와 열에 민감한 아미노산이 온전히 유지됩니다. 다만 관건은 정밀함입니다. 안전한 생뱐를 조달하고 비율을 정확히 맞추는 데는 상당한 주의가 필요하며, 뱐 비율을 잘못 계산하는 것이 변비를 유발하거나 성장기 강아지의 경우 장기적으로 계거적 문제로 이어지는 가장 흔한 실수입니다. 생고기 역시 사람이 먹는 생식품과 동일한 수준의 위생 관리(별도 도마 사용, 냉장 보관, 신속한 뒷정리)가 필요합니다.\n\n대부분의 가정에서는 재료를 직접 계량해 완전히 맞춤화된 생식을 만들기 전 단계로, 이미 비율이 맞춰진 전문 제조 생식 제품으로 시작하는 것이 더 수월합니다.",
+          "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+          "productNote": "비율 계산의 수고를 덜어주는 사전 균형 생식 제품:"
+        },
+        {
+          "rank": "03",
+          "title": "에어드라이 & 동결건조 생식 사료",
+          "score": "91/100",
+          "pros": "생식의 풍부한 영양가를 상온 보관 가능한 편의성으로 구현. 입맛이 까다로운 아이들을 위한 토핑으로 훌륭함.",
+          "cons": "신장 부담을 방지하기 위해 급여 전 미온수나 뿈 육수에 반드시 불려주어야 함.",
+          "readMore": "에어드라이와 동결건조는 모두 낮은 온도에서 생고기의 수분을 제거하는 방식으로, 생식에 가까운 영양소와 효소 프로필을 유지하면서도 실온 보관이 가능하게 만들어 냉동 보관이 필요 없습니다. 동결건조는 저온 진공 공정을 사용해 에어드라이보다 영양소를 더 잘 보존하는 경향이 있지만, 파운드당 비용은 대체로 더 높습니다.\n\n두 형태 모두 휴대가 간편하고, 건식 사료에 섞어 기호성을 높이는 생식 토퍼로도 훌륭하게 활용됩니다. 급여 전 따뜻한 물이나 본브로스로 수분을 보충하면 개의 조상이 섭취했던 야생 식단에 더 가까운 수분 함량을 회복할 수 있어, 요로 결정이나 신장 부담이 우려되는 반려견에게 특히 유용합니다.\n\n가장 중요하게 고려할 점은 칼로리당 비용입니다. 수분 무게가 제거된 만큼 농축된 영양을 구매하는 셈이므로, 대형견의 유일한 주식으로 사용하기보다는 토퍼나 로테이션 식단으로 활용되는 경우가 많습니다.",
+          "productKey": "ziwi-peak-beef-chicken-bundle",
+          "productNote": "평이 좋은 에어드라이 제품:"
+        },
+        {
+          "rank": "04",
+          "title": "고단백 그레인프리 & 고대곡물 건식 사료 (키블)",
+          "score": "78/100",
+          "pros": "상온 장기 보관이 가능하며 대형견이나 다견 가정에서 경제적인 선택지.",
+          "cons": "200℃ 이상의 고온 압출 제조로 수분이 8~10%에 불과하며 전분 탄수화물이 40~50% 함유됨.",
+          "readMore": "프리미엄 건식 사료는 많은 가정에서 여전히 가장 실용적인 선택지입니다. 최대 1년까지 상온 보관이 가능하고, 자동 급식기로 급여량 조절이 쉬우며, 화식이나 생식에 비해 칼로리당 비용이 훨씬 저렴합니다.\n\n이 등급에서 가장 우수한 제품들은 모호한 '육류 부산물' 대신 구체적인 동물성 단백질원을 주원료로 내세우고, 옥수수나 밀 같은 저가 충전재 대신 귀리나 수수 같은 고대곱물로 탄수화물원을 구성하며, 중금속 검사를 위한 제3자 실험실 테스트를 거칩니다.\n\n단점은 압출 공정 자체에 있습니다. 200℃ 이상의 고온에 노출되면 열에 민감한 일부 비타민이 파괴되고 수분 함량이 약 10%까지 낮아지는데, 이 때문에 수의사들은 건식 사료만 급여하는 경우, 특히 요로 결정이 우려되는 반려견에게는 본브로스나 생식 토퍼를 소량 추가할 것을 권장하는 경우가 많습니다.",
+          "productKey": "orijen-original-grain-free-23lb",
+          "productNote": "이 카테고리의 고단백 홀프레이 제품:"
+        },
+        {
+          "rank": "05",
+          "title": "수의사 처방 전문 치료식 사료",
+          "score": "72/100",
+          "pros": "만성 신부전, 간 질환, 결석증 등 특정 임상 질환 관리에 맞춤 배합.",
+          "cons": "공물성 충전재 비율이 높고 수의사의 처방이 필요함.",
+          "readMore": "처방식은 하나의 특정 진단 질환을 관리하기 위해 설계됩니다. 신장 질환에는 단백질과 인 함량을 낮춘 제품을, 심각한 음식 알레르기에는 면역계가 반응하지 않는 가수분해 단백질을, 스트루바이트 방광 결석에는 마그네슈과 pH를 조절한 제품을 사용하는 식입니다.\n\n일반적인 '건강함' 기준으로는 순위가 낮게 매겨지는 이유는 단순합니다. 평균적으로 건강한 개에게 최적화된 것이 아니라 의도적으로 제한적인 구성을 취하기 때문입니다. 예를 들어 신장 기능 저하를 완화하도록 설계된 제품은 의도적으로 시중에서 가장 단백질 함량이 높은 사료가 아닙니다.\n\n이러한 처방식은 수의사의 승인이 필요하며, 효과를 확인하기 위한 주기적인 혈액 검사가 동반되어야 합니다. 건강한 개에게 실제로 필요한 영양소를 제한하면 시간이 지나면서 해를 끼칠 수 있으므로, 임상적인 이유 없이 건강한 반려견에게 급여해서는 안 됩니다.",
+          "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+          "productNote": "수의사가 흔히 처방하는 신장 관리용 처방식:"
+        }
+      ],
+      "buyerGuideTitle": "최고의 사료를 선택하기 위한 4대 황금 원칙",
+      "buyerRules": [
+        {
+          "title": "1. 원재료 첫 번째 자리에 명확한 생육 표기",
+          "desc": "출처를 알 수 없는 ‘가금류 육골분’ 대신 ‘뼈를 바른 칠면조’, ‘소고기’, ‘생연어’가 명시되어 있는지 확인하세요.",
+          "readMore": "반려동물 사료 라벨의 원재료는 조리 전 무게가 무거운 순서대로 표기됩니다. '뼈를 바른 칠면조', '생소고기', '신선한 연어'처럼 구체적인 동물 명칭이 명시된 원육은 타우린, 아르기닌, 카르니틴 등 필수 아미노산을 가장 생체 이용률이 높은 형태로 제공합니다. '동물성 부산물', '육골분', '가금류 미ール'과 같이 모호한 일반 명칭은 출처를 알 수 없는 저급 렌더링 원료가 섞일 위험이 높으므로 피해야 합니다.\n\n또한 '원재료 쪼개기(Ingredient Splitting)' 꼼수도 주의 깊게 살펴야 합니다. 완두콩, 완두콩 전분, 완두콩 단백질처럼 탄수화물을 여러 항목으로 나누어 표기함으로써, 실제로는 탄수화물 비중이 더 높음에도 불구하고 고기가 첫 번째 성분인 것처럼 보이게 만드는 제조 방식이 있습니다.\n\n'탈수 양고기 분말'이나 '연어 미ール'처럼 구체적인 동물이 명시된 고품질 건조육은 제조 전 수분을 미리 제거한 상태이므로 투명하게 공개된 경우 훌륭한 고농축 동물성 단백질 공급원이 됩니다."
+        },
+        {
+          "title": "2. 70% 이상의 풍부한 수분 공급",
+          "desc": "수분 8~10%의 건식 사료만 먹는 개는 만성적인 미세 탈수 상태에 빠집니다. 수제 화식이나 뼈 육수를 꼭 섞어주세요.",
+          "readMore": "야생에서 개의 조상이 섭취하던 먹이 동물은 수분 함량이 70~75%에 달합니다. 개는 진화 과정에서 식사를 통해 직접 수분을 섭취해왔기 때문에 갈증을 느끼고 물을 찾아 마시는 반사 신경이 사람에 비해 둔합니다. 수분이 8~10%에 불과한 건식 사료만 급여하면 만성적인 미세 탈수 상태가 지속되기 쉽습니다.\n\n장기간 농축된 소변은 신장에 막대한 부담을 주며, 스트루바이트 및 옥살산칼슘 방광 결석이 발생하기에 가장 취약한 환경을 만듭니다.\n\n건식 사료를 먹일 때는 반드시 수분을 보충해주세요. 염분과 양파류가 없는 따뜻한 본브로스나 미온수를 1:1 비율로 붓거나, 수분이 풍부한 저온 조리 화식 토퍼를 함께 급여하면 신장과 요로 건강을 효과적으로 지킬 수 있습니다."
+        },
+        {
+          "title": "3. 화학 합성 방부제 및 인공 색소 배제",
+          "desc": "BHA, BHT, 에톡시퀸, 프로필렌글리콜 등 유해성이 지적된 합성 첨가물을 철저히 피하십시오.",
+          "readMore": "1~2년의 긴 유통기한을 확보하기 위해 저가 사료에는 BHA(부틸히드록시아니솔), BHT(부틸히드록시톨루엔), 에톡시퀸과 같은 합성 화학 산화방지제가 흔히 쓰입니다. 다수의 연구에서 BHA와 BHT는 발암 가능 물질 및 내분비계 교란 물질로 지목되었으며, 살충제 및 고무 안정제로 개발되었던 에톡시퀸은 간 손상과 심각한 알레르기 유발 위험이 보고되어 있습니다.\n\n또한 적색 40호, 황색 5호 같은 인공 색소는 사람의 시각적 만족만을 위한 불필요한 첨가물로, 민감한 개에게 피부 가려움증과 알레르기, 소화기 염증을 일으키는 주원인이 됩니다.\n\n반드시 혼합 토코페롤(비타민 E), 로즈마리 추출물, 구연산 등 천연 항산화제로 보존된 안전한 사료를 선택하십시오."
+        },
+        {
+          "title": "4. 탄수화물 함량을 25% 이하로 제어",
+          "desc": "개의 침에는 아밀라아제가 없습니다. 과도한 전분은 췌장에 무리를 주고 비만을 유발합니다.",
+          "readMore": "개는 통성 육식동물(facultative carnivore)로, 정제 탄수화물에 대한 생물학적 필수 요구량이 전혀 없습니다. 사람과 달리 개의 침에는 전분을 입안에서 분해하는 효소인 아밀라아제가 분비되지 않으므로, 섭취한 모든 탄수화물의 소화 부담은 고스란히 췌장에 집중됩니다.\n\n사료 라벨의 보증성분표에는 탄수화물 함량 표시 의무가 없기 때문에, 많은 일반 건식 사료는 알갱이(키블)를 물리적으로 팽창시키고 뭉치기 위해 옥수수, 밀, 감자 전분 등을 45~60%나 포함하고 있습니다.\n\n혈당을 급격히 높이는 고탄수화물 식단은 잦은 인슐린 분비, 만성 염증, 귓병, 췌장염 및 비만을 유발합니다. '100% − (조단백질 + 조지방 + 조섬유 + 수분 + 조회분)' 계산식을 통해 탄수화물 비율을 역산하고, 탄수화물이 25% 이하로 엄격히 관리된 사료를 고르세요."
+        }
+      ],
+      "ctaTitle": "우리 강아지 맞춤 사료의 일일 급여량을 계산해 보세요",
+      "ctaDesc": "자연 화식, 생식 BARF, 프리미엄 건식 사료 등 식단에 맞는 정확한 일일 급여량(g)과 칼로리를 확인할 수 있습니다.",
+      "ctaBtn": "맞춤 급여량 계산하기 →"
+    },
+    "recipes": {
+      "eyebrow": "맞춤 수제 자연식 & 생식 레시피",
+      "heroTitle": "강아지 수제 건강 자연식 레시피",
+      "heroSubtitle": "가정에서 손쉽게 조리할 수 있는 영양 균형 저온 화식과 자연의 법칙에 맞춘 80-10-10 생식 가이드.",
+      "calciumWarningTitle": "수제 사료 조리의 절대 원칙: 칼슘과 인의 균형",
+      "calciumWarningDesc": "순수 살코기는 인 함량이 매우 높고 칼슘은 거의 없습니다(비율 1:20). 칼슘 보충 없이 고기와 밥만 지속해서 먹이면 수개월 내에 심각한 골다공증과 뼈 탈회 질환이 발생합니다. 뼈 없는 살코기 450g당 반드시 순수 난각가루(계란껍질 분말) 반 티스푼(원소 칼슘 약 900mg)을 첨가하여 1.2:1의 칼슘:인 비율을 맞춰주세요.",
+      "recipesList": [
+        {
+          "tag": "저온 조리 화식",
+          "title": "레시피 1: 칠면조 & 프리바이오틱스 단호박 화식 (위장이 민감한 강아지용)",
+          "desc": "장 건강이 약하거나 무른 변을 자주 보는 아이, 시중 닭고기에 알레르기가 있는 강아지에게 적합합니다.",
+          "ingredients": [
+            "지방 제거 칠면조 분쇄육 (93/7) — 65% (약 900g)",
+            "칠면조 또는 소 심장 (천연 타우린 공급원) — 10% (약 140g)",
+            "순수 단호박 퓨레 (수용성 식이섬유) — 10% (약 140g)",
+            "살짝 찐 시금치 & 다진 애호박 — 10% (약 140g)",
+            "자연산 알래스카 연어오일 (EPA/DHA) — 2% (1.5 큰술)",
+            "미세 난각가루 (천연 칼슘 보충제) — 3% (1 작은술 듬뿍)"
+          ],
+          "prep": "칠면조 고기와 심장을 약불에서 살짝 익힙니다 (내부 온도 70℃ 유지). 채소를 쪄서 단호박과 함께 부드럽게 갈아줍니다. 모든 재료를 고루 섞은 후 완전히 식힙니다. 음식이 식은 후 연어오일과 난각가루를 골고루 섞어 소분 냉동합니다."
+        },
+        {
+          "tag": "생식 BARF",
+          "title": "레시피 2: 소고기 & 오리고기 80-10-10 천연 생식 식단",
+          "desc": "소화 기능이 건강하고 위산 분비가 원활한 성견을 위한 야생 비율의 완전 생식.",
+          "ingredients": [
+            "목초 사육 소고기 살코기 — 70%",
+            "소 심장 (L-카르니틴 및 코엔자임 Q10 풍부) — 10%",
+            "생 오리 목뼈 또는 닭 안심뼈 — 10% (천연 생뼈 및 칼슘)",
+            "소 간 (비타민 A 및 B군 복합체) — 5%",
+            "소 콩팥 또는 비장 (필수 분비 내장 기관) — 5%"
+          ],
+          "prep": "살코기와 심장을 강아지 한 입 크기로 자릅니다. 생뼈는 삼키지 않도록 체급에 맞게 고릅니다. 내장 기관을 주방 저울로 정밀하게 계량합니다. 모든 생식 재료는 급여 전 영하 20℃ 이하에서 최소 3주간 냉동 보관하여 기생충을 예방합니다."
+        },
+        {
+          "tag": "슈퍼푸드 토퍼",
+          "title": "레시피 3: 80/20 항산화 슈퍼푸드 사료 영양 토핑",
+          "desc": "기존 건식 사료 칼로리의 20%를 신선한 자연 식재료로 대체하여 활력을 불어넣는 토퍼.",
+          "ingredients": [
+            "방사 유정란 반숙 수란 — 40%",
+            "살짝 찐 브로콜리 새싹 & 야생 블루베리 — 30%",
+            "푹 고아낸 한우 사골 뼈 육수 — 20%",
+            "유기농 헴프씨드 & 켈프 해조 분말 — 10%"
+          ],
+          "prep": "달걀을 4분간 삶아 반숙으로 준비합니다. 채소를 3분간 살짝 찝니다. 미온의 사골 육수와 블루베리를 함께 으깬 뒤, 매 끼니 기존 사료 위에 2~4큰술을 얹어 급여합니다."
+        }
+      ],
+      "calciumGuideTitle": "수제 사료에 안전하게 사용할 수 있는 칼슘 급원",
+      "calciumGuideItems": [
+        {
+          "title": "순수 난각가루 (계란껍질 분말)",
+          "ratio": "뼈 없는 고기 450g당 1/2 작은술",
+          "desc": "순도 95%의 탄산칼슘. 세척 후 오븐에서 살균 건조하여 믹서기로 곱게 갈아 만듭니다."
+        },
+        {
+          "title": "가열하지 않은 신선한 생뼈",
+          "ratio": "전체 식단 무게의 10%",
+          "desc": "오리 목뼈, 닭 날개 등. 익힌 뼈는 단단해져 유리조각처럼 깨져 식도와 장을 찢을 수 있으므로 절대 익히지 마십시오."
+        },
+        {
+          "title": "수의사 전용 골분 영양제 (Bone Meal)",
+          "ratio": "제조사 권장량 준수",
+          "desc": "천연 2:1 비율로 칼슘과 인이 배합된 미세 결정 하이드록시아파타이트 분말."
+        }
+      ]
+    },
+    "toxic": {
+      "eyebrow": "응급 안전 // 강아지에게 치명적인 위험 음식",
+      "dangerTitle": "가정 내에서 강아지에게 가장 위험한 치명적 음식",
+      "dangerIntro": "사람에게는 안전하지만 개의 체내 효소로는 해독할 수 없어 급성 장기 부전이나 사망을 초래하는 유해 음식들입니다.",
+      "dangerList": [
+        {
+          "name": "초콜릿 및 코코아 가공품",
+          "toxin": "테오브로민 및 카페인",
+          "symptoms": "구토, 과호흡(헐떡임), 심장 빈맥, 근육 떨림, 전신 발작 및 급성 심부전.",
+          "risk": "매우 높음 / 치사율 높음"
+        },
+        {
+          "name": "포도, 건포도 및 청포도",
+          "toxin": "타르타르산 (주석산)",
+          "symptoms": "기력 저하, 탈수, 섭취 후 24~72시간 이내에 영구적인 급성 신부전 유발.",
+          "risk": "극도로 위험 / 사망 위험"
+        },
+        {
+          "name": "자일리톨 (인공 감미료 / E967)",
+          "toxin": "합성 당알코올",
+          "symptoms": "급격한 인슐린 폭발 분비로 인한 심각한 저혈당 쇼크, 몇 시간 내 급성 간 괴사.",
+          "risk": "초응급 상황"
+        },
+        {
+          "name": "양파, 마늘, 파, 부추류",
+          "toxin": "유기황 화합물 (알릴 프로필 디설파이드)",
+          "symptoms": "적혈구 헤모글로빈 파괴, 하인츠 소체 용혈성 빈혈, 붉은 혈뇨, 호흡곤란.",
+          "risk": "지속적인 축적 독성"
+        },
+        {
+          "name": "마카다미아 너트",
+          "toxin": "미확인 신경독소",
+          "symptoms": "후지(뒷다리) 마비 및 비틀거림, 고열, 구토, 극심한 관절 통증.",
+          "risk": "중등도 ~ 중증"
+        },
+        {
+          "name": "조리된 모든 종류의 뼈",
+          "toxin": "물리적 장기 파열 위험",
+          "symptoms": "식도 천공, 위장관 파열, 내부 출혈, 복막염, 급성 장폐색.",
+          "risk": "외과적 응급 개복수술 필요"
+        }
+      ],
+      "emergencyTitle": "음식 중독 사고 발생 시 응급 대처 수칙",
+      "emergencySteps": [
+        "1. 즉시 격리 및 음식물 수거: 무엇을, 언제, 얼마만큼 섭취했는지 정확한 포장지와 잔여물을 확인하십시오.",
+        "2. 수의사의 지시 없이 억지로 구토를 유도하지 마십시오: 부식성 물질이나 날카로운 뼈는 토해내는 과정에서 식도를 손상시킵니다.",
+        "3. 지체 없이 동물병원으로 이동: 인근 24시간 동물 응급센터에 전화하여 상태를 미리 알리고 즉시 내원하십시오."
+      ],
+      "safeTitle": "강아지가 먹어도 100% 안전하고 유익한 과일 & 채소",
+      "safeIntro": "다음 식재료는 천연 항산화제, 수용성 프리바이오틱스, 비타민이 풍부하여 매일 토핑으로 주기에 안전합니다:",
+      "safeFoods": [
+        {
+          "name": "블루베리",
+          "benefit": "풍부한 안토시아닌과 폴리페놀이 세포 노화를 억제하고 뇌 건강을 돕습니다."
+        },
+        {
+          "name": "찐 단호박",
+          "benefit": "풍부한 수용성 식이섬유가 설사와 변비를 모두 완화하고 소화를 돕습니다."
+        },
+        {
+          "name": "당근",
+          "benefit": "베타카로틴이 풍부한 저칼로리 간식으로 아삭한 저작 작용을 통해 치아 건강에 기여합니다."
+        },
+        {
+          "name": "삶은 껍질콩 (그린빈)",
+          "benefit": "포만감을 주는 훌륭한 저혈당 채소로 다이어트가 필요한 아이들에게 이상적입니다."
+        },
+        {
+          "name": "사과 (씨앗과 심지 완전 제거)",
+          "benefit": "비타민 C와 장내 유익균의 먹이가 되는 펙틴이 풍부합니다."
+        }
+      ]
+    },
+    "brands": {
+      "eyebrow": "사료 브랜드 객관적 리뷰 및 리콜 이력",
+      "heroTitle": "인기 사료 브랜드 검증 및 안전 리콜 기록",
+      "heroSubtitle": "엄격한 영양 기준에 따라 주요 상업용 사료의 원료 성분, AAFCO 표기 준수 여부, 리콜 이력을 엄격하게 검증합니다.",
+      "brandsList": [
+        {
+          "name": "블루 버팔로 (Blue Buffalo)",
+          "grade": "평가: B+",
+          "pros": "제1원료로 생육 사용; 옥수수·밀·대두 무첨가; 비타민을 보존하는 냉압착 라이프소스 비츠 배합.",
+          "cons": "탄수화물 비율이 45~50%로 다소 높음; 과거 수분 과다 곰팡이 및 비타민 D 초과로 인한 리콜 이력 존재.",
+          "verdict": "시중 건식 사료 중에서는 상위권. 부족한 수분을 보충하기 위해 신선한 화식 토핑을 20% 병행하는 것을 권장."
+        },
+        {
+          "name": "레이첼레이 뉴트리쉬",
+          "grade": "평가: C+ / B-",
+          "pros": "합리적인 가격대; 상위 라인업(Peak/Dish)은 실제 고기 함량을 대폭 개선함.",
+          "cons": "보급형 라인은 완두콩 단백질과 옥수수 글루텐에 과도하게 의존하며, FDA 심근병증(DCM) 조사 대상에 포함된 바 있음.",
+          "verdict": "가성비 위주 선택 시 상위 라인을 고르고 원재료 라벨의 콩류 분할 표기를 반드시 확인해야 함."
+        },
+        {
+          "name": "퓨어 밸런스 (Pure Balance)",
+          "grade": "평가: B (최고의 가성비)",
+          "pros": "탁월한 가격 대비 성능; 인공 색소나 저급 밀가루 없이 육류 중심의 기본에 충실한 배합.",
+          "cons": "OEM 외주 생산; 평균적인 탄수화물 함량.",
+          "verdict": "대형 마트에서 구할 수 있는 상업용 사료 중 가장 양심적이고 실속 있는 선택지 중 하나."
+        },
+        {
+          "name": "올리 (Ollie) 신선 맞춤 화식",
+          "grade": "평가: A (최우수)",
+          "pros": "100% 휴먼그레이드 육류와 채소; 저온 스팀 조리; 개별 체중에 맞춘 맞춤형 진공 소분 팩.",
+          "cons": "고가의 구독 비용(월 20~40만 원 상당); 냉동실 보관 공간 필요.",
+          "verdict": "대사 활력, 모질의 윤기, 소화기 건강수명을 극대화하고자 하는 보호자를 위한 최고의 기준."
+        },
+        {
+          "name": "오픈 팜 (Open Farm)",
+          "grade": "평가: A-",
+          "pros": "모든 식재료의 농장 및 어장 출처 100% 투명 공개; 동물 복지 인증 육류 및 지속 가능한 어류 사용.",
+          "cons": "프리미엄 가격대; 오프라인 매장 접근성이 낮음.",
+          "verdict": "원료의 윤리적 출처, 높은 육류 비율, 가금류 부산물 무첨가를 중요시하는 보호자에게 최적."
+        }
+      ],
+      "recallsTitle": "사료 안전 리콜 기준 바로 알기",
+      "recallsDesc": "FDA 리콜은 3단계로 나뉩니다: 클래스 I (살모넬라균 감염, 비타민 D 치사량 등 생명을 위협하는 중대 사안), 클래스 II (일시적 건강 이상), 클래스 III (단순 라벨 표기 위반). 구매한 사료 포대의 제조 로트 번호를 주기적으로 확인하세요.",
+      "methodTitle": "당사의 4대 사료 평가 기준",
+      "methodPillars": [
+        {
+          "title": "1. 단백질 원료의 투명성",
+          "desc": "모호한 ‘육골분’이 아닌 명확한 부위가 적힌 뼈를 바른 온전한 고기."
+        },
+        {
+          "title": "2. 탄수화물 함량 제한",
+          "desc": "비만과 췌장 부담을 예방하기 위해 전분 함유량을 40% 미만으로 억제."
+        },
+        {
+          "title": "3. 원산지 및 유통 추적성",
+          "desc": "비유전자변형(Non-GMO) 및 동물 복지 인증 농장 원료 확인."
+        },
+        {
+          "title": "4. 안전 검사 및 리콜 기록",
+          "desc": "공인 연구기관의 정기 미생물 검사 및 안전한 위생 공정 유지."
+        }
+      ]
+    },
+    "allergies": {
+      "eyebrow": "식이 알레르기 가이드 // 알레르기 및 제한 급여",
+      "heroTitle": "알레르기 및 민감성 장을 가진 강아지를 위한 사료 가이드",
+      "heroSubtitle": "단일 단백질(노벨 프로틴) 선택법과 8주간의 배제 식이 시험 프로토콜 안내.",
+      "allergensTitle": "강아지에게 가장 흔한 5대 식이 알레르겐",
+      "allergensIntro": "개의 음식 알레르기는 특정 단백질 분자에 대한 면역계의 과민 반응입니다. 임상 빈도순으로 나열하면 다음과 같습니다:",
+      "allergensList": [
+        {
+          "name": "1. 공장식 사육 닭고기 (전체 사례의 60%)",
+          "desc": "시중 펫푸드에 가장 흔하게 쓰이므로 체내 항체가 가장 많이 생성된 제1의 알레르겐입니다."
+        },
+        {
+          "name": "2. 상업용 소고기 (전체 사례의 30%)",
+          "desc": "예민한 아이들에게 심한 발 핥기(지간염)와 만성 외이도염을 일으키는 대표적 붉은 살코기."
+        },
+        {
+          "name": "3. 유제품 및 치즈류",
+          "desc": "성견은 젖당 분해 효소가 결핍되어 있어 삼투성 설사와 복부 팽만을 유발합니다."
+        },
+        {
+          "name": "4. 밀 및 옥수수 글루텐",
+          "desc": "장 점막 장벽을 손상시키고 체내 만성 염증과 효모균(말라세치아) 증식을 촉진합니다."
+        },
+        {
+          "name": "5. 대두 및 콩류 단백질",
+          "desc": "저가 충전재로 자주 쓰이지만 장내 이상 발효와 피부 가려움증을 유발합니다."
+        }
+      ],
+      "eliminationTitle": "표준 8주 배제 식이 시험 (엘리미네이션 다이어트)",
+      "eliminationSteps": [
+        {
+          "step": "1단계",
+          "title": "단 한 번도 먹어본 적 없는 신기 단백질 선정",
+          "desc": "사슴고기, 토끼고기, 캥거루고기 등 지금까지 한 번도 접해보지 않은 단일 육류와 단호박 같은 소화 잘되는 단일 탄수화물로 제한합니다."
+        },
+        {
+          "step": "2단계",
+          "title": "엄격한 교차 오염 차단 (연속 8주)",
+          "desc": "8주 동안 오직 지정된 단일 식단과 물만 급여합니다. 시중 간식, 식탁 잔반, 향료가 첨가된 영양제도 전면 금지합니다."
+        },
+        {
+          "step": "3단계",
+          "title": "원인 물질 단일 재도전 시험",
+          "desc": "가려움증이 완전히 가라앉으면, 의심되는 단백질(예: 닭고기)을 7일간 소량 먹여 반응을 살핍니다. 증상이 재발하면 알레르기가 확진됩니다."
+        }
+      ],
+      "novelTitle": "추천 저알레르기 신기 단백질 (Novel Proteins)",
+      "novelProteins": [
+        {
+          "name": "사슴고기 (베니슨)",
+          "desc": "지방이 적고 영양 밀도가 높으며 개들이 항체를 거의 가지고 있지 않은 훌륭한 붉은 고기."
+        },
+        {
+          "name": "토끼고기",
+          "desc": "알레르기 유발 가능성이 극히 낮고 아미노산 조성이 뛰어나며 소화 흡수율이 우수합니다."
+        },
+        {
+          "name": "오리고기",
+          "desc": "일반 닭고기에 과민 반응을 보이는 아이들을 위한 안전하고 기호성 높은 대체 조류 육류."
+        },
+        {
+          "name": "캥거루고기",
+          "desc": "야생에서 서식하여 지방 함량이 2% 내외로 극히 낮고 청정한 최고급 저알레르기 단백질."
+        }
+      ]
+    },
+    "calculator": {
+      "eyebrow": "100% 무료 // 급여량 & 칼로리 계산기",
+      "noticeTitle": "안내사항:",
+      "noticeText": "본 계산기는 영양학적 교육 및 참고용입니다. 수의사의 임상 진료를 대신할 수 없습니다.",
+      "heroTitle": "강아지 일일 사료 급여량 및 칼로리 계산기",
+      "heroSubtitle": "반려견의 체중, 연령, 활동량, 체형(BCS)을 입력하여 과학적 휴지기 대사량(RER)과 유지 에너지 요구량(MER), 끼니별 정밀 급여량(g)을 확인하세요."
+    },
+    "breeds": {
+      "eyebrow": "견종별 맞춤 영양 가이드 // 수의학 권장 급여량",
+      "targetWeight": "목표 체중",
+      "dailyCalories": "일일 권장 칼로리",
+      "freshDaily": "자연 화식 1일량",
+      "kibbleDaily": "건식 사료 1일량",
+      "cups": "컵",
+      "reqsTitle": "{name} 견종의 영양 요구량 및 특성",
+      "reqsIntro": "평균 체중이 {w0}~{w1} lbs(약 {Math.round(w0*0.453)}~{Math.round(w1*0.453)} kg)인 {category} 체급의 {name} 견종은 고유의 체질에 맞는 영양 밸런스가 필요합니다:",
+      "predispositionsTitle": "주의해야 할 체질 및 건강 소인:",
+      "feedingRoutineTitle": "권장 식사 루틴:",
+      "feedingRoutineDesc": "성견 {name}은 하루 2회(아침 50%, 저녁 50%)로 나누어 규칙적으로 급여하세요. 항상 깨끗한 물을 준비해 주시고, 건식 사료를 먹일 때는 따뜻한 뼈 육수나 미온수를 부어 불려주면 신장 결석을 예방할 수 있습니다.",
+      "ctaTitle": "{name} 맞춤형 식단 플랜 생성하기",
+      "ctaSubtitle": "자견기, 성견, 노령견 단계와 실제 체중, 활동량, 중성화 여부에 맞는 정밀 급여량을 계산해 보세요.",
+      "ctaBtn": "{name} 계산기 시작하기 →",
+      "faqTitle": "{name} 식단 관련 자주 묻는 질문",
+      "faqSubtitle": "적정 식사 횟수, 체중 관리법, 추천 식재료 안내."
+    },
+    "comparisonTable": {
+      "eyebrow": "영양 비교 // 자연 화식 VS 일반 건식 사료",
+      "title": "자연 원물 식단이 건식 사료보다 생물학적으로 우수한 이유",
+      "subtitle": "가공 열처리 온도, 급여량의 정밀도, 실제 월간 사료비를 임상적으로 비교 분석 — 5년간의 반려견 수명 연구에서 신선한 자연식을 급여한 반려견이 최대 32개월 더 오래 생존한 핵심 원인 변수들입니다.",
+      "scrollHint": "↔ 표를 좌우로 스크롤하여 확인하세요",
+      "colMetric": "영양·임상 분석 지표",
+      "colDfp": "✨ DogFoodPlanner",
+      "colSubs": "화식 정기구독 서비스",
+      "colKibble": "일반 건식 사료 (키블)",
+      "rows": [
+        {
+          "metric": "가공 및 조리 방식",
+          "dfp": "저온 스팀 조리 (~74℃) 또는 생식 — 효소 활성 유지",
+          "subs": "수비드 저온 조리 후 급속 냉동",
+          "kibble": "200℃ 이상의 초고온 압출 팽창 가공"
+        },
+        {
+          "metric": "급여량 정밀도",
+          "dfp": "체중·연령·활동량에 맞춘 RER/MER 대사 계산으로 정확한 g 단위 산출",
+          "subs": "체중 범위별 고정 급여량 차트",
+          "kibble": "사료 포장지 표준 권장량 — 권장 칼로리를 20~30% 과대평가"
+        },
+        {
+          "metric": "순 탄수화물 함량",
+          "dfp": "< 5% (필수 채소 식이섬유만, 전분 충전재 제로)",
+          "subs": "10% – 20%",
+          "kibble": "45% – 60% (옥수수·밀·완두콩 전분 충전재)"
+        },
+        {
+          "metric": "생체 수분 함유량",
+          "dfp": "70% – 75% (신장 및 비뇨기 수분 공급 최적화)",
+          "subs": "70% – 75%",
+          "kibble": "8% – 10% (만성적인 잠재적 탈수 유발)"
+        },
+        {
+          "metric": "영양소 보존율",
+          "dfp": "산화 최소화 — 오메가-3 지방산 및 천연 효소 보존",
+          "subs": "보통 수준 — 일부 열 민감성 영양소 변성",
+          "kibble": "압출 고열로 인한 지방 산패 및 최종당화산물(AGEs) 형성"
+        },
+        {
+          "metric": "원재료 투명성",
+          "dfp": "100% 정밀 그램(g) 및 배합 비율 공개 — 보호자가 직접 통제",
+          "subs": "독자 배합비 (상세 배합률 비공개)",
+          "kibble": "원재료 쪼개기 표기 및 모호한 '육골분/가금부산물' 표기"
+        },
+        {
+          "metric": "월평균 예상 식비 (23kg 성견 기준)",
+          "dfp": "약 11만 – 18만 원 (직접 장보기 식재료 기준)",
+          "subs": "약 35만 – 60만 원 / 월",
+          "kibble": "약 8만 – 14만 원 / 월"
+        }
+      ]
+    },
+    "faqPage": {
+      "badge": "나레ッジ 베이스 // 수의사 검증 40여 개 답변",
+      "exploreHubsTitle": "전문 영양 심층 가이드 살펴보기",
+      "exploreHubsSubtitle": "반려견의 건강수명과 활력을 높이고자 하는 보호자님들을 위한 전문 분야별 가이드.",
+      "cardBestFood": "자연 화식, 생식 BARF, 고단백 사료, 장이 예민한 아이를 위한 푸드 완벽 비교.",
+      "cardCalc": "반려견의 안정시 대사량(RER)과 유지 칼로리를 바탕으로 한 정밀 급여량 계산기.",
+      "cardRecipes": "필수 칼슘 균형을 완벽히 맞춘 저온 조리 화식 및 80-10-10 생식 레시피.",
+      "cardAllergies": "저알레르기 신기 단백질 선택법과 8주간의 배제 식이 시험 프로토콜.",
+      "cardToxic": "반려견에게 치명적인 위험 음식 총정리 및 안전한 과일·채소 급여 기준.",
+      "cardBrands": "블루 버팔로, 뉴트리쉬, 퓨어밸런스, 올리 등 인기 사료 브랜드 객관적 리뷰."
+    },
+    "faqSingle": {
+      "reviewedBy": "검증: DogFoodPlanner 편집팀",
+      "updated": "최신 업데이트: 2026년",
+      "directQuickAnswer": "핵심 요약 답변",
+      "clinicalAnalysis": "상세 영양학적 분석",
+      "topics": "관련 주제:",
+      "ctaBadge": "🐾 무료 반려견 영양 엔진",
+      "ctaTitle": "우리 강아지에게 필요한 정확한 칼로리와 식사량을 계산하세요",
+      "ctaSubtitle": "사료량 계산기를 사용하여 대사 소비량(RER/MER)을 확인하고 맞춤 화식 또는 생식 급여량을 확인해 보세요.",
+      "ctaBtn": "지금 급여량 계산하기 →",
+      "relatedTitle": "관련 반려견 영양 Q&A",
+      "readAnswer": "답변 전체 읽기 →",
       "referencedInAnswer": "이 답변에서 참조된 제품",
       "buyNow": "지금 구매"
+    },
+    "bestFoodSingle": {
+      "rankBadge": "건강 사료 TOP 5 // 순위",
+      "reviewedBy": "검증: DogFoodPlanner 편집팀",
+      "nutritionalScore": "영양 점수",
+      "strengths": "장점",
+      "tradeoffs": "단점",
+      "fullBreakdown": "상세 분석",
+      "exampleProduct": "이 카테고리의 예시 제품",
+      "previousRank": "이전 순위",
+      "nextRank": "다음 순위",
+      "backToRanking": "TOP 5 전체 랭킹으로 돌아가기",
+      "viewOnAmazon": "아마존에서 보기"
+    }
   },
-  "bestFoodSingle": {
-    "rankBadge": "건강 사료 TOP 5 // 순위",
-    "reviewedBy": "검증: DogFoodPlanner 편집팀",
-    "nutritionalScore": "영양 점수",
-    "strengths": "장점",
-    "tradeoffs": "단점",
-    "fullBreakdown": "상세 분석",
-    "exampleProduct": "이 카테고리의 예시 제품",
-    "previousRank": "이전 순위",
-    "nextRank": "다음 순위",
-    "backToRanking": "TOP 5 전체 랭킹으로 돌아가기",
-    "viewOnAmazon": "아마존에서 보기"
-  }
-},
-  it: {
-  "about": {
-    "heroTitle": "Su DogFoodPlanner: Piani Pasto per Cani in Tutta Semplicità",
-    "heroSubtitle": "Scopri DogFoodPlanner.com, la nostra missione e come funziona il nostro calcolatore gratuito di pappa per cani.",
-    "missionBadge": "LA NOSTRA MISSION // PIANI PASTO PER CANI",
-    "whyTitle": "Perché è Nato DogFoodPlanner",
-    "whyP1": "Abbiamo creato DogFoodPlanner per aiutare i proprietari di cani a pianificare pasti e porzioni con sicurezza. Analizziamo le linee guida pubbliche per trasformarle in strumenti e guide semplici e gratuiti.",
-    "whyP2": "",
-    "whoTitle": "Chi Siamo",
-    "whoContent": "DogFoodPlanner è un sito web indipendente gestito da ricercatori e scrittori amanti dei cani. Non siamo veterinari. Consulta sempre il tuo medico veterinario prima di modificare la dieta del tuo cane, soprattutto per cuccioli, cani anziani o con patologie pregresse.",
-    "methodTitle": "La Nostra Metodologia Nutrizionale",
-    "pillars": [
-      {
-        "tag": "01 // STIMA DELLE CALORIE",
-        "title": "Stima delle Calorie",
-        "desc": "Il nostro calcolatore utilizza la formula standard del Fabbisogno Energetico a Riposo (70 × peso corporeo in kg^0,75) e comuni moltiplicatori di attività per stimare le calorie giornaliere."
-      },
-      {
-        "tag": "02 // FONTI DI RIFERIMENTO",
-        "title": "Fonti di Riferimento",
-        "desc": "Ci basiamo su linee guida pubblicate da fonti autorevoli come AAFCO e il National Research Council. I nostri contenuti hanno scopo educativo e non sostituiscono il parere di un professionista."
-      },
-      {
-        "tag": "03 // TRASPARENZA",
-        "title": "Trasparenza",
-        "desc": "Alcune pagine contengono link di affiliazione, compresi i link Amazon Associates. Se effettui un acquisto tramite essi potremmo ricevere una piccola commissione senza alcun costo aggiuntivo per te. Questo non influenza in alcun modo i nostri consigli."
-      }
-    ],
-    "ctaTitle": "Pronto a Calcolare i Fabbisogni del Tuo Cane?",
-    "ctaDesc": "Prova il nostro calcolatore interattivo, consulta le guide sulle allergie canine e leggi le nostre guide sul cibo per cani.",
-    "ctaBtn": "Avvia il Calcolatore Gratuito →",
-    "amazonDisclaimer": "In qualità di Affiliato Amazon, riceviamo un guadagno dagli acquisti idonei."
-  },
-  "contact": {
-    "eyebrow": "SUPPORTO E CONTATTO // RICHIESTE DIRETTE",
-    "cards": [
-      {
-        "icon": "📧",
-        "title": "Informazioni Generali",
-        "desc": "Domande e suggerimenti:",
-        "email": "hello@dogfoodplanner.com"
-      },
-      {
-        "icon": "🐾",
-        "title": "Ricerca Nutrizionale",
-        "desc": "Quesiti su formule e ricette:",
-        "email": "research@dogfoodplanner.com"
-      },
-      {
-        "icon": "🛡️",
-        "title": "Supporto Tecnico",
-        "desc": "Segnalazione bug e calcoli:",
-        "email": "legal@dogfoodplanner.com"
-      }
-    ],
-    "formTitle": "Invia un Messaggio al Nostro Team Nutrizionale",
-    "formDesc": "Hai dubbi sulle formule caloriche NRC o desideri un chiarimento su una ricetta BARF? Rispondiamo entro 24 ore lavorative.",
-    "nameLabel": "Il Tuo Nome",
-    "namePlaceholder": "es. Marco Rossi",
-    "emailLabel": "Il Tuo Indirizzo Email",
-    "emailPlaceholder": "marco@example.it",
-    "subjectLabel": "Argomento del Messaggio",
-    "subjectOptions": [
-      "Domanda Generale / Feedback",
-      "Nutrizione Canina e Ricette",
-      "Formula del Calcolatore",
-      "Segnalazione di Errore"
-    ],
-    "messageLabel": "Il Tuo Messaggio",
-    "messagePlaceholder": "Raccontaci del tuo cane (razza, peso, età) e come possiamo aiutarti...",
-    "submitBtn": "Invia Messaggio →",
-    "notice": "Avviso di Emergenza Veterinaria: Se il tuo cane manifesta sintomi acuti di avvelenamento o sofferenza severa, contatta immediatamente il pronto soccorso veterinario più vicino.",
-    "faqTitle": "Cerchi risposte immediate?",
-    "faqDesc": "Consulta la nostra raccolta di oltre 40 risposte su inappetenza, dieta BARF, cibo per gatti e marche industriali.",
-    "faqBtn": "Consulta Tutte le FAQ →",
-    "successTitle": "✓ Messaggio preparato — invio a hello@dogfoodplanner.com",
-    "successDesc": "Il tuo client di posta dovrebbe aprirsi con un messaggio pre-compilato indirizzato a hello@dogfoodplanner.com. Premi semplicemente Invia nella tua app di posta e arriverà nella nostra casella di posta."
-  },
-  "privacy": {
-    "eyebrow": "INFORMATIVA SULLA PRIVACY // PROTEZIONE DATI",
-    "lastUpdated": "Aggiornato al: 13 ottobre 2026",
-    "intro": "Su DogFoodPlanner.com rispettiamo la tua privacy e proteggiamo i tuoi dati personali. Questa informativa descrive come gestiamo le informazioni.",
-    "sections": [
-      {
-        "title": "1. Informazioni che non raccogliamo",
-        "content": "I dati sulla salute del tuo cane appartengono a te. Non richiediamo alcuna registrazione, password né carta di credito per utilizzare il nostro calcolatore di cibo per cani. I profili dei cani, i pesi corporei e le selezioni dei pasti inseriti nel calcolatore vengono elaborati lato client nel tuo browser e non vengono salvati in database esterni."
-      },
-      {
-        "title": "2. Dati tecnici anonimi di navigazione",
-        "content": "I nostri server CDN registrano in modo anonimo i normali log di connessione (indirizzo IP anonimizzato, tipo di browser, pagina di provenienza e data/ora) per garantire la sicurezza del sito e prevenire attacchi informatici."
-      },
-      {
-        "title": "3. Cookie e memoria locale (localStorage)",
-        "content": "Utilizziamo il localStorage per ricordare la lingua e il piano pasti sul tuo dispositivo. Se fai clic su un link di affiliazione, il sito di terze parti (come Amazon) potrebbe impostare i propri cookie."
-      },
-      {
-        "title": "4. Link di Terze Parti",
-        "content": "Il nostro sito contiene link di riferimento a ricerche pubblicate, standard AAFCO, database del NRC e risorse esterne. Non siamo responsabili delle pratiche sulla privacy o dei contenuti dei siti web di terze parti."
-      },
-      {
-        "title": "5. Informativa sulle Affiliazioni",
-        "content": "DogFoodPlanner partecipa al Programma Affiliazione Amazon Services LLC. In qualità di Affiliato Amazon, riceviamo un guadagno dagli acquisti idonei, senza alcun costo aggiuntivo per te."
-      },
-      {
-        "title": "6. Protezione dei Minori",
-        "content": "I nostri contenuti e strumenti sono rivolti a persone adulte. Non raccogliamo consapevolmente informazioni di minori di 13 anni."
-      },
-      {
-        "title": "7. Aggiornamenti e Contatti",
-        "content": "Questa policy può essere periodicamente aggiornata. Per ogni richiesta, scrivi a privacy@dogfoodplanner.com."
-      }
-    ]
-  },
-  "terms": {
-    "eyebrow": "TERMINI E CONDIZIONI DI SERVIZIO",
-    "lastUpdated": "Aggiornato a: Gennaio 2026",
-    "intro": "Ti preghiamo di leggere attentamente questi Termini di Servizio prima di utilizzare DogFoodPlanner.com. L’accesso al sito implica la loro integrale accettazione.",
-    "sections": [
-      {
-        "title": "1. Accettazione dei Termini",
-        "content": "Accedendo e utilizzando DogFoodPlanner.com (il \"Sito\"), dichiari di aver letto, compreso e accettato i presenti Termini e Condizioni. Qualora non fossi d’accordo, ti invitiamo a interrompere immediatamente l’uso."
-      },
-      {
-        "title": "2. Disclaimer Medico e Veterinario",
-        "content": "Le informazioni, i calcolatori e le ricette presenti su DogFoodPlanner.com hanno finalità puramente educative e divulgative fondate sui modelli NRC e FEDIAF. NON costituiscono in alcun modo diagnosi clinica, consulenza medica o terapia personalizzata. Rivolgiti sempre a un medico veterinario o a un nutrizionista per animali prima di apportare cambiamenti radicali alla dieta del tuo cane."
-      },
-      {
-        "title": "3. Utilizzo dei Calcolatori Interattivi",
-        "content": "Tutti i calcoli calorici (RER e MER) e i grammi raccomandati rappresentano stime matematiche teoriche. Il metabolismo reale varia in base a sterilizzazione, clima e fattori genetici. È dovere del proprietario verificare il Body Condition Score (BCS) e calibrare le dosi."
-      },
-      {
-        "title": "4. Sicurezza delle Diete Casalinghe e Integrazione del Calcio",
-        "content": "La preparazione di cibo casalingo o crudo impone la copertura totale di tutti i micronutrienti. Nutrire i cani con sola carne disossata e carboidrati senza integrazione di calcio causa demineralizzazione ossea grave in pochi mesi. L’utente assume la piena responsabilità della formulazione dei pasti."
-      },
-      {
-        "title": "5. Diritti di Proprietà Intellettuale",
-        "content": "Tutti i contenuti, i codici dei calcolatori, le interfacce grafiche e gli articoli su DogFoodPlanner.com sono protetti da copyright e appartengono in via esclusiva a DogFoodPlanner."
-      },
-      {
-        "title": "6. Limitazione di Responsabilità",
-        "content": "DogFoodPlanner.com e i suoi autori non saranno responsabili per eventuali danni diretti o indiretti derivanti dall’utilizzo delle informazioni e degli strumenti messi a disposizione."
-      }
-    ]
-  },
-  "bestFood": {
-    "eyebrow": "GUIDA COMPLETA // MIGLIOR CIBO PER CANI 2026",
-    "rankingsTitle": "Quali Sono i 5 Cibi Più Sani per Cani nel 2026?",
-    "rankingsIntro": "La ricerca veterinaria sulla longevità canina conferma che una lavorazione termica minima e un’idratazione biologica superiore al 70% sono i due fattori più determinanti per la vitalità e la salute dei reni.",
-    "readMoreLabel": "Leggi di più →",
-    "readLessLabel": "Mostra meno ↑",
-    "rankings": [
-      {
-        "rank": "01",
-        "title": "Cibo Fresco Casalingo Cotto a Bassa Temperatura di Grado Umano",
-        "score": "98/100",
-        "pros": "Vera carne e verdure cotte dolcemente a 70°C. Mantiene oltre il 70% di idratazione naturale, enzimi attivi e vitamine intatte.",
-        "cons": "Richiede conservazione in frigo o freezer. Costo leggermente superiore alle crocchette da supermercato.",
-        "readMore": "Il cibo fresco cotto delicatamente si posiziona al primo posto della classifica perché riproduce un pasto casalingo senza sacrificare la sicurezza alimentare. Gli ingredienti provengono da stabilimenti per alimenti destinati al consumo umano ispezionati dalle autorità sanitarie, poi vengono cotti a bassa temperatura (circa 70°C) solo per il tempo necessario a eliminare i patogeni, preservando al contempo proteine delicate, taurina e vitamine del gruppo B idrosolubili che l'estrusione ad alta temperatura distrugge.\n\nPoiché l'alimento contiene già oltre il 70% di umidità, allevia il carico di lavoro renale e riduce la lieve disidratazione cronica tipica delle diete a base di sole crocchette. È una scelta particolarmente indicata per cani in convalescenza, anziani con uno stimolo della sete ridotto o razze predisposte a sensibilità alimentari, dato che le ricette sono generalmente monoproteiche e prive di farine di carne animale o conservanti sintetici.\n\nIl principale compromesso riguarda la logistica: richiede spazio in frigorifero o freezer e le porzioni devono essere scongelate in anticipo rispetto al pasto. Se non si è pronti a cucinarlo autonomamente, diversi marchi che utilizzano cucine certificate per uso umano vendono versioni a lunga conservazione dello stesso formato cotto delicatamente, un modo semplice per provare questa categoria prima di impegnarsi in una routine completamente casalinga.",
-        "productKey": "justfoodfordogs-chicken-white-rice",
-        "productNote": "Un'opzione a lunga conservazione per provare questa categoria:"
-      },
-      {
-        "rank": "02",
-        "title": "Dieta Cruda Ancestrale BARF 80-10-10",
-        "score": "95/100",
-        "pros": "Proporzione carnivora naturale: 80% polpa, 10% ossa polpose, 10% organi. Ideale per la salute dentale e massa magra tonica.",
-        "cons": "Richiede igiene scrupolosa nella manipolazione e un bilanciamento rigoroso del calcio.",
-        "readMore": "Il rapporto 80-10-10 (80% carne muscolare, 10% ossa crude commestibili, 10% organi secretori) è pensato per replicare ciò che un antenato canino selvatico riceverebbe da una preda intera. Se eseguito correttamente, garantisce un rapporto calcio-fosforo naturalmente equilibrato grazie al contenuto osseo, sostiene la massa muscolare magra e l'azione meccanica della masticazione delle ossa crude aiuta a rimuovere il tartaro dai denti.\n\nPoiché nulla viene cotto, enzimi e amminoacidi sensibili al calore rimangono completamente intatti. Il punto critico è la precisione: reperire ossa crude sicure e rispettare esattamente il rapporto richiedono vera disciplina, dato che un calcolo errato della percentuale di ossa è l'errore più comune, causa di stitichezza o, nel tempo, di problemi scheletrici nei cuccioli in crescita. La carne cruda va inoltre maneggiata con le stesse precauzioni igieniche di qualsiasi alimento crudo destinato al consumo umano (taglieri separati, refrigerazione, pulizia immediata).\n\nLa maggior parte delle famiglie trova più semplice iniziare con un prodotto crudo formulato professionalmente che già rispetta il rapporto corretto, prima di passare a pasti crudi completamente personalizzati, reperiti e pesati in casa.",
-        "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-        "productNote": "Un'opzione cruda pre-bilanciata che elimina le congetture:"
-      },
-      {
-        "rank": "03",
-        "title": "Cibo Crudo Liofilizzato e Disidratato ad Aria",
-        "score": "91/100",
-        "pros": "Unisce la ricchezza nutrizionale della carne cruda alla comodità della conservazione a temperatura ambiente.",
-        "cons": "Va reidratato con acqua tiepida o brodo di ossa prima della somministrazione.",
-        "readMore": "Sia l'essiccazione all'aria che la liofilizzazione rimuovono l'umidità dalla carne cruda a basse temperature, mantenendo il profilo nutrizionale e enzimatico vicino a quello del crudo e rendendo l'alimento conservabile a temperatura ambiente, senza bisogno del freezer. La liofilizzazione utilizza un processo sottovuoto a freddo che tende a preservare i nutrienti ancora meglio dell'essiccazione all'aria, anche se solitamente ha un costo più elevato al chilo.\n\nEntrambi i formati si trasportano facilmente e funzionano benissimo come topping crudo mescolato alle crocchette per aumentarne l'appetibilità. Reidratare con acqua tiepida o brodo d'ossa prima di servire aiuta a ripristinare un livello di umidità più vicino alla dieta ancestrale del cane, ed è particolarmente utile per i cani predisposti a cristalli urinari o a un affaticamento renale.\n\nLa considerazione principale è il costo per caloria: poiché il peso in acqua viene eliminato, si paga per una nutrizione concentrata, motivo per cui questo formato viene spesso usato come topping o come dieta a rotazione piuttosto che come unico alimento quotidiano per un cane di taglia grande.",
-        "productKey": "ziwi-peak-beef-chicken-bundle",
-        "productNote": "Un'opzione essiccata all'aria molto apprezzata:"
-      },
-      {
-        "rank": "04",
-        "title": "Crocchette ad Alto Contenuto Proteico Senza Cereali o Grani Antichi",
-        "score": "78/100",
-        "pros": "Pratiche, a lunga conservazione e sostenibili per famiglie con cani di grossa taglia.",
-        "cons": "Estrusione a oltre 200°C, solo 8-10% di umidità e 40-50% di amidi amidacei.",
-        "readMore": "Le crocchette premium restano l'opzione più pratica per molte famiglie: si conservano fino a un anno, sono facili da dosare con un distributore automatico e costano significativamente meno per caloria rispetto alle diete fresche o crude.\n\nLe formule migliori di questa fascia indicano in etichetta una proteina animale specifica invece di una vaga \"farina di carne\", limitano gli amidi a grani antichi come avena e sorgo invece di pesanti riempitivi a base di mais o frumento, e vengono sottoposte a test di laboratorio indipendenti per i metalli pesanti.\n\nIl compromesso è il processo di estrusione stesso: l'esposizione a temperature superiori ai 200°C distrugge alcune vitamine sensibili al calore e riduce l'umidità a circa il 10%, motivo per cui i veterinari raccomandano spesso di aggiungere un po' di brodo d'ossa o un topping crudo alle diete a base di sole crocchette, soprattutto per i cani predisposti a cristalli urinari.",
-        "productKey": "orijen-original-grain-free-23lb",
-        "productNote": "Una formula ad alto contenuto proteico, in stile WholePrey, in questa categoria:"
-      },
-      {
-        "rank": "05",
-        "title": "Diete Veterinarie Terapeutiche da Prescrizione",
-        "score": "72/100",
-        "pros": "Formulate specificamente per insufficienze renali, epatopatie o calcoli di struvite accertati.",
-        "cons": "Frequente impiego di sottoprodotti vegetali; richiedono prescrizione medica.",
-        "readMore": "Le diete terapeutiche sono progettate per gestire una specifica condizione diagnosticata: proteine e fosforo ridotti per la malattia renale, proteine idrolizzate a cui il sistema immunitario non può reagire per le gravi allergie alimentari, oppure magnesio e pH controllati per i calcoli vescicali di struvite.\n\nSi collocano più in basso in una classifica generale di \"alimenti più sani\" solo perché sono deliberatamente restrittive piuttosto che ottimizzate per un cane sano nella media; una formula pensata per alleviare il lavoro di reni compromessi, ad esempio, non è intenzionalmente l'alimento più ricco di proteine sul mercato.\n\nQueste diete richiedono l'approvazione del veterinario ed esami del sangue periodici per confermarne l'efficacia, e non dovrebbero mai essere somministrate a un cane sano senza una motivazione clinica, poiché limitare i nutrienti di cui un cane sano ha effettivamente bisogno può causare danni nel tempo.",
-        "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-        "productNote": "Una comune formula veterinaria di supporto renale su prescrizione:"
-      }
-    ],
-    "buyerGuideTitle": "4 Regole d’Oro per Scegliere il Miglior Alimento",
-    "buyerRules": [
-      {
-        "title": "1. Carne Animale Specifica al 1° Posto negli Ingredienti",
-        "desc": "Cerca «Tacchino disossato», «Manzo» o «Salmone fresco» invece di generiche «farine di carne».",
-        "readMore": "Sull'etichetta degli alimenti per animali domestici, gli ingredienti sono elencati in ordine decrescente di peso prima della cottura. Le carni intere e chiaramente specificate (come «Tacchino disossato» o «Manzo fresco») forniscono aminoacidi essenziali come taurina, arginina e carnitina nella loro forma più biodisponible. Evita espressioni generiche come «derivati animali», «farina di carne» o «sottoprodotti di pollame», che consentono l'impiego di scarti industriali di provenienza sconosciuta.\n\nFai attenzione anche alla tecnica dell'«ingredient splitting»: molti produttori suddividono i carboidrati in voci distinte (piselli, amido di piselli e proteine di piselli) per far figurare la carne al primo posto nell'elenco, anche quando i carboidrati costituiscono la maggior parte della formula.\n\nLe farine disidratate con nome specifico — come la «Farina di agnello disidratata» o la «Farina di salmone» — sono valide se chiaramente dichiarate, poiché l'acqua è stata rimossa prima della lavorazione, garantendo un apporto concentrato di proteine animali nobili."
-      },
-      {
-        "title": "2. Elevata Umidità Biologica (>70%)",
-        "desc": "Le sole crocchette secche provocano una disidratazione cronica latente. Aggiungi sempre brodi o cibi freschi.",
-        "readMore": "In natura, le prede da cui discendono i cani contengono tra il 70% e il 75% di acqua. I cani hanno uno stimolo della sete fisiologicamente basso perché il loro organismo è evoluto per assumere liquidi direttamente dal cibo. Nutrirli esclusivamente con crocchette secche (con appena l'8-10% di umidità) li espone a una disidratazione cronica latente.\n\nNel tempo, un'urina continuamente concentrata affatica i reni e crea l'ambiente ideale per la comparsa di calcoli vescicali di struvite e ossalato di calcio.\n\nSe somministri crocchette, reidrata sempre la ciotola: aggiungi in proporzione 1:1 brodo di ossa tiepido non salato, acqua filtrata o kefir semplice, oppure integra con cibi freschi cucinati per proteggere la salute renale."
-      },
-      {
-        "title": "3. Zero Conservanti Chimici Sintetici",
-        "desc": "Evita categoricamente additivi come BHA, BHT, etossichina e coloranti sintetici.",
-        "readMore": "Per assicurare scadenze fino a 24 mesi, molti mangimi economici impiegano antiossidanti chimici di sintesi come BHA (butilidrossianisolo), BHT (butilidrossitoluene) ed etossichina. Numerosi studi scientifici classificano BHA e BHT come sospetti interferenti endocrini e cancerogeni, mentre l'etossichina (nata originariamente come pesticida) è correlata a tossicità epatica e reazioni allergiche.\n\nInoltre, i coloranti artificiali (come Rosso 40 o Giallo 5) hanno una funzione puramente visiva per il proprietario, ma scatenano dermatiti, prurito cronico e infiammazioni intestinali nei cani sensibili.\n\nScegli sempre formule conservate naturalmente con tocoferoli misti (Vitamina E), estratto di rosmarino e acido citrico, che proteggono i grassi dall'ossidazione in modo sicuro."
-      },
-      {
-        "title": "4. Carboidrati Moderati (<25%)",
-        "desc": "I cani non possiedono amilasi salivare. Troppi amidi affaticano il pancreas e favoriscono il sovrappeso.",
-        "readMore": "Il cane è un carnivoro facoltativo privo di un fabbisogno biologico di carboidrati raffinati. A differenza dell'essere umano, la saliva del cane non contiene amilasi salivare per digerire gli amidi in bocca; tutto il carico enzimatico grava unicamente sul pancreas.\n\nPoiché le tabelle nutrizionali non obbligano a dichiarare i carboidrati, molte crocchette commerciali nascondono dal 45% al 60% di amidi (da mais, frumento o tapioca) al solo scopo di agglomerare i croccantini durante l'estrusione.\n\nUn elevato carico glicemico provoca continui picchi di insulina, infiammazione sistemica, otiti croniche e obesità canina. Calcola i carboidrati sottraendo al 100% la somma di proteine, grassi, fibre, umidità e ceneri grezze. Cerca sempre prodotti con meno del 25% di carboidrati."
-      }
-    ],
-    "ctaTitle": "Calcola la Dose Giornaliera Esatta per il Tuo Cane",
-    "ctaDesc": "Che tu scelga cibo fresco, dieta BARF o crocchette premium: scopri i grammi giornalieri esatti e il fabbisogno calorico.",
-    "ctaBtn": "Calcola la Razion Quotidiana Ora →"
-  },
-  "recipes": {
-    "eyebrow": "RICETTE CASALINGHE PER CANI // FORMULE NRC E AAFCO",
-    "heroTitle": "Ricette Casalinghe Equilibrate per Cani",
-    "heroSubtitle": "Istruzioni dettagliate passo-passo per preparare a casa razioni cotte a vapore bilanciate e diete crude ancestrali BARF 80-10-10.",
-    "calciumWarningTitle": "La Regola d’Oro del Fatto in Casa: Il Bilanciamento del Calcio",
-    "calciumWarningDesc": "La polpa muscolare è ricca di fosforo e quasi priva di calcio (rapporto 1:20). Alimentare un cane solo con carne e riso senza calcio provoca demineralizzazione scheletrica severa in pochi mesi. Aggiungi sempre 1/2 cucchiaino raso di polvere di guscio d’uovo purificata (circa 900 mg di calcio elementare) ogni 450 g di carne senza ossa per garantire il rapporto ottimale Calcio/Fosforo di 1.2:1.",
-    "recipesList": [
-      {
-        "tag": "COTTURA DOLCE",
-        "title": "Ricetta 1: Tacchino a Vapore con Zucca Prebiotica (Ideale per Stomaci Delicati)",
-        "desc": "Perfetta per cani con digestione sensibile, feci molli o intolleranze al pollo da allevamento intensivo.",
-        "ingredients": [
-          "Macinato magro di tacchino — 65% (circa 900 g)",
-          "Cuori di tacchino o manzo (Fonte naturale di taurina) — 10% (circa 140 g)",
-          "Purea di zucca cotta al naturale (Fibre solubili) — 10% (circa 140 g)",
-          "Spinacini e zucchine cotti a vapore tritati — 10% (circa 140 g)",
-          "Olio di salmone selvaggio d’Alaska (EPA/DHA) — 2% (1.5 cucchiai)",
-          "Farina fine di guscio d’uovo (Calcio) — 3% (1 cucchiaino raso)"
-        ],
-        "prep": "Cuoci delicatamente il tacchino e i cuori a fuoco basso fino a leggera cottura (70°C). Cuoci le verdure a vapore e frullale con la zucca. Amalgama tutto e lascia raffreddare completamente. Aggiungi l’olio di salmone e il calcio a freddo. Congela in porzioni singole."
-      },
-      {
-        "tag": "BARF CRUDA",
-        "title": "Ricetta 2: Dieta Ancestrale BARF 80-10-10 Manzo & Anatra",
-        "desc": "Alimentazione cruda biologicamente appropriata per cani adulti sani dotati di una normale acidità gastrica.",
-        "ingredients": [
-          "Carne magra di manzo da pascolo — 70%",
-          "Cuore di manzo (Ricco di L-Carnitina e CoQ10) — 10%",
-          "Colli d’anatra crudi o carcasse — 10% (Osso polposo e calcio)",
-          "Fegato di manzo (Vitamina A e complesso B) — 5%",
-          "Rene o milza di manzo (Organo secretore essenziale) — 5%"
-        ],
-        "prep": "Taglia carne e cuore a bocconi adeguati alla taglia. Pesa accuratamente gli organi con bilancia digitale. Congela tutte le porzioni per almeno 3 settimane a -20°C prima di scongelarle e somministrarle."
-      },
-      {
-        "tag": "TOPPER SUPERFOOD",
-        "title": "Ricetta 3: Topper Antiossidante 80/20 per Arricchire le Crocchette",
-        "desc": "Integrazione fresca formulata per sostituire il 20% delle calorie giornaliere delle normali crocchette.",
-        "ingredients": [
-          "Uova fresche biologiche in camicia — 40%",
-          "Germogli di broccoli al vapore e mirtilli neri — 30%",
-          "Brodo di ossa di manzo fatto sobbollire a lungo — 20%",
-          "Semi di canapa bio e farina di alga kelp — 10%"
-        ],
-        "prep": "Cuoci le uova per 4 minuti lasciando il tuorlo morbido. Cuoci a vapore le verdure per 3 minuti. Frulla con il brodo tiepido e i mirtilli. Aggiungi da 2 a 4 cucchiai al giorno nella ciotola delle crocchette."
-      }
-    ],
-    "calciumGuideTitle": "Fonti Sicure di Calcio per l’Alimentazione Casalinga",
-    "calciumGuideItems": [
-      {
-        "title": "Farina di Guscio d’Uovo",
-        "ratio": "1/2 cucchiaino ogni 450 g di carne disossata",
-        "desc": "95% carbonato di calcio puro. Facile da produrre lavando, asciugando in forno e polverizzando i gusci."
-      },
-      {
-        "title": "Ossa Polpose Crude Commestibili",
-        "ratio": "10% del peso totale della ciotola",
-        "desc": "Colli d’anatra o ali di pollo crude. Mai cuocere le ossa, che diventerebbero rigide e pericolose."
-      },
-      {
-        "title": "Farina d’Ossa Veterinaria (Bone Meal)",
-        "ratio": "Secondo le indicazioni in etichetta",
-        "desc": "Idrossiapatite microcristallina che apporta calcio e fosforo nel perfetto rapporto naturale di 2:1."
-      }
-    ]
-  },
-  "toxic": {
-    "eyebrow": "ALIMENTI TOSSICI PER CANI // GUIDA ALLE EMERGENZE",
-    "dangerTitle": "I Cibi Domestici Più Pericolosi e Letali per il Cane",
-    "dangerIntro": "Alcuni alimenti innocui per noi contengono tossine che l’organismo del cane non può smaltire, portando a collassi d’organo irreversibili.",
-    "dangerList": [
-      {
-        "name": "Cioccolato & Cacao",
-        "toxin": "Teobromina e Caffeina",
-        "symptoms": "Vomito, respiro affannoso, tachicardia, tremori muscolari, convulsioni, arresto cardiaco.",
-        "risk": "ALTO O LETALE"
-      },
-      {
-        "name": "Uva, Uvetta e Uva Passa",
-        "toxin": "Acido Tartarico",
-        "symptoms": "Letargia, disidratazione, blocco renale e insufficienza acuta in 24-72 ore.",
-        "risk": "ESTREMAMENTE LETALE"
-      },
-      {
-        "name": "Xilitolo (Dolcificante / E967)",
-        "toxin": "Poliolo Sintetico",
-        "symptoms": "Rilascio massiccio di insulina, ipoglicemia fulminea, atassia, necrosi epatica acuta.",
-        "risk": "MASSIMA URGENZA"
-      },
-      {
-        "name": "Cipolla, Aglio, Porri e Erba Cipollina",
-        "toxin": "Disolfuro di N-propile",
-        "symptoms": "Distruzione dei globuli rossi, anemia emolitica, gengive pallide, urine scure.",
-        "risk": "TOSSICITÀ CUMULATIVA"
-      },
-      {
-        "name": "Noci di Macadamia",
-        "toxin": "Neurotossina non identificata",
-        "symptoms": "Debolezza del treno posteriore, febbre alta, vomito, rigidità muscolare dolorosa.",
-        "risk": "MODERATO O SEVERO"
-      },
-      {
-        "name": "Ossa Cotte di Qualsiasi Tipo",
-        "toxin": "Rischio Meccanico di Schegge",
-        "symptoms": "Perforazione gastrointestinale, emorragia interna, peritonite, blocco chirurgico.",
-        "risk": "URGENZA CHIRURGICA"
-      }
-    ],
-    "emergencyTitle": "Cosa Fare in Caso di Avvelenamento Sospetto",
-    "emergencySteps": [
-      "1. Agisci Subito: Accerta l’alimento ingerito, la confezione, la quantità approssimativa e l’ora precisa.",
-      "2. NON Provocare il Vomito senza Parere Veterinario: Prodotti corrosivi o frammenti d’ossa lesionano l’esofago durante la risalita.",
-      "3. Chiama Immediatamente una Clinica Veterinaria: Contatta senza indugio un pronto soccorso veterinario attivo 24 ore."
-    ],
-    "safeTitle": "Frutta e Verdura 100% Sicure e Salutari",
-    "safeIntro": "Questi alimenti naturali forniscono antiossidanti, fibre solubili e vitamine utili alla salute del cane:",
-    "safeFoods": [
-      {
-        "name": "Mirtilli Neri",
-        "benefit": "Ricchi di antociani e polifenoli ad alto potere protettivo cellulare."
-      },
-      {
-        "name": "Purea di Zucca",
-        "benefit": "Ottima fonte di fibra solubile per regolarizzare sia diarrea che costipazione."
-      },
-      {
-        "name": "Carote",
-        "benefit": "Snack croccante e ipocalorico, ricco di beta-carotene, utile alla masticazione."
-      },
-      {
-        "name": "Fagiolini al Vapore",
-        "benefit": "Verdura verde a basso indice glicemico ideale per cani in sovrappeso."
-      },
-      {
-        "name": "Mele (Senza Semi né Torsolo)",
-        "benefit": "Apporto naturale di vitamina C, vitamina A e pectina alleata dell’intestino."
-      }
-    ]
-  },
-  "brands": {
-    "eyebrow": "RECENSIONI MARCHE CROCCHETTE E STORICO RICHIAMI",
-    "heroTitle": "Analisi delle Marche di Cibo per Cani e Storico Richiami",
-    "heroSubtitle": "Recensioni imparziali su trasparenza degli ingredienti, conformità delle etichette e ritiri dal commercio.",
-    "brandsList": [
-      {
-        "name": "Blue Buffalo",
-        "grade": "Voto: B+",
-        "pros": "Carne disossata reale al 1° posto; senza mais, grano o soia; crocchette LifeSource Bits ricche di vitamine.",
-        "cons": "Contenuto di carboidrati elevato (45-50%); richiami storici FDA per umidità eccessiva e ipervitaminosi D.",
-        "verdict": "Crocchette sopra la media. Consigliamo di integrare con un 20% di alimenti freschi per idratare i reni."
-      },
-      {
-        "name": "Rachael Ray Nutrish",
-        "grade": "Voto: C+ / B-",
-        "pros": "Economico e facilmente reperibile; le linee Peak e Dish contengono percentuali maggiori di carne reale.",
-        "cons": "Le linee base impiegano concentrati proteici di piselli e glutine di mais; citata in indagini FDA passate.",
-        "verdict": "Scelta economica discreta nelle linee superiori, verificando che non vi sia frazionamento di legumi in etichetta."
-      },
-      {
-        "name": "Pure Balance",
-        "grade": "Voto: B (Miglior Scelta Budget)",
-        "pros": "Ottimo rapporto qualità/prezzo; ricette incentrate sulla carne senza coloranti artificiali o farine scadenti.",
-        "cons": "Produzione esternalizzata; quota moderata di carboidrati.",
-        "verdict": "Una delle alternative più oneste e affidabili nella fascia di prezzo da supermercato."
-      },
-      {
-        "name": "Ollie Fresh Dog Food",
-        "grade": "Voto: A (Eccellenza)",
-        "pros": "Ingredienti 100% di grado umano; cottura dolce a bassa temperatura; porzioni singole su misura.",
-        "cons": "Abbonamento mensile impegnativo (180€-350€/mese); richiede spazio nel congelatore.",
-        "verdict": "Punto di riferimento per il benessere metabolico, brillantezza del mantello e salute dell’apparato digerente."
-      },
-      {
-        "name": "Open Farm",
-        "grade": "Voto: A-",
-        "pros": "Trasparenza totale delle filiere; carni da allevamenti certificati nel rispetto degli animali e pesce sostenibile.",
-        "cons": "Prezzo di fascia alta; distribuzione limitata nei negozi tradizionali.",
-        "verdict": "Scelta d’eccellenza per chi ricerca sostenibilità etica e zero farine di sottoprodotti."
-      }
-    ],
-    "recallsTitle": "Come Leggere le Notifiche di Richiamo (Recalls)",
-    "recallsDesc": "Gli allarmi sanitari si suddividono in tre classi: Classe I (rischio grave o letale, es. Salmonella o eccesso di Vitamina D), Classe II (disturbi transitori) e Classe III (difformità formali in etichetta). Controlla sempre il numero di lotto stampato sul sacco.",
-    "methodTitle": "I Nostri 4 Criteri di Valutazione",
-    "methodPillars": [
-      {
-        "title": "1. Chiarezza delle Carni",
-        "desc": "Muscolo intero chiaramente indicato anziché generiche farine di carne."
-      },
-      {
-        "title": "2. Tasso di Carboidrati",
-        "desc": "Mantenere gli amidi sotto il 40% per prevenire l’obesità canina."
-      },
-      {
-        "title": "3. Tracciabilità d’Origine",
-        "desc": "Filiere etiche certificate e ingredienti privi di OGM."
-      },
-      {
-        "title": "4. Rigore Igienico Sanitario",
-        "desc": "Controlli batteriologici regolari in laboratori terzi indipendenti."
-      }
-    ]
-  },
-  "allergies": {
-    "eyebrow": "GUIDA NUTRIZIONALE // ALLERGIE ALIMENTARI E DIETE AD ESCLUSIONE",
-    "heroTitle": "Miglior Cibo per Cani con Allergie e Stomaco Sensibile",
-    "heroSubtitle": "Guida pratica a intolleranze alimentari, proteine novità ipoallergeniche e dieta di esclusione di 8 settimane.",
-    "allergensTitle": "I 5 Più Comuni Allergeni Alimentari nel Cane",
-    "allergensIntro": "Le allergie alimentari canine sono reazioni immunitarie anomale scatenate da proteine dietetiche. In ordine di frequenza clinica:",
-    "allergensList": [
-      {
-        "name": "1. Pollo da Allevamento Intensivo (60% dei casi)",
-        "desc": "Onnipresente nel pet food commerciale, è l’allergene alimentare più frequente in assoluto."
-      },
-      {
-        "name": "2. Manzo Commerciale (30% dei casi)",
-        "desc": "Proteina rossa diffusa che scatena spesso forte prurito alle zampe e otiti recidivanti."
-      },
-      {
-        "name": "3. Latticini e Formaggi",
-        "desc": "I cani adulti perdono gli enzimi lattasi, manifestando coliche gassose e diarrea."
-      },
-      {
-        "name": "4. Glutine di Frumento e Mais",
-        "desc": "Proteine vegetali che irritano la barriera intestinale e alimentano la proliferazione di lieviti."
-      },
-      {
-        "name": "5. Soia e Legumi",
-        "desc": "Riempitivi proteici a basso costo che causano fermentazioni anomale e prurito."
-      }
-    ],
-    "eliminationTitle": "Il Protocollo della Dieta ad Esclusione di 8 Settimane",
-    "eliminationSteps": [
-      {
-        "step": "Fase 1",
-        "title": "Scegliere una Sola Proteina Novità",
-        "desc": "Passa il cane a una carne che non ha mai assaggiato prima (Cervo, Coniglio o Canguro) abbinata a un vegetale leggero come la zucca."
-      },
-      {
-        "step": "Fase 2",
-        "title": "Tolleranza Zero (8 Settimane Rigorose)",
-        "desc": "Per 8 settimane consecutive fornisci solo ed esclusivamente questo alimento. Vietati snack commerciali, bocconcini e avanzi di cucina."
-      },
-      {
-        "step": "Fase 3",
-        "title": "Reintroduzione Controllata per Prova",
-        "desc": "Se il prurito scompare, reintroduci un solo ingrediente sospetto per 7 giorni. La ricomparsa dei sintomi confermerà l’allergia."
-      }
-    ],
-    "novelTitle": "Proteínas Novità Ipoallergeniche Consigliate",
-    "novelProteins": [
-      {
-        "name": "Carne di Cervo / Capriolo",
-        "desc": "Carne rossa magra e altamente digeribile verso cui i cani non hanno anticorpi pregressi."
-      },
-      {
-        "name": "Carne di Coniglio",
-        "desc": "Proteina ipoallergenica d’eccellenza, leggera e dal profilo aminoacidico ideale."
-      },
-      {
-        "name": "Carne d’Anatra",
-        "desc": "Ottima e saporita alternativa per cani intolleranti alle carni di pollo convenzionali."
-      },
-      {
-        "name": "Carne di Canguro",
-        "desc": "Tra le carni selvatiche più pure e povere di grassi disponibili in dermatologia veterinaria."
-      }
-    ]
-  },
-  "calculator": {
-    "eyebrow": "100% GRATUITO // CALCOLATORE DEL FABBISOGNO CALORICO",
-    "noticeTitle": "Nota Importante:",
-    "noticeText": "Fornito a scopo informativo ed educativo. Non sostituisce una consulenza o diagnosi veterinaria.",
-    "heroTitle": "Calcolatore del Fabbisogno Calorico per Cani",
-    "heroSubtitle": "Determina l’esatto fabbisogno calorico giornaliero del tuo cane (RER e MER) e calcola i grammi raccomandati per pasto in base a peso, età, attività e silhouette."
-  },
-  "breeds": {
-    "eyebrow": "GUIDA NUTRIZIONALE PER RAZZA // LINEE GUIDA NUTRIZIONALI",
-    "targetWeight": "Peso Ideale",
-    "dailyCalories": "Calorie Giornaliere",
-    "freshDaily": "Cibo Fresco / Giorno",
-    "kibbleDaily": "Crocchette / Giorno",
-    "cups": "tazze",
-    "reqsTitle": "Fabbisogni Nutrizionali per il {name}",
-    "reqsIntro": "Come cane di categoria {category} con un peso medio di {w0}–{w1} lbs (circa {Math.round(w0*0.453)}–{Math.round(w1*0.453)} kg), il {name} necessita di un profilo nutrizionale dedicato:",
-    "predispositionsTitle": "Sensibilità e Predisposizioni di Razza:",
-    "feedingRoutineTitle": "Routine di Alimentazione Consigliata:",
-    "feedingRoutineDesc": "Distribuisci i pasti del tuo {name} adulto due volte al giorno (50% al mattino e 50% alla sera). Assicura sempre acqua fresca. Se somministri crocchette, reidratale con brodo di ossa tiepido per sostenere i reni.",
-    "ctaTitle": "Personalizza il Piano Alimentare per il Tuo {name}",
-    "ctaSubtitle": "Imposta età esatta (cucciolo, adulto o senior), peso reale, livello di esercizio fisico e forma fisica con il calcolatore gratuito.",
-    "ctaBtn": "Calcola per {name} →",
-    "faqTitle": "Domande Frequenti sull’Alimentazione del {name}",
-    "faqSubtitle": "Dosi consigliate, numero di pasti e ingredienti ottimali."
-  },
-  "comparisonTable": {
-    "eyebrow": "CONFRONTO NUTRIZIONALE // CIBO FRESCO NATURALE VS CROCCHETTE",
-    "title": "Perché il Cibo Naturale Supera Biologicamente le Crocchette",
-    "subtitle": "Un confronto nutrizionale dettagliato tra calore di lavorazione, precisione delle porzioni e costo mensile reale — gli stessi fattori che uno studio di 5 anni sulla longevità ha correlato a una vita fino a 32 mesi più lunga nei cani nutriti con cibo fresco.",
-    "scrollHint": "↔ Scorri la tabella in orizzontale",
-    "colMetric": "Parametro Nutrizionale",
-    "colDfp": "✨ DogFoodPlanner",
-    "colSubs": "Abbonamenti Fresco",
-    "colKibble": "Crocchette Secche",
-    "rows": [
-      {
-        "metric": "Metodo di Lavorazione",
-        "dfp": "Cottura Delicata (~74°C) o Crudo — Enzimi Intatti",
-        "subs": "Cotto Sottovuoto (Sous-Vide) e Surgelato",
-        "kibble": "Estrusione ad Altissima Temperatura (200°C+)"
-      },
-      {
-        "metric": "Precisione della Porzione",
-        "dfp": "Grammi esatti tramite calcolo metabolico RER/MER, calibrato su peso, età e attività",
-        "subs": "Tabella fissa per fasce di peso approssimative",
-        "kibble": "Tabella generica sul sacco — sovrastima le porzioni del 20–30%"
-      },
-      {
-        "metric": "Carboidrati Netti",
-        "dfp": "< 5% (solo verdure selezionate, zero riempitivi)",
-        "subs": "10% – 20%",
-        "kibble": "45% – 60% (amidi di mais, frumento e piselli)"
-      },
-      {
-        "metric": "Umidità Biologica",
-        "dfp": "70% – 75% (supporta l'idratazione renale e urinaria)",
-        "subs": "70% – 75%",
-        "kibble": "8% – 10% (disidratazione subclinica cronica)"
-      },
-      {
-        "metric": "Integrità Nutrizionale",
-        "dfp": "Minima ossidazione — omega-3 ed enzimi preservati",
-        "subs": "Moderata — degradazione di alcuni nutrienti termosensibili",
-        "kibble": "Ossidazione lipidica e formazione di composti AGE dal calore di estrusione"
-      },
-      {
-        "metric": "Trasparenza degli Ingredienti",
-        "dfp": "100% grammi e percentuali dichiarati — controlli ogni singolo grammo",
-        "subs": "Formula proprietaria (proporzioni esatte non divulgate)",
-        "kibble": "Frazionamento degli ingredienti e farine di carne generiche"
-      },
-      {
-        "metric": "Costo Medio Mensile (Cane 23 kg)",
-        "dfp": "75€ – 120€ (solo ingredienti freschi preparati a casa)",
-        "subs": "240€ – 420€ / mese",
-        "kibble": "55€ – 90€ / mese"
-      }
-    ]
-  },
-  "faqPage": {
-    "badge": "ARCHIVIO CONOSCENZE // OLTRE 40 RISPOSTE",
-    "exploreHubsTitle": "Esplora i Nostri Dossier di Nutrizione Canina",
-    "exploreHubsSubtitle": "Guide di approfondimento create per i proprietari attenti al benessere e alla longevità del loro cane.",
-    "cardBestFood": "Confronto tra cibo fresco, BARF, crocchette ad alto tenore di carne e formule delicate.",
-    "cardCalc": "Calcolatore RER e MER per calcolare le porzioni giornaliere in grammi.",
-    "cardRecipes": "Ricette casalinghe cotte e BARF 80-10-10 con apporto controllato e sicuro di calcio.",
-    "cardAllergies": "Scelta delle proteine ipoallergeniche, diete ad esclusione e flora batterica intestinale.",
-    "cardToxic": "Elenco completo dei cibi tossici da evitare, frutta e verdura sicure e additivi dannosi.",
-    "cardBrands": "Recensioni imparziali su Blue Buffalo, Nutrish, Pure Balance, Ollie e Open Farm."
-  },
-  "faqSingle": {
-    "reviewedBy": "Revisionato da: Team Editoriale di DogFoodPlanner",
-    "updated": "Aggiornato al: 2026",
-    "directQuickAnswer": "Risposta Rapida Diretta",
-    "clinicalAnalysis": "Analisi Nutrizionale Approfondita",
-    "topics": "Argomenti correlati:",
-    "ctaBadge": "🐾 Motore Nutrizionale Canino Gratuito",
-    "ctaTitle": "Calcola le Calorie e i Grammi Giornalieri per il Tuo Cane",
-    "ctaSubtitle": "Usa il nostro calcolatore per conoscere il dispendio metabolico (RER/MER) e i grammi per pasti freschi o crudi.",
-    "ctaBtn": "Calcola le Dosi Ora →",
-    "relatedTitle": "Domande Nutrizionali Correlate",
-    "readAnswer": "Leggi la Risposta Completa →",
+  "it": {
+    "about": {
+      "heroTitle": "Su DogFoodPlanner: Piani Pasto per Cani in Tutta Semplicità",
+      "heroSubtitle": "Scopri DogFoodPlanner.com, la nostra missione e come funziona il nostro calcolatore gratuito di pappa per cani.",
+      "missionBadge": "LA NOSTRA MISSION // PIANI PASTO PER CANI",
+      "whyTitle": "Perché è Nato DogFoodPlanner",
+      "whyP1": "Abbiamo creato DogFoodPlanner per aiutare i proprietari di cani a pianificare pasti e porzioni con sicurezza. Analizziamo le linee guida pubbliche per trasformarle in strumenti e guide semplici e gratuiti.",
+      "whyP2": "",
+      "whoTitle": "Chi Siamo",
+      "whoContent": "DogFoodPlanner è un sito web indipendente gestito da ricercatori e scrittori amanti dei cani. Non siamo veterinari. Consulta sempre il tuo medico veterinario prima di modificare la dieta del tuo cane, soprattutto per cuccioli, cani anziani o con patologie pregresse.",
+      "methodTitle": "La Nostra Metodologia Nutrizionale",
+      "pillars": [
+        {
+          "tag": "01 // STIMA DELLE CALORIE",
+          "title": "Stima delle Calorie",
+          "desc": "Il nostro calcolatore utilizza la formula standard del Fabbisogno Energetico a Riposo (70 × peso corporeo in kg^0,75) e comuni moltiplicatori di attività per stimare le calorie giornaliere."
+        },
+        {
+          "tag": "02 // FONTI DI RIFERIMENTO",
+          "title": "Fonti di Riferimento",
+          "desc": "Ci basiamo su linee guida pubblicate da fonti autorevoli come AAFCO e il National Research Council. I nostri contenuti hanno scopo educativo e non sostituiscono il parere di un professionista."
+        },
+        {
+          "tag": "03 // TRASPARENZA",
+          "title": "Trasparenza",
+          "desc": "Alcune pagine contengono link di affiliazione, compresi i link Amazon Associates. Se effettui un acquisto tramite essi potremmo ricevere una piccola commissione senza alcun costo aggiuntivo per te. Questo non influenza in alcun modo i nostri consigli."
+        }
+      ],
+      "ctaTitle": "Pronto a Calcolare i Fabbisogni del Tuo Cane?",
+      "ctaDesc": "Prova il nostro calcolatore interattivo, consulta le guide sulle allergie canine e leggi le nostre guide sul cibo per cani.",
+      "ctaBtn": "Avvia il Calcolatore Gratuito →",
+      "amazonDisclaimer": "In qualità di Affiliato Amazon, riceviamo un guadagno dagli acquisti idonei."
+    },
+    "contact": {
+      "eyebrow": "SUPPORTO E CONTATTO // RICHIESTE DIRETTE",
+      "cards": [
+        {
+          "icon": "📧",
+          "title": "Informazioni Generali",
+          "desc": "Domande e suggerimenti:",
+          "email": "hello@dogfoodplanner.com"
+        },
+        {
+          "icon": "🐾",
+          "title": "Ricerca Nutrizionale",
+          "desc": "Quesiti su formule e ricette:",
+          "email": "research@dogfoodplanner.com"
+        },
+        {
+          "icon": "🛡️",
+          "title": "Supporto Tecnico",
+          "desc": "Segnalazione bug e calcoli:",
+          "email": "legal@dogfoodplanner.com"
+        }
+      ],
+      "formTitle": "Invia un Messaggio al Nostro Team Nutrizionale",
+      "formDesc": "Hai dubbi sulle formule caloriche NRC o desideri un chiarimento su una ricetta BARF? Rispondiamo entro 24 ore lavorative.",
+      "nameLabel": "Il Tuo Nome",
+      "namePlaceholder": "es. Marco Rossi",
+      "emailLabel": "Il Tuo Indirizzo Email",
+      "emailPlaceholder": "marco@example.it",
+      "subjectLabel": "Argomento del Messaggio",
+      "subjectOptions": [
+        "Domanda Generale / Feedback",
+        "Nutrizione Canina e Ricette",
+        "Formula del Calcolatore",
+        "Segnalazione di Errore"
+      ],
+      "messageLabel": "Il Tuo Messaggio",
+      "messagePlaceholder": "Raccontaci del tuo cane (razza, peso, età) e come possiamo aiutarti...",
+      "submitBtn": "Invia Messaggio →",
+      "notice": "Avviso di Emergenza Veterinaria: Se il tuo cane manifesta sintomi acuti di avvelenamento o sofferenza severa, contatta immediatamente il pronto soccorso veterinario più vicino.",
+      "faqTitle": "Cerchi risposte immediate?",
+      "faqDesc": "Consulta la nostra raccolta di oltre 40 risposte su inappetenza, dieta BARF, cibo per gatti e marche industriali.",
+      "faqBtn": "Consulta Tutte le FAQ →",
+      "successTitle": "✓ Messaggio preparato — invio a hello@dogfoodplanner.com",
+      "successDesc": "Il tuo client di posta dovrebbe aprirsi con un messaggio pre-compilato indirizzato a hello@dogfoodplanner.com. Premi semplicemente Invia nella tua app di posta e arriverà nella nostra casella di posta."
+    },
+    "privacy": {
+      "eyebrow": "INFORMATIVA SULLA PRIVACY // PROTEZIONE DATI",
+      "lastUpdated": "Aggiornato: 14 ottobre 2026",
+      "intro": "Su DogFoodPlanner.com rispettiamo la tua privacy e proteggiamo i tuoi dati personali. Questa informativa descrive come gestiamo le informazioni.",
+      "sections": [
+        {
+          "title": "1. Informazioni che non raccogliamo",
+          "content": "I dati sulla salute del tuo cane appartengono a te. Non richiediamo alcuna registrazione, password né carta di credito per utilizzare il nostro calcolatore di cibo per cani. I profili dei cani, i pesi corporei e le selezioni dei pasti inseriti nel calcolatore vengono elaborati lato client nel tuo browser e non vengono salvati in database esterni."
+        },
+        {
+          "title": "2. Raccolta E-mail e Newsletter",
+          "content": "Quando ti iscrivi alla nostra newsletter, raccogliamo il tuo indirizzo e-mail per inviarti guide sulla nutrizione canina, allerte di richiamo alimenti e consigli pratici. Utilizziamo EmailOctopus per gestire la lista in totale sicurezza. Non vendiamo né condividiamo mai i tuoi dati. Puoi cancellare l’iscrizione in qualsiasi momento con un semplice clic tramite il link in fondo a ogni e-mail."
+        },
+        {
+          "title": "3. Dati tecnici anonimi di navigazione",
+          "content": "I nostri server CDN registrano in modo anonimo i normali log di connessione (indirizzo IP anonimizzato, tipo di browser, pagina di provenienza e data/ora) per garantire la sicurezza del sito e prevenire attacchi informatici."
+        },
+        {
+          "title": "4. Cookie e memoria locale (localStorage)",
+          "content": "Utilizziamo il localStorage per ricordare la lingua e il piano pasti sul tuo dispositivo. Se fai clic su un link di affiliazione, il sito di terze parti (come Amazon) potrebbe impostare i propri cookie."
+        },
+        {
+          "title": "5. Link di Terze Parti",
+          "content": "Il nostro sito contiene link di riferimento a ricerche pubblicate, standard AAFCO, database del NRC e risorse esterne. Non siamo responsabili delle pratiche sulla privacy o dei contenuti dei siti web di terze parti."
+        },
+        {
+          "title": "6. Informativa sulle Affiliazioni",
+          "content": "DogFoodPlanner partecipa al Programma Affiliazione Amazon Services LLC. In qualità di Affiliato Amazon, riceviamo un guadagno dagli acquisti idonei, senza alcun costo aggiuntivo per te."
+        },
+        {
+          "title": "7. Protezione dei Minori",
+          "content": "I nostri contenuti e strumenti sono rivolti a persone adulte. Non raccogliamo consapevolmente informazioni di minori di 13 anni."
+        },
+        {
+          "title": "8. Aggiornamenti e Contatti",
+          "content": "Questa policy può essere periodicamente aggiornata. Per ogni richiesta, scrivi a privacy@dogfoodplanner.com."
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "TERMINI E CONDIZIONI DI SERVIZIO",
+      "lastUpdated": "Aggiornato: 14 ottobre 2026",
+      "intro": "Ti preghiamo di leggere attentamente questi Termini di Servizio prima di utilizzare DogFoodPlanner.com. L’accesso al sito implica la loro integrale accettazione.",
+      "sections": [
+        {
+          "title": "1. Accettazione dei Termini",
+          "content": "Accedendo e utilizzando DogFoodPlanner.com (il \"Sito\"), dichiari di aver letto, compreso e accettato i presenti Termini e Condizioni. Qualora non fossi d’accordo, ti invitiamo a interrompere immediatamente l’uso."
+        },
+        {
+          "title": "2. Disclaimer Medico e Veterinario",
+          "content": "Le informazioni, i calcolatori e le ricette presenti su DogFoodPlanner.com hanno finalità puramente educative e divulgative fondate sui modelli NRC e FEDIAF. NON costituiscono in alcun modo diagnosi clinica, consulenza medica o terapia personalizzata. Rivolgiti sempre a un medico veterinario o a un nutrizionista per animali prima di apportare cambiamenti radicali alla dieta del tuo cane."
+        },
+        {
+          "title": "3. Utilizzo dei Calcolatori Interattivi",
+          "content": "Tutti i calcoli calorici (RER e MER) e i grammi raccomandati rappresentano stime matematiche teoriche. Il metabolismo reale varia in base a sterilizzazione, clima e fattori genetici. È dovere del proprietario verificare il Body Condition Score (BCS) e calibrare le dosi."
+        },
+        {
+          "title": "4. Sicurezza delle Diete Casalinghe e Integrazione del Calcio",
+          "content": "La preparazione di cibo casalingo o crudo impone la copertura totale di tutti i micronutrienti. Nutrire i cani con sola carne disossata e carboidrati senza integrazione di calcio causa demineralizzazione ossea grave in pochi mesi. L’utente assume la piena responsabilità della formulazione dei pasti."
+        },
+        {
+          "title": "5. Diritti di Proprietà Intellettuale",
+          "content": "Tutti i contenuti, i codici dei calcolatori, le interfacce grafiche e gli articoli su DogFoodPlanner.com sono protetti da copyright e appartengono in via esclusiva a DogFoodPlanner."
+        },
+        {
+          "title": "6. Limitazione di Responsabilità",
+          "content": "DogFoodPlanner.com e i suoi autori non saranno responsabili per eventuali danni diretti o indiretti derivanti dall’utilizzo delle informazioni e degli strumenti messi a disposizione."
+        },
+        {
+          "title": "7. Iscrizioni via E-mail e Comunicazioni",
+          "content": "Iscrivendoti alla nostra newsletter, accetti di ricevere guide educative sulla nutrizione canina e novità sul sito. Puoi annullare l’iscrizione in qualunque momento cliccando sull’apposito link in ciascuna e-mail. Ci riserviamo il diritto di modificare o sospendere l’invio della newsletter a nostra discrezione."
+        }
+      ]
+    },
+    "bestFood": {
+      "eyebrow": "GUIDA COMPLETA // MIGLIOR CIBO PER CANI 2026",
+      "rankingsTitle": "Quali Sono i 5 Cibi Più Sani per Cani nel 2026?",
+      "rankingsIntro": "La ricerca veterinaria sulla longevità canina conferma che una lavorazione termica minima e un’idratazione biologica superiore al 70% sono i due fattori più determinanti per la vitalità e la salute dei reni.",
+      "readMoreLabel": "Leggi di più →",
+      "readLessLabel": "Mostra meno ↑",
+      "rankings": [
+        {
+          "rank": "01",
+          "title": "Cibo Fresco Casalingo Cotto a Bassa Temperatura di Grado Umano",
+          "score": "98/100",
+          "pros": "Vera carne e verdure cotte dolcemente a 70°C. Mantiene oltre il 70% di idratazione naturale, enzimi attivi e vitamine intatte.",
+          "cons": "Richiede conservazione in frigo o freezer. Costo leggermente superiore alle crocchette da supermercato.",
+          "readMore": "Il cibo fresco cotto delicatamente si posiziona al primo posto della classifica perché riproduce un pasto casalingo senza sacrificare la sicurezza alimentare. Gli ingredienti provengono da stabilimenti per alimenti destinati al consumo umano ispezionati dalle autorità sanitarie, poi vengono cotti a bassa temperatura (circa 70°C) solo per il tempo necessario a eliminare i patogeni, preservando al contempo proteine delicate, taurina e vitamine del gruppo B idrosolubili che l'estrusione ad alta temperatura distrugge.\n\nPoiché l'alimento contiene già oltre il 70% di umidità, allevia il carico di lavoro renale e riduce la lieve disidratazione cronica tipica delle diete a base di sole crocchette. È una scelta particolarmente indicata per cani in convalescenza, anziani con uno stimolo della sete ridotto o razze predisposte a sensibilità alimentari, dato che le ricette sono generalmente monoproteiche e prive di farine di carne animale o conservanti sintetici.\n\nIl principale compromesso riguarda la logistica: richiede spazio in frigorifero o freezer e le porzioni devono essere scongelate in anticipo rispetto al pasto. Se non si è pronti a cucinarlo autonomamente, diversi marchi che utilizzano cucine certificate per uso umano vendono versioni a lunga conservazione dello stesso formato cotto delicatamente, un modo semplice per provare questa categoria prima di impegnarsi in una routine completamente casalinga.",
+          "productKey": "justfoodfordogs-chicken-white-rice",
+          "productNote": "Un'opzione a lunga conservazione per provare questa categoria:"
+        },
+        {
+          "rank": "02",
+          "title": "Dieta Cruda Ancestrale BARF 80-10-10",
+          "score": "95/100",
+          "pros": "Proporzione carnivora naturale: 80% polpa, 10% ossa polpose, 10% organi. Ideale per la salute dentale e massa magra tonica.",
+          "cons": "Richiede igiene scrupolosa nella manipolazione e un bilanciamento rigoroso del calcio.",
+          "readMore": "Il rapporto 80-10-10 (80% carne muscolare, 10% ossa crude commestibili, 10% organi secretori) è pensato per replicare ciò che un antenato canino selvatico riceverebbe da una preda intera. Se eseguito correttamente, garantisce un rapporto calcio-fosforo naturalmente equilibrato grazie al contenuto osseo, sostiene la massa muscolare magra e l'azione meccanica della masticazione delle ossa crude aiuta a rimuovere il tartaro dai denti.\n\nPoiché nulla viene cotto, enzimi e amminoacidi sensibili al calore rimangono completamente intatti. Il punto critico è la precisione: reperire ossa crude sicure e rispettare esattamente il rapporto richiedono vera disciplina, dato che un calcolo errato della percentuale di ossa è l'errore più comune, causa di stitichezza o, nel tempo, di problemi scheletrici nei cuccioli in crescita. La carne cruda va inoltre maneggiata con le stesse precauzioni igieniche di qualsiasi alimento crudo destinato al consumo umano (taglieri separati, refrigerazione, pulizia immediata).\n\nLa maggior parte delle famiglie trova più semplice iniziare con un prodotto crudo formulato professionalmente che già rispetta il rapporto corretto, prima di passare a pasti crudi completamente personalizzati, reperiti e pesati in casa.",
+          "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
+          "productNote": "Un'opzione cruda pre-bilanciata che elimina le congetture:"
+        },
+        {
+          "rank": "03",
+          "title": "Cibo Crudo Liofilizzato e Disidratato ad Aria",
+          "score": "91/100",
+          "pros": "Unisce la ricchezza nutrizionale della carne cruda alla comodità della conservazione a temperatura ambiente.",
+          "cons": "Va reidratato con acqua tiepida o brodo di ossa prima della somministrazione.",
+          "readMore": "Sia l'essiccazione all'aria che la liofilizzazione rimuovono l'umidità dalla carne cruda a basse temperature, mantenendo il profilo nutrizionale e enzimatico vicino a quello del crudo e rendendo l'alimento conservabile a temperatura ambiente, senza bisogno del freezer. La liofilizzazione utilizza un processo sottovuoto a freddo che tende a preservare i nutrienti ancora meglio dell'essiccazione all'aria, anche se solitamente ha un costo più elevato al chilo.\n\nEntrambi i formati si trasportano facilmente e funzionano benissimo come topping crudo mescolato alle crocchette per aumentarne l'appetibilità. Reidratare con acqua tiepida o brodo d'ossa prima di servire aiuta a ripristinare un livello di umidità più vicino alla dieta ancestrale del cane, ed è particolarmente utile per i cani predisposti a cristalli urinari o a un affaticamento renale.\n\nLa considerazione principale è il costo per caloria: poiché il peso in acqua viene eliminato, si paga per una nutrizione concentrata, motivo per cui questo formato viene spesso usato come topping o come dieta a rotazione piuttosto che come unico alimento quotidiano per un cane di taglia grande.",
+          "productKey": "ziwi-peak-beef-chicken-bundle",
+          "productNote": "Un'opzione essiccata all'aria molto apprezzata:"
+        },
+        {
+          "rank": "04",
+          "title": "Crocchette ad Alto Contenuto Proteico Senza Cereali o Grani Antichi",
+          "score": "78/100",
+          "pros": "Pratiche, a lunga conservazione e sostenibili per famiglie con cani di grossa taglia.",
+          "cons": "Estrusione a oltre 200°C, solo 8-10% di umidità e 40-50% di amidi amidacei.",
+          "readMore": "Le crocchette premium restano l'opzione più pratica per molte famiglie: si conservano fino a un anno, sono facili da dosare con un distributore automatico e costano significativamente meno per caloria rispetto alle diete fresche o crude.\n\nLe formule migliori di questa fascia indicano in etichetta una proteina animale specifica invece di una vaga \"farina di carne\", limitano gli amidi a grani antichi come avena e sorgo invece di pesanti riempitivi a base di mais o frumento, e vengono sottoposte a test di laboratorio indipendenti per i metalli pesanti.\n\nIl compromesso è il processo di estrusione stesso: l'esposizione a temperature superiori ai 200°C distrugge alcune vitamine sensibili al calore e riduce l'umidità a circa il 10%, motivo per cui i veterinari raccomandano spesso di aggiungere un po' di brodo d'ossa o un topping crudo alle diete a base di sole crocchette, soprattutto per i cani predisposti a cristalli urinari.",
+          "productKey": "orijen-original-grain-free-23lb",
+          "productNote": "Una formula ad alto contenuto proteico, in stile WholePrey, in questa categoria:"
+        },
+        {
+          "rank": "05",
+          "title": "Diete Veterinarie Terapeutiche da Prescrizione",
+          "score": "72/100",
+          "pros": "Formulate specificamente per insufficienze renali, epatopatie o calcoli di struvite accertati.",
+          "cons": "Frequente impiego di sottoprodotti vegetali; richiedono prescrizione medica.",
+          "readMore": "Le diete terapeutiche sono progettate per gestire una specifica condizione diagnosticata: proteine e fosforo ridotti per la malattia renale, proteine idrolizzate a cui il sistema immunitario non può reagire per le gravi allergie alimentari, oppure magnesio e pH controllati per i calcoli vescicali di struvite.\n\nSi collocano più in basso in una classifica generale di \"alimenti più sani\" solo perché sono deliberatamente restrittive piuttosto che ottimizzate per un cane sano nella media; una formula pensata per alleviare il lavoro di reni compromessi, ad esempio, non è intenzionalmente l'alimento più ricco di proteine sul mercato.\n\nQueste diete richiedono l'approvazione del veterinario ed esami del sangue periodici per confermarne l'efficacia, e non dovrebbero mai essere somministrate a un cane sano senza una motivazione clinica, poiché limitare i nutrienti di cui un cane sano ha effettivamente bisogno può causare danni nel tempo.",
+          "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
+          "productNote": "Una comune formula veterinaria di supporto renale su prescrizione:"
+        }
+      ],
+      "buyerGuideTitle": "4 Regole d’Oro per Scegliere il Miglior Alimento",
+      "buyerRules": [
+        {
+          "title": "1. Carne Animale Specifica al 1° Posto negli Ingredienti",
+          "desc": "Cerca «Tacchino disossato», «Manzo» o «Salmone fresco» invece di generiche «farine di carne».",
+          "readMore": "Sull'etichetta degli alimenti per animali domestici, gli ingredienti sono elencati in ordine decrescente di peso prima della cottura. Le carni intere e chiaramente specificate (come «Tacchino disossato» o «Manzo fresco») forniscono aminoacidi essenziali come taurina, arginina e carnitina nella loro forma più biodisponible. Evita espressioni generiche come «derivati animali», «farina di carne» o «sottoprodotti di pollame», che consentono l'impiego di scarti industriali di provenienza sconosciuta.\n\nFai attenzione anche alla tecnica dell'«ingredient splitting»: molti produttori suddividono i carboidrati in voci distinte (piselli, amido di piselli e proteine di piselli) per far figurare la carne al primo posto nell'elenco, anche quando i carboidrati costituiscono la maggior parte della formula.\n\nLe farine disidratate con nome specifico — come la «Farina di agnello disidratata» o la «Farina di salmone» — sono valide se chiaramente dichiarate, poiché l'acqua è stata rimossa prima della lavorazione, garantendo un apporto concentrato di proteine animali nobili."
+        },
+        {
+          "title": "2. Elevata Umidità Biologica (>70%)",
+          "desc": "Le sole crocchette secche provocano una disidratazione cronica latente. Aggiungi sempre brodi o cibi freschi.",
+          "readMore": "In natura, le prede da cui discendono i cani contengono tra il 70% e il 75% di acqua. I cani hanno uno stimolo della sete fisiologicamente basso perché il loro organismo è evoluto per assumere liquidi direttamente dal cibo. Nutrirli esclusivamente con crocchette secche (con appena l'8-10% di umidità) li espone a una disidratazione cronica latente.\n\nNel tempo, un'urina continuamente concentrata affatica i reni e crea l'ambiente ideale per la comparsa di calcoli vescicali di struvite e ossalato di calcio.\n\nSe somministri crocchette, reidrata sempre la ciotola: aggiungi in proporzione 1:1 brodo di ossa tiepido non salato, acqua filtrata o kefir semplice, oppure integra con cibi freschi cucinati per proteggere la salute renale."
+        },
+        {
+          "title": "3. Zero Conservanti Chimici Sintetici",
+          "desc": "Evita categoricamente additivi come BHA, BHT, etossichina e coloranti sintetici.",
+          "readMore": "Per assicurare scadenze fino a 24 mesi, molti mangimi economici impiegano antiossidanti chimici di sintesi come BHA (butilidrossianisolo), BHT (butilidrossitoluene) ed etossichina. Numerosi studi scientifici classificano BHA e BHT come sospetti interferenti endocrini e cancerogeni, mentre l'etossichina (nata originariamente come pesticida) è correlata a tossicità epatica e reazioni allergiche.\n\nInoltre, i coloranti artificiali (come Rosso 40 o Giallo 5) hanno una funzione puramente visiva per il proprietario, ma scatenano dermatiti, prurito cronico e infiammazioni intestinali nei cani sensibili.\n\nScegli sempre formule conservate naturalmente con tocoferoli misti (Vitamina E), estratto di rosmarino e acido citrico, che proteggono i grassi dall'ossidazione in modo sicuro."
+        },
+        {
+          "title": "4. Carboidrati Moderati (<25%)",
+          "desc": "I cani non possiedono amilasi salivare. Troppi amidi affaticano il pancreas e favoriscono il sovrappeso.",
+          "readMore": "Il cane è un carnivoro facoltativo privo di un fabbisogno biologico di carboidrati raffinati. A differenza dell'essere umano, la saliva del cane non contiene amilasi salivare per digerire gli amidi in bocca; tutto il carico enzimatico grava unicamente sul pancreas.\n\nPoiché le tabelle nutrizionali non obbligano a dichiarare i carboidrati, molte crocchette commerciali nascondono dal 45% al 60% di amidi (da mais, frumento o tapioca) al solo scopo di agglomerare i croccantini durante l'estrusione.\n\nUn elevato carico glicemico provoca continui picchi di insulina, infiammazione sistemica, otiti croniche e obesità canina. Calcola i carboidrati sottraendo al 100% la somma di proteine, grassi, fibre, umidità e ceneri grezze. Cerca sempre prodotti con meno del 25% di carboidrati."
+        }
+      ],
+      "ctaTitle": "Calcola la Dose Giornaliera Esatta per il Tuo Cane",
+      "ctaDesc": "Che tu scelga cibo fresco, dieta BARF o crocchette premium: scopri i grammi giornalieri esatti e il fabbisogno calorico.",
+      "ctaBtn": "Calcola la Razion Quotidiana Ora →"
+    },
+    "recipes": {
+      "eyebrow": "RICETTE CASALINGHE PER CANI // FORMULE NRC E AAFCO",
+      "heroTitle": "Ricette Casalinghe Equilibrate per Cani",
+      "heroSubtitle": "Istruzioni dettagliate passo-passo per preparare a casa razioni cotte a vapore bilanciate e diete crude ancestrali BARF 80-10-10.",
+      "calciumWarningTitle": "La Regola d’Oro del Fatto in Casa: Il Bilanciamento del Calcio",
+      "calciumWarningDesc": "La polpa muscolare è ricca di fosforo e quasi priva di calcio (rapporto 1:20). Alimentare un cane solo con carne e riso senza calcio provoca demineralizzazione scheletrica severa in pochi mesi. Aggiungi sempre 1/2 cucchiaino raso di polvere di guscio d’uovo purificata (circa 900 mg di calcio elementare) ogni 450 g di carne senza ossa per garantire il rapporto ottimale Calcio/Fosforo di 1.2:1.",
+      "recipesList": [
+        {
+          "tag": "COTTURA DOLCE",
+          "title": "Ricetta 1: Tacchino a Vapore con Zucca Prebiotica (Ideale per Stomaci Delicati)",
+          "desc": "Perfetta per cani con digestione sensibile, feci molli o intolleranze al pollo da allevamento intensivo.",
+          "ingredients": [
+            "Macinato magro di tacchino — 65% (circa 900 g)",
+            "Cuori di tacchino o manzo (Fonte naturale di taurina) — 10% (circa 140 g)",
+            "Purea di zucca cotta al naturale (Fibre solubili) — 10% (circa 140 g)",
+            "Spinacini e zucchine cotti a vapore tritati — 10% (circa 140 g)",
+            "Olio di salmone selvaggio d’Alaska (EPA/DHA) — 2% (1.5 cucchiai)",
+            "Farina fine di guscio d’uovo (Calcio) — 3% (1 cucchiaino raso)"
+          ],
+          "prep": "Cuoci delicatamente il tacchino e i cuori a fuoco basso fino a leggera cottura (70°C). Cuoci le verdure a vapore e frullale con la zucca. Amalgama tutto e lascia raffreddare completamente. Aggiungi l’olio di salmone e il calcio a freddo. Congela in porzioni singole."
+        },
+        {
+          "tag": "BARF CRUDA",
+          "title": "Ricetta 2: Dieta Ancestrale BARF 80-10-10 Manzo & Anatra",
+          "desc": "Alimentazione cruda biologicamente appropriata per cani adulti sani dotati di una normale acidità gastrica.",
+          "ingredients": [
+            "Carne magra di manzo da pascolo — 70%",
+            "Cuore di manzo (Ricco di L-Carnitina e CoQ10) — 10%",
+            "Colli d’anatra crudi o carcasse — 10% (Osso polposo e calcio)",
+            "Fegato di manzo (Vitamina A e complesso B) — 5%",
+            "Rene o milza di manzo (Organo secretore essenziale) — 5%"
+          ],
+          "prep": "Taglia carne e cuore a bocconi adeguati alla taglia. Pesa accuratamente gli organi con bilancia digitale. Congela tutte le porzioni per almeno 3 settimane a -20°C prima di scongelarle e somministrarle."
+        },
+        {
+          "tag": "TOPPER SUPERFOOD",
+          "title": "Ricetta 3: Topper Antiossidante 80/20 per Arricchire le Crocchette",
+          "desc": "Integrazione fresca formulata per sostituire il 20% delle calorie giornaliere delle normali crocchette.",
+          "ingredients": [
+            "Uova fresche biologiche in camicia — 40%",
+            "Germogli di broccoli al vapore e mirtilli neri — 30%",
+            "Brodo di ossa di manzo fatto sobbollire a lungo — 20%",
+            "Semi di canapa bio e farina di alga kelp — 10%"
+          ],
+          "prep": "Cuoci le uova per 4 minuti lasciando il tuorlo morbido. Cuoci a vapore le verdure per 3 minuti. Frulla con il brodo tiepido e i mirtilli. Aggiungi da 2 a 4 cucchiai al giorno nella ciotola delle crocchette."
+        }
+      ],
+      "calciumGuideTitle": "Fonti Sicure di Calcio per l’Alimentazione Casalinga",
+      "calciumGuideItems": [
+        {
+          "title": "Farina di Guscio d’Uovo",
+          "ratio": "1/2 cucchiaino ogni 450 g di carne disossata",
+          "desc": "95% carbonato di calcio puro. Facile da produrre lavando, asciugando in forno e polverizzando i gusci."
+        },
+        {
+          "title": "Ossa Polpose Crude Commestibili",
+          "ratio": "10% del peso totale della ciotola",
+          "desc": "Colli d’anatra o ali di pollo crude. Mai cuocere le ossa, che diventerebbero rigide e pericolose."
+        },
+        {
+          "title": "Farina d’Ossa Veterinaria (Bone Meal)",
+          "ratio": "Secondo le indicazioni in etichetta",
+          "desc": "Idrossiapatite microcristallina che apporta calcio e fosforo nel perfetto rapporto naturale di 2:1."
+        }
+      ]
+    },
+    "toxic": {
+      "eyebrow": "ALIMENTI TOSSICI PER CANI // GUIDA ALLE EMERGENZE",
+      "dangerTitle": "I Cibi Domestici Più Pericolosi e Letali per il Cane",
+      "dangerIntro": "Alcuni alimenti innocui per noi contengono tossine che l’organismo del cane non può smaltire, portando a collassi d’organo irreversibili.",
+      "dangerList": [
+        {
+          "name": "Cioccolato & Cacao",
+          "toxin": "Teobromina e Caffeina",
+          "symptoms": "Vomito, respiro affannoso, tachicardia, tremori muscolari, convulsioni, arresto cardiaco.",
+          "risk": "ALTO O LETALE"
+        },
+        {
+          "name": "Uva, Uvetta e Uva Passa",
+          "toxin": "Acido Tartarico",
+          "symptoms": "Letargia, disidratazione, blocco renale e insufficienza acuta in 24-72 ore.",
+          "risk": "ESTREMAMENTE LETALE"
+        },
+        {
+          "name": "Xilitolo (Dolcificante / E967)",
+          "toxin": "Poliolo Sintetico",
+          "symptoms": "Rilascio massiccio di insulina, ipoglicemia fulminea, atassia, necrosi epatica acuta.",
+          "risk": "MASSIMA URGENZA"
+        },
+        {
+          "name": "Cipolla, Aglio, Porri e Erba Cipollina",
+          "toxin": "Disolfuro di N-propile",
+          "symptoms": "Distruzione dei globuli rossi, anemia emolitica, gengive pallide, urine scure.",
+          "risk": "TOSSICITÀ CUMULATIVA"
+        },
+        {
+          "name": "Noci di Macadamia",
+          "toxin": "Neurotossina non identificata",
+          "symptoms": "Debolezza del treno posteriore, febbre alta, vomito, rigidità muscolare dolorosa.",
+          "risk": "MODERATO O SEVERO"
+        },
+        {
+          "name": "Ossa Cotte di Qualsiasi Tipo",
+          "toxin": "Rischio Meccanico di Schegge",
+          "symptoms": "Perforazione gastrointestinale, emorragia interna, peritonite, blocco chirurgico.",
+          "risk": "URGENZA CHIRURGICA"
+        }
+      ],
+      "emergencyTitle": "Cosa Fare in Caso di Avvelenamento Sospetto",
+      "emergencySteps": [
+        "1. Agisci Subito: Accerta l’alimento ingerito, la confezione, la quantità approssimativa e l’ora precisa.",
+        "2. NON Provocare il Vomito senza Parere Veterinario: Prodotti corrosivi o frammenti d’ossa lesionano l’esofago durante la risalita.",
+        "3. Chiama Immediatamente una Clinica Veterinaria: Contatta senza indugio un pronto soccorso veterinario attivo 24 ore."
+      ],
+      "safeTitle": "Frutta e Verdura 100% Sicure e Salutari",
+      "safeIntro": "Questi alimenti naturali forniscono antiossidanti, fibre solubili e vitamine utili alla salute del cane:",
+      "safeFoods": [
+        {
+          "name": "Mirtilli Neri",
+          "benefit": "Ricchi di antociani e polifenoli ad alto potere protettivo cellulare."
+        },
+        {
+          "name": "Purea di Zucca",
+          "benefit": "Ottima fonte di fibra solubile per regolarizzare sia diarrea che costipazione."
+        },
+        {
+          "name": "Carote",
+          "benefit": "Snack croccante e ipocalorico, ricco di beta-carotene, utile alla masticazione."
+        },
+        {
+          "name": "Fagiolini al Vapore",
+          "benefit": "Verdura verde a basso indice glicemico ideale per cani in sovrappeso."
+        },
+        {
+          "name": "Mele (Senza Semi né Torsolo)",
+          "benefit": "Apporto naturale di vitamina C, vitamina A e pectina alleata dell’intestino."
+        }
+      ]
+    },
+    "brands": {
+      "eyebrow": "RECENSIONI MARCHE CROCCHETTE E STORICO RICHIAMI",
+      "heroTitle": "Analisi delle Marche di Cibo per Cani e Storico Richiami",
+      "heroSubtitle": "Recensioni imparziali su trasparenza degli ingredienti, conformità delle etichette e ritiri dal commercio.",
+      "brandsList": [
+        {
+          "name": "Blue Buffalo",
+          "grade": "Voto: B+",
+          "pros": "Carne disossata reale al 1° posto; senza mais, grano o soia; crocchette LifeSource Bits ricche di vitamine.",
+          "cons": "Contenuto di carboidrati elevato (45-50%); richiami storici FDA per umidità eccessiva e ipervitaminosi D.",
+          "verdict": "Crocchette sopra la media. Consigliamo di integrare con un 20% di alimenti freschi per idratare i reni."
+        },
+        {
+          "name": "Rachael Ray Nutrish",
+          "grade": "Voto: C+ / B-",
+          "pros": "Economico e facilmente reperibile; le linee Peak e Dish contengono percentuali maggiori di carne reale.",
+          "cons": "Le linee base impiegano concentrati proteici di piselli e glutine di mais; citata in indagini FDA passate.",
+          "verdict": "Scelta economica discreta nelle linee superiori, verificando che non vi sia frazionamento di legumi in etichetta."
+        },
+        {
+          "name": "Pure Balance",
+          "grade": "Voto: B (Miglior Scelta Budget)",
+          "pros": "Ottimo rapporto qualità/prezzo; ricette incentrate sulla carne senza coloranti artificiali o farine scadenti.",
+          "cons": "Produzione esternalizzata; quota moderata di carboidrati.",
+          "verdict": "Una delle alternative più oneste e affidabili nella fascia di prezzo da supermercato."
+        },
+        {
+          "name": "Ollie Fresh Dog Food",
+          "grade": "Voto: A (Eccellenza)",
+          "pros": "Ingredienti 100% di grado umano; cottura dolce a bassa temperatura; porzioni singole su misura.",
+          "cons": "Abbonamento mensile impegnativo (180€-350€/mese); richiede spazio nel congelatore.",
+          "verdict": "Punto di riferimento per il benessere metabolico, brillantezza del mantello e salute dell’apparato digerente."
+        },
+        {
+          "name": "Open Farm",
+          "grade": "Voto: A-",
+          "pros": "Trasparenza totale delle filiere; carni da allevamenti certificati nel rispetto degli animali e pesce sostenibile.",
+          "cons": "Prezzo di fascia alta; distribuzione limitata nei negozi tradizionali.",
+          "verdict": "Scelta d’eccellenza per chi ricerca sostenibilità etica e zero farine di sottoprodotti."
+        }
+      ],
+      "recallsTitle": "Come Leggere le Notifiche di Richiamo (Recalls)",
+      "recallsDesc": "Gli allarmi sanitari si suddividono in tre classi: Classe I (rischio grave o letale, es. Salmonella o eccesso di Vitamina D), Classe II (disturbi transitori) e Classe III (difformità formali in etichetta). Controlla sempre il numero di lotto stampato sul sacco.",
+      "methodTitle": "I Nostri 4 Criteri di Valutazione",
+      "methodPillars": [
+        {
+          "title": "1. Chiarezza delle Carni",
+          "desc": "Muscolo intero chiaramente indicato anziché generiche farine di carne."
+        },
+        {
+          "title": "2. Tasso di Carboidrati",
+          "desc": "Mantenere gli amidi sotto il 40% per prevenire l’obesità canina."
+        },
+        {
+          "title": "3. Tracciabilità d’Origine",
+          "desc": "Filiere etiche certificate e ingredienti privi di OGM."
+        },
+        {
+          "title": "4. Rigore Igienico Sanitario",
+          "desc": "Controlli batteriologici regolari in laboratori terzi indipendenti."
+        }
+      ]
+    },
+    "allergies": {
+      "eyebrow": "GUIDA NUTRIZIONALE // ALLERGIE ALIMENTARI E DIETE AD ESCLUSIONE",
+      "heroTitle": "Miglior Cibo per Cani con Allergie e Stomaco Sensibile",
+      "heroSubtitle": "Guida pratica a intolleranze alimentari, proteine novità ipoallergeniche e dieta di esclusione di 8 settimane.",
+      "allergensTitle": "I 5 Più Comuni Allergeni Alimentari nel Cane",
+      "allergensIntro": "Le allergie alimentari canine sono reazioni immunitarie anomale scatenate da proteine dietetiche. In ordine di frequenza clinica:",
+      "allergensList": [
+        {
+          "name": "1. Pollo da Allevamento Intensivo (60% dei casi)",
+          "desc": "Onnipresente nel pet food commerciale, è l’allergene alimentare più frequente in assoluto."
+        },
+        {
+          "name": "2. Manzo Commerciale (30% dei casi)",
+          "desc": "Proteina rossa diffusa che scatena spesso forte prurito alle zampe e otiti recidivanti."
+        },
+        {
+          "name": "3. Latticini e Formaggi",
+          "desc": "I cani adulti perdono gli enzimi lattasi, manifestando coliche gassose e diarrea."
+        },
+        {
+          "name": "4. Glutine di Frumento e Mais",
+          "desc": "Proteine vegetali che irritano la barriera intestinale e alimentano la proliferazione di lieviti."
+        },
+        {
+          "name": "5. Soia e Legumi",
+          "desc": "Riempitivi proteici a basso costo che causano fermentazioni anomale e prurito."
+        }
+      ],
+      "eliminationTitle": "Il Protocollo della Dieta ad Esclusione di 8 Settimane",
+      "eliminationSteps": [
+        {
+          "step": "Fase 1",
+          "title": "Scegliere una Sola Proteina Novità",
+          "desc": "Passa il cane a una carne che non ha mai assaggiato prima (Cervo, Coniglio o Canguro) abbinata a un vegetale leggero come la zucca."
+        },
+        {
+          "step": "Fase 2",
+          "title": "Tolleranza Zero (8 Settimane Rigorose)",
+          "desc": "Per 8 settimane consecutive fornisci solo ed esclusivamente questo alimento. Vietati snack commerciali, bocconcini e avanzi di cucina."
+        },
+        {
+          "step": "Fase 3",
+          "title": "Reintroduzione Controllata per Prova",
+          "desc": "Se il prurito scompare, reintroduci un solo ingrediente sospetto per 7 giorni. La ricomparsa dei sintomi confermerà l’allergia."
+        }
+      ],
+      "novelTitle": "Proteínas Novità Ipoallergeniche Consigliate",
+      "novelProteins": [
+        {
+          "name": "Carne di Cervo / Capriolo",
+          "desc": "Carne rossa magra e altamente digeribile verso cui i cani non hanno anticorpi pregressi."
+        },
+        {
+          "name": "Carne di Coniglio",
+          "desc": "Proteina ipoallergenica d’eccellenza, leggera e dal profilo aminoacidico ideale."
+        },
+        {
+          "name": "Carne d’Anatra",
+          "desc": "Ottima e saporita alternativa per cani intolleranti alle carni di pollo convenzionali."
+        },
+        {
+          "name": "Carne di Canguro",
+          "desc": "Tra le carni selvatiche più pure e povere di grassi disponibili in dermatologia veterinaria."
+        }
+      ]
+    },
+    "calculator": {
+      "eyebrow": "100% GRATUITO // CALCOLATORE DEL FABBISOGNO CALORICO",
+      "noticeTitle": "Nota Importante:",
+      "noticeText": "Fornito a scopo informativo ed educativo. Non sostituisce una consulenza o diagnosi veterinaria.",
+      "heroTitle": "Calcolatore del Fabbisogno Calorico per Cani",
+      "heroSubtitle": "Determina l’esatto fabbisogno calorico giornaliero del tuo cane (RER e MER) e calcola i grammi raccomandati per pasto in base a peso, età, attività e silhouette."
+    },
+    "breeds": {
+      "eyebrow": "GUIDA NUTRIZIONALE PER RAZZA // LINEE GUIDA NUTRIZIONALI",
+      "targetWeight": "Peso Ideale",
+      "dailyCalories": "Calorie Giornaliere",
+      "freshDaily": "Cibo Fresco / Giorno",
+      "kibbleDaily": "Crocchette / Giorno",
+      "cups": "tazze",
+      "reqsTitle": "Fabbisogni Nutrizionali per il {name}",
+      "reqsIntro": "Come cane di categoria {category} con un peso medio di {w0}–{w1} lbs (circa {Math.round(w0*0.453)}–{Math.round(w1*0.453)} kg), il {name} necessita di un profilo nutrizionale dedicato:",
+      "predispositionsTitle": "Sensibilità e Predisposizioni di Razza:",
+      "feedingRoutineTitle": "Routine di Alimentazione Consigliata:",
+      "feedingRoutineDesc": "Distribuisci i pasti del tuo {name} adulto due volte al giorno (50% al mattino e 50% alla sera). Assicura sempre acqua fresca. Se somministri crocchette, reidratale con brodo di ossa tiepido per sostenere i reni.",
+      "ctaTitle": "Personalizza il Piano Alimentare per il Tuo {name}",
+      "ctaSubtitle": "Imposta età esatta (cucciolo, adulto o senior), peso reale, livello di esercizio fisico e forma fisica con il calcolatore gratuito.",
+      "ctaBtn": "Calcola per {name} →",
+      "faqTitle": "Domande Frequenti sull’Alimentazione del {name}",
+      "faqSubtitle": "Dosi consigliate, numero di pasti e ingredienti ottimali."
+    },
+    "comparisonTable": {
+      "eyebrow": "CONFRONTO NUTRIZIONALE // CIBO FRESCO NATURALE VS CROCCHETTE",
+      "title": "Perché il Cibo Naturale Supera Biologicamente le Crocchette",
+      "subtitle": "Un confronto nutrizionale dettagliato tra calore di lavorazione, precisione delle porzioni e costo mensile reale — gli stessi fattori che uno studio di 5 anni sulla longevità ha correlato a una vita fino a 32 mesi più lunga nei cani nutriti con cibo fresco.",
+      "scrollHint": "↔ Scorri la tabella in orizzontale",
+      "colMetric": "Parametro Nutrizionale",
+      "colDfp": "✨ DogFoodPlanner",
+      "colSubs": "Abbonamenti Fresco",
+      "colKibble": "Crocchette Secche",
+      "rows": [
+        {
+          "metric": "Metodo di Lavorazione",
+          "dfp": "Cottura Delicata (~74°C) o Crudo — Enzimi Intatti",
+          "subs": "Cotto Sottovuoto (Sous-Vide) e Surgelato",
+          "kibble": "Estrusione ad Altissima Temperatura (200°C+)"
+        },
+        {
+          "metric": "Precisione della Porzione",
+          "dfp": "Grammi esatti tramite calcolo metabolico RER/MER, calibrato su peso, età e attività",
+          "subs": "Tabella fissa per fasce di peso approssimative",
+          "kibble": "Tabella generica sul sacco — sovrastima le porzioni del 20–30%"
+        },
+        {
+          "metric": "Carboidrati Netti",
+          "dfp": "< 5% (solo verdure selezionate, zero riempitivi)",
+          "subs": "10% – 20%",
+          "kibble": "45% – 60% (amidi di mais, frumento e piselli)"
+        },
+        {
+          "metric": "Umidità Biologica",
+          "dfp": "70% – 75% (supporta l'idratazione renale e urinaria)",
+          "subs": "70% – 75%",
+          "kibble": "8% – 10% (disidratazione subclinica cronica)"
+        },
+        {
+          "metric": "Integrità Nutrizionale",
+          "dfp": "Minima ossidazione — omega-3 ed enzimi preservati",
+          "subs": "Moderata — degradazione di alcuni nutrienti termosensibili",
+          "kibble": "Ossidazione lipidica e formazione di composti AGE dal calore di estrusione"
+        },
+        {
+          "metric": "Trasparenza degli Ingredienti",
+          "dfp": "100% grammi e percentuali dichiarati — controlli ogni singolo grammo",
+          "subs": "Formula proprietaria (proporzioni esatte non divulgate)",
+          "kibble": "Frazionamento degli ingredienti e farine di carne generiche"
+        },
+        {
+          "metric": "Costo Medio Mensile (Cane 23 kg)",
+          "dfp": "75€ – 120€ (solo ingredienti freschi preparati a casa)",
+          "subs": "240€ – 420€ / mese",
+          "kibble": "55€ – 90€ / mese"
+        }
+      ]
+    },
+    "faqPage": {
+      "badge": "ARCHIVIO CONOSCENZE // OLTRE 40 RISPOSTE",
+      "exploreHubsTitle": "Esplora i Nostri Dossier di Nutrizione Canina",
+      "exploreHubsSubtitle": "Guide di approfondimento create per i proprietari attenti al benessere e alla longevità del loro cane.",
+      "cardBestFood": "Confronto tra cibo fresco, BARF, crocchette ad alto tenore di carne e formule delicate.",
+      "cardCalc": "Calcolatore RER e MER per calcolare le porzioni giornaliere in grammi.",
+      "cardRecipes": "Ricette casalinghe cotte e BARF 80-10-10 con apporto controllato e sicuro di calcio.",
+      "cardAllergies": "Scelta delle proteine ipoallergeniche, diete ad esclusione e flora batterica intestinale.",
+      "cardToxic": "Elenco completo dei cibi tossici da evitare, frutta e verdura sicure e additivi dannosi.",
+      "cardBrands": "Recensioni imparziali su Blue Buffalo, Nutrish, Pure Balance, Ollie e Open Farm."
+    },
+    "faqSingle": {
+      "reviewedBy": "Revisionato da: Team Editoriale di DogFoodPlanner",
+      "updated": "Aggiornato al: 2026",
+      "directQuickAnswer": "Risposta Rapida Diretta",
+      "clinicalAnalysis": "Analisi Nutrizionale Approfondita",
+      "topics": "Argomenti correlati:",
+      "ctaBadge": "🐾 Motore Nutrizionale Canino Gratuito",
+      "ctaTitle": "Calcola le Calorie e i Grammi Giornalieri per il Tuo Cane",
+      "ctaSubtitle": "Usa il nostro calcolatore per conoscere il dispendio metabolico (RER/MER) e i grammi per pasti freschi o crudi.",
+      "ctaBtn": "Calcola le Dosi Ora →",
+      "relatedTitle": "Domande Nutrizionali Correlate",
+      "readAnswer": "Leggi la Risposta Completa →",
       "referencedInAnswer": "Referenziato in questa risposta",
       "buyNow": "Acquista ora"
-  },
-  "bestFoodSingle": {
-    "rankBadge": "TOP 5 CIBI PIÙ SANI // POSIZIONE",
-    "reviewedBy": "Revisionato da: Team Editoriale di DogFoodPlanner",
-    "nutritionalScore": "Punteggio Nutrizionale",
-    "strengths": "Punti di Forza",
-    "tradeoffs": "Compromessi",
-    "fullBreakdown": "Analisi Completa",
-    "exampleProduct": "Prodotto di esempio in questa categoria",
-    "previousRank": "Posizione precedente",
-    "nextRank": "Posizione successiva",
-    "backToRanking": "Torna alla Classifica Completa Top 5",
-    "viewOnAmazon": "Vedi su Amazon"
+    },
+    "bestFoodSingle": {
+      "rankBadge": "TOP 5 CIBI PIÙ SANI // POSIZIONE",
+      "reviewedBy": "Revisionato da: Team Editoriale di DogFoodPlanner",
+      "nutritionalScore": "Punteggio Nutrizionale",
+      "strengths": "Punti di Forza",
+      "tradeoffs": "Compromessi",
+      "fullBreakdown": "Analisi Completa",
+      "exampleProduct": "Prodotto di esempio in questa categoria",
+      "previousRank": "Posizione precedente",
+      "nextRank": "Posizione successiva",
+      "backToRanking": "Torna alla Classifica Completa Top 5",
+      "viewOnAmazon": "Vedi su Amazon"
+    }
   }
-},
 };
 
 export type PageTranslations = typeof PAGE_TRANSLATIONS.en;
