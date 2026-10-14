@@ -80,7 +80,7 @@ export const itRecipes: LocalizedRecipesMap = {
       'Trippa verde cruda e kefir o latte di capra crudo'
     ],
     preparationNotes: [
-      'Utilizza carne certificata per consumo umano e congela a -20 °C per almeno 3 settimane prima della somministrazione iniziale.',
+      'Il congelamento non rende sicura la carne cruda. Maneggia la carne cruda con attenzione e consulta il veterinario prima di somministrare cibo crudo.',
       'Trita o taglia finemente muscolo e organi. Le ossa carnose morbide devono essere finemente macinate per cani piccoli o date intere sotto stretta supervisione.',
       'Scongela le porzioni giornaliere in frigorifero 24 ore prima del pasto.'
     ]
@@ -222,7 +222,7 @@ export const itRecipes: LocalizedRecipesMap = {
       'Inizia solo con pollo per le prime 2 settimane senza variare la fonte proteica.',
       'Servi sempre a temperatura ambiente, mai freddo di frigorifero.',
       'Feci più morbide sono del tutto normali nei primi 3-5 giorni di adattamento.',
-      'Congela sempre il pollo a -20 °C per 3 settimane prima dell’uso a crudo.'
+      'Il congelamento non rende sicura la carne cruda. Maneggia la carne cruda con attenzione e consulta il veterinario prima di somministrare cibo crudo.'
     ]
   },
   'raw-barf-salmon-skin': {
@@ -255,7 +255,7 @@ export const itRecipes: LocalizedRecipesMap = {
       'Olio di semi di canapa e integratore minerale'
     ],
     preparationNotes: [
-      'Acquista carni sicure per consumo umano e congela a -20 °C per 3 settimane prima dell’uso.',
+      'Il congelamento non rende sicura la carne cruda. Maneggia la carne cruda con attenzione e consulta il veterinario prima di somministrare cibo crudo.',
       'Segui scrupolosamente questa dieta di esclusione per 8–12 settimane senza premi esterni.',
       'L’osso di coniglio finemente tritato è morbido, sicuro e ricco di calcio.'
     ]

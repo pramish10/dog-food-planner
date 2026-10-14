@@ -31,7 +31,7 @@ const prevItem = idx > 0 ? goldenRules[idx - 1] : null;
 const nextItem = idx < goldenRules.length - 1 ? goldenRules[idx + 1] : null;
 
 const pageTitle = `${item.title}: ${p.titleSuffix}`;
-const pageDescription = item.desc.slice(0, 155);
+const pageDescription = item.desc;
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -66,7 +66,7 @@ const articleJsonLd = {
     <Breadcrumbs
       items={[
         { name: 'Home', url: '/' },
-        { name: 'Dog Food Types Compared', url: '/best-dog-food' },
+        { name: 'Dog Food Types', url: '/best-dog-food' },
         { name: item.title },
       ]}
     />

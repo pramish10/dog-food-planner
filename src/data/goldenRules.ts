@@ -51,7 +51,7 @@ export const GOLDEN_RULES_PAGE_I18N: Record<Lang, GoldenRulesPageI18n> = {
     vetTipTitle: 'Nutritional Recommendation',
     prevRule: 'Previous Rule',
     nextRule: 'Next Rule',
-    backLink: 'Back to Dog Food Types Compared',
+    backLink: 'Back to Dog Food Types',
     titleSuffix: 'Golden Rule for Choosing Dog Food | Dog Food Planner',
     ctaTitle: 'Calculate Your Dog’s Estimated Daily Food Grams',
     ctaDesc: 'Whether feeding fresh food, raw, or premium kibble, get estimated daily portion weights tailored to your dog.',

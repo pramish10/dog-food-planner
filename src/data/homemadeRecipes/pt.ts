@@ -243,7 +243,7 @@ export const ptRecipes: LocalizedRecipesMap = {
     shortDesc: 'Uma dieta crua biologicamente apropriada baseada no modelo de presa inteira no rigoroso padrão 80-10-10: 80% carne muscular, 10% ossos carnudos crus e 10% vísceras.',
     summary: 'Criada para cães adultos saudáveis com boa acidez estomacal. Combina carne muscular magra bovina a pasto, coração bovino, pescoço de pato cru inteiro (fonte de cálcio ósseo natural e condroprotetores) e vísceras essenciais (fígado e rim bovino para retinol e vitaminas B).',
     badge: 'MODELO DE PRESA ANCESTRAL CRUA // 80-10-10 EQUILÍBRIO BIOLÓGICO',
-    prepTime: '25 minutos (mais congelamento prévio obrigatório de 3 semanas)',
+    prepTime: '25 minutos',
     cookTime: '0 minutos (Servido 100% Cru)',
     yieldAmount: 'Aprox. 1.360 g (3,0 lbs) de lote cru',
     lifeStage: 'Cães Adultos Saudáveis (Acidez Gástrica Normal)',
@@ -309,7 +309,7 @@ export const ptRecipes: LocalizedRecipesMap = {
         ],
       },
       {
-        title: 'Protocolo Obrigatório de Congelamento de 3 Semanas Antiparasitário',
+        title: 'Segurança Alimentar e Orientação Veterinária para Dietas Cruas',
         description: 'Carnes cruas podem carregar cistos parasitários (como Neospora ou Toxoplasma). Por rigorosa biossegurança veterinária, todos os itens crus DEVEM passar por congelamento contínuo a -20°C por pelo menos 21 dias consecutivos antes do descongelamento e consumo.',
         keyPoints: [
           'Congelar por 21 dias a -20°C inativa com eficácia parasitas teciduais.',
@@ -331,7 +331,7 @@ export const ptRecipes: LocalizedRecipesMap = {
       {
         step: 1,
         title: 'Higiene e Checagem do Congelamento Prévio',
-        instruction: 'Confirme se toda a carne, corações, pescoços e vísceras cumpriram as 3 semanas a -20°C. Separe tábuas não porosas e facas limpas exclusivas.',
+        instruction: 'O congelamento não torna a carne crua segura. Manipule carne crua com cuidado e converse com seu veterinário antes de oferecer alimentação crua. Separe tábuas não porosas e facas limpas exclusivas.',
         criticalTip: 'Lave as mãos com água e sabão por 20 segundos antes e após o manuseio de carnes cruas.',
       },
       {

@@ -120,7 +120,7 @@ export const PUPPY_NUTRITION_PAGE_I18N: Record<Lang, PuppyNutritionPageI18n> = {
     vetTipTitle: 'Puppy Nutrition Insight',
     prevRequirement: 'Previous Requirement',
     nextRequirement: 'Next Requirement',
-    backLink: 'Back to Dog Food Types Compared',
+    backLink: 'Back to Dog Food Types',
     titleSuffix: 'Puppy Growth Nutrition Guide | Dog Food Planner',
     ctaTitle: 'Calculate Your Puppy’s Estimated Daily Feeding Portions',
     ctaDesc: 'Enter your puppy’s age, weight, and breed size into our feeding calculator to get estimated daily calorie and gram targets.',
@@ -255,7 +255,7 @@ const REQUIREMENTS_DATA: Record<Lang, PuppyNutritionRequirement[]> = {
       title: 'High Metabolic Burn & Meal Scheduling',
       shortTag: 'Caloric Kinetics & Glycemic Control',
       metricBadge: '2–3× Adult RER • 3–4 Meals Daily',
-      desc: 'Young puppies (2–4 months) burn up to three times their resting metabolic rate per pound due to rapid cell division, tissue synthesis, and high body-surface heat dissipation. Serving 3 to 4 smaller, nutrient-dense meals helps prevent hypoglycemia, digestive overload, and gastric distension.',
+      desc: 'Young puppies burn up to three times adult resting calories. Serving 3 to 4 smaller meals daily helps prevent hypoglycemia and digestive distress.',
       readMore: `During the initial postnatal growth window (weeks 8 through 16), canine metabolic velocity peaks at levels never experienced again during adult life. A growing puppy must fuel exponential protein turnover, continuous osteoblast bone deposition, and intense thermoregulation. Because their ratio of skin surface area to body mass is drastically elevated, juvenile puppies lose metabolic heat rapidly, driving baseline caloric expenditure up to 2.5–3.0 times the adult Resting Energy Requirement (RER = 70 × [kg]^0.75).
 
 However, their anatomic stomach volume remains remarkably compact. Overloading a juvenile puppy’s digestive tract with one or two massive daily feedings causes acute gastric dilatation, osmotic diarrhea from incomplete enzyme saturation, and sluggish intestinal motility. Pancreatic lipase and amylase concentrations in young pups are still maturing; moderate, evenly spaced meals ensure complete enzymatic hydrolyzation without triggering small intestinal bacterial overgrowth.
@@ -289,7 +289,7 @@ The feeding schedule follows a structured step-down protocol: 4 meals daily from
       title: 'Optimal Calcium-to-Phosphorus Ratio & Skeletal Growth',
       shortTag: 'Mineral Density & Joint Protection',
       metricBadge: 'Ca:P 1.2:1–1.4:1 • 1.2%–1.6% Max DM',
-      desc: "Puppies under six months cannot regulate intestinal calcium uptake and absorb nearly all ingested calcium through passive diffusion. Maintaining an appropriate Calcium:Phosphorus ratio (1.2:1 to 1.4:1) with strict upper limits is essential to protect skeletal growth and joint development. Ask your vet about your puppy's calcium and growth needs.",
+      desc: 'Puppies absorb dietary calcium passively. Balancing calcium and phosphorus is vital to support skeletal growth and protect joint development.',
       readMore: `Calcium homeostasis in puppies differs fundamentally from that of adult canines. Adult dogs possess an active, vitamin D-dependent transcellular transport mechanism that effectively downregulates intestinal calcium absorption when dietary intake is excessive. In sharp contrast, puppies younger than 6 months absorb dietary calcium almost entirely through passive paracellular diffusion across the intestinal brush border—absorbing up to 45% to 50% of whatever calcium enters their lumen, regardless of physiological necessity.
 
 When growing puppies ingest excess dietary calcium, circulating serum levels elevate, triggering continuous calcitonin secretion from thyroid C-cells and suppressing parathyroid hormone (PTH). This hypercalcitonemia halts normal osteoclastic bone resorption and delays cartilage maturation. Growing epiphyseal growth plates fail to ossify at physiological rates, causing thickened, mechanically fragile cartilage that fissures under normal biomechanical load.
@@ -323,7 +323,7 @@ AAFCO and FEDIAF guidelines mandate a strict Calcium-to-Phosphorus ratio between
       title: 'DHA Omega-3 for Brain & Retinal Development',
       shortTag: 'Neurological & Photoreceptor Acuity',
       metricBadge: 'DHA ≥0.05% DM • Cold-Water Marine EPA/DHA',
-      desc: 'Docosahexaenoic acid (DHA) is a key structural fatty acid in neural and retinal tissue. Puppies nourished with marine DHA support healthy brain development, trainability, and retinal visual acuity.',
+      desc: 'DHA omega-3 is a key structural lipid in neural tissue. Marine DHA supports healthy brain development, trainability, and visual acuity in puppies.',
       readMore: `The central nervous system of a puppy experiences its most critical architectural expansion between late gestation and 16 weeks of age. During this neurodevelopmental surge, Docosahexaenoic Acid (DHA, 22:6 n-3)—a 22-carbon long-chain omega-3 polyunsaturated fatty acid—is selectively transported across the blood-brain barrier and incorporated into synaptic neuronal plasma membranes and retinal rod photoreceptors. In fact, DHA represents more than 30% of total structural lipids in cerebral gray matter.
 
 At the biophysical level, DHA’s unique six double bonds impart extraordinary fluidity to neuronal membranes. This fluidity accelerates G-protein-coupled receptor signaling, enhances synaptic plasticity, and optimizes neurotransmitter vesicle fusion, directly governing the speed of neural transmission and memory consolidation.
@@ -357,7 +357,7 @@ Studies evaluating puppies fed diets with added marine DHA compared to low-DHA d
       title: 'Breed Size-Specific Growth Rates & Energy Density',
       shortTag: 'Breed Scale & Orthopedic Growth Modulation',
       metricBadge: 'Toy: 8–10 Mo • Giant: 18–24 Mo Maturity',
-      desc: 'Toy and small breed puppies complete skeletal maturity by 8 to 10 months and require high caloric density (≥3,800 kcal/kg) and micro-kibble size to prevent nocturnal hypoglycemia. In contrast, large and giant breed puppies grow for up to 24 months and require calorie-controlled formulas (≤3,500 kcal/kg) to slow bone elongation and protect weight-bearing joints.',
+      desc: 'Small breeds need calorie-dense nutrition, while large breed puppies need calorie-controlled formulas to protect developing joints during growth.',
       readMore: `The canine species exhibits the most dramatic intraspecific morphological diversity of any land mammal. A 3-pound adult Chihuahua and a 160-pound adult English Mastiff begin life at comparable neonatal proportions, yet their growth trajectories diverge exponentially. A toy breed puppy multiplies their birth weight roughly 20-fold over an 8- to 10-month window, whereas a giant breed puppy multiplies birth weight up to 100-fold over a prolonged 18- to 24-month developmental period.
 
 Because their biological endpoints are radically dissimilar, feeding a generic "one-size-fits-all" puppy food introduces catastrophic pediatric risks at both ends of the scale.

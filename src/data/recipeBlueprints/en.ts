@@ -5,7 +5,7 @@ export const enBlueprints: RecipeBlueprint[] = [
   {
     slug: 'turkey-pumpkin-maintenance',
     name: 'Gently Cooked Lean Turkey & Pumpkin Adult Maintenance Blueprint',
-    shortDesc: 'A 65/10/10/8/4/3 whole-food recipe designed for adult maintenance with 93/7 lean turkey, organ taurine, digestive pumpkin fiber, and eggshell calcium.',
+    shortDesc: 'A whole-food recipe for adult maintenance with 93/7 lean turkey, organ taurine, digestive pumpkin fiber, and balanced eggshell calcium.',
     badge: 'Flagship Adult Maintenance',
     targetAudience: 'Adult Canines (1-7 Years) // Maintenance & Sensitive Digestion',
     colorTheme: '#0070f3',
@@ -193,7 +193,7 @@ export const enBlueprints: RecipeBlueprint[] = [
   {
     slug: 'beef-sweet-potato-vitality',
     name: 'Gently Cooked Grass-Fed Beef & Sweet Potato Vitality Blueprint',
-    shortDesc: 'A high-stamina 62/10/12/8/4/4 formula featuring 90/10 grass-fed beef, nutrient-dense liver & heart, slow-burning sweet potato carbohydrates, and antioxidant-rich steamed broccoli for active dogs.',
+    shortDesc: 'A high-stamina formula featuring 90/10 grass-fed beef, nutrient-dense organ meats, sweet potato, and antioxidant-rich broccoli for active dogs.',
     badge: 'Active Muscle & Vitality',
     targetAudience: 'Active, Working & Agility Dogs // High Caloric Burn & Muscle Density',
     colorTheme: '#7928ca',
@@ -361,7 +361,7 @@ export const enBlueprints: RecipeBlueprint[] = [
   {
     slug: 'salmon-quinoa-joint-coat',
     name: 'Wild Alaskan Salmon & Quinoa Joint & Coat Blueprint',
-    shortDesc: 'An omega-dense 60/8/12/10/6/4 marine recipe designed with wild salmon, organ taurine, quinoa, antioxidant blueberries, and cold-pressed hemp oil for soothing joints and dry skin.',
+    shortDesc: 'An omega-dense marine recipe featuring wild salmon, organ taurine, quinoa, blueberries, and cold-pressed hemp oil for joint and coat support.',
     badge: 'Joint Mobility & Pruritic Skin',
     targetAudience: 'Adult & Senior Canines (2+ Years) // Stiff Joints, Itchy Skin & Coat Restoration',
     colorTheme: '#06b6d4',
@@ -519,7 +519,7 @@ export const enBlueprints: RecipeBlueprint[] = [
   {
     slug: 'lamb-cranberry-gentle-gut',
     name: 'Gently Stewed Pasture Lamb & Cranberry Sensitive Gut Blueprint',
-    shortDesc: 'A novel red meat 64/8/12/8/5/3 recipe designed with pasture lamb, liver & kidney, soothing butternut squash, and pure cranberries for dogs with poultry/beef sensitivities.',
+    shortDesc: 'A novel red meat recipe with pasture lamb, organ meats, soothing butternut squash, and pure cranberries for dogs with food sensitivities.',
     badge: 'Sensitive Gut & Urinary',
     targetAudience: 'Adult Dogs with Severe Food Allergies (Beef/Chicken) & Chronic Digestive Flare-Ups',
     colorTheme: '#10b981',

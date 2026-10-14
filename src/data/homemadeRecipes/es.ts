@@ -243,7 +243,7 @@ export const esRecipes: LocalizedRecipesMap = {
     shortDesc: 'Una dieta cruda biológicamente apropiada basada en presas enteras, formulada según la estricta regla 80-10-10: 80% carne muscular, 10% hueso carnoso crudo y 10% vísceras secretoras.',
     summary: 'Diseñada para perros adultos sanos con acidez gástrica normal. Contiene carne muscular magra de ternera de pasto, corazón de ternera, cuellos de pato crudos enteros (fuente de calcio óseo natural y colágeno) e hígado y riñón de ternera para un aporte óptimo de retinol y complejo B.',
     badge: 'MODELO DE PRESA ANCESTRAL CRUDA // 80-10-10 BIOLÓGICAMENTE EQUILIBRADO',
-    prepTime: '25 minutos (más congelación previa obligatoria de 3 semanas)',
+    prepTime: '25 minutos',
     cookTime: '0 minutos (Servido 100% Crudo)',
     yieldAmount: 'Aprox. 1.360 g (3.0 lbs) de lote crudo',
     lifeStage: 'Perros Adultos Sanos (Acidez Gástrica Normal)',
@@ -309,7 +309,7 @@ export const esRecipes: LocalizedRecipesMap = {
         ],
       },
       {
-        title: 'Protocolo Obligatorio de Congelación de 3 Semanas Antiparasitaria',
+        title: 'Seguridad en Alimentación Cruda y Consulta Veterinaria',
         description: 'Las carnes crudas pueden albergar quistes microscópicos (como Neospora caninum, Toxoplasma o Sarcocystis). Para garantizar seguridad veterinaria absoluta, todos los componentes crudos DEBEN congelarse a -20°C o menos durante un mínimo de 21 días consecutivos antes de descongelar y servir.',
         keyPoints: [
           'La congelación a -20°C durante 21 días inactiva con eficacia los parásitos tisulares.',
@@ -330,8 +330,8 @@ export const esRecipes: LocalizedRecipesMap = {
     prepProtocol: [
       {
         step: 1,
-        title: 'Higiene y Verificación de Congelación Previa',
-        instruction: 'Asegúrate de que toda la ternera, corazón, cuellos y vísceras hayan completado las 3 semanas previas de congelación a -20°C. Utiliza tablas de cortar no porosas y cuchillos exclusivos para comida cruda.',
+        title: 'Higiene y Seguridad en Carne Cruda',
+        instruction: 'Congelar la carne no la hace segura. Manipula la carne cruda con cuidado y consulta a tu veterinario antes de alimentar con dieta cruda. Utiliza tablas de cortar no porosas y cuchillos exclusivos para comida cruda.',
         criticalTip: 'Lava manos, utensilios y encimeras con jabón antibacteriano durante 20 segundos antes y después de manipular carne cruda.',
       },
       {
@@ -397,7 +397,7 @@ export const esRecipes: LocalizedRecipesMap = {
       {
         method: 'Conservación en Congelador (Raciones Individuales)',
         duration: 'Hasta 6 meses a -18°C o inferior',
-        instructions: 'Envasar al vacío o en recipientes herméticos. Mantener 3 semanas de congelación previa antes de la primera toma.',
+        instructions: 'Envasar al vacío o en recipientes herméticos antes de congelar porciones individuales.',
       },
       {
         method: 'Protocolo de Descongelación',

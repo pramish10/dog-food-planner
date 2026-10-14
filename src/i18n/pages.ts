@@ -10,7 +10,7 @@ export const PAGE_TRANSLATIONS = {
       "whyP1": "We built DogFoodPlanner to help dog owners plan meals and feeding portions with confidence. We research publicly available guidance and turn it into simple, free tools and guides.",
       "whyP2": "",
       "whoTitle": "Who We Are",
-      "whoContent": "DogFoodPlanner is an independent website run by dog-loving researchers and writers. We are not veterinarians. Always consult your veterinarian before changing your dog's diet, especially for puppies, seniors, or dogs with health conditions.",
+      "whoContent": "DogFoodPlanner is an independent website run by dog owners who love researching and simplifying dog feeding. We are not veterinarians. Always consult your veterinarian before changing your dog's diet, especially for puppies, seniors, or dogs with health conditions.",
       "methodTitle": "Our Nutritional Methodology",
       "pillars": [
         {
@@ -168,7 +168,7 @@ export const PAGE_TRANSLATIONS = {
           "score": "",
           "pros": "Real meats and vegetables cooked at gentle temperatures. Retains natural moisture, nutrients, and high digestibility.",
           "cons": "Requires freezer or refrigerator storage. Typically higher cost than commercial kibble.",
-          "readMore": "Gently cooked fresh food uses quality cuts of meat, vegetables, and grains cooked at low heat to kill pathogens while preserving delicate nutrients.\n\nBecause the food carries high natural moisture (typically 70% or more), many owners find it supports daily hydration. It is commonly chosen for dogs with reduced appetites or sensitive digestion, as recipes often feature single animal proteins without rendered meat meals.\n\nKey considerations are storage and logistics: meals need refrigerator or freezer space and require thawing before feeding.",
+          "readMore": "Gently cooked fresh food uses quality cuts of meat, vegetables, and grains cooked at low heat to kill pathogens while preserving delicate nutrients.\n\nBecause the food carries high natural moisture (typically 70% or more), many owners find it supports daily hydration. It is commonly chosen for dogs with reduced appetites or sensitive digestion, as recipes often feature single animal proteins without rendered meat meals.\n\nKey considerations are storage and logistics: meals need refrigerator or freezer space and require thawing before feeding.\n\nThis format suits picky eaters and dogs that thrive on easily digestible meals with natural moisture. Look for a complete and balanced statement from AAFCO along with clearly identified whole meats and vegetables on the ingredient list. Transition over 7 to 10 days by gradually mixing increasing portions of fresh food into your dog's current meals.",
           "productKey": "justfoodfordogs-chicken-white-rice",
           "productNote": "An example option in this category:"
         },
@@ -178,7 +178,7 @@ export const PAGE_TRANSLATIONS = {
           "score": "",
           "pros": "Uncooked muscle meat, edible raw bone, and organ meats. Chewing raw bone can help clean teeth.",
           "cons": "Requires strict food safety hygiene. Careful calcium and nutrient balancing is essential.",
-          "readMore": "Raw diets (often based on an 80% muscle meat, 10% edible raw bone, and 10% organ ratio) aim to provide uncooked ingredients with natural enzymes.\n\nRaw foods can carry bacteria. Safe handling, separate preparation surfaces, and prompt handwashing are essential to manage risks for both dogs and humans. Miscalculating bone and mineral ratios can lead to nutritional imbalances. Talk to your vet before feeding raw.",
+          "readMore": "Raw diets (often based on an 80% muscle meat, 10% edible raw bone, and 10% organ ratio) aim to provide uncooked ingredients with natural enzymes.\n\nRaw foods can carry bacteria. Safe handling, separate preparation surfaces, and prompt handwashing are essential to manage risks for both dogs and humans. Miscalculating bone and mineral ratios can lead to nutritional imbalances. Talk to your vet before feeding raw.\n\nRaw feeding suits healthy adult dogs whose owners can manage rigorous sanitary prep and consistent mineral balancing. Check the label for distinct protein sources, verified bone and organ proportions, and safe handling guidelines. Switch gradually over 7 to 14 days under veterinary supervision to allow your dog's digestive system to adapt comfortably.",
           "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
           "productNote": "A pre-portioned raw option:"
         },
@@ -188,7 +188,7 @@ export const PAGE_TRANSLATIONS = {
           "score": "",
           "pros": "Low-temperature processing preserves nutrients with shelf stability. Convenient as a full meal or topper.",
           "cons": "Higher cost per calorie compared to standard kibble. Rehydrating with water is recommended.",
-          "readMore": "Air-drying and freeze-drying remove moisture at low temperatures, keeping nutrient levels high while remaining shelf-stable at room temperature without freezing.\n\nBoth formats travel easily and work well as a topper or complete meal. Many owners add warm water or broth before serving to restore moisture.\n\nThe main consideration is cost per calorie: since water weight is removed, these foods are nutrient-dense and carry a higher price point per meal.",
+          "readMore": "Air-drying and freeze-drying remove moisture at low temperatures, keeping nutrient levels high while remaining shelf-stable at room temperature without freezing.\n\nBoth formats travel easily and work well as a topper or complete meal. Many owners add warm water or broth before serving to restore moisture.\n\nThe main consideration is cost per calorie: since water weight is removed, these foods are nutrient-dense and carry a higher price point per meal.\n\nThese shelf-stable meals suit dogs needing nutrient-rich whole foods while traveling or as a daily nutrient topper. Inspect the ingredient panel for named animal proteins, natural preservation with mixed tocopherols, and clear rehydration guidelines. Introduce the food slowly over 7 to 10 days, optionally adding warm water to restore hydration before serving.",
           "productKey": "ziwi-peak-beef-chicken-bundle",
           "productNote": "An air-dried option in this category:"
         },
@@ -198,7 +198,7 @@ export const PAGE_TRANSLATIONS = {
           "score": "",
           "pros": "Convenient, shelf-stable, and budget-accessible for most households.",
           "cons": "Extruded at high temperatures and contains low moisture (roughly 8-10%).",
-          "readMore": "Dry kibble remains the most common everyday choice: it is shelf-stable, easy to store, and budget-friendly.\n\nQuality formulas in this tier lead with named animal proteins and clearly identified grains or legumes rather than generic meat meals.\n\nBecause dry kibble contains only 8-10% moisture, many owners add moisture with toppers, warm water, or low-sodium bone broth to support hydration.",
+          "readMore": "Dry kibble remains the most common everyday choice: it is shelf-stable, easy to store, and budget-friendly.\n\nQuality formulas in this tier lead with named animal proteins and clearly identified grains or legumes rather than generic meat meals.\n\nBecause dry kibble contains only 8-10% moisture, many owners add moisture with toppers, warm water, or low-sodium bone broth to support hydration.\n\nQuality dry kibble suits busy households looking for convenient, budget-friendly nutrition that stores easily at room temperature. Check the label for a specific named animal protein at the top and wholesome grains or fibers without generic meat by-products. Switch gradually across 7 to 10 days by steadily shifting the ratio from your previous dry food to the new formula.",
           "productKey": "orijen-original-grain-free-23lb",
           "productNote": "An example formula in this category:"
         },
@@ -208,7 +208,7 @@ export const PAGE_TRANSLATIONS = {
           "score": "",
           "pros": "Formulated specifically for dogs with diagnosed health conditions under veterinary management.",
           "cons": "Prescription diets are formulated for specific medical conditions and should only be used on your veterinarian's advice.",
-          "readMore": "Prescription diets are designed to manage specific health conditions, such as kidney disease, urinary crystals, or food intolerances under veterinary supervision.\n\nThese diets are intentionally specialized to support specific health needs. Prescription diets are formulated for specific medical conditions and should only be used on your veterinarian's advice.",
+          "readMore": "Prescription diets are designed to manage specific health conditions, such as kidney disease, urinary crystals, or food intolerances under veterinary supervision.\n\nThese diets are intentionally specialized to support specific health needs. Prescription diets are formulated for specific medical conditions and should only be used on your veterinarian's advice.\n\nTherapeutic diets suit dogs with veterinary-diagnosed medical conditions that require targeted nutrient modifications. Check the label to verify that the specific clinical indication matches your veterinarian's recommendation. Always follow your vet's precise guidance when switching to a therapeutic diet, as abrupt changes can disrupt medical management.",
           "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
           "productNote": "A common vet-prescribed formula:"
         }
@@ -245,7 +245,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "Healthy Homemade Dog Food Recipes",
       "heroSubtitle": "Step-by-step guides for preparing gently cooked meals and 80-10-10 raw BARF meals at home.",
       "calciumWarningTitle": "Important: Review Diets With Your Veterinarian & Balance Calcium",
-      "calciumWarningDesc": "Homemade diets can miss essential nutrients. Have any homemade recipe reviewed by your veterinarian or a board-certified veterinary nutritionist before feeding it long term. Muscle meat is naturally very high in phosphorus and low in calcium (1:20 ratio). Feeding plain chicken, beef, and rice without added calcium will cause serious deficiencies. Ask your vet about appropriate calcium supplementation, such as 1/2 teaspoon of clean powdered eggshell per pound of boneless meat.",
+      "calciumWarningDesc": "Homemade diets can miss essential nutrients. Have any homemade recipe reviewed by your veterinarian or a board-certified veterinary nutritionist before feeding it long term. Muscle meat is naturally very high in phosphorus and low in calcium (1:20 ratio). Feeding plain chicken, beef, and rice without added calcium will cause serious deficiencies. Ask your veterinarian or a veterinary nutritionist how much calcium your dog needs.",
       "recipesList": [
         {
           "tag": "GENTLY COOKED",
@@ -272,7 +272,7 @@ export const PAGE_TRANSLATIONS = {
             "Beef Liver — 5%",
             "Beef Kidney or Spleen — 5%"
           ],
-          "prep": "Dice beef muscle and heart into bite-sized chunks. Thaw raw edible bone pieces. Weigh organs precisely using a digital gram scale. Freeze all portions for at least 3 weeks at -4°F (-20°C) prior to feeding. Wash hands and sanitize all surfaces thoroughly."
+          "prep": "Dice beef muscle and heart into bite-sized chunks. Thaw raw edible bone pieces. Weigh organs precisely using a digital gram scale. Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw. Wash hands and sanitize all surfaces thoroughly."
         },
         {
           "tag": "SUPERFOOD TOPPER",
@@ -291,17 +291,17 @@ export const PAGE_TRANSLATIONS = {
       "calciumGuideItems": [
         {
           "title": "Eggshell Powder",
-          "ratio": "1/2 tsp per 1 lb boneless meat",
+          "ratio": "Ask your veterinarian or a veterinary nutritionist how much calcium your dog needs.",
           "desc": "Clean calcium carbonate. Easy to grind at home from washed, baked eggshells. Safe and neutral."
         },
         {
           "title": "Raw Edible Meaty Bones",
-          "ratio": "10% of total diet weight",
+          "ratio": "Ask your veterinarian or a veterinary nutritionist how much calcium your dog needs.",
           "desc": "Duck necks, chicken wings, or turkey necks. Never feed cooked bones. Ask your veterinarian before feeding any bones, including raw ones."
         },
         {
           "title": "Bone Meal Supplement",
-          "ratio": "Follow manufacturer specifications",
+          "ratio": "Ask your veterinarian or a veterinary nutritionist how much calcium your dog needs.",
           "desc": "Commercial canine supplement providing calcium and phosphorus in a 2:1 ratio."
         }
       ]
@@ -636,7 +636,7 @@ export const PAGE_TRANSLATIONS = {
       "whyP1": "Creamos DogFoodPlanner para ayudar a los dueños de perros a planificar las comidas y las porciones con total confianza. Investigamos las recomendaciones públicas disponibles y las convertimos en guías y herramientas gratuitas y sencillas.",
       "whyP2": "",
       "whoTitle": "Quiénes Somos",
-      "whoContent": "DogFoodPlanner es un sitio web independiente gestionado por investigadores y redactores apasionados por los perros. No somos veterinarios. Consulta siempre con tu veterinario antes de cambiar la dieta de tu perro, especialmente en el caso de cachorros, perros mayores o perros con problemas de salud.",
+      "whoContent": "DogFoodPlanner es un sitio web independiente gestionado por dueños de perros a los que les apasiona investigar y simplificar la alimentación canina. No somos veterinarios. Consulta siempre con tu veterinario antes de cambiar la dieta de tu perro, especialmente en el caso de cachorros, perros mayores o perros con problemas de salud.",
       "methodTitle": "Nuestra Metodología Nutricional",
       "pillars": [
         {
@@ -869,7 +869,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "Recetas Caseras y Saludables para Perros",
       "heroSubtitle": "Guías paso a paso para elaborar menús caseros cocinados al vapor y dietas BARF crudas 80-10-10 completas y equilibradas.",
       "calciumWarningTitle": "La Regla de Oro de la Comida Casera: El Equilibrio de Calcio",
-      "calciumWarningDesc": "La carne muscular es naturalmente rica en fósforo y muy pobre en calcio (relación 1:20). Alimentar a un perro únicamente con pollo, ternera y arroz sin añadir calcio provoca descalcificación ósea severa en pocos meses. Añade siempre media cucharadita rasa de cáscara de huevo en polvo (aprox. 900 mg de calcio elemental) por cada 450 g de carne sin hueso para lograr la proporción óptima de Calcio-Fósforo de 1.2:1.",
+      "calciumWarningDesc": "Las dietas caseras pueden carecer de nutrientes esenciales. Haz que cualquier receta casera sea revisada por tu veterinario o por un nutricionista veterinario antes de suministrarla a largo plazo. La carne muscular es naturalmente rica en fósforo y muy pobre en calcio (relación 1:20). Alimentar a un perro únicamente con pollo, ternera y arroz sin añadir calcio provocará deficiencias graves. Consulta con tu veterinario o con un nutricionista veterinario cuánto calcio necesita tu perro.",
       "recipesList": [
         {
           "tag": "COCINADO AL VAPOR",
@@ -896,7 +896,7 @@ export const PAGE_TRANSLATIONS = {
             "Hígado de Ternera (Vitamina A y Complejo B) — 5%",
             "Riñón o Bazo de Ternera (Víscera Secretora) — 5%"
           ],
-          "prep": "Corta la carne y los corazones en trozos adecuados a la mandíbula del perro. Pesa los órganos con báscula digital. Congela previamente todas las porciones durante al menos 3 semanas a -20°C antes de descongelar y servir."
+          "prep": "Corta la carne y los corazones en trozos adecuados a la mandíbula del perro. Pesa los órganos con báscula digital. La congelación no hace que la carne cruda sea segura. Manipula la carne cruda con cuidado y habla con tu veterinario antes de dar alimentos crudos."
         },
         {
           "tag": "TOPPER SUPERALIMENTO",
@@ -915,17 +915,17 @@ export const PAGE_TRANSLATIONS = {
       "calciumGuideItems": [
         {
           "title": "Cáscara de Huevo en Polvo",
-          "ratio": "1/2 cucharadita por cada 450 g de carne deshuesada",
+          "ratio": "Consulta con tu veterinario o con un nutricionista veterinario cuánto calcio necesita tu perro.",
           "desc": "95% carbonato cálcico puro. Fácil de preparar en casa lavando, horneando y moliendo cáscaras finamente."
         },
         {
           "title": "Huesos Carnosos Comestibles Crudos",
-          "ratio": "10% del peso total de la dieta",
+          "ratio": "Consulta con tu veterinario o con un nutricionista veterinario cuánto calcio necesita tu perro.",
           "desc": "Cuellos de pato, alas de pollo o carcasas crudas. Nunca cocinados para evitar que se astillen."
         },
         {
           "title": "Harina de Hueso Veterinaria (Bone Meal)",
-          "ratio": "Según indicación del fabricante",
+          "ratio": "Consulta con tu veterinario o con un nutricionista veterinario cuánto calcio necesita tu perro.",
           "desc": "Hidroxiapatita microcristalina que aporta calcio y fósforo en una proporción biodisponible de 2:1."
         }
       ]
@@ -1260,7 +1260,7 @@ export const PAGE_TRANSLATIONS = {
       "whyP1": "DogFoodPlannerは、愛犬家が自信を持って食事や給餌量を計画できるように作られました。公表されている信頼できるガイドラインを調査し、シンプルで使いやすい無料のツールとガイドとしてお届けしています。",
       "whyP2": "",
       "whoTitle": "運営者について",
-      "whoContent": "DogFoodPlannerは、犬を愛するリサーチャーとライターによって運営されている独立系ウェブサイトです。私たちは獣医師ではありません。愛犬の食事を変更する前、特に子犬、シニア犬、または健康上の不安がある犬の場合は、必ずかかりつけの獣医師にご相談ください。",
+      "whoContent": "DogFoodPlannerは、愛犬の食事について調査し分かりやすく解説することに情熱を注ぐ愛犬家によって運営されている独立系ウェブサイトです。私たちは獣医師ではありません。愛犬の食事を変更する前、特に子犬、シニア犬、または健康上の不安がある犬の場合は、必ずかかりつけの獣医師にご相談ください。",
       "methodTitle": "私たちの栄養計算アプローチ",
       "pillars": [
         {
@@ -1493,7 +1493,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "愛犬のための手作り健康食レシピ",
       "heroSubtitle": "完全な栄養バランスを満たした低温調理フードと、自然の摂理に沿った80-10-10生肉BARF食を自宅で作るためのステップバイステップ・ガイド。",
       "calciumWarningTitle": "手作り犬ごはんの絶対鉄則：カルシウムとリンのバランス",
-      "calciumWarningDesc": "動物の筋肉肉はリンが極めて多く、カルシウムがほとんど含まれていません（比率1:20）。カルシウムを足さずに肉と白米だけを与え続けると、数ヶ月で骨軟化症や骨の脱灰（スカスカになる病気）を引き起こします。骨なし肉450gあたり、必ず純粋な卵殻パウダー小さじ半分（元素カルシウム約900mg）を加えて、安全な「カルシウム：リン＝1.2：1」の比率を保ってください。",
+      "calciumWarningDesc": "手作りの食事は必須栄養素が不足することがあります。手作り食を長期的に与える前に、必ず獣医師やかかりつけの獣医栄養学者にレシピを確認してもらってください。動物の筋肉肉はリンが極めて多く、カルシウムがほとんど含まれていません（比率1:20）。カルシウムを補給せずに肉と米だけを与え続けると深刻な欠乏症を引き起こします。愛犬に必要なカルシウムの量については、かかりつけの獣医師または獣医栄養学者にご相談ください。",
       "recipesList": [
         {
           "tag": "低温スチーム調理",
@@ -1520,7 +1520,7 @@ export const PAGE_TRANSLATIONS = {
             "牛レバー（肝臓・ビタミンAとB群） — 5%",
             "牛キドニー（腎臓）または脾臓（分泌内臓器官） — 5%"
           ],
-          "prep": "赤身肉とハツを一口大にカットします。生骨は愛犬が丸呑みしない適切なサイズを選びます。内臓はデジタルキッチンスケールで正確に計量します。寄生虫対策として、給餌前にマイナス20℃以下で最低3週間以上冷凍庫で凍結保存してください。"
+          "prep": "赤身肉とハツを一口大にカットします。生骨は愛犬が丸呑みしない適切なサイズを選びます。内臓はデジタルキッチンスケールで正確に計量します。冷凍しても生の肉の安全性は保証されません。生肉は慎重に取り扱い、生食を与える前に必ず獣医師にご相談ください。"
         },
         {
           "tag": "スーパーフードトッピング",
@@ -1539,17 +1539,17 @@ export const PAGE_TRANSLATIONS = {
       "calciumGuideItems": [
         {
           "title": "微粉末卵殻パウダー",
-          "ratio": "骨なし肉450gに対して小さじ1/2",
+          "ratio": "愛犬に必要なカルシウムの量については、かかりつけの獣医師または獣医栄養学者にご相談ください。",
           "desc": "純度95％の炭酸カルシウム。水洗いして天日干しまたは加熱殺菌した卵の殻をミルで細かく粉砕して使用します。"
         },
         {
           "title": "生の可食生肉骨（絶対に加熱しない）",
-          "ratio": "食事全体の重量の10％",
+          "ratio": "愛犬に必要なカルシウムの量については、かかりつけの獣医師または獣医栄養学者にご相談ください。",
           "desc": "鴨ネック、鶏手羽先など。加熱した骨は硬化して縦に裂け、食道や腸を突き破る致命的な危険があるため絶対に生で与えてください。"
         },
         {
           "title": "獣医用ボーンミール（骨粉サプリ）",
-          "ratio": "製品ラベルの指示に従う",
+          "ratio": "愛犬に必要なカルシウムの量については、かかりつけの獣医師または獣医栄養学者にご相談ください。",
           "desc": "微小結晶性ヒドロキシアパタイト。カルシウムとリンが天然の2:1比率で含まれており生体利用効率に優れます。"
         }
       ]
@@ -1884,7 +1884,7 @@ export const PAGE_TRANSLATIONS = {
       "whyP1": "Nous avons créé DogFoodPlanner pour aider les propriétaires de chiens à planifier les repas et les rations en toute confiance. Nous étudions les recommandations publiques disponibles pour les transformer en guides et outils gratuits et faciles d'accès.",
       "whyP2": "",
       "whoTitle": "Qui Sommes-Nous",
-      "whoContent": "DogFoodPlanner est un site indépendant géré par des passionnés de chiens, chercheurs et rédacteurs. Nous ne sommes pas vétérinaires. Consultez toujours votre vétérinaire avant de modifier l'alimentation de votre chien, en particulier pour les chiots, les chiens seniors ou les animaux ayant des problèmes de santé.",
+      "whoContent": "DogFoodPlanner est un site indépendant géré par des propriétaires de chiens passionnés par la recherche et la simplification de l'alimentation canine. Nous ne sommes pas vétérinaires. Consultez toujours votre vétérinaire avant de modifier l'alimentation de votre chien, en particulier pour les chiots, les chiens seniors ou les animaux ayant des problèmes de santé.",
       "methodTitle": "Notre Méthodologie Nutritionnelle",
       "pillars": [
         {
@@ -2117,7 +2117,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "Recettes Équilibrées de Repas Maison pour Chien",
       "heroSubtitle": "Des guides détaillés pour préparer à la maison des rations ménagères cuites à basse température et des menus BARF 80-10-10 complets et équilibrés.",
       "calciumWarningTitle": "La Règle Absolue du Fait-Maison : L’Équilibre en Calcium",
-      "calciumWarningDesc": "La viande musculaire est naturellement riche en phosphore et très pauvre en calcium (ratio 1:20). Nourrir un chien exclusivement de viande et de riz sans complément calcique provoque une décalcification osseuse sévère en quelques mois. Ajoutez toujours 1/2 cuillère à café rase de poudre de coquille d’œuf pure (environ 900 mg de calcium élémentaire) pour 450 g de viande désossée afin de respecter le ratio optimal Calcium/Phosphore de 1.2:1.",
+      "calciumWarningDesc": "Les rations ménagères peuvent manquer de nutriments essentiels. Faites examiner toute recette maison par votre vétérinaire ou un nutritionniste vétérinaire avant de l'adopter sur le long terme. La viande musculaire est naturellement riche en phosphore et très pauvre en calcium (ratio 1:20). Nourrir un chien uniquement de viande et de riz sans complément calcique provoquera de graves carences. Demandez à votre vétérinaire ou à un nutritionniste vétérinaire la quantité de calcium dont votre chien a besoin.",
       "recipesList": [
         {
           "tag": "CUISSON DOUCE",
@@ -2144,7 +2144,7 @@ export const PAGE_TRANSLATIONS = {
             "Foie de bœuf (Vitamines A et groupe B) — 5%",
             "Rein ou rate de bœuf (Organe sécréteur essentiel) — 5%"
           ],
-          "prep": "Coupez la viande et le cœur en morceaux adaptés. Pesez rigoureusement les abats sur balance électronique. Congelez impérativement les rations au moins 3 semaines à -20°C avant décongélation et distribution."
+          "prep": "Coupez la viande et le cœur en morceaux adaptés. Pesez rigoureusement les abats sur balance électronique. La congélation ne rend pas la viande crue sans danger. Manipulez la viande crue avec précaution et consultez votre vétérinaire avant de donner une alimentation crue."
         },
         {
           "tag": "TOPPER SUPERFOOD",
@@ -2163,17 +2163,17 @@ export const PAGE_TRANSLATIONS = {
       "calciumGuideItems": [
         {
           "title": "Poudre de Coquille d’Œuf",
-          "ratio": "1/2 c. à café pour 450 g de viande sans os",
+          "ratio": "Demandez à votre vétérinaire ou à un nutritionniste vétérinaire la quantité de calcium dont votre chien a besoin.",
           "desc": "95% de carbonate de calcium pur. Facile à réaliser en lavant, séchant au four et broyant des coquilles d’œufs."
         },
         {
           "title": "Os Charnus Crus Comestibles",
-          "ratio": "10% du poids total de la ration",
+          "ratio": "Demandez à votre vétérinaire ou à un nutritionniste vétérinaire la quantité de calcium dont votre chien a besoin.",
           "desc": "Cous de canard ou ailes de poulet crues. Ne jamais cuire les os, qui deviennent cassants et perforants."
         },
         {
           "title": "Poudre d’Os Vétérinaire (Bone Meal)",
-          "ratio": "Selon indications du fabricant",
+          "ratio": "Demandez à votre vétérinaire ou à un nutritionniste vétérinaire la quantité de calcium dont votre chien a besoin.",
           "desc": "Hydroxyapatite microcristalline apportant calcium et phosphore selon un ratio naturel et équilibré de 2:1."
         }
       ]
@@ -2508,7 +2508,7 @@ export const PAGE_TRANSLATIONS = {
       "whyP1": "Wir haben DogFoodPlanner entwickelt, damit Hundebesitzer Mahlzeiten und Futterportionen mit gutem Gefühl planen können. Wir recherchieren öffentlich zugängliche Richtlinien und machen daraus einfache, kostenlose Tools und Ratgeber.",
       "whyP2": "",
       "whoTitle": "Wer Wir Sind",
-      "whoContent": "DogFoodPlanner ist eine unabhängige Website, die von hundebegeisterten Rechercheuren und Autoren betrieben wird. Wir sind keine Tierärzte. Konsultieren Sie immer Ihren Tierarzt, bevor Sie die Ernährung Ihres Hundes umstellen – insbesondere bei Welpen, Senioren oder Hunden mit Vorerkrankungen.",
+      "whoContent": "DogFoodPlanner ist eine unabhängige Website, die von Hundehaltern betrieben wird, die es lieben, die Hundeernährung zu erforschen und zu vereinfachen. Wir sind keine Tierärzte. Konsultieren Sie immer Ihren Tierarzt, bevor Sie die Ernährung Ihres Hundes umstellen – insbesondere bei Welpen, Senioren oder Hunden mit Vorerkrankungen.",
       "methodTitle": "Unsere Ernährungsmethodik",
       "pillars": [
         {
@@ -2741,7 +2741,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "Ausgewogene Rezepte für selbstgemachtes Hundefutter",
       "heroSubtitle": "Schritt-für-Schritt-Anleitungen zur Zubereitung ausgewogener, schonend gegarter Mahlzeiten und artgerechter 80-10-10 BARF-Rationen.",
       "calciumWarningTitle": "Die oberste Regel beim Selberkochen: Der Kalziumausgleich",
-      "calciumWarningDesc": "Reines Muskelfleisch enthält von Natur aus extrem viel Phosphor und fast kein Kalzium (Verhältnis 1:20). Werden Hunde nur mit Fleisch und Reis gefüttert, führt dies innerhalb weniger Monate zu schweren Skeletterkrankungen. Fügen Sie pro 500 g reinem Fleisch ohne Knochen stets 1/2 gestrichenen Teelöffel reines Eierschalenpulver (ca. 900 mg elementares Kalzium) hinzu, um das lebensnotwendige Kalzium-Phosphor-Verhältnis von 1.2:1 zu sichern.",
+      "calciumWarningDesc": "Selbstgemachtes Futter kann wichtige Nährstoffe vermissen lassen. Lassen Sie jedes Rezept von Ihrem Tierarzt oder einem Fachtierarzt für Tierernährung überprüfen, bevor Sie es langfristig füttern. Reines Muskelfleisch enthält extrem viel Phosphor und fast kein Kalzium (Verhältnis 1:20). Die Fütterung von Fleisch und Reis ohne Kalziumzusatz führt zu schweren Mangelerscheinungen. Fragen Sie Ihren Tierarzt oder einen Fachtierarzt für Tierernährung, wie viel Kalzium Ihr Hund benötigt.",
       "recipesList": [
         {
           "tag": "SCHONEND GEKOCHT",
@@ -2768,7 +2768,7 @@ export const PAGE_TRANSLATIONS = {
             "Rinderleber (Vitamin A & B-Komplex) — 5%",
             "Rinderniere oder Milz (Sekretierende Innerei) — 5%"
           ],
-          "prep": "Muskelfleisch und Herz in maulgerechte Stücke schneiden. Innereien grammgenau auf der Küchenwaage abwiegen. Alle Fleischkomponenten vor der Fütterung mindestens 3 Wochen bei -20°C tiefkühlen."
+          "prep": "Muskelfleisch und Herz in maulgerechte Stücke schneiden. Innereien grammgenau auf der Küchenwaage abwiegen. Einfrieren macht rohes Fleisch nicht keimfrei. Gehen Sie sorgfältig mit rohem Fleisch um und sprechen Sie mit Ihrem Tierarzt, bevor Sie roh füttern."
         },
         {
           "tag": "SUPERFOOD-TOPPER",
@@ -2787,17 +2787,17 @@ export const PAGE_TRANSLATIONS = {
       "calciumGuideItems": [
         {
           "title": "Feines Eierschalenpulver",
-          "ratio": "1/2 TL pro 500 g Fleisch ohne Knochen",
+          "ratio": "Fragen Sie Ihren Tierarzt oder einen Fachtierarzt für Tierernährung, wie viel Kalzium Ihr Hund benötigt.",
           "desc": "95% reines Kalziumkarbonat. Leicht selbst herzustellen durch Auskochen, Trocknen und feines Mahlen von Eierschalen."
         },
         {
           "title": "Rohe fleischige Knochen (RFK)",
-          "ratio": "10% des Gesamtgewichts der Futterration",
+          "ratio": "Fragen Sie Ihren Tierarzt oder einen Fachtierarzt für Tierernährung, wie viel Kalzium Ihr Hund benötigt.",
           "desc": "Entenhälse, Hühnerflügel oder Karkassen. Knochen niemals erhitzen, da sie sonst splittern und lebensgefährlich werden."
         },
         {
           "title": "Futterknochenmehl (Bone Meal)",
-          "ratio": "Nach Herstellerangabe dosieren",
+          "ratio": "Fragen Sie Ihren Tierarzt oder einen Fachtierarzt für Tierernährung, wie viel Kalzium Ihr Hund benötigt.",
           "desc": "Mikrokristallines Hydroxylapatit, das Kalzium und Phosphor im optimalen natürlichen 2:1-Verhältnis liefert."
         }
       ]
@@ -3132,7 +3132,7 @@ export const PAGE_TRANSLATIONS = {
       "whyP1": "Criamos o DogFoodPlanner para ajudar tutores de cães a planejar refeições e porções com total confiança. Pesquisamos orientações públicas e as transformamos em guias e ferramentas gratuitas e fáceis de usar.",
       "whyP2": "",
       "whoTitle": "Quem Somos",
-      "whoContent": "O DogFoodPlanner é um site independente criado por pesquisadores e redatores apaixonados por cães. Não somos veterinários. Sempre consulte seu médico veterinário antes de alterar a dieta do seu cão, especialmente para filhotes, idosos ou cães com problemas de saúde.",
+      "whoContent": "O DogFoodPlanner é um site independente criado por tutores de cães apaixonados por pesquisar e simplificar a alimentação canina. Não somos veterinários. Sempre consulte seu médico veterinário antes de alterar a dieta do seu cão, especialmente para filhotes, idosos ou cães com problemas de saúde.",
       "methodTitle": "Nossa Metodologia Nutricional",
       "pillars": [
         {
@@ -3365,7 +3365,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "Receitas Caseiras Equilibradas para Cães",
       "heroSubtitle": "Orientações práticas para preparar em casa refeições cozidas no vapor e dietas cruas BARF 80-10-10 completas e saudáveis.",
       "calciumWarningTitle": "A Regra Mais Importante da Comida Caseira: O Equilíbrio do Cálcio",
-      "calciumWarningDesc": "A carne muscular possui alto teor de fósforo e quase nenhum cálcio (proporção 1:20). Alimentar cães apenas com carne e arroz sem adicionar cálcio provoca descalcificação óssea e hiperparatireoidismo em poucos meses. Adicione sempre 1/2 colher de chá rasa de pó de casca de ovo (aprox. 900 mg de cálcio elementar) para cada 450 g de carne sem ossos para atingir o ratio ideal Cálcio/Fósforo de 1.2:1.",
+      "calciumWarningDesc": "Dietas caseiras podem apresentar deficiência de nutrientes essenciais. Peça sempre que um médico veterinário ou nutricionista veterinário avalie qualquer receita caseira antes de adotá-la a longo prazo. A carne muscular possui alto teor de fósforo e quase nenhum cálcio (proporção 1:20). Alimentar cães apenas com carne e arroz sem adicionar cálcio provocará carências graves. Consulte seu médico veterinário ou um nutricionista veterinário sobre a quantidade de cálcio que seu cão precisa.",
       "recipesList": [
         {
           "tag": "COZIDO NO VAPOR",
@@ -3392,7 +3392,7 @@ export const PAGE_TRANSLATIONS = {
             "Fígado bovino (Vitamina A e complexo B) — 5%",
             "Rim ou baço bovino (Víscera secretora vital) — 5%"
           ],
-          "prep": "Pique a carne e o coração no tamanho ideal para o porte do cão. Pese as vísceras com precisão em balança digital. Congele todas as porções cruas por no mínimo 3 semanas a -20°C antes de descongelar e servir."
+          "prep": "Pique a carne e o coração no tamanho ideal para o porte do cão. Pese as vísceras com precisão em balança digital. O congelamento não torna a carne crua segura. Manipule carne crua com cuidado e converse com seu veterinário antes de oferecer alimentação crua."
         },
         {
           "tag": "TOPPER SUPERFOOD",
@@ -3411,17 +3411,17 @@ export const PAGE_TRANSLATIONS = {
       "calciumGuideItems": [
         {
           "title": "Farinha de Casca de Ovo",
-          "ratio": "1/2 colher de chá para cada 450 g de carne sem ossos",
+          "ratio": "Consulte seu médico veterinário ou um nutricionista veterinário sobre a quantidade de cálcio que seu cão precisa.",
           "desc": "95% carbonato de cálcio puro. Prático de fazer em casa lavando, secando e triturando cascas no liquidificador."
         },
         {
           "title": "Ossos Carnudos Crus Comestíveis",
-          "ratio": "10% do peso total da dieta",
+          "ratio": "Consulte seu médico veterinário ou um nutricionista veterinário sobre a quantidade de cálcio que seu cão precisa.",
           "desc": "Pescoços de pato ou asas de frango cruas. Jamais cozinhe ossos, pois perdem a elasticidade e perfuram o trato digestivo."
         },
         {
           "title": "Farinha de Ossos Veterinária (Bone Meal)",
-          "ratio": "Conforme rótulo do fabricante",
+          "ratio": "Consulte seu médico veterinário ou um nutricionista veterinário sobre a quantidade de cálcio que seu cão precisa.",
           "desc": "Hidroxiapatita microcristalina que fornece cálcio e fósforo na proporção fisiológica ideal de 2:1."
         }
       ]
@@ -3756,7 +3756,7 @@ export const PAGE_TRANSLATIONS = {
       "whyP1": "DogFoodPlanner는 반려견 보호자가 식단과 급여량을 안심하고 계획할 수 있도록 개발되었습니다. 공개된 가이드라인을 연구하여 누구나 쉽게 활용할 수 있는 무료 도구와 유용한 가이드로 제공합니다.",
       "whyP2": "",
       "whoTitle": "운영진 소개",
-      "whoContent": "DogFoodPlanner는 반려견을 사랑하는 연구원과 전문 필진이 운영하는 독립 웹사이트입니다. 저희는 수의사가 아닙니다. 특히 강아지(퍼피), 노령견, 또는 건강 질환이 있는 반려견의 식단을 변경하기 전에는 반드시 담당 수의사와 상담하시기 바랍니다.",
+      "whoContent": "DogFoodPlanner는 반려견 영양 정보를 연구하고 사료 급여를 알기 쉽게 전달하는 것을 좋아하는 반려견 보호자들이 운영하는 독립 웹사이트입니다. 저희는 수의사가 아닙니다. 특히 강아지(퍼피), 노령견, 또는 건강 질환이 있는 반려견의 식단을 변경하기 전에는 반드시 담당 수의사와 상담하시기 바랍니다.",
       "methodTitle": "영양 분석 방법론",
       "pillars": [
         {
@@ -3989,7 +3989,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "강아지 수제 건강 자연식 레시피",
       "heroSubtitle": "가정에서 손쉽게 조리할 수 있는 영양 균형 저온 화식과 자연의 법칙에 맞춘 80-10-10 생식 가이드.",
       "calciumWarningTitle": "수제 사료 조리의 절대 원칙: 칼슘과 인의 균형",
-      "calciumWarningDesc": "순수 살코기는 인 함량이 매우 높고 칼슘은 거의 없습니다(비율 1:20). 칼슘 보충 없이 고기와 밥만 지속해서 먹이면 수개월 내에 심각한 골다공증과 뼈 탈회 질환이 발생합니다. 뼈 없는 살코기 450g당 반드시 순수 난각가루(계란껍질 분말) 반 티스푼(원소 칼슘 약 900mg)을 첨가하여 1.2:1의 칼슘:인 비율을 맞춰주세요.",
+      "calciumWarningDesc": "자연식과 화식은 필수 영양소가 결핍되기 쉽습니다. 장기 급여 전에는 반드시 수의사 또는 수의영양학 전문가에게 레시피 검토를 받으십시오. 순수 살코기는 인 함량이 매우 높고 칼슘은 거의 없습니다(비율 1:20). 칼슘 보충 없이 고기와 밥만 지속해서 먹이면 심각한 결핍증이 발생합니다. 반려견에게 필요한 정확한 칼슘 요구량은 담당 수의사 또는 수의영양학 전문가와 상담하십시오.",
       "recipesList": [
         {
           "tag": "저온 조리 화식",
@@ -4016,7 +4016,7 @@ export const PAGE_TRANSLATIONS = {
             "소 간 (비타민 A 및 B군 복합체) — 5%",
             "소 콩팥 또는 비장 (필수 분비 내장 기관) — 5%"
           ],
-          "prep": "살코기와 심장을 강아지 한 입 크기로 자릅니다. 생뼈는 삼키지 않도록 체급에 맞게 고릅니다. 내장 기관을 주방 저울로 정밀하게 계량합니다. 모든 생식 재료는 급여 전 영하 20℃ 이하에서 최소 3주간 냉동 보관하여 기생충을 예방합니다."
+          "prep": "살코기와 심장을 강아지 한 입 크기로 자릅니다. 생뼈는 삼키지 않도록 체급에 맞게 고릅니다. 내장 기관을 주방 저울로 정밀하게 계량합니다. 냉동 보관이 생고기의 안전성을 완벽히 보장하지는 않습니다. 생고기는 위생적으로 취급하고 급여 전 반드시 수의사와 상담하십시오."
         },
         {
           "tag": "슈퍼푸드 토퍼",
@@ -4035,17 +4035,17 @@ export const PAGE_TRANSLATIONS = {
       "calciumGuideItems": [
         {
           "title": "순수 난각가루 (계란껍질 분말)",
-          "ratio": "뼈 없는 고기 450g당 1/2 작은술",
+          "ratio": "반려견에게 필요한 정확한 칼슘 요구량은 담당 수의사 또는 수의영양학 전문가와 상담하십시오.",
           "desc": "순도 95%의 탄산칼슘. 세척 후 오븐에서 살균 건조하여 믹서기로 곱게 갈아 만듭니다."
         },
         {
           "title": "가열하지 않은 신선한 생뼈",
-          "ratio": "전체 식단 무게의 10%",
+          "ratio": "반려견에게 필요한 정확한 칼슘 요구량은 담당 수의사 또는 수의영양학 전문가와 상담하십시오.",
           "desc": "오리 목뼈, 닭 날개 등. 익힌 뼈는 단단해져 유리조각처럼 깨져 식도와 장을 찢을 수 있으므로 절대 익히지 마십시오."
         },
         {
           "title": "수의사 전용 골분 영양제 (Bone Meal)",
-          "ratio": "제조사 권장량 준수",
+          "ratio": "반려견에게 필요한 정확한 칼슘 요구량은 담당 수의사 또는 수의영양학 전문가와 상담하십시오.",
           "desc": "천연 2:1 비율로 칼슘과 인이 배합된 미세 결정 하이드록시아파타이트 분말."
         }
       ]
@@ -4380,7 +4380,7 @@ export const PAGE_TRANSLATIONS = {
       "whyP1": "Abbiamo creato DogFoodPlanner per aiutare i proprietari di cani a pianificare pasti e porzioni con sicurezza. Analizziamo le linee guida pubbliche per trasformarle in strumenti e guide semplici e gratuiti.",
       "whyP2": "",
       "whoTitle": "Chi Siamo",
-      "whoContent": "DogFoodPlanner è un sito web indipendente gestito da ricercatori e scrittori amanti dei cani. Non siamo veterinari. Consulta sempre il tuo medico veterinario prima di modificare la dieta del tuo cane, soprattutto per cuccioli, cani anziani o con patologie pregresse.",
+      "whoContent": "DogFoodPlanner è un sito web indipendente gestito da proprietari di cani che amano ricercare e semplificare l'alimentazione canina. Non siamo veterinari. Consulta sempre il tuo medico veterinario prima di modificare la dieta del tuo cane, soprattutto per cuccioli, cani anziani o con patologie pregresse.",
       "methodTitle": "La Nostra Metodologia Nutrizionale",
       "pillars": [
         {
@@ -4613,7 +4613,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "Ricette Casalinghe Equilibrate per Cani",
       "heroSubtitle": "Istruzioni dettagliate passo-passo per preparare a casa razioni cotte a vapore bilanciate e diete crude ancestrali BARF 80-10-10.",
       "calciumWarningTitle": "La Regola d’Oro del Fatto in Casa: Il Bilanciamento del Calcio",
-      "calciumWarningDesc": "La polpa muscolare è ricca di fosforo e quasi priva di calcio (rapporto 1:20). Alimentare un cane solo con carne e riso senza calcio provoca demineralizzazione scheletrica severa in pochi mesi. Aggiungi sempre 1/2 cucchiaino raso di polvere di guscio d’uovo purificata (circa 900 mg di calcio elementare) ogni 450 g di carne senza ossa per garantire il rapporto ottimale Calcio/Fosforo di 1.2:1.",
+      "calciumWarningDesc": "Le diete casalinghe possono essere prive di nutrienti essenziali. Fai sempre verificare qualsiasi ricetta casalinga dal tuo veterinario o da un nutrizionista veterinario prima di somministrarla a lungo termine. La polpa muscolare è ricca di fosforo e quasi priva di calcio (rapporto 1:20). Alimentare un cane solo con carne e riso senza calcio provoca gravi carenze. Chiedi al tuo medico veterinario o a un nutrizionista veterinario di quanto calcio ha bisogno il tuo cane.",
       "recipesList": [
         {
           "tag": "COTTURA DOLCE",
@@ -4640,7 +4640,7 @@ export const PAGE_TRANSLATIONS = {
             "Fegato di manzo (Vitamina A e complesso B) — 5%",
             "Rene o milza di manzo (Organo secretore essenziale) — 5%"
           ],
-          "prep": "Taglia carne e cuore a bocconi adeguati alla taglia. Pesa accuratamente gli organi con bilancia digitale. Congela tutte le porzioni per almeno 3 settimane a -20°C prima di scongelarle e somministrarle."
+          "prep": "Taglia carne e cuore a bocconi adeguati alla taglia. Pesa accuratamente gli organi con bilancia digitale. Il congelamento non rende sicura la carne cruda. Maneggia la carne cruda con attenzione e consulta il veterinario prima di somministrare cibo crudo."
         },
         {
           "tag": "TOPPER SUPERFOOD",
@@ -4659,17 +4659,17 @@ export const PAGE_TRANSLATIONS = {
       "calciumGuideItems": [
         {
           "title": "Farina di Guscio d’Uovo",
-          "ratio": "1/2 cucchiaino ogni 450 g di carne disossata",
+          "ratio": "Chiedi al tuo medico veterinario o a un nutrizionista veterinario di quanto calcio ha bisogno il tuo cane.",
           "desc": "95% carbonato di calcio puro. Facile da produrre lavando, asciugando in forno e polverizzando i gusci."
         },
         {
           "title": "Ossa Polpose Crude Commestibili",
-          "ratio": "10% del peso totale della ciotola",
+          "ratio": "Chiedi al tuo medico veterinario o a un nutrizionista veterinario di quanto calcio ha bisogno il tuo cane.",
           "desc": "Colli d’anatra o ali di pollo crude. Mai cuocere le ossa, che diventerebbero rigide e pericolose."
         },
         {
           "title": "Farina d’Ossa Veterinaria (Bone Meal)",
-          "ratio": "Secondo le indicazioni in etichetta",
+          "ratio": "Chiedi al tuo medico veterinario o a un nutrizionista veterinario di quanto calcio ha bisogno il tuo cane.",
           "desc": "Idrossiapatite microcristallina che apporta calcio e fosforo nel perfetto rapporto naturale di 2:1."
         }
       ]

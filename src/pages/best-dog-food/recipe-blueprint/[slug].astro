@@ -30,7 +30,7 @@ const prevItem = idx > 0 ? blueprints[idx - 1] : null;
 const nextItem = idx < blueprints.length - 1 ? blueprints[idx + 1] : null;
 
 const pageTitle = `${item.name}: ${p.titleSuffix}`;
-const pageDescription = item.shortDesc.slice(0, 155);
+const pageDescription = item.shortDesc;
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -76,7 +76,7 @@ const articleJsonLd = {
     <Breadcrumbs
       items={[
         { name: 'Home', url: '/' },
-        { name: 'Dog Food Types Compared', url: '/best-dog-food' },
+        { name: 'Dog Food Types', url: '/best-dog-food' },
         { name: item.name },
       ]}
     />

@@ -243,7 +243,7 @@ export const itRecipes: LocalizedRecipesMap = {
     shortDesc: 'Una dieta cruda biologicamente appropriata basata sul modello della preda intera secondo il rigido rapporto 80-10-10: 80% muscolo, 10% ossa carnose crude e 10% frattaglie.',
     summary: 'Studiata per cani adulti sani dotati di una robusta acidità gastrica. Abbina carne magra di manzo da pascolo, cuore di manzo, colli d’anatra crudi interi (fonte di calcio naturale e condroprotettori) e organi nobili (fegato e reni di manzo per retinolo e vitamine B).',
     badge: 'MODELLO PREDE ANCESTRALE CRUDO // 80-10-10 BIOLOGICAMENTE BILANCIATO',
-    prepTime: '25 minuti (più congelamento preventivo obbligatorio di 3 settimane)',
+    prepTime: '25 minuti',
     cookTime: '0 minuti (Servito 100% Crudo)',
     yieldAmount: 'Circa 1.360 g (3,0 lbs) di porzione cruda',
     lifeStage: 'Cani Adulti Sani (Con Forte Acidità Gastrica)',
@@ -309,7 +309,7 @@ export const itRecipes: LocalizedRecipesMap = {
         ],
       },
       {
-        title: 'Protocollo Obbligatorio di Congelamento Preventivo di 3 Settimane',
+        title: 'Sicurezza Alimentazione Cruda e Parere Veterinario',
         description: 'La carne cruda può ospitare cisti parassitarie (Neospora, Toxoplasma). Per garantire la massima sicurezza sanitaria veterinaria, tutte le carni e i volatili crudi DEVONO essere mantenuti a -20°C per almeno 21 giorni consecutivi prima di essere scongelati e serviti.',
         keyPoints: [
           'Il congelamento a -20°C per 21 giorni inattiva efficacemente i parassiti tissutali.',
@@ -331,7 +331,7 @@ export const itRecipes: LocalizedRecipesMap = {
       {
         step: 1,
         title: 'Igiene e Verifica del Congelamento Preventivo',
-        instruction: 'Verificare che carne, cuori, colli e organi abbiano completato le 3 settimane a -20°C. Utilizzare taglieri non porosi e coltelli dedicati alla carne cruda.',
+        instruction: 'Il congelamento non rende sicura la carne cruda. Maneggia la carne cruda con attenzione e consulta il veterinario prima di somministrare cibo crudo. Utilizzare taglieri non porosi e coltelli dedicati alla carne cruda.',
         criticalTip: 'Lavare accuratamente le mani con acqua e sapone per 20 secondi prima e dopo aver maneggiato la carne cruda.',
       },
       {
@@ -397,7 +397,7 @@ export const itRecipes: LocalizedRecipesMap = {
       {
         method: 'Freezer (Porzioni Monodose)',
         duration: 'Fino a 6 mesi a -18°C o inferiore',
-        instructions: 'Sotto vuoto o in barattoli ermetici. Rispettare sempre le 3 settimane di congelamento iniziale.',
+        instructions: 'Sotto vuoto o in barattoli ermetici. Il congelamento non rende sicura la carne cruda. Maneggia la carne cruda con attenzione e consulta il veterinario prima di somministrare cibo crudo.',
       },
       {
         method: 'Protocollo di Scongelamento',

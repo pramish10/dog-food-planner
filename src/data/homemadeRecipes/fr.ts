@@ -243,7 +243,7 @@ export const frRecipes: LocalizedRecipesMap = {
     shortDesc: 'Un régime cru ancestral biologiquement adapté au ratio strict 80-10-10 : 80% de muscle, 10% d’os crus comestibles et 10% d’abats sécrétoires.',
     summary: 'Conçu pour les chiens adultes sains dotés d’un pH stomacal acide protecteur. Allie viande de bœuf nourri à l’herbe, cœur de bœuf, cous de canard crus entiers (calcium osseux naturel et chondroprotecteurs) et abats nobles (foie et rognons de bœuf pour les vitamines A et B).',
     badge: 'MODÈLE DE PROIE CRUE ANCESTRALE // 80-10-10 ÉQUILIBRE BIOLOGIQUE',
-    prepTime: '25 minutes (plus congélation préalable obligatoire de 3 semaines)',
+    prepTime: '25 minutes',
     cookTime: '0 minute (Servi 100% Cru)',
     yieldAmount: 'Env. 1 360 g (3,0 lbs) de préparation crue',
     lifeStage: 'Chiens Adultes en Bonne Santé (Acidité Gastrique Forte)',
@@ -309,7 +309,7 @@ export const frRecipes: LocalizedRecipesMap = {
         ],
       },
       {
-        title: 'Protocole Obligatoire de Congélation de 3 Semaines Antiparasitaire',
+        title: 'Sécurité de l’Alimentation Crue et Suivi Vétérinaire',
         description: 'La viande crue peut abriter des kystes parasitaires (Neospora caninum, Toxoplasma, Sarcocystis). Pour garantir une sécurité vétérinaire parfaite, toutes les viandes et volailles crues DOIVENT subir une congélation à -20°C pendant au moins 21 jours consécutifs avant d’être décongelées et servies.',
         keyPoints: [
           'La congélation à -20°C pendant 21 jours détruit efficacement les parasites tissulaires.',
@@ -331,7 +331,7 @@ export const frRecipes: LocalizedRecipesMap = {
       {
         step: 1,
         title: 'Hygiène et Contrôle de la Congélation Préalable',
-        instruction: 'Vérifiez que toutes les viandes, cous et abats ont effectué les 3 semaines obligatoires à -20°C. Démarrez sur une planche à découper non poreuse et propre.',
+        instruction: 'La congélation ne rend pas la viande crue sans danger. Manipulez la viande crue avec précaution et consultez votre vétérinaire avant de donner une alimentation crue. Démarrez sur une planche à découper non poreuse et propre.',
         criticalTip: 'Lavez-vous les mains et les ustensiles au savon antibactérien pendant 20 secondes avant et après manipulation.',
       },
       {
@@ -397,7 +397,7 @@ export const frRecipes: LocalizedRecipesMap = {
       {
         method: 'Congélation (Portions Individuelles)',
         duration: 'Jusqu’à 6 mois à -18°C ou moins',
-        instructions: 'Sous vide ou en boîte étanche. Maintenir les 3 semaines de congélation préalable.',
+        instructions: 'Sous vide ou en boîte étanche. La congélation ne rend pas la viande crue sans danger. Manipulez la viande crue avec précaution et consultez votre vétérinaire avant de donner une alimentation crue.',
       },
       {
         method: 'Protocole de Décongélation',

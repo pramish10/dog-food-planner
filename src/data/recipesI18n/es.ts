@@ -80,7 +80,7 @@ export const esRecipes: LocalizedRecipesMap = {
       'Callos verdes crudos y kéfir fermentado o leche de cabra'
     ],
     preparationNotes: [
-      'Adquiere carnes certificadas de consumo humano y congela a -20°C durante un mínimo de 3 semanas antes del primer consumo.',
+      'La congelación no hace que la carne cruda sea segura. Manipula la carne cruda con cuidado y habla con tu veterinario antes de dar alimentos crudos.',
       'Pica finamente la carne muscular y los órganos. Los huesos carnosos blandos deben picarse finamente para perros pequeños o darse enteros bajo supervisión directa.',
       'Descongela las porciones diarias individuales en el frigorífico 24 horas antes de servir.'
     ]
@@ -222,7 +222,7 @@ export const esRecipes: LocalizedRecipesMap = {
       'Comienza solo con pollo durante las primeras 2 semanas sin mezclar otras proteínas.',
       'Sirve siempre a temperatura ambiente (nunca frío de la nevera) para evitar molestias digestivas.',
       'Es habitual observar heces blandas durante los primeros 3 a 5 días de adaptación.',
-      'Congela siempre el pollo apto para consumo humano a -20°C durante 3 semanas antes del primer uso.'
+      'La congelación no hace que la carne cruda sea segura. Manipula la carne cruda con cuidado y habla con tu veterinario antes de dar alimentos crudos.'
     ]
   },
   'raw-barf-salmon-skin': {
@@ -255,7 +255,7 @@ export const esRecipes: LocalizedRecipesMap = {
       'Aceite de semillas de cáñamo y mezcla mineral'
     ],
     preparationNotes: [
-      'Consigue carnes certificadas aptas para consumo humano y congela a -20°C durante 3 semanas antes del primer uso.',
+      'La congelación no hace que la carne cruda sea segura. Manipula la carne cruda con cuidado y habla con tu veterinario antes de dar alimentos crudos.',
       'Mantén esta dieta estricta de exclusión durante 8 a 12 semanas sin añadir premios ni otros alimentos.',
       'El hueso de conejo triturado es blando, seguro y aporta calcio biodisponible de gran calidad.'
     ]

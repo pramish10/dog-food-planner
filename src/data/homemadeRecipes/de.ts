@@ -309,10 +309,10 @@ export const deRecipes: LocalizedRecipesMap = {
         ],
       },
       {
-        title: '3-wöchiges Tiefkühlprotokoll zur Parasitenabwehr',
+        title: 'Tierärztliche Beratung & Rohfütterungssicherheit',
         description: 'Rohes Fleisch kann Gewebszysten (wie Neospora oder Toxoplasma) enthalten. Um absolute tierärztliche Sicherheit zu gewährleisten, MÜSSEN alle rohen Rindfleisch- und Geflügelkomponenten vor dem Verfüttern mindestens 21 Tage bei -20°C tiefgekühlt gelagert werden.',
         keyPoints: [
-          '21 Tage bei -20°C inaktivieren Gewebsparasiten zuverlässig.',
+          'Einfrieren macht rohes Fleisch nicht keimfrei. Gehen Sie sorgfältig mit rohem Fleisch um und sprechen Sie mit Ihrem Tierarzt, bevor Sie roh füttern.',
           'Erhebt rohe Verdauungsenzyme, Probiotika und natives Kollagen unbeschadet.',
           'Auftauen ausschließlich langsam im Kühlschrank, niemals warm oder in der Mikrowelle.',
         ],
@@ -331,7 +331,7 @@ export const deRecipes: LocalizedRecipesMap = {
       {
         step: 1,
         title: 'Hygiene & Kontrolle der Vorkühlung',
-        instruction: 'Sicherstellen, dass Fleisch, Hälse und Organe die 3 Wochen bei -20°C durchlaufen haben. Nicht-poröse Schneidebretter und separate Messer verwenden.',
+        instruction: 'Einfrieren macht rohes Fleisch nicht keimfrei. Gehen Sie sorgfältig mit rohem Fleisch um und sprechen Sie mit Ihrem Tierarzt, bevor Sie roh füttern. Nicht-poröse Schneidebretter und separate Messer verwenden.',
         criticalTip: 'Hände und Flächen vor und nach der Fleischverarbeitung 20 Sekunden mit Seife reinigen.',
       },
       {
@@ -397,7 +397,7 @@ export const deRecipes: LocalizedRecipesMap = {
       {
         method: 'Tiefkühllagerung (Portionierte Dosen)',
         duration: 'Bis zu 6 Monate bei -18°C oder kälter',
-        instructions: 'Vakuumieren oder Gefrierdosen nutzen. 3 Wochen Vorgefrierzeit einhalten.',
+        instructions: 'Vakuumieren oder Gefrierdosen nutzen. Einfrieren macht rohes Fleisch nicht keimfrei. Gehen Sie sorgfältig mit rohem Fleisch um und sprechen Sie mit Ihrem Tierarzt, bevor Sie roh füttern.',
       },
       {
         method: 'Auftauprotokoll',

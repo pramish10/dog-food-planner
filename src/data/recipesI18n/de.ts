@@ -80,7 +80,7 @@ export const deRecipes: LocalizedRecipesMap = {
       'Roher grüner Pansen & Kefir oder Ziegenmilch'
     ],
     preparationNotes: [
-      'Fleisch in Lebensmittelqualität beziehen und vor der ersten Fütterung mindestens 3 Wochen bei -20 °C durchfrieren.',
+      'Einfrieren macht rohes Fleisch nicht keimfrei. Gehen Sie sorgfältig mit rohem Fleisch um und sprechen Sie mit Ihrem Tierarzt, bevor Sie roh füttern.',
       'Muskelfleisch und Innereien fein schneiden. Rohe fleischige Weichknochen für kleine Hunde fein wolfen.',
       'Tagesportionen stets 24 Stunden vor dem Füttern schonend im Kühlschrank auftauen.'
     ]
@@ -222,7 +222,7 @@ export const deRecipes: LocalizedRecipesMap = {
       'In den ersten 2 Wochen ausschließlich Huhn füttern und noch keine Proteine mischen.',
       'Stets zimmerwarm servieren, niemals kühlschrankkalt.',
       'Leicht weicherer Kot ist in den ersten 3 bis 5 Tagen normal.',
-      'Roh verfüttertes Geflügel in Lebensmittelqualität stets 3 Wochen bei -20 °C tiefkühlen.'
+      'Einfrieren macht rohes Fleisch nicht keimfrei. Gehen Sie sorgfältig mit rohem Fleisch um und sprechen Sie mit Ihrem Tierarzt, bevor Sie roh füttern.'
     ]
   },
   'raw-barf-salmon-skin': {
@@ -255,7 +255,7 @@ export const deRecipes: LocalizedRecipesMap = {
       'Hanfsamenöl & Mineralmischung'
     ],
     preparationNotes: [
-      'Wildfleisch aus sicherer Herkunft beziehen und vor Fütterung 3 Wochen bei -20 °C tiefkühlen.',
+      'Einfrieren macht rohes Fleisch nicht keimfrei. Gehen Sie sorgfältig mit rohem Fleisch um und sprechen Sie mit Ihrem Tierarzt, bevor Sie roh füttern.',
       'Diese Ausschlussdiät 8–12 Wochen lang konsequent ohne jegliche Fremdleckerlis einhalten.',
       'Gewolfte Kaninchenknochen sind weich, sicher und eine natürliche Calciumquelle.'
     ]

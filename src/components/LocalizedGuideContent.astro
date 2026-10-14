@@ -222,6 +222,16 @@ const brI18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
 
   {kind === 'recipes' && <>
 
+    <!-- Top advisory banner for homemade recipes -->
+    <div class="p-4 sm:p-5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed mb-6">
+      <div class="flex items-start gap-3">
+        <span class="text-base sm:text-lg shrink-0">⚠️</span>
+        <p>
+          Homemade diets can miss essential nutrients. These recipes are examples and may not be complete and balanced. Have any homemade recipe reviewed by your veterinarian or a board-certified veterinary nutritionist before feeding it long term.
+        </p>
+      </div>
+    </div>
+
     {p.recipesList.map((recipe: any, idx: number) => {
       const slug = HOMEMADE_RECIPE_SLUGS[idx] || 'gently-cooked-turkey-pumpkin';
       const richRecipe = getHomemadeRecipeBySlug(slug, lang);
@@ -281,16 +291,22 @@ const brI18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
               <span>{hrI18n.readMoreBtn}</span>
               <span class="transform group-hover:translate-x-1 transition-transform">→</span>
             </a>
-            {richRecipe && (
-              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373]">
-                {richRecipe.macroProfile.caPhosphorusRatio.split('(')[0].trim()}
-              </span>
-            )}
           </div>
         </section>
       );
     })}
-    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-3"><h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.calciumGuideTitle}</h2>{p.calciumGuideItems.map((item: any) => <div><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.title} — {item.ratio}</h3><p>{item.desc}</p></div>)}</section>
+    <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] space-y-4">
+      <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">{p.calciumGuideTitle}</h2>
+      <div class="space-y-4">
+        {p.calciumGuideItems.map((item: any) => (
+          <div class="p-4 rounded-xl bg-[#fafafa] dark:bg-[#1a1a1a] border border-[#ebebeb] dark:border-[#262626]">
+            <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed] mb-1">{item.title}</h3>
+            <p class="text-xs text-[#0070f3] dark:text-[#3291ff] font-medium mb-1.5">{item.ratio}</p>
+            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   </>}
 
   {kind === 'toxic' && <>

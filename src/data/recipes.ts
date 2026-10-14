@@ -174,7 +174,7 @@ export const RECIPES: MealRecipe[] = [
     ],
     healthFocusMatches: ['Clean Teeth & Breath', 'Hip & Joint', 'Optimal Muscle Density'],
     preparationNotes: [
-      'Source certified human-grade meats and freeze at -4°F for minimum 3 weeks before initial feeding if using wild or raw sourced proteins.',
+      'Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw.',
       'Grind or finely dice muscle meat and organs. Soft edible raw bones should be finely ground for smaller dogs or served whole under direct supervision for experienced chewers.',
       'Thaw individual daily portions in the refrigerator 24 hours prior to feeding.'
     ]
@@ -444,7 +444,7 @@ export const RECIPES: MealRecipe[] = [
       'Begin with chicken only for the first 2 weeks — do not mix proteins during the transition period.',
       'Serve at room temperature (not cold from fridge) — cold food causes digestive upset in raw beginners.',
       'Expect loose stools for 3–5 days during transition — this is normal detox. If diarrhea persists beyond 7 days, slow the transition.',
-      'Source human-grade chicken and freeze at -4°F for 3 weeks before first use to eliminate parasites.'
+      'Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw.'
     ]
   },
 
@@ -509,7 +509,7 @@ export const RECIPES: MealRecipe[] = [
     healthFocusMatches: ['Allergy Relief & Immune Balance', 'Skin & Shiny Coat Vitality', 'Metabolic Weight Management'],
     preparationNotes: [
       'Source from reputable raw pet food suppliers — wild venison and rabbit must be human-grade and properly handled.',
-      'Freeze at -4°F for minimum 3 weeks before feeding to eliminate parasites common in wild game.',
+      'Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw.',
       'This is a strict elimination diet formula — do not add any other proteins for the first 8–12 weeks.',
       'Rabbit bones are very soft and safe for most dogs — whole ground rabbit (including bone) is the safest raw bone option.',
       'Monitor stool quality closely — venison is very lean and some dogs need a small amount of added fat (hemp oil) for optimal digestion.'

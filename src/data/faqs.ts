@@ -233,7 +233,7 @@ export const FAQS_DATA: FaqItem[] = [
       <h4>Critical Safety & Balancing Rules:</h4>
       <ul>
         <li>Never feed <em>cooked</em> bones (cooked bones splinter and cause gastrointestinal perforation). Only feed soft, raw edible bones like chicken necks, wings, or duck frames.</li>
-        <li>Practice strict food hygiene: freeze raw meats for at least 3 weeks at -4°F (-20°C) before feeding to eliminate parasites.</li>
+        <li>Practice strict food hygiene: Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw.</li>
       </ul>
     `,
     tags: ['raw food', 'BARF', 'ancestral diet', 'raw bone'],

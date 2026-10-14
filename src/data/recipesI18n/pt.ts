@@ -80,7 +80,7 @@ export const ptRecipes: LocalizedRecipesMap = {
       'Bucho verde cru e kefir ou leite cru de cabra'
     ],
     preparationNotes: [
-      'Utilize carnes inspecionadas próprias para consumo humano e congele a -20 °C por no mínimo 3 semanas antes do primeiro uso.',
+      'O congelamento não torna a carne crua segura. Manipule carne crua com cuidado e converse com seu veterinário antes de oferecer alimentação crua.',
       'Moa ou pique miúdo as carnes e vísceras. Ossos carnudos macios devem ser moídos para cães de porte menor.',
       'Descongele as porções individuais na geladeira 24 horas antes de servir.'
     ]
@@ -222,7 +222,7 @@ export const ptRecipes: LocalizedRecipesMap = {
       'Ofereça somente frango nas primeiras 2 semanas sem misturar outras proteínas.',
       'Sirva sempre em temperatura ambiente, nunca gelado recém-tirado da geladeira.',
       'Fezes levemente amolecidas são normais nos primeiros 3 a 5 dias de adaptação.',
-      'Sempre congele o frango destinado ao consumo cru a -20 °C por 3 semanas antes do uso.'
+      'O congelamento não torna a carne crua segura. Manipule carne crua com cuidado e converse com seu veterinário antes de oferecer alimentação crua.'
     ]
   },
   'raw-barf-salmon-skin': {
@@ -255,7 +255,7 @@ export const ptRecipes: LocalizedRecipesMap = {
       'Óleo de semente de cânhamo e minerais'
     ],
     preparationNotes: [
-      'Adquira carnes de fornecedores confiáveis e congele a -20 °C por 3 semanas antes do uso.',
+      'O congelamento não torna a carne crua segura. Manipule carne crua com cuidado e converse com seu veterinário antes de oferecer alimentação crua.',
       'Mantenha essa dieta estrita de exclusão por 8 a 12 semanas sem nenhum petisco extra.',
       'Os ossos de coelho moídos são macios, seguros e fornecem cálcio altamente assimilável.'
     ]

@@ -62,8 +62,8 @@ const paragraphs = item.readMore.split('\n\n');
 const prevItem = idx > 0 ? { title: rankings[idx - 1].title, slug: BEST_FOOD_RANKING_SLUGS[idx - 1] } : null;
 const nextItem = idx < rankings.length - 1 ? { title: rankings[idx + 1].title, slug: BEST_FOOD_RANKING_SLUGS[idx + 1] } : null;
 
-const pageTitle = `${item.title} (${item.score}) | Best Dog Food 2026`;
-const pageDescription = `${item.pros} ${item.cons}`.slice(0, 155);
+const pageTitle = `${item.title} (${item.score}) | ${t('nav.bestDogFood')}`;
+const pageDescription = item.pros;
 
 const articleJsonLd = {
   "@context": "https://schema.org",

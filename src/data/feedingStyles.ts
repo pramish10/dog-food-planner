@@ -120,7 +120,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
     prevOption: 'Previous option',
     nextOption: 'Next option',
     backLink: 'Back to Fresh vs. Raw vs. Kibble',
-    titleSuffix: 'What It Is & Considerations for Your Dog | Dog Food Types Compared',
+    titleSuffix: 'What It Is & Considerations for Your Dog | Dog Food Types',
   },
   es: {
     badge: 'FRESCA VS. CRUDA VS. PIENSO',
@@ -222,7 +222,7 @@ const FEEDING_STYLES_BY_LANG: Record<Lang, FeedingStyle[]> = {
       optionLabel: 'Option 1',
       accent: '#10b981',
       title: 'Fresh Dog Food',
-      summary: 'Gently cooked at ~160°F, preserving 70%+ moisture, heat-sensitive vitamins, and essential amino acids. Supports kidney health, coat sheen, and firm stools.',
+      summary: 'Gently cooked fresh dog food preserving natural moisture, heat-sensitive vitamins, and amino acids to support digestion and hydration.',
       pros: [
         'Human-grade ingredients cooked in USDA-inspected kitchens, not rendered meat meal',
         'Retains 70%+ moisture and heat-sensitive nutrients like taurine and B-vitamins',
@@ -241,7 +241,7 @@ const FEEDING_STYLES_BY_LANG: Record<Lang, FeedingStyle[]> = {
       optionLabel: 'Option 2',
       accent: '#7928ca',
       title: 'Raw Dog Food (BARF)',
-      summary: '80% muscle meat, 10% raw bone, 10% secreting organs. A whole-food approach based on raw meat, bone, and organs. Raw foods carry bacteria risks; talk to your vet before feeding raw.',
+      summary: 'An 80-10-10 whole-food diet of raw meat, bone, and organs. Raw foods carry bacterial risks; talk to your veterinarian before feeding raw.',
       pros: [
         'Closest nutritional match to what a wild canine ancestor evolved to eat',
         'Raw edible bone mechanically scrapes tartar off teeth as the dog chews',
@@ -261,7 +261,7 @@ const FEEDING_STYLES_BY_LANG: Record<Lang, FeedingStyle[]> = {
       optionLabel: 'Option 3',
       accent: '#0070f3',
       title: 'Superfood Kibble Toppers',
-      summary: 'Adding 25–50% fresh whole-food toppers (bone broth, sardines, pumpkin) over standard kibble adds moisture and micronutrients while staying cost-effective.',
+      summary: 'Adding fresh whole-food toppers over standard kibble adds natural moisture and micronutrients while staying budget-friendly.',
       pros: [
         'Most shelf-stable and budget-friendly of the three feeding styles',
         'Easy to portion, batch-buy, and automate with a timed feeder',

@@ -924,7 +924,7 @@ export const HOMEMADE_RECIPES: Record<HomemadeRecipeSlug, HomemadeRecipe> = {
     shortDesc: 'A biologically appropriate ancestral prey model diet prepared to the 80-10-10 raw ratio: 80% muscle meat, 10% edible raw bone, and 10% secreting organ meats.',
     summary: 'Designed for healthy adult dogs with robust gastric physiology. Features grass-fed beef muscle meat, beef heart, raw edible duck necks for bone calcium and joint chondroitin, plus liver and kidney secreting organs for retinol and B-complex vitamins. Raw foods can carry bacteria. Talk to your vet first before feeding raw.',
     badge: 'ANCESTRAL RAW PREY MODEL // 80-10-10 RAW RATIO',
-    prepTime: '25 minutes (plus mandatory 3-week prior deep freeze)',
+    prepTime: '25 minutes',
     cookTime: '0 minutes (Served 100% Raw)',
     yieldAmount: 'Approx. 3.0 lbs (1,360 g) raw batch',
     lifeStage: 'Healthy Adult Dogs (Strong Gastric Acidity)',
@@ -1019,11 +1019,11 @@ export const HOMEMADE_RECIPES: Record<HomemadeRecipeSlug, HomemadeRecipe> = {
         ],
       },
       {
-        title: 'The Mandatory 3-Week Deep Freeze Protocol for Parasite Defense',
-        description: 'Raw meats can harbor natural microscopic cysts (such as Neospora caninum, Toxoplasma gondii, or Sarcocystis). To guarantee absolute veterinary safety, all raw beef and poultry components MUST undergo deep freezing at or below -4°F (-20°C) for a minimum of 21 consecutive days prior to thawing and feeding. Domestic household freezers at 0°F (-18°C) should maintain storage for at least 3 weeks before serving.',
+        title: 'Raw Food Safety & Veterinary Review',
+        description: 'Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw. Raw foods carry bacterial risks that require dedicated preparation surfaces, strict refrigeration, and thorough handwashing.',
         keyPoints: [
-          'Freezing for 21 days at -4°F effectively destroys zoonotic tissue parasites.',
-          'Preserves heat-sensitive active enzymes, live probiotics, and native collagen.',
+          'Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw.',
+          'Wash hands, surfaces, and utensils thoroughly with hot soapy water after preparing raw ingredients.',
           'Thaw portions slowly in the refrigerator—never at room temperature or in microwaves.',
         ],
       },
@@ -1041,7 +1041,7 @@ export const HOMEMADE_RECIPES: Record<HomemadeRecipeSlug, HomemadeRecipe> = {
       {
         step: 1,
         title: 'Sanitation & Sourcing Verification',
-        instruction: 'Ensure all beef, heart, necks, and organs have undergone the required 3-week deep freeze at -4°F (-20°C). Dedicate specific non-porous cutting boards (plastic or marble) and knives to raw food prep.',
+        instruction: 'Dedicate specific non-porous cutting boards (plastic or marble) and knives to raw food prep. Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw.',
         criticalTip: 'Wash hands, utensils, and countertops with antibacterial soap for 20 seconds before and after handling raw meats.',
       },
       {
@@ -1107,7 +1107,7 @@ export const HOMEMADE_RECIPES: Record<HomemadeRecipeSlug, HomemadeRecipe> = {
       {
         method: 'Freezer Storage (Portioned Batches)',
         duration: 'Up to 6 months at 0°F (-18°C) or lower',
-        instructions: 'Vacuum-seal or use freezer-grade airtight containers. Always freeze for 3 weeks prior to first feeding.',
+        instructions: 'Vacuum-seal or use freezer-grade airtight containers. Freezing does not make raw meat safe. Handle raw meat carefully and talk to your vet before feeding raw.',
       },
       {
         method: 'Thawing Protocol',

@@ -135,12 +135,17 @@ const recipeJsonLd = {
     <!-- Main Content Container -->
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 space-y-10 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
 
+      <!-- Nutrition Advisory Banner -->
+      <div class="p-4 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 rounded-xl text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed">
+        <strong>Important Advisory:</strong> Homemade diets can miss essential nutrients. These recipes are examples and may not be complete and balanced. Have any homemade recipe reviewed by your veterinarian or a board-certified veterinary nutritionist before feeding it long term.
+      </div>
+
       <!-- 1. Quick Specs & Vital Metrics -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
         <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
           {p.quickSpecsTitle}
         </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
           <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
             <span class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.prepTimeLabel}</span>
             <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{recipe.prepTime}</span>
@@ -156,10 +161,6 @@ const recipeJsonLd = {
           <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626]">
             <span class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.lifeStageLabel}</span>
             <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{recipe.lifeStage}</span>
-          </div>
-          <div class="p-3.5 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] sm:col-span-2">
-            <span class="text-[11px] font-mono uppercase text-[#8f8f8f] dark:text-[#737373] block mb-1">{p.caRatioLabel}</span>
-            <span class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{recipe.macroProfile.caPhosphorusRatio}</span>
           </div>
         </div>
       </section>

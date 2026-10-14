@@ -80,7 +80,7 @@ export const frRecipes: LocalizedRecipesMap = {
       'Panse verte crue et kéfir ou lait de chèvre cru'
     ],
     preparationNotes: [
-      'Utilisez de la viande certifiée propre à la consommation humaine et congelez à -20 °C pendant 3 semaines minimum avant la première utilisation.',
+      'La congélation ne rend pas la viande crue sans danger. Manipulez la viande crue avec précaution et consultez votre vétérinaire avant de donner une alimentation crue.',
       'Hachez finement la viande et les abats. Les os charnus tendres doivent être finement broyés pour les petits chiens ou donnés entiers sous surveillance pour les chiens habitués.',
       'Décongelez les portions individuelles au réfrigérateur 24 heures avant le service.'
     ]
@@ -222,7 +222,7 @@ export const frRecipes: LocalizedRecipesMap = {
       'Proposez uniquement du poulet pendant les 2 premières semaines sans mélanger d’autres viandes.',
       'Servez à température ambiante (jamais froid sortant du réfrigérateur) pour éviter les régurgitations.',
       'Des selles plus molles sont habituelles les premiers jours de détoxination.',
-      'Congelez toujours le poulet destiné à l’alimentation crue à -20 °C pendant 3 semaines avant consommation.'
+      'La congélation ne rend pas la viande crue sans danger. Manipulez la viande crue avec précaution et consultez votre vétérinaire avant de donner une alimentation crue.'
     ]
   },
   'raw-barf-salmon-skin': {
@@ -255,7 +255,7 @@ export const frRecipes: LocalizedRecipesMap = {
       'Huile de graines de chanvre et minéraux'
     ],
     preparationNotes: [
-      'Sélectionnez des viandes de qualité boucherie et congelez à -20 °C pendant 3 semaines avant distribution.',
+      'La congélation ne rend pas la viande crue sans danger. Manipulez la viande crue avec précaution et consultez votre vétérinaire avant de donner une alimentation crue.',
       'Maintenez cette alimentation exclusive pendant 8 à 12 semaines sans aucune friandise extérieure.',
       'L’os de lapin finement broyé est tendre, sûr et hautement assimilable.'
     ]
