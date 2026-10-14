@@ -29,10 +29,10 @@ const INDEXABLE_FAQ_SLUGS = new Set([
  */
 function sitemapFilter(page) {
   const path = new URL(page).pathname.replace(/\/$/, '') || '/';
-  if (LOCALE_PREFIX.test(path)) return false;
   if (path === '/print' || path === '/404' || path === '/500' || path === '/feeding-calculator') return false;
 
-  const faqMatch = path.match(/^\/faq\/([^/]+)$/);
+  const unprefixed = path.replace(LOCALE_PREFIX, '') || '/';
+  const faqMatch = unprefixed.match(/^\/faq\/([^/]+)$/);
   if (faqMatch && !INDEXABLE_FAQ_SLUGS.has(faqMatch[1])) {
     return false;
   }
@@ -67,9 +67,14 @@ function serializeSitemapItem(item) {
   item.url = withoutTrailingSlash(item.url);
   const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
   const unprefixed = path.replace(LOCALE_PREFIX, '') || '/';
+  const defaultUrl = withoutLocalePrefix(item.url);
 
-  // Do not emit alternate hreflang links pointing to non-English or noindexed pages
-  delete item.links;
+  if (item.links?.length) {
+    item.links = [
+      { lang: 'x-default', url: defaultUrl },
+      ...item.links.map((link) => ({ ...link, url: withoutTrailingSlash(link.url) })),
+    ];
+  }
 
   if (unprefixed === '/') {
     item.priority = 1.0;
@@ -121,6 +126,19 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en',
+          es: 'es',
+          ja: 'ja',
+          fr: 'fr',
+          de: 'de',
+          pt: 'pt',
+          ko: 'ko',
+          it: 'it',
+        },
+      },
       filter: sitemapFilter,
       serialize: serializeSitemapItem,
       namespaces: {

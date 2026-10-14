@@ -25,7 +25,7 @@ const {
   ogImage = "https://dogfoodplanner.com/og-image.jpg"
 } = Astro.props;
 
-const isNoindex = Boolean(Astro.props.noindex || lang !== 'en' || ['/404', '/500', '/print'].includes(cleanPath));
+const isNoindex = Boolean(Astro.props.noindex || ['/404', '/500', '/print'].includes(cleanPath));
 
 const robotsContent = !isNoindex
   ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
@@ -59,11 +59,18 @@ const finalDescription = lang === 'en'
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap.xml" />
     
-    <!-- Multilingual Hreflang SEO Markup (only indexable alternates) -->
-    {!isNoindex && lang === 'en' && (
+    <!-- Multilingual Hreflang SEO Markup -->
+    {!isNoindex && (
       <>
         <link rel="alternate" hreflang="x-default" href={getAbsoluteLocalizedUrl(cleanPath, 'en')} />
         <link rel="alternate" hreflang="en" href={getAbsoluteLocalizedUrl(cleanPath, 'en')} />
+        <link rel="alternate" hreflang="es" href={getAbsoluteLocalizedUrl(cleanPath, 'es')} />
+        <link rel="alternate" hreflang="ja" href={getAbsoluteLocalizedUrl(cleanPath, 'ja')} />
+        <link rel="alternate" hreflang="fr" href={getAbsoluteLocalizedUrl(cleanPath, 'fr')} />
+        <link rel="alternate" hreflang="de" href={getAbsoluteLocalizedUrl(cleanPath, 'de')} />
+        <link rel="alternate" hreflang="pt" href={getAbsoluteLocalizedUrl(cleanPath, 'pt')} />
+        <link rel="alternate" hreflang="ko" href={getAbsoluteLocalizedUrl(cleanPath, 'ko')} />
+        <link rel="alternate" hreflang="it" href={getAbsoluteLocalizedUrl(cleanPath, 'it')} />
       </>
     )}
 
@@ -93,6 +100,9 @@ const finalDescription = lang === 'en'
     <meta property="og:image:alt" content="Dog Food Planner - Free Custom Dog Meal & Nutrition Calculator" />
     <meta property="og:site_name" content="Dog Food Planner" />
     <meta property="og:locale" content={currentLocaleData.ogLocale} />
+    {Object.values(localesMap).filter(l => l.code !== lang).map(l => (
+      <meta property="og:locale:alternate" content={l.ogLocale} />
+    ))}
 
     <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image" />
