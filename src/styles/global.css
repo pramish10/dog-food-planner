@@ -531,4 +531,389 @@ html.dark .page-warm-bg .hairline-card:hover {
   border-color: #f59e0b;
 }
 
+/* ==========================================================================
+   Canine Editorial Prose Typography (Blog Articles)
+   ========================================================================== */
+
+.prose-canine {
+  font-size: 1.0625rem; /* 17px - optimal long-form reading size */
+  line-height: 1.85;
+  color: #3b2314;
+  letter-spacing: 0.005em;
+  word-spacing: 0.015em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 640px) {
+  .prose-canine {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+
+html.dark .prose-canine {
+  color: #e4cbb0;
+}
+
+/* Paragraphs & sentence flow - generous gap between thoughts and sentences */
+.prose-canine p {
+  margin-top: 0;
+  margin-bottom: 1.625rem;
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+/* Magazine-style Lead paragraph */
+.prose-canine .lead,
+.prose-canine > p:first-of-type {
+  font-size: 1.1875rem;
+  line-height: 1.85;
+  font-weight: 500;
+  color: #241306;
+  margin-top: 0;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px dashed rgba(240, 213, 168, 0.8);
+}
+
+@media (max-width: 640px) {
+  .prose-canine .lead,
+  .prose-canine > p:first-of-type {
+    font-size: 1.075rem;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+html.dark .prose-canine .lead,
+html.dark .prose-canine > p:first-of-type {
+  color: #fde8c8;
+  border-bottom-color: rgba(92, 55, 29, 0.8);
+}
+
+/* Major Section Headings (H2) */
+.prose-canine h2 {
+  font-size: 1.625rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #1a0e02;
+  letter-spacing: -0.025em;
+  margin-top: 3.25rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 2px solid rgba(196, 122, 43, 0.22);
+  scroll-margin-top: 6rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .prose-canine h2 {
+    font-size: 1.85rem;
+  }
+}
+
+html.dark .prose-canine h2 {
+  color: #fde8c8;
+  border-bottom-color: rgba(196, 122, 43, 0.35);
+}
+
+/* Subheadings (H3) */
+.prose-canine h3 {
+  font-size: 1.28rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #261405;
+  letter-spacing: -0.015em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.875rem;
+  scroll-margin-top: 6rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .prose-canine h3 {
+    font-size: 1.35rem;
+  }
+}
+
+html.dark .prose-canine h3 {
+  color: #fbd7aa;
+}
+
+/* Minor Headings (H4) */
+.prose-canine h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #3b2314;
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+  scroll-margin-top: 6rem;
+}
+
+html.dark .prose-canine h4 {
+  color: #f5caa0;
+}
+
+/* Lists */
+.prose-canine ul,
+.prose-canine ol {
+  margin-top: 0.85rem;
+  margin-bottom: 1.75rem;
+  padding-left: 1.6rem;
+}
+
+.prose-canine ul {
+  list-style-type: disc;
+}
+
+.prose-canine ol {
+  list-style-type: decimal;
+}
+
+.prose-canine li {
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+  color: inherit;
+}
+
+.prose-canine li:last-child {
+  margin-bottom: 0;
+}
+
+.prose-canine ul li::marker {
+  color: #c47a2b;
+}
+
+.prose-canine ol li::marker {
+  color: #c47a2b;
+  font-weight: 700;
+  font-feature-settings: 'tnum';
+}
+
+/* Links */
+.prose-canine a {
+  color: #c47a2b;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(196, 122, 43, 0.4);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  transition: all 0.2s ease;
+}
+
+.prose-canine a:hover {
+  color: #92400e;
+  text-decoration-color: #92400e;
+}
+
+html.dark .prose-canine a {
+  color: #f59e0b;
+  text-decoration-color: rgba(245, 158, 11, 0.4);
+}
+
+html.dark .prose-canine a:hover {
+  color: #fbbf24;
+  text-decoration-color: #fbbf24;
+}
+
+/* Strong & Emphasis */
+.prose-canine strong {
+  font-weight: 700;
+  color: #1a0e03;
+}
+
+html.dark .prose-canine strong {
+  color: #fff8f0;
+}
+
+.prose-canine em {
+  font-style: italic;
+  color: #4a2e18;
+}
+
+html.dark .prose-canine em {
+  color: #ecd2b8;
+}
+
+/* Inline Code */
+.prose-canine code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.875em;
+  background: rgba(240, 213, 168, 0.35);
+  color: #8b3a05;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(240, 213, 168, 0.6);
+}
+
+html.dark .prose-canine code {
+  background: #251608;
+  color: #f59e0b;
+  border-color: rgba(196, 122, 43, 0.3);
+}
+
+/* Blockquotes */
+.prose-canine blockquote {
+  margin: 2.25rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #c47a2b;
+  background: rgba(196, 122, 43, 0.06);
+  border-radius: 0 0.85rem 0.85rem 0;
+  font-style: italic;
+  color: #4e2e14;
+}
+
+html.dark .prose-canine blockquote {
+  background: rgba(196, 122, 43, 0.12);
+  color: #ebd1b5;
+}
+
+/* Horizontal Dividers */
+.prose-canine hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 1px dashed rgba(196, 122, 43, 0.35);
+}
+
+html.dark .prose-canine hr {
+  border-top-color: rgba(196, 122, 43, 0.4);
+}
+
+/* Tables within content */
+.prose-canine table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  border: 1px solid #f0d5a8;
+}
+
+html.dark .prose-canine table {
+  border-color: #3a2510;
+}
+
+.prose-canine th {
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-align: left;
+  background: #faf0e1;
+  color: #1c0f00;
+  border-bottom: 1px solid #f0d5a8;
+}
+
+html.dark .prose-canine th {
+  background: #251608;
+  color: #fde8c8;
+  border-bottom-color: #3a2510;
+}
+
+.prose-canine td {
+  padding: 0.85rem 1rem;
+  font-size: 0.925rem;
+  border-bottom: 1px solid rgba(240, 213, 168, 0.5);
+  color: inherit;
+}
+
+html.dark .prose-canine td {
+  border-bottom-color: rgba(58, 37, 16, 0.7);
+}
+
+.prose-canine tr:last-child td {
+  border-bottom: none;
+}
+
+/* Editorial Callout Boxes */
+.callout {
+  margin: 2.25rem 0;
+  padding: 1.35rem 1.6rem;
+  border-radius: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.callout p {
+  margin-bottom: 0.75rem;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.65rem;
+}
+
+.callout-vet {
+  background: rgba(196, 122, 43, 0.08);
+  border: 1px solid rgba(196, 122, 43, 0.3);
+  color: #4a2e18;
+}
+
+html.dark .callout-vet {
+  background: rgba(196, 122, 43, 0.14);
+  border-color: rgba(196, 122, 43, 0.4);
+  color: #e8b584;
+}
+
+.callout-vet .callout-title {
+  color: #92400e;
+}
+
+html.dark .callout-vet .callout-title {
+  color: #f59e0b;
+}
+
+.callout-tip {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #134e4a;
+}
+
+html.dark .callout-tip {
+  background: rgba(16, 185, 129, 0.14);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #99f6e4;
+}
+
+.callout-tip .callout-title {
+  color: #047857;
+}
+
+html.dark .callout-tip .callout-title {
+  color: #34d399;
+}
+
+.callout-warning {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #7f1d1d;
+}
+
+html.dark .callout-warning {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+}
+
+.callout-warning .callout-title {
+  color: #b91c1c;
+}
+
+html.dark .callout-warning .callout-title {
+  color: #f87171;
+}
+
+
 
