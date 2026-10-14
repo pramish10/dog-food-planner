@@ -28,7 +28,7 @@ const prevItem = idx > 0 ? FEEDING_STYLES[idx - 1] : null;
 const nextItem =
     idx < FEEDING_STYLES.length - 1 ? FEEDING_STYLES[idx + 1] : null;
 
-const pageTitle = `${item.title}: What It Is & Considerations for Your Dog | Dog Food Types`;
+const pageTitle = `${item.title}: What It Is & Considerations for Your Dog | Best Dog Food Guide`;
 const pageDescription = item.summary;
 
 const articleJsonLd = {
@@ -64,7 +64,7 @@ const articleJsonLd = {
         <Breadcrumbs
             items={[
                 { name: "Home", url: "/" },
-                { name: "Dog Food Types", url: "/best-dog-food" },
+                { name: "Best Dog Food", url: "/best-dog-food" },
                 { name: item.title },
             ]}
         />
@@ -239,7 +239,7 @@ const articleJsonLd = {
                     href="/best-dog-food"
                     class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
                 >
-                    ← Back to Dog Food Types
+                    ← Back to Best Dog Food Guide
                 </a>
             </div>
         </div>

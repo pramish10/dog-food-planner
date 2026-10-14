@@ -120,7 +120,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
     prevOption: 'Previous option',
     nextOption: 'Next option',
     backLink: 'Back to Fresh vs. Raw vs. Kibble',
-    titleSuffix: 'What It Is & Considerations for Your Dog | Dog Food Types',
+    titleSuffix: 'What It Is & Considerations for Your Dog | Best Dog Food Guide',
   },
   es: {
     badge: 'FRESCA VS. CRUDA VS. PIENSO',

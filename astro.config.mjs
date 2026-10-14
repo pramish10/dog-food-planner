@@ -22,6 +22,7 @@ const INDEXABLE_FAQ_SLUGS = new Set([
   'what-does-spayed-neutered-intact-gender-mean-for-dogs',
   'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb',
   'what-are-dog-food-planner-website-terms-and-disclaimers',
+  'how-long-does-it-take-for-a-dog-to-digest-food',
 ]);
 
 /**

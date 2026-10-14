@@ -153,13 +153,37 @@ export const FAQS_DATA: FaqItem[] = [
     category: 'Health & Allergies',
     shortAnswer: 'A dog digests raw food in 4 to 8 hours, fresh gently cooked food in 6 to 10 hours, and ultra-processed dry kibble in 10 to 14+ hours. Canine digestion is significantly faster and more acidic than human digestion.',
     fullAnswerHtml: `
-      <p>A dog's gastrointestinal tract is uniquely designed for rapid carnivore digestion with a highly acidic stomach (pH 1.0–2.0) that breaks down dense animal proteins and neutralizes bacteria:</p>
+      <p>On average, the complete digestion process in a healthy dog takes anywhere from <strong>4 to 14 hours</strong> from the moment food enters the mouth to the point waste is eliminated. However, digestion speed varies dramatically based on whether you feed raw meat, fresh gently cooked food, or commercial dry kibble.</p>
+
+      <h3>Average Digestion Time by Food Format</h3>
+      <p>Canine digestive efficiency depends directly on the moisture content, biological processing level, and ingredient structure of the food:</p>
       <ul>
-        <li><strong>Raw Meat & Bone (BARF):</strong> 4 to 8 hours. The high acidity breaks down raw meat and soft edible bone quickly and efficiently.</li>
-        <li><strong>Fresh Gently Cooked Food:</strong> 6 to 10 hours. High biological moisture and digestible amino acids allow smooth intestinal transit.</li>
-        <li><strong>Commercial Dry Kibble:</strong> 10 to 14+ hours. Due to high starch, dense binders, and low moisture (10%), kibble sits in the digestive tract longer and requires extra body hydration to rehydrate in the stomach.</li>
+        <li><strong>Raw Meat & Edible Bone Diets (BARF / Prey Model):</strong> <strong>4 to 8 hours.</strong> High natural moisture (70–75%) combined with pure animal protein and low starch allows a dog's acidic stomach to digest meals rapidly and efficiently without metabolic strain.</li>
+        <li><strong>Gently Cooked Human-Grade Fresh Food:</strong> <strong>6 to 10 hours.</strong> Lightly steamed whole meats, root vegetables, and healthy fats deliver high bio-availability and smooth intestinal transit with minimal digestive residue.</li>
+        <li><strong>Wet & Canned Dog Food:</strong> <strong>6 to 8 hours.</strong> While canned foods have high moisture (75–80%), dense gums, carrageenan, and thickeners can slightly modulate absorption compared to fresh food.</li>
+        <li><strong>Ultra-Processed Dry Kibble:</strong> <strong>10 to 14+ hours.</strong> High starch binders, extruded grain meals, and an extremely low moisture content (around 8–10%) force the dog's stomach to draw internal body fluid into the gut just to rehydrate the food pellets before breakdown can begin.</li>
       </ul>
-      <p>Factors influencing digestion include dog size, breed, hydration, age, exercise level, and dietary fiber content.</p>
+
+      <h3>Canine Digestive Biology: Why Dogs Digest Faster Than Humans</h3>
+      <p>A dog’s gastrointestinal tract is biologically engineered for an opportunistic carnivore lifestyle. There are three key anatomical differences that separate canine digestion from human digestion:</p>
+      <ol>
+        <li><strong>Ultra-Acidic Stomach pH (1.0 to 2.0):</strong> A dog’s fasting stomach acid is as acidic as battery acid. This intense acidity quickly dissolves dense animal proteins, softens raw bone cartilage, and neutralizes harmful environmental bacteria such as <em>Salmonella</em> and <em>E. coli</em>. By comparison, human stomach acid is significantly milder (pH 2.0 to 3.5).</li>
+        <li><strong>Short Gastrointestinal Length:</strong> A dog’s total digestive tract is only 3 to 6 times their body length (compared to 10 to 12 times in humans). This short transit distance ensures that decomposing meat proteins move through the intestines before dangerous bacterial toxins can colonize the mucosal lining.</li>
+        <li><strong>Absence of Salivary Amylase:</strong> Unlike humans, dogs do not produce amylase in their saliva. Digestion does not begin in the mouth; food is gulped in chunks and delivered straight to the stomach where mechanical churning and acid bath digestion take place.</li>
+      </ol>
+
+      <h3>5 Key Factors That Speed Up or Slow Down Dog Digestion</h3>
+      <p>Every dog has a unique metabolic pace. If your dog's transit time seems unusually fast or slow, consider these critical factors:</p>
+      <ul>
+        <li><strong>Biological Hydration:</strong> Dehydrated dogs have sluggish digestion. Providing clean water or adding warm bone broth to kibble cuts digestion time by several hours.</li>
+        <li><strong>Dietary Fat Density:</strong> High-fat foods take significantly longer to digest because fats require bile emulsification in the duodenum, delaying gastric emptying.</li>
+        <li><strong>Soluble vs. Insoluble Fiber:</strong> Soluble fiber (such as organic pumpkin puree) absorbs water and smooths digestion, whereas excess insoluble fiber can rush transit prematurely, leading to soft stools.</li>
+        <li><strong>Breed Size & Metabolic Rate:</strong> Small and toy breeds (Chihuahuas, Yorkies) have fast metabolic rates and can digest meals in as little as 4 to 7 hours. Giant breeds (Great Danes, Mastiffs) have prolonged transit times of up to 14 to 18 hours.</li>
+        <li><strong>Post-Meal Activity:</strong> Strenuous exercise immediately after eating slows blood flow to the stomach and dramatically elevates the risk of life-threatening gastric torsion (bloat/GDV). Always enforce 45 minutes of quiet rest after meals.</li>
+      </ol>
+
+      <h3>When Slow Digestion Signals a Medical Emergency</h3>
+      <p>Consult your veterinarian immediately if you notice red flag symptoms such as vomiting undigested food more than 8 hours after a meal, unproductive retching, a distended hard abdomen, lack of bowel movements for over 36 hours, or sudden lethargy. These signs can indicate life-threatening conditions including gastric dilatation-volvulus (GDV), a foreign body intestinal obstruction, or acute pancreatitis.</p>
     `,
     tags: ['digestion time', 'stomach', 'gut health', 'transit time'],
     relatedSlugs: ['why-is-my-dog-not-eating-his-food-but-will-eat-treats', 'should-i-feed-my-dog-wet-or-dry-food', 'how-many-hours-should-my-dog-eat']

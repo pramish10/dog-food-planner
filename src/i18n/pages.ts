@@ -154,11 +154,11 @@ export const PAGE_TRANSLATIONS = {
       ]
     },
     "bestFood": {
-      "eyebrow": "DOG FOOD TYPES // COMPARISON GUIDE",
-      "heroTitle": "Dog Food Types Compared",
-      "heroSubtitle": "An overview of common types of dog food, their strengths, and things to consider.",
-      "rankingsTitle": "Common Types of Dog Food",
-      "rankingsIntro": "Choosing food for your dog involves understanding the different options available, how they are prepared, and what works best for your dog's lifestyle.",
+      "eyebrow": "BEST DOG FOOD GUIDE // TYPES & RANKINGS 2026",
+      "heroTitle": "Best Dog Food Guide & Types Compared",
+      "heroSubtitle": "A comprehensive veterinary and nutritional guide comparing fresh food, raw BARF, and premium kibble with practical feeding guidance.",
+      "rankingsTitle": "Top 5 Dog Food Formulations Ranked (2026)",
+      "rankingsIntro": "Veterinary research shows that minimally processed whole ingredients, biologically appropriate protein, and adequate moisture are key to long-term vitality and kidney health.",
       "readMoreLabel": "Read more →",
       "readLessLabel": "Show less ↑",
       "rankings": [

@@ -127,7 +127,7 @@ export const RECIPE_BLUEPRINT_PAGE_I18N: Record<Lang, RecipeBlueprintPageI18n> =
     calculatorCtaBtn: 'Launch Meal Planner →',
     prevBlueprint: 'Previous Recipe Blueprint',
     nextBlueprint: 'Next Recipe Blueprint',
-    backLink: 'Back to Dog Food Types',
+    backLink: 'Back to Best Dog Food Guide',
     titleSuffix: 'Homemade Dog Food Blueprint | Dog Food Planner',
     faqTitle: 'Frequently Asked Questions About This Blueprint',
   },

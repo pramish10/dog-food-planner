@@ -117,7 +117,7 @@ export const SENSITIVE_STOMACH_PAGE_I18N: Record<Lang, SensitiveStomachPageI18n>
     vetTipTitle: 'Digestive Health Advice',
     prevPillar: 'Previous Principle',
     nextPillar: 'Next Principle',
-    backLink: 'Back to Dog Food Types',
+    backLink: 'Back to Best Dog Food Guide',
     titleSuffix: 'Sensitive Stomach Nutrition Guide | Dog Food Planner',
     ctaTitle: 'Calculate Your Dog’s Estimated Daily Meal Portions',
     ctaDesc: 'Gentle, easily digestible diets benefit from estimated portions to prevent overfeeding and digestive upset.',

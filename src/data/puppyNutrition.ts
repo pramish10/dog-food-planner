@@ -120,7 +120,7 @@ export const PUPPY_NUTRITION_PAGE_I18N: Record<Lang, PuppyNutritionPageI18n> = {
     vetTipTitle: 'Puppy Nutrition Insight',
     prevRequirement: 'Previous Requirement',
     nextRequirement: 'Next Requirement',
-    backLink: 'Back to Dog Food Types',
+    backLink: 'Back to Best Dog Food Guide',
     titleSuffix: 'Puppy Growth Nutrition Guide | Dog Food Planner',
     ctaTitle: 'Calculate Your Puppy’s Estimated Daily Feeding Portions',
     ctaDesc: 'Enter your puppy’s age, weight, and breed size into our feeding calculator to get estimated daily calorie and gram targets.',
