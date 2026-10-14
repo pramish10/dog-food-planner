@@ -567,7 +567,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>A Chihuahua pup reaches adult size around 9 months, whereas an Irish Wolfhound continues skeletal maturation until 24 months. Large breed puppy diets are designed with lower overall fat and restricted calcium (typically 1.2% maximum dry matter) to promote steady, controlled growth rather than rapid weight spikes.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. Weekly Weigh-Ins & Portion Adjustment Protocol</h2>
-      <p>Weigh your puppy on the same scale once every 7 days. Plug the new weight into our <a href="/feeding-calculator" class="text-[#c47a2b] font-semibold underline">Dog Feeding Calculator</a> to update daily grams. Remember: a slightly lean puppy with palpable ribs will live a longer, healthier life with pristine joints.</p>
+      <p>Weigh your puppy on the same scale once every 7 days. Plug the new weight into our <a href="/#planner-section" class="text-[#c47a2b] font-semibold underline">Dog Feeding Calculator</a> to update daily grams. Remember: a slightly lean puppy with palpable ribs will live a longer, healthier life with pristine joints.</p>
     `,
     relatedSlugs: ['the-science-of-canine-macros', 'how-to-transition-dog-to-fresh-food', 'senior-dog-nutrition-aging-metabolism']
   },
