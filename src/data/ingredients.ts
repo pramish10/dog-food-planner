@@ -24,7 +24,7 @@ export const INGREDIENT_DATABASE: IngredientSafetyItem[] = [
     name: 'Wild Alaskan Salmon',
     category: 'Protein',
     status: 'SAFE_AND_BENEFICIAL',
-    benefitsOrRisks: 'Highest source of bioavailable EPA and DHA Omega-3 fatty acids, proven to reduce inflammation, soothe itchy skin, and protect joints.',
+    benefitsOrRisks: 'Highest source of bioavailable EPA and DHA Omega-3 fatty acids, known to reduce inflammation, soothe itchy skin, and protect joints.',
     servingAdvice: 'Always cook thoroughly (or deep-freeze if raw) to eliminate potential salmon poisoning fluke.',
     nutrients: ['EPA/DHA Omega-3', 'Vitamin B12', 'Selenium', 'High Biological Value Protein']
   },

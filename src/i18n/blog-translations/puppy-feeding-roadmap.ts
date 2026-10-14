@@ -9,7 +9,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
     tags: ['Nutrición de Cachorros', 'Curvas de Crecimiento', 'Cachorros de Raza Grande', 'Ratio Calcio Fósforo', 'Tabla de Alimentación'],
     keyTakeaways: [
       'Los cachorros menores de 4 meses necesitan hasta 3 veces su Requerimiento Energético en Reposo (RER) para el desarrollo óseo y muscular.',
-      'En razas grandes no se debe dejar comida a libre disposición: el crecimiento acelerado dispara el riesgo de displasia de cadera en un 300%.',
+      'En razas grandes no se debe dejar comida a libre disposición: un crecimiento demasiado rápido aumenta el riesgo de problemas ortopédicos del desarrollo como la displasia.',
       'Antes de los 6 meses los cachorros no regulan la absorción intestinal de calcio, absorbiéndolo pasivamente y cerrando placas óseas prematuramente.',
       'El paso a comida de adulto se hace a los 10-12 meses en razas pequeñas, pero se espera a los 18-24 meses en razas gigantes.'
     ],
@@ -52,7 +52,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
     tags: ['子犬の栄養学', '成長曲線', '大型犬の子犬', 'カルシウム・リン比率', '給餌量チャート'],
     keyTakeaways: [
       '生後4ヶ月未満の子犬は、骨格形成と細胞分裂のために安静時エネルギー要求量（RER）の最大3.0倍のカロリーを必要とします。',
-      '大型犬の子犬（成犬時体重25kg以上）の置き餌は厳禁です。急激な体重増加は股関節形成不全のリスクを300%以上高めます。',
+      '大型犬の子犬（成犬時体重25kg以上）の置き餌は避けましょう。急激な体重増加は股関節形成不全などの骨関節トラブルのリスクを高めます。',
       '生後6ヶ月未満の子犬は腸管でのカルシウム吸収を自己調節できず、過剰なカルシウムは骨端線を異常硬化させてしまいます。',
       '成犬用フードへの切り替えは、小型犬なら生後10〜12ヶ月、超大型犬なら18〜24ヶ月が推奨されます。'
     ],
@@ -95,7 +95,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
     tags: ['Nutrition du Chiot', 'Courbes de Croissance', 'Chiots Grandes Races', 'Ratio Calcium Phosphore', 'Rations Chiot'],
     keyTakeaways: [
       'Les chiots de moins de 4 mois ont besoin de 3 fois leur Besoin Énergétique de Base (BEE) pour développer leur squelette.',
-      'Les grandes races ne doivent jamais être nourries à volonté : une croissance trop rapide multiplie le risque de dysplasie par 3.',
+      'Les grandes races ne doivent jamais être nourries à volonté : une croissance trop rapide augmente significativement le risque de troubles articulaires comme la dysplasie.',
       'Avant 6 mois, les chiots absorbent le calcium de manière passive sans pouvoir le réguler au niveau intestinal.',
       'La transition vers l\'aliment adulte se fait vers 10-12 mois pour les petits chiens, mais vers 18-24 mois pour les races géantes.'
     ],
@@ -138,7 +138,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
     tags: ['Welpenernährung', 'Wachstumskurven', 'Große Rassen', 'Kalzium Phosphor', 'Fütterungstabelle'],
     keyTakeaways: [
       'Welpen unter 4 Monaten benötigen bis zum 3,0-fachen ihres Ruheenergiebedarfs (RER) für Knochen- und Gewebeaufbau.',
-      'Große Rassen dürfen niemals ad libitum gefüttert werden: Ein zu schnelles Wachstum verdreifacht das Risiko für Hüftdysplasie.',
+      'Große Rassen sollten nicht ad libitum gefüttert werden: Ein zu schnelles Wachstum erhöht das Risiko für orthopädische Entwicklungsstörungen wie Hüftdysplasie.',
       'Unter 6 Monaten können Welpen Kalzium im Darm nicht regulieren; ein Überschuss führt zur Verknöcherung der Knorpel.',
       'Kleine Rassen wechseln mit 10–12 Monaten auf Adult-Futter, Riesenrassen erst mit 18–24 Monaten.'
     ],
@@ -181,7 +181,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
     tags: ['Nutrição de Filhotes', 'Curvas de Crescimento', 'Cães de Raça Grande', 'Cálcio e Fósforo', 'Tabela de Alimentação'],
     keyTakeaways: [
       'Filhotes com menos de 4 meses necessitam de até 3 vezes o seu Gasto Energético em Repouso (RER).',
-      'Filhotes de raças grandes nunca devem comer à vontade; o ganho de peso acelerado triplica casos de displasia coxofemoral.',
+      'Filhotes de raças grandes não devem ser alimentados à vontade: o ganho de peso excessivo aumenta o risco de problemas ortopédicos como a displasia coxofemoral.',
       'Antes dos 6 meses de vida o intestino do filhote absorve cálcio de forma passiva, sem controle de excessos.',
       'A troca para ração de adulto ocorre por volta de 10-12 meses em cães pequenos e entre 18-24 meses em raças gigantes.'
     ],
@@ -224,7 +224,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
     tags: ['퍼피 영양학', '성장 곡선', '대형견 자견', '칼슘 인 비율', '급여량 계산표'],
     keyTakeaways: [
       '생후 4개월 미만의 자견은 골격 형성을 위해 기초 휴식 에너지(RER)의 최대 3.0배에 달하는 칼로리를 필요로 합니다.',
-      '대형견 자견(성견 체중 25kg 이상)은 절대 자율 급식을 해서는 안 되며, 급격한 체중 증가는 고관절 이형성증 위험을 3배 높입니다.',
+      '대형견 자견은 자율 급식을 피하는 것이 좋으며, 급격한 체중 증가는 고관절 이형성증 등 골격 질환의 위험을 높입니다.',
       '생후 6개월 이전의 자견은 장내 칼슘 흡수 조절 능력이 없어 과도한 칼슘이 성장판을 조기 폐쇄시킬 수 있습니다.',
       '소형견은 생후 10~12개월에 성견 사료로 교체하지만, 초대형견은 18~24개월까지 자견용 식단을 유지해야 합니다.'
     ],
@@ -267,7 +267,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
     tags: ['Nutrizione del Cucciolo', 'Curve di Crescita', 'Cuccioli Razze Grandi', 'Rapporto Calcio Fosforo', 'Tabella Porzioni'],
     keyTakeaways: [
       'I cuccioli sotto i 4 mesi necessitano fino a 3 volte il loro Fabbisogno Energetico a Riposo (RER).',
-      'Nelle razze grandi l\'alimentazione a volontà è dannosa: la crescita rapida triplica il rischio di displasia dell\'anca.',
+      'Nelle razze grandi l\'alimentazione a volontà non è consigliata: una crescita eccessivamente rapida aumenta il rischio di disturbi ortopedici dello sviluppo come la displasia dell\'anca.',
       'Sotto i 6 mesi i cuccioli non regolano l\'assorbimento intestinale del calcio, assorbendolo passivamente.',
       'Il passaggio al cibo per adulti avviene a 10-12 mesi nei cani piccoli e a 18-24 mesi nei cani giganti.'
     ],

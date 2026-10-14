@@ -1073,7 +1073,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     recommendedProduct: {
       name: "Libby's 100% Pure Canned Pumpkin, 15 oz (Pack of 5)",
       url: "https://amzn.to/4xINd8W",
-      badge: "100% PURE PUMPKIN — VET-RECOMMENDED",
+      badge: "100% PURE PUMPKIN — COMMONLY RECOMMENDED",
       whyRecommended: "The gold-standard single-ingredient canned pumpkin with zero added sugars, cinnamon, or toxic nutmeg. Balances bowel motility for both loose stools and constipation.",
     },
   },

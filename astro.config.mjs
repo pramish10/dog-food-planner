@@ -6,6 +6,18 @@ import tailwindcss from '@tailwindcss/vite';
 const SITE = 'https://dogfoodplanner.com';
 const LOCALE_PREFIX = /^\/(es|ja|fr|de|pt|ko|it)(?=\/|$)/;
 
+const BLOG_POST_DATES = {
+  'dry-vs-wet-dog-food': '2026-10-13T00:00:00.000Z',
+  'the-science-of-canine-macros': '2026-10-11T00:00:00.000Z',
+  'how-to-transition-dog-to-fresh-food': '2026-10-08T00:00:00.000Z',
+  'top-vet-approved-superfoods-for-dogs': '2026-10-05T00:00:00.000Z',
+  'puppy-feeding-roadmap-growth-curves': '2026-10-02T00:00:00.000Z',
+  'senior-dog-nutrition-diet-adjustments': '2026-09-29T00:00:00.000Z',
+  'understanding-dog-food-recalls': '2026-09-26T00:00:00.000Z',
+  'canine-gut-health-and-allergies': '2026-09-23T00:00:00.000Z',
+  'rotational-feeding-benefits-guide': '2026-09-20T00:00:00.000Z',
+};
+
 /**
  * @param {string} page
  */
@@ -84,7 +96,12 @@ function serializeSitemapItem(item) {
     item.priority = Number((item.priority * 0.9).toFixed(1));
   }
 
-  item.lastmod = new Date().toISOString();
+  const blogMatch = unprefixed.match(/^\/blog\/([^/]+)$/);
+  if (blogMatch && BLOG_POST_DATES[blogMatch[1]]) {
+    item.lastmod = BLOG_POST_DATES[blogMatch[1]];
+  } else {
+    item.lastmod = new Date().toISOString();
+  }
   return item;
 }
 

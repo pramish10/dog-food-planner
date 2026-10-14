@@ -328,16 +328,28 @@ img {
   height: auto;
 }
 
-/* Better focus styles for accessibility */
-:focus-visible {
-  outline: 2px solid #0070f3;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
+/* Accessible focus styles in base layer so utility classes and custom components can override them */
+@layer base {
+  :focus-visible {
+    outline: 2px solid #c47a2b;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 
-/* Remove focus outline for mouse users */
-:focus:not(:focus-visible) {
-  outline: none;
+  /* Form inputs manage their own bespoke borders / focus rings */
+  input:focus,
+  input:focus-visible,
+  textarea:focus,
+  textarea:focus-visible,
+  select:focus,
+  select:focus-visible {
+    outline: none;
+  }
+
+  /* Remove focus outline for mouse users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 /* Fluid typography scale */

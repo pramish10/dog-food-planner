@@ -366,7 +366,7 @@ export function getLocalizedInsight(params: InsightParams, lang: Lang): string {
       if (isUnderweight) return `${name} is underweight (BCS ${bcs}/9) — increase daily portion by 10% and add a raw egg yolk or 1 tsp salmon oil per meal for calorie-dense nutrition.`;
       if (isWorking) return `${name} is a working dog — this plan runs at 2.5–3× RER. Weigh food daily; adjust by ±10% based on body condition every 2 weeks.`;
       if (isSedentary) return `${name} is sedentary — this plan uses a 1.2× RER multiplier. Avoid free-feeding; pick up the bowl after 15 minutes to prevent overeating.`;
-      if (isJoint) return `For ${name}'s joint health, add 1 tsp salmon oil daily (EPA/DHA) and consider green-lipped mussel powder — both are proven to reduce canine joint inflammation.`;
+      if (isJoint) return `For ${name}'s joint health, add 1 tsp salmon oil daily (EPA/DHA) and consider green-lipped mussel powder — both are known to help reduce canine joint inflammation.`;
       if (isSkin) return `For ${name}'s skin and coat, add 1 tsp wild salmon oil per 20 lbs of body weight daily — visible coat improvement typically appears within 3–4 weeks.`;
       if (isDigest) return `For ${name}'s sensitive digestion, add 1–2 tbsp plain pumpkin purée per meal and introduce new proteins one at a time over 7 days.`;
       if (isWeight) return `For ${name}'s weight management, weigh every meal on a kitchen scale — eyeballing portions causes 20–30% overfeeding in most households.`;

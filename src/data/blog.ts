@@ -63,7 +63,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'dry-vs-wet-dog-food',
     slug: 'dry-vs-wet-dog-food',
     title: 'Dry vs Wet Dog Food: How to Choose for Your Dog',
-    subtitle: 'Not sure whether to feed dry or wet food? Learn the differences, how to choose by size, age, and teeth, and explore popular vet-recommended options.',
+    subtitle: 'Not sure whether to feed dry or wet food? Learn the differences, how to choose by size, age, and teeth, and explore popular options.',
     category: 'Canine Nutrition & Diets',
     categorySlug: 'canine-nutrition-diets',
     excerpt: 'Not sure whether to feed dry or wet food? Learn the differences, how to choose by size, age, and teeth, and see popular options.',
@@ -151,8 +151,8 @@ export const BLOG_POSTS: BlogPost[] = [
     image: '/images/blog/science-of-canine-macros.jpg',
     imageAlt: 'Ceramic dog food bowl with fresh beef cuts, salmon, and nutritious spinach on a wooden table',
     featured: false,
-    publishedDate: 'March 28, 2026',
-    updatedDate: 'April 6, 2026',
+    publishedDate: 'October 11, 2026',
+    updatedDate: 'October 11, 2026',
     readTime: '8 min read',
     author: {
       name: 'Dr. Maya Lin, DVM',
@@ -197,7 +197,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Every calorie your dog consumes falls into one of three macronutrient buckets: <strong>Protein</strong> (4 kcal/g), <strong>Fat</strong> (9 kcal/g), and <strong>Carbohydrates</strong> (4 kcal/g). Unlike humans, who rely predominantly on dietary carbohydrates for endurance and glycolytic energy, a canine's metabolic machinery is fundamentally lipid-driven.</p>
 
       <div class="callout callout-vet">
-        <div class="callout-title">🐾 Veterinary Fact</div>
+        <div class="callout-title">🐾 Nutrition Fact</div>
         <p>A sled dog running the 1,000-mile Iditarod burns up to 12,000 calories per day on a diet comprising approximately 60% fat, 35% protein, and under 5% carbohydrates. Canines possess unparalleled mitochondrial density in muscle tissue, allowing them to oxidize free fatty acids with extreme efficiency.</p>
       </div>
 
@@ -280,7 +280,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="vet-summary-and-action-steps">7. Summary & Actionable Recommendations</h2>
       <p>To optimize your dog's daily bowl today, focus on nutrient density over marketing buzzwords. Calculate your dog's daily Resting Energy Requirements (RER), aim for real animal proteins within the first 3 ingredients, and consider topping meals with marine omega-3s to optimize their anti-inflammatory balance.</p>
     `,
-    relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'top-vet-approved-superfoods-for-dogs', 'gut-health-and-chronic-allergies'],
+    relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'top-vet-approved-superfoods-for-dogs', 'canine-gut-health-and-allergies'],
     affiliateProduct: {
       name: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz',
       url: 'https://amzn.to/46HCJdW',
@@ -290,15 +290,15 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'transition-dog-to-fresh-food',
     slug: 'how-to-transition-dog-to-fresh-food',
     title: 'The 10-Day Safe Transition Guide: Switching Your Dog to Fresh Food Without Tummy Troubles',
-    subtitle: 'A step-by-step veterinary protocol for shifting from extruded kibble to fresh, gently cooked, or raw diets without causing diarrhea, vomiting, or digestive panic.',
+    subtitle: 'A step-by-step feeding protocol for shifting from extruded kibble to fresh, gently cooked, or raw diets without causing diarrhea, vomiting, or digestive upset.',
     category: 'Fresh & Raw Feeding',
     categorySlug: 'fresh-raw-feeding',
-    excerpt: 'Switching your dog\'s diet too quickly is the #1 cause of acute gastrointestinal upset. Learn the proven 10-day transition timeline, digestive enzyme buffering, and how to read your dog\'s stool quality throughout the switch.',
+    excerpt: 'Switching your dog\'s diet too quickly is a common cause of acute gastrointestinal upset. Learn a gentle 10-day transition timeline, digestive enzyme buffering, and how to read your dog\'s stool quality throughout the switch.',
     image: '/images/blog/transition-dog-to-fresh-food.jpg',
     imageAlt: 'Comparison of dry kibble and gently cooked fresh dog food with chicken, sweet potatoes, and pureed pumpkin',
     featured: false,
-    publishedDate: 'March 22, 2026',
-    updatedDate: 'April 2, 2026',
+    publishedDate: 'October 8, 2026',
+    updatedDate: 'October 8, 2026',
     readTime: '6 min read',
     author: {
       name: 'Elena Vance',
@@ -321,13 +321,13 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     keyTakeaways: [
       'Abrupt food changes shock the canine microbiome, which adapts its digestive enzyme output to the specific macronutrient profile of its regular food.',
-      'A gradual 10-day step-up schedule (25% -> 50% -> 75% -> 100%) reduces the incidence of gastrointestinal distress by over 85%.',
+      'A gradual 10-day step-up schedule (25% -> 50% -> 75% -> 100%) significantly helps prevent common gastrointestinal distress.',
       'Warm bone broth and pure pumpkin puree are the two most effective natural digestive buffers to add during transitions.',
       'Slight stool softening on Days 3-5 is normal; liquid diarrhea or lethargy indicates moving too fast or an underlying protein intolerance.'
     ],
     tableOfContents: [
       { id: 'why-abrupt-diet-changes-cause-upset', title: '1. Why Abrupt Diet Changes Cause Stomach Upset' },
-      { id: 'the-proven-10-day-transition-schedule', title: '2. The Proven 10-Day Transition Schedule' },
+      { id: 'the-proven-10-day-transition-schedule', title: '2. The 10-Day Transition Schedule' },
       { id: 'digestive-buffers-pumpkin-and-probiotics', title: '3. Digestive Buffers: Pumpkin, Bone Broth & Probiotics' },
       { id: 'how-to-read-your-dogs-stool', title: '4. How to Read Your Dog\'s Stool Quality' },
       { id: 'handling-picky-eaters-during-transition', title: '5. Handling Picky Eaters & Texture Refusal' },
@@ -339,8 +339,8 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="why-abrupt-diet-changes-cause-upset">1. Why Abrupt Diet Changes Cause Stomach Upset</h2>
       <p>Your dog's gastrointestinal tract is colonized by billions of symbiotic microbes that specialize in fermenting and breaking down whatever food they have been eating consistently for months. When switching from dry kibble (which digests slowly and contains heavy starch) to fresh whole food (which digests quickly and has high moisture and bioavailable fat), the bacterial colonies require 7 to 10 days to shift enzyme secretion.</p>
 
-      <h2 id="the-proven-10-day-transition-schedule">2. The Proven 10-Day Transition Schedule</h2>
-      <p>Follow this veterinary step-by-step ratio protocol for a smooth transition:</p>
+      <h2 id="the-proven-10-day-transition-schedule">2. The 10-Day Transition Schedule</h2>
+      <p>Follow this step-by-step ratio schedule for a smooth transition:</p>
 
       <div class="overflow-x-auto my-6">
         <table class="w-full text-left border-collapse border border-[#f0d5a8] dark:border-[#3a2510] text-sm">
@@ -382,7 +382,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
 
       <h2 id="digestive-buffers-pumpkin-and-probiotics">3. Digestive Buffers: Pumpkin, Bone Broth & Probiotics</h2>
-      <p>To guarantee zero stomach upset during transition, add these three natural gastrointestinal helpers:</p>
+      <p>To help prevent stomach upset during transition, consider these three natural digestive helpers:</p>
       <ul>
         <li><strong>Pure Canned Pumpkin:</strong> Rich in soluble fiber, pumpkin absorbs excess water in loose stools while softening hard feces. Dosage: 1 teaspoon per 10 lbs body weight daily.</li>
         <li><strong>Warm Bone Broth:</strong> Provides soothing glycine, gelatin, and hydration that coat the stomach lining and stimulate appetite.</li>
@@ -412,16 +412,16 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'superfoods-for-dogs-bowl',
     slug: 'top-vet-approved-superfoods-for-dogs',
-    title: '7 Vet-Approved Bowl Boosters: Nutrient-Dense Superfoods You Can Add Today',
-    subtitle: 'You do not need to overhaul your entire budget to give your dog the benefits of fresh whole foods. Here are 7 affordable, research-backed kitchen staples that transform ordinary kibble.',
+    title: '7 Healthy Foods You Can Add to Your Dog\'s Bowl',
+    subtitle: 'You do not need to overhaul your entire budget to give your dog the benefits of fresh whole foods. Here are 7 affordable, nutrient-dense kitchen staples that transform ordinary kibble.',
     category: 'Safe Ingredients & Superfoods',
     categorySlug: 'safe-ingredients-superfoods',
-    excerpt: 'Even adding 10-20% whole foods to your dog\'s bowl provides live enzymes, antioxidants, and bioavailable micronutrients missing from processed pet food. Discover 7 vet-approved superfoods you can buy at any grocery store.',
+    excerpt: 'Even adding 10-20% whole foods to your dog\'s bowl provides live enzymes, antioxidants, and bioavailable micronutrients. Discover 7 nutrient-dense foods you can buy at any grocery store.',
     image: '/images/blog/superfoods-for-dogs-bowl.jpg',
     imageAlt: 'Healthy canine superfoods bowl with blueberries, fresh pumpkin slices, raw egg yolk, wild sardines, and broccoli',
     featured: false,
-    publishedDate: 'March 16, 2026',
-    updatedDate: 'April 1, 2026',
+    publishedDate: 'October 5, 2026',
+    updatedDate: 'October 5, 2026',
     readTime: '6 min read',
     author: {
       name: 'Dr. Aris Thorne, DVM',
@@ -443,7 +443,7 @@ export const BLOG_POSTS: BlogPost[] = [
       icon: '🫐'
     },
     keyTakeaways: [
-      'Purdue University research found that adding leafy greens and colorful vegetables just 3 times per week reduced bladder cancer risk in Scottish Terriers by up to 90%.',
+      'Studies from Purdue University found that adding leafy greens and colorful vegetables several times a week was associated with significantly reduced health risks in studied dogs.',
       'Canned sardines in plain water are one of the most potent, low-mercury sources of EPA and DHA omega-3s available.',
       'Antioxidants from whole blueberries pass through the canine blood-brain barrier to protect cognitive function in senior dogs.',
       'Always follow the 90/10 rule: toppers and whole food additions should not exceed 10-15% of your dog\'s daily caloric intake unless you are formulating a complete balanced recipe.'
@@ -489,7 +489,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="7-organic-simmered-bone-broth">8. Organic Simmered Bone Broth</h2>
       <p>Slowly simmering marrow bones and cartilage with a splash of apple cider vinegar extracts collagen, gelatin, glycine, and glucosamine. It is the ultimate hydration booster for dogs reluctant to drink from their water bowl.</p>
     `,
-    relatedSlugs: ['the-science-of-canine-macros', 'gut-health-and-chronic-allergies', 'how-to-transition-dog-to-fresh-food'],
+    relatedSlugs: ['the-science-of-canine-macros', 'canine-gut-health-and-allergies', 'how-to-transition-dog-to-fresh-food'],
     affiliateProduct: {
       name: 'Wild Planet Wild Sardines in Water, No Salt Added, 4.4oz (Pack of 12)',
       url: 'https://amzn.to/4xg3W2h',
@@ -504,10 +504,10 @@ export const BLOG_POSTS: BlogPost[] = [
     categorySlug: 'puppy-senior-care',
     excerpt: 'Puppies grow faster in their first 12 months than humans do in their first 15 years. Learn how to calculate precise puppy caloric requirements, protect growing joint plates, and avoid over-supplementation.',
     image: '/images/blog/puppy-feeding-roadmap.jpg',
-    imageAlt: 'Golden retriever puppy sitting by a ceramic bowl with veterinarian-designed puppy food',
+    imageAlt: 'Golden retriever puppy sitting by a ceramic bowl with balanced puppy food',
     featured: false,
-    publishedDate: 'March 10, 2026',
-    updatedDate: 'March 30, 2026',
+    publishedDate: 'October 2, 2026',
+    updatedDate: 'October 2, 2026',
     readTime: '7 min read',
     author: {
       name: 'Dr. Maya Lin, DVM',
@@ -530,7 +530,7 @@ export const BLOG_POSTS: BlogPost[] = [
     },
     keyTakeaways: [
       'Puppies under 4 months require up to 3.0x their base Resting Energy Requirement (RER) to fuel skeletal expansion and cellular growth.',
-      'Large breed puppies (&gt;55 lbs adult weight) must never be free-fed; rapid growth increases hip dysplasia and Osteochondritis Dissecans (OCD) rates by over 300%.',
+      'Large breed puppies (&gt;55 lbs adult weight) must never be free-fed; rapid growth significantly increases the risk of developmental joint issues like hip dysplasia.',
       'Puppies cannot regulate intestinal calcium absorption before 6 months of age; excess calcium directly hardens growth plates prematurely.',
       'Switching to adult food should occur between 10-12 months for small dogs, but not until 18-24 months for giant breeds like Great Danes and Mastiffs.'
     ],
@@ -578,12 +578,12 @@ export const BLOG_POSTS: BlogPost[] = [
     subtitle: 'Dispelling the dangerous myth of protein restriction for aging dogs. Learn how high-biological-value amino acids prevent sarcopenia (muscle loss) while protecting renal and kidney longevity.',
     category: 'Puppy & Senior Care',
     categorySlug: 'puppy-senior-care',
-    excerpt: 'For decades, pet owners were told to reduce protein for senior dogs. Modern veterinary research proves the exact opposite: older dogs need higher protein quality to maintain muscle mass and immune resilience.',
+    excerpt: 'For decades, pet owners were told to reduce protein for senior dogs. Modern research indicates the opposite: older dogs need higher protein quality to maintain muscle mass and immune resilience.',
     image: '/images/blog/senior-dog-nutrition.jpg',
     imageAlt: 'Senior Golden Retriever resting comfortably next to an elevated ceramic bowl with warm nutritious dog stew',
     featured: false,
-    publishedDate: 'March 04, 2026',
-    updatedDate: 'March 25, 2026',
+    publishedDate: 'September 29, 2026',
+    updatedDate: 'September 29, 2026',
     readTime: '6 min read',
     author: {
       name: 'Dr. Marcus Vance, DVM',
@@ -621,7 +621,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p class="lead">As our beloved companions enter their golden years—silver muzzle, slower walks, longer naps—their nutritional requirements undergo a dramatic shift. Sadly, many well-intentioned owners switch their senior dogs to low-protein "Senior" kibbles that actually accelerate muscle wasting.</p>
 
       <h2 id="the-protein-restriction-myth-debunked">1. The Protein Restriction Myth Debunked</h2>
-      <p>In the 1970s and 80s, veterinary dogma assumed that high protein caused kidney failure in older animals. Decades of landmark research (including peer-reviewed studies by Finco et al. at the University of Georgia) proved that <strong>dietary protein does not cause renal failure or damage healthy kidneys</strong>.</p>
+      <p>In the 1970s and 80s, common belief assumed that high protein caused kidney failure in older animals. Decades of research (including peer-reviewed studies by Finco et al. at the University of Georgia) showed that <strong>dietary protein does not cause renal failure or damage healthy kidneys</strong>.</p>
       <p>In fact, as dogs age, their protein turnover rate and digestive absorption efficiency decline. A healthy 11-year-old Golden Retriever requires <em>higher quality, more bioavailable protein</em> than a 3-year-old dog to synthesize antibodies, hormones, and muscle tissue.</p>
 
       <h2 id="combating-canine-sarcopenia-and-muscle-wasting">2. Combating Canine Sarcopenia & Muscle Wasting</h2>
@@ -655,10 +655,10 @@ export const BLOG_POSTS: BlogPost[] = [
     categorySlug: 'commercial-food-recalls',
     excerpt: 'Pet food recalls can feel terrifying. Discover the top reasons foods are pulled from shelves, the difference between FDA Class I and Class II recalls, and the exact steps to protect your dog if their food is affected.',
     image: '/images/blog/understanding-dog-food-recalls.jpg',
-    imageAlt: 'Natural pet food bag on a counter with fresh ingredients, magnifying glass, and veterinary quality checklist',
+    imageAlt: 'Natural pet food bag on a counter with fresh ingredients, magnifying glass, and ingredient safety checklist',
     featured: false,
-    publishedDate: 'February 26, 2026',
-    updatedDate: 'March 18, 2026',
+    publishedDate: 'September 26, 2026',
+    updatedDate: 'September 26, 2026',
     readTime: '7 min read',
     author: {
       name: 'Elena Vance',
@@ -732,7 +732,7 @@ export const BLOG_POSTS: BlogPost[] = [
         <li><strong>Disinfect Bowls and Bins:</strong> Wash all feeding bowls, scoops, and storage containers with hot soapy water and bleach solution.</li>
       </ol>
     `,
-    relatedSlugs: ['the-science-of-canine-macros', 'how-to-transition-dog-to-fresh-food', 'gut-health-and-chronic-allergies'],
+    relatedSlugs: ['the-science-of-canine-macros', 'how-to-transition-dog-to-fresh-food', 'canine-gut-health-and-allergies'],
     affiliateProduct: {
       name: 'ORIJEN Grain-Free WHOLEPREY Dry Dog Food Original Recipe, 23.5lb',
       url: 'https://amzn.to/4xF5aFr',
@@ -741,16 +741,16 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'canine-gut-health-and-allergies',
     slug: 'canine-gut-health-and-allergies',
-    title: 'Canine Leaky Gut Syndrome: Healing Itchy Paws and Ear Infections from Within',
-    subtitle: 'Chronic paw chewing, yeasty ears, and dull coats are rarely just external skin issues. Discover how intestinal dysbiosis triggers systemic inflammation and how novel proteins rebuild mucosal barriers.',
+    title: 'Dog Gut Health and Food Sensitivities: What Owners Should Know',
+    subtitle: 'Chronic paw chewing, yeasty ears, and dull coats are rarely just external skin issues. Discover how gut health and food sensitivities connect to skin comfort, and how novel proteins help.',
     category: 'Digestion & Gut Health',
     categorySlug: 'digestion-gut-health',
-    excerpt: 'Over 70% of your dog\'s immune system is located in their gut. When the intestinal mucosal barrier breaks down, food proteins trigger chronic skin flare-ups. Learn how to diagnose and heal leaky gut with targeted nutrition.',
+    excerpt: 'A large portion of your dog\'s immune system is located in their digestive tract. When gut balance is disrupted, food sensitivities can trigger skin flare-ups. Learn practical nutritional steps to support gut health.',
     image: '/images/blog/canine-gut-health-allergies.jpg',
     imageAlt: 'Happy healthy French Bulldog with a hypoallergenic bowl of dog food, kefir, and steamed green vegetables',
     featured: false,
-    publishedDate: 'February 19, 2026',
-    updatedDate: 'March 14, 2026',
+    publishedDate: 'September 23, 2026',
+    updatedDate: 'September 23, 2026',
     readTime: '8 min read',
     author: {
       name: 'Dr. Aris Thorne, DVM',
@@ -763,7 +763,7 @@ export const BLOG_POSTS: BlogPost[] = [
       role: 'Holistic Veterinary Practitioner',
       credentials: 'DVM, CVA'
     },
-    tags: ['Gut Health', 'Dog Allergies', 'Leaky Gut', 'Itchy Paws', 'Microbiome', 'Elimination Diets'],
+    tags: ['Gut Health', 'Dog Allergies', 'Food Sensitivities', 'Itchy Paws', 'Microbiome', 'Elimination Diets'],
     gradient: {
       from: '#059669',
       to: '#34d399',
@@ -772,44 +772,44 @@ export const BLOG_POSTS: BlogPost[] = [
       icon: '🌿'
     },
     keyTakeaways: [
-      'Over 70-80% of a dog\'s immune cells are concentrated in the gut-associated lymphoid tissue (GALT).',
-      'Leaky gut occurs when tight junction proteins (zonulin) loosen, permitting partially digested food molecules and bacterial endotoxins (LPS) into systemic circulation.',
-      'The classic signs of canine leaky gut are not just soft stools, but recurrent ear infections, obsessive paw licking, and hot spots.',
-      'A true elimination diet requires feeding an authentic novel protein (such as venison, kangaroo, or rabbit) for a minimum of 8 to 12 weeks with zero outside treats.'
+      'A large portion of a dog\'s immune cells is concentrated in the gut-associated lymphoid tissue (GALT).',
+      'Intestinal permeability issues can allow partially digested food particles to trigger immune responses in sensitive dogs.',
+      'Common signs of food sensitivities can include both digestive changes and skin issues like itchy paws, ear irritation, or dry skin.',
+      'A true elimination trial requires feeding a single novel protein (such as venison, kangaroo, or rabbit) for 8 to 12 weeks with zero outside treats, under veterinary guidance.'
     ],
     tableOfContents: [
       { id: 'the-gut-skin-axis-in-dogs', title: '1. The Gut-Skin Axis in Dogs' },
-      { id: 'what-causes-leaky-gut-in-canines', title: '2. What Causes Leaky Gut in Canines?' },
+      { id: 'what-causes-leaky-gut-in-canines', title: '2. Understanding Intestinal Permeability and Gut Stress' },
       { id: 'symptoms-beyond-the-digestive-tract', title: '3. Symptoms Beyond the Digestive Tract' },
-      { id: 'the-3-step-gut-healing-protocol', title: '4. The 3-Step Gut Healing Protocol' },
-      { id: 'conducting-a-flawless-elimination-diet', title: '5. Conducting a Flawless Elimination Diet' }
+      { id: 'the-3-step-gut-healing-protocol', title: '4. 3 Practical Steps to Support Gut Health' },
+      { id: 'conducting-a-flawless-elimination-diet', title: '5. Conducting an Elimination Diet' }
     ],
     contentHtml: `
-      <p class="lead">If your dog spends their evenings aggressively chewing their paws until they turn rusty pink, shaking their head from yeasty ear flare-ups, or rubbing their face against the carpet, you know the frustration of canine allergies. While many pet parents cycle through antibiotic drops and steroid shots, the real battlefield is inside the canine gut.</p>
+      <p class="lead">If your dog has ongoing itching or ear infections, see your veterinarian first. Persistent paw chewing, head shaking, or skin irritation are common reasons dogs visit the clinic, and ruling out medical causes is essential before adjusting their bowl.</p>
 
       <h2 id="the-gut-skin-axis-in-dogs">1. The Gut-Skin Axis in Dogs</h2>
-      <p>The canine gut is not simply a tube that processes food; it is the largest immunological organ in your dog's body. The gut-associated lymphoid tissue (GALT) acts as a microscopic security gate. When functioning normally, single-cell epithelial barriers held together by "tight junctions" only permit fully broken-down amino acids and simple nutrients into the bloodstream.</p>
+      <p>The canine gut is not simply a tube that processes food; it is one of the largest immunological centers in your dog's body. The gut-associated lymphoid tissue (GALT) acts as a microscopic security gate. When functioning normally, single-cell epithelial barriers held together by tight junctions allow properly broken-down nutrients into the bloodstream while keeping unneeded compounds contained.</p>
 
-      <h2 id="what-causes-leaky-gut-in-canines">2. What Causes Leaky Gut in Canines?</h2>
-      <p>Intestinal hyperpermeability (leaky gut) is triggered by chronic stressors:</p>
+      <h2 id="what-causes-leaky-gut-in-canines">2. Understanding Intestinal Permeability and Gut Stress</h2>
+      <p>Increased intestinal permeability can be influenced by multiple dietary and lifestyle factors:</p>
       <ul>
-        <li><strong>Repeated Antibiotic Courses:</strong> Wipes out symbiotic gut microbes, paving the way for opportunistic fungal overgrowths like <em>Candida albicans</em>.</li>
-        <li><strong>High Glycemic Starch & Glyphosate:</strong> Heavily processed carbohydrates elevate intestinal inflammation.</li>
-        <li><strong>Chronic NSAID Use:</strong> Inhibit prostaglandins essential for gastric mucosal blood flow.</li>
+        <li><strong>Repeated Antibiotic Courses:</strong> Can disrupt beneficial gut microbes, sometimes allowing opportunistic organisms to multiply.</li>
+        <li><strong>High Glycemic Starch:</strong> Heavily processed carbohydrates can contribute to digestive sensitivity in some dogs.</li>
+        <li><strong>Chronic Medication Use:</strong> Certain medications may affect gastric mucosal comfort over time.</li>
       </ul>
 
       <h2 id="symptoms-beyond-the-digestive-tract">3. Symptoms Beyond the Digestive Tract</h2>
-      <p>When undigested peptides leak into the canine bloodstream, the immune system flags them as foreign invaders, producing IgE and IgG antibodies. This triggers histamine cascades that erupt across the canine body in the thinnest skin areas: the paws, the ear canals, the groin, and the armpits.</p>
+      <p>When larger protein fragments cross a compromised intestinal barrier, the immune system may flag them, producing antibodies. This immune reaction can show up in sensitive areas of the skin: the paws, the ear canals, the groin, and the belly.</p>
 
-      <h2 id="the-3-step-gut-healing-protocol">4. The 3-Step Gut Healing Protocol</h2>
+      <h2 id="the-3-step-gut-healing-protocol">4. 3 Practical Steps to Support Gut Health</h2>
       <ol class="space-y-3 list-decimal list-inside text-sm">
-        <li><strong>Remove the Irritants:</strong> Transition to a limited-ingredient diet free of corn, wheat, soy, artificial dyes, and chicken meals.</li>
-        <li><strong>Repair the Epithelial Wall:</strong> Supplement with <em>L-Glutamine</em> (the primary amino acid fuel for enterocytes) and slippery elm bark to soothe inflamed mucosal linings.</li>
-        <li><strong>Reinoculate the Microbiome:</strong> Introduce spore-forming soil-based probiotics (SBOs) and canine-specific prebiotics to rebalance dysbiosis.</li>
+        <li><strong>Identify Potential Irritants:</strong> Many owners choose a limited-ingredient diet with a single novel protein, avoiding ingredients their dog has previously reacted to.</li>
+        <li><strong>Support the Mucosal Lining:</strong> Nutrients such as L-Glutamine and soothing fibers like slippery elm bark are commonly used to support digestive barrier health.</li>
+        <li><strong>Nurture the Microbiome:</strong> Quality probiotics and prebiotic fibers help maintain balanced, diverse intestinal flora.</li>
       </ol>
 
-      <h2 id="conducting-a-flawless-elimination-diet">5. Conducting a Flawless Elimination Diet</h2>
-      <p>To accurately identify food triggers, feed a single novel protein that your dog has never consumed in their life (such as venison, kangaroo, or bison). Maintain this strictly for 8 to 12 weeks. One single flavored treat, rawhide, or dental chew containing hidden chicken or beef will reset the immunological clock back to day one.</p>
+      <h2 id="conducting-a-flawless-elimination-diet">5. Conducting an Elimination Diet</h2>
+      <p>To evaluate potential food sensitivities, veterinarians frequently recommend an elimination trial with a novel protein your dog has never eaten before (such as venison, kangaroo, or rabbit). Following the plan strictly for 8 to 12 weeks without extra treats gives the clearest picture of what agrees with your dog.</p>
     `,
     relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'rotational-feeding-benefits'],
     affiliateProduct: {
@@ -828,8 +828,8 @@ export const BLOG_POSTS: BlogPost[] = [
     image: '/images/blog/rotational-feeding-benefits.jpg',
     imageAlt: 'Three bowls showing protein rotational variety with fresh lamb, turkey, cranberries, and salmon on a slate table',
     featured: false,
-    publishedDate: 'February 12, 2026',
-    updatedDate: 'March 08, 2026',
+    publishedDate: 'September 20, 2026',
+    updatedDate: 'September 20, 2026',
     readTime: '6 min read',
     author: {
       name: 'Dr. Marcus Vance, DVM',

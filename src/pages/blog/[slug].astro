@@ -108,8 +108,8 @@ const schemaOrgBlogPosting = {
       "url": "https://dogfoodplanner.com/logo.svg"
     }
   },
-  "datePublished": new Date(post.publishedDate).toISOString(),
-  "dateModified": new Date(post.updatedDate).toISOString(),
+  "datePublished": new Date(post.publishedDate + ' UTC').toISOString(),
+  "dateModified": new Date(post.updatedDate + ' UTC').toISOString(),
   "keywords": post.tags.join(', ')
 };
 ---

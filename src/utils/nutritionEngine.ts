@@ -472,7 +472,7 @@ function getHealthAdvice(healthFocus: string, ageStage: string, weightKg: number
         'Avoid the 6 most common canine allergens: chicken, beef, dairy, wheat, soy, and eggs — introduce them one at a time after the elimination period.',
         `Add ${salmonOilDose} salmon oil daily — EPA/DHA modulates the Th2 immune response that drives allergic reactions.`,
         'Include quercetin-rich foods (apples without seeds, blueberries) — quercetin is a natural antihistamine that stabilizes mast cells.',
-        'Add ${pumpkinDose} pumpkin per meal — gut health is directly linked to immune regulation (70% of the immune system is in the gut).',
+        'Add ${pumpkinDose} pumpkin per meal — gut health is directly linked to overall immune regulation.',
         'Avoid artificial colors, flavors, and preservatives — all are documented immune triggers in sensitive dogs.',
       ],
       avoidFoods: ['chicken', 'beef (during elimination)', 'dairy', 'wheat/grains', 'soy', 'corn', 'artificial additives'],
@@ -492,7 +492,7 @@ function getHealthAdvice(healthFocus: string, ageStage: string, weightKg: number
       tips: [
         'Rotate proteins every 3–4 weeks — chicken → turkey → beef → salmon → lamb — to ensure a complete amino acid and mineral spectrum and prevent sensitization.',
         'Add organ meat (liver, heart, kidney) 1–2x per week at 5–10% of the meal — it is the most nutrient-dense food on earth, containing 10–100× the vitamins of muscle meat.',
-        'Include antioxidant-rich vegetables daily: blueberries (anthocyanins), broccoli (sulforaphane), spinach (lutein) — all proven to reduce oxidative DNA damage.',
+        'Include antioxidant-rich vegetables daily: blueberries (anthocyanins), broccoli (sulforaphane), spinach (lutein) — all known to help reduce oxidative stress.',
         `Add ${salmonOilDose} salmon oil daily — omega-3s support brain, heart, immune, and joint health simultaneously.`,
         'Fresh filtered water should always be available — dehydration is the most overlooked health factor and causes kidney stress, constipation, and lethargy.',
         ageStage === 'senior' ? 'Senior dogs benefit from 3 smaller meals daily — easier on digestion and maintains stable blood sugar throughout the day.' : 'Feed 2 consistent meals daily at the same time — routine supports digestive enzyme secretion and circadian health.',
