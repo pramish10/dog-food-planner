@@ -18,7 +18,7 @@ const descriptionKey = titleKey.replace('.title', '.desc') as keyof typeof ui.en
   <Navbar />
   <main class="min-h-screen page-warm-bg">
     <Breadcrumbs items={[{ name: t('nav.brand'), url: translatePath('/') }, { name: t(navKey) }]} />
-    {kind !== 'bestFood' && kind !== 'recipes' ? (
+    {kind !== 'bestFood' && kind !== 'recipes' && kind !== 'brands' ? (
       <section class="relative py-10 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
         <!-- Warm glow -->
         <div class="absolute inset-0 pointer-events-none z-0">
