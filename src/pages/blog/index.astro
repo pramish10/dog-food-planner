@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Footer from '../../components/Footer.astro';
 import BlogCard from '../../components/BlogCard.astro';
+import BlogNewsletter from '../../components/BlogNewsletter.astro';
 import { BLOG_POSTS } from '../../data/blog';
 import { useTranslations, useTranslatedPath } from '../../i18n/utils';
 import { ui } from '../../i18n/ui';
@@ -146,35 +147,7 @@ const regularPosts = BLOG_POSTS.filter(p => p.id !== featuredPost.id);
     </section>
 
     <!-- ── Newsletter / Weekly Guide Signup ───────────────────────────── -->
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 pt-16">
-      <div class="rounded-2xl p-6 sm:p-8 text-center bg-white/90 dark:bg-[#1a1106]/90 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs">
-        <div class="text-3xl mb-3">📬</div>
-        <h3 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-2">
-          {uiStrings.newsletterTitle}
-        </h3>
-        <p class="text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a] max-w-xl mx-auto mb-6 leading-relaxed">
-          {uiStrings.newsletterDesc}
-        </p>
-
-        <form id="newsletter-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-2.5">
-          <input 
-            type="email" 
-            required 
-            placeholder={uiStrings.newsletterPlaceholder}
-            class="flex-1 px-4 py-2.5 rounded-xl text-xs bg-[#fff8f0] dark:bg-[#150d04] border border-[#f0d5a8] dark:border-[#3a2510] text-[#1c0f00] dark:text-[#fde8c8] placeholder-[#9a7b56] dark:placeholder-[#785b3b] focus:outline-none focus:border-[#c47a2b]"
-          />
-          <button 
-            type="submit" 
-            class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-[#c47a2b] hover:bg-[#a86520] transition-colors shadow-xs shrink-0 cursor-pointer"
-          >
-            {uiStrings.newsletterBtn}
-          </button>
-        </form>
-        <p id="newsletter-success-msg" class="hidden text-xs text-emerald-600 dark:text-emerald-400 font-semibold mt-3">
-          {uiStrings.newsletterSuccess}
-        </p>
-      </div>
-    </section>
+    <BlogNewsletter lang={lang} />
 
   </main>
 
@@ -286,18 +259,6 @@ const regularPosts = BLOG_POSTS.filter(p => p.id !== featuredPost.id);
       });
     }
 
-    // Newsletter fake submit
-    const newsletterForm = document.getElementById('newsletter-form');
-    const successMsg = document.getElementById('newsletter-success-msg');
-    if (newsletterForm) {
-      newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (successMsg) {
-          successMsg.classList.remove('hidden');
-          newsletterForm.reset();
-        }
-      });
-    }
   }
 
   setupBlogFiltering();
