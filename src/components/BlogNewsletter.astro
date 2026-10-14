@@ -13,7 +13,7 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 
 <section class:list={["max-w-xl mx-auto px-4 sm:px-6 pt-10 sm:pt-12", className]} aria-label={uiStrings.newsletterTitle}>
   <div 
-    class="blog-newsletter-card rounded-2xl p-5 sm:p-6 text-center bg-white/90 dark:bg-[#1a1106]/90 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs"
+    class="blog-newsletter-card rounded-2xl px-4 py-5 sm:p-6 text-center bg-white/90 dark:bg-[#1a1106]/90 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs"
   >
     <div class="text-2xl mb-2">📬</div>
     <h3 class="text-base sm:text-lg font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-1.5">
@@ -110,14 +110,19 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
         function checkAndAttachForm() {
           const form = wrapper.querySelector('form.emailoctopus-form');
           const emailInput = wrapper.querySelector('input[type="email"]');
-          const submitBtn = wrapper.querySelector('input[type="submit"]');
+          const submitBtn = wrapper.querySelector('input[type="submit"], button[type="submit"]');
 
           // Localize input placeholder & submit button
           if (emailInput && placeholder && emailInput.placeholder !== placeholder) {
             emailInput.placeholder = placeholder;
           }
-          if (submitBtn && btnText && submitBtn.value !== btnText) {
-            submitBtn.value = btnText;
+          if (submitBtn && btnText) {
+            if ('value' in submitBtn && submitBtn.value !== btnText) {
+              submitBtn.value = btnText;
+            }
+            if (submitBtn.tagName.toLowerCase() === 'button' && submitBtn.textContent !== btnText) {
+              submitBtn.textContent = btnText;
+            }
           }
 
           // Attach pre-flight validation in capture phase before EmailOctopus recaptcha runs
@@ -192,43 +197,70 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 
 <style is:global>
   /* Seamless DogFoodPlanner styling for EmailOctopus embedded form */
+  .emailoctopus-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
   .emailoctopus-wrapper .inline-container {
     max-width: 100% !important;
+    width: 100% !important;
     background: transparent !important;
     padding: 0 !important;
+    margin: 0 auto !important;
+  }
+  .emailoctopus-wrapper .form-container {
+    width: 100% !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
   }
   .emailoctopus-wrapper .emailoctopus-form-wrapper {
     margin-top: 0 !important;
+    margin-bottom: 0 !important;
     background: transparent !important;
     padding: 0 !important;
+    width: 100% !important;
   }
-  .emailoctopus-wrapper .main-form {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.5rem !important;
-    max-width: 24rem !important;
+  .emailoctopus-wrapper .emailoctopus-form {
+    width: 100% !important;
     margin: 0 auto !important;
   }
-  @media (min-width: 640px) {
-    .emailoctopus-wrapper .main-form {
-      flex-direction: row !important;
-      align-items: stretch !important;
-    }
-    .emailoctopus-wrapper [eo-form-fields-container] {
-      flex: 1 1 auto !important;
-    }
-    .emailoctopus-wrapper .emailoctopus-form-row {
-      margin-bottom: 0 !important;
-    }
+
+  /* Responsive layout: clean inline bar on mobile & PC like desktop view */
+  .emailoctopus-wrapper .main-form {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    max-width: 26rem !important;
+    margin: 0 auto !important;
   }
-  .emailoctopus-wrapper .emailoctopus-form-row {
-    margin-bottom: 0 !important;
+  .emailoctopus-wrapper [eo-form-fields-container] {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: stretch !important;
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
     padding: 0 !important;
   }
+  .emailoctopus-wrapper .emailoctopus-form-row {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Input styling: comfortable height, warm border, proper typography */
   .emailoctopus-wrapper .form-control {
     width: 100% !important;
-    font-size: 0.75rem !important; /* text-xs */
+    min-width: 0 !important;
+    font-size: 0.8125rem !important; /* 13px */
     line-height: 1.25rem !important;
     padding: 0.5rem 0.875rem !important;
     border-radius: 0.75rem !important; /* rounded-xl */
@@ -237,7 +269,8 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
     color: #1c0f00 !important;
     box-sizing: border-box !important;
     transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
-    height: 2.25rem !important;
+    height: 2.375rem !important;
+    margin: 0 !important;
   }
   html.dark .emailoctopus-wrapper .form-control {
     background-color: #150d04 !important;
@@ -256,10 +289,17 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
     border-color: #c47a2b !important;
     box-shadow: 0 0 0 2px rgba(196, 122, 43, 0.25) !important;
   }
-  .emailoctopus-wrapper .btn-primary {
-    font-size: 0.75rem !important; /* text-xs */
+
+  /* Submit button styling: matched height, no drop-down, no rightward push */
+  .emailoctopus-wrapper .btn,
+  .emailoctopus-wrapper .btn-primary,
+  .emailoctopus-wrapper input[type="submit"],
+  .emailoctopus-wrapper button[type="submit"] {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    font-size: 0.8125rem !important;
     font-weight: 700 !important;
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1.125rem !important;
     border-radius: 0.75rem !important;
     background-color: #c47a2b !important;
     border: 1px solid #c47a2b !important;
@@ -267,18 +307,48 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
     cursor: pointer !important;
     transition: background-color 0.15s ease, transform 0.1s ease !important;
     white-space: nowrap !important;
-    width: auto !important;
-    margin-bottom: 0 !important;
-    height: 2.25rem !important;
+    margin: 0 !important;
+    height: 2.375rem !important;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-  .emailoctopus-wrapper .btn-primary:hover {
+  .emailoctopus-wrapper .btn:hover,
+  .emailoctopus-wrapper .btn-primary:hover,
+  .emailoctopus-wrapper input[type="submit"]:hover,
+  .emailoctopus-wrapper button[type="submit"]:hover {
     background-color: #a86520 !important;
     border-color: #a86520 !important;
   }
-  .emailoctopus-wrapper .btn-primary:active {
+  .emailoctopus-wrapper .btn:active,
+  .emailoctopus-wrapper .btn-primary:active,
+  .emailoctopus-wrapper input[type="submit"]:active,
+  .emailoctopus-wrapper button[type="submit"]:active {
     transform: scale(0.98) !important;
   }
+
+  /* Ultra narrow devices (< 330px): graceful stacked layout that is 100% centered and full-width */
+  @media (max-width: 330px) {
+    .emailoctopus-wrapper .main-form {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 0.5rem !important;
+    }
+    .emailoctopus-wrapper [eo-form-fields-container],
+    .emailoctopus-wrapper .emailoctopus-form-row {
+      width: 100% !important;
+      flex: 1 1 100% !important;
+    }
+    .emailoctopus-wrapper .btn,
+    .emailoctopus-wrapper .btn-primary,
+    .emailoctopus-wrapper input[type="submit"],
+    .emailoctopus-wrapper button[type="submit"] {
+      width: 100% !important;
+      flex: 1 1 100% !important;
+    }
+  }
+
   .emailoctopus-wrapper .emailoctopus-success-message {
     font-size: 0.75rem !important;
     font-weight: 600 !important;
