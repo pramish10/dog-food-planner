@@ -91,3 +91,18 @@ export function getLangStaticPaths() {
     { params: { lang: 'it' } },
   ];
 }
+
+/**
+ * Truncates and formats meta descriptions to at most maxLen (default 150) characters,
+ * ensuring it never cuts off mid-word and terminates properly.
+ */
+export function formatMetaDescription(text: string, maxLen = 150): string {
+  const clean = text.replace(/\s+/g, ' ').trim();
+  if (clean.length <= maxLen) return clean;
+  const cut = clean.slice(0, maxLen);
+  const lastSpace = cut.lastIndexOf(' ');
+  const truncated = lastSpace !== -1 ? cut.slice(0, lastSpace) : cut;
+  const stripped = truncated.replace(/[,;:\-\s]+$/, '');
+  return /[.!?]$/.test(stripped) ? stripped : stripped + '.';
+}
+

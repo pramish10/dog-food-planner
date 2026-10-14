@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { getLangFromUrl, cleanPathname, getAbsoluteLocalizedUrl } from '../i18n/utils';
+import { getLangFromUrl, cleanPathname, getAbsoluteLocalizedUrl, formatMetaDescription } from '../i18n/utils';
 import { localesMap, ui, defaultLang, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
   canonicalUrl?: string;
   ogImage?: string;
   lang?: Lang;
+  noindex?: boolean;
 }
 
 const lang: Lang = Astro.props.lang || getLangFromUrl(Astro.url);
@@ -24,9 +25,15 @@ const {
   ogImage = "https://dogfoodplanner.com/og-image.jpg"
 } = Astro.props;
 
-const robotsContent = lang === 'en'
+const isNoindex = Boolean(Astro.props.noindex || lang !== 'en' || ['/404', '/500', '/print'].includes(cleanPath));
+
+const robotsContent = !isNoindex
   ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   : "noindex, follow";
+
+const finalDescription = lang === 'en'
+  ? formatMetaDescription(description, 150)
+  : description;
 ---
 
 <!doctype html>
@@ -52,21 +59,18 @@ const robotsContent = lang === 'en'
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap.xml" />
     
-    <!-- Multilingual Hreflang SEO Markup -->
-    <link rel="alternate" hreflang="x-default" href={getAbsoluteLocalizedUrl(cleanPath, 'en')} />
-    <link rel="alternate" hreflang="en" href={getAbsoluteLocalizedUrl(cleanPath, 'en')} />
-    <link rel="alternate" hreflang="es" href={getAbsoluteLocalizedUrl(cleanPath, 'es')} />
-    <link rel="alternate" hreflang="ja" href={getAbsoluteLocalizedUrl(cleanPath, 'ja')} />
-    <link rel="alternate" hreflang="fr" href={getAbsoluteLocalizedUrl(cleanPath, 'fr')} />
-    <link rel="alternate" hreflang="de" href={getAbsoluteLocalizedUrl(cleanPath, 'de')} />
-    <link rel="alternate" hreflang="pt" href={getAbsoluteLocalizedUrl(cleanPath, 'pt')} />
-    <link rel="alternate" hreflang="ko" href={getAbsoluteLocalizedUrl(cleanPath, 'ko')} />
-    <link rel="alternate" hreflang="it" href={getAbsoluteLocalizedUrl(cleanPath, 'it')} />
+    <!-- Multilingual Hreflang SEO Markup (only indexable alternates) -->
+    {!isNoindex && lang === 'en' && (
+      <>
+        <link rel="alternate" hreflang="x-default" href={getAbsoluteLocalizedUrl(cleanPath, 'en')} />
+        <link rel="alternate" hreflang="en" href={getAbsoluteLocalizedUrl(cleanPath, 'en')} />
+      </>
+    )}
 
     <!-- Primary SEO Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
-    <meta name="description" content={description} />
+    <meta name="description" content={finalDescription} />
     <meta name="robots" content={robotsContent} />
     <meta name="googlebot" content={robotsContent} />
     <meta name="bingbot" content={robotsContent} />
@@ -84,20 +88,17 @@ const robotsContent = lang === 'en'
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={finalDescription} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:alt" content="Dog Food Planner - Free Custom Dog Meal & Nutrition Calculator" />
     <meta property="og:site_name" content="Dog Food Planner" />
     <meta property="og:locale" content={currentLocaleData.ogLocale} />
-    {Object.values(localesMap).filter(l => l.code !== lang).map(l => (
-      <meta property="og:locale:alternate" content={l.ogLocale} />
-    ))}
 
     <!-- Twitter Cards -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    <meta property="twitter:description" content={finalDescription} />
     <meta property="twitter:image" content={ogImage} />
     <meta name="twitter:site" content="@dogfoodplanner" />
 

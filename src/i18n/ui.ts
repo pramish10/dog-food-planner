@@ -31,7 +31,7 @@ export const ui = {
     'nav.brand': 'DogFoodPlanner',
     'nav.badge': 'Free',
     'nav.subbrand': 'Meals for Happy Dogs',
-    'nav.bestDogFood': 'Best Dog Food',
+    'nav.bestDogFood': 'Dog Food Types',
     'nav.recipes': 'Homemade Recipes',
     'nav.toxicFoods': 'Toxic Foods',
     'nav.brands': 'Brand Reviews',

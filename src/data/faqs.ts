@@ -77,7 +77,7 @@ export const FAQS_DATA: FaqItem[] = [
         <li><strong>Ancestral Raw Diets (BARF / Prey Model):</strong> Prepared with 80% muscle meat, 10% raw edible bone for calcium/phosphorus balance, and 10% secreting organs (5% liver, 5% other organs).</li>
         <li><strong>High-Tier Kibble with Fresh Superfood Toppers:</strong> High-protein, low-glycemic dry food enriched with bone broth, pasture-raised egg yolks, and steamed vegetables.</li>
       </ol>
-      <p>The best food for your dog depends on their life stage (puppy vs. senior), activity burn, and digestive tolerance. Use our <a href="/feeding-calculator" class="text-blue-600 font-semibold underline">Free Canine Feeding Calculator</a> to formulate the ideal bowl for your pet.</p>
+      <p>The best food for your dog depends on their life stage (puppy vs. senior), activity burn, and digestive tolerance. Use our <a href="/#planner-section" class="text-blue-600 font-semibold underline">Free Canine Feeding Calculator</a> to formulate the ideal bowl for your pet.</p>
     `,
     tags: ['best dog food', 'nutrition', 'fresh food', 'raw food'],
     relatedSlugs: ['what-is-the-1-best-dog-food', 'what-is-the-best-dry-dog-food', 'what-is-the-best-dog-food-for-allergies']
@@ -558,8 +558,8 @@ export const FAQS_DATA: FaqItem[] = [
       <p>Veterinary studies from UC Davis found that over <strong>95% of homemade dog food recipes found on the internet are nutritionally deficient</strong> in calcium, zinc, vitamin D, or vitamin E. However, when prepared correctly with balanced supplements:</p>
       <ul>
         <li><strong>Tremendous Health Benefits:</strong> 100% human-grade ingredients, zero synthetic dyes or BHA/BHT preservatives, high biological hydration, and reduced chronic inflammation.</li>
-        <li><strong>The Calcium Imperative:</strong> Plain meat has a Calcium-to-Phosphorus ratio of 1:20 (dangerous). You must add calcium (such as eggshell powder at 1/2 tsp per lb of meat) to achieve the healthy 1.2:1 ratio.</li>
-        <li><strong>Use a Validated Calculator:</strong> Always formulate your homemade recipes using our <a href="/feeding-calculator" class="text-blue-600 underline font-semibold">Free Canine Meal Calculator</a> to ensure nutritional adequacy.</li>
+        <li><strong>The Calcium Imperative:</strong> Plain meat has a Calcium-to-Phosphorus ratio of 1:20 (dangerous). Ask your veterinarian or a veterinary nutritionist how much calcium your dog needs to achieve the healthy 1.2:1 ratio.</li>
+        <li><strong>Use a Validated Calculator:</strong> Always formulate your homemade recipes using our <a href="/#planner-section" class="text-blue-600 underline font-semibold">Free Canine Meal Calculator</a> to ensure nutritional adequacy.</li>
       </ul>
     `,
     tags: ['homemade food', 'vet approved', 'health', 'calcium deficiency'],
@@ -934,3 +934,27 @@ export function generateFaqJsonLd(
     }))
   };
 }
+
+export const MANDATORY_NOINDEX_FAQ_SLUGS = new Set([
+  'what-is-the-1-best-dog-food',
+  'whats-the-best-dog-food-brand',
+  'is-nutrish-a-good-dog-food',
+  'is-pure-balance-a-good-dog-food',
+  'what-is-the-best-diet-for-dogs',
+  'what-is-the-best-natural-dog-food',
+  'what-is-a-perfect-meal-for-a-dog',
+]);
+
+export function isFaqNoindexed(slug: string): boolean {
+  if (MANDATORY_NOINDEX_FAQ_SLUGS.has(slug)) return true;
+  const faq = getFaqBySlug(slug);
+  if (!faq) return false;
+  const plainText = (faq.question + ' ' + faq.shortAnswer + ' ' + faq.fullAnswerHtml.replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
+  const wordCount = plainText.split(/\s+/).filter(Boolean).length;
+  return wordCount < 300;
+}
+
+export function getAllNoindexFaqSlugs(): string[] {
+  return FAQS_DATA.filter(f => isFaqNoindexed(f.slug)).map(f => f.slug);
+}
+

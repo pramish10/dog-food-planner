@@ -18,12 +18,26 @@ const BLOG_POST_DATES = {
   'rotational-feeding-benefits-guide': '2026-09-20T00:00:00.000Z',
 };
 
+const INDEXABLE_FAQ_SLUGS = new Set([
+  'what-does-spayed-neutered-intact-gender-mean-for-dogs',
+  'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb',
+  'what-are-dog-food-planner-website-terms-and-disclaimers',
+]);
+
 /**
  * @param {string} page
  */
 function sitemapFilter(page) {
   const path = new URL(page).pathname.replace(/\/$/, '') || '/';
-  return path !== '/print' && path !== '/404' && path !== '/500';
+  if (LOCALE_PREFIX.test(path)) return false;
+  if (path === '/print' || path === '/404' || path === '/500' || path === '/feeding-calculator') return false;
+
+  const faqMatch = path.match(/^\/faq\/([^/]+)$/);
+  if (faqMatch && !INDEXABLE_FAQ_SLUGS.has(faqMatch[1])) {
+    return false;
+  }
+
+  return true;
 }
 
 /**
@@ -53,20 +67,14 @@ function serializeSitemapItem(item) {
   item.url = withoutTrailingSlash(item.url);
   const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
   const unprefixed = path.replace(LOCALE_PREFIX, '') || '/';
-  const isDefaultLocale = path === unprefixed;
-  const defaultUrl = withoutLocalePrefix(item.url);
 
-  if (item.links?.length) {
-    item.links = [
-      { lang: 'x-default', url: defaultUrl },
-      ...item.links.map((link) => ({ ...link, url: withoutTrailingSlash(link.url) })),
-    ];
-  }
+  // Do not emit alternate hreflang links pointing to non-English or noindexed pages
+  delete item.links;
 
   if (unprefixed === '/') {
     item.priority = 1.0;
     item.changefreq = ChangeFreqEnum.DAILY;
-  } else if (['/best-dog-food', '/feeding-calculator', '/faq', '/blog'].includes(unprefixed)) {
+  } else if (['/best-dog-food', '/faq', '/blog'].includes(unprefixed)) {
     item.priority = 0.9;
     item.changefreq = ChangeFreqEnum.WEEKLY;
   } else if (
@@ -92,10 +100,6 @@ function serializeSitemapItem(item) {
     item.changefreq = ChangeFreqEnum.YEARLY;
   }
 
-  if (!isDefaultLocale && typeof item.priority === 'number') {
-    item.priority = Number((item.priority * 0.9).toFixed(1));
-  }
-
   const blogMatch = unprefixed.match(/^\/blog\/([^/]+)$/);
   if (blogMatch && BLOG_POST_DATES[blogMatch[1]]) {
     item.lastmod = BLOG_POST_DATES[blogMatch[1]];
@@ -117,19 +121,6 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      i18n: {
-        defaultLocale: 'en',
-        locales: {
-          en: 'en',
-          es: 'es',
-          ja: 'ja',
-          fr: 'fr',
-          de: 'de',
-          pt: 'pt',
-          ko: 'ko',
-          it: 'it',
-        },
-      },
       filter: sitemapFilter,
       serialize: serializeSitemapItem,
       namespaces: {
