@@ -14,8 +14,6 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 <section class:list={["max-w-xl mx-auto px-4 sm:px-6 pt-10 sm:pt-12", className]} aria-label={uiStrings.newsletterTitle}>
   <div 
     class="blog-newsletter-card rounded-2xl p-5 sm:p-6 text-center bg-white/90 dark:bg-[#1a1106]/90 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs"
-    data-msg-already-subscribed={uiStrings.newsletterAlreadySubscribed}
-    data-msg-temp-error={uiStrings.newsletterTempEmailError}
   >
     <div class="text-2xl mb-2">📬</div>
     <h3 class="text-base sm:text-lg font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-1.5">
@@ -25,246 +23,293 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
       {uiStrings.newsletterDesc}
     </p>
 
-    <form class="blog-newsletter-form max-w-sm mx-auto flex flex-col sm:flex-row gap-2" novalidate>
-      <input 
-        type="email" 
-        name="email"
-        required 
-        placeholder={uiStrings.newsletterPlaceholder}
-        class="flex-1 px-3.5 py-2 rounded-xl text-xs bg-[#fff8f0] dark:bg-[#150d04] border border-[#f0d5a8] dark:border-[#3a2510] text-[#1c0f00] dark:text-[#fde8c8] placeholder-[#9a7b56] dark:placeholder-[#785b3b] focus:outline-none focus:border-[#c47a2b]"
-      />
-      <button 
-        type="submit" 
-        class="blog-newsletter-btn px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#c47a2b] hover:bg-[#a86520] transition-all shadow-xs shrink-0 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
-      >
-        {uiStrings.newsletterBtn}
-      </button>
-    </form>
-    
-    <p class="blog-newsletter-success hidden text-xs text-emerald-600 dark:text-emerald-400 font-semibold mt-2.5">
-      {uiStrings.newsletterSuccess}
-    </p>
-    <p class="blog-newsletter-error hidden text-xs text-red-600 dark:text-red-400 font-medium mt-2.5"></p>
+    <!-- EmailOctopus Form Embed -->
+    <div 
+      class="emailoctopus-wrapper" 
+      data-placeholder={uiStrings.newsletterPlaceholder} 
+      data-btn={uiStrings.newsletterBtn}
+      data-msg-already-subscribed={uiStrings.newsletterAlreadySubscribed}
+      data-msg-temp-error={uiStrings.newsletterTempEmailError}
+    >
+      <script is:inline async src="https://eomail5.com/form/3a32e580-c79f-11f1-ba68-8f65c387aa2a.js" data-form="3a32e580-c79f-11f1-ba68-8f65c387aa2a"></script>
+    </div>
   </div>
 </section>
 
-<script>
-  // Top disposable and temporary email domains to block
-  const DISPOSABLE_DOMAINS = new Set([
-    '10minutemail.com', '10minutemail.net', '20minutemail.com', 'tempmail.com', 'temp-mail.org',
-    'mailinator.com', 'guerrillamail.com', 'sharklasers.com', 'guerillamail.biz', 'guerillamail.com',
-    'guerillamail.de', 'guerillamail.net', 'guerillamail.org', 'grr.la', 'guerrillamailblock.com',
-    'yopmail.com', 'trashmail.com', 'trashmail.net', 'trashmail.me', 'throwawaymail.com',
-    'getnada.com', 'dispostable.com', 'fakeinbox.com', 'mohmal.com', 'crazymailing.com',
-    'mytemp.email', 'generator.email', 'emailondeck.com', 'inboxkitten.com', 'dropmail.me',
-    'fakemailgenerator.com', 'tempr.email', 'tempail.com', 'burnermail.io', 'mailcatch.com',
-    'maildrop.cc', 'harakirimail.com', 'jetable.org', 'mailnesia.com', 'zillamail.com',
-    'nada.ltd', 'tempmailaddress.com', 'disposablemail.com', 'tempinbox.com', 'byom.de',
-    'yopmail.fr', 'yopmail.net', 'cool.fr.nf', 'courriel.fr.nf', 'moncourrier.fr.nf',
-    'monemail.fr.nf', 'monmail.fr.nf', 'mytempemail.com', 'spambox.us', 'binkmail.com',
-    'bobmail.info', 'chammy.info', 'devnullmail.com', 'letthemeatspam.com', 'mailinater.com',
-    'mailhazard.com', 'mailslurp.com', 'minutemail.com', 'trashymail.com', 'tmail.ws',
-    'tmpmail.org', 'disbox.org', 'inboxclean.com', 'trashmail.org', 'deadaddress.com',
-    'trashmail.net', 'wegwerfmail.de', 'wegwerfmail.net', 'wegwerfmail.org', 'fakemail.net',
-    'tempmail.net', 'throwawayemailaddress.com', 'temp-mail.io', 'mailpoof.com'
-  ]);
+<script is:inline>
+  (function() {
+    const DISPOSABLE_DOMAINS = new Set([
+      '10minutemail.com', '10minutemail.net', '20minutemail.com', 'tempmail.com', 'temp-mail.org',
+      'mailinator.com', 'guerrillamail.com', 'sharklasers.com', 'guerillamail.biz', 'guerillamail.com',
+      'guerillamail.de', 'guerillamail.net', 'guerillamail.org', 'grr.la', 'guerrillamailblock.com',
+      'yopmail.com', 'trashmail.com', 'trashmail.net', 'trashmail.me', 'throwawaymail.com',
+      'getnada.com', 'dispostable.com', 'fakeinbox.com', 'mohmal.com', 'crazymailing.com',
+      'mytemp.email', 'generator.email', 'emailondeck.com', 'inboxkitten.com', 'dropmail.me',
+      'fakemailgenerator.com', 'tempr.email', 'tempail.com', 'burnermail.io', 'mailcatch.com',
+      'maildrop.cc', 'harakirimail.com', 'jetable.org', 'mailnesia.com', 'zillamail.com',
+      'nada.ltd', 'tempmailaddress.com', 'disposablemail.com', 'tempinbox.com', 'byom.de',
+      'yopmail.fr', 'yopmail.net', 'cool.fr.nf', 'courriel.fr.nf', 'moncourrier.fr.nf',
+      'monemail.fr.nf', 'monmail.fr.nf', 'mytempemail.com', 'spambox.us', 'binkmail.com',
+      'bobmail.info', 'chammy.info', 'devnullmail.com', 'letthemeatspam.com', 'mailinater.com',
+      'mailhazard.com', 'mailslurp.com', 'minutemail.com', 'trashymail.com', 'tmail.ws',
+      'tmpmail.org', 'disbox.org', 'inboxclean.com', 'trashmail.org', 'deadaddress.com',
+      'trashmail.net', 'wegwerfmail.de', 'wegwerfmail.net', 'wegwerfmail.org', 'fakemail.net',
+      'tempmail.net', 'throwawayemailaddress.com', 'temp-mail.io', 'mailpoof.com'
+    ]);
 
-  const DISPOSABLE_KEYWORDS = [
-    'tempmail', 'temp-mail', '10minute', '20minute', 'throwaway',
-    'trashmail', 'fakemail', 'guerrillamail', 'mailinator', 'dispostable',
-    'disposable', 'burnermail', 'yopmail', 'crazymailing', 'sharklasers',
-    'mohmal', 'dropmail', 'emailondeck', 'inboxkitten', 'getnada', 'tempail',
-    'fakemailgenerator', 'wegwerfmail', 'trashmail', 'minutemail'
-  ];
+    const DISPOSABLE_KEYWORDS = [
+      'tempmail', 'temp-mail', '10minute', '20minute', 'throwaway',
+      'trashmail', 'fakemail', 'guerrillamail', 'mailinator', 'dispostable',
+      'disposable', 'burnermail', 'yopmail', 'crazymailing', 'sharklasers',
+      'mohmal', 'dropmail', 'emailondeck', 'inboxkitten', 'getnada', 'tempail',
+      'fakemailgenerator', 'wegwerfmail', 'trashmail', 'minutemail'
+    ];
 
-  function isDisposableDomain(domain: string): boolean {
-    if (!domain) return false;
-    const lower = domain.toLowerCase();
-    if (DISPOSABLE_DOMAINS.has(lower)) return true;
-    return DISPOSABLE_KEYWORDS.some(kw => lower.includes(kw));
-  }
-
-  let activeSubmittingCard: HTMLElement | null = null;
-  let activeSubmittedEmail: string = '';
-  let lastSubmitTime = 0;
-
-  function isAlreadySubscribed(email: string): boolean {
-    try {
-      const stored = JSON.parse(localStorage.getItem('dfp_subscribed_emails') || '[]');
-      return Array.isArray(stored) && stored.includes(email.toLowerCase());
-    } catch {
-      return false;
+    function isDisposableEmail(email) {
+      if (!email || !email.includes('@')) return false;
+      const domain = email.split('@')[1]?.toLowerCase();
+      if (!domain) return false;
+      if (DISPOSABLE_DOMAINS.has(domain)) return true;
+      return DISPOSABLE_KEYWORDS.some(function(kw) { return domain.includes(kw); });
     }
-  }
 
-  function markSubscribed(email: string) {
-    try {
-      const stored = JSON.parse(localStorage.getItem('dfp_subscribed_emails') || '[]');
-      const list = Array.isArray(stored) ? stored : [];
-      if (!list.includes(email.toLowerCase())) {
-        list.push(email.toLowerCase());
-        localStorage.setItem('dfp_subscribed_emails', JSON.stringify(list));
+    function isAlreadySubscribed(email) {
+      try {
+        const stored = JSON.parse(localStorage.getItem('dfp_subscribed_emails') || '[]');
+        return Array.isArray(stored) && stored.includes(email.toLowerCase());
+      } catch (e) {
+        return false;
       }
-    } catch {}
-  }
-
-  function loadEmailOctopusBridge() {
-    if (document.getElementById('eo-bridge-script')) return;
-
-    const container = document.createElement('div');
-    container.id = 'eo-bridge-container';
-    container.className = 'opacity-0 pointer-events-none fixed -top-[9999px] -left-[9999px] h-0 w-0 overflow-hidden';
-    container.setAttribute('aria-hidden', 'true');
-
-    const s = document.createElement('script');
-    s.id = 'eo-bridge-script';
-    s.src = 'https://eomail5.com/form/3a32e580-c79f-11f1-ba68-8f65c387aa2a.js';
-    s.async = true;
-    s.setAttribute('data-form', '3a32e580-c79f-11f1-ba68-8f65c387aa2a');
-
-    container.appendChild(s);
-    document.body.appendChild(container);
-
-    watchEmailOctopusBridge(container);
-  }
-
-  function handleSuccess() {
-    const card = activeSubmittingCard || document.querySelector<HTMLElement>('.blog-newsletter-card');
-    if (!card) return;
-
-    const form = card.querySelector<HTMLFormElement>('.blog-newsletter-form');
-    const successMsg = card.querySelector<HTMLElement>('.blog-newsletter-success');
-    const errorMsg = card.querySelector<HTMLElement>('.blog-newsletter-error');
-    const submitBtn = card.querySelector<HTMLButtonElement>('.blog-newsletter-btn');
-
-    if (errorMsg) errorMsg.classList.add('hidden');
-    if (form) form.classList.add('hidden');
-    if (successMsg) successMsg.classList.remove('hidden');
-
-    if (activeSubmittedEmail) {
-      markSubscribed(activeSubmittedEmail);
     }
 
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '1';
+    function markSubscribed(email) {
+      try {
+        const stored = JSON.parse(localStorage.getItem('dfp_subscribed_emails') || '[]');
+        const list = Array.isArray(stored) ? stored : [];
+        if (!list.includes(email.toLowerCase())) {
+          list.push(email.toLowerCase());
+          localStorage.setItem('dfp_subscribed_emails', JSON.stringify(list));
+        }
+      } catch (e) {}
     }
-  }
 
-  function handleError(msg?: string) {
-    const card = activeSubmittingCard || document.querySelector<HTMLElement>('.blog-newsletter-card');
-    if (!card) return;
+    function setupEmailOctopusEnhancements() {
+      const wrappers = document.querySelectorAll('.emailoctopus-wrapper');
+      wrappers.forEach(function(wrapper) {
+        if (wrapper.dataset.eoEnhanced) return;
+        wrapper.dataset.eoEnhanced = 'true';
 
-    const errorMsg = card.querySelector<HTMLElement>('.blog-newsletter-error');
-    const submitBtn = card.querySelector<HTMLButtonElement>('.blog-newsletter-btn');
+        const placeholder = wrapper.getAttribute('data-placeholder');
+        const btnText = wrapper.getAttribute('data-btn');
+        const msgAlreadySubscribed = wrapper.getAttribute('data-msg-already-subscribed') || "You're already subscribed with this email!";
+        const msgTempError = wrapper.getAttribute('data-msg-temp-error') || "Please use a permanent personal or work email (temporary emails are not accepted).";
 
-    if (errorMsg) {
-      errorMsg.textContent = msg || 'Subscription failed, please try again.';
-      errorMsg.classList.remove('hidden');
-    }
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '1';
-    }
-  }
+        let attachedForm = null;
+        let lastEmailAttempt = '';
 
-  function watchEmailOctopusBridge(container: HTMLElement) {
-    const observer = new MutationObserver(() => {
-      const successEl = container.querySelector('.emailoctopus-success-message');
-      const errorEl = container.querySelector('.emailoctopus-error-message');
+        function checkAndAttachForm() {
+          const form = wrapper.querySelector('form.emailoctopus-form');
+          const emailInput = wrapper.querySelector('input[type="email"]');
+          const submitBtn = wrapper.querySelector('input[type="submit"]');
 
-      if (successEl && successEl.textContent && successEl.textContent.trim()) {
-        handleSuccess();
-      } else if (errorEl && errorEl.textContent && errorEl.textContent.trim()) {
-        handleError(errorEl.textContent.trim());
-      }
-    });
+          // Localize input placeholder & submit button
+          if (emailInput && placeholder && emailInput.placeholder !== placeholder) {
+            emailInput.placeholder = placeholder;
+          }
+          if (submitBtn && btnText && submitBtn.value !== btnText) {
+            submitBtn.value = btnText;
+          }
 
-    observer.observe(container, { childList: true, subtree: true, characterData: true });
-  }
+          // Attach pre-flight validation in capture phase before EmailOctopus recaptcha runs
+          if (form && form !== attachedForm) {
+            attachedForm = form;
+            
+            // Clear custom error on typing
+            emailInput?.addEventListener('input', function() {
+              const errEl = wrapper.querySelector('.emailoctopus-error-message');
+              if (errEl) errEl.textContent = '';
+            });
 
-  function setupBlogNewsletter() {
-    loadEmailOctopusBridge();
+            function validateAndIntercept(e) {
+              const emailVal = (emailInput?.value || '').trim();
+              lastEmailAttempt = emailVal;
+              const errEl = wrapper.querySelector('.emailoctopus-error-message');
 
-    const forms = document.querySelectorAll<HTMLFormElement>('.blog-newsletter-form');
-    forms.forEach(form => {
-      if (form.dataset.newsletterReady) return;
-      form.dataset.newsletterReady = 'true';
+              // Check format
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+              if (!emailRegex.test(emailVal)) {
+                return; // Let standard validation handle empty or invalid syntax
+              }
 
-      const emailInput = form.querySelector<HTMLInputElement>('input[type="email"]');
-      const card = form.closest<HTMLElement>('.blog-newsletter-card');
-      const errorMsg = card?.querySelector<HTMLElement>('.blog-newsletter-error');
+              // 1. Check for temporary / disposable email
+              if (isDisposableEmail(emailVal)) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                if (errEl) errEl.textContent = msgTempError;
+                return false;
+              }
 
-      emailInput?.addEventListener('input', () => {
-        if (errorMsg) errorMsg.classList.add('hidden');
-      });
+              // 2. Check for duplicate subscription on this device
+              if (isAlreadySubscribed(emailVal)) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                if (errEl) errEl.textContent = msgAlreadySubscribed;
+                return false;
+              }
+            }
 
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!card) return;
-
-        const submitBtn = form.querySelector<HTMLButtonElement>('.blog-newsletter-btn');
-        const emailValue = emailInput?.value.trim() || '';
-
-        // Check 1: Format validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
-        if (!emailRegex.test(emailValue)) {
-          handleError('Please enter a valid email address.');
-          return;
-        }
-
-        const domain = emailValue.split('@')[1]?.toLowerCase();
-
-        // Check 2: Block disposable / temporary email domains
-        if (domain && isDisposableDomain(domain)) {
-          const tempMsg = card.dataset.msgTempError || 'Please use a permanent personal or work email (temporary emails are not accepted).';
-          handleError(tempMsg);
-          return;
-        }
-
-        // Check 3: Block repeated / already subscribed email
-        if (isAlreadySubscribed(emailValue)) {
-          const alreadyMsg = card.dataset.msgAlreadySubscribed || "You're already subscribed with this email!";
-          handleError(alreadyMsg);
-          return;
-        }
-
-        // Check 4: Rate-limit rapid submissions
-        const now = Date.now();
-        if (now - lastSubmitTime < 4000) {
-          return;
-        }
-        lastSubmitTime = now;
-
-        if (errorMsg) errorMsg.classList.add('hidden');
-        activeSubmittingCard = card;
-        activeSubmittedEmail = emailValue;
-
-        // Set button loading state while waiting for captcha/submission
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.style.opacity = '0.6';
-        }
-
-        // Trigger the EmailOctopus form
-        const eoForm = document.querySelector<HTMLFormElement>('[data-form="3a32e580-c79f-11f1-ba68-8f65c387aa2a"] form');
-        if (eoForm) {
-          const eoEmail = eoForm.querySelector<HTMLInputElement>('input[type="email"]');
-          const eoSubmit = eoForm.querySelector<HTMLInputElement | HTMLButtonElement>('[type="submit"]');
-          if (eoEmail && eoSubmit) {
-            eoEmail.value = emailValue;
-            eoEmail.dispatchEvent(new Event('input', { bubbles: true }));
-            eoEmail.dispatchEvent(new Event('change', { bubbles: true }));
-            eoSubmit.click();
+            submitBtn?.addEventListener('click', validateAndIntercept, true);
+            form.addEventListener('submit', validateAndIntercept, true);
           }
         }
+
+        checkAndAttachForm();
+        const observer = new MutationObserver(checkAndAttachForm);
+        observer.observe(wrapper, { childList: true, subtree: true });
+
+        // Save email on successful subscription
+        const successObserver = new MutationObserver(function() {
+          const successEl = wrapper.querySelector('.emailoctopus-success-message');
+          if (successEl && successEl.textContent && successEl.textContent.trim()) {
+            if (lastEmailAttempt) {
+              markSubscribed(lastEmailAttempt);
+            }
+          }
+        });
+        successObserver.observe(wrapper, { childList: true, subtree: true });
       });
-    });
-  }
+    }
 
-  // Listen for EmailOctopus success custom event
-  document.addEventListener('emailoctopus:form.success', handleSuccess);
-
-  setupBlogNewsletter();
-  document.addEventListener('astro:page-load', setupBlogNewsletter);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupEmailOctopusEnhancements);
+    } else {
+      setupEmailOctopusEnhancements();
+    }
+  })();
 </script>
+
+<style is:global>
+  /* Seamless DogFoodPlanner styling for EmailOctopus embedded form */
+  .emailoctopus-wrapper .inline-container {
+    max-width: 100% !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+  .emailoctopus-wrapper .emailoctopus-form-wrapper {
+    margin-top: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  .emailoctopus-wrapper .main-form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    max-width: 24rem !important;
+    margin: 0 auto !important;
+  }
+  @media (min-width: 640px) {
+    .emailoctopus-wrapper .main-form {
+      flex-direction: row !important;
+      align-items: stretch !important;
+    }
+    .emailoctopus-wrapper [eo-form-fields-container] {
+      flex: 1 1 auto !important;
+    }
+    .emailoctopus-wrapper .emailoctopus-form-row {
+      margin-bottom: 0 !important;
+    }
+  }
+  .emailoctopus-wrapper .emailoctopus-form-row {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+  .emailoctopus-wrapper .form-control {
+    width: 100% !important;
+    font-size: 0.75rem !important; /* text-xs */
+    line-height: 1.25rem !important;
+    padding: 0.5rem 0.875rem !important;
+    border-radius: 0.75rem !important; /* rounded-xl */
+    background-color: #fff8f0 !important;
+    border: 1px solid #f0d5a8 !important;
+    color: #1c0f00 !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+    height: 2.25rem !important;
+  }
+  html.dark .emailoctopus-wrapper .form-control {
+    background-color: #150d04 !important;
+    border-color: #3a2510 !important;
+    color: #fde8c8 !important;
+  }
+  .emailoctopus-wrapper .form-control::placeholder {
+    color: #9a7b56 !important;
+    opacity: 1 !important;
+  }
+  html.dark .emailoctopus-wrapper .form-control::placeholder {
+    color: #785b3b !important;
+  }
+  .emailoctopus-wrapper .form-control:focus {
+    outline: none !important;
+    border-color: #c47a2b !important;
+    box-shadow: 0 0 0 2px rgba(196, 122, 43, 0.25) !important;
+  }
+  .emailoctopus-wrapper .btn-primary {
+    font-size: 0.75rem !important; /* text-xs */
+    font-weight: 700 !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.75rem !important;
+    background-color: #c47a2b !important;
+    border: 1px solid #c47a2b !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    transition: background-color 0.15s ease, transform 0.1s ease !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    margin-bottom: 0 !important;
+    height: 2.25rem !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  }
+  .emailoctopus-wrapper .btn-primary:hover {
+    background-color: #a86520 !important;
+    border-color: #a86520 !important;
+  }
+  .emailoctopus-wrapper .btn-primary:active {
+    transform: scale(0.98) !important;
+  }
+  .emailoctopus-wrapper .emailoctopus-success-message {
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: #059669 !important; /* emerald-600 */
+    margin: 0.75rem auto 0 !important;
+    text-align: center !important;
+  }
+  html.dark .emailoctopus-wrapper .emailoctopus-success-message {
+    color: #34d399 !important; /* emerald-400 */
+  }
+  .emailoctopus-wrapper .emailoctopus-error-message {
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    color: #dc2626 !important; /* red-600 */
+    margin: 0.75rem auto 0 !important;
+    text-align: center !important;
+  }
+  html.dark .emailoctopus-wrapper .emailoctopus-error-message {
+    color: #f87171 !important; /* red-400 */
+  }
+  .emailoctopus-wrapper .mastfoot {
+    font-size: 0.65rem !important;
+    color: #9a7b56 !important;
+    margin-top: 0.5rem !important;
+    opacity: 0.8 !important;
+  }
+  html.dark .emailoctopus-wrapper .mastfoot {
+    color: #785b3b !important;
+  }
+  .emailoctopus-wrapper .mastfoot a {
+    color: #c47a2b !important;
+    text-decoration: underline !important;
+  }
+</style>
