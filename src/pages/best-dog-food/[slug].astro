@@ -40,7 +40,7 @@ const paragraphs = item.readMore.split('\n\n');
 const prevItem = idx > 0 ? { title: rankings[idx - 1].title, slug: BEST_FOOD_RANKING_SLUGS[idx - 1] } : null;
 const nextItem = idx < rankings.length - 1 ? { title: rankings[idx + 1].title, slug: BEST_FOOD_RANKING_SLUGS[idx + 1] } : null;
 
-const pageTitle = `${item.title} (${item.score}) | Best Dog Food 2026`;
+const pageTitle = `${item.title} | Dog Food Types Compared`;
 const pageDescription = `${item.pros} ${item.cons}`.slice(0, 155);
 
 const articleJsonLd = {
@@ -50,7 +50,7 @@ const articleJsonLd = {
   "description": pageDescription,
   "author": {
     "@type": "Organization",
-    "name": "Dog Food Planner Nutrition Team",
+    "name": "Dog Food Planner Editorial Team",
     "url": "https://dogfoodplanner.com"
   },
   "publisher": {
@@ -76,7 +76,7 @@ const articleJsonLd = {
     <Breadcrumbs
       items={[
         { name: 'Home', url: '/' },
-        { name: 'Best Dog Food', url: '/best-dog-food' },
+        { name: 'Dog Food Types Compared', url: '/best-dog-food' },
         { name: item.title }
       ]}
     />
@@ -86,17 +86,23 @@ const articleJsonLd = {
       <!-- Header -->
       <header class="mb-8">
         <div class="inline-flex items-center gap-2 font-mono text-xs text-[#0070f3] dark:text-[#3291ff] bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-900/60 px-3 py-1 rounded-full mb-3">
-          <span>TOP 5 HEALTHIEST DOG FOODS // RANK #{item.rank}</span>
+          <span>DOG FOOD TYPES COMPARED</span>
         </div>
         <h1 class="text-[1.35rem] sm:text-3xl lg:text-4xl font-bold text-[#171717] dark:text-[#ededed] tracking-tight mb-4 leading-tight text-balance">
           {item.title}
         </h1>
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8f8f8f] dark:text-[#737373] font-mono border-b border-[#ebebeb] dark:border-[#262626] pb-4">
-          <span>Nutritional Score: <strong class="text-[#0070f3]">{item.score}</strong></span>
-          <span>•</span>
           <span>Reviewed by: <strong>DogFoodPlanner Editorial Team</strong></span>
+          <span>•</span>
+          <span>Last updated: October 14, 2026</span>
         </div>
       </header>
+
+      {slug === 'raw-barf-dog-food' && (
+        <div class="p-4 mb-6 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 rounded-xl text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed">
+          <strong>Raw Feeding Safety:</strong> Raw foods carry bacteria risks that require strict food-safety handling and hygiene. Talk to your veterinarian before feeding a raw diet.
+        </div>
+      )}
 
       <!-- Pros / Cons callout -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -135,13 +141,13 @@ const articleJsonLd = {
         <section class="border-t border-[#ebebeb] dark:border-[#262626] pt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
           {prevItem ? (
             <a href={`/best-dog-food/${prevItem.slug}`} class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all">
-              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">← Previous rank</span>
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">← Previous type</span>
               <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">{prevItem.title}</span>
             </a>
           ) : <div />}
           {nextItem && (
             <a href={`/best-dog-food/${nextItem.slug}`} class="hairline-card p-4 bg-white dark:bg-[#141414] hover:border-[#171717] dark:hover:border-[#ededed] transition-all text-right">
-              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">Next rank →</span>
+              <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373] block mb-1">Next type →</span>
               <span class="text-sm font-medium text-[#171717] dark:text-[#ededed]">{nextItem.title}</span>
             </a>
           )}
@@ -154,7 +160,7 @@ const articleJsonLd = {
           href="/best-dog-food"
           class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
         >
-          ← Back to the Full Top 5 Ranking
+          ← Back to Dog Food Types Compared
         </a>
       </div>
 

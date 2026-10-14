@@ -45,19 +45,19 @@ export const PAGE_TRANSLATIONS = {
         },
         {
           "icon": "🐾",
-          "title": "Nutrition Research",
-          "desc": "Formula inquiries:",
-          "email": "research@dogfoodplanner.com"
+          "title": "Feedback & Suggestions",
+          "desc": "Site & guide feedback:",
+          "email": "hello@dogfoodplanner.com"
         },
         {
           "icon": "🛡️",
-          "title": "Technical & Data",
-          "desc": "Bug reports & calculator queries:",
-          "email": "legal@dogfoodplanner.com"
+          "title": "Technical & Bug Reports",
+          "desc": "Calculator queries & reports:",
+          "email": "hello@dogfoodplanner.com"
         }
       ],
-      "formTitle": "Send Our Canine Nutrition Team a Message",
-      "formDesc": "Have questions regarding our NRC calorie formulas or need help with a custom raw recipe? We reply within 24 business hours.",
+      "formTitle": "Contact Us",
+      "formDesc": "Have questions, feedback, or found an issue? Send us a message and we will reply within 24 business hours.",
       "nameLabel": "Your Name",
       "namePlaceholder": "e.g. Sarah Jenkins",
       "emailLabel": "Your Email Address",
@@ -65,16 +65,16 @@ export const PAGE_TRANSLATIONS = {
       "subjectLabel": "Inquiry Topic",
       "subjectOptions": [
         "General Question / Feedback",
-        "Canine Nutrition & Recipe Inquiry",
+        "Feeding Guide Inquiry",
         "Calculator Formula Question",
         "Bug Report / Technical Issue"
       ],
       "messageLabel": "Your Message",
-      "messagePlaceholder": "Tell us about your dog (breed, weight, age) and how we can assist...",
+      "messagePlaceholder": "Tell us how we can assist...",
       "submitBtn": "Send Message →",
       "notice": "Veterinary Emergency Notice: If your pet is exhibiting acute symptoms of poisoning or severe distress, contact your emergency veterinarian or the ASPCA Poison Control hotline immediately.",
       "faqTitle": "Looking for fast answers?",
-      "faqDesc": "Check our comprehensive veterinary FAQ knowledge base covering picky eating, raw diets, cat food, and commercial dog food brands.",
+      "faqDesc": "Check our FAQ section covering feeding routines, raw diets, and commercial dog food brands.",
       "faqBtn": "Browse All FAQs →",
       "successTitle": "✓ Message prepared — sending to hello@dogfoodplanner.com",
       "successDesc": "Your email client should open with a pre-drafted message addressed to hello@dogfoodplanner.com. Just hit Send in your email app and it will arrive in our inbox."
@@ -154,177 +154,179 @@ export const PAGE_TRANSLATIONS = {
       ]
     },
     "bestFood": {
-      "eyebrow": "PILLAR GUIDE // CANINE NUTRITION RANKING 2026",
-      "rankingsTitle": "What Are the Top 5 Healthiest Dog Foods in 2026?",
-      "rankingsIntro": "Canine nutritional longevity research confirms that minimal heat processing and high biological moisture are the two strongest predictors of canine vitality, kidney health, and disease resistance.",
+      "eyebrow": "DOG FOOD TYPES // COMPARISON GUIDE",
+      "heroTitle": "Dog Food Types Compared",
+      "heroSubtitle": "An overview of common types of dog food, their strengths, and things to consider.",
+      "rankingsTitle": "Common Types of Dog Food",
+      "rankingsIntro": "Choosing food for your dog involves understanding the different options available, how they are prepared, and what works best for your dog's lifestyle.",
       "readMoreLabel": "Read more →",
       "readLessLabel": "Show less ↑",
       "rankings": [
         {
-          "rank": "01",
+          "rank": "1",
           "title": "Gently Cooked Human-Grade Fresh Food",
-          "score": "98/100",
-          "pros": "Real USDA meats and vegetables cooked at low temperatures (160°F). Retains 70%+ natural moisture, live enzymes, and bioavailable vitamins.",
-          "cons": "Requires freezer or refrigerator storage. Slightly higher cost than commercial kibble.",
-          "readMore": "Gently cooked fresh food sits at the top of the ranking because it mimics a home-cooked meal without sacrificing food safety. Ingredients are sourced from USDA-inspected human food facilities, then cooked just long enough at low heat (around 160°F) to kill pathogens while preserving delicate proteins, taurine, and water-soluble B-vitamins that high-heat extrusion destroys.\n\nBecause the food already carries 70%+ moisture, it takes pressure off the kidneys and lowers the chronic low-grade dehydration common in kibble-only diets. It's an especially strong fit for dogs recovering from illness, seniors with a reduced thirst drive, or breeds prone to food sensitivities, since recipes are typically single-protein and free of rendered meat meals or synthetic preservatives.\n\nThe main tradeoff is logistics: it needs fridge or freezer space, and portions must be thawed ahead of feeding time. If you're not ready to cook it yourself, several USDA-kitchen brands sell shelf-stable versions of the same gently-cooked format, which is a low-effort way to try the category before committing to a full homemade routine.",
+          "score": "",
+          "pros": "Real meats and vegetables cooked at gentle temperatures. Retains natural moisture, nutrients, and high digestibility.",
+          "cons": "Requires freezer or refrigerator storage. Typically higher cost than commercial kibble.",
+          "readMore": "Gently cooked fresh food uses quality cuts of meat, vegetables, and grains cooked at low heat to kill pathogens while preserving delicate nutrients.\n\nBecause the food carries high natural moisture (typically 70% or more), many owners find it supports daily hydration. It is commonly chosen for dogs with reduced appetites or sensitive digestion, as recipes often feature single animal proteins without rendered meat meals.\n\nKey considerations are storage and logistics: meals need refrigerator or freezer space and require thawing before feeding.",
           "productKey": "justfoodfordogs-chicken-white-rice",
-          "productNote": "A shelf-stable way to try this category:"
+          "productNote": "An example option in this category:"
         },
         {
-          "rank": "02",
-          "title": "Ancestral 80-10-10 Raw BARF Diets",
-          "score": "95/100",
-          "pros": "Biologically appropriate balance: 80% muscle meat, 10% bone, 10% organ. Promotes optimal dental health and lean muscle tone.",
-          "cons": "Requires strict safe food handling and careful calcium balancing.",
-          "readMore": "The 80-10-10 ratio (80% muscle meat, 10% raw edible bone, 10% secreting organ) is built to replicate what a wild canine ancestor would get from a whole prey animal. Done correctly, it delivers naturally balanced calcium-to-phosphorus ratios straight from the bone content, supports lean muscle mass, and the mechanical action of chewing raw bone helps scrape tartar off teeth.\n\nBecause nothing is cooked, enzymes and heat-sensitive amino acids stay fully intact. The catch is precision: sourcing safe raw bone and hitting the ratio exactly both require real discipline, since miscalculating the bone percentage is the most common mistake that leads to constipation or, over time, skeletal issues in growing puppies. Raw meat also needs to be handled with the same hygiene as any raw human food (separate cutting boards, refrigeration, prompt cleanup).\n\nMost households find it easier to start with a professionally-formulated raw product that already hits the ratio before graduating to fully custom raw meals sourced and weighed at home.",
+          "rank": "2",
+          "title": "Raw & BARF Diets",
+          "score": "",
+          "pros": "Uncooked muscle meat, edible raw bone, and organ meats. Chewing raw bone can help clean teeth.",
+          "cons": "Requires strict food safety hygiene. Careful calcium and nutrient balancing is essential.",
+          "readMore": "Raw diets (often based on an 80% muscle meat, 10% edible raw bone, and 10% organ ratio) aim to provide uncooked ingredients with natural enzymes.\n\nRaw foods can carry bacteria. Safe handling, separate preparation surfaces, and prompt handwashing are essential to manage risks for both dogs and humans. Miscalculating bone and mineral ratios can lead to nutritional imbalances. Talk to your vet before feeding raw.",
           "productKey": "stella-chewys-freeze-dried-red-meat-14oz",
-          "productNote": "A pre-balanced raw option that removes the guesswork:"
+          "productNote": "A pre-portioned raw option:"
         },
         {
-          "rank": "03",
+          "rank": "3",
           "title": "Air-Dried & Freeze-Dried Raw Dog Food",
-          "score": "91/100",
-          "pros": "Delivers raw nutritional integrity with ambient shelf stability. Excellent convenient topper for picky eaters.",
-          "cons": "Must be rehydrated with warm water or bone broth for optimal kidney function.",
-          "readMore": "Air-drying and freeze-drying both pull moisture out of raw meat at low temperatures, keeping the nutrient and enzyme profile close to raw while making the food shelf-stable at room temperature, so no freezer is required. Freeze-drying uses a cold vacuum process that tends to preserve nutrients even better than air-drying, though it usually costs more per pound.\n\nBoth formats travel well and work great as a raw topper mixed into kibble to boost palatability. Rehydrating with warm water or bone broth before serving helps restore moisture closer to a dog's ancestral wild diet, and is especially worthwhile for dogs prone to urinary crystals or kidney strain.\n\nThe main consideration is cost-per-calorie: since the water weight is removed, you're paying for concentrated nutrition, which is why it's often used as a topper or rotational diet rather than a large dog's sole daily feed.",
+          "score": "",
+          "pros": "Low-temperature processing preserves nutrients with shelf stability. Convenient as a full meal or topper.",
+          "cons": "Higher cost per calorie compared to standard kibble. Rehydrating with water is recommended.",
+          "readMore": "Air-drying and freeze-drying remove moisture at low temperatures, keeping nutrient levels high while remaining shelf-stable at room temperature without freezing.\n\nBoth formats travel easily and work well as a topper or complete meal. Many owners add warm water or broth before serving to restore moisture.\n\nThe main consideration is cost per calorie: since water weight is removed, these foods are nutrient-dense and carry a higher price point per meal.",
           "productKey": "ziwi-peak-beef-chicken-bundle",
-          "productNote": "A well-reviewed air-dried option:"
+          "productNote": "An air-dried option in this category:"
         },
         {
-          "rank": "04",
-          "title": "High-Protein Grain-Free & Ancient Grain Kibble",
-          "score": "78/100",
-          "pros": "Convenient, shelf-stable, and budget-accessible for large and multi-dog households.",
-          "cons": "Undergoes 400°F extrusion, only 8-10% moisture, contains 40-50% high-glycemic starches.",
-          "readMore": "Premium kibble remains the most practical option for many households: it's shelf-stable for up to a year, easy to portion with an automatic feeder, and significantly cheaper per calorie than fresh or raw diets.\n\nThe best formulas in this tier lead with a named animal protein rather than a vague \"meat meal\", keep starches to ancient grains like oats and sorghum instead of heavy corn or wheat fillers, and undergo third-party lab testing for heavy metals.\n\nThe tradeoff is the extrusion process itself: exposure to temperatures above 400°F destroys some heat-sensitive vitamins and reduces moisture to roughly 10%, which is why vets often recommend adding a splash of bone broth or a raw topper to kibble-only diets, especially for dogs prone to urinary crystals.",
+          "rank": "4",
+          "title": "High-Protein & Grain-Inclusive Kibble",
+          "score": "",
+          "pros": "Convenient, shelf-stable, and budget-accessible for most households.",
+          "cons": "Extruded at high temperatures and contains low moisture (roughly 8-10%).",
+          "readMore": "Dry kibble remains the most common everyday choice: it is shelf-stable, easy to store, and budget-friendly.\n\nQuality formulas in this tier lead with named animal proteins and clearly identified grains or legumes rather than generic meat meals.\n\nBecause dry kibble contains only 8-10% moisture, many owners add moisture with toppers, warm water, or low-sodium bone broth to support hydration.",
           "productKey": "orijen-original-grain-free-23lb",
-          "productNote": "A high-protein, WholePrey formula in this category:"
+          "productNote": "An example formula in this category:"
         },
         {
-          "rank": "05",
+          "rank": "5",
           "title": "Prescription Therapeutic Diets",
-          "score": "72/100",
-          "pros": "Formulated specifically for clinical renal failure, liver disease, or struvite bladder stones.",
-          "cons": "Often utilizes lower-grade carbohydrate fillers and requires veterinary prescription.",
-          "readMore": "Therapeutic diets are engineered to manage one specific diagnosed condition: reduced protein and phosphorus for kidney disease, hydrolyzed proteins the immune system can't react to for severe food allergies, or controlled magnesium and pH for struvite bladder stones.\n\nThey rank lower on a general \"healthiest\" scale only because they're deliberately restrictive rather than optimized for an average healthy dog; a formula built to spare failing kidneys, for example, is intentionally not the most protein-dense food on the market.\n\nThese diets require veterinary sign-off and periodic bloodwork to confirm they're working, and should never be fed to a healthy dog without a clinical reason, since restricting nutrients a healthy dog actually needs can cause harm over time.",
+          "score": "",
+          "pros": "Formulated specifically for dogs with diagnosed health conditions under veterinary management.",
+          "cons": "Prescription diets are formulated for specific medical conditions and should only be used on your veterinarian's advice.",
+          "readMore": "Prescription diets are designed to manage specific health conditions, such as kidney disease, urinary crystals, or food intolerances under veterinary supervision.\n\nThese diets are intentionally specialized to support specific health needs. Prescription diets are formulated for specific medical conditions and should only be used on your veterinarian's advice.",
           "productKey": "purina-pro-plan-vet-nf-kidney-25lb",
-          "productNote": "A common vet-prescribed kidney-support formula:"
+          "productNote": "A common vet-prescribed formula:"
         }
       ],
-      "buyerGuideTitle": "4 Golden Rules for Choosing the Best Dog Food",
+      "buyerGuideTitle": "Important Considerations When Choosing Dog Food",
       "buyerRules": [
         {
           "title": "1. Named Animal Protein First",
-          "desc": "Look for \"Deboned Turkey\", \"Beef\", or \"Wild Salmon\" as the primary ingredient rather than ambiguous generic \"meat meal\".",
-          "readMore": "Ingredients are listed by pre-cooking weight on commercial pet food labels. Whole named meats (such as 'Deboned Turkey' or 'Fresh Beef') supply essential amino acids like taurine, arginine, and carnitine in their most bioavailable form. Avoid generic terms like 'animal derivatives', 'poultry meal', or 'meat and bone meal', which allow manufacturers to blend low-grade rendered waste from unspecified animal species.\n\nBe mindful of 'ingredient splitting' as well: brands frequently split carbohydrates into separate entries (e.g. peas, pea flour, pea protein) so that the meat appears first on the list, even when carbohydrates make up the majority of the food.\n\nConcentrated named meals—such as 'Dehydrated Lamb Meal' or 'Wild Salmon Meal'—are acceptable when transparently named, as their moisture has already been removed before cooking, providing a dense source of animal protein."
+          "desc": "Look for specific named meats (like \"Turkey\", \"Beef\", or \"Salmon\") as the primary ingredient.",
+          "readMore": "Ingredients are listed by weight on pet food labels. Named whole meats supply high-quality amino acids. Clear labeling helps you know exactly what protein source your dog is eating.\n\nBe mindful of ingredient splitting where carbohydrates are listed as multiple separate items (e.g. peas, pea flour, pea protein).\n\nNamed meat meals—such as 'Lamb Meal' or 'Salmon Meal'—are concentrated sources of animal protein with moisture removed."
         },
         {
-          "title": "2. High Biological Moisture (>70%)",
-          "desc": "Dry kibble (8-10% moisture) causes chronic low-grade dehydration. Always add fresh toppers or rehydrate with warm bone broth.",
-          "readMore": "In the wild, canine ancestral prey animals consist of 70% to 75% water. Dogs have an evolutionary low thirst reflex because their physiology expects to absorb hydration directly through their food. Relying entirely on dry kibble (which contains only 8–10% moisture) leaves dogs in a persistent state of low-grade dehydration.\n\nOver years, concentrated urine places intense strain on the kidneys and creates an ideal environment for struvite and calcium oxalate bladder stones to form.\n\nIf you feed kibble, always incorporate moisture: rehydrate meals 1:1 with warm low-sodium bone broth, filtered water, or plain kefir, or top kibble with fresh steamed meats and organ puree to safeguard kidney function."
+          "title": "2. Moisture Content",
+          "desc": "Dry kibble contains only 8-10% moisture. Many owners add moisture with toppers or warm water.",
+          "readMore": "Fresh foods naturally contain over 70% moisture. If feeding dry food, many owners add moisture with toppers, warm water, or dog-safe broth to support daily hydration."
         },
         {
-          "title": "3. Zero Synthetic Preservatives",
-          "desc": "Strictly avoid BHA, BHT, ethoxyquin, propylene glycol, and artificial food colorings.",
-          "readMore": "To achieve 18–24 month shelf lives, budget pet foods rely on chemical antioxidants like BHA (butylated hydroxyanisole), BHT (butylated hydroxytoluene), and ethoxyquin. Scientific studies have flagged BHA and BHT as potential endocrine disruptors and carcinogens, while ethoxyquin—originally designed as a pesticide—has been tied to liver toxicity and allergies.\n\nAdditionally, artificial dyes like Red 40, Yellow 5, and Blue 2 serve purely cosmetic purposes for human pet owners while triggering dermatitis, chronic itching, and gastrointestinal inflammation in sensitive dogs.\n\nPrioritize foods preserved strictly with natural antioxidants: mixed tocopherols (Vitamin E), rosemary extract, and citric acid. These keep fats fresh safely without systemic toxicity."
+          "title": "3. Natural Preservatives",
+          "desc": "Check labels for natural antioxidants like mixed tocopherols (Vitamin E) and rosemary extract.",
+          "readMore": "Look for foods preserved with natural antioxidants like mixed tocopherols (Vitamin E), rosemary extract, or citric acid to keep fats fresh without synthetic chemicals like BHA or BHT."
         },
         {
-          "title": "4. Controlled Carbohydrates (<25%)",
-          "desc": "Dogs lack salivary amylase. High-starch diets overtax the pancreas and accelerate obesity.",
-          "readMore": "Dogs are facultative carnivores with zero biological requirement for refined carbohydrates. Unlike humans, dogs produce no salivary amylase to start breaking down starches during chewing; their pancreas must shoulder the entire enzymatic load of digesting complex carbohydrates.\n\nBecause pet food regulations do not mandate carbohydrate disclosure on guaranteed analysis panels, many commercial kibbles quietly hide 45% to 60% starch from corn, wheat, white potatoes, or tapioca simply to bind dry pellets together.\n\nExcessive glycemic loads trigger rapid insulin spikes, systemic inflammation, chronic ear infections, and accelerate canine obesity. Calculate carb content using the Nitrogen-Free Extract formula: 100% minus (Protein + Fat + Fiber + Moisture + Ash). Strive for foods under 25% total carbohydrates."
+          "title": "4. Carbohydrate & Starch Balance",
+          "desc": "Review carbohydrate sources and total starches to match your dog's activity level.",
+          "readMore": "Dogs digest proteins, fats, and carbohydrates when prepared properly. Evaluating total carbohydrate levels helps ensure the diet matches your dog's daily energy expenditure."
         }
       ],
-      "ctaTitle": "Calculate Exact Portions for Your Dog’s Ideal Food",
-      "ctaDesc": "Whether you choose fresh, raw, or premium kibble, get your dog’s exact daily grams and calorie target.",
+      "ctaTitle": "Calculate Estimated Portions for Your Dog’s Ideal Food",
+      "ctaDesc": "Whether you choose fresh, raw, or dry kibble, estimate your dog’s daily grams and calorie target.",
       "ctaBtn": "Calculate Meal Portions Now →"
     },
     "recipes": {
-      "eyebrow": "RECIPE ARCHIVE // NRC & AAFCO NUTRITION BLUEPRINTS",
+      "eyebrow": "RECIPE ARCHIVE // HOME-PREPARED MEAL BLUEPRINTS",
       "heroTitle": "Healthy Homemade Dog Food Recipes",
-      "heroSubtitle": "Step-by-step blueprints for preparing healthy, complete, and balanced gently cooked meals and ancestral 80-10-10 raw BARF diets at home.",
-      "calciumWarningTitle": "The #1 Rule of Homemade Dog Food: Calcium Balancing",
-      "calciumWarningDesc": "Muscle meat is naturally very high in phosphorus and low in calcium (1:20 ratio). Feeding plain chicken, beef, and rice without added calcium will cause severe metabolic bone disease and skeletal demineralization within months. Always add 1/2 teaspoon of pure powdered eggshell (approx. 900mg elemental calcium) per pound of boneless meat to achieve the essential 1.2:1 Calcium-to-Phosphorus ratio.",
+      "heroSubtitle": "Step-by-step guides for preparing gently cooked meals and 80-10-10 raw BARF meals at home.",
+      "calciumWarningTitle": "Important: Review Diets With Your Veterinarian & Balance Calcium",
+      "calciumWarningDesc": "Homemade diets can miss essential nutrients. Have any homemade recipe reviewed by your veterinarian or a board-certified veterinary nutritionist before feeding it long term. Muscle meat is naturally very high in phosphorus and low in calcium (1:20 ratio). Feeding plain chicken, beef, and rice without added calcium will cause serious deficiencies. Ask your vet about appropriate calcium supplementation, such as 1/2 teaspoon of clean powdered eggshell per pound of boneless meat.",
       "recipesList": [
         {
           "tag": "GENTLY COOKED",
-          "title": "Recipe 1: Gently Cooked Turkey & Prebiotic Pumpkin (Sensitive Stomach Friendly)",
-          "desc": "Ideal for dogs with sensitive digestion, loose stools, or poultry allergies to factory chicken.",
+          "title": "Recipe 1: Gently Cooked Turkey & Pumpkin",
+          "desc": "A simple gently cooked recipe for dogs needing a single poultry protein and mild fiber.",
           "ingredients": [
             "USDA Ground Turkey (93/7) — 65% (approx. 2 lbs)",
-            "Turkey or Beef Hearts (Natural Taurine) — 10% (approx. 5 oz)",
-            "Pure Canned Pumpkin Puree (Digestive Fiber) — 10% (approx. 5 oz)",
+            "Turkey or Beef Hearts — 10% (approx. 5 oz)",
+            "Pure Canned Pumpkin Puree — 10% (approx. 5 oz)",
             "Steamed Baby Spinach & Diced Zucchini — 10% (approx. 5 oz)",
-            "Wild Alaskan Salmon Oil (EPA/DHA) — 2% (1.5 tbsp)",
-            "Clean Eggshell Powder (Elemental Calcium) — 3% (1 full tsp)"
+            "Wild Alaskan Salmon Oil — 2% (1.5 tbsp)",
+            "Clean Eggshell Powder — 3% (1 full tsp)"
           ],
           "prep": "Sauté turkey and hearts on medium-low heat until lightly cooked (160°F). Steam vegetables, blend with pumpkin, and fold into cooked meats. Let cool completely before stirring in salmon oil and eggshell powder. Store in meal-sized portions."
         },
         {
           "tag": "RAW BARF",
-          "title": "Recipe 2: Ancestral 80-10-10 Raw BARF Beef & Duck",
-          "desc": "Biologically balanced raw ancestral diet for healthy adult dogs with strong digestive acids.",
+          "title": "Recipe 2: 80-10-10 Raw BARF Beef & Duck",
+          "desc": "Raw ancestral diet style for adult dogs. Raw foods can carry bacteria. Talk to your vet before feeding raw.",
           "ingredients": [
             "Lean Grass-Fed Beef Muscle Meat & Trimmings — 70%",
-            "Beef Heart (Rich in L-Carnitine & CoQ10) — 10%",
-            "Raw Edible Duck Necks or Chicken Frames — 10% (Natural Bone & Calcium)",
-            "Beef Liver (Vitamin A & B-Complex) — 5%",
-            "Beef Kidney or Spleen (Essential Secreting Organ) — 5%"
+            "Beef Heart — 10%",
+            "Raw Edible Duck Necks or Chicken Frames — 10%",
+            "Beef Liver — 5%",
+            "Beef Kidney or Spleen — 5%"
           ],
-          "prep": "Dice beef muscle and heart into bite-sized chunks. Thaw raw edible bone pieces. Weigh organs precisely using a digital gram scale. Freeze all portions for at least 3 weeks at -4°F (-20°C) prior to feeding."
+          "prep": "Dice beef muscle and heart into bite-sized chunks. Thaw raw edible bone pieces. Weigh organs precisely using a digital gram scale. Freeze all portions for at least 3 weeks at -4°F (-20°C) prior to feeding. Wash hands and sanitize all surfaces thoroughly."
         },
         {
           "tag": "SUPERFOOD TOPPER",
-          "title": "Recipe 3: 80/20 Antioxidant Superfood Kibble Topper",
-          "desc": "Cost-effective fresh food booster designed to replace 20% of your dog’s dry kibble calories.",
+          "title": "Recipe 3: 80/20 Fresh Food Kibble Topper",
+          "desc": "Fresh food booster designed to replace 20% of your dog’s dry kibble calories with whole foods.",
           "ingredients": [
             "Gently Poached Pastured Eggs — 40%",
             "Steamed Broccoli Sprouts & Wild Blueberries — 30%",
-            "Simmered Grass-Fed Beef Bone Broth — 20%",
+            "Simmered Beef Bone Broth — 20%",
             "Kelp Powder & Organic Hemp Seeds — 10%"
           ],
-          "prep": "Lightly soft-boil eggs. Steam green veggies for 3 minutes. Blend with warm bone broth and organic berries. Pour 2-4 tablespoons over your dog’s standard kibble bowl daily."
+          "prep": "Lightly soft-boil eggs. Steam green veggies for 3 minutes. Blend with warm bone broth and berries. Pour 2-4 tablespoons over your dog’s standard kibble bowl daily."
         }
       ],
-      "calciumGuideTitle": "Safe Calcium Sources for Homemade Dog Diets",
+      "calciumGuideTitle": "Calcium Sources for Homemade Dog Diets",
       "calciumGuideItems": [
         {
           "title": "Eggshell Powder",
           "ratio": "1/2 tsp per 1 lb boneless meat",
-          "desc": "95% pure calcium carbonate. Easy to grind at home from washed, baked eggshells. Safe and neutral."
+          "desc": "Clean calcium carbonate. Easy to grind at home from washed, baked eggshells. Safe and neutral."
         },
         {
           "title": "Raw Edible Meaty Bones",
           "ratio": "10% of total diet weight",
-          "desc": "Duck necks, chicken wings, or turkey necks. Never feed cooked bones, which become brittle and splinter."
+          "desc": "Duck necks, chicken wings, or turkey necks. Never feed cooked bones. Ask your veterinarian before feeding any bones, including raw ones."
         },
         {
-          "title": "Veterinary Bone Meal",
+          "title": "Bone Meal Supplement",
           "ratio": "Follow manufacturer specifications",
-          "desc": "Microcrystalline hydroxyapatite delivering calcium and phosphorus in a natural, bioavailable 2:1 ratio."
+          "desc": "Commercial canine supplement providing calcium and phosphorus in a 2:1 ratio."
         }
       ]
     },
     "toxic": {
       "eyebrow": "CRITICAL SAFETY // CANINE INGREDIENT TOXICITY",
       "dangerTitle": "The Most Dangerous Household Foods for Dogs",
-      "dangerIntro": "Certain human foods contain biochemical compounds that canine metabolisms cannot break down, causing acute organ failure or toxicity.",
+      "dangerIntro": "Certain human foods contain biochemical compounds that canine metabolisms cannot break down, causing severe toxicity or acute organ damage.",
       "dangerList": [
         {
           "name": "Chocolate & Cocoa",
           "toxin": "Theobromine & Caffeine",
-          "symptoms": "Vomiting, rapid panting, tachycardia, muscle tremors, seizures, cardiac arrest.",
-          "risk": "HIGH TO FATAL"
+          "symptoms": "Vomiting, rapid panting, tachycardia, muscle tremors, seizures, cardiac complications.",
+          "risk": "HIGH TO SEVERE"
         },
         {
           "name": "Grapes, Raisins & Currants",
           "toxin": "Tartaric Acid",
-          "symptoms": "Lethargy, dehydration, acute irreversible kidney (renal) failure within 24-72 hours.",
-          "risk": "EXTREMELY FATAL"
+          "symptoms": "Lethargy, dehydration, acute kidney failure within 24-72 hours.",
+          "risk": "CRITICAL EMERGENCY"
         },
         {
           "name": "Xylitol (Birch Sugar / E967)",
           "toxin": "Synthetic Sugar Alcohol",
-          "symptoms": "Massive insulin surge, profound hypoglycemia, ataxia, acute liver necrosis within hours.",
+          "symptoms": "Massive insulin surge, profound hypoglycemia, ataxia, acute liver damage within hours.",
           "risk": "CRITICAL EMERGENCY"
         },
         {
@@ -342,7 +344,7 @@ export const PAGE_TRANSLATIONS = {
         {
           "name": "Cooked Bones of Any Kind",
           "toxin": "Physical Splinter Hazard",
-          "symptoms": "Gastrointestinal perforation, internal bleeding, peritonitis, fatal bowel blockage.",
+          "symptoms": "Gastrointestinal perforation, internal bleeding, peritonitis, severe bowel blockage.",
           "risk": "SURGICAL EMERGENCY"
         }
       ],
@@ -350,9 +352,9 @@ export const PAGE_TRANSLATIONS = {
       "emergencySteps": [
         "1. Act Immediately: Identify the exact substance, packaging, estimated amount ingested, and the time.",
         "2. Do NOT Induce Vomiting without Veterinary Instruction: Caustic chemicals, petroleum products, and sharp objects cause secondary burns and esophageal tearing if regurgitated.",
-        "3. Call Animal Emergency Services Immediately: Contact your 24/7 veterinary clinic or ASPCA Animal Poison Control (888-426-4435)."
+        "3. Call Animal Emergency Services Immediately: Contact your 24/7 veterinary clinic or ASPCA Animal Poison Control (888-426-4435). If your dog ate something toxic, call your vet or the ASPCA Poison Control Center right away. Source: ASPCA Animal Poison Control (https://www.aspca.org/pet-care/animal-poison-control)"
       ],
-      "safeTitle": "100% Safe Canine Fruits & Vegetables",
+      "safeTitle": "Safe Canine Fruits & Vegetables",
       "safeIntro": "These dog-friendly whole foods provide natural antioxidants, soluble prebiotic fiber, and vitamins when added to your dog’s bowl:",
       "safeFoods": [
         {
@@ -361,7 +363,7 @@ export const PAGE_TRANSLATIONS = {
         },
         {
           "name": "Pure Pumpkin",
-          "benefit": "Rich soluble fiber that naturally relieves both diarrhea and constipation."
+          "benefit": "Rich soluble fiber that naturally supports regular digestion."
         },
         {
           "name": "Carrots",
@@ -369,7 +371,7 @@ export const PAGE_TRANSLATIONS = {
         },
         {
           "name": "Green Beans",
-          "benefit": "Excellent low-glycemic bulking vegetable for weight-management diets."
+          "benefit": "Excellent low-calorie bulking vegetable for weight-management diets."
         },
         {
           "name": "Apples (No Seeds)",
@@ -380,47 +382,47 @@ export const PAGE_TRANSLATIONS = {
     "brands": {
       "eyebrow": "INDEPENDENT ANALYSIS // BRAND REVIEWS & RECALL LOG",
       "heroTitle": "Dog Food Brand Reviews & Recall History",
-      "heroSubtitle": "Unbiased reviews of major pet food brands, AAFCO labeling rules, and recall tracking to protect your canine companion.",
+      "heroSubtitle": "Reviews of major pet food brands, AAFCO labeling rules, and recall tracking to help you evaluate commercial options.",
       "brandsList": [
         {
           "name": "Blue Buffalo",
-          "grade": "Grade: B+",
-          "pros": "Real deboned meat is ingredient #1; no corn, wheat, or soy; cold-formed LifeSource Bits provide vitamins.",
-          "cons": "High carbohydrate load (45-50%); historical FDA recalls for moisture/mold and elevated Vitamin D.",
-          "verdict": "Above-average commercial kibble. Consider adding 20% fresh whole food toppers to improve moisture."
+          "grade": "",
+          "pros": "Highlights: Real deboned meat is ingredient #1; recipes free from corn, wheat, or soy.",
+          "cons": "Things to consider: Check the FDA pet food recall page for current recalls (https://www.fda.gov/animal-veterinary/safety-health/recalls-withdrawals). Check product labels for specific carbohydrate content.",
+          "verdict": "Commercial kibble option. Based on publicly listed ingredients and information as of October 2026. Always check the current label."
         },
         {
           "name": "Rachael Ray Nutrish",
-          "grade": "Grade: C+ / B-",
-          "pros": "Budget-friendly and widely available; Peak and Dish lines feature improved real meat inclusion.",
-          "cons": "Standard lines rely heavily on pea protein and corn gluten fillers; past FDA DCM investigation inclusion.",
-          "verdict": "Acceptable budget option in higher-tier lines, but inspect ingredient labels carefully for legume splitting."
+          "grade": "",
+          "pros": "Highlights: Widely available; Peak and Dish lines feature real meat as the primary ingredient.",
+          "cons": "Things to consider: Standard lines include plant proteins like pea protein and corn gluten; check the FDA pet food recall page for current recalls (https://www.fda.gov/animal-veterinary/safety-health/recalls-withdrawals).",
+          "verdict": "Supermarket brand option. Based on publicly listed ingredients and information as of October 2026. Always check the current label."
         },
         {
           "name": "Pure Balance (Walmart)",
-          "grade": "Grade: B (Best Budget)",
-          "pros": "Exceptional price-to-quality ratio; meat-first recipes free from corn, wheat, soy, and artificial colors.",
-          "cons": "Manufactured by contract co-packers; moderate carbohydrate levels.",
-          "verdict": "One of the best value supermarket brands available on the commercial dry dog food market."
+          "grade": "",
+          "pros": "Highlights: Meat-first recipes free from corn, wheat, soy, and artificial colors.",
+          "cons": "Things to consider: Manufactured by contract co-packers; moderate carbohydrate levels.",
+          "verdict": "Value supermarket brand. Based on publicly listed ingredients and information as of October 2026. Always check the current label."
         },
         {
           "name": "Ollie Fresh Dog Food",
-          "grade": "Grade: A",
-          "pros": "100% human-grade USDA meats and produce; gently cooked at low temperatures; precision pre-portioned packs.",
-          "cons": "Premium monthly subscription cost ($180-$350/month); requires dedicated freezer storage.",
-          "verdict": "Gold standard for canine metabolic health, coat vitality, and digestive longevity."
+          "grade": "",
+          "pros": "Highlights: Human-grade USDA meats and produce; gently cooked; pre-portioned packs delivered fresh.",
+          "cons": "Things to consider: Higher monthly cost than dry kibble; requires freezer and refrigerator storage.",
+          "verdict": "Fresh dog food subscription option. Based on publicly listed ingredients and information as of October 2026. Always check the current label."
         },
         {
           "name": "Open Farm",
-          "grade": "Grade: A-",
-          "pros": "Exceptional sourcing transparency; 100% certified humane meats and wild ocean-wise fish; ancient grain options.",
-          "cons": "Premium price point; limited retail store availability.",
-          "verdict": "Top choice for pet parents seeking ethical sourcing, high meat inclusion, and zero poultry by-products."
+          "grade": "",
+          "pros": "Highlights: Certified humane meats and wild ocean-wise fish; ancient grain and grain-free options available.",
+          "cons": "Things to consider: Premium price point; limited retail store availability.",
+          "verdict": "Brand emphasizing humane sourcing and ingredient transparency. Based on publicly listed ingredients and information as of October 2026. Always check the current label."
         }
       ],
       "recallsTitle": "Understanding FDA Pet Food Recalls",
-      "recallsDesc": "Pet food recalls fall into three distinct FDA classes: Class I (dangerous health hazard with risk of death, e.g. Salmonella, lethal aflatoxins, excessive Vitamin D), Class II (temporary adverse health effect), and Class III (minor labeling or weight violation). Always register your lot numbers and check the FDA recall database periodically.",
-      "methodTitle": "Our 4-Point Brand Evaluation Standard",
+      "recallsDesc": "Pet food recalls fall into three distinct FDA classes: Class I (health hazard with risk of adverse consequences), Class II (temporary or reversible adverse health effect), and Class III (minor labeling or weight violation). Check the FDA pet food recall page for current recalls: https://www.fda.gov/animal-veterinary/safety-health/recalls-withdrawals.",
+      "methodTitle": "What We Look At",
       "methodPillars": [
         {
           "title": "1. Named Animal Protein",
@@ -428,7 +430,7 @@ export const PAGE_TRANSLATIONS = {
         },
         {
           "title": "2. Carbohydrate Fraction",
-          "desc": "Keeping starches under 40% to prevent metabolic obesity."
+          "desc": "Evaluation of starch sources, grain choices, and fiber content."
         },
         {
           "title": "3. Sourcing Transparency",
@@ -436,7 +438,7 @@ export const PAGE_TRANSLATIONS = {
         },
         {
           "title": "4. Clean Recall Record",
-          "desc": "Independent laboratory testing and rigorous plant safety."
+          "desc": "Independent laboratory testing and manufacturing safety standards."
         }
       ]
     },
@@ -445,7 +447,7 @@ export const PAGE_TRANSLATIONS = {
       "heroTitle": "Best Dog Food for Allergies & Sensitive Stomachs",
       "heroSubtitle": "Practical guide to food allergies, single-source novel proteins, and 8-week elimination diet protocols.",
       "allergensTitle": "The Top 5 Most Common Canine Food Allergens",
-      "allergensIntro": "Canine food allergies are immune-mediated hypersensitivity reactions to specific dietary proteins. In order of clinical frequency:",
+      "allergensIntro": "Canine food allergies are immune-mediated hypersensitivity reactions to specific dietary proteins. In order of common frequency:",
       "allergensList": [
         {
           "name": "1. Factory Chicken (60% of cases)",
@@ -525,16 +527,16 @@ export const PAGE_TRANSLATIONS = {
       "predispositionsTitle": "Key Health & Dietary Predispositions:",
       "feedingRoutineTitle": "Feeding Routine Recommendation:",
       "feedingRoutineDesc": "Feed your adult {name} twice daily (50% in the morning and 50% in the evening). Always ensure clean filtered water is available. If feeding dry kibble, rehydrate with warm bone broth or water to support kidney longevity.",
-      "ctaTitle": "Customize Your {name}’s Exact Meal Plan",
-      "ctaSubtitle": "Adjust for your dog’s exact age (puppy, adult, senior), exact weight, activity level, and body condition score with our free calculator.",
+      "ctaTitle": "Customize Your {name}’s Meal Plan",
+      "ctaSubtitle": "Adjust for your dog’s age (puppy, adult, senior), estimated weight, activity level, and body condition score with our free calculator.",
       "ctaBtn": "Launch {name} Calculator →",
       "faqTitle": "Common Feeding FAQs for {name}s",
       "faqSubtitle": "Answers to portion questions, feeding frequency, and best foods."
     },
     "comparisonTable": {
       "eyebrow": "NUTRITIONAL COMPARISON // FRESH FOOD VS. KIBBLE",
-      "title": "Why Whole Food Biologically Outperforms Kibble",
-      "subtitle": "A side-by-side nutritional breakdown of processing heat, portion accuracy, and true monthly cost — the same variables a 5-year longevity study linked to dogs living up to 32 months longer on fresh whole food.",
+      "title": "Fresh Food and Kibble Compared",
+      "subtitle": "A side-by-side comparison of processing methods, moisture levels, portion flexibility, and monthly feeding considerations.",
       "scrollHint": "↔ Scroll table horizontally",
       "colMetric": "Nutritional Metric",
       "colDfp": "✨ DogFoodPlanner",
@@ -543,13 +545,13 @@ export const PAGE_TRANSLATIONS = {
       "rows": [
         {
           "metric": "Processing Method",
-          "dfp": "Gently Cooked (~165°F) or Raw — Enzymes Intact",
+          "dfp": "Gently Cooked (~165°F) or Raw — Whole Ingredients",
           "subs": "Sous-Vide Cooked & Flash-Frozen",
           "kibble": "High-Heat Extrusion (400°F+)"
         },
         {
           "metric": "Portion Accuracy",
-          "dfp": "Exact grams via RER/MER metabolic math, personalized to weight, age & activity",
+          "dfp": "Estimated grams via RER/MER metabolic formulas, personalized to weight, age & activity",
           "subs": "Fixed weight-range feeding chart",
           "kibble": "Generic bag chart — overestimates portions by 20–30%"
         },
@@ -561,19 +563,19 @@ export const PAGE_TRANSLATIONS = {
         },
         {
           "metric": "Biological Moisture",
-          "dfp": "70% – 75% (supports renal & urinary hydration)",
+          "dfp": "70% – 75% (supports hydration)",
           "subs": "70% – 75%",
-          "kibble": "8% – 10% (chronic sub-clinical dehydration)"
+          "kibble": "8% – 10% (many owners add moisture with toppers)"
         },
         {
           "metric": "Nutrient Integrity",
-          "dfp": "Minimal oxidation — omega-3s & enzymes preserved",
+          "dfp": "Minimal heat — omega-3s & nutrients preserved",
           "subs": "Moderate — some heat-sensitive nutrients degraded",
-          "kibble": "Fat oxidation & AGE formation from extrusion heat"
+          "kibble": "Fat oxidation & heat processing from extrusion"
         },
         {
           "metric": "Ingredient Transparency",
-          "dfp": "100% disclosed grams & percentages — you control every gram",
+          "dfp": "Disclosed grams & percentages — you control what goes in the bowl",
           "subs": "Proprietary blend (exact ratios withheld)",
           "kibble": "Split ingredients & vague \"meat meal\" sourcing"
         },
@@ -588,13 +590,13 @@ export const PAGE_TRANSLATIONS = {
     "faqPage": {
       "badge": "KNOWLEDGE BASE // VERIFIED CANINE ANSWERS",
       "exploreHubsTitle": "Explore Dedicated Canine Nutrition Hubs",
-      "exploreHubsSubtitle": "Deep-dive into specialized guides created for dog parents seeking optimal health.",
-      "cardBestFood": "Comparison of fresh, raw, high-protein kibble, and specialized formulas for small and sensitive dogs.",
-      "cardCalc": "RER and MER calorie calculator delivering exact gram and cup meal portions.",
-      "cardRecipes": "Balanced gently cooked and 80-10-10 raw BARF recipes with essential calcium balancing.",
-      "cardAllergies": "Novel protein selection, elimination diets, and soothing gut microbiome protocols.",
+      "exploreHubsSubtitle": "Deep-dive into specialized guides created for dog parents seeking feeding guidance.",
+      "cardBestFood": "Comparison of fresh, raw, high-protein kibble, and specialized options for small and sensitive dogs.",
+      "cardCalc": "RER and MER calorie calculator delivering estimated gram and cup meal portions.",
+      "cardRecipes": "Gently cooked and 80-10-10 raw BARF recipes with essential calcium guidance.",
+      "cardAllergies": "Novel protein selection, elimination diets, and digestive health guides.",
       "cardToxic": "Complete index of dangerous human foods, safe fruits, vegetables, and chemical additives.",
-      "cardBrands": "Unbiased reviews for Blue Buffalo, Nutrish, Pure Balance, Ollie, and Open Farm."
+      "cardBrands": "Reviews for Blue Buffalo, Nutrish, Pure Balance, Ollie, and Open Farm."
     },
     "faqSingle": {
       "reviewedBy": "Reviewed by: DogFoodPlanner Editorial Team",

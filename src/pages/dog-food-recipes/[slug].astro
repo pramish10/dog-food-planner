@@ -116,15 +116,22 @@ const recipeJsonLd = {
         </p>
 
         <!-- Reviewer citation -->
-        <div class="p-3.5 bg-white/80 dark:bg-[#1f1307]/80 rounded-xl border border-[#f0d5a8] dark:border-[#3a2510] text-xs text-[#8f5e35] dark:text-[#a87c54] flex items-center gap-2.5">
+        <div class="p-3.5 bg-white/80 dark:bg-[#1f1307]/80 rounded-xl border border-[#f0d5a8] dark:border-[#3a2510] text-xs text-[#8f5e35] dark:text-[#a87c54] flex flex-wrap items-center gap-2.5">
           <span class="text-base">🩺</span>
           <span>{p.reviewedBy}</span>
+          <span>•</span>
+          <span>Last updated: October 14, 2026</span>
         </div>
       </div>
     </section>
 
     <!-- Main Content Container -->
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-10 space-y-10 text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
+
+      <!-- Nutrition Advisory Banner -->
+      <div class="p-4 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 rounded-xl text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed">
+        <strong>Important Advisory:</strong> Homemade diets can miss essential nutrients. Have any homemade recipe reviewed by your veterinarian or a board-certified veterinary nutritionist before feeding it long term.
+      </div>
 
       <!-- 1. Quick Specs & Vital Metrics -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
@@ -244,7 +251,7 @@ const recipeJsonLd = {
                 )}
               </div>
 
-              <!-- Card Content: 2-Column Grid for Function & Clinical Benefit -->
+              <!-- Card Content: 2-Column Grid for Function & Nutritional Benefit -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
                 <div class="p-3.5 bg-white dark:bg-[#141414] rounded-lg border border-[#ebebeb] dark:border-[#262626]">
                   <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-bold text-[#8f8f8f] dark:text-[#737373] block mb-1">
@@ -341,7 +348,7 @@ const recipeJsonLd = {
         </div>
       </section>
 
-      <!-- 4. Clinical Rationale & Veterinary Deep Dives -->
+      <!-- 4. Nutritional Rationale & Deep Dives -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-5">
         <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
           {p.clinicalTitle}
@@ -467,7 +474,7 @@ const recipeJsonLd = {
                 </div>
               </div>
 
-              <!-- Clinical Serving Advice Box -->
+              <!-- Serving Advice Box -->
               <div class="p-3 bg-white/70 dark:bg-[#141414]/70 rounded-lg border border-[#ebebeb] dark:border-[#262626] text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">
                 <span class="font-semibold text-[#171717] dark:text-[#ededed] block mb-0.5 text-[11px]">
                   💡 {p.servingNotesCol}:

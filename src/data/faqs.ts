@@ -51,7 +51,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'can-dogs-eat-cat-food',
     question: 'Can dogs eat cat food?',
     category: 'Ingredients & Safety',
-    shortAnswer: 'While a small stolen bite of cat food is rarely fatal, dogs should never be fed cat food regularly. Cat food is formulated for obligate carnivores with significantly higher protein, taurine, and fat levels that can trigger acute pancreatitis and kidney strain in dogs.',
+    shortAnswer: 'While a small stolen bite of cat food is rarely fatal, dogs should never be fed cat food regularly. Cat food is designed for obligate carnivores with significantly higher protein, taurine, and fat levels that can trigger acute pancreatitis and kidney strain in dogs.',
     fullAnswerHtml: `
       <p>Cats are <strong>obligate carnivores</strong>, whereas dogs are <strong>adaptive omnivores/carnivores</strong>. Because feline biological requirements differ substantially, cat food presents real health risks to canines if fed routinely:</p>
       <ul>
@@ -74,7 +74,7 @@ export const FAQS_DATA: FaqItem[] = [
       <p>Nutritional science confirms there is no universal "magic brand" for all dogs. The gold standard of canine health consists of:</p>
       <ol>
         <li><strong>Gently Cooked Fresh Whole Foods:</strong> Human-grade USDA meats, steamed organ meats (hearts, livers), leafy greens, pureed pumpkin, and wild fish oils cooked at low temperatures (160°F) to retain live enzymes and moisture.</li>
-        <li><strong>Ancestral Raw Diets (BARF / Prey Model):</strong> Formulated with 80% muscle meat, 10% raw edible bone for calcium/phosphorus balance, and 10% secreting organs (5% liver, 5% other organs).</li>
+        <li><strong>Ancestral Raw Diets (BARF / Prey Model):</strong> Prepared with 80% muscle meat, 10% raw edible bone for calcium/phosphorus balance, and 10% secreting organs (5% liver, 5% other organs).</li>
         <li><strong>High-Tier Kibble with Fresh Superfood Toppers:</strong> High-protein, low-glycemic dry food enriched with bone broth, pasture-raised egg yolks, and steamed vegetables.</li>
       </ol>
       <p>The best food for your dog depends on their life stage (puppy vs. senior), activity burn, and digestive tolerance. Use our <a href="/feeding-calculator" class="text-blue-600 font-semibold underline">Free Canine Feeding Calculator</a> to formulate the ideal bowl for your pet.</p>
@@ -193,7 +193,7 @@ export const FAQS_DATA: FaqItem[] = [
         <li><strong>Feed-Grade vs. Human-Grade:</strong> Most dry kibbles use <em>feed-grade</em> ingredients, which legally permits rendered animal tissues, high-ash bone meals, and lower processing hygiene thresholds than USDA human food.</li>
         <li><strong>Bacterial Contamination:</strong> Dry kibble and commercial raw diets can harbor <em>Salmonella</em> or <em>E. coli</em> that dogs\' high stomach acidity can handle, but human digestive tracts cannot.</li>
         <li><strong>Synthetic Vitamin Additives:</strong> Excessive synthetic vitamin D or menadione (synthetic Vitamin K) added to pet foods can cause toxicity in humans over repeated consumption.</li>
-        <li><strong>Exception:</strong> Certified 100% human-grade fresh dog food (prepared in USDA-inspected human kitchens) is made from human-safe meat and produce, but still formulated for canine nutritional ratios.</li>
+        <li><strong>Exception:</strong> Certified 100% human-grade fresh dog food (prepared in USDA-inspected human kitchens) is made from human-safe meat and produce, but still prepared for canine nutritional ratios.</li>
       </ul>
     `,
     tags: ['safety', 'human grade', 'sanitation', 'dog food ingredients'],
@@ -280,7 +280,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'what-is-the-best-dog-food-to-feed-your-dog',
     question: 'What is the best dog food to feed your dog daily?',
     category: 'Diet & Nutrition',
-    shortAnswer: 'The best daily food is a fresh, whole-food diet or a high-quality kibble enhanced with fresh toppers (eggs, leafy greens, pumpkin, salmon oil) formulated for your dog\'s exact life stage and caloric requirement.',
+    shortAnswer: 'The best daily food is a fresh, whole-food diet or a high-quality kibble enhanced with fresh toppers (eggs, leafy greens, pumpkin, salmon oil) prepared for your dog\'s life stage and estimated caloric requirement.',
     fullAnswerHtml: `
       <p>Feeding your dog daily comes down to bio-availability, moisture, and safety. Rather than searching for an elusive single bag, a widely recommended daily routine is <strong>The Hybrid Whole-Food Bowl</strong>:</p>
       <ul>
@@ -316,7 +316,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'what-is-the-1-best-dog-food',
     question: 'What is the #1 best dog food in the world?',
     category: 'Diet & Nutrition',
-    shortAnswer: 'By canine nutrition standards, the #1 dog food is freshly prepared, gently cooked, human-grade whole food formulated to NRC/AAFCO complete nutrient standards with real meats, organs, vegetables, and natural calcium balancing.',
+    shortAnswer: 'By canine nutrition standards, the #1 dog food is freshly prepared, gently cooked, human-grade whole food prepared to NRC/AAFCO complete nutrient standards with real meats, organs, vegetables, and natural calcium balancing.',
     fullAnswerHtml: `
       <p>When evaluated across digestibility, organ longevity, coat condition, and metabolic health, <strong>gently cooked human-grade fresh food</strong> ranks #1 over conventional dry kibble.</p>
       <p>A landmark 5-year European canine longevity study showed dogs fed natural, human-grade whole food lived an average of <strong>32 months (nearly 3 years) longer</strong> than dogs fed ultra-processed industrial kibbles. Fresh diets preserve biological hydration, maintain kidney function, and eliminate chemical preservatives and advanced glycation end-products (AGEs).</p>
@@ -553,7 +553,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'is-homemade-dog-food-healthy',
     question: 'Is homemade dog food healthy for dogs?',
     category: 'Diet & Nutrition',
-    shortAnswer: 'Homemade dog food is extraordinarily healthy—improving coat, energy, and digestion—ONLY when formulated to meet NRC/AAFCO nutritional standards. Unbalanced homemade diets (like plain chicken and rice) lead to severe mineral and calcium deficiencies.',
+    shortAnswer: 'Homemade dog food is extraordinarily healthy—improving coat, energy, and digestion—ONLY when prepared to meet NRC/AAFCO nutritional standards. Unbalanced homemade diets (like plain chicken and rice) lead to severe mineral and calcium deficiencies.',
     fullAnswerHtml: `
       <p>Veterinary studies from UC Davis found that over <strong>95% of homemade dog food recipes found on the internet are nutritionally deficient</strong> in calcium, zinc, vitamin D, or vitamin E. However, when prepared correctly with balanced supplements:</p>
       <ul>
@@ -774,7 +774,7 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'can-dogs-live-on-dry-food-only',
     question: 'Can dogs live on dry food only?',
     category: 'Diet & Nutrition',
-    shortAnswer: 'Yes, dogs can survive on complete and balanced dry food alone, but they thrive significantly better when dry kibble is rehydrated with water or bone broth and supplemented with fresh foods to prevent chronic sub-clinical dehydration.',
+    shortAnswer: 'Yes, dogs can survive on complete and balanced dry food alone, but they thrive significantly better when dry kibble is rehydrated with water or bone broth and supplemented with fresh foods to support everyday hydration.',
     fullAnswerHtml: `
       <p>While millions of dogs live full lifespans on commercial dry kibble alone, canine nutritionists highlight key physiological realities:</p>
       <ul>
@@ -847,7 +847,7 @@ export const FAQS_DATA: FaqItem[] = [
 
       <h4>Physical Health & Body Assessment:</h4>
       <ul>
-        <li><strong>BCS (Body Condition Score):</strong> A clinical 1-to-9 grading system used by veterinarians instead of simple scale weight. A score of 4 to 5 is ideal (ribs easily felt under a light blanket of skin, noticeable waist when viewed from above, clear abdominal tuck from the side). A score of 6-7 is overweight, while 8-9 indicates canine obesity.</li>
+        <li><strong>BCS (Body Condition Score):</strong> A 1-to-9 grading system used by veterinarians instead of simple scale weight. A score of 4 to 5 is ideal (ribs easily felt under a light blanket of skin, noticeable waist when viewed from above, clear abdominal tuck from the side). A score of 6-7 is overweight, while 8-9 indicates canine obesity.</li>
         <li><strong>Cranial Conformation Types:</strong> Skull and facial structure:
           <ul>
             <li><em>Brachycephalic:</em> Short, flat-faced skull (French Bulldogs, Pugs, Boxers). Prone to aerophagia (swallowing air while eating), heat stress, and dental crowding; benefit from shallow, tilted bowls and wave-shaped kibbles.</li>
@@ -879,7 +879,7 @@ export const FAQS_DATA: FaqItem[] = [
       <p>To maintain complete transparency with pet parents, here is an easy-to-understand explanation of <strong>DogFoodPlanner.com's Terms & Conditions</strong> and website policies:</p>
 
       <h4>1. Educational Guidance vs. Veterinary Prescription:</h4>
-      <p>All algorithms, calorie recommendations, macronutrient ratios, and recipes generated on DogFoodPlanner.com are formulated using peer-reviewed canine physiological standards (AAFCO and NRC). However, <strong>every dog is an individual with unique metabolic and medical characteristics</strong>.</p>
+      <p>All algorithms, calorie recommendations, macronutrient ratios, and recipes generated on DogFoodPlanner.com are prepared using established canine physiological standards (AAFCO and NRC). However, <strong>every dog is an individual with unique metabolic and medical characteristics</strong>.</p>
       <p>Our tools are educational planning guides. They do not replace hands-on veterinary medicine. If your dog suffers from chronic conditions such as chronic renal failure, acute pancreatitis, endocrine disorders (diabetes/Cushing\'s), or severe cardiac disease, always consult your veterinarian or a board-certified veterinary nutritionist (DACVIM) before transitioning diets.</p>
 
       <h4>2. Safe Edge AI Breed Scanning & Image Privacy:</h4>

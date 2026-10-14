@@ -183,8 +183,8 @@ const INGREDIENT_TRANSLATIONS: Record<Lang, LocalizedData> = {
     'Wild Alaskan Salmon': {
       name: 'Wild Alaskan Salmon',
       category: 'Protein',
-      benefitsOrRisks: 'Highest source of bioavailable EPA and DHA Omega-3 fatty acids, known to reduce inflammation, soothe itchy skin, and protect joints.',
-      servingAdvice: 'Always cook thoroughly (or deep-freeze if raw) to eliminate potential salmon poisoning fluke.',
+      benefitsOrRisks: 'Rich dietary source of EPA and DHA Omega-3 fatty acids, which help support skin, coat, and joint health.',
+      servingAdvice: 'Cook thoroughly before serving. Raw foods can carry bacteria. Talk to your vet first.',
       nutrients: ['EPA/DHA Omega-3', 'Vitamin B12', 'Selenium', 'High Biological Value Protein']
     },
     'Wild Blueberries': {
@@ -197,14 +197,14 @@ const INGREDIENT_TRANSLATIONS: Record<Lang, LocalizedData> = {
     'Raw Unbleached Green Tripe': {
       name: 'Raw Unbleached Green Tripe',
       category: 'Protein',
-      benefitsOrRisks: 'The holy grail of canine microbiome nutrition. Packed with natural digestive enzymes, lactobacillus probiotics, and ideal 1:1 Calcium-to-Phosphorus ratio.',
-      servingAdvice: 'Serve raw and unbleached. Never cook as heat destroys beneficial living enzymes.',
+      benefitsOrRisks: 'Untreated stomach lining that contains natural digestive enzymes, probiotics, and a balanced 1:1 Calcium-to-Phosphorus ratio.',
+      servingAdvice: 'Serve raw and unbleached. Raw foods can carry bacteria. Talk to your vet first.',
       nutrients: ['Lactobacillus Probiotics', 'Digestive Enzymes', '1:1 Ca:P Ratio']
     },
     'Collagen Bone Broth': {
       name: 'Collagen Bone Broth',
       category: 'Herbs & Supplements',
-      benefitsOrRisks: 'Rich in gelatin, glucosamine, chondroitin, and hyaluronic acid that seal leaky gut lining and lubricate stiff joints.',
+      benefitsOrRisks: 'Rich in gelatin, glucosamine, chondroitin, and amino acids that support joint health and provide meal hydration.',
       servingAdvice: 'Simmered without onions, garlic, or salt. Serve warm over meals.',
       nutrients: ['Type II Collagen', 'Glucosamine', 'Glycine', 'Proline']
     },
@@ -218,15 +218,15 @@ const INGREDIENT_TRANSLATIONS: Record<Lang, LocalizedData> = {
     'Raw Goat Milk / Kefir': {
       name: 'Raw Goat Milk / Kefir',
       category: 'Dairy & Ferments',
-      benefitsOrRisks: 'Smaller fat globules and A2 beta-casein make it hypoallergenic and easily tolerated compared to cow milk. Delivers billions of active CFUs.',
-      servingAdvice: '1 tbsp per 20 lbs per day. Keep refrigerated.',
-      nutrients: ['Live CFUs Probiotics', 'Caprylic Acid', 'Calcium', 'Vitamins A & D']
+      benefitsOrRisks: 'Smaller fat globules and A2 beta-casein make it easier to tolerate than cow milk, while providing probiotics.',
+      servingAdvice: '1 tbsp per 20 lbs per day. Keep refrigerated. Raw foods can carry bacteria. Talk to your vet first.',
+      nutrients: ['Live Probiotics', 'Caprylic Acid', 'Calcium', 'Vitamins A & D']
     },
     'Cooked Bones (Any Poultry or Meat)': {
       name: 'Cooked Bones (Any Poultry or Meat)',
       category: 'HARMFUL',
       benefitsOrRisks: 'Cooking changes the cellular structure of bone from soft/pliable to brittle and splintery, posing extreme risk of stomach perforation or intestinal obstruction.',
-      servingAdvice: 'NEVER feed cooked bones. Only feed raw, soft non-weight bearing bones under direct supervision.',
+      servingAdvice: 'Never feed cooked bones. Ask your veterinarian before feeding any bones, including raw ones.',
       nutrients: ['DANGER: Splinter hazard', 'Emergency veterinary surgery risk']
     },
     'High-Fat Trimmings & Bacon Grease': {

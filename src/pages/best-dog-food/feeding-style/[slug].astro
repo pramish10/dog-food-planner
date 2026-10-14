@@ -28,7 +28,7 @@ const prevItem = idx > 0 ? FEEDING_STYLES[idx - 1] : null;
 const nextItem =
     idx < FEEDING_STYLES.length - 1 ? FEEDING_STYLES[idx + 1] : null;
 
-const pageTitle = `${item.title}: What It Is & Is It Right for Your Dog? | Best Dog Food 2026`;
+const pageTitle = `${item.title}: What It Is & Considerations for Your Dog | Dog Food Types Compared`;
 const pageDescription = item.summary.slice(0, 155);
 
 const articleJsonLd = {
@@ -38,7 +38,7 @@ const articleJsonLd = {
     description: pageDescription,
     author: {
         "@type": "Organization",
-        name: "Dog Food Planner Nutrition Team",
+        name: "Dog Food Planner Editorial Team",
         url: "https://dogfoodplanner.com",
     },
     publisher: {
@@ -64,7 +64,7 @@ const articleJsonLd = {
         <Breadcrumbs
             items={[
                 { name: "Home", url: "/" },
-                { name: "Best Dog Food", url: "/best-dog-food" },
+                { name: "Dog Food Types Compared", url: "/best-dog-food" },
                 { name: item.title },
             ]}
         />
@@ -95,8 +95,16 @@ const articleJsonLd = {
                             >DogFoodPlanner Editorial Team</strong
                         ></span
                     >
+                    <span>•</span>
+                    <span>Last updated: October 14, 2026</span>
                 </div>
             </header>
+
+            {item.slug === 'raw-dog-food-barf' && (
+                <div class="p-4 mb-6 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 rounded-xl text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed">
+                    <strong>Raw Feeding Safety:</strong> Raw foods carry bacteria risks that require strict food-safety handling and hygiene. Talk to your veterinarian before feeding a raw diet.
+                </div>
+            )}
 
             <p
                 class="text-sm text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed mb-8"
@@ -231,7 +239,7 @@ const articleJsonLd = {
                     href="/best-dog-food"
                     class="inline-flex items-center gap-1.5 text-xs font-mono text-[#4d4d4d] dark:text-[#a1a1a1] hover:text-[#171717] dark:hover:text-white transition-colors underline"
                 >
-                    ← Back to Fresh vs. Raw vs. Kibble
+                    ← Back to Dog Food Types Compared
                 </a>
             </div>
         </div>

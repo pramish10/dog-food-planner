@@ -117,10 +117,10 @@ export const SENSITIVE_STOMACH_PAGE_I18N: Record<Lang, SensitiveStomachPageI18n>
     vetTipTitle: 'Digestive Health Advice',
     prevPillar: 'Previous Principle',
     nextPillar: 'Next Principle',
-    backLink: 'Back to Best Dog Food Guide',
+    backLink: 'Back to Dog Food Types Compared',
     titleSuffix: 'Sensitive Stomach Nutrition Guide | Dog Food Planner',
-    ctaTitle: 'Calculate Your Dog’s Exact Daily Meal Portions',
-    ctaDesc: 'Gentle, easily digestible diets require precise portions to prevent gastric overload and diarrhea.',
+    ctaTitle: 'Calculate Your Dog’s Estimated Daily Meal Portions',
+    ctaDesc: 'Gentle, easily digestible diets benefit from estimated portions to prevent overfeeding and digestive upset.',
     ctaBtn: 'Calculate Meal Portions Now →',
   },
   es: {
@@ -252,7 +252,7 @@ const SENSITIVE_STOMACH_DATA: Record<Lang, SensitiveStomachPillar[]> = {
       title: 'Single Novel Protein',
       desc: 'Avoid common allergens (chicken, dairy) — use lean turkey, wild salmon, pasture lamb, venison, or duck instead.',
       readMore:
-        "Over 70% of canine food allergies and chronic gastrointestinal inflammatory flare-ups originate from repeated, long-term exposure to common commercial proteins—predominantly low-grade factory-farmed chicken, beef, dairy, and wheat gluten. When the intestinal mucosal lining becomes irritated or hyper-permeable ('leaky gut'), the immune system identifies these frequent protein antigens as foreign invaders, triggering chronic pruritus, paw-licking, loose stool, and painful gas.\n\nA true single novel protein diet introduces an animal protein source your specific dog has never consumed before, such as wild venison, duck, pasture-raised lamb, rabbit, or wild Alaskan salmon. Because the immune system has never developed antibodies against this novel molecular structure, gut inflammation begins subsiding almost immediately.\n\nSingle-source transparency is vital: budget pet foods often print 'Lamb & Rice' on the front bag, yet quietly include chicken fat, poultry byproduct meal, or hydrolyzed eggs in the fine print. Even minute trace contaminants can sabotage an elimination diet and prolong intestinal inflammation.",
+        "Canine food sensitivities and gastrointestinal flare-ups often correlate with repeated, long-term exposure to common commercial proteins—such as chicken, beef, dairy, or wheat gluten. When the intestinal mucosal lining becomes irritated, the immune system can react to these frequent protein antigens, leading to itching, paw-licking, loose stool, and gas.\n\nA single novel protein diet introduces an animal protein source your specific dog has not previously consumed, such as venison, duck, lamb, rabbit, or salmon. Because the immune system has not previously reacted to this protein, digestive comfort often improves steadily.\n\nSingle-source transparency is vital: commercial pet foods often print 'Lamb & Rice' on the front, yet include chicken fat, poultry byproduct meal, or egg in the ingredient list. Even small amounts can interfere with an elimination trial.",
       whatToLookFor: [
         '100% single animal protein source (e.g., Only Venison, Only Duck, or Only Pasture Lamb)',
         'Explicit disclosure of all fat sources (e.g., pure lamb fat or salmon oil, zero mixed poultry fat)',
@@ -269,7 +269,7 @@ const SENSITIVE_STOMACH_DATA: Record<Lang, SensitiveStomachPillar[]> = {
         'Choose a complete and balanced formula meeting AAFCO/FEDIAF standards to prevent nutritional deficiencies.',
       ],
       vetTip:
-        'In clinical canine dermatology and gastroenterology, switching to a strictly formulated single novel protein resolves up to 80% of dietary hypersensitivities within 8 weeks. Absolute compliance without accidental treat contamination is the secret to success.',
+        'In veterinary dermatology and gastroenterology, switching to a single novel protein often helps identify dietary sensitivities within 8 to 12 weeks. Consistency without accidental table food or unvetted treats is important for reliable results.',
     },
     {
       slug: 'soluble-prebiotic-fiber',
@@ -319,7 +319,7 @@ const SENSITIVE_STOMACH_DATA: Record<Lang, SensitiveStomachPillar[]> = {
         'Introduce fish oil gradually over 7 to 10 days to allow the pancreas to adjust smoothly.',
       ],
       vetTip:
-        'In clinical veterinary trials, marine EPA and DHA have demonstrated significant reductions in intestinal mucosal permeability and gastrointestinal histopathology scores. High-quality fish oil is a true biological anti-inflammatory medicine for the canine gut.',
+        'Marine EPA and DHA support healthy intestinal barrier function and help balance inflammatory responses. High-quality fish oil can be a helpful addition to a sensitive stomach diet under your veterinarian’s guidance.',
     },
   ],
   es: [

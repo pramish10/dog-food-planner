@@ -103,6 +103,9 @@ const articleJsonLd = {
                 <h2 class="text-sm sm:text-base font-bold text-red-950 dark:text-red-100 mb-1">
                   {p.emergencyHotlineTitle}
                 </h2>
+                <p class="text-xs sm:text-sm text-red-900 dark:text-red-100 font-semibold leading-relaxed mb-2">
+                  If your dog ate something toxic, call your vet or the ASPCA Poison Control Center right away.
+                </p>
                 <p class="text-xs sm:text-sm text-red-800 dark:text-red-200 leading-relaxed mb-2.5">
                   {p.emergencyHotlineDesc}
                 </p>
@@ -114,6 +117,9 @@ const articleJsonLd = {
                     <span>📞 {p.callPetPoison}: (855) 764-7661</span>
                   </a>
                 </div>
+                <p class="text-xs text-red-800 dark:text-red-300 mt-3 pt-2 border-t border-red-200 dark:border-red-900/60">
+                  Source: <a href={item.slug === 'grapes-and-raisins' || item.slug === 'onions-and-garlic' ? "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants" : "https://www.aspca.org/pet-care/animal-poison-control"} target="_blank" rel="noopener noreferrer" class="underline font-semibold hover:text-red-950 dark:hover:text-white">ASPCA Animal Poison Control</a>
+                </p>
               </div>
             </div>
           </div>
@@ -152,6 +158,8 @@ const articleJsonLd = {
 
           <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#6b4226] dark:text-[#c4956a] font-mono">
             <span>🩺 {p.reviewedBy}</span>
+            <span>•</span>
+            <span>Last updated: October 14, 2026</span>
           </div>
         </header>
       </div>
@@ -229,7 +237,7 @@ const articleJsonLd = {
         </div>
       </section>
 
-      <!-- Detailed Clinical Narrative -->
+      <!-- Detailed Nutritional Narrative -->
       <section class="hairline-card p-6 sm:p-8 bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] mb-8 space-y-4 shadow-xs">
         <h2 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] border-b border-[#f0d5a8]/60 dark:border-[#3a2510] pb-3">
           🔬 {p.clinicalAnalysisTitle}
@@ -254,7 +262,7 @@ const articleJsonLd = {
         </div>
       </section>
 
-      <!-- Clinical Timeline & Symptom Progression -->
+      <!-- Timeline & Symptom Progression -->
       <section class="mb-8">
         <div class="flex items-center gap-2 mb-4">
           <span class="text-lg">⏱️</span>
@@ -360,7 +368,7 @@ const articleJsonLd = {
         </div>
       </section>
 
-      <!-- Clinical Product Recommendation -->
+      <!-- Product Recommendation -->
       {!isToxic && item.category !== 'FATAL_TOXIC' && item.recommendedProduct && (
         <section class="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-amber-50/90 via-white/90 to-amber-50/70 dark:from-[#24170a] dark:via-[#1c1208] dark:to-[#170e05] border border-[#f0d5a8] dark:border-amber-900/60 shadow-sm mb-8 backdrop-blur-sm">
           <div class="flex items-center gap-2 mb-4">

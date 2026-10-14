@@ -327,7 +327,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     tableOfContents: [
       { id: 'why-abrupt-diet-changes-cause-upset', title: '1. Why Abrupt Diet Changes Cause Stomach Upset' },
-      { id: 'the-proven-10-day-transition-schedule', title: '2. The 10-Day Transition Schedule' },
+      { id: 'the-10-day-transition-schedule', title: '2. The 10-Day Transition Schedule' },
       { id: 'digestive-buffers-pumpkin-and-probiotics', title: '3. Digestive Buffers: Pumpkin, Bone Broth & Probiotics' },
       { id: 'how-to-read-your-dogs-stool', title: '4. How to Read Your Dog\'s Stool Quality' },
       { id: 'handling-picky-eaters-during-transition', title: '5. Handling Picky Eaters & Texture Refusal' },
@@ -339,7 +339,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="why-abrupt-diet-changes-cause-upset">1. Why Abrupt Diet Changes Cause Stomach Upset</h2>
       <p>Your dog's gastrointestinal tract is colonized by billions of symbiotic microbes that specialize in fermenting and breaking down whatever food they have been eating consistently for months. When switching from dry kibble (which digests slowly and contains heavy starch) to fresh whole food (which digests quickly and has high moisture and bioavailable fat), the bacterial colonies require 7 to 10 days to shift enzyme secretion.</p>
 
-      <h2 id="the-proven-10-day-transition-schedule">2. The 10-Day Transition Schedule</h2>
+      <h2 id="the-10-day-transition-schedule">2. The 10-Day Transition Schedule</h2>
       <p>Follow this step-by-step ratio schedule for a smooth transition:</p>
 
       <div class="overflow-x-auto my-6">
@@ -427,7 +427,7 @@ export const BLOG_POSTS: BlogPost[] = [
       name: 'Dr. Aris Thorne, DVM',
       role: 'Board-Certified Veterinary Nutritionist',
       avatar: '🫐',
-      credentials: 'DACVIM (Nutrition), Clinical Canine Dietetics Specialist'
+      credentials: 'DACVIM (Nutrition), Canine Dietetics Specialist'
     },
     reviewedBy: {
       name: 'Dr. Maya Lin, DVM',
@@ -564,7 +564,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
 
       <h2 id="small-breed-vs-large-breed-differences">4. Small Breed vs. Large Breed Nutritional Needs</h2>
-      <p>A Chihuahua pup reaches adult size around 9 months, whereas an Irish Wolfhound continues skeletal maturation until 24 months. Large breed puppy diets are formulated with lower overall fat and restricted calcium (typically 1.2% maximum dry matter) to promote steady, controlled growth rather than rapid weight spikes.</p>
+      <p>A Chihuahua pup reaches adult size around 9 months, whereas an Irish Wolfhound continues skeletal maturation until 24 months. Large breed puppy diets are designed with lower overall fat and restricted calcium (typically 1.2% maximum dry matter) to promote steady, controlled growth rather than rapid weight spikes.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. Weekly Weigh-Ins & Portion Adjustment Protocol</h2>
       <p>Weigh your puppy on the same scale once every 7 days. Plug the new weight into our <a href="/feeding-calculator" class="text-[#c47a2b] font-semibold underline">Dog Feeding Calculator</a> to update daily grams. Remember: a slightly lean puppy with palpable ribs will live a longer, healthier life with pristine joints.</p>

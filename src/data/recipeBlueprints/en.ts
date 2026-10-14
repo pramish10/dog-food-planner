@@ -5,7 +5,7 @@ export const enBlueprints: RecipeBlueprint[] = [
   {
     slug: 'turkey-pumpkin-maintenance',
     name: 'Gently Cooked Lean Turkey & Pumpkin Adult Maintenance Blueprint',
-    shortDesc: 'A balanced 65/10/10/8/4/3 whole-food recipe engineered for adult maintenance with 93/7 lean turkey, heart-protective organ taurine, digestive pumpkin fiber, and balanced eggshell calcium.',
+    shortDesc: 'A 65/10/10/8/4/3 whole-food recipe designed for adult maintenance with 93/7 lean turkey, organ taurine, digestive pumpkin fiber, and eggshell calcium.',
     badge: 'Flagship Adult Maintenance',
     targetAudience: 'Adult Canines (1-7 Years) // Maintenance & Sensitive Digestion',
     colorTheme: '#0070f3',
@@ -74,7 +74,7 @@ export const enBlueprints: RecipeBlueprint[] = [
       },
     ],
     executiveSummary:
-      'A balanced, whole-food flagship formula designed to deliver complete adult canine maintenance while resting the digestive tract. Built on ultra-lean USDA ground turkey, cardioprotective organ taurine, microbiome-stimulating pumpkin pectin, and scientifically balanced eggshell calcium.',
+      'A whole-food flagship recipe designed to support adult canine maintenance while resting the digestive tract. Built on ultra-lean USDA ground turkey, organ taurine, pumpkin pectin, and eggshell calcium.',
     clinicalRationale: [
       {
         title: '1. Why 93/7 Lean Turkey Over Chicken or Beef?',
@@ -360,8 +360,8 @@ export const enBlueprints: RecipeBlueprint[] = [
   // 3. SALMON & QUINOA BLUEPRINT
   {
     slug: 'salmon-quinoa-joint-coat',
-    name: 'Wild Alaskan Salmon & Quinoa Anti-Inflammatory Joint & Coat Blueprint',
-    shortDesc: 'An omega-dense 60/8/12/10/6/4 marine formula engineered with wild salmon, organ taurine, complete-protein quinoa, antioxidant blueberries, and cold-pressed hemp oil for soothing inflamed joints and itchy skin.',
+    name: 'Wild Alaskan Salmon & Quinoa Joint & Coat Blueprint',
+    shortDesc: 'An omega-dense 60/8/12/10/6/4 marine recipe designed with wild salmon, organ taurine, quinoa, antioxidant blueberries, and cold-pressed hemp oil for soothing joints and dry skin.',
     badge: 'Joint Mobility & Pruritic Skin',
     targetAudience: 'Adult & Senior Canines (2+ Years) // Stiff Joints, Itchy Skin & Coat Restoration',
     colorTheme: '#06b6d4',
@@ -393,8 +393,8 @@ export const enBlueprints: RecipeBlueprint[] = [
       {
         name: 'Cooked Organic Quinoa',
         percentage: 12,
-        category: 'Hypoallergenic Pseudo-Cereal Seed',
-        role: 'Complete plant amino acid profile (contains all 9 essential amino acids) with zero gluten, lectins, or prolamin antigens',
+        category: 'Nutrient-Dense Pseudo-Cereal Seed',
+        role: 'Broad plant amino acid profile (contains all 9 essential amino acids) with zero gluten, lectins, or prolamin antigens',
         clinicalBenefit: 'Gentle on inflamed intestines while delivering bioavailable magnesium, iron, and prebiotic fiber.',
         color: '#f5a623',
         affiliateKey: 'quinoa',
@@ -426,7 +426,7 @@ export const enBlueprints: RecipeBlueprint[] = [
       },
     ],
     executiveSummary:
-      'An anti-inflammatory whole-food formulation designed for dogs with joint stiffness, mobility decline, chronic skin allergies, or dull coats. High doses of marine EPA/DHA from wild salmon work in synergy with green-lipped mussel glycosaminoglycans and cold-pressed hemp oil to lubricate joints and soothe dermal pruritus.',
+      'A whole-food recipe designed for dogs with joint stiffness, mobility decline, skin sensitivities, or dull coats. High doses of marine EPA/DHA from wild salmon work in synergy with green-lipped mussel glycosaminoglycans and cold-pressed hemp oil to support joints and soothe skin.',
     clinicalRationale: [
       {
         title: '1. The Marine EPA & DHA Cascade for Joints & Skin',
@@ -518,9 +518,9 @@ export const enBlueprints: RecipeBlueprint[] = [
   // 4. LAMB & CRANBERRY BLUEPRINT
   {
     slug: 'lamb-cranberry-gentle-gut',
-    name: 'Gently Stewed Pasture Lamb & Cranberry Hypoallergenic Gut Blueprint',
-    shortDesc: 'A novel red meat 64/8/12/8/5/3 formula engineered with pasture lamb, liver & kidney, soothing butternut squash, and pure cranberries for dogs suffering from severe poultry/beef allergies and gut sensitivities.',
-    badge: 'Hypoallergenic Gut & Urinary',
+    name: 'Gently Stewed Pasture Lamb & Cranberry Sensitive Gut Blueprint',
+    shortDesc: 'A novel red meat 64/8/12/8/5/3 recipe designed with pasture lamb, liver & kidney, soothing butternut squash, and pure cranberries for dogs with poultry/beef sensitivities.',
+    badge: 'Sensitive Gut & Urinary',
     targetAudience: 'Adult Dogs with Severe Food Allergies (Beef/Chicken) & Chronic Digestive Flare-Ups',
     colorTheme: '#10b981',
     macroProfile: {
@@ -586,7 +586,7 @@ export const enBlueprints: RecipeBlueprint[] = [
       },
     ],
     executiveSummary:
-      'A targeted hypoallergenic whole-food formula engineered for dogs plagued by chronic soft stools, food intolerances to chicken or beef, gas, or recurrent urinary tract irritation. Pasture-raised lamb provides a clean novel red protein source, while butternut squash and pure cranberries deliver soothing pectin and urinary protective proanthocyanidins.',
+      'A targeted whole-food recipe designed for dogs with soft stools, sensitivities to chicken or beef, gas, or urinary tract irritation. Pasture-raised lamb provides a clean novel red protein source, while butternut squash and pure cranberries deliver soothing pectin and urinary protective proanthocyanidins.',
     clinicalRationale: [
       {
         title: '1. Why Pasture Lamb for Chronic Food Sensitivities?',

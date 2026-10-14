@@ -164,7 +164,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
   en: {
     badge: 'FREE DOG FEEDING CALCULATOR',
     title: 'Tailor the perfect bowl in under 60 seconds.',
-    subtitle: "Our easy calculator estimates your dog's exact daily calorie needs and matches fresh, wholesome ingredients to their lifestyle.",
+    subtitle: "Our easy calculator estimates your dog's daily calorie needs and matches fresh, wholesome ingredients to their lifestyle.",
     disclaimerTitle: 'General Purpose & Educational Guidance:',
     disclaimerText: "This tool is provided for general educational purposes only. It is not a diagnostic tool and is not a substitute for professional veterinary advice, diagnosis, or treatment. Always consult your licensed veterinarian before making major changes to your dog's diet, especially for dogs with specific medical conditions.",
     nrcStandard: 'NRC Standard Math',
@@ -303,7 +303,7 @@ export const plannerTranslations: Record<Lang, PlannerTranslations> = {
     transitionP2: 'Days 3–4: 50% New Food / 50% Old Food',
     transitionP3: 'Days 5–6: 75% New Food / 25% Old Food',
     transitionP4: 'Day 7+: 100% Tailored Whole-Food Nutrition',
-    noRecipeMatch: 'No recipe in this feeding style safely matches every selected sensitivity. Please choose another feeding style or ask your veterinarian for a formulated diet.',
+    noRecipeMatch: 'No recipe in this feeding style safely matches every selected sensitivity. Please choose another feeding style or ask your veterinarian for a tailored diet.',
     keyNutrientsTitle: 'Key Nutrients',
     startOverBtn: 'Start Over',
     downloadPdfBtn: 'Download PDF',

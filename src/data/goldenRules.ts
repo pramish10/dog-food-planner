@@ -51,10 +51,10 @@ export const GOLDEN_RULES_PAGE_I18N: Record<Lang, GoldenRulesPageI18n> = {
     vetTipTitle: 'Nutritional Recommendation',
     prevRule: 'Previous Rule',
     nextRule: 'Next Rule',
-    backLink: 'Back to Best Dog Food Guide',
+    backLink: 'Back to Dog Food Types Compared',
     titleSuffix: 'Golden Rule for Choosing Dog Food | Dog Food Planner',
-    ctaTitle: 'Calculate Your Dog’s Exact Daily Food Grams',
-    ctaDesc: 'Whether feeding fresh food, raw, or premium kibble, get precise daily portion weights tailored to your dog.',
+    ctaTitle: 'Calculate Your Dog’s Estimated Daily Food Grams',
+    ctaDesc: 'Whether feeding fresh food, raw, or premium kibble, get estimated daily portion weights tailored to your dog.',
     ctaBtn: 'Calculate Meal Portions Now →',
   },
   es: {
@@ -209,26 +209,26 @@ const GOLDEN_RULES_DATA: Record<Lang, GoldenRule[]> = {
       slug: 'high-biological-moisture',
       ruleNumber: 2,
       title: '2. High Biological Moisture (>70%)',
-      desc: 'Dry kibble (8-10% moisture) causes chronic low-grade dehydration. Always add fresh toppers or rehydrate with warm bone broth.',
+      desc: 'Dry kibble contains only 8-10% moisture. Many owners add moisture with toppers or warm bone broth.',
       readMore:
-        'In the wild, canine ancestral prey animals consist of 70% to 75% water. Dogs have an evolutionary low thirst reflex because their physiology expects to absorb hydration directly through their food. Relying entirely on dry kibble (which contains only 8–10% moisture) leaves dogs in a persistent state of low-grade dehydration.\n\nOver years, concentrated urine places intense strain on the kidneys and creates an ideal environment for struvite and calcium oxalate bladder stones to form.\n\nIf you feed kibble, always incorporate moisture: rehydrate meals 1:1 with warm low-sodium bone broth, filtered water, or plain kefir, or top kibble with fresh steamed meats and organ puree to safeguard kidney function.',
+        'In the wild, canine ancestral prey animals consist of 70% to 75% water. Dogs often have a modest thirst reflex because their physiology evolved to absorb hydration directly through their food. Dry kibble contains only 8–10% moisture.\n\nProviding adequate daily hydration supports healthy kidney and urinary tract function.\n\nMany owners add moisture with toppers: rehydrating meals with warm low-sodium bone broth, filtered water, or adding fresh food toppers to support daily hydration.',
       whatToLookFor: [
         'Diets with natural moisture content above 70% (gently cooked fresh, raw BARF, or high-moisture canned)',
         'Warm bone broth made without onions, garlic, or added sodium for hydration',
         'Fresh hydrating vegetable and fruit toppers like zucchini, pumpkin, or blueberries',
       ],
       redFlags: [
-        'Feeding bone-dry extruded kibble for years with zero supplemental moisture',
+        'Feeding dry extruded kibble with zero supplemental moisture or water availability',
         'High-sodium store-bought gravies or processed meat sauces with artificial thickeners',
-        'Concentrated, dark yellow or cloudy urine indicating chronic subclinical dehydration',
+        'Concentrated, dark yellow or cloudy urine indicating insufficient hydration',
       ],
       checklist: [
-        'If feeding dry food, add equal parts warm broth or warm water and let sit 10 minutes before serving.',
-        'Rotate in fresh human-grade foods with 75%+ natural moisture at least once daily.',
-        'Monitor urine color and volume: light straw-yellow indicates ideal renal hydration.',
+        'If feeding dry food, consider adding warm broth or warm water before serving.',
+        'Rotate in fresh foods or wet toppers with high natural moisture.',
+        'Ensure fresh, clean water is accessible throughout the day.',
       ],
       vetTip:
-        'Kidney disease is among the leading causes of mortality in senior domestic dogs. Introducing daily bioavailable moisture through broths and fresh food relieves osmotic stress on the renal nephrons and significantly cuts crystal formation risk.',
+        'Maintaining adequate hydration supports renal and urinary health. Introducing daily moisture through broths and fresh toppers helps support healthy kidney function.',
     },
     {
       slug: 'zero-synthetic-preservatives',
@@ -259,9 +259,9 @@ const GOLDEN_RULES_DATA: Record<Lang, GoldenRule[]> = {
       slug: 'controlled-carbohydrates',
       ruleNumber: 4,
       title: '4. Controlled Carbohydrates (<25%)',
-      desc: 'Dogs lack salivary amylase. High-starch diets overtax the pancreas and accelerate obesity.',
+      desc: 'Many commercial kibbles are high in starch. Choose diets with wholesome protein and moderate carbohydrates.',
       readMore:
-        'Dogs are facultative carnivores with zero biological requirement for refined carbohydrates. Unlike humans, dogs produce no salivary amylase to start breaking down starches during chewing; their pancreas must shoulder the entire enzymatic load of digesting complex carbohydrates.\n\nBecause pet food regulations do not mandate carbohydrate disclosure on guaranteed analysis panels, many commercial kibbles quietly hide 45% to 60% starch from corn, wheat, white potatoes, or tapioca simply to bind dry pellets together.\n\nExcessive glycemic loads trigger rapid insulin spikes, systemic inflammation, chronic ear infections, and accelerate canine obesity. Calculate carb content using the Nitrogen-Free Extract formula: 100% minus (Protein + Fat + Fiber + Moisture + Ash). Strive for foods under 25% total carbohydrates.',
+        'Dogs are facultative carnivores that thrive on protein- and nutrient-rich whole foods. Dogs produce less salivary amylase than omnivores, meaning starch digestion primarily occurs in the small intestine via pancreatic enzymes.\n\nBecause pet food regulations do not mandate carbohydrate disclosure on guaranteed analysis panels, many commercial kibbles contain significant starch from corn, wheat, white potatoes, or tapioca to bind dry pellets together.\n\nMonitoring carbohydrate content helps maintain healthy weight and steady energy. Calculate carb content using the Nitrogen-Free Extract formula: 100% minus (Protein + Fat + Fiber + Moisture + Ash). Strive for foods with moderate, controlled carbohydrate levels.',
       whatToLookFor: [
         'Low glycemic carbohydrate percentage (under 25% on a dry matter basis)',
         'Wholesome ancestral complex carb sources: steel-cut oats, quinoa, sweet potatoes, or pumpkin',
@@ -278,7 +278,7 @@ const GOLDEN_RULES_DATA: Record<Lang, GoldenRule[]> = {
         'Avoid formulas listing multiple grain or starch derivatives among the first 4 ingredients.',
       ],
       vetTip:
-        'Canine insulin spikes from high-glycemic diets feed systemic yeast, cause chronic otitis externa (ear infections), and accelerate canine pancreatitis. Keeping carbs below 25% mimics ancestral evolutionary biology.',
+        'Balanced macronutrients with quality animal proteins and controlled carbohydrates help maintain lean body condition and digestive comfort.',
     },
   ],
   es: [

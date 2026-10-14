@@ -120,7 +120,7 @@ export const FEEDING_STYLES_PAGE_I18N: Record<Lang, FeedingStylesPageI18n> = {
     prevOption: 'Previous option',
     nextOption: 'Next option',
     backLink: 'Back to Fresh vs. Raw vs. Kibble',
-    titleSuffix: 'What It Is & Is It Right for Your Dog? | Best Dog Food 2026',
+    titleSuffix: 'What It Is & Considerations for Your Dog | Dog Food Types Compared',
   },
   es: {
     badge: 'FRESCA VS. CRUDA VS. PIENSO',
@@ -241,7 +241,7 @@ const FEEDING_STYLES_BY_LANG: Record<Lang, FeedingStyle[]> = {
       optionLabel: 'Option 2',
       accent: '#7928ca',
       title: 'Raw Dog Food (BARF)',
-      summary: '80% muscle meat, 10% raw bone, 10% secreting organs. Mirrors ancestral ecology — natural enzymes, zero refined starches, optimal dental hygiene.',
+      summary: '80% muscle meat, 10% raw bone, 10% secreting organs. A whole-food approach based on raw meat, bone, and organs. Raw foods carry bacteria risks; talk to your vet before feeding raw.',
       pros: [
         'Closest nutritional match to what a wild canine ancestor evolved to eat',
         'Raw edible bone mechanically scrapes tartar off teeth as the dog chews',
@@ -252,7 +252,7 @@ const FEEDING_STYLES_BY_LANG: Record<Lang, FeedingStyle[]> = {
         'DIY ratios require precision — getting the bone percentage wrong causes constipation or, in puppies, skeletal issues',
         'Not recommended for immunocompromised dogs or households with young children, pregnant people, or elderly family members',
       ],
-      readMore: "BARF stands for \"Biologically Appropriate Raw Food\" (sometimes \"Bones and Raw Food\"), and the 80-10-10 ratio behind it — 80% muscle meat, 10% raw edible bone, 10% secreting organ — is designed to mirror what a wild canine would get from consuming a whole prey animal. Done correctly, the bone content alone supplies a naturally balanced calcium-to-phosphorus ratio, the organ meat delivers concentrated vitamin A, iron, and B-vitamins, and nothing in the bowl is cooked, so heat-sensitive enzymes and amino acids stay fully intact.\n\nOwners who switch to raw commonly report firmer, smaller stools, cleaner teeth from the chewing action, and a visibly leaner, more muscled dog within a few months. The catch is that raw meat carries the same salmonella and listeria risk as raw meat prepared for human consumption, so it needs dedicated cutting boards, refrigerated storage, and prompt cleanup — and it's not a good fit for households with an immunocompromised person, a very young child, or an elderly family member who could be exposed to cross-contamination. Feeding raw bone also demands real precision: too much bone leads to hard, chalky stools and constipation, while too little strips away the calcium the diet depends on. For growing large-breed puppies, miscalculating the ratio over months can contribute to developmental skeletal problems.\n\nBecause of that precision requirement, most households find it far safer to start with a professionally-formulated raw product — frozen raw patties, freeze-dried raw, or high-pressure-pasteurized (HPP) raw, which reduces pathogen risk while keeping the nutrient profile close to true raw — before ever attempting to source and weigh a fully custom raw diet at home. If you do go fully DIY, work with a board-certified veterinary nutritionist to verify the recipe rather than relying on ratio rules of thumb alone.",
+      readMore: "BARF stands for \"Biologically Appropriate Raw Food\" (sometimes \"Bones and Raw Food\"), and the 80-10-10 ratio behind it — 80% muscle meat, 10% raw edible bone, 10% secreting organ — is designed to mirror what a wild canine would get from consuming a whole prey animal. Done correctly, the bone content alone supplies a naturally balanced calcium-to-phosphorus ratio, the organ meat delivers concentrated vitamin A, iron, and B-vitamins, and nothing in the bowl is cooked, so heat-sensitive enzymes and amino acids stay fully intact.\n\nOwners who switch to raw commonly report firmer, smaller stools, cleaner teeth from the chewing action, and a visibly leaner, more muscled dog within a few months. The catch is that raw meat carries the same salmonella and listeria risk as raw meat prepared for human consumption, so it needs dedicated cutting boards, refrigerated storage, and prompt cleanup — and it's not a good fit for households with an immunocompromised person, a very young child, or an elderly family member who could be exposed to cross-contamination. Feeding raw bone also demands real precision: too much bone leads to hard, chalky stools and constipation, while too little strips away the calcium the diet depends on. For growing large-breed puppies, miscalculating the ratio over months can contribute to developmental skeletal problems.\n\nBecause of that precision requirement, most households find it far safer to start with a professionally prepared commercial raw product — frozen raw patties, freeze-dried raw, or high-pressure-pasteurized (HPP) raw, which reduces pathogen risk while keeping the nutrient profile close to true raw — before ever attempting to source and weigh a fully custom raw diet at home. If you do go fully DIY, work with a board-certified veterinary nutritionist to verify the recipe rather than relying on ratio rules of thumb alone. Raw foods carry bacteria risks. Talk to your vet before feeding raw.",
       productKey: 'old-mill-85-15-ground-beef-10pack',
       productNote: 'Raw, pasture-raised muscle meat to build a DIY 80-10-10 meal:',
     },
@@ -261,7 +261,7 @@ const FEEDING_STYLES_BY_LANG: Record<Lang, FeedingStyle[]> = {
       optionLabel: 'Option 3',
       accent: '#0070f3',
       title: 'Superfood Kibble Toppers',
-      summary: 'Adding 25–50% fresh whole-food toppers (bone broth, sardines, pumpkin) over standard kibble boosts bioavailable micronutrients by 40%+ while staying cost-effective.',
+      summary: 'Adding 25–50% fresh whole-food toppers (bone broth, sardines, pumpkin) over standard kibble adds moisture and micronutrients while staying cost-effective.',
       pros: [
         'Most shelf-stable and budget-friendly of the three feeding styles',
         'Easy to portion, batch-buy, and automate with a timed feeder',

@@ -120,10 +120,10 @@ export const PUPPY_NUTRITION_PAGE_I18N: Record<Lang, PuppyNutritionPageI18n> = {
     vetTipTitle: 'Puppy Nutrition Insight',
     prevRequirement: 'Previous Requirement',
     nextRequirement: 'Next Requirement',
-    backLink: 'Back to Best Dog Food Guide',
+    backLink: 'Back to Dog Food Types Compared',
     titleSuffix: 'Puppy Growth Nutrition Guide | Dog Food Planner',
-    ctaTitle: 'Calculate Your Puppy’s Exact Daily Feeding Portions',
-    ctaDesc: 'Enter your puppy’s exact age, weight, and breed size into our feeding calculator to get balanced daily calorie and gram targets.',
+    ctaTitle: 'Calculate Your Puppy’s Estimated Daily Feeding Portions',
+    ctaDesc: 'Enter your puppy’s age, weight, and breed size into our feeding calculator to get estimated daily calorie and gram targets.',
     ctaBtn: 'Launch Puppy Feeding Calculator →',
   },
   es: {
@@ -255,14 +255,14 @@ const REQUIREMENTS_DATA: Record<Lang, PuppyNutritionRequirement[]> = {
       title: 'High Metabolic Burn & Meal Scheduling',
       shortTag: 'Caloric Kinetics & Glycemic Control',
       metricBadge: '2–3× Adult RER • 3–4 Meals Daily',
-      desc: 'Young puppies (2–4 months) burn up to three times their resting metabolic rate per pound due to rapid cell division, tissue synthesis, and high body-surface heat dissipation. Serving 3 to 4 smaller, nutrient-dense meals prevents life-threatening hypoglycemia, enzymatic digestive overload, and gastric distension.',
+      desc: 'Young puppies (2–4 months) burn up to three times their resting metabolic rate per pound due to rapid cell division, tissue synthesis, and high body-surface heat dissipation. Serving 3 to 4 smaller, nutrient-dense meals helps prevent hypoglycemia, digestive overload, and gastric distension.',
       readMore: `During the initial postnatal growth window (weeks 8 through 16), canine metabolic velocity peaks at levels never experienced again during adult life. A growing puppy must fuel exponential protein turnover, continuous osteoblast bone deposition, and intense thermoregulation. Because their ratio of skin surface area to body mass is drastically elevated, juvenile puppies lose metabolic heat rapidly, driving baseline caloric expenditure up to 2.5–3.0 times the adult Resting Energy Requirement (RER = 70 × [kg]^0.75).
 
 However, their anatomic stomach volume remains remarkably compact. Overloading a juvenile puppy’s digestive tract with one or two massive daily feedings causes acute gastric dilatation, osmotic diarrhea from incomplete enzyme saturation, and sluggish intestinal motility. Pancreatic lipase and amylase concentrations in young pups are still maturing; moderate, evenly spaced meals ensure complete enzymatic hydrolyzation without triggering small intestinal bacterial overgrowth.
 
-Crucially, toy and small breed puppies under 16 weeks possess minimal hepatic glycogen storage capacity and immature gluconeogenesis pathways. If meal intervals exceed 6 to 8 hours during active daytime waking periods, systemic blood glucose can plummet precipitously into clinical hypoglycemia—leading to tremors, hypothermia, ataxia, and seizures.
+Crucially, toy and small breed puppies under 16 weeks possess minimal hepatic glycogen storage capacity and immature gluconeogenesis pathways. If meal intervals exceed 6 to 8 hours during active daytime waking periods, blood glucose can drop into hypoglycemia—leading to tremors, hypothermia, or weakness.
 
-The clinical feeding schedule follows a structured step-down protocol: 4 meals daily from weaning to 16 weeks; 3 meals daily from 4 months until 6 months of age; and transitioning smoothly to 2 meals daily once the dog reaches 50% to 75% of expected adult mass. Caloric targets must be re-evaluated every 7 to 10 days, as rapid growth curves mean static feeding amounts quickly turn into progressive underfeeding.`,
+The feeding schedule follows a structured step-down protocol: 4 meals daily from weaning to 16 weeks; 3 meals daily from 4 months until 6 months of age; and transitioning smoothly to 2 meals daily once the dog reaches 50% to 75% of expected adult mass. Caloric targets must be re-evaluated every 7 to 10 days, as rapid growth curves mean static feeding amounts quickly turn into progressive underfeeding.`,
       whatToLookFor: [
         'Caloric density exceeding 3,800 kcal ME/kg for toy/small breeds to deliver sufficient energy without stomach overfill',
         'High biological value whole-animal protein (≥28% to 32% dry matter basis) with minimum 18% digestible fat',
@@ -289,12 +289,12 @@ The clinical feeding schedule follows a structured step-down protocol: 4 meals d
       title: 'Optimal Calcium-to-Phosphorus Ratio & Skeletal Growth',
       shortTag: 'Mineral Density & Joint Protection',
       metricBadge: 'Ca:P 1.2:1–1.4:1 • 1.2%–1.6% Max DM',
-      desc: 'Puppies under six months cannot regulate intestinal calcium uptake and absorb nearly all ingested calcium through passive diffusion. A tightly controlled Calcium:Phosphorus ratio (1.2:1 to 1.4:1) with strict upper limits is non-negotiable to prevent irreversible developmental orthopedic diseases like osteochondrosis dissecans and hip dysplasia.',
+      desc: "Puppies under six months cannot regulate intestinal calcium uptake and absorb nearly all ingested calcium through passive diffusion. Maintaining an appropriate Calcium:Phosphorus ratio (1.2:1 to 1.4:1) with strict upper limits is essential to protect skeletal growth and joint development. Ask your vet about your puppy's calcium and growth needs.",
       readMore: `Calcium homeostasis in puppies differs fundamentally from that of adult canines. Adult dogs possess an active, vitamin D-dependent transcellular transport mechanism that effectively downregulates intestinal calcium absorption when dietary intake is excessive. In sharp contrast, puppies younger than 6 months absorb dietary calcium almost entirely through passive paracellular diffusion across the intestinal brush border—absorbing up to 45% to 50% of whatever calcium enters their lumen, regardless of physiological necessity.
 
 When growing puppies ingest excess dietary calcium, circulating serum levels elevate, triggering continuous calcitonin secretion from thyroid C-cells and suppressing parathyroid hormone (PTH). This hypercalcitonemia halts normal osteoclastic bone resorption and delays cartilage maturation. Growing epiphyseal growth plates fail to ossify at physiological rates, causing thickened, mechanically fragile cartilage that fissures under normal biomechanical load.
 
-The result is developmental orthopedic disease (DOD), including Osteochondritis Dissecans (OCD), Hypertrophic Osteodystrophy (HOD), Radius Curvus syndrome, and premature joint incongruity accelerating canine hip and elbow dysplasia. Large and giant breed puppies are particularly vulnerable because their rapid linear skeletal growth magnifies shear forces across fragile joint surfaces.
+The result can be developmental orthopedic conditions, including osteochondritis dissecans and joint irregularities. Large and giant breed puppies are particularly vulnerable because their rapid linear skeletal growth magnifies shear forces across fragile joint surfaces. Ask your vet about your puppy's calcium and growth needs.
 
 AAFCO and FEDIAF guidelines mandate a strict Calcium-to-Phosphorus ratio between 1.2:1 and 1.4:1, with an absolute dietary calcium ceiling of 1.2% to 1.6% on a dry matter basis for large breed puppies (versus up to 2.5% tolerated in adult maintenance). Crucially, pet parents must never add supplementary calcium powder, bone meal, or dairy products to an already complete and balanced commercial puppy formula.`,
       whatToLookFor: [
@@ -315,7 +315,7 @@ AAFCO and FEDIAF guidelines mandate a strict Calcium-to-Phosphorus ratio between
         'If preparing homemade puppy food, consult a board-certified veterinary nutritionist with software recipe formulation',
         'Schedule orthopedic palpation and gait evaluation with your veterinarian at the 16-week and 6-month wellness visits',
       ],
-      vetTip: 'The most dangerous misconception in puppy rearing is that "extra calcium builds stronger bones." In puppies, excess calcium is directly toxic to developing joint cartilage. A balanced growth diet provides every milligram of calcium required; adding supplements destroys that delicate equilibrium and can cripple a growing dog for life.',
+      vetTip: "A common misconception in puppy rearing is that extra calcium builds stronger bones. In puppies, excess calcium can disrupt developing joint cartilage. A balanced growth diet provides the required calcium; avoid adding calcium supplements unless recommended by your veterinarian. Ask your vet about your puppy's calcium and growth needs.",
     },
     {
       slug: 'dha-brain-cognitive-development',
@@ -323,14 +323,14 @@ AAFCO and FEDIAF guidelines mandate a strict Calcium-to-Phosphorus ratio between
       title: 'DHA Omega-3 for Brain & Retinal Development',
       shortTag: 'Neurological & Photoreceptor Acuity',
       metricBadge: 'DHA ≥0.05% DM • Cold-Water Marine EPA/DHA',
-      desc: 'Docosahexaenoic acid (DHA) is the primary structural phospholipid in the mammalian cerebral cortex and photoreceptor membranes. Clinical trials demonstrate that puppies nourished with bioavailable marine DHA achieve significantly higher trainability scores, faster spatial learning, and superior retinal visual acuity.',
+      desc: 'Docosahexaenoic acid (DHA) is a key structural fatty acid in neural and retinal tissue. Puppies nourished with marine DHA support healthy brain development, trainability, and retinal visual acuity.',
       readMore: `The central nervous system of a puppy experiences its most critical architectural expansion between late gestation and 16 weeks of age. During this neurodevelopmental surge, Docosahexaenoic Acid (DHA, 22:6 n-3)—a 22-carbon long-chain omega-3 polyunsaturated fatty acid—is selectively transported across the blood-brain barrier and incorporated into synaptic neuronal plasma membranes and retinal rod photoreceptors. In fact, DHA represents more than 30% of total structural lipids in cerebral gray matter.
 
 At the biophysical level, DHA’s unique six double bonds impart extraordinary fluidity to neuronal membranes. This fluidity accelerates G-protein-coupled receptor signaling, enhances synaptic plasticity, and optimizes neurotransmitter vesicle fusion, directly governing the speed of neural transmission and memory consolidation.
 
 Crucially, canines possess negligible activity of the elongase and delta-6 desaturase enzymes required to convert short-chain plant-derived alpha-linolenic acid (ALA, found in flaxseed and chia) into long-chain DHA. Research shows that less than 1% of ingested plant ALA is synthesized into functional DHA in dogs. Therefore, pre-formed marine DHA sourced from wild cold-water fish oils (salmon, menhaden, sardine) or specialized schizochytrium marine microalgae is physiologically essential.
 
-Controlled double-blind cognitive clinical studies at leading veterinary schools have tested puppies fed high-DHA diets versus typical low-DHA control diets. Puppies receiving adequate marine DHA achieved significantly superior results in visual contrast sensitivity testing, learned T-maze directional cues in fewer trials, and demonstrated higher retention during basic obedience training and crate socialization protocols.`,
+Studies evaluating puppies fed diets with added marine DHA compared to low-DHA diets have observed benefits in visual testing, directional cue learning, and obedience training retention.`,
       whatToLookFor: [
         'Guaranteed analysis explicitly listing DHA as a separate percentage (minimum 0.05% to 0.10% dry matter)',
         'Direct marine oil sources on the ingredient panel: wild Alaskan salmon oil, menhaden fish oil, sardine meal, or marine microalgae',
@@ -368,7 +368,7 @@ Conversely, large and giant breed puppies face an orthopedic crisis if fed high-
       whatToLookFor: [
         'Formulas explicitly tailored to breed size: "Toy/Small Breed Puppy" vs. "Large Breed Puppy" (for dogs with adult weight >55 lbs)',
         'Caloric density matched to size: 3,800–4,200 kcal/kg for small breeds; 3,300–3,600 kcal/kg for large breeds',
-        'Kibble particle diameter engineered for jaw biomechanics: 6–8mm micro-pellets for toy breeds; 12–15mm crunch kibble for large breeds',
+        'Kibble particle diameter designed for jaw biomechanics: 6–8mm micro-pellets for toy breeds; 12–15mm crunch kibble for large breeds',
         'Controlled dietary fat levels (12%–15%) with L-carnitine in large breed formulas to support lean muscle development without fat accumulation',
       ],
       redFlags: [

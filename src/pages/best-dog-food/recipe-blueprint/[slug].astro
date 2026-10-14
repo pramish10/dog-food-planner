@@ -76,7 +76,7 @@ const articleJsonLd = {
     <Breadcrumbs
       items={[
         { name: 'Home', url: '/' },
-        { name: 'Best Dog Food', url: '/best-dog-food' },
+        { name: 'Dog Food Types Compared', url: '/best-dog-food' },
         { name: item.name },
       ]}
     />
@@ -94,8 +94,15 @@ const articleJsonLd = {
           <span class="text-[#0070f3] dark:text-[#3291ff] font-semibold">{item.targetAudience}</span>
           <span>•</span>
           <span>{p.reviewedBy}</span>
+          <span>•</span>
+          <span>Last updated: October 14, 2026</span>
         </div>
       </header>
+
+      <!-- Nutrition Advisory Banner -->
+      <div class="p-4 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/50 rounded-xl text-amber-900 dark:text-amber-200 text-xs sm:text-sm leading-relaxed">
+        <strong>Important Advisory:</strong> Homemade diets can miss essential nutrients. Have any homemade recipe reviewed by your veterinarian or a board-certified veterinary nutritionist before feeding it long term.
+      </div>
 
       <!-- Executive Summary Card -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] shadow-sm space-y-3">
@@ -224,7 +231,7 @@ const articleJsonLd = {
         </div>
       </section>
 
-      <!-- In-Depth Nutritional & Clinical Rationale -->
+      <!-- In-Depth Nutritional Rationale -->
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-6">
         <div>
           <h2 class="text-xl sm:text-2xl font-bold text-[#171717] dark:text-[#ededed]">

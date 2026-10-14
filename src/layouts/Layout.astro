@@ -6,7 +6,6 @@ import { localesMap, ui, defaultLang, type Lang } from '../i18n/ui';
 interface Props {
   title?: string;
   description?: string;
-  keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
   lang?: Lang;
@@ -21,10 +20,13 @@ const defaultStrings = ui[lang] || ui[defaultLang];
 const {
   title = defaultStrings['meta.title'],
   description = defaultStrings['meta.description'],
-  keywords = defaultStrings['meta.keywords'],
   canonicalUrl = getAbsoluteLocalizedUrl(cleanPath, lang),
   ogImage = "https://dogfoodplanner.com/og-image.jpg"
 } = Astro.props;
+
+const robotsContent = lang === 'en'
+  ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  : "noindex, follow";
 ---
 
 <!doctype html>
@@ -65,10 +67,9 @@ const {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="robots" content={robotsContent} />
+    <meta name="googlebot" content={robotsContent} />
+    <meta name="bingbot" content={robotsContent} />
     <meta name="author" content="DogFoodPlanner Editorial Team" />
     
     <!-- Pinterest Verification -->

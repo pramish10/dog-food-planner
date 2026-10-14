@@ -14,7 +14,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     targetOrgans: ['Pancreatic Islet Beta Cells', 'Liver (Hepatocytes)', 'Coagulation Cascade'],
     toxicThresholdOrServing: '0.1 g/kg causes profound hypoglycemia; >0.5 g/kg causes acute hepatic necrosis and liver failure.',
     onsetWindow: '10 to 60 minutes (delayed up to 12 hours in extended-release gums)',
-    summary: 'Xylitol is arguably the deadliest household food additive for dogs. While completely harmless in humans, canine physiology responds to xylitol with an immediate, massive surge of insulin up to six times greater than an equivalent dose of pure sugar, resulting in rapid collapse and potentially fatal liver death.',
+    summary: 'Xylitol is arguably the deadliest household food additive for dogs. While completely harmless in humans, canine physiology responds to xylitol with an immediate, massive surge of insulin up to six times greater than an equivalent dose of pure sugar, resulting in rapid collapse and potentially fatal liver death. If your dog ate something toxic, call your vet or the ASPCA Poison Control Center right away. Source: ASPCA Animal Poison Control (https://www.aspca.org/pet-care/animal-poison-control).',
     narrativeOverview: [
       'Xylitol is a 5-carbon polyol sugar alcohol widely marketed as birch sugar or food additive E967. Over the last decade, it has proliferated across peanut butters, sugar-free chewing gums, low-calorie baked goods, dental rinses, liquid pharmaceutical suspensions, and chewable multivitamins.',
       'In dogs, xylitol absorption occurs with extreme velocity. Because the canine digestive tract fails to distinguish xylitol from natural glucose, it prompts total pancreatic degranulation. Within 30 minutes, circulating blood glucose plummets to life-threatening lows (often under 30 mg/dL), depriving the brain and central nervous system of its primary energy substrate.',
@@ -78,7 +78,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       {
         stepNumber: 4,
         title: 'Transport to 24/7 Veterinary ER Without Delay',
-        desc: 'Call the clinic while driving so their clinical staff can prepare an intravenous catheter, 50% dextrose bolus, and blood glucose testing apparatus before your arrival.',
+        desc: 'Call the clinic while driving so their veterinary staff can prepare an intravenous catheter, 50% dextrose bolus, and blood glucose testing apparatus before your arrival.',
         isUrgent: true,
       },
     ],
@@ -117,7 +117,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     preventionRules: [
       'Scrutinize every peanut butter and nut spread label before offering it in lick mats or Kongs.',
       'Keep all sugar-free chewing gum, breath mints, and dietary throat lozenges in high closed cabinets—never in backpacks, purses, or car cup holders.',
-      'Never brush your dog’s teeth with human toothpaste; canine dental pastes are specially formulated without foaming agents or polyols.',
+      'Never brush your dog’s teeth with human toothpaste; canine dental pastes are specially made without foaming agents or polyols.',
       'Check liquid human medications (especially children’s cough syrups and liquid allergy drops) for xylitol sweetener.',
     ],
     faqs: [
@@ -131,7 +131,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       },
       {
         q: 'Does activated charcoal work for xylitol ingestion?',
-        a: 'No. Clinical veterinary toxicology shows that activated charcoal has poor binding affinity for small, highly water-soluble sugar alcohols like xylitol. Vets generally prioritize emesis and IV dextrose over charcoal administration.',
+        a: 'No. Veterinary toxicology shows that activated charcoal has poor binding affinity for small, highly water-soluble sugar alcohols like xylitol. Vets generally prioritize emesis and IV dextrose over charcoal administration.',
       },
     ],
   },
@@ -285,9 +285,9 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     onsetWindow: 'Gastrointestinal signs within 2 to 6 hours; renal failure markers surge at 24 to 48 hours',
     summary: 'Grapes, raisins, sultanas, currants, and grape pomace contain high concentrations of tartaric acid and its salt potassium bitartrate. Dogs are uniquely susceptible to tartaric acid-induced nephrotoxicity, which destroys the proximal renal tubules and can shut down kidney filtration completely.',
     narrativeOverview: [
-      'For decades, the toxic principle in grapes remained a frustrating mystery in veterinary medicine until clinical breakthroughs identified tartaric acid and potassium bitartrate as the causative agents. Because tartaric acid content varies wildly depending on grape variety, ripeness, and soil conditions, there is no reliable "safe" dose.',
+      'For decades, the toxic principle in grapes remained a frustrating mystery in veterinary medicine until research identified tartaric acid and potassium bitartrate as the causative agents. Because tartaric acid content varies wildly depending on grape variety, ripeness, and soil conditions, there is no reliable "safe" dose.',
       'Raisins and currants are dried, concentrating the tartaric acid payload by a factor of 4.5 times compared to fresh table grapes. Even baked goods containing raisin paste or holiday fruitcakes pose a severe life threat to dogs of all sizes.',
-      'The clinical danger is idiosyncratic: some dogs have consumed grapes without immediate catastrophe, while others developed acute, irreversible oliguric renal failure from a single grape dropped on the floor. Never gamble with any Vitis fruit.',
+      'The toxicity risk is idiosyncratic: some dogs have consumed grapes without immediate catastrophe, while others developed acute, irreversible oliguric renal failure from a single grape dropped on the floor. Never gamble with any Vitis fruit.',
     ],
     biochemicalMechanism: 'Canines possess a distinct physiological vulnerability in the proximal tubular epithelial cells of the nephron to tartrates. Absorbed tartaric acid causes rapid cellular ATP depletion, loss of tubular brush-border polarity, and mitochondrial destruction. This triggers widespread proximal tubular necrosis. As necrotic epithelial casts slough into the tubular lumen, intra-tubular pressure surges, driving glomerular filtration rate (GFR) to zero and leading to anuria (inability to produce urine), refractory hyperkalemia, metabolic acidosis, and uremic encephalopathy.',
     vitalStats: [
@@ -328,7 +328,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     emergencyProtocol: [
       {
         stepNumber: 1,
-        title: 'Treat Every Single Ingestion as a Code-Red Emergency',
+        title: 'Respond to Every Ingestion as an Immediate Emergency',
         desc: 'Do not wait for symptoms or adopt a "wait-and-see" approach. Once kidneys shut down, dialysis is the only salvage option.',
         isUrgent: true,
       },
@@ -428,7 +428,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     vitalStats: [
       { label: 'Toxicity Classification', value: 'Oxidative Hemotoxin', tone: 'danger' },
       { label: 'Relative Potency', value: 'Garlic is 5x More Toxic Than Onion', tone: 'danger' },
-      { label: 'Peak Clinical Severity', value: 'Days 3 to 7 Post-Ingestion', tone: 'danger' },
+      { label: 'Peak Severity', value: 'Days 3 to 7 Post-Ingestion', tone: 'danger' },
       { label: 'Dehydrated Powders', value: '10x Concentration Hazard', tone: 'danger' },
     ],
     timeline: [
@@ -474,7 +474,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       },
       {
         stepNumber: 3,
-        title: 'Immediate Clinical Emesis (If Ingested Within 2 Hours)',
+        title: 'Immediate Veterinary Emesis (If Ingested Within 2 Hours)',
         desc: 'Medical evacuation of the stomach eliminates unabsorbed alliums before enzymatic conversion occurs.',
         isUrgent: true,
       },
@@ -530,7 +530,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       },
       {
         q: 'Why do some dog treat brands claim garlic is safe?',
-        a: 'Some niche supplement manufacturers claim microscopic amounts have antimicrobial benefits. However, board-certified veterinary toxicologists (including the ASPCA Animal Poison Control Center) maintain that garlic has no proven clinical advantage in dogs and exclusively introduces oxidative stress to red blood cells.',
+        a: 'Some niche supplement manufacturers claim microscopic amounts have antimicrobial benefits. However, board-certified veterinary toxicologists (including the ASPCA Animal Poison Control Center) maintain that garlic has no established health benefit in dogs and exclusively introduces oxidative stress to red blood cells.',
       },
       {
         q: 'What color does urine turn during onion poisoning?',
@@ -551,7 +551,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     primaryCompound: 'Unknown Macadamia Neurotoxic Ester & Ultra-Dense Lipid Matrix',
     targetOrgans: ['Neuromuscular Junctions', 'Central Nervous System', 'Exocrine Pancreas'],
     toxicThresholdOrServing: '0.7 g/kg body weight (roughly 1 to 2 nuts for a 10-lb toy dog; 10–12 nuts for a medium dog).',
-    onsetWindow: '3 to 12 hours post-ingestion (clinical signs peak at 12–24 hours; resolve within 24–48 hours with care)',
+    onsetWindow: '3 to 12 hours post-ingestion (symptoms peak at 12–24 hours; resolve within 24–48 hours with care)',
     summary: 'Macadamia nuts are exclusively toxic to canines—no other domestic species develops this syndrome. Ingestion triggers acute neuromuscular dysfunction characterized by sudden weakness in the hind legs, involuntary muscle fasciculations, high fever, and extreme joint pain.',
     narrativeOverview: [
       'Macadamia nuts (frequently baked into cookies or mixed into trail mixes) contain an as-yet-unidentified toxic lipid fraction that selectively impairs canine neuromuscular signaling. Dogs ingesting macadamias lose motor control of their pelvic limbs, presenting with a distinctive drunken gait or total inability to stand.',
@@ -684,7 +684,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     targetOrgans: ['Esophagus', 'Stomach Wall', 'Duodenum & Small Intestines', 'Colon'],
     toxicThresholdOrServing: 'Zero Tolerance: Even a single cooked chicken, rib, or chop bone can shatter into razor-sharp needle-like fragments.',
     onsetWindow: 'Immediate choking/esophageal injury (0–2 hours) or delayed perforation/blockage (12–48 hours)',
-    summary: 'Never feed cooked bones of any kind—poultry, beef, pork, or lamb. Heat denatures the collagen matrix that gives raw bone flexibility, transforming it into brittle, glass-like calcium fragments that can puncture internal organs and require life-saving emergency surgery.',
+    summary: 'Never feed cooked bones. Ask your veterinarian before feeding any bones, including raw ones. Cooking alters bone structure from soft and pliable to brittle and splintery, posing a risk of obstruction or internal injury. If your dog ate something toxic, call your vet or the ASPCA Poison Control Center right away. Source: ASPCA Animal Poison Control (https://www.aspca.org/pet-care/animal-poison-control).',
     narrativeOverview: [
       'The myth that dogs can eat table bones persists from ancestral history, but wild canines only consumed raw, pliable bones surrounded by muscle meat. Thermal cooking (boiling, baking, grilling) completely dehydrates the bone matrix and cross-links calcium minerals into rigid, brittle structures.',
       'When crunched under canine jaw pressures (which can exceed 300 psi), cooked bones shatter into jagged needles and knife-like shards. These sharp fragments act like internal shrapnel as they travel through the gastrointestinal tract.',
@@ -827,7 +827,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       { label: 'Primary Pathology', value: 'Acute Necrotizing Pancreatitis', tone: 'danger' },
       { label: 'High-Risk Breeds', value: 'Mini Schnauzers, Yorkies, Dachshunds', tone: 'warning' },
       { label: 'Common Trigger', value: 'Holiday Table Scraps & Bacon Skillets', tone: 'warning' },
-      { label: 'Clinical Hallmark', value: '"Prayer Position" & Severe Abdominal Pain', tone: 'danger' },
+      { label: 'Key Hallmark', value: '"Prayer Position" & Severe Abdominal Pain', tone: 'danger' },
     ],
     timeline: [
       {
@@ -1058,7 +1058,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     ],
     faqs: [
       {
-        q: 'Can pumpkin cure both diarrhea and constipation in dogs?',
+        q: 'Can pumpkin help with both diarrhea and constipation in dogs?',
         a: 'Yes. Pumpkin contains balanced soluble and insoluble fiber. Soluble fiber absorbs excess water to firm loose stools during diarrhea, while insoluble fiber adds gentle bulk and moisture to lubricate the colon during constipation.',
       },
       {
@@ -1086,14 +1086,14 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     status: 'SAFE_AND_BENEFICIAL',
     category: 'PROTEIN',
     badgeLabel: '✓ NUTRITIONAL SUPERFOOD // OMEGA-3 POWERHOUSE',
-    riskSeverity: 'SAFE & HIGHLY BENEFICIAL: The gold-standard dietary source of bioavailable EPA and DHA Omega-3s. Soothes itchy skin, reduces joint inflammation, and protects heart health.',
+    riskSeverity: 'SAFE & HIGHLY BENEFICIAL: A rich dietary source of EPA and DHA Omega-3 fatty acids that supports skin, coat, and joint health.',
     primaryCompound: 'EPA & DHA Omega-3s, Astaxanthin, Complete Amino Acids',
     targetOrgans: ['Epidermal Skin Barrier', 'Synovial Joints', 'Cardiovascular System', 'Brain & Retina'],
     toxicThresholdOrServing: '1 oz per 10–15 lbs body weight 2–3x weekly, or 1 tsp pure salmon oil per 20 lbs daily. ALWAYS COOK THOROUGHLY.',
     onsetWindow: 'Noticeable coat shine in 2–3 weeks; anti-inflammatory joint benefits in 4–6 weeks',
-    summary: 'Wild Alaskan Salmon is one of the most nutritionally complete functional foods you can add to a dog’s bowl. Packed with long-chain marine Omega-3 fatty acids (EPA and DHA), it dramatically reduces inflammatory cytokines, calms allergic skin conditions, lubricates arthritic joints, and enhances cognitive vitality.',
+    summary: 'Wild Alaskan Salmon is a rich source of long-chain marine Omega-3 fatty acids (EPA and DHA), supporting skin health, coat quality, and joint mobility. Cook thoroughly before serving. Raw foods can carry bacteria. Talk to your vet first.',
     narrativeOverview: [
-      'Unlike plant-based omega-3s like flaxseed (which contain ALA that dogs convert to EPA/DHA at a dismal rate below 5%), wild salmon provides preformed, directly bioavailable EPA and DHA that integrate into cellular membranes immediately.',
+      'Unlike plant-based omega-3s like flaxseed (which contain ALA that dogs convert to EPA/DHA at a dismal rate below 5%), wild salmon provides preformed EPA and DHA that integrate into cellular membranes.',
       'Wild salmon is also naturally rich in astaxanthin, one of nature’s most potent carotenoid antioxidants, which gives salmon its deep red hue and protects canine cardiovascular tissue from oxidative stress.',
       'CRITICAL SAFETY WARNING: NEVER feed raw or undercooked wild Pacific salmon. Raw Pacific salmonids can carry the parasite Nanophyetus salmincola infected with the bacterium Neorickettsia helminthoeca, which causes "Salmon Poisoning Disease"—a severe, potentially fatal infection. Always cook salmon thoroughly to an internal temperature of 145°F (63°C), or feed certified commercially flash-frozen fish.',
     ],
@@ -1159,7 +1159,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     vetTreatments: [
       {
         name: 'Omega-3 Titration (Allergy & Joint Protocols)',
-        purpose: 'Vets calculate EPA+DHA targets at 100–150 mg per kg of body weight to treat canine atopic dermatitis and osteoarthritis.',
+        purpose: 'Vets calculate EPA+DHA targets at 100–150 mg per kg of body weight for dogs with skin sensitivity and osteoarthritis.',
       },
       {
         name: 'Renal Protective Therapy',
@@ -1171,7 +1171,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       },
       {
         name: 'Doxycycline Protocol for Raw Salmon Ingestion',
-        purpose: 'If raw Pacific salmon is consumed and Salmon Poisoning Disease develops, prompt oral doxycycline curative therapy saves lives.',
+        purpose: 'If raw Pacific salmon is consumed and Salmon Poisoning Disease develops, prompt oral doxycycline therapy is administered.',
       },
     ],
     safeAlternatives: [
@@ -1200,7 +1200,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       },
       {
         q: 'What is Salmon Poisoning Disease in dogs?',
-        a: 'It is a life-threatening infection caused by the rickettsial organism Neorickettsia helminthoeca carried by a small intestinal fluke in raw wild Pacific salmonids. Symptoms include fever up to 107°F, vomiting, and lymphadenopathy. It is fatal in 90% of untreated cases but easily cured with antibiotics if caught early. Cooking salmon completely eliminates this risk.',
+        a: 'It is a life-threatening infection caused by the rickettsial organism Neorickettsia helminthoeca carried by a small intestinal fluke in raw wild Pacific salmonids. Symptoms include fever up to 107°F, vomiting, and lymphadenopathy. It is severe in untreated cases but treatable with antibiotics prescribed by a veterinarian if caught early. Cooking salmon completely eliminates this risk.',
       },
       {
         q: 'Can salmon cause food allergies in dogs?',
@@ -1231,7 +1231,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     summary: 'Wild blueberries are hailed by veterinary nutritionists as the ultimate neuroprotective fruit for dogs. Their deep blue-purple pigment reflects an extraordinary concentration of anthocyanins and polyphenols capable of crossing the blood-brain barrier to neutralize free radicals, sharpen memory, and delay canine cognitive decline.',
     narrativeOverview: [
       'Wild blueberries (Vaccinium angustifolium) differ fundamentally from cultivated grocery store blueberries (highbush berries). Because wild lowbush blueberries evolved to survive harsh northern climates, they possess double the antioxidant capacity and significantly higher anthocyanin concentrations per gram.',
-      'Groundbreaking veterinary clinical trials conducted in senior sled dogs and aging pet canines demonstrate that daily blueberry supplementation substantially improves task-learning ability, spatial memory retention, and agility.',
+      'Groundbreaking veterinary studies conducted in senior sled dogs and aging pet canines demonstrate that daily blueberry supplementation substantially improves task-learning ability, spatial memory retention, and agility.',
       'With virtually no fat, minimal glycemic impact, and high natural water content, blueberries serve as the ideal training treat for diabetic, overweight, or senior dogs who need high-value rewards without excess starch.',
     ],
     biochemicalMechanism: 'Wild blueberries contain potent flavonoid anthocyanins (including cyanidin, delphinidin, and malvidin glucosides) alongside pterostilbene. These small polyphenol molecules traverse the blood-brain barrier and localize within the hippocampus and cerebral cortex. There, they upregulate brain-derived neurotrophic factor (BDNF), enhance synaptic plasticity, and scavenge reactive oxygen and nitrogen species (ROS/RNS), protecting neuronal membranes from lipid peroxidation.',
@@ -1360,12 +1360,12 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     status: 'SAFE_AND_BENEFICIAL',
     category: 'PROTEIN',
     badgeLabel: '✓ NUTRITIONAL SUPERFOOD // MICROBIOME RESTORATIVE',
-    riskSeverity: 'SAFE & HIGHLY BENEFICIAL: The holy grail of canine microbiome nutrition. Delivers live Lactobacillus probiotics, digestive enzymes, and a perfect 1:1 Calcium-to-Phosphorus ratio.',
+    riskSeverity: 'SAFE & HIGHLY BENEFICIAL: Untreated ruminant stomach lining containing natural digestive enzymes, probiotics, and a balanced 1:1 Calcium-to-Phosphorus ratio.',
     primaryCompound: 'Lactobacillus Acidophilus, Digestive Enzymes, 1:1 Ca:P Ratio',
     targetOrgans: ['Gastrointestinal Microbiome', 'Small Intestine Brush Border', 'Immune System (GALT)'],
     toxicThresholdOrServing: '10% to 15% of daily meal portion. MUST BE RAW AND UNBLEACHED. Never cook as heat kills beneficial enzymes.',
     onsetWindow: 'Immediate palatability spike; digestive stool improvement within 24 to 48 hours',
-    summary: 'Raw unbleached green tripe is widely regarded as one of the most powerful functional superfoods on the planet for dogs. As the untreated stomach lining of grass-fed ruminants, it retains natural living digestive enzymes, trillions of beneficial probiotics, and an ideal mineral profile.',
+    summary: 'Raw unbleached green tripe is the untreated stomach lining of grass-fed ruminants, retaining natural digestive enzymes, probiotics, and a balanced mineral profile. Raw foods can carry bacteria. Talk to your vet first.',
     narrativeOverview: [
       'Green tripe does not refer to the color green; it denotes "raw and untreated". Grocery store tripe sold for human culinary use is chemically washed and bleached with chlorine, stripping all beneficial enzymes and probiotics. Dogs must exclusively eat unbleached green tripe sourced from raw pet food suppliers.',
       'Green tripe contains partially digested, fermented grasses and herbs packed with gastric enzymes (pepsin, amylase, lipase) and living strains of Lactobacillus acidophilus. When added to a dog’s bowl, these living components ease the digestive burden on the pancreas and seed the microbiome.',
@@ -1374,7 +1374,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     biochemicalMechanism: 'The untreated rumen and reticulum tissues host an active biofilm of beneficial commensal microorganisms (predominantly lactic acid bacteria) and residual digestive enzymes. When consumed raw, these enzymes facilitate macromolecular breakdown in the canine stomach, reducing the secretory demand on endogenous gastric and pancreatic glands. Furthermore, green tripe exhibits a naturally harmonious 1:1 to 1:1.2 Calcium-to-Phosphorus ratio and provides optimal ratios of linoleic and linolenic essential fatty acids alongside prebiotic oligosaccharides that reinforce the gut barrier.',
     vitalStats: [
       { label: 'Nutritional Category', value: 'Living Fermented Super-Protein', tone: 'safe' },
-      { label: 'Active Compounds', value: 'Live CFUs, Gastric Enzymes, 1:1 Ca:P', tone: 'safe' },
+      { label: 'Active Compounds', value: 'Live Cultures, Gastric Enzymes, 1:1 Ca:P', tone: 'safe' },
       { label: 'Strict Rule', value: 'Never Cook (Heat Kills Living Enzymes)', tone: 'warning' },
       { label: 'Primary Benefit', value: 'Rehabilitates Damaged Gut Microbiome', tone: 'safe' },
     ],
@@ -1436,7 +1436,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
         purpose: 'Vets utilize raw green tripe as a high-value meal topper to entice dogs recovering from surgery, chemotherapy, or severe illness to eat voluntarily.',
       },
       {
-        name: 'Chronic Enteropathy & Leaky Gut Protocol',
+        name: 'Chronic Enteropathy & Digestive Sensitivity Protocol',
         purpose: 'Living lactic acid bacteria and ideal Ca:P balance help rebuild the mucosal layer in dogs refractory to traditional kibble diets.',
       },
       {
@@ -1455,7 +1455,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       },
       {
         name: 'Raw Fermented Goat Milk / Kefir',
-        why: 'Another exceptional living source of trillions of active probiotic CFUs and enzymes.',
+        why: 'Another source of active probiotic cultures and enzymes.',
       },
       {
         name: 'High-Potency Veterinary Digestive Enzymes',
@@ -1497,23 +1497,23 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     status: 'SAFE_AND_BENEFICIAL',
     category: 'SUPPLEMENT',
     badgeLabel: '✓ NUTRITIONAL SUPERFOOD // JOINT & GUT ELIXIR',
-    riskSeverity: 'SAFE & HIGHLY BENEFICIAL: Packed with gelatin, type II collagen, glucosamine, chondroitin, and hyaluronic acid. Seals leaky gut junctions, hydrates, and lubricates stiff joints.',
+    riskSeverity: 'SAFE & HIGHLY BENEFICIAL: Packed with gelatin, type II collagen, glucosamine, and chondroitin, providing hydration and joint support.',
     primaryCompound: 'Type II Collagen, Gelatin, Glycine, Proline, Glucosamine',
     targetOrgans: ['Intestinal Epithelial Tight Junctions', 'Joint Cartilage & Synovium', 'Liver (Phase II Detox)'],
     toxicThresholdOrServing: '1/4 cup per 20 lbs body weight daily poured warm over food. MUST BE PREPARED WITHOUT ONIONS, GARLIC, OR SALT.',
     onsetWindow: 'Immediate meal hydration; digestive soothing in 24 hours; joint mobility improvements in 3–4 weeks',
-    summary: 'Slow-simmered collagen bone broth is an ancient, veterinarian-revered restorative elixir for dogs. By simmering marrow bones for 12 to 24 hours with an acid medium, dense collagen breaks down into gelatin, glutamine, and glycine, creating an easily absorbed broth that seals permeable gut linings and regenerates joint cartilage.',
+    summary: 'Slow-simmered bone broth provides gelatin, glutamine, and glycine, creating an easily absorbed broth that provides hydration and joint support.',
     narrativeOverview: [
-      'Commercial dry kibble diets contain only 8–10% moisture, leaving dogs in a perpetual state of low-grade dehydration. Warm bone broth is the premier solution: pouring broth over meals instantly rehydrates food to ancestral moisture levels (>70%), easing renal filtration workload and preventing bladder stones.',
+      'Warm bone broth is an easy way to add moisture to your dog’s meal, helping keep food hydrated and encouraging appetite.',
       'Bone broth delivers an exceptional concentration of the non-essential amino acid glycine. Glycine is required by the liver for Phase II detoxification conjugation pathways, shielding canines from household chemicals, pharmaceuticals, and environmental toxins.',
       'CRITICAL SAFETY WARNING: NEVER purchase standard human commercial broths from supermarkets without checking the ingredients. Virtually all human broths are simmered with onions, garlic, and leeks—toxic compounds that induce red blood cell hemolysis in dogs—and contain excess sodium.',
     ],
-    biochemicalMechanism: 'Prolonged low-temperature simmering hydrolyzes dense bone matrix collagen fibrils into water-soluble gelatin. Gelatin is composed of repeated Gly-Pro-Hyp amino acid tripeptides. In the gut lumen, gelatin binds water and adheres to mucosal surface glycoproteins, physically sealing micro-fissures in hyper-permeable intestinal junctions (attenuating "leaky gut syndrome"). Concurrently, glucosamine and chondroitin sulfate within the broth serve as direct glycosaminoglycan building blocks for chondrocytes, stimulating synovial hyaluronic acid synthesis and damping pro-inflammatory matrix metalloproteinases (MMPs) in arthritic joint capsules.',
+    biochemicalMechanism: 'Prolonged low-temperature simmering hydrolyzes dense bone matrix collagen fibrils into water-soluble gelatin. Gelatin is composed of repeated Gly-Pro-Hyp amino acid tripeptides. In the gut lumen, gelatin binds water and adheres to mucosal surface glycoproteins, supporting intestinal mucosal health. Concurrently, glucosamine and chondroitin sulfate within the broth serve as direct glycosaminoglycan building blocks for chondrocytes, stimulating synovial hyaluronic acid synthesis and damping pro-inflammatory matrix metalloproteinases (MMPs) in arthritic joint capsules.',
     vitalStats: [
       { label: 'Nutritional Category', value: 'Functional Collagen Hydration Elixir', tone: 'safe' },
       { label: 'Key Bioactive Compounds', value: 'Gelatin, Glucosamine, Chondroitin, Glycine', tone: 'safe' },
       { label: 'Crucial Preparation Rule', value: 'Zero Onions, Zero Garlic, Zero Added Salt', tone: 'warning' },
-      { label: 'Primary Therapeutic Target', value: 'Leaky Gut Seal & Synovial Joint Repair', tone: 'safe' },
+      { label: 'Primary Target', value: 'Hydration & Joint Support', tone: 'safe' },
     ],
     timeline: [
       {
@@ -1569,7 +1569,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     ],
     vetTreatments: [
       {
-        name: 'Canine Leaky Gut / Chronic IBD Management',
+        name: 'Digestive Upset & IBD Management',
         purpose: 'Vets prescribe gelatin-rich bone broth to rebuild compromised mucosal tight junctions and reduce food allergy absorption.',
       },
       {
@@ -1588,7 +1588,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     safeAlternatives: [
       {
         name: 'Commercial Veterinary Pet-Specific Bone Broths',
-        why: 'Pre-packaged canine broths formulated without onions, garlic, or sodium by pet nutrition brands.',
+        why: 'Pre-packaged canine broths prepared without onions, garlic, or sodium by pet nutrition brands.',
       },
       {
         name: 'Pure Bovine Collagen Peptide Powder',
@@ -1719,7 +1719,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       },
       {
         name: 'Geriatric Ocular Antioxidant Support',
-        purpose: 'Supplies bioavailable lutein and zeaxanthin carotenoids to support retinal health in senior dogs.',
+        purpose: 'Supplies lutein and zeaxanthin carotenoids to support retinal health in senior dogs.',
       },
     ],
     safeAlternatives: [
@@ -1767,26 +1767,26 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
   {
     slug: 'raw-goat-milk-kefir',
     name: 'Raw Goat Milk & Kefir',
-    scientificName: 'Capra Hircus Fermented Milk (A2 Beta-Casein & Live CFUs)',
+    scientificName: 'Capra Hircus Fermented Milk (A2 Beta-Casein & Live Cultures)',
     status: 'SAFE_AND_BENEFICIAL',
     category: 'DAIRY',
     badgeLabel: '✓ NUTRITIONAL SUPERFOOD // PROBIOTIC BIO-FERMENT',
-    riskSeverity: 'SAFE & HIGHLY BENEFICIAL: Smaller fat globules and A2 beta-casein make it hypoallergenic and easily tolerated compared to cow milk. Delivers billions of active CFUs to soothe gut and skin allergies.',
-    primaryCompound: 'A2 Beta-Casein, Caprylic Acid, 30+ Strains Live CFUs, Calcium',
+    riskSeverity: 'SAFE & HIGHLY BENEFICIAL: Smaller fat globules and A2 beta-casein make it easier to digest compared to cow milk. Delivers active cultures to support gut and skin health.',
+    primaryCompound: 'A2 Beta-Casein, Caprylic Acid, Probiotic Cultures, Calcium',
     targetOrgans: ['Gastrointestinal Microbiota', 'Epithelial Skin Barrier', 'Immune System (GALT)'],
     toxicThresholdOrServing: '1–2 tablespoons per 20 lbs body weight daily. Keep chilled; introduce gradually over 5 days.',
     onsetWindow: 'Digestive soothing in 24 hours; skin allergy and yeast relief within 2 to 3 weeks',
-    summary: 'Raw goat milk and goat milk kefir are celebrated as the most easily digested, bioavailable probiotic superfoods in canine nutrition. With naturally smaller fat globules and hypoallergenic A2 beta-casein protein, it digests in just 20 minutes without lactose distress, flooding the microbiome with billions of active, living probiotics.',
+    summary: 'Raw goat milk and goat milk kefir are easily digested probiotic foods for dogs. With naturally smaller fat globules and A2 beta-casein protein, it digests comfortably without lactose distress, providing beneficial active probiotics. Raw foods can carry bacteria. Talk to your vet first.',
     narrativeOverview: [
-      'Most adult dogs are lactose intolerant to conventional pasteurized cow milk. Cow milk contains large fat globules, inflammatory A1 beta-casein, and high lactose levels that cause severe gas, bloating, and watery diarrhea. In sharp contrast, goat milk contains smaller fat globules, naturally lower lactose, and exclusively hypoallergenic A2 beta-casein.',
+      'Most adult dogs are lactose intolerant to conventional pasteurized cow milk. Cow milk contains large fat globules, inflammatory A1 beta-casein, and high lactose levels that cause severe gas, bloating, and watery diarrhea. In sharp contrast, goat milk contains smaller fat globules, naturally lower lactose, and exclusively A2 beta-casein.',
       'When goat milk is traditionally cultured into kefir, beneficial yeasts and lactic acid bacteria ferment virtually all remaining lactose into lactic acid, making it 99% lactose-free while cultivating over 30 distinct probiotic bacterial strains.',
       'Raw goat milk kefir is especially renowned for combating canine yeast overgrowth (Malassezia dermatitis). Rich in natural caprylic and capric medium-chain fatty acids, it actively suppresses fungal and yeast blooms in paws, ears, and belly folds while reducing systemic allergy symptoms.',
     ],
     biochemicalMechanism: 'Goat milk fat globules average 2 micrometers in diameter (compared to >4 micrometers in bovine milk), enabling rapid enzymatic lipolysis by canine gastric lipases. Goat milk casein consists predominantly of A2 beta-casein, which avoids the creation of the inflammatory opioid peptide BCM-7 associated with A1 cow casein. Fermentation produces high titers of live probiotic strains (Lactobacillus, Lactococcus, Bifidobacterium, and Saccharomyces kefir) along with natural medium-chain triglycerides (MCTs: caprylic and capric acid). Caprylic acid disrupts fungal cell membranes, exerting powerful natural fungicidal action against Malassezia yeast.',
     vitalStats: [
-      { label: 'Nutritional Category', value: 'Hypoallergenic Probiotic Bio-Ferment', tone: 'safe' },
+      { label: 'Nutritional Category', value: 'Fermented Probiotic Milk', tone: 'safe' },
       { label: 'Protein Profile', value: '100% A2 Beta-Casein (Non-Inflammatory)', tone: 'safe' },
-      { label: 'Microbial Density', value: 'Billions of Active Live CFUs', tone: 'safe' },
+      { label: 'Microbial Density', value: 'Active Live Cultures', tone: 'safe' },
       { label: 'Target Benefit', value: 'Soothes Allergies & Clears Yeast Overgrowth', tone: 'safe' },
     ],
     timeline: [
@@ -1794,7 +1794,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
         phase: 'Phase 1: 0 to 24 Hours (Gastric Digestion & Hydration)',
         symptoms: [
           'Digests completely within 20 minutes without the bloating or gas caused by cow milk',
-          'Delivers easily assimilated dietary calcium, vitamin A, and bioavailable hydration',
+          'Delivers easily assimilated dietary calcium, vitamin A, and hydration',
           'Living enzymes begin soothing irritated gastric and intestinal lining',
         ],
       },
@@ -1852,7 +1852,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       },
       {
         name: 'Geriatric Nutritional Boost for Inappetent Dogs',
-        purpose: 'Provides dense, hypoallergenic calories, electrolytes, and hydration for aging or failing canines who refuse solid food.',
+        purpose: 'Provides dense, easily tolerated calories, electrolytes, and hydration for aging or failing canines who refuse solid food.',
       },
       {
         name: 'Puppy Weaning & Transitional Nutrition',
@@ -1881,11 +1881,11 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     faqs: [
       {
         q: 'Why can dogs drink goat milk when they cannot drink cow milk?',
-        a: 'Cow milk contains large fat globules that take hours to break down, inflammatory A1 beta-casein protein, and high lactose levels that adult dogs lack enzymes to digest. Goat milk has naturally smaller fat globules, lower lactose, and hypoallergenic A2 beta-casein that digests in just 20 minutes without gastrointestinal distress.',
+        a: 'Cow milk contains large fat globules that take hours to break down, inflammatory A1 beta-casein protein, and high lactose levels that adult dogs lack enzymes to digest. Goat milk has naturally smaller fat globules, lower lactose, and A2 beta-casein that digests comfortably without gastrointestinal distress.',
       },
       {
         q: 'How does goat milk kefir help dogs with itchy, yeasty paws?',
-        a: 'Goat milk kefir contains high natural concentrations of caprylic and capric acid (medium-chain fatty acids). Caprylic acid is a clinically proven natural antifungal that penetrates and destroys the cell walls of Malassezia yeast—the root cause of red, smelly, constantly licked paws.',
+        a: 'Goat milk kefir contains high natural concentrations of caprylic and capric acid (medium-chain fatty acids). Caprylic acid is a natural antifungal fatty acid that helps manage Malassezia yeast—a common contributor to red, itchy, constantly licked paws.',
       },
       {
         q: 'How much goat milk kefir should I give my dog each day?',
@@ -1896,7 +1896,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
       name: "Native Pet Pup-Kin Spice Latte Bundle - Goat Milk & Pumpkin Powder for Dogs",
       url: "https://amzn.to/3UA8cvX",
       badge: "ALL-NATURAL GOAT MILK & DIGESTIVE PROBIOTICS",
-      whyRecommended: "Hypoallergenic A2 beta-casein goat milk powder paired with pure pumpkin. Delivers billions of living probiotic CFUs to calm yeasty paws, sooth allergies, and rebuild gut flora.",
+      whyRecommended: "A2 beta-casein goat milk powder paired with pure pumpkin, delivering live probiotic cultures for digestive support.",
     },
   },
 ];

@@ -3,10 +3,10 @@ import type { RecipeBlueprintSectionI18n, RecipeBlueprintPageI18n } from './type
 
 export const RECIPE_BLUEPRINT_SECTION_I18N: Record<Lang, RecipeBlueprintSectionI18n> = {
   en: {
-    title: 'Balanced Homemade Recipe Blueprints',
-    intro: 'Four complete, balanced whole-food formulations engineered for adult canine maintenance, high vitality, senior joints, and sensitive digestion:',
+    title: 'Homemade Recipe Blueprints',
+    intro: 'Four whole-food recipe blueprints designed for adult canine maintenance, high vitality, senior joints, and sensitive digestion:',
     readMoreBtn: 'Read full recipe guide & preparation blueprint →',
-    footerText: 'Use our free nutrition engine to convert any of these percentages into exact daily gram measurements for your dog’s weight:',
+    footerText: 'Use our free nutrition engine to convert any of these percentages into estimated daily gram measurements for your dog’s weight:',
     footerLink: 'Launch Dog Feeding Calculator',
   },
   es: {
@@ -62,11 +62,11 @@ export const RECIPE_BLUEPRINT_SECTION_I18N: Record<Lang, RecipeBlueprintSectionI
 
 export const RECIPE_BLUEPRINT_PAGE_I18N: Record<Lang, RecipeBlueprintPageI18n> = {
   en: {
-    badge: 'NUTRITION BLUEPRINT // NRC & AAFCO ADULT COMPLIANT',
+    badge: 'RECIPE BLUEPRINT // HOMEMADE GUIDE',
     reviewedBy: 'DogFoodPlanner Editorial Team',
     clinicalOverview: 'Nutritional Overview',
-    formulaTitle: 'The Complete Percentage Blueprint Formula',
-    formulaSubtitle: 'Exact weight-based ratio breakdown. Zero synthetic fillers, chemical colors, or unverified premixes.',
+    formulaTitle: 'Percentage Blueprint Recipe Breakdown',
+    formulaSubtitle: 'Weight-based ratio breakdown. Zero synthetic fillers, chemical colors, or unverified premixes.',
     ingredientCol: 'Ingredient',
     pctCol: 'Blueprint Ratio',
     categoryCol: 'Nutritional Category',
@@ -122,12 +122,12 @@ export const RECIPE_BLUEPRINT_PAGE_I18N: Record<Lang, RecipeBlueprintPageI18n> =
     safetyTitle: 'Safety, Transition & Contraindications',
     contraindicationsTitle: 'Who Should NOT Eat This Specific Blueprint',
     transitionTitle: '10-Day Safe Gastrointestinal Transition Protocol',
-    calculatorCtaTitle: 'Calculate Custom Grams for Your Dog’s Exact Age & Weight',
-    calculatorCtaDesc: 'Our feeding calculator factors in neuter status, body condition score, and activity level to generate precise daily gram portions.',
+    calculatorCtaTitle: 'Calculate Custom Grams for Your Dog’s Age & Weight',
+    calculatorCtaDesc: 'Our feeding calculator factors in neuter status, body condition score, and activity level to generate estimated daily gram portions.',
     calculatorCtaBtn: 'Launch Meal Planner →',
     prevBlueprint: 'Previous Recipe Blueprint',
     nextBlueprint: 'Next Recipe Blueprint',
-    backLink: 'Back to Best Dog Food Guide',
+    backLink: 'Back to Dog Food Types Compared',
     titleSuffix: 'Homemade Dog Food Blueprint | Dog Food Planner',
     faqTitle: 'Frequently Asked Questions About This Blueprint',
   },
