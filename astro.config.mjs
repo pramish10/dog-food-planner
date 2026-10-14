@@ -92,7 +92,6 @@ function serializeSitemapItem(item) {
   } else if (
     unprefixed.startsWith('/faq/') ||
     unprefixed.startsWith('/blog/') ||
-    unprefixed.startsWith('/breeds/') ||
     unprefixed.startsWith('/best-dog-food/')
   ) {
     item.priority = 0.7;
