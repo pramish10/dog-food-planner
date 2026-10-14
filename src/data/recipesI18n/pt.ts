@@ -86,7 +86,7 @@ export const ptRecipes: LocalizedRecipesMap = {
     ]
   },
   'raw-barf-lamb-hypoallergenic': {
-    name: 'Fórmula Crua Hipoalergênica de Cordeiro e Bucho Verde',
+    name: 'Fórmula Crua de Proteína Inédita de Cordeiro e Bucho Verde',
     description: 'Carne de cordeiro de pasto, fígado, costelas macias comestíveis, bucho verde cru sem alvejante e salsa antioxidante.',
     ingredients: [
       'Paleta e coração de cordeiro de pasto',

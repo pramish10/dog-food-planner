@@ -86,7 +86,7 @@ export const itRecipes: LocalizedRecipesMap = {
     ]
   },
   'raw-barf-lamb-hypoallergenic': {
-    name: 'Formula Cruda Ipoallergenica di Agnello e Trippa Verde',
+    name: 'Formula Cruda a Proteina Novità di Agnello e Trippa Verde',
     description: 'Muscolo di agnello da pascolo, fegato, costine morbide commestibili, trippa verde non sbiancata e prezzemolo antiossidante.',
     ingredients: [
       'Spalla e cuore di agnello da pascolo',

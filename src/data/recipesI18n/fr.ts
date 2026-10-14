@@ -86,7 +86,7 @@ export const frRecipes: LocalizedRecipesMap = {
     ]
   },
   'raw-barf-lamb-hypoallergenic': {
-    name: 'Formule Crue Hypoallergénique Agneau et Panse Verte',
+    name: 'Formule Crue à Protéine Nouvelle Agneau et Panse Verte',
     description: 'Viande musculaire d’agneau de pâturage, foie, côtes tendres comestibles, panse verte non blanchie et persil antioxydant bio.',
     ingredients: [
       'Épaule et cœur d’agneau d’herbe',

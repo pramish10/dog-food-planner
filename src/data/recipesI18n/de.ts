@@ -86,7 +86,7 @@ export const deRecipes: LocalizedRecipesMap = {
     ]
   },
   'raw-barf-lamb-hypoallergenic': {
-    name: 'Hypoallergene Weidelamm- & Blättermagen-Rohformel',
+    name: 'Neuartige Weidelamm- & Blättermagen-Rohformel',
     description: 'Weidelamm-Muskelfleisch, Lammleber, kaubare weiche Lammrippen, ungebleichter grüner Pansen und Petersilien-Antioxidantien.',
     ingredients: [
       'Lammschulter & Lammherz aus Weidehaltung',
@@ -245,7 +245,7 @@ export const deRecipes: LocalizedRecipesMap = {
   },
   'raw-barf-venison-novel': {
     name: 'Ausschluss-Rohformel mit Hirsch & Kaninchen',
-    description: 'Die bewährte Eliminationsdiät mit zwei seltenen, hypoallergenen Proteinquellen für Hunde mit multiplen Unverträglichkeiten.',
+    description: 'Die bewährte Ausschlussdiät mit zwei seltenen, neuartigen Proteinquellen für Hunde mit Unverträglichkeiten.',
     ingredients: [
       'Wildes Hirschhackfleisch (95/5)',
       'Ganzes gewolftes Kaninchen (inkl. Knochen)',

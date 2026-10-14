@@ -86,7 +86,7 @@ export const jaRecipes: LocalizedRecipesMap = {
     ]
   },
   'raw-barf-lamb-hypoallergenic': {
-    name: '低アレルゲン放牧ラム＆生グリーントライプ処方',
+    name: '新奇タンパク質 放牧ラム＆生グリーントライプ処方',
     description: '放牧ラム肉、ラムレバー、可食ラムリブ骨、未漂白グリーントライプ、有機パセリ抗酸化ブレンド。',
     ingredients: [
       '放牧ラム肩肉＆ラムハツ',

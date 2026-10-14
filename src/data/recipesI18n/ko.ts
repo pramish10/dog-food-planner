@@ -86,7 +86,7 @@ export const koRecipes: LocalizedRecipesMap = {
     ]
   },
   'raw-barf-lamb-hypoallergenic': {
-    name: '저알레르기 양고기 & 그린 트라이프 생식',
+    name: '신기 단백질 양고기 & 그린 트라이프 생식',
     description: '방목 양고기 살코기, 양 간, 부드러운 양 갈비뼈, 무표백 그린 트라이프와 파슬리 항산화 블렌드.',
     ingredients: [
       '방목 양 어깨살 & 양 염통',

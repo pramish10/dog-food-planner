@@ -18,23 +18,32 @@ const descriptionKey = titleKey.replace('.title', '.desc') as keyof typeof ui.en
   <Navbar />
   <main class="min-h-screen page-warm-bg">
     <Breadcrumbs items={[{ name: t('nav.brand'), url: translatePath('/') }, { name: t(navKey) }]} />
-    <section class="relative py-10 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
-      <!-- Warm glow -->
-      <div class="absolute inset-0 pointer-events-none z-0">
-        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] h-48 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.15) 0%, transparent 70%); filter: blur(35px);"></div>
-      </div>
-      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center min-w-0">
-        <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-4 text-balance leading-tight">
-          {page.heroTitle || t(navKey)}
-        </h1>
-        <p class="text-sm sm:text-base text-[#6b4226] dark:text-[#c4956a] max-w-2xl mx-auto leading-relaxed text-pretty">
-          {page.heroSubtitle || strings[descriptionKey]}
-        </p>
-        <p class="mt-3 text-xs font-mono text-[#8f5e35] dark:text-[#c4956a]">
-          Last updated: October 14, 2026
-        </p>
-      </div>
-    </section>
+    {kind !== 'bestFood' && kind !== 'recipes' ? (
+      <section class="relative py-10 sm:py-16 border-b border-[#f0d5a8] dark:border-[#3a2510] overflow-hidden">
+        <!-- Warm glow -->
+        <div class="absolute inset-0 pointer-events-none z-0">
+          <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[500px] h-48 rounded-full opacity-50" style="background: radial-gradient(ellipse at 50% 0%, rgba(196,122,43,0.15) 0%, transparent 70%); filter: blur(35px);"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center min-w-0">
+          <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-4 text-balance leading-tight">
+            {page.heroTitle || t(navKey)}
+          </h1>
+          {kind === 'allergies' && (
+            <p class="text-sm sm:text-base text-[#6b4226] dark:text-[#c4956a] max-w-2xl mx-auto leading-relaxed text-pretty mb-3">
+              {page.vetNotice || 'Food allergies can look like other health problems. See your veterinarian before starting an elimination diet and follow their guidance during the trial.'}
+            </p>
+          )}
+          <p class="text-sm sm:text-base text-[#6b4226] dark:text-[#c4956a] max-w-2xl mx-auto leading-relaxed text-pretty">
+            {page.heroSubtitle || strings[descriptionKey]}
+          </p>
+          <p class="mt-3 text-xs font-mono text-[#8f5e35] dark:text-[#c4956a]">
+            Last updated: October 14, 2026
+          </p>
+        </div>
+      </section>
+    ) : (
+      <h1 class="sr-only">{page.heroTitle || strings[titleKey]}</h1>
+    )}
     <LocalizedGuideContent kind={kind} />
   </main>
   <Footer />

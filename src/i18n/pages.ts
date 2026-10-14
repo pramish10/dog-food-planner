@@ -444,30 +444,31 @@ export const PAGE_TRANSLATIONS = {
     },
     "allergies": {
       "eyebrow": "NUTRITIONAL GUIDE // CANINE ALLERGIES & DIGESTION",
-      "heroTitle": "Best Dog Food for Allergies & Sensitive Stomachs",
+      "heroTitle": "Dog Food for Allergies & Sensitive Stomachs",
+      "vetNotice": "Food allergies can look like other health problems. See your veterinarian before starting an elimination diet and follow their guidance during the trial.",
       "heroSubtitle": "Practical guide to food allergies, single-source novel proteins, and 8-week elimination diet protocols.",
-      "allergensTitle": "The Top 5 Most Common Canine Food Allergens",
-      "allergensIntro": "Canine food allergies are immune-mediated hypersensitivity reactions to specific dietary proteins. In order of common frequency:",
+      "allergensTitle": "Ingredients Some Dogs React To",
+      "allergensIntro": "Canine food allergies are immune-mediated reactions to specific dietary ingredients. Some common examples include:",
       "allergensList": [
         {
-          "name": "1. Factory Chicken (60% of cases)",
-          "desc": "Due to extreme overexposure across commercial pet food, chicken is the #1 canine allergen."
+          "name": "Chicken",
+          "desc": "Chicken is widely used in dog food, so many dogs have been exposed to it. Some react to it."
         },
         {
-          "name": "2. Commercial Beef (30% of cases)",
-          "desc": "Widely used red meat that triggers severe skin itching and ear infections in sensitive dogs."
+          "name": "Beef",
+          "desc": "Beef is another common ingredient that some dogs react to, with signs such as itching or ear problems."
         },
         {
-          "name": "3. Dairy Products",
-          "desc": "Adult dogs naturally lack lactase enzymes, causing explosive diarrhea and gas."
+          "name": "Dairy",
+          "desc": "Many adult dogs have trouble digesting milk, which can cause gas or loose stools."
         },
         {
-          "name": "4. Wheat & Corn Gluten",
-          "desc": "High-glycemic grain proteins that trigger chronic inflammation and yeast overgrowth."
+          "name": "Wheat & Corn",
+          "desc": "Some dogs react to grains, although reactions to proteins are more common."
         },
         {
-          "name": "5. Soy & Legumes",
-          "desc": "Common cheap filler proteins that can impair gut barrier function and thyroid health."
+          "name": "Soy",
+          "desc": "Soy is a common ingredient that some dogs react to."
         }
       ],
       "eliminationTitle": "The 8-Week Elimination Diet Protocol",
@@ -485,28 +486,29 @@ export const PAGE_TRANSLATIONS = {
         {
           "step": "Phase 3",
           "title": "Controlled Single-Ingredient Rechallenge",
-          "desc": "If itching and gastrointestinal issues resolve, introduce one suspected protein (e.g. chicken) for 7 days. If symptoms return, you have confirmed the allergy."
+          "desc": "If itching and gastrointestinal issues resolve, introduce one suspected protein (e.g. chicken) for 7 days. If symptoms return, tell your veterinarian. Food allergies should be diagnosed with your vet's help."
         }
       ],
-      "novelTitle": "Top Recommended Novel & Hypoallergenic Proteins",
+      "novelTitle": "Common Novel Proteins",
       "novelProteins": [
         {
           "name": "Venison (Deer)",
-          "desc": "Lean, nutrient-dense red meat that sensitive dogs rarely have antibodies against."
+          "desc": "A lean red meat that is new to many dogs."
         },
         {
           "name": "Rabbit",
-          "desc": "Extremely hypoallergenic novel protein with an ideal ratio of essential amino acids."
+          "desc": "A protein many dogs have never eaten."
         },
         {
           "name": "Duck",
-          "desc": "Excellent flavorful alternative for dogs with severe factory chicken intolerance."
+          "desc": "An alternative for dogs that have eaten a lot of chicken."
         },
         {
           "name": "Kangaroo",
-          "desc": "One of the leanest, cleanest wild proteins in veterinary dermatology."
+          "desc": "A lean protein that is new to many dogs."
         }
-      ]
+      ],
+      "hydrolyzedPrescriptionNotice": "This is a prescription diet. Talk to your veterinarian before using it."
     },
     "calculator": {
       "eyebrow": "100% FREE // CANINE NUTRITION GUIDELINES",
@@ -1068,30 +1070,31 @@ export const PAGE_TRANSLATIONS = {
     },
     "allergies": {
       "eyebrow": "GUÍA NUTRICIONAL // ALERGIAS Y DIGESTIÓN CANINA",
-      "heroTitle": "Mejor Comida para Perros con Alergias y Estómago Sensible",
-      "heroSubtitle": "Guía práctica sobre intolerancias alimentarias, proteínas noveles hipoalergénicas y dietas de descarte de 8 semanas.",
-      "allergensTitle": "Los 5 Alérgenos Alimentarios Más Frecuentes en Perros",
-      "allergensIntro": "Las alergias alimentarias caninas son reacciones de hipersensibilidad inmunitaria frente a determinadas proteínas dietéticas. Por orden de frecuencia clínica:",
+      "heroTitle": "Comida para Perros con Alergias y Estómago Sensible",
+      "vetNotice": "Las alergias alimentarias pueden parecerse a otros problemas de salud. Consulte a su veterinario antes de iniciar una dieta de eliminación y siga sus indicaciones durante la prueba.",
+      "heroSubtitle": "Guía práctica sobre intolerancias alimentarias, proteínas noveles y dietas de descarte de 8 semanas.",
+      "allergensTitle": "Ingredientes a los que Reaccionan Algunos Perros",
+      "allergensIntro": "Las alergias alimentarias caninas son reacciones inmunitarias frente a ingredientes dietéticos específicos. Algunos ejemplos comunes incluyen:",
       "allergensList": [
         {
-          "name": "1. Pollo Industrial (60% de los casos)",
-          "desc": "Debido a su sobreexposición masiva en los piensos comerciales, el pollo es el alérgeno canino número uno."
+          "name": "Pollo",
+          "desc": "El pollo se utiliza ampliamente en la comida para perros, por lo que muchos perros han estado expuestos a él. Algunos reaccionan a él."
         },
         {
-          "name": "2. Ternera Comercial (30% de los casos)",
-          "desc": "Proteína roja habitual que suele desencadenar picor cutáneo intenso e infecciones de oído recurrentes."
+          "name": "Ternera",
+          "desc": "La ternera es otro ingrediente común al que algunos perros reaccionan, con signos como picor o problemas de oído."
         },
         {
-          "name": "3. Lácteos y Quesos",
-          "desc": "Los perros adultos carecen de lactasa suficiente, provocando diarrea osmótica y cólicos."
+          "name": "Lácteos",
+          "desc": "Muchos perros adultos tienen problemas para digerir la leche, lo que puede causar gases o heces blandas."
         },
         {
-          "name": "4. Gluten de Trigo y Maíz",
-          "desc": "Proteínas vegetales que dañan la mucosa intestinal y favorecen la proliferación de levaduras."
+          "name": "Trigo y Maíz",
+          "desc": "Algunos perros reaccionan a los cereales, aunque las reacciones a las proteínas son más comunes."
         },
         {
-          "name": "5. Soja y Leguminosas",
-          "desc": "Rellenos proteicos económicos que alteran la barrera digestiva y provocan gases y prurito."
+          "name": "Soja",
+          "desc": "La soja es un ingrediente común al que algunos perros reaccionan."
         }
       ],
       "eliminationTitle": "Protocolo de Dieta de Eliminación de 8 Semanas",
@@ -1109,28 +1112,29 @@ export const PAGE_TRANSLATIONS = {
         {
           "step": "Fase 3",
           "title": "Reintroducción Controlada",
-          "desc": "Si los picores y problemas digestivos remiten, reintroduce un ingrediente sospechoso durante 7 días para verificar con certeza la causa de la alergia."
+          "desc": "Si los picores y problemas digestivos remiten, reintroduce un ingrediente sospechoso durante 7 días. Si los síntomas reaparecen, avise a su veterinario. Las alergias alimentarias deben diagnosticarse con la ayuda de su veterinario."
         }
       ],
-      "novelTitle": "Proteínas Noveles Hipoalergénicas Recomendadas",
+      "novelTitle": "Proteínas Noveles Comunes",
       "novelProteins": [
         {
           "name": "Carne de Ciervo / Venado",
-          "desc": "Carne roja magra y muy digestible frente a la cual los perros casi nunca han desarrollado anticuerpos."
+          "desc": "Una carne roja magra que es nueva para muchos perros."
         },
         {
           "name": "Carne de Conejo",
-          "desc": "Proteína hipoalergénica de alto valor biológico y óptimo perfil de aminoácidos."
+          "desc": "Una proteína que muchos perros nunca han comido."
         },
         {
           "name": "Carne de Pato",
-          "desc": "Excelente alternativa sabrosa para perros intolerantes a las aves de corral comunes."
+          "desc": "Una alternativa para perros que han comido mucho pollo."
         },
         {
           "name": "Carne de Canguro",
-          "desc": "Una de las carnes silvestres más puras y magras utilizadas en dermatología veterinaria."
+          "desc": "Una proteína magra que es nueva para muchos perros."
         }
-      ]
+      ],
+      "hydrolyzedPrescriptionNotice": "Esta es una dieta de prescripción veterinaria. Hable con su veterinario antes de utilizarla."
     },
     "calculator": {
       "eyebrow": "100% GRATIS // PAUTAS DE NUTRICIÓN CANINA",
@@ -1691,31 +1695,32 @@ export const PAGE_TRANSLATIONS = {
       ]
     },
     "allergies": {
-      "eyebrow": "アレルギー対策ガイド // 食物アレルギーと低アレルゲン食",
+      "eyebrow": "アレルギー対策ガイド // 食物アレルギーと新奇タンパク質",
       "heroTitle": "アレルギー・皮膚炎・お腹が弱い犬のためのフードガイド",
-      "heroSubtitle": "食物アレルギーのメカニズム、単一タンパク質（新奇タンパク質）の選び方、8週間の除去食試験プロトコルを詳しく解説。",
-      "allergensTitle": "犬に最も多い食物アレルゲンTOP5",
-      "allergensIntro": "犬の食物アレルギーは、特定のタンパク質に対する免疫過剰反応です。臨床報告の多い順に以下の通りです：",
+      "vetNotice": "食物アレルギーは他の健康問題と似た症状を示すことがあります。除去食試験を始める前に獣医師に相談し、試験中もその指導に従ってください。",
+      "heroSubtitle": "食物アレルギーの仕組み、単一の新奇タンパク質の選び方、8週間の除去食試験手順を解説。",
+      "allergensTitle": "一部の犬が反応を示す原材料",
+      "allergensIntro": "犬の食物アレルギーは、特定の食事成分に対する免疫反応です。代表的な例として以下が挙げられます：",
       "allergensList": [
         {
-          "name": "1. 市販ブロイラーチキン（全体の約60％）",
-          "desc": "市販ペットフードに極めて多用されているため、最も抗体が作られやすいアレルゲンです。"
+          "name": "鶏肉（チキン）",
+          "desc": "鶏肉はドッグフードに広く使われているため、多くの犬が口にしています。中には反応を示す犬もいます。"
         },
         {
-          "name": "2. 牛肉（全体の約30％）",
-          "desc": "赤身肉アレルギーを持つ犬では、激しい皮膚の痒みや外耳炎の主な原因となります。"
+          "name": "牛肉（ビーフ）",
+          "desc": "牛肉も多くの犬が反応を示す一般的な原材料で、皮膚の痒みや耳のトラブルなどの兆候が見られることがあります。"
         },
         {
-          "name": "3. 乳製品・チーズ",
-          "desc": "犬は成犬になるとラクターゼ酵素が失われるため、乳糖不耐症による下痢や腹鳴を引き起こします。"
+          "name": "乳製品",
+          "desc": "成犬の多くは牛乳の消化が苦手で、ガスや軟便の原因になることがあります。"
         },
         {
-          "name": "4. 小麦・トウモロコシのグルテン",
-          "desc": "腸粘膜バリアを荒らし、体内の慢性炎症や皮膚のマラセチア酵母菌の増殖を助長します。"
+          "name": "小麦・トウモロコシ",
+          "desc": "穀物に反応する犬もいますが、タンパク質に対する反応の方がより一般的です。"
         },
         {
-          "name": "5. 大豆・豆類プロテイン",
-          "desc": "安価な増量材として使われる植物性タンパク質ですが、消化不良やガス発生の原因になります。"
+          "name": "大豆",
+          "desc": "大豆は一般的な原材料ですが、一部の犬が反応を示すことがあります。"
         }
       ],
       "eliminationTitle": "「8週間 除去食試験（エリミネーション）」の手順",
@@ -1733,28 +1738,29 @@ export const PAGE_TRANSLATIONS = {
         {
           "step": "ステップ3",
           "title": "1食材ずつの負荷試験（原因物質の特定）",
-          "desc": "痒みや下痢が完全に治まったら、疑わしい食材（例：鶏肉）を1種類だけ7日間与えて反応を観察します。症状が再発すればアレルゲン確定です。"
+          "desc": "痒みや消化器系の問題が治まったら、疑わしい原材料（例：鶏肉）を1種類だけ7日間与えて観察します。症状が再発した場合は獣医師に伝えてください。食物アレルギーの診断は獣医師の助けを借りて行う必要があります。"
         }
       ],
-      "novelTitle": "おすすめの新奇タンパク質（低アレルゲン肉）",
+      "novelTitle": "一般的な新奇タンパク質",
       "novelProteins": [
         {
           "name": "鹿肉（ベニソン）",
-          "desc": "高タンパク低脂質でビタミンB群が豊富。抗体を持っている犬が極めて少ない優秀な赤身肉。"
+          "desc": "多くの犬にとって初めてとなる赤身の赤身肉です。"
         },
         {
           "name": "ウサギ肉（ラビット）",
-          "desc": "必須アミノ酸バランスに優れ、消化吸収率が高く、漢方医学でも体を温め炎症を鎮める肉とされます。"
+          "desc": "多くの犬が今まで食べたことのないタンパク質です。"
         },
         {
           "name": "鴨肉（ダック）",
-          "desc": "鶏肉アレルギーの犬にとって安全な鳥肉代替品。鉄分と不飽和脂肪酸が豊富。"
+          "desc": "鶏肉をたくさん食べてきた犬のための代替タンパク質です。"
         },
         {
           "name": "カンガルー肉",
-          "desc": "オーストラリアの大自然で育った天然野生肉。脂肪分が約2％と極めて低く最もクリーンな肉。"
+          "desc": "多くの犬にとって新しい、脂肪分の少ないタンパク質です。"
         }
-      ]
+      ],
+      "hydrolyzedPrescriptionNotice": "これは特別療法食です。使用する前に獣医師にご相談ください。"
     },
     "calculator": {
       "eyebrow": "完全無料 // 給餌量＆カロリー計算機",
@@ -2316,30 +2322,31 @@ export const PAGE_TRANSLATIONS = {
     },
     "allergies": {
       "eyebrow": "GUIDE PRATIQUE // ALLERGIES ALIMENTAIRES ET DIGESTION",
-      "heroTitle": "Meilleure Alimentation pour Chien Allergique et Estomac Sensible",
+      "heroTitle": "Alimentation pour Chien Allergique et Estomac Sensible",
+      "vetNotice": "Les allergies alimentaires peuvent ressembler à d'autres problèmes de santé. Consultez votre vétérinaire avant d'entamer un régime d'éviction et suivez ses conseils pendant l'essai.",
       "heroSubtitle": "Guide pratique sur les intolérances, le choix des protéines nouvelles et le protocole d’éviction de 8 semaines.",
-      "allergensTitle": "Les 5 Allergènes Alimentaires les Plus Courants chez le Chien",
-      "allergensIntro": "Les allergies alimentaires canines sont des réactions immunitaires d’hypersensibilité à des protéines spécifiques. Par ordre de prévalence clinique :",
+      "allergensTitle": "Ingrédients aux Quels Certains Chiens Réagissent",
+      "allergensIntro": "Les allergies alimentaires chez le chien sont des réactions immunitaires à des ingrédients alimentaires spécifiques. Voici quelques exemples fréquents :",
       "allergensList": [
         {
-          "name": "1. Poulet Industriel (60% des cas)",
-          "desc": "Omniprésent dans les croquettes de grande consommation, le poulet est l’allergène canin numéro un."
+          "name": "Poulet",
+          "desc": "Le poulet est largement utilisé dans les aliments pour chiens, de sorte que de nombreux chiens y ont été exposés. Certains y réagissent."
         },
         {
-          "name": "2. Bœuf Commercial (30% des cas)",
-          "desc": "Protéine rouge fréquente provoquant de fortes démangeaisons cutanées et des otites chroniques."
+          "name": "Bœuf",
+          "desc": "Le bœuf est un autre ingrédient courant auquel certains chiens réagissent, avec des signes comme des démangeaisons ou des problèmes d'oreilles."
         },
         {
-          "name": "3. Produits Laitiers et Fromages",
-          "desc": "Les chiens adultes manquent d’enzymes lactases, causant diarrhées et flatulences douloureuses."
+          "name": "Produits laitiers",
+          "desc": "Beaucoup de chiens adultes ont du mal à digérer le lait, ce qui peut provoquer des gaz ou des selles molles."
         },
         {
-          "name": "4. Gluten de Blé et de Maïs",
-          "desc": "Protéines végétales pro-inflammatoires fragilisant la muqueuse intestinale."
+          "name": "Blé et Maïs",
+          "desc": "Certains chiens réagissent aux céréales, bien que les réactions aux protéines soient plus fréquentes."
         },
         {
-          "name": "5. Soja et Légumineuses",
-          "desc": "Substituts protéiques industriels provoquant une fermentation intestinale anormale et du prurit."
+          "name": "Soja",
+          "desc": "Le soja est un ingrédient courant auquel certains chiens réagissent."
         }
       ],
       "eliminationTitle": "Le Protocole d’Éviction sur 8 Semaines",
@@ -2357,28 +2364,29 @@ export const PAGE_TRANSLATIONS = {
         {
           "step": "Phase 3",
           "title": "Test de Réintroduction Contrôlé",
-          "desc": "Si les démangeaisons ont disparu, réintroduisez un ingrédient suspect pendant 7 jours. Si les rougeurs réapparaissent, l’allergie est confirmée."
+          "desc": "Si les démangeaisons et les troubles digestifs ont disparu, réintroduisez un ingrédient suspect pendant 7 jours. Si les symptômes réapparaissent, prévenez votre vétérinaire. Les allergies alimentaires doivent être diagnostiquées avec l'aide de votre vétérinaire."
         }
       ],
-      "novelTitle": "Protéines Nouvelles Recommandées par les Vétérinaires",
+      "novelTitle": "Protéines Nouvelles Courantes",
       "novelProteins": [
         {
           "name": "Viande de Cerf / Chevreuil",
-          "desc": "Viande rouge maigre et très digeste contre laquelle l’organisme canin n’a généralement pas d’anticorps."
+          "desc": "Une viande rouge maigre nouvelle pour beaucoup de chiens."
         },
         {
           "name": "Viande de Lapin",
-          "desc": "Protéine hypoallergénique d’excellence possédant un remarquable profil en acides aminés."
+          "desc": "Une protéine que beaucoup de chiens n'ont jamais mangée."
         },
         {
           "name": "Viande de Canard",
-          "desc": "Alternative très appétente pour les chiens intolérants au poulet d’élevage."
+          "desc": "Une alternative pour les chiens qui ont consommé beaucoup de poulet."
         },
         {
           "name": "Viande de Kangourou",
-          "desc": "L’une des viandes sauvages les plus pures et pauvres en matières grasses."
+          "desc": "Une protéine maigre nouvelle pour beaucoup de chiens."
         }
-      ]
+      ],
+      "hydrolyzedPrescriptionNotice": "Il s'agit d'un aliment diététique vétérinaire sur prescription. Consultez votre vétérinaire avant de l'utiliser."
     },
     "calculator": {
       "eyebrow": "100% GRATUIT // CALCULATEUR DE PORTIONS",
@@ -2940,30 +2948,31 @@ export const PAGE_TRANSLATIONS = {
     },
     "allergies": {
       "eyebrow": "ERNÄHRUNGS-RATGEBER // ALLERGIEN & AUSSCHLUSSDIÄT",
-      "heroTitle": "Bestes Futter für Hunde mit Allergien & empfindlichem Magen",
+      "heroTitle": "Futter für Hunde mit Allergien & empfindlichem Magen",
+      "vetNotice": "Futtermittelallergien können anderen gesundheitlichen Problemen ähneln. Konsultieren Sie Ihren Tierarzt, bevor Sie mit einer Eliminationsdiät beginnen, und befolgen Sie dessen Anweisungen während des Tests.",
       "heroSubtitle": "Praktischer Leitfaden zu Futtermittelallergien, Monoprotein-Sorten und der 8-wöchigen Eliminationsdiät.",
-      "allergensTitle": "Die 5 häufigsten Futtermittelallergene beim Hund",
-      "allergensIntro": "Futtermittelallergien sind immunologische Überreaktionen auf bestimmte Nahrungsproteine. Nach klinischer Häufigkeit geordnet:",
+      "allergensTitle": "Zutaten, auf die manche Hunde reagieren",
+      "allergensIntro": "Futtermittelallergien bei Hunden sind immunvermittelte Reaktionen auf bestimmte Futterzutaten. Häufige Beispiele sind:",
       "allergensList": [
         {
-          "name": "1. Masthuhn / Geflügel (ca. 60% der Fälle)",
-          "desc": "Aufgrund der massenhaften Verwendung in Fertigfuttern das häufigste Allergen überhaupt."
+          "name": "Huhn",
+          "desc": "Hühnerfleisch wird häufig in Hundefutter verwendet, sodass viele Hunde damit in Kontakt gekommen sind. Einige reagieren darauf."
         },
         {
-          "name": "2. Rindfleisch (ca. 30% der Fälle)",
-          "desc": "Klassisches rotes Fleisch, das bei sensibilisierten Hunden extremen Juckreiz und Ohrentzündungen auslöst."
+          "name": "Rind",
+          "desc": "Rindfleisch ist eine weitere häufige Zutat, auf die manche Hunde reagieren, oft mit Anzeichen wie Juckreiz oder Ohrenproblemen."
         },
         {
-          "name": "3. Milchprodukte & Käse",
-          "desc": "Erwachsene Hunde verlieren Laktase-Enzyme; Durchfall und Blähungen sind die Folge."
+          "name": "Milchprodukte",
+          "desc": "Viele erwachsene Hunde vertragen Milch schlecht, was zu Blähungen oder weichem Kot führen kann."
         },
         {
-          "name": "4. Weizen- und Maisgluten",
-          "desc": "Pflanzliche Proteine, welche die Darmschleimhaut schädigen und Entzündungen begünstigen."
+          "name": "Weizen & Mais",
+          "desc": "Manche Hunde reagieren auf Getreide, obwohl Reaktionen auf Proteine häufiger sind."
         },
         {
-          "name": "5. Soja & Hülsenfrüchte",
-          "desc": "Günstige pflanzliche Eiweißquellen, die häufig zu Fehlgärungen und Juckreiz führen."
+          "name": "Soja",
+          "desc": "Soja ist eine häufige Zutat, auf die manche Hunde reagieren."
         }
       ],
       "eliminationTitle": "Die 8-wöchige Ausschlussdiät (Eliminationsdiät)",
@@ -2981,28 +2990,29 @@ export const PAGE_TRANSLATIONS = {
         {
           "step": "Phase 3",
           "title": "Gezielte Provokationstestung",
-          "desc": "Sind Juckreiz und Verdauungsprobleme verschwunden, wird eine verdächtige Zutat für 7 Tage zugefüttert. Treten Symptome wieder auf, ist die Allergie bewiesen."
+          "desc": "Sind Juckreiz und Verdauungsprobleme verschwunden, wird eine verdächtige Zutat für 7 Tage zugefüttert. Treten die Symptome wieder auf, informieren Sie Ihren Tierarzt. Futtermittelallergien sollten mit Hilfe Ihres Tierarztes diagnostiziert werden."
         }
       ],
-      "novelTitle": "Empfohlene hypoallergene Fleischsorten",
+      "novelTitle": "Gängige neuartige Proteinquellen",
       "novelProteins": [
         {
           "name": "Hirsch- & Rehfleisch (Venison)",
-          "desc": "Mageres, nährstoffreiches Wildfleisch mit extrem geringem Allergiepotenzial."
+          "desc": "Ein mageres rotes Fleisch, das für viele Hunde neu ist."
         },
         {
           "name": "Kaninchenfleisch",
-          "desc": "Sehr bekömmliches, hypoallergenes Fleisch mit hervorragender Verdaulichkeit."
+          "desc": "Eine Proteinquelle, die viele Hunde noch nie gefressen haben."
         },
         {
           "name": "Entenfleisch",
-          "desc": "Sehr schmackhafte Alternative für Hunde, die auf normales Hühnerfleisch reagieren."
+          "desc": "Eine Alternative für Hunde, die viel Hühnerfleisch gefressen haben."
         },
         {
           "name": "Kängurufleisch",
-          "desc": "Eines der reinsten und fettärmsten Wildfleische in der tierärztlichen Dermatologie."
+          "desc": "Ein mageres Protein, das für viele Hunde neu ist."
         }
-      ]
+      ],
+      "hydrolyzedPrescriptionNotice": "Dies ist ein verschreibungspflichtiges Diätfuttermittel. Sprechen Sie vor der Verwendung mit Ihrem Tierarzt."
     },
     "calculator": {
       "eyebrow": "100% KOSTENLOS // FUTTERRECHNER",
@@ -3564,30 +3574,31 @@ export const PAGE_TRANSLATIONS = {
     },
     "allergies": {
       "eyebrow": "GUIA NUTRICIONAL // ALERGIAS E DIETA DE ELIMINAÇÃO",
-      "heroTitle": "Melhor Alimentação para Cães Alérgicos e com Estômago Sensível",
-      "heroSubtitle": "Guia prático sobre hipersensibilidade alimentar, proteínas nobres únicas e dieta de eliminação de 8 semanas.",
-      "allergensTitle": "Os 5 Alérgenos Mais Frequentes na Alimentação Canina",
-      "allergensIntro": "Alergias alimentares em cães são respostas imunes anormais a certas proteínas. Por ordem de incidência clínica:",
+      "heroTitle": "Alimentação para Cães Alérgicos e com Estômago Sensível",
+      "vetNotice": "Alergias alimentares podem se parecer com outros problemas de saúde. Consulte seu veterinário antes de iniciar uma dieta de eliminação e siga suas orientações durante o teste.",
+      "heroSubtitle": "Guia prático sobre sensibilidades alimentares, proteínas novas e dieta de eliminação de 8 semanas.",
+      "allergensTitle": "Ingredientes aos Quais Alguns Cães Reagem",
+      "allergensIntro": "Alergias alimentares caninas são reações imunológicas a ingredientes dietéticos específicos. Alguns exemplos comuns incluem:",
       "allergensList": [
         {
-          "name": "1. Frango Industrial (60% dos casos)",
-          "desc": "Devido à superexposição contínua nas rações comerciais, o frango é o maior alérgeno alimentar canino."
+          "name": "Frango",
+          "desc": "O frango é amplamente utilizado em rações para cães, portanto muitos cães já foram expostos a ele. Alguns reagem a ele."
         },
         {
-          "name": "2. Carne Bovina (30% dos casos)",
-          "desc": "Proteína comum que frequentemente deflagra coceira intensa nas patas e otites recorrentes."
+          "name": "Carne Bovina",
+          "desc": "A carne bovina é outro ingrediente comum ao qual alguns cães reagem, apresentando sinais como coceira ou problemas de ouvido."
         },
         {
-          "name": "3. Derivados de Leite e Queijo",
-          "desc": "Cães adultos perdem a enzima lactase, provocando diarreia osmótica e gases."
+          "name": "Laticínios",
+          "desc": "Muitos cães adultos têm dificuldade para digerir leite, o que pode causar gases ou fezes moles."
         },
         {
-          "name": "4. Glúten de Trigo e Milho",
-          "desc": "Proteínas vegetais inflamatórias que fragilizam a permeabilidade intestinal."
+          "name": "Trigo e Milho",
+          "desc": "Alguns cães reagem a grãos, embora reações a proteínas sejam mais comuns."
         },
         {
-          "name": "5. Soja e Proteínas Vegetais Isoladas",
-          "desc": "Fontes vegetais de baixo custo que causam fermentação digestiva e dermatites."
+          "name": "Soja",
+          "desc": "A soja é um ingrediente comum ao qual alguns cães reagem."
         }
       ],
       "eliminationTitle": "O Protocolo da Dieta de Eliminação de 8 Semanas",
@@ -3605,28 +3616,29 @@ export const PAGE_TRANSLATIONS = {
         {
           "step": "Fase 3",
           "title": "Reintrodução Monitorada",
-          "desc": "Se a coceira cessar, reintroduza um ingrediente suspeito por 7 dias. O retorno dos sintomas confirma a alergia."
+          "desc": "Se a coceira e os problemas digestivos cessarem, reintroduza um ingrediente suspeito por 7 dias. Se os sintomas retornarem, avise seu veterinário. Alergias alimentares devem ser diagnosticadas com o apoio do veterinário."
         }
       ],
-      "novelTitle": "Proteínas Nobres Hipoalergênicas Indicadas",
+      "novelTitle": "Proteínas Novas Comuns",
       "novelProteins": [
         {
           "name": "Carne de Cervo / Veado",
-          "desc": "Carne vermelha magra e de altíssima digestibilidade contra a qual cães raramente possuem anticorpos."
+          "desc": "Uma carne vermelha magra que é nova para muitos cães."
         },
         {
           "name": "Carne de Coelho",
-          "desc": "Proteína hipoalergênica por excelência, leve e de fácil quebra metabólica."
+          "desc": "Uma proteína que muitos cães nunca comeram."
         },
         {
           "name": "Carne de Pato",
-          "desc": "Alternativa muito saborosa e segura para animais sensíveis à carne de frango comum."
+          "desc": "Uma alternativa para cães que já comeram muito frango."
         },
         {
           "name": "Carne de Canguru",
-          "desc": "Uma das carnes selvagens mais puras e magras disponíveis na dermatologia veterinária."
+          "desc": "Uma proteína magra que é nova para muitos cães."
         }
-      ]
+      ],
+      "hydrolyzedPrescriptionNotice": "Esta é uma dieta sob prescrição veterinária. Converse com seu veterinário antes de usá-la."
     },
     "calculator": {
       "eyebrow": "100% GRATUITO // CALCULADORA DE RAÇÃO E CALORIAS",
@@ -4187,31 +4199,32 @@ export const PAGE_TRANSLATIONS = {
       ]
     },
     "allergies": {
-      "eyebrow": "식이 알레르기 가이드 // 알레르기 및 제한 급여",
+      "eyebrow": "식이 알레르기 가이드 // 알레르기 및 배제 식이",
       "heroTitle": "알레르기 및 민감성 장을 가진 강아지를 위한 사료 가이드",
-      "heroSubtitle": "단일 단백질(노벨 프로틴) 선택법과 8주간의 배제 식이 시험 프로토콜 안내.",
-      "allergensTitle": "강아지에게 가장 흔한 5대 식이 알레르겐",
-      "allergensIntro": "개의 음식 알레르기는 특정 단백질 분자에 대한 면역계의 과민 반응입니다. 임상 빈도순으로 나열하면 다음과 같습니다:",
+      "vetNotice": "음식 알레르기는 다른 건강 문제와 증상이 유사할 수 있습니다. 배제 식이 시험을 시작하기 전에 수의사와 상담하고 시험 기간 동안 수의사의 지침을 따르세요.",
+      "heroSubtitle": "단일 신기 단백질(노벨 프로틴) 선택법과 8주간의 배제 식이 시험 프로토콜 안내.",
+      "allergensTitle": "일부 반려견이 반응을 보이는 원료",
+      "allergensIntro": "반려견의 식이 알레르기는 특정 성분에 대한 면역 매개 반응입니다. 흔한 예는 다음과 같습니다:",
       "allergensList": [
         {
-          "name": "1. 공장식 사육 닭고기 (전체 사례의 60%)",
-          "desc": "시중 펫푸드에 가장 흔하게 쓰이므로 체내 항체가 가장 많이 생성된 제1의 알레르겐입니다."
+          "name": "닭고기",
+          "desc": "닭고기는 사료에 널리 사용되므로 많은 반려견이 접해 왔습니다. 일부 반려견은 이에 반응을 보입니다."
         },
         {
-          "name": "2. 상업용 소고기 (전체 사례의 30%)",
-          "desc": "예민한 아이들에게 심한 발 핥기(지간염)와 만성 외이도염을 일으키는 대표적 붉은 살코기."
+          "name": "소고기",
+          "desc": "소고기 또한 일부 반려견이 반응을 보이는 흔한 원료로, 가려움증이나 귓병 같은 징후가 나타날 수 있습니다."
         },
         {
-          "name": "3. 유제품 및 치즈류",
-          "desc": "성견은 젖당 분해 효소가 결핍되어 있어 삼투성 설사와 복부 팽만을 유발합니다."
+          "name": "유제품",
+          "desc": "많은 성견이 우유를 소화하는 데 어려움을 겪으며, 이로 인해 가스나 묽은 변이 생길 수 있습니다."
         },
         {
-          "name": "4. 밀 및 옥수수 글루텐",
-          "desc": "장 점막 장벽을 손상시키고 체내 만성 염증과 효모균(말라세치아) 증식을 촉진합니다."
+          "name": "밀 및 옥수수",
+          "desc": "일부 반려견은 곡물에 반응하지만, 단백질에 대한 반응이 더 흔합니다."
         },
         {
-          "name": "5. 대두 및 콩류 단백질",
-          "desc": "저가 충전재로 자주 쓰이지만 장내 이상 발효와 피부 가려움증을 유발합니다."
+          "name": "대두",
+          "desc": "대두는 흔히 쓰이는 원료이지만, 일부 반려견이 반응을 보일 수 있습니다."
         }
       ],
       "eliminationTitle": "표준 8주 배제 식이 시험 (엘리미네이션 다이어트)",
@@ -4229,28 +4242,29 @@ export const PAGE_TRANSLATIONS = {
         {
           "step": "3단계",
           "title": "원인 물질 단일 재도전 시험",
-          "desc": "가려움증이 완전히 가라앉으면, 의심되는 단백질(예: 닭고기)을 7일간 소량 먹여 반응을 살핍니다. 증상이 재발하면 알레르기가 확진됩니다."
+          "desc": "가려움증과 소화기 문제가 해결되면 의심되는 성분(예: 닭고기)을 7일간 급여합니다. 증상이 다시 나타나면 수의사에게 알리세요. 음식 알레르기는 수의사의 진단을 통해 확인해야 합니다."
         }
       ],
-      "novelTitle": "추천 저알레르기 신기 단백질 (Novel Proteins)",
+      "novelTitle": "흔히 쓰이는 신기 단백질 (Novel Proteins)",
       "novelProteins": [
         {
           "name": "사슴고기 (베니슨)",
-          "desc": "지방이 적고 영양 밀도가 높으며 개들이 항체를 거의 가지고 있지 않은 훌륭한 붉은 고기."
+          "desc": "많은 반려견에게 생소한 기름기 적은 붉은 살코기입니다."
         },
         {
           "name": "토끼고기",
-          "desc": "알레르기 유발 가능성이 극히 낮고 아미노산 조성이 뛰어나며 소화 흡수율이 우수합니다."
+          "desc": "많은 반려견이 한 번도 먹어본 적 없는 단백질입니다."
         },
         {
           "name": "오리고기",
-          "desc": "일반 닭고기에 과민 반응을 보이는 아이들을 위한 안전하고 기호성 높은 대체 조류 육류."
+          "desc": "닭고기를 많이 먹어온 반려견을 위한 대체 육류입니다."
         },
         {
           "name": "캥거루고기",
-          "desc": "야생에서 서식하여 지방 함량이 2% 내외로 극히 낮고 청정한 최고급 저알레르기 단백질."
+          "desc": "많은 반려견에게 새로운 담백한 단백질입니다."
         }
-      ]
+      ],
+      "hydrolyzedPrescriptionNotice": "이 사료는 처방 사료입니다. 급여하기 전에 수의사와 상담하세요."
     },
     "calculator": {
       "eyebrow": "100% 무료 // 급여량 & 칼로리 계산기",
@@ -4812,30 +4826,31 @@ export const PAGE_TRANSLATIONS = {
     },
     "allergies": {
       "eyebrow": "GUIDA NUTRIZIONALE // ALLERGIE ALIMENTARI E DIETE AD ESCLUSIONE",
-      "heroTitle": "Miglior Cibo per Cani con Allergie e Stomaco Sensibile",
-      "heroSubtitle": "Guida pratica a intolleranze alimentari, proteine novità ipoallergeniche e dieta di esclusione di 8 settimane.",
-      "allergensTitle": "I 5 Più Comuni Allergeni Alimentari nel Cane",
-      "allergensIntro": "Le allergie alimentari canine sono reazioni immunitarie anomale scatenate da proteine dietetiche. In ordine di frequenza clinica:",
+      "heroTitle": "Cibo per Cani con Allergie e Stomaco Sensibile",
+      "vetNotice": "Le allergie alimentari possono somigliare ad altri problemi di salute. Consulta il tuo veterinario prima di iniziare una dieta a esclusione e segui le sue indicazioni durante la prova.",
+      "heroSubtitle": "Guida pratica a intolleranze alimentari, proteine novità e dieta di esclusione di 8 settimane.",
+      "allergensTitle": "Ingredienti a cui Reagiscono Alcuni Cani",
+      "allergensIntro": "Le allergie alimentari canine sono reazioni immunitarie verso specifici ingredienti dietetici. Alcuni esempi comuni includono:",
       "allergensList": [
         {
-          "name": "1. Pollo da Allevamento Intensivo (60% dei casi)",
-          "desc": "Onnipresente nel pet food commerciale, è l’allergene alimentare più frequente in assoluto."
+          "name": "Pollo",
+          "desc": "Il pollo è ampiamente utilizzato nel cibo per cani, quindi molti cani ne sono stati a contatto. Alcuni vi reagiscono."
         },
         {
-          "name": "2. Manzo Commerciale (30% dei casi)",
-          "desc": "Proteina rossa diffusa che scatena spesso forte prurito alle zampe e otiti recidivanti."
+          "name": "Manzo",
+          "desc": "Il manzo è un altro ingrediente comune a cui alcuni cani reagiscono, con segni come prurito o problemi alle orecchie."
         },
         {
-          "name": "3. Latticini e Formaggi",
-          "desc": "I cani adulti perdono gli enzimi lattasi, manifestando coliche gassose e diarrea."
+          "name": "Latticini",
+          "desc": "Molti cani adulti hanno difficoltà a digerire il latte, il che può causare gas o feci molli."
         },
         {
-          "name": "4. Glutine di Frumento e Mais",
-          "desc": "Proteine vegetali che irritano la barriera intestinale e alimentano la proliferazione di lieviti."
+          "name": "Frumento e Mais",
+          "desc": "Alcuni cani reagiscono ai cereali, anche se le reazioni alle proteine sono più comuni."
         },
         {
-          "name": "5. Soia e Legumi",
-          "desc": "Riempitivi proteici a basso costo che causano fermentazioni anomale e prurito."
+          "name": "Soia",
+          "desc": "La soia è un ingrediente comune a cui alcuni cani reagiscono."
         }
       ],
       "eliminationTitle": "Il Protocollo della Dieta ad Esclusione di 8 Settimane",
@@ -4853,28 +4868,29 @@ export const PAGE_TRANSLATIONS = {
         {
           "step": "Fase 3",
           "title": "Reintroduzione Controllata per Prova",
-          "desc": "Se il prurito scompare, reintroduci un solo ingrediente sospetto per 7 giorni. La ricomparsa dei sintomi confermerà l’allergia."
+          "desc": "Se il prurito e i disturbi gastrointestinali scompaiono, reintroduci un solo ingrediente sospetto per 7 giorni. Se i sintomi ricompaiono, informa il tuo veterinario. Le allergie alimentari devono essere diagnosticate con l'aiuto del veterinario."
         }
       ],
-      "novelTitle": "Proteínas Novità Ipoallergeniche Consigliate",
+      "novelTitle": "Comuni Proteine Novità",
       "novelProteins": [
         {
           "name": "Carne di Cervo / Capriolo",
-          "desc": "Carne rossa magra e altamente digeribile verso cui i cani non hanno anticorpi pregressi."
+          "desc": "Una carne rossa magra nuova per molti cani."
         },
         {
           "name": "Carne di Coniglio",
-          "desc": "Proteina ipoallergenica d’eccellenza, leggera e dal profilo aminoacidico ideale."
+          "desc": "Una proteina che molti cani non hanno mai mangiato."
         },
         {
           "name": "Carne d’Anatra",
-          "desc": "Ottima e saporita alternativa per cani intolleranti alle carni di pollo convenzionali."
+          "desc": "Un'alternativa per i cani che hanno mangiato molto pollo."
         },
         {
           "name": "Carne di Canguro",
-          "desc": "Tra le carni selvatiche più pure e povere di grassi disponibili in dermatologia veterinaria."
+          "desc": "Una proteina magra nuova per molti cani."
         }
-      ]
+      ],
+      "hydrolyzedPrescriptionNotice": "Questa è una dieta su prescrizione veterinaria. Parla con il tuo veterinario prima di utilizzarla."
     },
     "calculator": {
       "eyebrow": "100% GRATUITO // CALCOLATORE DEL FABBISOGNO CALORICO",

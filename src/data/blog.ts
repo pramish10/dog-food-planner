@@ -747,7 +747,7 @@ export const BLOG_POSTS: BlogPost[] = [
     categorySlug: 'digestion-gut-health',
     excerpt: 'A large portion of your dog\'s immune system is located in their digestive tract. When gut balance is disrupted, food sensitivities can trigger skin flare-ups. Learn practical nutritional steps to support gut health.',
     image: '/images/blog/canine-gut-health-allergies.jpg',
-    imageAlt: 'Happy healthy French Bulldog with a hypoallergenic bowl of dog food, kefir, and steamed green vegetables',
+    imageAlt: 'Happy healthy French Bulldog with a fresh bowl of dog food, kefir, and steamed green vegetables',
     featured: false,
     publishedDate: 'September 23, 2026',
     updatedDate: 'September 23, 2026',

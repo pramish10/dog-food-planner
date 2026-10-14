@@ -86,7 +86,7 @@ export const esRecipes: LocalizedRecipesMap = {
     ]
   },
   'raw-barf-lamb-hypoallergenic': {
-    name: 'Fórmula Cruda Hipoalergénica de Cordero y Callos Verdes',
+    name: 'Fórmula Cruda de Proteína Novel de Cordero y Callos Verdes',
     description: 'Músculo de cordero de pasto, hígado de cordero, costillas tiernas comestibles, callos verdes sin blanquear y mezcla antioxidante de perejil orgánico.',
     ingredients: [
       'Paletilla y corazón de cordero de pasto',
@@ -245,7 +245,7 @@ export const esRecipes: LocalizedRecipesMap = {
   },
   'raw-barf-venison-novel': {
     name: 'Fórmula Cruda de Exclusión de Venado Salvaje y Conejo',
-    description: 'La fórmula de exclusión definitiva con dos proteínas hipoalergénicas para perros con alergias múltiples a pollo, ternera, pescado o cordero.',
+    description: 'La fórmula de exclusión con dos proteínas noveles para perros con intolerancias a pollo, ternera, pescado o cordero.',
     ingredients: [
       'Venado salvaje picado (95/5)',
       'Conejo entero picado (con hueso blando)',

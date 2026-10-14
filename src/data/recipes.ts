@@ -121,7 +121,7 @@ export const RECIPES: MealRecipe[] = [
     name: 'Wild Salmon & Sweet Potato Derma-Care Recipe',
     dietType: 'fresh-cooked',
     primaryProtein: 'Salmon',
-    headline: 'Hypoallergenic, ultra-rich Omega-3 formula designed to soothe itchy skin and restore radiant coat shine.',
+    headline: 'Omega-3 rich formula designed to soothe itchy skin and restore radiant coat shine.',
     description: 'Skin-soothing recipe packed with wild-caught Pacific salmon, Atlantic cod, steamed orange sweet potatoes, and organic turmeric root with black pepper extract.',
     macroProfile: {
       proteinPct: 46,
@@ -184,7 +184,7 @@ export const RECIPES: MealRecipe[] = [
     name: 'Novel Pasture Lamb & Green Tripe Raw Formula',
     dietType: 'raw-barf',
     primaryProtein: 'Lamb',
-    headline: 'Hypoallergenic raw formula tailored for dogs with severe common poultry/beef sensitivities.',
+    headline: 'Novel protein raw formula tailored for dogs with poultry or beef sensitivities.',
     description: 'Pasture-grazed lamb muscle, lamb liver, edible lamb ribs, unbleached green tripe, and organic parsley antioxidant blend.',
     macroProfile: {
       proteinPct: 50,
@@ -248,7 +248,7 @@ export const RECIPES: MealRecipe[] = [
     name: 'Novel Lamb & Butternut Squash Allergy-Relief Bowl',
     dietType: 'fresh-cooked',
     primaryProtein: 'Lamb',
-    headline: 'Single novel protein recipe for dogs with chicken, beef, or fish allergies — gentle, hypoallergenic, and complete.',
+    headline: 'Single novel protein recipe for dogs with chicken, beef, or fish allergies — gentle, digestible, and complete.',
     description: 'Pasture-raised ground lamb with butternut squash, steamed zucchini, and a mineral blend. Lamb is a true novel protein for most dogs, making it ideal for elimination diets and allergy management.',
     macroProfile: {
       proteinPct: 47,
@@ -488,7 +488,7 @@ export const RECIPES: MealRecipe[] = [
     dietType: 'raw-barf',
     primaryProtein: 'Venison',
     headline: 'The ultimate elimination diet raw formula — two novel proteins for dogs with severe multi-protein allergies.',
-    description: 'Venison and rabbit are the two most hypoallergenic proteins available — most dogs have never been exposed to either. This formula is the gold standard for dogs with confirmed food allergies to chicken, beef, fish, and lamb.',
+    description: 'Venison and rabbit are novel proteins that many dogs have never eaten. This formula is designed for dogs with food sensitivities to common proteins like chicken, beef, fish, or lamb.',
     macroProfile: {
       proteinPct: 54,
       fatPct: 30,
@@ -500,7 +500,7 @@ export const RECIPES: MealRecipe[] = [
     },
     ingredients: [
       { name: 'Wild Ground Venison (95/5)', category: 'Muscle Meat', percentage: 45, purpose: 'Ultra-lean novel protein — iron, zinc, B12, and complete amino acids', allergens: ['venison'] },
-      { name: 'Whole Ground Rabbit (Bone-In)', category: 'Muscle Meat', percentage: 20, purpose: 'Novel protein with natural bone calcium — highly digestible and hypoallergenic', allergens: ['rabbit'] },
+      { name: 'Whole Ground Rabbit (Bone-In)', category: 'Muscle Meat', percentage: 20, purpose: 'Novel protein with natural bone calcium — highly digestible and gentle', allergens: ['rabbit'] },
       { name: 'Venison Liver & Kidney', category: 'Organ', percentage: 10, purpose: 'Vitamin A, B12, selenium, and metabolic enzymes', allergens: ['venison'] },
       { name: 'Ground Rabbit Bone', category: 'Raw Bone', percentage: 10, purpose: 'Natural calcium and phosphorus from rabbit bones — very soft and safe', allergens: ['rabbit', 'bone'] },
       { name: 'Pureed Organic Vegetables (Zucchini, Celery, Parsley)', category: 'Vegetables & Greens', percentage: 10, purpose: 'Phytonutrients, chlorophyll, and natural digestive enzymes' },

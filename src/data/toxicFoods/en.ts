@@ -1400,7 +1400,7 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
         symptoms: [
           'Robust colonization of beneficial gut microflora across the colon',
           'Improved nutrient assimilation reflected in increased energy and muscle tone',
-          'Enhanced immune resilience and elimination of yeast overgrowth in paws and ears',
+          'Enhanced immune resilience and support for skin and paw comfort',
         ],
       },
     ],
@@ -1775,19 +1775,19 @@ export const toxicFoodsEn: ToxicFoodItem[] = [
     primaryCompound: 'A2 Beta-Casein, Caprylic Acid, Probiotic Cultures, Calcium',
     targetOrgans: ['Gastrointestinal Microbiota', 'Epithelial Skin Barrier', 'Immune System (GALT)'],
     toxicThresholdOrServing: '1–2 tablespoons per 20 lbs body weight daily. Keep chilled; introduce gradually over 5 days.',
-    onsetWindow: 'Digestive soothing in 24 hours; skin allergy and yeast relief within 2 to 3 weeks',
+    onsetWindow: 'Digestive soothing in 24 hours; skin and coat support within 2 to 3 weeks',
     summary: 'Raw goat milk and goat milk kefir are easily digested probiotic foods for dogs. With naturally smaller fat globules and A2 beta-casein protein, it digests comfortably without lactose distress, providing beneficial active probiotics. Raw foods can carry bacteria. Talk to your vet first.',
     narrativeOverview: [
       'Most adult dogs are lactose intolerant to conventional pasteurized cow milk. Cow milk contains large fat globules, inflammatory A1 beta-casein, and high lactose levels that cause severe gas, bloating, and watery diarrhea. In sharp contrast, goat milk contains smaller fat globules, naturally lower lactose, and exclusively A2 beta-casein.',
       'When goat milk is traditionally cultured into kefir, beneficial yeasts and lactic acid bacteria ferment virtually all remaining lactose into lactic acid, making it 99% lactose-free while cultivating over 30 distinct probiotic bacterial strains.',
-      'Raw goat milk kefir is especially renowned for combating canine yeast overgrowth (Malassezia dermatitis). Rich in natural caprylic and capric medium-chain fatty acids, it actively suppresses fungal and yeast blooms in paws, ears, and belly folds while reducing systemic allergy symptoms.',
+      'Raw goat milk kefir is popular for supporting healthy skin and coat in dogs. Rich in natural caprylic and capric medium-chain fatty acids, it helps support natural cutaneous flora in paws, ears, and belly folds while providing gentle probiotic nourishment.',
     ],
-    biochemicalMechanism: 'Goat milk fat globules average 2 micrometers in diameter (compared to >4 micrometers in bovine milk), enabling rapid enzymatic lipolysis by canine gastric lipases. Goat milk casein consists predominantly of A2 beta-casein, which avoids the creation of the inflammatory opioid peptide BCM-7 associated with A1 cow casein. Fermentation produces high titers of live probiotic strains (Lactobacillus, Lactococcus, Bifidobacterium, and Saccharomyces kefir) along with natural medium-chain triglycerides (MCTs: caprylic and capric acid). Caprylic acid disrupts fungal cell membranes, exerting powerful natural fungicidal action against Malassezia yeast.',
+    biochemicalMechanism: 'Goat milk fat globules average 2 micrometers in diameter (compared to >4 micrometers in bovine milk), enabling rapid enzymatic lipolysis by canine gastric lipases. Goat milk casein consists predominantly of A2 beta-casein, which avoids the creation of the inflammatory opioid peptide BCM-7 associated with A1 cow casein. Fermentation produces high titers of live probiotic strains (Lactobacillus, Lactococcus, Bifidobacterium, and Saccharomyces kefir) along with natural medium-chain triglycerides (MCTs: caprylic and capric acid) that support a balanced microbial environment.',
     vitalStats: [
       { label: 'Nutritional Category', value: 'Fermented Probiotic Milk', tone: 'safe' },
       { label: 'Protein Profile', value: '100% A2 Beta-Casein (Non-Inflammatory)', tone: 'safe' },
       { label: 'Microbial Density', value: 'Active Live Cultures', tone: 'safe' },
-      { label: 'Target Benefit', value: 'Soothes Allergies & Clears Yeast Overgrowth', tone: 'safe' },
+      { label: 'Target Benefit', value: 'Soothes Digestion & Supports Healthy Skin', tone: 'safe' },
     ],
     timeline: [
       {

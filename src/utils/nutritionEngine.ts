@@ -252,7 +252,7 @@ function getBreedNote(category: string, ageStage: string, breedName?: string, kn
     'Beagle':
       'Beagles are scent-driven food obsessives — they will eat until sick if given the chance. Weigh every meal precisely, use a slow-feeder bowl, and never leave food out. L-carnitine-rich foods (beef heart, lamb) help their sluggish metabolism burn fat more efficiently.',
     'Cocker Spaniel':
-      'Cocker Spaniels are prone to ear infections (yeast-driven) and hypothyroidism. Reduce dietary sugar and starch to starve yeast. Include omega-3s for their silky coat and zinc for immune function. Their drop ears trap moisture — avoid high-sugar treats.',
+      'Cocker Spaniels are prone to ear infections and hypothyroidism. Include omega-3s for their silky coat and zinc for immune function. Their drop ears trap moisture — keep ears clean and dry, and consult your veterinarian if infections occur.',
     'Dalmatian':
       'Dalmatians have a unique purine metabolism defect — they cannot convert uric acid to allantoin, causing urate bladder stones. Feed a LOW-PURINE diet: avoid organ meats (liver, kidney), sardines, and anchovies. Lean chicken, turkey, and eggs are safe proteins. Ensure constant fresh water access.',
     'Basset Hound':
@@ -383,7 +383,7 @@ function getHealthAdvice(healthFocus: string, ageStage: string, weightKg: number
         `Add ${salmonOilDose} wild salmon oil or sardine oil daily — the single most effective dietary intervention for coat shine and skin health. Visible improvement in 3–4 weeks.`,
         'Include 1 whole egg (raw or lightly cooked) 3–4x per week — biotin, sulfur amino acids (methionine, cystine), and lecithin for keratin production.',
         'Zinc from red meat (beef, lamb) is essential for skin barrier function — zinc deficiency causes dull coat, flaking, and slow wound healing.',
-        'If your dog has itchy skin, eliminate chicken for 8 weeks — poultry is the #1 canine food allergen and the most common cause of dietary skin reactions.',
+        'If your dog has itchy skin, talk to your veterinarian about an elimination diet — chicken is a common ingredient that some dogs react to.',
         'Rotate proteins every 4–6 weeks — single-protein diets increase sensitization risk over time.',
         'Avoid corn, soy, and artificial preservatives (BHA, BHT, ethoxyquin) — all are documented skin irritants in sensitive dogs.',
       ],

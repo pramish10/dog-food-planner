@@ -1010,7 +1010,7 @@ export const HOMEMADE_RECIPES: Record<HomemadeRecipeSlug, HomemadeRecipe> = {
     clinicalDeepDives: [
       {
         title: 'The Biological 80-10-10 Mathematical Framework',
-        description: 'Feeding pure muscle meat leads to skeletal collapse, while feeding too many organs causes explosive diarrhea, and excess bone causes severe constipation (chalky impaction). The 80-10-10 ratio is veterinary science’s most reliable balance: exactly 80% muscle meat (including heart, gizzards, tongue), 10% raw edible bone, and 10% secreting organs (strictly divided into 5% liver and 5% other secreting organs such as kidney, spleen, pancreas).',
+        description: 'Feeding pure muscle meat leads to calcium deficiency, while feeding too many organs causes loose stools or diarrhea, and excess bone causes severe constipation (chalky impaction). The 80-10-10 ratio is veterinary science’s most reliable balance: exactly 80% muscle meat (including heart, gizzards, tongue), 10% raw edible bone, and 10% secreting organs (strictly divided into 5% liver and 5% other secreting organs such as kidney, spleen, pancreas).',
         keyPoints: [
           '80% Muscle: Supplies energy, protein, essential fatty acids, and water.',
           '10% Edible Bone: Calibrates exact 1.2:1 Ca:P ratio and hardens normal fecal stools.',
