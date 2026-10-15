@@ -55,9 +55,9 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       </div>
 
       <!-- Morning & Evening Bowls (Side by Side with Interactive Inline Add Ingredient) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 items-start" id="card-bowls-grid">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3 items-start" id="card-bowls-grid" style="align-items: start;">
         <!-- Morning Bowl -->
-        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40">
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 self-start h-auto" style="align-self: start; height: fit-content;">
           <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
             <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
               <span>☀️</span>
@@ -70,13 +70,13 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           </ul>
 
           <!-- Add Ingredient Interactive Row (AM) - sits immediately below previous ingredient -->
-          <div id="am-add-container" class="mt-2 pt-1 border-t border-dashed border-[#f0d5a8]/60 dark:border-[#3a2510]/60 no-print">
+          <div id="am-add-container" class="mt-1.5 no-print">
             <!-- Populated by JS -->
           </div>
         </div>
 
         <!-- Evening Bowl -->
-        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40" id="card-pm-bowl-wrapper">
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 self-start h-auto" style="align-self: start; height: fit-content;" id="card-pm-bowl-wrapper">
           <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
             <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
               <span>🌙</span>
@@ -89,7 +89,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           </ul>
 
           <!-- Add Ingredient Interactive Row (PM) - sits immediately below previous ingredient -->
-          <div id="pm-add-container" class="mt-2 pt-1 border-t border-dashed border-[#f0d5a8]/60 dark:border-[#3a2510]/60 no-print">
+          <div id="pm-add-container" class="mt-1.5 no-print">
             <!-- Populated by JS -->
           </div>
         </div>
@@ -103,7 +103,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
             <div class="font-bold text-[#1c0f00] dark:text-[#fde8c8] uppercase font-mono">{px.treatBudgetHeader}</div>
             <div class="text-xs text-[#92400e] dark:text-[#c4956a] mt-0.5" id="card-treat-breakdown">
               <a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">
-                Training Bites <span class="no-print">🛒</span>
+                Training Bites
               </a>
             </div>
           </div>
@@ -491,22 +491,20 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           <strong class="font-bold">${perMealCups} ${tx.cupsUnit}</strong> (${perMealGrams}${tx.gramsUnit})
           <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">
             <span>${recipe.title}</span>
-            <span class="text-[10px] text-[#c47a2b] no-print ml-1">🛒</span>
           </a>
         </span>
       </li>
     `;
 
-    // Render custom dynamic items for AM
+    // Render custom dynamic items for AM (no emojis)
     const amItemsHtml = amCustomItems.map((item, index) => `
       <li class="flex items-start justify-between gap-2 text-xs text-[#6b4226] dark:text-[#c4956a] group">
         <div class="flex items-start gap-1.5">
           <span class="text-[#c47a2b] font-bold">•</span>
           <span>
-            ${item.icon} <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono">${item.dose}</strong>
+            <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono">${item.dose}</strong>
             <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors ml-1">
               <span>${item.name}</span>
-              <span class="text-[10px] text-[#c47a2b] no-print ml-0.5">🛒</span>
             </a>
           </span>
         </div>
@@ -514,16 +512,15 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       </li>
     `).join('');
 
-    // Render custom dynamic items for PM
+    // Render custom dynamic items for PM (no emojis)
     const pmItemsHtml = pmCustomItems.map((item, index) => `
       <li class="flex items-start justify-between gap-2 text-xs text-[#6b4226] dark:text-[#c4956a] group">
         <div class="flex items-start gap-1.5">
           <span class="text-[#c47a2b] font-bold">•</span>
           <span>
-            ${item.icon} <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono">${item.dose}</strong>
+            <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono">${item.dose}</strong>
             <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors ml-1">
               <span>${item.name}</span>
-              <span class="text-[10px] text-[#c47a2b] no-print ml-0.5">🛒</span>
             </a>
           </span>
         </div>
@@ -534,7 +531,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const medsHtml = profile.hasMeds
       ? `
         <li class="flex items-start gap-2 text-xs text-[#16a34a] font-semibold">
-          <span>💊</span>
+          <span>•</span>
           <span>[ ] Daily Medication (Administer in morning bowl)</span>
         </li>
       `
@@ -573,8 +570,8 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
     container.innerHTML = `
       <div class="add-wrapper relative">
-        <button type="button" class="open-search-btn text-xs font-semibold text-[#c47a2b] hover:text-[#92400e] dark:hover:text-[#fde8c8] flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-amber-50 dark:hover:bg-amber-950/30 transition-all cursor-pointer">
-          <span class="w-4 h-4 rounded-full border border-[#c47a2b] flex items-center justify-center font-bold text-xs leading-none">+</span>
+        <button type="button" class="open-search-btn text-xs font-semibold text-[#c47a2b] hover:text-[#92400e] dark:hover:text-[#fde8c8] flex items-center gap-1.5 py-0.5 px-1 rounded-md hover:bg-amber-50 dark:hover:bg-amber-950/30 transition-all cursor-pointer">
+          <span class="w-3.5 h-3.5 rounded-full border border-[#c47a2b] flex items-center justify-center font-bold text-[11px] leading-none">+</span>
           <span>Add extra ingredient</span>
         </button>
       </div>
@@ -625,7 +622,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         if (matches.length === 0) {
           suggestions.innerHTML = `
             <div class="px-3 py-2 text-xs text-[#92400e] dark:text-[#c4956a]">
-              No matching dog-safe food found. Try "pumpkin", "egg", "blueberries", "kefir"...
+              No matching dog-safe food found. Try pumpkin, egg, blueberries, kefir...
             </div>
           `;
           suggestions.classList.remove('hidden');
@@ -640,10 +637,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           const dose = item.calculateDose(weightLbs, stage, goal);
           return `
             <button type="button" data-pick-id="${item.id}" class="pick-item-btn w-full text-left px-2.5 py-1.5 text-xs rounded-lg hover:bg-amber-50 dark:hover:bg-amber-950/40 flex items-center justify-between transition-colors cursor-pointer">
-              <span class="flex items-center gap-2">
-                <span>${item.icon}</span>
-                <span class="font-semibold text-[#1c0f00] dark:text-[#fde8c8]">${item.name}</span>
-              </span>
+              <span class="font-semibold text-[#1c0f00] dark:text-[#fde8c8]">${item.name}</span>
               <span class="font-mono text-[10px] text-[#c47a2b] font-bold">${dose}</span>
             </button>
           `;
@@ -662,7 +656,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
             const newItem: BowlCustomItem = {
               id: pickedItem.id,
               name: pickedItem.name,
-              icon: pickedItem.icon,
+              icon: '',
               dose,
               url: pickedItem.affiliateUrl,
             };
@@ -791,7 +785,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       amCustomItems = salmonItem ? [{
         id: salmonItem.id,
         name: salmonItem.name,
-        icon: salmonItem.icon,
+        icon: '',
         dose: salmonItem.calculateDose(weightLbs, stage, goal),
         url: salmonItem.affiliateUrl,
       }] : [];
@@ -802,7 +796,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       pmCustomItems = pmItem ? [{
         id: pmItem.id,
         name: pmItem.name,
-        icon: pmItem.icon,
+        icon: '',
         dose: pmItem.calculateDose(weightLbs, stage, goal),
         url: pmItem.affiliateUrl,
       }] : [];

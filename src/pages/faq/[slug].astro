@@ -659,9 +659,6 @@ const articleJsonLd = {
       </div>
 
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 min-w-0">
-        <div class="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#92400e] dark:text-[#d97706] bg-[#fdf3e7] dark:bg-[#2a1a08] border border-[#f0d5a8] dark:border-[#3a2510] px-3 py-1 rounded-full mb-3">
-          <span>{faq.category}</span>
-        </div>
         <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight mb-3 leading-tight text-balance">
           {faq.question}
         </h1>
@@ -705,14 +702,14 @@ const articleJsonLd = {
           <h2 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] border-b border-[#f0d5a8] dark:border-[#3a2510] pb-3 mb-4">
             Detailed Nutritional Analysis
           </h2>
-          <div class="space-y-4 text-[#4d4d4d] dark:text-[#c4956a]" set:html={faq.fullAnswerHtml} />
-
-          {/* Referenced product — inline without recommendation card box or buy button */}
-          {resolvedProduct && (
-            <p class="not-prose text-xs text-[#6b4226] dark:text-[#c4956a] pt-4 border-t border-[#f0d5a8]/60 dark:border-[#3a2510]">
-              Referenced in this answer: <a href={resolvedProduct.url} target="_blank" rel="noopener noreferrer sponsored" class="inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">{resolvedProduct.label}</a> — {resolvedProduct.note}
-            </p>
-          )}
+          <div class="space-y-4 text-[#4d4d4d] dark:text-[#c4956a]">
+            <Fragment set:html={faq.fullAnswerHtml} />
+            {resolvedProduct && (
+              <p>
+                <a href={resolvedProduct.url} target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">{resolvedProduct.label}</a> — {resolvedProduct.note}
+              </p>
+            )}
+          </div>
 
           <!-- Tags / Topics -->
           <div class="pt-6 border-t border-[#f0d5a8] dark:border-[#3a2510] flex flex-wrap items-center gap-1.5 not-prose">
