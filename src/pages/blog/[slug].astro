@@ -71,7 +71,7 @@ function formatAmazonLinks(html: string): string {
   return html.replace(
     /<AmazonLink\s+url="([^"]+)">([\s\S]*?)<\/AmazonLink>/gi,
     (_, url, label) =>
-      `<a href="${url}" target="_blank" rel="sponsored nofollow noopener" class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold rounded-lg transition-all active:scale-95 touch-manipulation bg-[#0070f3] hover:bg-[#005ac2] text-white shadow-xs no-underline mx-1 align-baseline"><svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg><span>${label}</span></a>`
+      `<a href="${url}" target="_blank" rel="sponsored nofollow noopener" class="amazon-inline-link inline font-semibold text-black dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 transition-opacity hover:opacity-80">${label}</a>`
   );
 }
 
@@ -249,7 +249,7 @@ const schemaOrgBlogPosting = {
 
             {hasProduct && post.affiliateProduct && (
               <p class="not-prose my-6 p-3.5 rounded-xl bg-[#fffbf6] dark:bg-[#1e1308] border border-[#f0d5a8]/60 dark:border-[#3a2510] text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a]">
-                Featured formulation: <a href={post.affiliateProduct.url} target="_blank" rel="noopener noreferrer sponsored" class="inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">{post.affiliateProduct.name}</a>
+                Featured formulation: <a href={post.affiliateProduct.url} target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 transition-opacity hover:opacity-80">{post.affiliateProduct.name}</a>
               </p>
             )}
 

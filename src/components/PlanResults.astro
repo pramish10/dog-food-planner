@@ -65,12 +65,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
             </div>
             <input type="text" id="am-time-input" value="7:30 AM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
           </div>
-          <ul id="card-am-items" class="space-y-1.5 text-xs text-[#1c0f00] dark:text-[#fde8c8]">
+          <ul id="card-am-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
             <!-- populated by JS -->
           </ul>
 
           <!-- Add Ingredient Interactive Row (AM) - sits immediately below previous ingredient -->
-          <div id="am-add-container" class="mt-1.5 no-print">
+          <div id="am-add-container" class="mt-2 no-print">
             <!-- Populated by JS -->
           </div>
         </div>
@@ -84,12 +84,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
             </div>
             <input type="text" id="pm-time-input" value="6:00 PM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
           </div>
-          <ul id="card-pm-items" class="space-y-1.5 text-xs text-[#1c0f00] dark:text-[#fde8c8]">
+          <ul id="card-pm-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
             <!-- populated by JS -->
           </ul>
 
           <!-- Add Ingredient Interactive Row (PM) - sits immediately below previous ingredient -->
-          <div id="pm-add-container" class="mt-1.5 no-print">
+          <div id="pm-add-container" class="mt-2 no-print">
             <!-- Populated by JS -->
           </div>
         </div>
@@ -102,7 +102,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           <div>
             <div class="font-bold text-[#1c0f00] dark:text-[#fde8c8] uppercase font-mono">{px.treatBudgetHeader}</div>
             <div class="text-xs text-[#92400e] dark:text-[#c4956a] mt-0.5" id="card-treat-breakdown">
-              <a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 transition-colors">
+              <a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
                 Training Bites
               </a>
             </div>
@@ -141,7 +141,9 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       <div class="mt-3 pt-3 border-t border-[#f0d5a8] dark:border-[#3a2510] flex items-center justify-between gap-3 no-print">
         <div class="flex items-center gap-2.5">
           <button type="button" class="print-card-btn px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#c47a2b] hover:bg-[#a8621f] rounded-xl transition-all shadow-sm flex items-center gap-2 cursor-pointer touch-manipulation min-h-[42px]">
-            <span>🖨️</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+            </svg>
             <span>{px.printFridgeBtn}</span>
           </button>
           <button type="button" class="edit-plan-btn text-xs sm:text-sm font-semibold text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl px-4 py-2.5 transition-colors flex items-center gap-1.5 cursor-pointer min-h-[42px]">
@@ -151,11 +153,6 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         </div>
       </div>
 
-      <!-- Print-only PDF document footer -->
-      <div class="hidden print:flex items-center justify-between pt-2 mt-2 border-t border-black text-[10.5px] font-mono text-black">
-        <span>dogfoodplanner.com • Personalized Canine Nutrition Plan</span>
-        <span>Educational estimates only • Consult your veterinarian</span>
-      </div>
 
     </div><!-- end #fridge-planner-card -->
 
@@ -482,24 +479,24 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const pmList = document.getElementById('card-pm-items');
 
     const baseItemHtml = `
-      <li class="flex items-start gap-2 font-medium">
+      <li class="flex items-start gap-2 font-medium text-xs sm:text-sm mb-2.5 pb-0.5 print:mb-3 print:pb-1">
         <span class="text-[#c47a2b] font-bold">•</span>
-        <span>
-          <strong class="font-bold">${perMealCups} ${tx.cupsUnit}</strong> (${perMealGrams}${tx.gramsUnit})
-          <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 transition-colors">
+        <div class="leading-relaxed">
+          <strong class="font-bold text-[#1c0f00] dark:text-[#fde8c8]">${perMealCups} ${tx.cupsUnit}</strong> (${perMealGrams}${tx.gramsUnit})
+          <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
             <span>${recipe.title}</span>
           </a>
-        </span>
+        </div>
       </li>
     `;
 
     // Render custom dynamic items for AM (no emojis)
     const amItemsHtml = amCustomItems.map((item, index) => `
-      <li class="flex items-center gap-1.5 text-xs text-[#6b4226] dark:text-[#c4956a] group py-0.5">
+      <li class="flex items-center gap-1.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group py-1.5 ${index === 0 ? 'mt-3.5 pt-3 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70 print:mt-4 print:pt-3.5 print:border-black/40' : 'mt-1.5 print:mt-2.5'}">
         <span class="text-[#c47a2b] font-bold shrink-0">•</span>
-        <div class="inline-flex items-center flex-wrap gap-x-1 gap-y-0.5 min-w-0">
+        <div class="inline-flex items-center flex-wrap gap-x-1.5 gap-y-1 min-w-0 leading-relaxed">
           <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono shrink-0">${item.dose}</strong>
-          <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 transition-colors">
+          <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
             <span>${item.name}</span>
           </a>
           <button type="button" data-remove-bowl="am" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-4 h-4 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 no-print" title="Remove ingredient" aria-label="Remove ${item.name}">
@@ -514,11 +511,11 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
     // Render custom dynamic items for PM (no emojis)
     const pmItemsHtml = pmCustomItems.map((item, index) => `
-      <li class="flex items-center gap-1.5 text-xs text-[#6b4226] dark:text-[#c4956a] group py-0.5">
+      <li class="flex items-center gap-1.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group py-1.5 ${index === 0 ? 'mt-3.5 pt-3 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70 print:mt-4 print:pt-3.5 print:border-black/40' : 'mt-1.5 print:mt-2.5'}">
         <span class="text-[#c47a2b] font-bold shrink-0">•</span>
-        <div class="inline-flex items-center flex-wrap gap-x-1 gap-y-0.5 min-w-0">
+        <div class="inline-flex items-center flex-wrap gap-x-1.5 gap-y-1 min-w-0 leading-relaxed">
           <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono shrink-0">${item.dose}</strong>
-          <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 transition-colors">
+          <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
             <span>${item.name}</span>
           </a>
           <button type="button" data-remove-bowl="pm" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-4 h-4 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 no-print" title="Remove ingredient" aria-label="Remove ${item.name}">
@@ -756,7 +753,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const smallBiscuitsCount = Math.max(1, Math.round(result.treatKcal / 35));
 
     if (treatBreakdown) {
-      treatBreakdown.innerHTML = `<a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 transition-colors">Training Bites</a>`;
+      treatBreakdown.innerHTML = `<a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Training Bites</a>`;
     }
     if (treatPiecesEl) {
       treatPiecesEl.textContent = `~${trainingBitesCount} training bites OR ${smallBiscuitsCount} small biscuits`;
@@ -802,6 +799,14 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
     currentProfile = profile;
     saveCurrentState();
+    ensureCardLinksOpenNewTab();
+  }
+
+  function ensureCardLinksOpenNewTab() {
+    document.querySelectorAll('#fridge-planner-card a').forEach((link) => {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer sponsored');
+    });
   }
 
   function restoreResultsState() {
@@ -814,6 +819,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       if (Array.isArray(state.amCustomItems)) amCustomItems = state.amCustomItems;
       if (Array.isArray(state.pmCustomItems)) pmCustomItems = state.pmCustomItems;
       renderResults(currentProfile, state.diet || 'fresh', false);
+      ensureCardLinksOpenNewTab();
     } catch {
       sessionStorage.removeItem(RESULTS_STATE_KEY);
     }
@@ -834,6 +840,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
   }
 
   function printPlan() {
+    ensureCardLinksOpenNewTab();
     document.body.classList.add('printing-plan');
     window.print();
   }
