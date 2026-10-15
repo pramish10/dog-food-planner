@@ -198,11 +198,8 @@ const articleJsonLd = {
                           href={ing.affiliateUrl}
                           target="_blank"
                           rel="noopener noreferrer sponsored"
-                          class="amazon-inline-link inline font-bold text-[#171717] dark:text-[#ededed] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:text-[#b46218] hover:decoration-[#8b4513] transition-colors"
-                        >
-                          {ing.name}
-                          <span class="text-[10px] text-[#c47a2b] ml-1 no-underline font-normal" aria-hidden="true">🛒</span>
-                        </a>
+                          class="amazon-inline-link inline font-bold text-[#171717] dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:text-[#b46218] hover:decoration-[#8b4513] transition-colors"
+                        >{ing.name}</a>
                       ) : (
                         ing.name
                       )}
@@ -408,7 +405,7 @@ const articleJsonLd = {
       <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414] rounded-2xl border border-[#ebebeb] dark:border-[#262626] space-y-4">
         <div>
           <h2 class="text-xl font-bold text-[#171717] dark:text-[#ededed]">
-            🛒 {p.supplementsTitle}
+            {p.supplementsTitle}
           </h2>
           <p class="text-xs sm:text-sm text-[#8f8f8f] dark:text-[#737373] mt-1">
             {p.supplementsSubtitle}
@@ -422,11 +419,8 @@ const articleJsonLd = {
                 href={sup.url}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                class="amazon-inline-link inline font-bold text-sm text-[#171717] dark:text-[#ededed] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:text-[#b46218] hover:decoration-[#8b4513] transition-colors"
-              >
-                {sup.title}
-                <span class="text-[10px] text-[#c47a2b] ml-1 no-underline font-normal" aria-hidden="true">🛒</span>
-              </a>
+                class="amazon-inline-link inline font-bold text-sm text-[#171717] dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:text-[#b46218] hover:decoration-[#8b4513] transition-colors"
+              >{sup.title}</a>
               <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 leading-relaxed">{sup.desc}</p>
             </li>
           ))}

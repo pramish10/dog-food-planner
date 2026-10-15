@@ -807,12 +807,25 @@ html.dark .prose-canine h4 {
   font-feature-settings: 'tnum';
 }
 
-/* Links */
+/* Links & Affiliate Links (Black Underline per design specification) */
+.amazon-inline-link,
+.amazon-food-link {
+  text-decoration-line: underline !important;
+  text-decoration-color: #000000 !important;
+  text-decoration-thickness: 1.5px !important;
+  text-underline-offset: 2px !important;
+}
+
+html.dark .amazon-inline-link,
+html.dark .amazon-food-link {
+  text-decoration-color: #ededed !important;
+}
+
 .prose-canine a {
   color: #c47a2b;
   font-weight: 600;
   text-decoration: underline;
-  text-decoration-color: rgba(196, 122, 43, 0.4);
+  text-decoration-color: #000000;
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
   transition: all 0.2s ease;
@@ -820,17 +833,17 @@ html.dark .prose-canine h4 {
 
 .prose-canine a:hover {
   color: #92400e;
-  text-decoration-color: #92400e;
+  text-decoration-color: #000000;
 }
 
 html.dark .prose-canine a {
   color: #f59e0b;
-  text-decoration-color: rgba(245, 158, 11, 0.4);
+  text-decoration-color: #ededed;
 }
 
 html.dark .prose-canine a:hover {
   color: #fbbf24;
-  text-decoration-color: #fbbf24;
+  text-decoration-color: #ededed;
 }
 
 /* Strong & Emphasis */

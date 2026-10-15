@@ -170,37 +170,37 @@ export const FAQ_CONTENT_TRANSLATIONS: Record<string, Partial<Record<Lang, FaqTr
     es: {
       question: '¿Es Blue Buffalo una buena marca de comida para perros?',
       shortAnswer: 'Blue Buffalo es una marca comercial de gama media-alta que evita subproductos cárnicos y trigo/soja. Sin embargo, contiene niveles considerables de carbohidratos (40-50%) y ha registrado retiradas históricas de la FDA.',
-      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a> destaca por utilizar carnes reales deshuesadas en sus recetas y evitar conservantes artificiales. Como la mayoría de piensos extrusionados comerciales, el porcentaje de almidón sigue siendo elevado para aglutinar la croqueta.</p>`
+      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a> destaca por utilizar carnes reales deshuesadas en sus recetas y evitar conservantes artificiales. Como la mayoría de piensos extrusionados comerciales, el porcentaje de almidón sigue siendo elevado para aglutinar la croqueta.</p>`
     },
     ja: {
       question: 'ブルーバッファロー（Blue Buffalo）は良質なドッグフードですか？',
       shortAnswer: 'ブルーバッファローは副産物ミールや小麦・トウモロコシを避け、良質な生肉を第一原料にした高品質ブランドです。ただし炭水化物量は40〜50％あり、過去に米国FDAによる自主回収履歴があります。',
-      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">ブルーバッファロー</a>は独自の「ライフソース・ビッツ」で低温加熱のビタミン群を配合している点が特徴ですが、一般的なドライキブル同様、成形のための炭水化物を含みます。総合栄養食として安定していますが、生肉や野菜トッピングの併用がより推奨されます。</p>`
+      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">ブルーバッファロー</a>は独自の「ライフソース・ビッツ」で低温加熱のビタミン群を配合している点が特徴ですが、一般的なドライキブル同様、成形のための炭水化物を含みます。総合栄養食として安定していますが、生肉や野菜トッピングの併用がより推奨されます。</p>`
     },
     fr: {
       question: 'Blue Buffalo est-elle une bonne marque de nourriture pour chien ?',
       shortAnswer: 'Blue Buffalo est une marque commerciale de bonne réputation qui évite les sous-produits de volaille et le blé/maïs. Elle reste cependant riche en glucides (40-50%) et a connu plusieurs rappels par la FDA.',
-      fullAnswerHtml: `<p>La viande désossée est généralement le premier ingrédient chez <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a>. Ses croquettes restent extrudées à haute température, ce qui justifie d'ajouter des aliments frais ou des toppers hydratants à la gamelle.</p>`
+      fullAnswerHtml: `<p>La viande désossée est généralement le premier ingrédient chez <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a>. Ses croquettes restent extrudées à haute température, ce qui justifie d'ajouter des aliments frais ou des toppers hydratants à la gamelle.</p>`
     },
     de: {
       question: 'Ist Blue Buffalo ein gutes Hundefutter?',
       shortAnswer: 'Blue Buffalo ist eine überdurchschnittliche Marke, die auf Nebenerzeugnisse und Weizen/Mais verzichtet. Dennoch enthält Trockenfutter fertigungsbedingt 40–50 % Kohlenhydrate.',
-      fullAnswerHtml: `<p>Bei <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a> ist echtes Fleisch an erster Stelle der Deklaration positiv hervorzuheben. Für optimale Vitalität empfiehlt sich die Ergänzung mit schonend gegartem Frischfleisch und Omega-3-Ölen.</p>`
+      fullAnswerHtml: `<p>Bei <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a> ist echtes Fleisch an erster Stelle der Deklaration positiv hervorzuheben. Für optimale Vitalität empfiehlt sich die Ergänzung mit schonend gegartem Frischfleisch und Omega-3-Ölen.</p>`
     },
     pt: {
       question: 'A ração Blue Buffalo é boa para cães?',
       shortAnswer: 'A Blue Buffalo é uma ração de padrão elevado que dispensa subprodutos e grãos como milho e trigo. Contudo, ainda possui teor moderado a alto de carboidratos e histórico de recalls no mercado americano.',
-      fullAnswerHtml: `<p>A linha <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a> tem carne desossada como primeiro ingrediente e vitaminas preservadas a frio. É uma ração comercial confiável, mas se beneficia da adição de toppers úmidos naturais.</p>`
+      fullAnswerHtml: `<p>A linha <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a> tem carne desossada como primeiro ingrediente e vitaminas preservadas a frio. É uma ração comercial confiável, mas se beneficia da adição de toppers úmidos naturais.</p>`
     },
     ko: {
       question: '블루 버팔로(Blue Buffalo) 사료는 강아지에게 좋은 사료인가요?',
       shortAnswer: '블루 버팔로는 부산물 육분, 옥수수, 밀, 대두를 배제하고 생육을 제1원료로 사용하는 프리미엄급 브랜드입니다. 다만 건식 사료 특성상 탄수화물 비율(40~50%)이 존재합니다.',
-      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">블루 버팔로(Blue Buffalo)</a>는 냉압착 항산화 알갱이인 \'라이프소스 비츠\'를 함유하여 영양 균형이 우수합니다. 일반적인 건식 키블로 훌륭하지만, 신선한 자연식 토핑을 곁들이면 체내 수분 균형에 큰 도움이 됩니다.</p>`
+      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">블루 버팔로(Blue Buffalo)</a>는 냉압착 항산화 알갱이인 \'라이프소스 비츠\'를 함유하여 영양 균형이 우수합니다. 일반적인 건식 키블로 훌륭하지만, 신선한 자연식 토핑을 곁들이면 체내 수분 균형에 큰 도움이 됩니다.</p>`
     },
     it: {
       question: 'Blue Buffalo è un buon cibo per cani?',
       shortAnswer: 'Blue Buffalo è un marchio di fascia medio-alta che evita scarti animali e mais/frumento. Come tutte le crocchette estruse, contiene carboidrati (40-50%) necessari alla forma del croccantino.',
-      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a> utilizza vera carne disossata al primo posto e complessi vitaminici a freddo. Una solida base commerciale a cui è consigliabile abbinare cibi freschi ricchi di idratazione.</p>`
+      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo</a> utilizza vera carne disossata al primo posto e complessi vitaminici a freddo. Una solida base commerciale a cui è consigliabile abbinare cibi freschi ricchi di idratazione.</p>`
     },
   },
 
