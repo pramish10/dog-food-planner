@@ -11,6 +11,7 @@ import { understandingRecallsTranslations } from './understanding-recalls';
 import { gutHealthAllergiesTranslations } from './gut-health-allergies';
 import { rotationalFeedingTranslations } from './rotational-feeding';
 import { dryVsWetDogFoodTranslations } from './dry-vs-wet-dog-food';
+import { getPickyDogToEatKibbleTranslations } from './get-picky-dog-to-eat-kibble';
 
 export * from './types';
 
@@ -23,6 +24,7 @@ export * from './types';
  * TypeScript strictly enforces this type contract (Record<string, BlogPostLocalizedRecord>).
  */
 export const BLOG_POST_TRANSLATIONS: Record<string, BlogPostLocalizedRecord> = {
+  'get-picky-dog-to-eat-kibble': getPickyDogToEatKibbleTranslations,
   'the-science-of-canine-macros': scienceOfCanineMacrosTranslations,
   'how-to-transition-dog-to-fresh-food': transitionToFreshFoodTranslations,
   'top-vet-approved-superfoods-for-dogs': superfoodsForDogsTranslations,

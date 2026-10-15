@@ -10,6 +10,7 @@ export const BLOG_CATEGORY_TRANSLATIONS: Record<Lang, Record<string, string>> = 
     'Digestion & Gut Health': 'Digestion & Gut Health',
     'Safe Ingredients & Superfoods': 'Safe Ingredients & Superfoods',
     'Commercial Food & Recalls': 'Commercial Food & Recalls',
+    'Dog Food': 'Dog Food',
   },
   es: {
     'All Articles': 'Todos los Artículos',
@@ -19,6 +20,7 @@ export const BLOG_CATEGORY_TRANSLATIONS: Record<Lang, Record<string, string>> = 
     'Digestion & Gut Health': 'Digestión y Salud Intestinal',
     'Safe Ingredients & Superfoods': 'Superalimentos e Ingredientes',
     'Commercial Food & Recalls': 'Pienso y Alertas FDA',
+    'Dog Food': 'Comida para Perros',
   },
   ja: {
     'All Articles': 'すべての記事',
@@ -28,6 +30,7 @@ export const BLOG_CATEGORY_TRANSLATIONS: Record<Lang, Record<string, string>> = 
     'Digestion & Gut Health': '腸活・消化器ケア',
     'Safe Ingredients & Superfoods': 'スーパーフードと食材',
     'Commercial Food & Recalls': '市販フードとリコール情報',
+    'Dog Food': 'ドッグフード',
   },
   fr: {
     'All Articles': 'Tous les Articles',
@@ -37,6 +40,7 @@ export const BLOG_CATEGORY_TRANSLATIONS: Record<Lang, Record<string, string>> = 
     'Digestion & Gut Health': 'Digestion & Flore Intestinale',
     'Safe Ingredients & Superfoods': 'Superaliments & Ingrédients',
     'Commercial Food & Recalls': 'Croquettes & Rappels de Lots',
+    'Dog Food': 'Alimentation pour Chien',
   },
   de: {
     'All Articles': 'Alle Artikel',
@@ -46,6 +50,7 @@ export const BLOG_CATEGORY_TRANSLATIONS: Record<Lang, Record<string, string>> = 
     'Digestion & Gut Health': 'Verdauung & Darmgesundheit',
     'Safe Ingredients & Superfoods': 'Superfoods & Gesunde Zutaten',
     'Commercial Food & Recalls': 'Fertigfutter & Futterrückrufe',
+    'Dog Food': 'Hundefutter',
   },
   pt: {
     'All Articles': 'Todos os Artigos',
@@ -55,6 +60,7 @@ export const BLOG_CATEGORY_TRANSLATIONS: Record<Lang, Record<string, string>> = 
     'Digestion & Gut Health': 'Digestão e Saúde Intestinal',
     'Safe Ingredients & Superfoods': 'Superalimentos e Ingredientes',
     'Commercial Food & Recalls': 'Rações e Recalls da FDA',
+    'Dog Food': 'Comida para Cães',
   },
   ko: {
     'All Articles': '모든 글',
@@ -64,6 +70,7 @@ export const BLOG_CATEGORY_TRANSLATIONS: Record<Lang, Record<string, string>> = 
     'Digestion & Gut Health': '장 건강 및 소화기 관리',
     'Safe Ingredients & Superfoods': '슈퍼푸드 및 안전 식재료',
     'Commercial Food & Recalls': '시판 사료 및 리콜 정보',
+    'Dog Food': '반려견 사료',
   },
   it: {
     'All Articles': 'Tutti gli Articoli',
@@ -73,6 +80,7 @@ export const BLOG_CATEGORY_TRANSLATIONS: Record<Lang, Record<string, string>> = 
     'Digestion & Gut Health': 'Digestione e Salute Intestinale',
     'Safe Ingredients & Superfoods': 'Superfood e Ingredienti Sicuri',
     'Commercial Food & Recalls': 'Cibo Commerciale e Richiami',
+    'Dog Food': 'Cibo per Cani',
   },
 };
 

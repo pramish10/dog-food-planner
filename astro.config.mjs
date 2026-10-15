@@ -7,6 +7,7 @@ const SITE = 'https://dogfoodplanner.com';
 const LOCALE_PREFIX = /^\/(es|ja|fr|de|pt|ko|it)(?=\/|$)/;
 
 const BLOG_POST_DATES = {
+  'get-picky-dog-to-eat-kibble': '2026-10-15T00:00:00.000Z',
   'dry-vs-wet-dog-food': '2026-10-13T00:00:00.000Z',
   'the-science-of-canine-macros': '2026-10-11T00:00:00.000Z',
   'how-to-transition-dog-to-fresh-food': '2026-10-08T00:00:00.000Z',

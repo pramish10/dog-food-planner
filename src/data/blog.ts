@@ -54,11 +54,139 @@ export const BLOG_CATEGORIES = [
   'Digestion & Gut Health',
   'Safe Ingredients & Superfoods',
   'Commercial Food & Recalls',
+  'Dog Food',
 ] as const;
 
 export type BlogCategory = typeof BLOG_CATEGORIES[number];
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: 'get-picky-dog-to-eat-kibble',
+    slug: 'get-picky-dog-to-eat-kibble',
+    title: 'How to Get a Picky Dog to Eat Kibble (Simple Tips That Work)',
+    subtitle: 'Dog turning away from dry food? Try these simple ways to get a picky dog to eat kibble, from broth toppers to better mealtime routines.',
+    category: 'Dog Food',
+    categorySlug: 'dog-food',
+    excerpt: 'Dog turning away from dry food? Try these simple ways to get a picky dog to eat kibble, from broth toppers to better mealtime routines.',
+    image: '/images/blog/get-picky-dog-to-eat-kibble.jpg',
+    imageAlt: 'Happy beagle waiting beside a bowl of kibble with broth poured on top',
+    featured: false,
+    publishedDate: 'October 15, 2026',
+    updatedDate: 'October 15, 2026',
+    readTime: '6 min read',
+    author: {
+      name: 'Dr. Maya Lin, DVM',
+      role: 'Veterinary Nutrition Researcher',
+      avatar: '🥣',
+      credentials: 'DVM, CVA, Member of the American Academy of Veterinary Nutrition (AAVN)'
+    },
+    reviewedBy: {
+      name: 'Dr. Aris Thorne, DVM',
+      role: 'Board-Certified Veterinary Nutritionist',
+      credentials: 'DACVIM (Nutrition)'
+    },
+    tags: ['Dog Food', 'Picky Eaters', 'Kibble', 'Meal Routine', 'Dog Nutrition', 'Feeding Tips'],
+    gradient: {
+      from: '#f59e0b',
+      to: '#d97706',
+      badgeBg: 'rgba(245,158,11,0.12)',
+      badgeText: '#b45309',
+      icon: '🥣'
+    },
+    keyTakeaways: [
+      'Picky eating in healthy dogs usually comes down to boredom, mild aroma, or free feeding rather than an illness, though sudden appetite loss warrants a vet visit.',
+      'Rule out the basics first: verify correct portion size, store kibble sealed and fresh, wash the bowl daily, and provide a quiet eating spot.',
+      'Make kibble more appealing by choosing recipes with a named meat first, pouring warm bone broth over the bowl, or stirring in crumbled freeze-dried food.',
+      'Establish a structured mealtime routine: feed at fixed times, pick up the bowl after 15 to 20 minutes, and cut back on treats between meals.'
+    ],
+    tableOfContents: [
+      { id: 'why-your-dog-may-be-turning-away-from-kibble', title: 'Why Your Dog May Be Turning Away From Kibble' },
+      { id: 'check-the-basics-before-changing-the-food', title: 'Check the Basics Before Changing the Food' },
+      { id: 'make-the-kibble-smell-and-taste-better', title: 'Make the Kibble Smell and Taste Better' },
+      { id: 'build-a-mealtime-routine-that-works', title: 'Build a Mealtime Routine That Works' },
+      { id: 'how-to-switch-foods-without-upsetting-the-stomach', title: 'How to Switch Foods Without Upsetting the Stomach' },
+      { id: 'dont-forget-dental-health', title: "Don't Forget Dental Health" },
+      { id: 'foods-to-keep-out-of-the-bowl', title: 'Foods to Keep Out of the Bowl' },
+      { id: 'quick-answers', title: 'Quick Answers' },
+      { id: 'when-to-call-your-vet', title: 'When to Call Your Vet' },
+    ],
+    contentHtml: `
+      <p class="lead">Few things are more frustrating than filling your dog's bowl and watching them walk away. Picky eating is common, and in many healthy dogs it comes down to boredom, smell, or routine rather than anything serious. The good news is that a few small changes often make kibble a lot more appealing. Here is what to check first, what to try, and when to call your vet.</p>
+
+      <h2 id="why-your-dog-may-be-turning-away-from-kibble">Why Your Dog May Be Turning Away From Kibble</h2>
+      <p>Dry food has a mild smell and the same texture every day, so some dogs simply lose interest. Other common causes include:</p>
+      <ul>
+        <li><strong>Free feeding.</strong> A bowl that is always full gives a dog little reason to be hungry at mealtime.</li>
+        <li><strong>Too many treats.</strong> Snacks, chews, and table scraps can take the edge off appetite.</li>
+        <li><strong>Frequent food changes.</strong> Dogs that learn a new, tastier food is coming may hold out for it.</li>
+        <li><strong>Stress or a new environment.</strong> Moving, travel, or a new pet can reduce appetite for a few days.</li>
+        <li><strong>Stale food.</strong> Kibble loses its smell once a bag has been open for a long time.</li>
+      </ul>
+      <p>Sometimes there is a health reason. If your dog suddenly stops eating, seems tired, or has vomiting or diarrhea, contact your veterinarian instead of trying tricks at home.</p>
+
+      <h2 id="check-the-basics-before-changing-the-food">Check the Basics Before Changing the Food</h2>
+      <p>Before buying anything new, look at the simple things:</p>
+      <ul>
+        <li><strong>Portion size.</strong> A dog that gets more food than it needs may leave some.</li>
+        <li><strong>Freshness.</strong> Store kibble in a cool, dry place in a sealed container, and use the bag within the time on the label.</li>
+        <li><strong>The bowl.</strong> Wash it daily. Some dogs dislike strong smells or bowls that move around.</li>
+        <li><strong>The spot.</strong> A quiet place away from noise and other pets helps nervous eaters.</li>
+      </ul>
+
+      <h2 id="make-the-kibble-smell-and-taste-better">Make the Kibble Smell and Taste Better</h2>
+      <p>If the basics are fine, try one change at a time so you can tell what works.</p>
+
+      <h3 id="switch-to-a-food-with-a-named-meat-first">Switch to a food with a named meat first</h3>
+      <p>Sometimes the food itself is the issue, and a recipe with a named meat as the first ingredient can be more appealing, such as <AmazonLink url="https://link.amazon/B080XJxUX">Wag Chicken & Sweet Potato Grain Free Dry Dog Food</AmazonLink>, which lists cage-free chicken first. Grain-free diets are not right for every dog, so ask your vet whether one suits yours. If you are unsure whether kibble is the right fit at all, our guide to <a href="/blog/dry-vs-wet-dog-food">dry vs wet dog food</a> explains the differences.</p>
+
+      <h3 id="add-a-warm-broth-topper">Add a warm broth topper</h3>
+      <p>A little broth poured over the bowl adds smell, flavor, and moisture, which is often enough to get a hesitant dog interested. <AmazonLink url="https://link.amazon/B0fXWJpSl">Caru Daily Dish Pumpkin Broth</AmazonLink> is one pour-over option made without garlic, onion, or soy. Warm water also works. Just skip any broth that contains onion or garlic.</p>
+
+      <h3 id="stir-in-freeze-dried-food">Stir in freeze-dried food</h3>
+      <p>A few crumbled pieces of freeze-dried food mixed into kibble add a strong aroma and a different texture, for example <AmazonLink url="https://link.amazon/B067FuABf">Nutra Complete Freeze-Dried Raw Duck</AmazonLink>, which can be used as a topper or mix-in. Raw and freeze-dried raw foods can carry bacteria, so wash your hands and your dog's bowl after every meal, and talk to your vet before feeding raw, especially if anyone in your home has a weakened immune system.</p>
+      <p>Toppers and mix-ins add calories, so use a little less kibble to keep the daily total the same.</p>
+
+      <h2 id="build-a-mealtime-routine-that-works">Build a Mealtime Routine That Works</h2>
+      <p>Routine often does more than any topper:</p>
+      <ul>
+        <li><strong>Set meal times.</strong> Offer food at the same times each day.</li>
+        <li><strong>Pick up the bowl after 15 to 20 minutes.</strong> Put it down again at the next meal, and do not add extras in between.</li>
+        <li><strong>Skip free feeding.</strong> Fixed meals teach your dog that food comes at set times.</li>
+        <li><strong>Cut back on treats.</strong> Keep them small and count them in the daily total.</li>
+        <li><strong>Stay calm.</strong> Hovering, coaxing, or hand feeding can turn mealtime into a game.</li>
+      </ul>
+
+      <h2 id="how-to-switch-foods-without-upsetting-the-stomach">How to Switch Foods Without Upsetting the Stomach</h2>
+      <p>If you decide to change foods, go slowly over 7 to 10 days:</p>
+      <ul>
+        <li><strong>Days 1 to 3:</strong> 25% new food and 75% old food</li>
+        <li><strong>Days 4 to 6:</strong> 50% new food and 50% old food</li>
+        <li><strong>Days 7 to 9:</strong> 75% new food and 25% old food</li>
+        <li><strong>Day 10:</strong> 100% new food</li>
+      </ul>
+      <p>If your dog gets loose stools or vomits, slow the switch down, and call your vet if it continues.</p>
+
+      <h2 id="dont-forget-dental-health">Don't Forget Dental Health</h2>
+      <p>Dry food does not clean teeth on its own, and toppers can make mouths a little messier. Brushing is the foundation of dental care, and some owners add a daily dental chew on top, such as <AmazonLink url="https://link.amazon/B02clv1nC">C.E.T. VeggieDent Fr3sh Plaque and Tartar Control Chews</AmazonLink> for large dogs, which are listed as VOHC accepted. You can look up accepted products on the <a href="https://vohc.org" target="_blank" rel="noopener noreferrer">VOHC website</a>. Sore teeth can also be a reason a dog avoids hard kibble, so ask your vet to check your dog's mouth if you suspect pain.</p>
+
+      <h2 id="foods-to-keep-out-of-the-bowl">Foods to Keep Out of the Bowl</h2>
+      <p>When adding extras, stick to dog-safe foods. Never add onion, garlic, grapes, raisins, chocolate, or anything sweetened with xylitol. You can check specific ingredients in our <a href="/toxic-foods">dog food safety guide</a>, and if your dog eats something toxic, call your vet or the <a href="https://www.aspca.org/pet-care/animal-poison-control" target="_blank" rel="noopener noreferrer">ASPCA Animal Poison Control Center</a> right away.</p>
+
+      <h2 id="quick-answers">Quick Answers</h2>
+      <h3 id="is-it-normal-for-a-dog-to-skip-a-meal">Is it normal for a dog to skip a meal?</h3>
+      <p>An occasional skipped meal can happen, especially in hot weather or after a change in routine. If it continues for more than a day or two, call your vet.</p>
+      <h3 id="can-i-mix-wet-food-with-kibble">Can I mix wet food with kibble?</h3>
+      <p>Yes, many owners do. Reduce the amount of kibble a little so total calories stay the same, and see our <a href="/blog/dry-vs-wet-dog-food">dry vs wet dog food guide</a> for more detail.</p>
+      <h3 id="should-i-give-people-food-to-get-my-dog-to-eat">Should I give people food to get my dog to eat?</h3>
+      <p>It is best not to. Dogs quickly learn that holding out leads to something better, and many human foods are unsafe for dogs.</p>
+      <h3 id="how-long-should-i-leave-the-bowl-down">How long should I leave the bowl down?</h3>
+      <p>About 15 to 20 minutes is common. Then pick it up until the next meal.</p>
+
+      <h2 id="when-to-call-your-vet">When to Call Your Vet</h2>
+      <p>Picky eating that lasts more than a day or two, weight loss, low energy, vomiting, or diarrhea can point to a health problem. Puppies, small dogs, and seniors should be checked sooner. Your vet can rule out dental pain, stomach issues, and other causes before you change the diet any further.</p>
+    `,
+    relatedSlugs: ['dry-vs-wet-dog-food', 'the-science-of-canine-macros', 'how-to-transition-dog-to-fresh-food'],
+  },
   {
     id: 'dry-vs-wet-dog-food',
     slug: 'dry-vs-wet-dog-food',
