@@ -8,29 +8,6 @@ import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
 import { getLocalizedFaq, getLocalizedFaqs } from '../../../i18n/faqs';
 import { getPageTranslations } from '../../../i18n/pages';
-import { findBrandMatchInText } from '../../../data/affiliates';
-import AffiliateButton from '../../../components/AffiliateButton.astro';
-
-// Curated product placements — identical to the English /faq/[slug].astro map.
-// Products are only shown when they are the direct next step after reading the answer.
-// Most FAQs (safety info, definitions, digestion time) show NO product at all.
-type FaqProduct = { label: string; note: string; url: string };
-const FAQ_PRODUCTS: Record<string, FaqProduct> = {
-  'what-is-the-1-best-dog-food': { label: 'JustFoodForDogs Pantry Fresh – Chicken & White Rice (Pack of 24)', note: 'Human-grade, gently cooked in a USDA-inspected kitchen — the category ranked #1 in the longevity research above.', url: 'https://amzn.to/4x9327I' },
-  'how-to-make-homemade-dog-food': { label: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement', note: 'Add ½ tsp per pound of boneless meat to hit the 1.2:1 Ca:P ratio — the most critical step described above.', url: 'https://amzn.to/4haNVWy' },
-  'is-homemade-dog-food-healthy': { label: 'U.S.A. Eggshell Powder, 8oz — Calcium Supplement', note: 'The calcium supplement referenced above — prevents the bone demineralization risk of unsupplemented homemade diets.', url: 'https://amzn.to/4haNVWy' },
-  'raw-food-diet-for-dogs': { label: "Stella & Chewy's Freeze-Dried Raw Dinner Patties – Variety Pack (5 Proteins)", note: 'HPP pathogen-controlled freeze-dried raw — the safest way to start BARF without sourcing and handling raw meat yourself.', url: 'https://amzn.to/4gCgdJp' },
-  'what-is-the-80-10-10-rule-for-dog-food': { label: "Stella & Chewy's Freeze-Dried Raw Beef Meal Mixers – 95% Grass-Fed Beef, Organs & Bone, 1oz", note: 'Contains the muscle meat, organ, and raw bone ratio the 80/10/10 rule describes — use as a complete meal or topper.', url: 'https://amzn.to/4gyO85G' },
-  'what-is-the-best-dog-food-for-allergies': { label: 'Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb', note: 'Hydrolyzed protein formula — the elimination diet option described in step 2 of the protocol above.', url: 'https://amzn.to/4ykV9Nk' },
-  'why-is-my-dog-not-eating-his-food-but-will-eat-treats': { label: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz', note: 'Warm bone broth over kibble is the first step the answer recommends — adds aroma and moisture without rewarding refusal.', url: 'https://amzn.to/4zSd7Zb' },
-  'what-is-the-best-dry-dog-food': { label: 'ORIJEN Grain-Free WHOLEPREY Dry Dog Food Original Recipe, 23.5lb', note: 'The top-rated traceable kibble named in the answer — 85%+ animal inclusions, baked not extruded, no rendered by-products.', url: 'https://amzn.to/4xF5aFr' },
-  'what-is-the-best-dog-food-to-feed-your-dog': { label: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz', note: 'The EPA/DHA omega-3 oil referenced in the Hybrid Bowl formula above — add 1 tsp per 20 lbs of body weight daily.', url: 'https://amzn.to/46HCJdW' },
-  'can-dogs-live-on-dry-food-only': { label: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz', note: 'The answer recommends rehydrating kibble with warm bone broth to protect kidney function — this is that product.', url: 'https://amzn.to/4zSd7Zb' },
-  'what-is-the-best-natural-dog-food': { label: 'ZIWI Peak Air-Dried Dog Food – Beef (16oz) + Chicken (16oz) Bundle', note: 'Air-dried at low temperature to preserve natural enzymes — the minimally processed format the answer describes.', url: 'https://amzn.to/4gRp8FA' },
-  'what-are-the-top-5-healthiest-dog-food': { label: 'JustFoodForDogs Pantry Fresh – Chicken & White Rice (Pack of 24)', note: 'Human-grade gently cooked — the #1 ranked category in the list above, made in a USDA-inspected kitchen.', url: 'https://amzn.to/4x9327I' },
-  'what-is-the-best-diet-for-dogs': { label: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz', note: 'The omega-3 supplement the answer recommends adding to any diet — EPA/DHA for coat, joints, and inflammation.', url: 'https://amzn.to/46HCJdW' },
-  'should-i-feed-my-dog-wet-or-dry-food': { label: 'The Honest Kitchen Bone Broth Pour Overs – Variety Pack of 3, 5.5oz', note: 'The answer recommends adding moisture to dry kibble — these pour-over broths are the easiest way to do that.', url: 'https://amzn.to/4zZ68xK' },
-};
 
 export function getStaticPaths() {
   const targetLangs: Lang[] = ['es', 'ja', 'fr', 'de', 'pt', 'ko', 'it'];
@@ -58,18 +35,6 @@ const currentStrings = ui[lang] || ui.en;
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 const p = getPageTranslations(lang).faqSingle;
-
-// Curated product for this specific FAQ (null for most FAQs — safety, definitions, etc.)
-const curatedProduct: FaqProduct | null = FAQ_PRODUCTS[baseFaq.slug] ?? null;
-
-// Brand-review FAQs: fall back to the brand's own product when no curated entry exists
-const brandCtx = !curatedProduct && baseFaq.category === 'Brand Reviews & Safety'
-  ? findBrandMatchInText(`${baseFaq.question} ${baseFaq.shortAnswer} ${baseFaq.tags.join(' ')}`)
-  : null;
-
-// Resolved product — single source used in the template (curated takes priority over brand)
-const resolvedProduct: FaqProduct | null = curatedProduct
-  ?? (brandCtx ? { label: brandCtx.product.name, note: `${brandCtx.brand} — the product reviewed and referenced above.`, url: brandCtx.product.url } : null);
 
 // Find related FAQs
 const relatedFaqs = (faq.relatedSlugs || [])
@@ -108,7 +73,7 @@ const articleJsonLd = {
   "description": faq.shortAnswer,
   "author": {
     "@type": "Organization",
-    "name": "Dog Food Planner Editorial Team",
+    "name": "Dog Food Planner Nutrition Team",
     "url": "https://dogfoodplanner.com"
   },
   "publisher": {
@@ -124,9 +89,9 @@ const articleJsonLd = {
 ---
 
 <Layout 
-  lang={lang}
-  title={`${faq.question} | DogFoodPlanner.com`}
+  title={`${faq.question} | Dog Food Planner`}
   description={faq.shortAnswer}
+  canonicalUrl={`https://dogfoodplanner.com/${lang}/faq/${faq.slug}`}
   noindex={isFaqNoindexed(faq.slug)}
 >
   <Navbar />
@@ -134,7 +99,7 @@ const articleJsonLd = {
   <main class="min-h-screen page-warm-bg pb-16">
     <Breadcrumbs 
       items={[
-        { name: t('nav.brand'), url: translatePath('/') },
+        { name: t('nav.home'), url: translatePath('/') },
         { name: t('nav.faqs'), url: translatePath('/faq') },
         { name: faq.question }
       ]}
@@ -154,9 +119,9 @@ const articleJsonLd = {
           {faq.question}
         </h1>
         <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8f5e35] dark:text-[#c4956a] font-mono">
-          <span>{p.reviewedBy}</span>
+          <span>{p.reviewedBy}: <strong>DogFoodPlanner Editorial Team</strong></span>
           <span>•</span>
-          <span>📅 {p.updated}</span>
+          <span>📅 {p.updatedYear}: {new Date().getFullYear()}</span>
         </div>
       </div>
     </section>
@@ -195,11 +160,6 @@ const articleJsonLd = {
           </h2>
           <div class="space-y-4 text-[#4d4d4d] dark:text-[#c4956a]">
             <Fragment set:html={faq.fullAnswerHtml} />
-            {resolvedProduct && (
-              <p>
-                <a href={resolvedProduct.url} target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">{resolvedProduct.label}</a> — {resolvedProduct.note}
-              </p>
-            )}
           </div>
 
           <!-- Tags / Topics -->

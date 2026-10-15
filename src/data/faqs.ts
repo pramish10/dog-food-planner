@@ -40,7 +40,7 @@ export const FAQS_DATA: FaqItem[] = [
       <ul>
         <li><strong>Pros:</strong> Real deboned meat is typically the first ingredient (e.g., real chicken, lamb, or salmon), and their recipes contain no corn, wheat, soy, or artificial preservatives. Their proprietary "LifeSource Bits" provide cold-formed antioxidants and vitamins.</li>
         <li><strong>Cons:</strong> Like most commercial extruded dry kibbles, carbohydrate levels hover between 42% and 52% of the recipe to allow the kibble pieces to hold form during high-heat manufacturing. They have also had several past FDA recalls regarding moisture, mold, and elevated Vitamin D levels.</li>
-        <li><strong>Nutrition Verdict:</strong> Blue Buffalo Wilderness and Basics (limited ingredient) lines provide solid commercial baseline nutrition, but incorporating 20-30% fresh, gently cooked whole foods or transitioning to human-grade meal recipes significantly improves bioavailable hydration and micronutrient density.</li>
+        <li><strong>Nutrition Verdict:</strong> <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Blue Buffalo Wilderness Chicken Adult Dry Dog Food</a> and Basics (limited ingredient) lines provide solid commercial baseline nutrition with real deboned chicken as the first ingredient and no corn/wheat/soy, but incorporating 20-30% fresh, gently cooked whole foods or transitioning to human-grade meal recipes significantly improves bioavailable hydration and micronutrient density.</li>
       </ul>
     `,
     tags: ['blue buffalo', 'brand review', 'kibble', 'recalls'],
