@@ -90,6 +90,190 @@ type FaqTranslation = {
 };
 
 export const FAQ_CONTENT_TRANSLATIONS: Record<string, Partial<Record<Lang, FaqTranslation>>> = {
+  'how-long-does-it-take-a-dog-to-digest-food': {
+    es: {
+      question: '¿Cuánto tiempo tarda un perro en digerir la comida?',
+      shortAnswer: 'En promedio, un perro adulto tarda entre 6 y 10 horas en digerir una comida por completo. Sin embargo, el tiempo de tránsito varía drásticamente según la dieta: la comida cruda BARF y los alimentos frescos cocinados se digieren en 4 a 8 horas, mientras que el pienso seco comercial requiere de 10 a 14 horas debido a su bajo contenido de humedad y elevado nivel de almidón.',
+      fullAnswerHtml: `
+        <p>Conocer el tiempo de digestión canina es vital para programar paseos, comidas, medicamentos y detectar problemas gastrointestinales a tiempo. El sistema digestivo del perro es anatómicamente más corto y notablemente más ácido que el humano, diseñado para procesar proteínas animales con gran rapidez.</p>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse border border-zinc-200 dark:border-zinc-800">
+            <thead>
+              <tr class="bg-amber-100/60 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 font-semibold">
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Tipo de Dieta</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Vaciado Gástrico</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Tránsito Total</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Humedad y pH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Dieta Cruda BARF</td><td class="p-2.5">2 – 4 horas</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">4 – 8 horas</td><td class="p-2.5">70–75% humedad (pH 1.0–2.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Comida Natural Cocinada</td><td class="p-2.5">3 – 5 horas</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">6 – 8 horas</td><td class="p-2.5">70–75% humedad (pH 2.0–3.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Comida Húmeda / Latas</td><td class="p-2.5">4 – 6 horas</td><td class="p-2.5 font-semibold text-amber-700 dark:text-amber-400">6 – 10 horas</td><td class="p-2.5">75–82% humedad (pH 2.5–3.5)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Pienso Seco Extrusionado</td><td class="p-2.5">6 – 8 horas</td><td class="p-2.5 font-semibold text-amber-800 dark:text-amber-500">10 – 14 horas</td><td class="p-2.5">8–10% humedad (pH 3.5–5.0)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Factores que alteran la velocidad:</strong> El tamaño de la raza (los perros grandes tardan hasta 24-36 horas, las razas miniatura solo 4-6 horas), el nivel de hidratación y la edad. Nunca realices ejercicio intenso inmediatamente después de comer para prevenir la torsión de estómago (GDV).</p>
+      `
+    },
+    fr: {
+      question: 'Combien de temps faut-il à un chien pour digérer les aliments ?',
+      shortAnswer: 'En moyenne, il faut entre 6 et 10 heures à un chien adulte pour digérer complètement un repas. La durée de transit varie fortement selon le régime : 4 à 8 heures pour une alimentation crue BARF ou une ration ménagère fraîche, contre 10 à 14 heures pour des croquettes sèches industrielles riches en amidon et pauvres en humidité.',
+      fullAnswerHtml: `
+        <p>Comprendre le temps de digestion chez le chien est fondamental pour rythmer les repas, les promenades et repérer les anomalies gastriques. Le tractus digestif canin est naturellement plus court et bien plus acide que celui de l'humain, favorisant la dégradation rapide des protéines animales.</p>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse border border-zinc-200 dark:border-zinc-800">
+            <thead>
+              <tr class="bg-amber-100/60 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 font-semibold">
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Type d'Alimentation</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Vidange Gastrique</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Transit Total</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Humidité & pH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">BARF Cru Ancestral</td><td class="p-2.5">2 – 4 heures</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">4 – 8 heures</td><td class="p-2.5">70–75% humidité (pH 1.0–2.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Ration Ménagère Cuite</td><td class="p-2.5">3 – 5 heures</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">6 – 8 heures</td><td class="p-2.5">70–75% humidité (pH 2.0–3.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Pâtée / Nourriture Humide</td><td class="p-2.5">4 – 6 heures</td><td class="p-2.5 font-semibold text-amber-700 dark:text-amber-400">6 – 10 heures</td><td class="p-2.5">75–82% humidité (pH 2.5–3.5)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Croquettes Sèches</td><td class="p-2.5">6 – 8 heures</td><td class="p-2.5 font-semibold text-amber-800 dark:text-amber-500">10 – 14 heures</td><td class="p-2.5">8–10% humidité (pH 3.5–5.0)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Facteurs influents :</strong> La taille du chien (les petites races digèrent en 4-6h, les géants jusqu'à 36h) et l'exercice physique. Attendez toujours 1 heure après le repas avant toute activité intense pour écarter le risque mortel de dilatation-torsion de l'estomac (SDTE).</p>
+      `
+    },
+    de: {
+      question: 'Wie lange braucht ein Hund, um Futter zu verdauen?',
+      shortAnswer: 'Ein ausgewachsener Hund benötigt im Durchschnitt 6 bis 10 Stunden für die Verdauung. Das Verdauungstempo variiert je nach Futterart erheblich: Artgerechtes BARF-Rohfutter und Schongar-Frischfutter werden in 4 bis 8 Stunden verdaut, während industrielles Trockenfutter aufgrund des hohen Stärkegehalts und der geringen Feuchtigkeit 10 bis 14 Stunden benötigt.',
+      fullAnswerHtml: `
+        <p>Die genaue Verdauungszeit bei Hunden zu kennen, ist entscheidend für Gassi-Zeiten, Fütterungsintervalle und die Erkennung von Magen-Darm-Problemen. Der Verdauungstrakt des Hundes ist deutlich kürzer und extrem säurebetont, um tierische Proteine und Knochen zügig aufzuschließen.</p>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse border border-zinc-200 dark:border-zinc-800">
+            <thead>
+              <tr class="bg-amber-100/60 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 font-semibold">
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Futterart</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Magenverweildauer</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Gesamte Passagezeit</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Feuchtigkeit & pH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Artgerechtes BARF (Roh)</td><td class="p-2.5">2 – 4 Stunden</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">4 – 8 Stunden</td><td class="p-2.5">70–75% Feuchte (pH 1.0–2.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Frisch gegartes Futter</td><td class="p-2.5">3 – 5 Stunden</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">6 – 8 Stunden</td><td class="p-2.5">70–75% Feuchte (pH 2.0–3.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Nassfutter / Dosenfleisch</td><td class="p-2.5">4 – 6 Stunden</td><td class="p-2.5 font-semibold text-amber-700 dark:text-amber-400">6 – 10 Stunden</td><td class="p-2.5">75–82% Feuchte (pH 2.5–3.5)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Trockenfutter (Extrudat)</td><td class="p-2.5">6 – 8 Stunden</td><td class="p-2.5 font-semibold text-amber-800 dark:text-amber-500">10 – 14 Stunden</td><td class="p-2.5">8–10% Feuchte (pH 3.5–5.0)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Wichtiger Tierarzt-Hinweis:</strong> Nach großen Mahlzeiten sollte der Hund mindestens 1 Stunde ruhen, um das Risiko einer lebensgefährlichen Magendrehung (Torsio ventriculi) zu minimieren.</p>
+      `
+    },
+    pt: {
+      question: 'Quanto tempo o cachorro leva para fazer a digestão dos alimentos?',
+      shortAnswer: 'Em média, um cão adulto leva de 6 a 10 horas para concluir a digestão de uma refeição. O tempo de trânsito gastrointestinal varia drasticamente conforme o tipo de dieta: alimentos crus (BARF) e alimentação natural cozida digerem em 4 a 8 horas, enquanto rações secas comerciais levam de 10 a 14 horas devido ao baixo teor de umidade e alta concentração de carboidratos.',
+      fullAnswerHtml: `
+        <p>Entender o tempo de digestão do cão é essencial para definir horários de passeios, alimentação e identificar desconfortos gastrointestinais. O trato digestivo canino é biologicamente mais curto e extremamente ácido, ideal para digerir carnes e ossos crus rapidamente.</p>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse border border-zinc-200 dark:border-zinc-800">
+            <thead>
+              <tr class="bg-amber-100/60 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 font-semibold">
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Tipo de Dieta</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Esvaziamento Gástrico</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Trânsito Total</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Umidade e pH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Dieta Crua BARF</td><td class="p-2.5">2 – 4 horas</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">4 – 8 horas</td><td class="p-2.5">70–75% umidade (pH 1.0–2.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Alimentação Natural Cozida</td><td class="p-2.5">3 – 5 horas</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">6 – 8 horas</td><td class="p-2.5">70–75% umidade (pH 2.0–3.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Comida Úmida / Sachê / Lata</td><td class="p-2.5">4 – 6 horas</td><td class="p-2.5 font-semibold text-amber-700 dark:text-amber-400">6 – 10 horas</td><td class="p-2.5">75–82% umidade (pH 2.5–3.5)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Ração Seca Extrusada</td><td class="p-2.5">6 – 8 horas</td><td class="p-2.5 font-semibold text-amber-800 dark:text-amber-500">10 – 14 horas</td><td class="p-2.5">8–10% umidade (pH 3.5–5.0)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Fatores de velocidade:</strong> Cães pequenos têm trânsito mais rápido (4 a 6h) e cães gigantes levam até 36h. Evite brincadeiras e corridas logo após a refeição para prevenir a torção gástrica.</p>
+      `
+    },
+    it: {
+      question: 'Quanto tempo ci mette un cane a digerire il cibo?',
+      shortAnswer: 'In media, un cane adulto impiega dalle 6 alle 10 ore per digerire completamente un pasto. Il tempo di transito varia notevolmente a seconda della ciotola: cibo fresco cotto e dieta cruda BARF vengono digeriti in sole 4-8 ore, mentre le crocchette secche industriali richiedono dalle 10 alle 14 ore a causa della scarsa idratazione e dell\'elevato contenuto di amidi.',
+      fullAnswerHtml: `
+        <p>Conoscere i tempi di digestione del cane è fondamentale per calcolare gli orari delle passeggiate, dei pasti e prevenire patologie gastrointestinali. L'apparato digerente del cane è compatto e molto acido, specializzato nello scomposizione rapida di carne e proteine animali.</p>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse border border-zinc-200 dark:border-zinc-800">
+            <thead>
+              <tr class="bg-amber-100/60 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 font-semibold">
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Tipo di Alimento</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Svuotamento Gastrico</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Transito Totale</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Umidità & pH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Dieta Cruda BARF</td><td class="p-2.5">2 – 4 ore</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">4 – 8 ore</td><td class="p-2.5">70–75% umidità (pH 1.0–2.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Cibo Fresco Cotto</td><td class="p-2.5">3 – 5 ore</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">6 – 8 ore</td><td class="p-2.5">70–75% umidità (pH 2.0–3.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">Cibo Umido / Scatoletta</td><td class="p-2.5">4 – 6 ore</td><td class="p-2.5 font-semibold text-amber-700 dark:text-amber-400">6 – 10 ore</td><td class="p-2.5">75–82% umidità (pH 2.5–3.5)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">Crocchette Secche</td><td class="p-2.5">6 – 8 ore</td><td class="p-2.5 font-semibold text-amber-800 dark:text-amber-500">10 – 14 ore</td><td class="p-2.5">8–10% umidità (pH 3.5–5.0)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Attenzione alla torsione gastrica:</strong> Evitare sforzi intensi o corse nelle 2 ore successive al pasto, specialmente nei cani di taglia grande o a torace profondo.</p>
+      `
+    },
+    ja: {
+      question: '犬がドッグフードを消化するのに何時間かかる？',
+      shortAnswer: '成犬が食事を完全に消化・排泄するまでの所要時間は平均6〜10時間です。消化時間はフードの種類によって大きく異なり、自然な水分を含む生肉（BARF）や手作りフレッシュフードは4〜8時間で消化される一方、デンプンが多く乾燥した市販のドライキブルは10〜14時間かかります。',
+      fullAnswerHtml: `
+        <p>愛犬の消化時間を正しく理解することは、散歩のタイミング、投薬、体調不良の早期発見に欠かせません。犬の消化管は人間よりも短く強酸性で、肉類を短時間で分解することに特化しています。</p>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse border border-zinc-200 dark:border-zinc-800">
+            <thead>
+              <tr class="bg-amber-100/60 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 font-semibold">
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">フードの種類</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">胃の排出時間</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">全消化管通過時間</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">水分率 & 胃酸pH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">生食 BARF</td><td class="p-2.5">2 – 4 時間</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">4 – 8 時間</td><td class="p-2.5">水分 70–75% (pH 1.0–2.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">手作り自然食（火通し）</td><td class="p-2.5">3 – 5 時間</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">6 – 8 時間</td><td class="p-2.5">水分 70–75% (pH 2.0–3.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">ウェットフード（缶詰）</td><td class="p-2.5">4 – 6 時間</td><td class="p-2.5 font-semibold text-amber-700 dark:text-amber-400">6 – 10 時間</td><td class="p-2.5">水分 75–82% (pH 2.5–3.5)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">ドライキブル（乾燥フード）</td><td class="p-2.5">6 – 8 時間</td><td class="p-2.5 font-semibold text-amber-800 dark:text-amber-500">10 – 14 時間</td><td class="p-2.5">水分 8–10% (pH 3.5–5.0)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>胃捻転（GDV）の予防：</strong> 食後すぐの激しい運動や散歩は胃拡張・胃捻転症候群を引き起こす恐れがあるため、食後は必ず1時間以上の安静を保ってください。</p>
+      `
+    },
+    ko: {
+      question: '강아지가 음식을 소화하는 데 걸리는 시간은 몇 시간인가요?',
+      shortAnswer: '성견 기준으로 식사를 완전히 소화하고 배변하기까지 평균 6~10시간이 소요됩니다. 소화 시간은 식단 형태에 따라 큰 차이를 보입니다. 수분이 풍부한 생식(BARF)이나 자연 화식은 4~8시간 만에 빠르게 소화 흡수되지만, 건식 사료는 수분 흡수와 높은 전분 함량으로 인해 10~14시간이 걸립니다.',
+      fullAnswerHtml: `
+        <p>반려견의 소화 시간을 이해하는 것은 배변 산책 시간 조절, 약물 투약 시간, 응급 상황 판단에 매우 중요합니다. 강아지의 소화관은 육식성에 가깝게 짧고 강산성으로 진화하여 고기를 빠르게 분해합니다.</p>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse border border-zinc-200 dark:border-zinc-800">
+            <thead>
+              <tr class="bg-amber-100/60 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 font-semibold">
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">식단 형태</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">위 배출 시간</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">전체 소화관 통과 시간</th>
+                <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">수분율 & 위산 pH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">생식 (BARF)</td><td class="p-2.5">2 – 4 시간</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">4 – 8 시간</td><td class="p-2.5">수분 70–75% (pH 1.0–2.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">자연 화식 (스팀 조리)</td><td class="p-2.5">3 – 5 시간</td><td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">6 – 8 시간</td><td class="p-2.5">수분 70–75% (pH 2.0–3.0)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800"><td class="p-2.5 font-medium">습식 캔 사료</td><td class="p-2.5">4 – 6 시간</td><td class="p-2.5 font-semibold text-amber-700 dark:text-amber-400">6 – 10 시간</td><td class="p-2.5">수분 75–82% (pH 2.5–3.5)</td></tr>
+              <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30"><td class="p-2.5 font-medium">익스트루전 건식 사료</td><td class="p-2.5">6 – 8 시간</td><td class="p-2.5 font-semibold text-amber-800 dark:text-amber-500">10 – 14 시간</td><td class="p-2.5">수분 8–10% (pH 3.5–5.0)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>위염전(GDV) 주의사항:</strong> 식사 직후 과도한 달리기나 점프는 위가 꼬이는 치명적인 위염전을 유발할 수 있으므로, 식후 최소 1시간 동안은 안정을 취하게 해주세요.</p>
+      `
+    },
+  },
   'why-is-my-dog-not-eating-his-food-but-will-eat-treats': {
     es: {
       question: '¿Por qué mi perro no come su comida pero sí come premios?',

@@ -83,6 +83,78 @@ export const FAQS_DATA: FaqItem[] = [
     relatedSlugs: ['what-is-the-1-best-dog-food', 'what-is-the-best-dry-dog-food', 'what-is-the-best-dog-food-for-allergies']
   },
   {
+    id: 'how-long-does-it-take-a-dog-to-digest-food',
+    slug: 'how-long-does-it-take-a-dog-to-digest-food',
+    question: 'How long does it take a dog to digest food?',
+    category: 'Diet & Nutrition',
+    shortAnswer: 'On average, an adult dog takes between 6 to 10 hours to digest a meal completely, though full gastrointestinal transit can take up to 14 hours for commercial dry kibble. In contrast, raw BARF and gently cooked fresh foods digest much faster (4 to 8 hours) because of high natural moisture and bioavailable animal proteins.',
+    fullAnswerHtml: `
+      <p>Understanding canine digestive transit time is essential for timing feedings, walks, medications, and diagnosing gastrointestinal distress. Because dogs are carnivore-biased omnivores, their digestive tract is anatomically shorter and much more acidic than a human's, allowing rapid processing of animal matter.</p>
+
+      <h3>Canine Digestion Transit Time by Diet Type</h3>
+      <p>Dietary moisture, fiber density, and processing temperature have the greatest influence on how long food stays in your dog's stomach and intestines:</p>
+
+      <div class="overflow-x-auto my-4">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse border border-zinc-200 dark:border-zinc-800">
+          <thead>
+            <tr class="bg-amber-100/60 dark:bg-amber-950/40 text-amber-900 dark:text-amber-200 font-semibold">
+              <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Diet Type</th>
+              <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Stomach Emptying</th>
+              <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Total GI Transit Time</th>
+              <th class="p-2.5 border border-zinc-200 dark:border-zinc-800">Moisture & Gastric pH</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-zinc-200 dark:border-zinc-800">
+              <td class="p-2.5 font-medium">Ancestral Raw (BARF)</td>
+              <td class="p-2.5">2 – 4 hours</td>
+              <td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">4 – 8 hours</td>
+              <td class="p-2.5">70–75% moisture (pH 1.0–2.0)</td>
+            </tr>
+            <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30">
+              <td class="p-2.5 font-medium">Gently Cooked Fresh Food</td>
+              <td class="p-2.5">3 – 5 hours</td>
+              <td class="p-2.5 font-semibold text-emerald-700 dark:text-emerald-400">6 – 8 hours</td>
+              <td class="p-2.5">70–75% moisture (pH 2.0–3.0)</td>
+            </tr>
+            <tr class="border-b border-zinc-200 dark:border-zinc-800">
+              <td class="p-2.5 font-medium">Canned / Wet Dog Food</td>
+              <td class="p-2.5">4 – 6 hours</td>
+              <td class="p-2.5 font-semibold text-amber-700 dark:text-amber-400">6 – 10 hours</td>
+              <td class="p-2.5">75–82% moisture (pH 2.5–3.5)</td>
+            </tr>
+            <tr class="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30">
+              <td class="p-2.5 font-medium">Commercial Dry Kibble</td>
+              <td class="p-2.5">6 – 8 hours</td>
+              <td class="p-2.5 font-semibold text-amber-800 dark:text-amber-500">10 – 14 hours</td>
+              <td class="p-2.5">8–10% moisture (pH 3.5–5.0)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>The 4 Stages of the Canine Digestive Journey</h3>
+      <ol>
+        <li><strong>Mouth & Esophagus (Seconds):</strong> Unlike humans, dogs produce virtually zero salivary amylase. Food is torn, lightly crushed, lubricated with saliva, and rapidly pushed into the stomach via peristalsis.</li>
+        <li><strong>The Gastric Reservoir (Stomach: 2 to 8 hours):</strong> A dog's stomach is an acidic crucible. When digesting whole raw meat and bone, stomach pH drops to a sterile 1.0 to 2.0, neutralizing pathogens and dissolving calcium phosphate. Dry kibble requires considerable gastric secretions to rehydrate, delaying gastric emptying.</li>
+        <li><strong>Small Intestine Absorption (2 to 4 hours):</strong> Pancreatic enzymes (lipase, protease, amylase) break down macromolecules while bile acids emulsify dietary fats. Amino acids, fatty acids, vitamins, and minerals absorb directly into the bloodstream.</li>
+        <li><strong>Large Intestine & Colon (1 to 3 hours):</strong> The colon reabsorbs water and electrolytes. Beneficial gut microbes ferment soluble prebiotic fibers into short-chain fatty acids (SCFAs like butyrate) that nourish colonocytes before elimination.</li>
+      </ol>
+
+      <h3>Key Factors That Speed Up or Slow Down Digestion</h3>
+      <ul>
+        <li><strong>Breed Size & Anatomy:</strong> Small and toy breeds (e.g., Yorkies, Chihuahuas) possess shorter intestinal tracts and process meals in 4 to 6 hours. Large and giant breeds (e.g., Great Danes, Mastiffs) can take up to 24 to 36 hours for total passage.</li>
+        <li><strong>Exercise Timing:</strong> Strenuous exercise immediately following meals redirects blood flow away from the gut to skeletal muscles, dramatically delaying stomach emptying and increasing the risk of Gastric Dilatation-Volvulus (GDV / Bloat). Always wait at least 45 to 60 minutes after eating before rigorous running.</li>
+        <li><strong>Age:</strong> Growing puppies have rapid metabolic turnover and usually empty their bowels 30 to 60 minutes after eating. Senior dogs often suffer from reduced gastrointestinal motility and lower digestive enzyme secretion.</li>
+        <li><strong>Hydration Status:</strong> Dehydration severely stalls digestion, particularly with dry kibble which absorbs substantial internal fluids.</li>
+      </ul>
+
+      <p><strong>When to Contact a Veterinarian:</strong> If your dog vomits intact food more than 8 to 10 hours after eating, shows severe abdominal distension, unproductive retching, or produces black, tarry stools, seek emergency veterinary attention immediately as these are clinical signs of delayed gastric emptying or intestinal obstruction.</p>
+    `,
+    tags: ['dog digestion', 'transit time', 'kibble vs raw digestion', 'stomach emptying', 'gut health'],
+    relatedSlugs: ['can-dogs-live-on-dry-food-only', 'how-much-food-should-i-feed-my-dog', 'what-is-the-best-dog-food']
+  },
+  {
     id: 'how-much-food-should-i-feed-my-dog',
     slug: 'how-much-food-should-i-feed-my-dog',
     question: 'How much food should I feed my dog?',

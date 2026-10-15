@@ -129,7 +129,7 @@ const finalDescription = lang === 'en'
       })();
     </script>
 
-    <!-- Structured Data Schema.org (SoftwareApplication + Organization + FAQPage) -->
+    <!-- Structured Data Schema.org (WebApplication + Organization) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -156,36 +156,6 @@ const finalDescription = lang === 'en'
             "logo": "https://dogfoodplanner.com/logo.png",
             "sameAs": [
               "https://twitter.com/dogfoodplanner"
-            ]
-          },
-          {
-            "@type": "FAQPage",
-            "@id": "https://dogfoodplanner.com/#faq",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is the best dog food for dogs with sensitive stomachs?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The best dog foods for sensitive stomach feature single novel protein sources (like lean turkey, salmon, or pasture-raised lamb) combined with soothing soluble fiber (such as organic pure pumpkin puree) and zero artificial binders, corn, wheat, or soy."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How does fresh dog food compare to commercial dry kibble brands?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Fresh dog food contains 70-75% natural biological moisture and less than 4% carbohydrates, compared to commercial dry kibble which is extruded at high temperatures (300°F-400°F) and contains 45-60% starch and grain fillers."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Is this dog food planner really 100% free with no paid subscription?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes! DogFoodPlanner.com provides completely free dog feeding calculation tools, macro breakdowns, printable feeding cards, and custom dog food recipes with zero subscription fees, paywalls, or forced delivery sign-ups."
-                }
-              }
             ]
           }
         ]
