@@ -55,45 +55,41 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       </div>
 
       <!-- Morning & Evening Bowls (Side by Side with Interactive Inline Add Ingredient) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3" id="card-bowls-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 items-start" id="card-bowls-grid">
         <!-- Morning Bowl -->
-        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
-              <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
-                <span>☀️</span>
-                <span id="am-bowl-title">{px.morningBowlTitle}</span>
-              </div>
-              <input type="text" id="am-time-input" value="7:30 AM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40">
+          <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
+            <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
+              <span>☀️</span>
+              <span id="am-bowl-title">{px.morningBowlTitle}</span>
             </div>
-            <ul id="card-am-items" class="space-y-1.5 text-xs text-[#1c0f00] dark:text-[#fde8c8]">
-              <!-- populated by JS -->
-            </ul>
+            <input type="text" id="am-time-input" value="7:30 AM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
           </div>
+          <ul id="card-am-items" class="space-y-1.5 text-xs text-[#1c0f00] dark:text-[#fde8c8]">
+            <!-- populated by JS -->
+          </ul>
 
-          <!-- Add Ingredient Interactive Row (AM) -->
-          <div id="am-add-container" class="mt-2.5 pt-2 border-t border-dashed border-[#f0d5a8] dark:border-[#3a2510] no-print">
+          <!-- Add Ingredient Interactive Row (AM) - sits immediately below previous ingredient -->
+          <div id="am-add-container" class="mt-2 pt-1 border-t border-dashed border-[#f0d5a8]/60 dark:border-[#3a2510]/60 no-print">
             <!-- Populated by JS -->
           </div>
         </div>
 
         <!-- Evening Bowl -->
-        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 flex flex-col justify-between" id="card-pm-bowl-wrapper">
-          <div>
-            <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
-              <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
-                <span>🌙</span>
-                <span id="pm-bowl-title">{px.eveningBowlTitle}</span>
-              </div>
-              <input type="text" id="pm-time-input" value="6:00 PM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40" id="card-pm-bowl-wrapper">
+          <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
+            <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
+              <span>🌙</span>
+              <span id="pm-bowl-title">{px.eveningBowlTitle}</span>
             </div>
-            <ul id="card-pm-items" class="space-y-1.5 text-xs text-[#1c0f00] dark:text-[#fde8c8]">
-              <!-- populated by JS -->
-            </ul>
+            <input type="text" id="pm-time-input" value="6:00 PM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
           </div>
+          <ul id="card-pm-items" class="space-y-1.5 text-xs text-[#1c0f00] dark:text-[#fde8c8]">
+            <!-- populated by JS -->
+          </ul>
 
-          <!-- Add Ingredient Interactive Row (PM) -->
-          <div id="pm-add-container" class="mt-2.5 pt-2 border-t border-dashed border-[#f0d5a8] dark:border-[#3a2510] no-print">
+          <!-- Add Ingredient Interactive Row (PM) - sits immediately below previous ingredient -->
+          <div id="pm-add-container" class="mt-2 pt-1 border-t border-dashed border-[#f0d5a8]/60 dark:border-[#3a2510]/60 no-print">
             <!-- Populated by JS -->
           </div>
         </div>
@@ -129,6 +125,24 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           <table class="w-full text-center text-xs font-mono border-collapse" id="weekly-checklist-table">
             <!-- populated by JS -->
           </table>
+        </div>
+      </div>
+
+      <!-- Pet Sitter & Care Notes (Kept on Result Card per user request) -->
+      <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 mb-3">
+        <div class="text-xs font-bold font-mono text-[#1c0f00] dark:text-[#fde8c8] uppercase mb-1 flex items-center gap-1.5">
+          <span>📝</span>
+          <span>Care & Feeding Notes</span>
+        </div>
+        <ul id="card-care-notes" class="space-y-1 text-xs text-[#6b4226] dark:text-[#c4956a] mb-2">
+          <!-- Populated by JS -->
+        </ul>
+        <div class="pt-1.5 border-t border-[#f0d5a8]/60 dark:border-[#3a2510]/60">
+          <label for="sitter-note-input" class="block text-[10px] font-mono uppercase font-semibold text-[#92400e] dark:text-[#c4956a] mb-0.5">
+            Pet Sitter & Family Instructions:
+          </label>
+          <input type="text" id="sitter-note-input" value="Fresh water changed 2x daily. Rest 30m before walks."
+            class="w-full text-xs bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg px-2 py-1 text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b]" />
         </div>
       </div>
 
@@ -580,9 +594,8 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       <div class="relative w-full">
         <div class="flex items-center gap-1.5">
           <div class="relative flex-1">
-            <span class="absolute left-2.5 top-1.5 text-xs text-[#92400e] opacity-60">🔍</span>
-            <input type="text" class="ingredient-search-input w-full pl-7 pr-7 py-1 text-xs bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b]" placeholder="Type ingredient (e.g. egg, blueberries, bone broth...)" autocomplete="off" />
-            <button type="button" class="cancel-search-btn absolute right-2 top-1 text-xs text-[#92400e] hover:text-[#c47a2b] cursor-pointer">✕</button>
+            <input type="text" class="ingredient-search-input w-full pl-2.5 pr-6 py-1 text-xs bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b]" placeholder="Type ingredient" autocomplete="off" />
+            <button type="button" class="cancel-search-btn absolute right-2 top-1 text-xs text-[#92400e] hover:text-[#c47a2b] cursor-pointer" title="Cancel">✕</button>
           </div>
         </div>
         <!-- Suggestions dropdown (starts hidden, only shows as user types) -->
@@ -751,6 +764,20 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const table = document.getElementById('weekly-checklist-table');
     if (table) {
       table.innerHTML = renderWeeklyChecklist(Boolean(profile.hasMeds), lang);
+    }
+
+    // Care & Feeding Notes (Kept on Result Card per user request)
+    const careNotesEl = document.getElementById('card-care-notes');
+    if (careNotesEl) {
+      const weightLbs = profile.weightLbs || 45;
+      const waterOz = Math.round(weightLbs);
+      const waterMl = Math.round(weightLbs * 29.57);
+      const medsNote = profile.hasMeds ? '<li>• 💊 <strong>Daily Medication:</strong> Administer morning medication with meal.</li>' : '';
+      careNotesEl.innerHTML = `
+        <li>• 💧 <strong>Target Daily Water:</strong> ~${waterOz} oz (${waterMl} ml) fresh filtered water daily (approx. 1 oz per lb of body weight). Rinse bowl twice daily.</li>
+        <li>• 🥣 <strong>Feeding Schedule:</strong> Feed at consistent scheduled morning and evening hours. Wash bowl in hot soapy water after every feed.</li>
+        ${medsNote}
+      `;
     }
 
     // Initialize custom bowl items if not restored from session

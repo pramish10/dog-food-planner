@@ -356,28 +356,27 @@ const articleJsonLd = {
         </div>
       </section>
 
-      {/* ── 10. BRAND PRODUCTS (ONLY SHOWN IF AVAILABLE) ── */}
+      {/* ── 10. BRAND PRODUCTS (INLINE LINKS) ── */}
       {brandProducts.length > 0 && (
-        <section class="hairline-card p-6 sm:p-8 bg-white dark:bg-[#141414]">
-          <div class="space-y-4 divide-y divide-[#ebebeb] dark:divide-[#262626]">
+        <section class="p-4 rounded-xl bg-[#faf6f0] dark:bg-[#1a1612] border border-[#ebd7b9] dark:border-[#2f2216]">
+          <p class="text-xs font-mono font-bold uppercase text-[#854d0e] dark:text-[#fde047] mb-2">
+            Verified {item.name} Products
+          </p>
+          <ul class="space-y-1.5 text-sm">
             {brandProducts.map((product) => (
-              <div class="pt-4 first:pt-0 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div class="flex-1 min-w-0">
-                  <h3 class="text-sm sm:text-base font-semibold text-[#171717] dark:text-[#ededed] leading-snug">
-                    {product.name}
-                  </h3>
-                </div>
-                <div class="shrink-0">
-                  <AffiliateButton
-                    url={product.url}
-                    label={i18n.buyNow || 'Buy Now'}
-                    size="sm"
-                    class="w-full sm:w-auto"
-                  />
-                </div>
-              </div>
+              <li>
+                <a
+                  href={product.url}
+                  target="_blank"
+                  rel="noopener noreferrer sponsored"
+                  class="amazon-inline-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors"
+                >
+                  {product.name}
+                  <span class="text-[10px] text-[#c47a2b] ml-1" aria-hidden="true">🛒</span>
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
       )}
 

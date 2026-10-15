@@ -365,40 +365,12 @@ const articleJsonLd = {
             </div>
           ))}
         </div>
+        {!isToxic && item.category !== 'FATAL_TOXIC' && item.recommendedProduct && (
+          <p class="mt-4 pt-3 border-t border-[#f0d5a8]/70 dark:border-[#3a2510] text-xs sm:text-sm text-[#4d3319] dark:text-[#d4a574]">
+            {p.recommendedProductTitle || 'Recommended formulation'}: <a href={item.recommendedProduct.url} target="_blank" rel="noopener noreferrer sponsored" class="inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">{item.recommendedProduct.name}</a> — {item.recommendedProduct.whyRecommended}
+          </p>
+        )}
       </section>
-
-      <!-- Clinical Product Recommendation -->
-      {!isToxic && item.category !== 'FATAL_TOXIC' && item.recommendedProduct && (
-        <section class="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-amber-50/90 via-white/90 to-amber-50/70 dark:from-[#24170a] dark:via-[#1c1208] dark:to-[#170e05] border border-[#f0d5a8] dark:border-amber-900/60 shadow-sm mb-8 backdrop-blur-sm">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-lg">⭐</span>
-            <h2 class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8]">
-              {p.recommendedProductTitle || 'Product Recommendation'}
-            </h2>
-          </div>
-          <div class="p-5 sm:p-6 rounded-xl bg-white/90 dark:bg-[#181109] border border-[#f0d5a8]/80 dark:border-amber-950/70 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-            <div class="flex-1 min-w-0">
-              <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase mb-2 bg-[#fdf3e7] text-[#92400e] border border-[#f0d5a8] dark:bg-amber-950/80 dark:text-amber-300 dark:border-[#523315]">
-                {item.recommendedProduct.badge}
-              </span>
-              <h3 class="text-base sm:text-lg font-bold text-[#1c0f00] dark:text-[#fde8c8] leading-snug mb-2">
-                {item.recommendedProduct.name}
-              </h3>
-              <p class="text-xs sm:text-sm text-[#4d3319] dark:text-[#d4a574] leading-relaxed">
-                {item.recommendedProduct.whyRecommended}
-              </p>
-            </div>
-            <div class="shrink-0 pt-2 sm:pt-0">
-              <AffiliateButton
-                url={item.recommendedProduct.url}
-                label={p.viewOnAmazon || 'View on Amazon'}
-                size="md"
-                class="w-full sm:w-auto shadow-md"
-              />
-            </div>
-          </div>
-        </section>
-      )}
 
       <!-- Household Prevention & Safety Checklist -->
       <section class="p-6 sm:p-8 rounded-2xl bg-white/85 dark:bg-[#1c1208]/85 backdrop-blur-sm border border-[#f0d5a8] dark:border-[#3a2510] mb-8 shadow-xs">

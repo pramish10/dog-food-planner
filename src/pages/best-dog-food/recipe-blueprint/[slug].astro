@@ -192,21 +192,25 @@ const articleJsonLd = {
                   </span>
                   <div>
                     <h3 class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed]">
-                      {ing.name}
+                      {ing.affiliateUrl ? (
+                        <a
+                          href={ing.affiliateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer sponsored"
+                          class="amazon-inline-link inline font-bold text-[#171717] dark:text-[#ededed] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:text-[#b46218] hover:decoration-[#8b4513] transition-colors"
+                        >
+                          {ing.name}
+                          <span class="text-[10px] text-[#c47a2b] ml-1 no-underline font-normal" aria-hidden="true">🛒</span>
+                        </a>
+                      ) : (
+                        ing.name
+                      )}
                     </h3>
                     <span class="text-[11px] font-mono text-[#8f8f8f] dark:text-[#737373]">
                       {ing.category}
                     </span>
                   </div>
                 </div>
-                {ing.affiliateUrl && (
-                  <AffiliateButton
-                    url={ing.affiliateUrl}
-                    label="Buy Verified Ingredient →"
-                    size="sm"
-                    class="shrink-0 self-start sm:self-auto"
-                  />
-                )}
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 text-xs sm:text-sm">
                 <div>
@@ -410,17 +414,22 @@ const articleJsonLd = {
           </p>
         </div>
 
-        <div class="space-y-3">
+        <ul class="divide-y divide-[#ebebeb] dark:divide-[#262626] rounded-xl border border-[#ebebeb] dark:border-[#262626] p-4 bg-white dark:bg-[#141414] space-y-3">
           {(p.supplementsList || []).map((sup) => (
-            <div class="p-4 bg-[#fafafa] dark:bg-[#1a1a1a] rounded-xl border border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-4">
-              <div class="min-w-0 flex-1">
-                <h3 class="font-bold text-sm text-[#171717] dark:text-[#ededed]">{sup.title}</h3>
-                <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5">{sup.desc}</p>
-              </div>
-              <AffiliateButton url={sup.url} label={sup.btnLabel || sup.buttonLabel || "Buy Now"} size="sm" class="shrink-0" />
-            </div>
+            <li class="pt-3 first:pt-0">
+              <a
+                href={sup.url}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                class="amazon-inline-link inline font-bold text-sm text-[#171717] dark:text-[#ededed] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:text-[#b46218] hover:decoration-[#8b4513] transition-colors"
+              >
+                {sup.title}
+                <span class="text-[10px] text-[#c47a2b] ml-1 no-underline font-normal" aria-hidden="true">🛒</span>
+              </a>
+              <p class="text-xs text-[#8f8f8f] dark:text-[#737373] mt-0.5 leading-relaxed">{sup.desc}</p>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       <!-- Veterinary Safety, Transition & Contraindications -->

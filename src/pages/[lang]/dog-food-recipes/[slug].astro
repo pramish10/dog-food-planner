@@ -226,7 +226,19 @@ const recipeJsonLd = {
                   </div>
                   <div>
                     <h3 class="font-bold text-sm sm:text-base text-[#171717] dark:text-[#ededed] leading-snug">
-                      {ing.name}
+                      {ing.affiliateUrl ? (
+                        <a
+                          href={ing.affiliateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer sponsored"
+                          class="amazon-inline-link inline font-bold text-[#171717] dark:text-[#ededed] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:text-[#b46218] hover:decoration-[#8b4513] transition-colors"
+                        >
+                          {ing.name}
+                          <span class="text-[10px] text-[#c47a2b] ml-1 no-underline font-normal" aria-hidden="true">🛒</span>
+                        </a>
+                      ) : (
+                        ing.name
+                      )}
                     </h3>
                     <div class="flex flex-wrap items-center gap-2 mt-1">
                       <span class="inline-flex items-center text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-[#666] dark:text-[#999] bg-white dark:bg-[#141414] px-2 py-0.5 rounded border border-[#ebebeb] dark:border-[#2a2a2a]">
@@ -239,16 +251,6 @@ const recipeJsonLd = {
                     </div>
                   </div>
                 </div>
-
-                {ing.affiliateUrl && (
-                  <div class="shrink-0 self-start sm:self-auto">
-                    <AffiliateButton
-                      url={ing.affiliateUrl}
-                      label={p.buyIngredientBtn}
-                      size="sm"
-                    />
-                  </div>
-                )}
               </div>
 
               <!-- Card Content: 2-Column Grid for Function & Clinical Benefit -->

@@ -141,15 +141,18 @@ const articleJsonLd = {
         {paragraphs.map(paragraph => <p>{paragraph}</p>)}
 
         {product && (
-          <div class="not-prose mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] flex items-start justify-between gap-4">
-            <div class="flex-1 min-w-0">
-              <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">
-                {item.productNote || p.exampleProduct}
-              </p>
-              <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">{product.name}</p>
-            </div>
-            <AffiliateButton url={product.url} label={p.viewOnAmazon} size="sm" class="shrink-0 mt-1" />
-          </div>
+          <p class="text-xs sm:text-sm text-[#4d4d4d] dark:text-[#a1a1a1] pt-2">
+            <span>{item.productNote || p.exampleProduct}: </span>
+            <a
+              href={product.url}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              class="amazon-inline-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors"
+            >
+              {product.name}
+              <span class="text-[10px] text-[#c47a2b] ml-0.5" aria-hidden="true">🛒</span>
+            </a>
+          </p>
         )}
       </article>
 

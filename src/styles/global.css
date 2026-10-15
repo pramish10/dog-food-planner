@@ -313,12 +313,12 @@ html.dark .hairline-card-active {
   }
 
   body.printing-plan #fridge-planner-card .pb-3,
-  body.printing-plan #fridge-planner-card .pb-3.5 {
+  body.printing-plan #fridge-planner-card .pb-3\.5 {
     padding-bottom: 3px !important;
   }
 
   body.printing-plan #fridge-planner-card .p-2,
-  body.printing-plan #fridge-planner-card .p-2.5,
+  body.printing-plan #fridge-planner-card .p-2\.5,
   body.printing-plan #fridge-planner-card .p-3 {
     padding: 4px 6px !important;
   }

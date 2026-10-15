@@ -248,28 +248,9 @@ const schemaOrgBlogPosting = {
             <Fragment set:html={beforeHtml} />
 
             {hasProduct && post.affiliateProduct && (
-              <div class="not-prose my-8 p-4 sm:p-5 rounded-2xl bg-[#fffbf6] dark:bg-[#1e1308] border border-[#f0d5a8] dark:border-[#3a2510] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all hover:border-[#c47a2b]/60 dark:hover:border-[#c47a2b]/60">
-                <div class="flex items-center gap-3.5 min-w-0">
-                  <div class="w-10 h-10 rounded-xl bg-[#c47a2b]/10 dark:bg-[#c47a2b]/20 text-[#c47a2b] dark:text-[#f59e0b] flex items-center justify-center shrink-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                    </svg>
-                  </div>
-                  <div class="min-w-0">
-                    <p class="text-sm sm:text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] leading-snug">
-                      {post.affiliateProduct.name}
-                    </p>
-                  </div>
-                </div>
-                <div class="shrink-0 self-start sm:self-center">
-                  <AffiliateButton 
-                    url={post.affiliateProduct.url} 
-                    label={uiStrings.buyNow || 'Buy Now'} 
-                    size="sm" 
-                    class="w-full sm:w-auto shadow-xs font-bold"
-                  />
-                </div>
-              </div>
+              <p class="not-prose my-6 p-3.5 rounded-xl bg-[#fffbf6] dark:bg-[#1e1308] border border-[#f0d5a8]/60 dark:border-[#3a2510] text-xs sm:text-sm text-[#6b4226] dark:text-[#c4956a]">
+                Featured formulation: <a href={post.affiliateProduct.url} target="_blank" rel="noopener noreferrer sponsored" class="inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">{post.affiliateProduct.name}</a>
+              </p>
             )}
 
             {afterHtml && <Fragment set:html={afterHtml} />}

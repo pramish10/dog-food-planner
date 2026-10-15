@@ -61,9 +61,17 @@ const brI18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
                 </a>
               )}
               {rankProd && (
-                <div class="mt-3 pt-2 border-t border-[#ebebeb] dark:border-[#262626] flex items-center justify-between gap-3">
-                  <p class="text-[11px] text-[#8f8f8f] dark:text-[#737373] flex-1 min-w-0 truncate">{rankProd.name}</p>
-                  <AffiliateButton url={rankProd.url} label="Buy Now" size="sm" class="shrink-0" />
+                <div class="mt-3 pt-2 border-t border-[#ebebeb] dark:border-[#262626] text-xs">
+                  <span class="text-[#8f8f8f] dark:text-[#737373]">Featured formula: </span>
+                  <a
+                    href={rankProd.url}
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                    class="amazon-inline-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors"
+                  >
+                    {rankProd.name}
+                    <span class="text-[10px] text-[#c47a2b] ml-0.5" aria-hidden="true">🛒</span>
+                  </a>
                 </div>
               )}
             </article>
@@ -308,32 +316,47 @@ const brI18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
       <div class="grid sm:grid-cols-2 gap-3 mt-4">{p.safeFoods.map((item: any) => <div><h3 class="font-bold text-[#171717] dark:text-[#ededed]">{item.name}</h3><p>{item.benefit}</p></div>)}</div>
 
       {/* Safe-food affiliate products — whole food ingredients that are safe & beneficial */}
-      <div class="mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] space-y-4">
-        <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373]">🛒 Safe & beneficial ingredients — available on Amazon</p>
+      <div class="mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] space-y-2 text-xs sm:text-sm">
+        <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373]">Safe whole-food ingredient references</p>
 
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex-1 min-w-0">
-            <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">Libby's 100% Pure Canned Pumpkin, 15oz (Pack of 5)</p>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Pure pumpkin — one of the safest, most beneficial foods for dogs. Soluble fiber for digestion, beta-carotene for immunity.</p>
-          </div>
-          <AffiliateButton url="https://amzn.to/4xINd8W" label="Buy Now" size="sm" class="shrink-0 mt-1" />
-        </div>
+        <p class="leading-relaxed">
+          <a
+            href="https://amzn.to/4xINd8W"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            class="amazon-inline-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors"
+          >
+            Libby's 100% Pure Canned Pumpkin (15oz Pack)
+            <span class="text-[10px] text-[#c47a2b] ml-0.5" aria-hidden="true">🛒</span>
+          </a>
+          <span class="text-[#4d4d4d] dark:text-[#a1a1a1]"> — pure soluble fiber for healthy canine stool quality and digestive support.</span>
+        </p>
 
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex-1 min-w-0">
-            <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">Wild Planet Wild Sardines in Water, No Salt Added, 4.4oz (Pack of 12)</p>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Safe whole-food omega-3 source — wild sardines in water (no salt) are one of the healthiest additions to any dog's bowl.</p>
-          </div>
-          <AffiliateButton url="https://amzn.to/4xg3W2h" label="Buy Now" size="sm" class="shrink-0 mt-1" />
-        </div>
+        <p class="leading-relaxed">
+          <a
+            href="https://amzn.to/4xg3W2h"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            class="amazon-inline-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors"
+          >
+            Wild Planet Wild Sardines in Water (No Salt Added)
+            <span class="text-[10px] text-[#c47a2b] ml-0.5" aria-hidden="true">🛒</span>
+          </a>
+          <span class="text-[#4d4d4d] dark:text-[#a1a1a1]"> — safe whole-food source of marine omega-3 fatty acids.</span>
+        </p>
 
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex-1 min-w-0">
-            <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz</p>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1] leading-relaxed">Safe omega-3 supplement — EPA/DHA for skin, coat, joints, and anti-inflammatory support. A safe daily addition to any meal.</p>
-          </div>
-          <AffiliateButton url="https://amzn.to/46HCJdW" label="Buy Now" size="sm" class="shrink-0 mt-1" />
-        </div>
+        <p class="leading-relaxed">
+          <a
+            href="https://amzn.to/46HCJdW"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            class="amazon-inline-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors"
+          >
+            Zesty Paws Wild Alaskan Salmon Oil (16oz)
+            <span class="text-[10px] text-[#c47a2b] ml-0.5" aria-hidden="true">🛒</span>
+          </a>
+          <span class="text-[#4d4d4d] dark:text-[#a1a1a1]"> — concentrated EPA & DHA for skin, coat, and joint health.</span>
+        </p>
       </div>
     </section>
   </>}
@@ -413,14 +436,21 @@ const brI18n = BRAND_REVIEWS_PAGE_I18N[lang] || BRAND_REVIEWS_PAGE_I18N.en;
             <p>{item.desc}</p>
           </div>
         ))}
-        <div class="mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] flex items-start justify-between gap-4">
-          <div class="flex-1 min-w-0">
-            <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">Recommended for elimination diets</p>
-            <p class="text-sm font-semibold text-[#171717] dark:text-[#ededed] leading-snug mb-1">Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb</p>
-            <p class="text-xs text-[#4d4d4d] dark:text-[#a1a1a1]">Hydrolyzed protein formula — a standard option for food allergy elimination trials.</p>
-            <p class="text-xs text-[#8c3b14] dark:text-[#f59e0b] mt-1 font-medium">{p.hydrolyzedPrescriptionNotice || 'This is a prescription diet. Talk to your veterinarian before using it.'}</p>
-          </div>
-          <AffiliateButton url="https://amzn.to/4ykV9Nk" label="Buy Now" size="sm" class="shrink-0 mt-1" />
+        <div class="mt-6 pt-5 border-t border-[#ebebeb] dark:border-[#262626] text-xs sm:text-sm">
+          <p class="text-[11px] font-mono uppercase tracking-wider text-[#8f8f8f] dark:text-[#737373] mb-1">Recommended for elimination diets</p>
+          <p class="leading-relaxed">
+            <a
+              href="https://amzn.to/4ykV9Nk"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              class="amazon-inline-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors"
+            >
+              Royal Canin Veterinary Diet Hydrolyzed Protein Adult (25.3lb)
+              <span class="text-[10px] text-[#c47a2b] ml-0.5" aria-hidden="true">🛒</span>
+            </a>
+            <span class="text-[#4d4d4d] dark:text-[#a1a1a1]"> — hydrolyzed protein formula standard for veterinary elimination trials.</span>
+          </p>
+          <p class="text-xs text-[#8c3b14] dark:text-[#f59e0b] mt-1 font-medium">{p.hydrolyzedPrescriptionNotice || 'This is a prescription diet. Talk to your veterinarian before using it.'}</p>
         </div>
       </section>
     </>
