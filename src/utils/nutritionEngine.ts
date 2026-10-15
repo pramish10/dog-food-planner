@@ -9,9 +9,15 @@ export interface DogProfileInput {
   activityLevel: 'sedentary' | 'moderate' | 'active' | 'working';
   allergies: string[];
   healthFocus: string;
-  dietPreference: 'fresh-cooked' | 'raw-barf' | 'superfood-topper';
+  dietPreference: 'fresh-cooked' | 'raw-barf' | 'superfood-topper' | 'kibble' | 'mixed';
   proteinChoice: string;
   treatBudgetPct?: number;
+  eatingSpeed?: 'vacuum' | 'picky' | 'normal' | 'grazer';
+  digestionStool?: 'healthy' | 'sensitive' | 'hard' | 'gas';
+  currentDiet?: 'kibble' | 'canned' | 'mixed' | 'fresh' | 'raw';
+  mealsCount?: number;
+  treatHabit?: 'rare' | 'moderate' | 'generous';
+  hasMeds?: boolean;
 }
 
 // ─── Breed-specific supplement recommendations ────────────────────────────────
@@ -670,10 +676,15 @@ export function calculateCanineNutrition(input: DogProfileInput): NutritionResul
     goalMultiplier = 1.30;       // Underweight: significant increase
   }
 
+  // Allow user mealsCount override if provided
+  if (input.mealsCount && [1, 2, 3].includes(input.mealsCount)) {
+    mealsPerDay = input.mealsCount;
+  }
+
   // ── MER: RER × lifeStage × activity × goal × breedSize ───────────────────
   const merKcal = Math.round(rerKcal * lifeStageMultiplier * activityMultiplier * goalMultiplier * breedSizeFactor);
 
-  const treatBudgetPct = input.treatBudgetPct ?? 10;
+  const treatBudgetPct = input.treatBudgetPct ?? (input.treatHabit === 'rare' ? 5 : input.treatHabit === 'generous' ? 15 : 10);
   const treatKcal = Math.round((merKcal * treatBudgetPct) / 100);
   const mealKcal = merKcal - treatKcal;
 
@@ -684,10 +695,13 @@ export function calculateCanineNutrition(input: DogProfileInput): NutritionResul
   if (input.dietPreference === 'raw-barf') {
     kcalPerGram = 1.55;
     activeDailyGrams = Math.round(mealKcal / kcalPerGram);
-  } else if (input.dietPreference === 'superfood-topper') {
+  } else if (input.dietPreference === 'superfood-topper' || input.dietPreference === 'mixed') {
     // Topper = 35% of total meal calories at 1.0 kcal/g
     kcalPerGram = 1.0;
     activeDailyGrams = Math.round((mealKcal * 0.35) / kcalPerGram);
+  } else if (input.dietPreference === 'kibble') {
+    kcalPerGram = 3.75;
+    activeDailyGrams = Math.round(mealKcal / kcalPerGram);
   } else {
     // fresh-cooked
     kcalPerGram = 1.3;

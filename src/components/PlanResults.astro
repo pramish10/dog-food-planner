@@ -1,185 +1,329 @@
 ---
-import { RECIPES } from '../data/recipes';
 import { getLangFromUrl } from '../i18n/utils';
 import { plannerTranslations } from '../i18n/planner';
+import { plannerExtraTranslations } from '../i18n/plannerExtra';
 
 const lang = getLangFromUrl(Astro.url);
 const p = plannerTranslations[lang] || plannerTranslations.en;
+const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 ---
 
-<section id="results-section" class="hidden py-8 sm:py-12 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0e0cc] dark:border-[#2a1f14]" data-lang={lang}>
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section id="results-section" class="hidden py-6 sm:py-8 bg-[#fdf8f3] dark:bg-[#150d04] border-b border-[#f0e0cc] dark:border-[#2a1f14]" data-lang={lang}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
 
-    <!-- Results Header -->
-    <div class="mb-5 sm:mb-6">
-      <div class="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase font-semibold text-[#16a34a] bg-[#22c55e]/10 px-3 py-1 rounded-full mb-3">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse"></span>
-        {p.readyBadge}
-      </div>
-      <h2 class="text-2xl sm:text-3xl font-bold text-[#1c0f00] dark:text-[#fde8c8] tracking-tight">
-        {p.mealPlanFor} <span id="res-dog-name" class="text-[#c47a2b] dark:text-[#e8a44a]">Lucy</span>
-      </h2>
-      <p id="res-summary" class="text-sm text-[#6b4226] dark:text-[#c4956a] mt-1.5 leading-relaxed"></p>
-    </div>
+    <!-- ────────────────────────────────────────────────────────────────────────
+         THE PRINTABLE FRIDGE PLANNER & PET SITTER CARD (Centerpiece)
+         ──────────────────────────────────────────────────────────────────────── -->
+    <div id="fridge-planner-card" class="bg-white dark:bg-[#1c1208] border-2 border-[#1c0f00] dark:border-[#f0d5a8] rounded-2xl p-4 sm:p-6 shadow-md text-[#1c0f00] dark:text-[#fde8c8]">
 
-    <!-- Horizontal layout on lg+: LEFT = stats/schedule/insight, RIGHT = recipe -->
-    <div class="lg:flex lg:gap-6 lg:items-start">
-
-      <!-- LEFT COLUMN: Stats + Schedule + Insight -->
-      <div class="lg:w-[42%] xl:w-[38%] shrink-0 space-y-4 mb-5 lg:mb-0">
-
-        <!-- 3 Key Stat Cards -->
-        <div class="grid grid-cols-3 gap-2 sm:gap-2.5">
-          <div class="p-3 sm:p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
-            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardEnergyTitle}</div>
-            <div class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-mer-calories">—</div>
-            <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono">kcal/day</div>
+      <!-- Card Top Header (Goal badge removed per user request) -->
+      <div class="border-b-2 border-[#1c0f00] dark:border-[#f0d5a8] pb-3 mb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xl">🐾</span>
+            <h3 class="text-base sm:text-lg font-black text-[#1c0f00] dark:text-[#fde8c8] tracking-tight uppercase">
+              <span id="card-dog-name">LUCY</span>'S {px.cardHeaderBadge}
+            </h3>
           </div>
-          <div class="p-3 sm:p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
-            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardPortionTitle}</div>
-            <div class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-daily-grams">—</div>
-            <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono">g/day</div>
-          </div>
-          <div class="p-3 sm:p-3.5 rounded-2xl border border-[#f0d5a8] dark:border-[#3a2510] bg-white dark:bg-[#1c1208] text-center">
-            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase mb-1">{p.cardPerMealTitle}</div>
-            <div class="text-lg sm:text-xl font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono" id="res-per-meal-grams">—</div>
-            <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-mono" id="res-meals-label">—x/day</div>
+          <div class="text-xs font-mono text-[#92400e] dark:text-[#c4956a] mt-0.5">
+            <span id="card-dog-breed">Golden Retriever</span> • <span id="card-dog-weight">55 lbs</span> • <span id="card-dog-stage">Adult</span> • <span id="card-dog-diet">Fresh Cooked</span> • <span id="card-dog-kcal" class="text-[#c47a2b] font-bold">1,075 kcal/day</span>
           </div>
         </div>
 
-        <!-- Feeding Schedule -->
-        <div class="bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
-          <h3 class="text-xs font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-3 uppercase tracking-wider font-mono">{p.bowlSectionTitle} <span class="res-dog-name-inline text-[#c47a2b] dark:text-[#e8a44a]">Lucy</span></h3>
-          <div id="feeding-schedule-container" class="space-y-2">
+        <!-- Emergency Vet Phone Box -->
+        <div class="flex items-center gap-2 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl px-3 py-1.5 bg-[#fdf8f3] dark:bg-[#2a1a08] shrink-0">
+          <span class="text-sm">🏥</span>
+          <div>
+            <div class="text-[9px] font-mono uppercase font-bold text-[#92400e] dark:text-[#c4956a] leading-none">{px.vetPhoneLabel}</div>
+            <input type="text" id="vet-phone-input" value="(555) 0199" placeholder={px.vetPhonePlaceholder}
+              class="text-xs font-bold font-mono text-[#1c0f00] dark:text-[#fde8c8] bg-transparent border-none p-0 focus:outline-none w-32" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Allergy Alert Banner -->
+      <div id="card-allergy-banner" class="mb-3 p-2 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-300 dark:border-red-800 flex items-center gap-2 text-xs text-red-900 dark:text-red-200 font-semibold">
+        <span class="text-base shrink-0">⚠️</span>
+        <div>
+          <span class="font-bold uppercase tracking-wider">{px.allergyAlertPrefix}:</span>
+          <span id="card-allergies-list" class="font-bold underline ml-1">No Chicken / Poultry!</span>
+        </div>
+      </div>
+      <div id="card-no-allergy-banner" class="hidden mb-3 p-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 flex items-center gap-2 text-xs text-emerald-800 dark:text-emerald-300 font-medium">
+        <span>✅</span>
+        <span>{px.noAllergiesNotice}</span>
+      </div>
+
+      <!-- Morning & Evening Bowls (Side by Side with Interactive Inline Add Ingredient) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3" id="card-bowls-grid">
+        <!-- Morning Bowl -->
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
+              <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
+                <span>☀️</span>
+                <span id="am-bowl-title">{px.morningBowlTitle}</span>
+              </div>
+              <input type="text" id="am-time-input" value="7:30 AM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+            </div>
+            <ul id="card-am-items" class="space-y-1.5 text-xs text-[#1c0f00] dark:text-[#fde8c8]">
+              <!-- populated by JS -->
+            </ul>
+          </div>
+
+          <!-- Add Ingredient Interactive Row (AM) -->
+          <div id="am-add-container" class="mt-2.5 pt-2 border-t border-dashed border-[#f0d5a8] dark:border-[#3a2510] no-print">
             <!-- Populated by JS -->
           </div>
-          <div class="mt-3 pt-3 border-t border-[#f0d5a8] dark:border-[#3a2510] flex items-center justify-between text-xs text-[#92400e] dark:text-[#c4956a]">
-            <span>{p.cardTreatTitle}:</span>
-            <span class="font-mono font-semibold text-[#c47a2b]"><span id="res-treat-kcal">—</span> kcal/day</span>
-          </div>
         </div>
 
-        <!-- Profile-specific insight card -->
-        <div id="insight-card" class="p-4 rounded-2xl border border-[#c47a2b]/30 bg-[#c47a2b]/5 dark:bg-[#c47a2b]/10">
-          <p id="insight-text" class="text-sm text-[#6b4226] dark:text-[#c4956a] leading-relaxed"></p>
-        </div>
-
-        <!-- Disclaimer + Start Over + Download PDF (desktop: in left col) -->
-        <div class="hidden lg:block text-center pt-1">
-          <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mb-3">{p.resultsDisclaimerText}</p>
-          <div class="flex flex-col gap-2 items-center">
-            <button id="download-pdf-btn" type="button"
-              class="w-full px-6 py-2.5 text-sm font-semibold text-white bg-[#c47a2b] hover:bg-[#a8621f] rounded-xl transition-all cursor-pointer touch-manipulation min-h-[44px] flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
-              {p.downloadPdfBtn}
-            </button>
-            <button id="start-over-btn" type="button"
-              class="w-full px-6 py-2.5 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px] flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-              {p.startOverBtn}
-            </button>
-          </div>
-        </div>
-
-      </div><!-- end LEFT COLUMN -->
-
-      <!-- RIGHT COLUMN: Diet tabs + Recipe -->
-      <div class="flex-1 min-w-0">
-
-        <!-- Diet Tabs -->
-        <div class="flex gap-1.5 mb-3 p-1 bg-[#fdf3e7] dark:bg-[#1c1208] rounded-xl border border-[#f0d5a8] dark:border-[#3a2510]">
-          <button type="button" data-diet="fresh-cooked" class="diet-tab-btn flex-1 py-2.5 text-xs font-semibold rounded-lg bg-white dark:bg-[#2a1a08] text-[#1c0f00] dark:text-[#fde8c8] shadow-sm transition-all cursor-pointer touch-manipulation min-h-[40px]">🍲 {p.dietFresh}</button>
-          <button type="button" data-diet="raw-barf" class="diet-tab-btn flex-1 py-2.5 text-xs font-semibold rounded-lg text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[40px]">🥩 {p.dietRaw}</button>
-          <button type="button" data-diet="superfood-topper" class="diet-tab-btn flex-1 py-2.5 text-xs font-semibold rounded-lg text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[40px]">🥣 {p.dietTopper}</button>
-        </div>
-
-        <!-- Recipe Card -->
-        <div class="bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-2xl p-4 sm:p-5">
-          <div class="text-[10px] font-mono font-semibold text-[#c47a2b] dark:text-[#e8a44a] uppercase tracking-wider mb-1" id="recipe-diet-tag">{p.todayRecipePrefix}</div>
-          <h3 class="text-base font-bold text-[#1c0f00] dark:text-[#fde8c8] mb-1" id="recipe-title">—</h3>
-          <p class="text-sm text-[#6b4226] dark:text-[#c4956a] mb-4 leading-relaxed" id="recipe-description">—</p>
-
-          <div id="no-recipe-warning" class="hidden mb-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-sm text-amber-800 dark:text-amber-200">
-            {p.noRecipeMatch}
+        <!-- Evening Bowl -->
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 flex flex-col justify-between" id="card-pm-bowl-wrapper">
+          <div>
+            <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
+              <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
+                <span>🌙</span>
+                <span id="pm-bowl-title">{px.eveningBowlTitle}</span>
+              </div>
+              <input type="text" id="pm-time-input" value="6:00 PM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+            </div>
+            <ul id="card-pm-items" class="space-y-1.5 text-xs text-[#1c0f00] dark:text-[#fde8c8]">
+              <!-- populated by JS -->
+            </ul>
           </div>
 
-          <!-- Ingredients -->
-          <div class="mb-4">
-            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.ingredientsHeader}</div>
-            <div id="ingredient-rows-container" class="divide-y divide-[#f0d5a8] dark:divide-[#3a2510] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl overflow-hidden">
-              <!-- Populated by JS -->
+          <!-- Add Ingredient Interactive Row (PM) -->
+          <div id="pm-add-container" class="mt-2.5 pt-2 border-t border-dashed border-[#f0d5a8] dark:border-[#3a2510] no-print">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Treat Limit & Training Budget Box (Daily treat cap text removed, Training Bites with inline styled link) -->
+      <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5 bg-amber-50/50 dark:bg-amber-950/20 mb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+        <div class="flex items-start gap-2">
+          <span class="text-base shrink-0">🦴</span>
+          <div>
+            <div class="font-bold text-[#1c0f00] dark:text-[#fde8c8] uppercase font-mono">{px.treatBudgetHeader}</div>
+            <div class="text-xs text-[#92400e] dark:text-[#c4956a] mt-0.5" id="card-treat-breakdown">
+              <a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">
+                Training Bites <span class="no-print">🛒</span>
+              </a>
             </div>
           </div>
-
-          <!-- Prep Steps -->
-          <div>
-            <div class="text-[10px] font-mono font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2">{p.prepStepsHeader}</div>
-            <ol id="prep-steps-container" class="space-y-2 text-sm text-[#6b4226] dark:text-[#c4956a]">
-              <!-- Populated by JS -->
-            </ol>
-          </div>
-
         </div>
-
-        <!-- Disclaimer + Start Over + Download PDF (mobile: below recipe) -->
-        <div class="lg:hidden text-center mt-5">
-          <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mb-4">{p.resultsDisclaimerText}</p>
-          <div class="flex flex-col gap-2 items-center">
-            <button id="download-pdf-btn-mobile" type="button"
-              class="w-full max-w-xs px-6 py-3 text-sm font-semibold text-white bg-[#c47a2b] hover:bg-[#a8621f] rounded-xl transition-all cursor-pointer touch-manipulation min-h-[44px] flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
-              {p.downloadPdfBtn}
-            </button>
-            <button id="start-over-btn-mobile" type="button"
-              class="w-full max-w-xs px-6 py-3 text-sm font-semibold text-[#92400e] dark:text-[#c4956a] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl hover:text-[#c47a2b] hover:border-[#c47a2b] transition-all cursor-pointer touch-manipulation min-h-[44px] flex items-center justify-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-              {p.startOverBtn}
-            </button>
-          </div>
+        <div class="font-mono font-bold text-sm text-[#c47a2b] sm:text-right shrink-0">
+          <span id="card-treat-limit">95</span> kcal/day
+          <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-normal" id="card-treat-pieces">~2 small biscuits or rewards</div>
         </div>
+      </div>
 
-      </div><!-- end RIGHT COLUMN -->
+      <!-- Weekly Feeding Checklist Table -->
+      <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5 mb-3 bg-white dark:bg-[#1c1208]">
+        <div class="text-xs font-bold font-mono text-[#1c0f00] dark:text-[#fde8c8] uppercase mb-1.5 flex items-center gap-1.5">
+          <span>📅</span>
+          <span>{px.weeklyChecklistHeader}</span>
+          <span class="text-[10px] font-normal text-[#92400e] dark:text-[#c4956a] normal-case ml-auto">(Tick when fed)</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-center text-xs font-mono border-collapse" id="weekly-checklist-table">
+            <!-- populated by JS -->
+          </table>
+        </div>
+      </div>
 
-    </div><!-- end horizontal layout -->
+      <!-- Action Bar: Print Fridge Card only + Start Over near it (Zero duplicates, hidden in print) -->
+      <div class="mt-3 pt-3 border-t border-[#f0d5a8] dark:border-[#3a2510] flex items-center justify-between gap-3 no-print">
+        <div class="flex items-center gap-2.5">
+          <button type="button" class="print-card-btn px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#c47a2b] hover:bg-[#a8621f] rounded-xl transition-all shadow-sm flex items-center gap-2 cursor-pointer touch-manipulation min-h-[42px]">
+            <span>🖨️</span>
+            <span>{px.printFridgeBtn}</span>
+          </button>
+          <button type="button" class="edit-plan-btn text-xs sm:text-sm font-semibold text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl px-4 py-2.5 transition-colors flex items-center gap-1.5 cursor-pointer min-h-[42px]">
+            <span>🔄</span>
+            <span>{p.startOverBtn}</span>
+          </button>
+        </div>
+      </div>
+
+    </div><!-- end #fridge-planner-card -->
 
   </div>
 </section>
 
 <script>
   import { calculateCanineNutrition } from '../utils/nutritionEngine';
-  import { RECIPES } from '../data/recipes';
-  import { getLocalizedRecipe } from '../data/recipesI18n';
-  import {
-    getLocalizedSummary,
-    getLocalizedSchedule,
-    getLocalizedInsight,
-    getDietTagName,
-    getBuyBtnText,
-    getMealsLabel,
-  } from '../i18n/plannerResults';
+  import { plannerExtraTranslations } from '../i18n/plannerExtra';
   import type { Lang } from '../i18n/ui';
 
-  const ALLERGY_ALIASES: Record<string, string[]> = {
-    'chicken / poultry': ['chicken', 'poultry', 'turkey'],
-    beef: ['beef'],
-    dairy: ['dairy'],
-    eggs: ['egg'],
-    'grains / wheat': ['grain', 'wheat'],
-    soy: ['soy'],
-    corn: ['corn'],
+  const WEEK_DAYS: Record<Lang, string[]> = {
+    en: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    es: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+    ja: ['月', '火', '水', '木', '金', '土', '日'],
+    fr: ['Lun', 'Mer', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+    de: ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'],
+    pt: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+    ko: ['월', '화', '수', '목', '금', '토', '일'],
+    it: ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'],
   };
 
-  const HEALTH_ICONS: Record<string, string> = {
-    'General Longevity & Health': '⭐',
-    'Joints & Mobility Support': '🦴',
-    'Skin & Shiny Coat Vitality': '✨',
-    'Sensitive Digestion & Gut Health': '🌿',
-    'Metabolic Weight Management': '⚖️',
-  };
+  interface CatalogItem {
+    id: string;
+    icon: string;
+    name: string;
+    affiliateUrl: string;
+    calculateDose: (weightLbs: number, stage: string, goal: string) => string;
+  }
+
+  // Predefined catalog with exact affiliate URLs & automated personalized canine portion calculation
+  const INGREDIENTS_CATALOG: CatalogItem[] = [
+    {
+      id: 'salmon-oil',
+      icon: '🐟',
+      name: 'Salmon Oil',
+      affiliateUrl: 'https://link.amazon/B0fm0lUNS',
+      calculateDose: (w) => (w < 25 ? '1/2 pump (1/2 tsp)' : w > 60 ? '2 pumps (2 tsp)' : '1 pump (1 tsp)'),
+    },
+    {
+      id: 'pumpkin',
+      icon: '🎃',
+      name: 'Pumpkin Puree',
+      affiliateUrl: 'https://link.amazon/B03dysm96',
+      calculateDose: (w) => (w < 20 ? '1 tsp' : w > 50 ? '2 tbsp' : '1 tbsp'),
+    },
+    {
+      id: 'bone-broth',
+      icon: '🥣',
+      name: 'Bone Broth',
+      affiliateUrl: 'https://link.amazon/B0gnQKj3j',
+      calculateDose: (w) => (w < 20 ? '1 tbsp' : w > 50 ? '1/4 cup (2 oz)' : '2 tbsp (1 oz)'),
+    },
+    {
+      id: 'blueberries',
+      icon: '🫐',
+      name: 'Fresh Blueberries',
+      affiliateUrl: 'https://link.amazon/B09gsTFIp',
+      calculateDose: (w) => (w < 20 ? '3–4 berries' : w > 50 ? '2 tbsp (~12 berries)' : '1 tbsp (~6 berries)'),
+    },
+    {
+      id: 'joint-chew',
+      icon: '🦴',
+      name: 'Joint Chew',
+      affiliateUrl: 'https://link.amazon/B06C6BUEW',
+      calculateDose: (w) => (w < 30 ? '1/2 chew' : w > 70 ? '2 chews' : '1 chew'),
+    },
+    {
+      id: 'egg',
+      icon: '🥚',
+      name: 'Hard-Boiled Egg',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+dog+food+eggs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/4 egg' : w > 60 ? '1 whole egg' : '1/2 egg'),
+    },
+    {
+      id: 'greek-yogurt',
+      icon: '🥛',
+      name: 'Plain Greek Yogurt',
+      affiliateUrl: 'https://www.amazon.com/s?k=dog+probiotic+digestive+support&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tsp' : w > 60 ? '2 tbsp' : '1 tbsp'),
+    },
+    {
+      id: 'goat-kefir',
+      icon: '🍶',
+      name: 'Goat Milk Kefir',
+      affiliateUrl: 'https://www.amazon.com/s?k=raw+goat+milk+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '1/4 cup' : '2 tbsp'),
+    },
+    {
+      id: 'chia-seeds',
+      icon: '🌱',
+      name: 'Chia Seeds (Hydrated)',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+chia+seeds+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+    },
+    {
+      id: 'carrots',
+      icon: '🥕',
+      name: 'Steamed Carrots (Diced)',
+      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+carrots+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
+    },
+    {
+      id: 'spinach',
+      icon: '🥬',
+      name: 'Steamed Spinach',
+      affiliateUrl: 'https://www.amazon.com/s?k=green+superfood+powder+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/2 tbsp' : w > 60 ? '2 tbsp' : '1 tbsp'),
+    },
+    {
+      id: 'green-beans',
+      icon: '🫘',
+      name: 'Steamed Green Beans',
+      affiliateUrl: 'https://www.amazon.com/s?k=dehydrated+green+beans+dog&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '2–3 beans' : w > 60 ? '1/2 cup' : '1/4 cup'),
+    },
+    {
+      id: 'beef-tripe',
+      icon: '🥩',
+      name: 'Green Beef Tripe',
+      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+green+beef+tripe+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '1/4 cup' : '2 tbsp'),
+    },
+    {
+      id: 'beef-liver',
+      icon: '🍖',
+      name: 'Freeze-Dried Beef Liver',
+      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+beef+liver+dog+treats&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 small piece' : w > 60 ? '3 pieces' : '2 pieces'),
+    },
+    {
+      id: 'sardines',
+      icon: '🐟',
+      name: 'Canned Sardines (in water)',
+      affiliateUrl: 'https://www.amazon.com/s?k=wild+sardines+in+water+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/2 sardine' : w > 60 ? '2 sardines' : '1 sardine'),
+    },
+    {
+      id: 'coconut-oil',
+      icon: '🥥',
+      name: 'Virgin Coconut Oil',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+virgin+coconut+oil+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+    },
+    {
+      id: 'turmeric-paste',
+      icon: '✨',
+      name: 'Turmeric Golden Paste',
+      affiliateUrl: 'https://www.amazon.com/s?k=turmeric+curcumin+supplement+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
+    },
+    {
+      id: 'zucchini',
+      icon: '🥒',
+      name: 'Steamed Zucchini',
+      affiliateUrl: 'https://www.amazon.com/s?k=healthy+veggie+mix+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
+    },
+    {
+      id: 'cranberries',
+      icon: '🍒',
+      name: 'Cranberries (Unsweetened)',
+      affiliateUrl: 'https://www.amazon.com/s?k=cranberry+bladder+support+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '3–4 berries' : w > 60 ? '1.5 tbsp' : '1 tbsp'),
+    },
+  ];
+
+  interface BowlCustomItem {
+    id: string;
+    name: string;
+    icon: string;
+    dose: string;
+    url: string;
+  }
 
   const RESULTS_STATE_KEY = 'dfp-results-state';
   let currentProfile: any = null;
-  let currentDiet = 'fresh-cooked';
+  let amCustomItems: BowlCustomItem[] = [];
+  let pmCustomItems: BowlCustomItem[] = [];
 
   function getCurrentLang(): Lang {
     const section = document.getElementById('results-section');
@@ -195,90 +339,353 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     return 'en';
   }
 
-  function selectRecipe(profile: any, dietOverride?: string) {
-    const diet = dietOverride || profile.dietPreference;
-    const dietRecipes = RECIPES.filter((r) => r.dietType === diet);
-    const avoidedAllergies = (profile.allergies || []).filter((a: string) => a !== 'none / no allergies');
-    const safes = dietRecipes.filter((r) =>
-      !r.ingredients.some((ing) =>
-        (ing.allergens || []).some((al) =>
-          avoidedAllergies.some((av: string) =>
-            (ALLERGY_ALIASES[av] || [av]).some((alias) => al.toLowerCase().includes(alias))
-          )
-        )
-      )
-    );
-    const pool = safes.length ? safes : dietRecipes;
-    const preferred = profile.proteinChoice?.toLowerCase();
-    // ── Smarter scoring: protein preference + health focus + life stage + BCS ──
-    const scored = pool.map((r) => {
-      let score = 0;
-      // Protein preference match (highest weight)
-      if (preferred && preferred !== 'auto' && r.primaryProtein.toLowerCase() === preferred) score += 100;
-      // Health focus match — check all words in the focus string
-      const focusWords = (profile.healthFocus || '').toLowerCase().split(/[\s&]+/).filter((w: string) => w.length > 3);
-      focusWords.forEach((word: string) => {
-        if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes(word))) score += 25;
-      });
-      // Life stage bonuses
-      if (profile.ageStage === 'puppy-early' || profile.ageStage === 'puppy-late') {
-        if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('puppy'))) score += 40;
-      }
-      if (profile.ageStage === 'senior') {
-        if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('senior'))) score += 40;
-      }
-      // Weight management bonus for overweight dogs
-      const bcs = Number(profile.bcs || 5);
-      if ((bcs >= 7 || profile.targetGoal === 'lose') && r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('weight'))) score += 35;
-      // Cardiac bonus for heart-risk breeds
-      const heartBreeds = ['doberman', 'boxer', 'cavalier', 'golden retriever', 'irish wolfhound', 'great dane', 'saint bernard'];
-      if (heartBreeds.some(b => (profile.breed || '').toLowerCase().includes(b)) && r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('cardiac') || h.toLowerCase().includes('heart'))) score += 50;
-      // Allergy bonus — prefer novel proteins for allergy dogs
-      const hasAllergies = (profile.allergies || []).filter((a: string) => a !== 'none / no allergies').length > 0;
-      if (hasAllergies && r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('allerg'))) score += 35;
-      // Skin/coat bonus
-      if (r.healthFocusMatches.some((h: string) => h.toLowerCase().includes('skin') || h.toLowerCase().includes('coat'))) {
-        if ((profile.healthFocus || '').toLowerCase().includes('skin') || (profile.healthFocus || '').toLowerCase().includes('coat')) score += 30;
-      }
-      return { r, score };
-    }).sort((a, b) => b.score - a.score);
-    return { recipe: scored[0]?.r || null, hadNoSafeMatch: safes.length === 0 };
+  function getExtraTranslations(lang: Lang) {
+    return plannerExtraTranslations[lang] || plannerExtraTranslations.en;
   }
 
-  function saveResultsState(profile: any, diet: string) {
+  function renderWeeklyChecklist(hasMeds: boolean, lang: Lang): string {
+    const days = WEEK_DAYS[lang] || WEEK_DAYS.en;
+    const tx = getExtraTranslations(lang);
+
+    const headerCells = days.map(d => `<th class="py-1 px-1 font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8] border-b border-[#f0d5a8] dark:border-[#3a2510]">${d}</th>`).join('');
+
+    const amBoxes = days.map((_, i) => `<td class="py-1.5 px-1 border-b border-[#f0d5a8]/50 dark:border-[#3a2510]/50"><label class="inline-flex items-center justify-center cursor-pointer"><input type="checkbox" data-check="am-${i}" class="w-4 h-4 rounded border-2 border-[#c47a2b] dark:border-[#e8a44a] text-[#c47a2b] focus:ring-0 cursor-pointer accent-[#c47a2b]" /></label></td>`).join('');
+
+    const pmBoxes = days.map((_, i) => `<td class="py-1.5 px-1 border-b border-[#f0d5a8]/50 dark:border-[#3a2510]/50"><label class="inline-flex items-center justify-center cursor-pointer"><input type="checkbox" data-check="pm-${i}" class="w-4 h-4 rounded border-2 border-[#c47a2b] dark:border-[#e8a44a] text-[#c47a2b] focus:ring-0 cursor-pointer accent-[#c47a2b]" /></label></td>`).join('');
+
+    const medsRow = hasMeds ? `
+      <tr class="hover:bg-[#fdf8f3]/80 dark:hover:bg-[#2a1a08]/50">
+        <td class="py-1.5 px-2 text-left font-bold text-xs text-[#16a34a] whitespace-nowrap border-b border-[#f0d5a8]/50 dark:border-[#3a2510]/50">💊 ${tx.medsRow}</td>
+        ${days.map((_, i) => `<td class="py-1.5 px-1 border-b border-[#f0d5a8]/50 dark:border-[#3a2510]/50"><label class="inline-flex items-center justify-center cursor-pointer"><input type="checkbox" data-check="meds-${i}" class="w-4 h-4 rounded border-2 border-[#16a34a] text-[#16a34a] focus:ring-0 cursor-pointer accent-[#16a34a]" /></label></td>`).join('')}
+      </tr>
+    ` : '';
+
+    return `
+      <thead class="bg-[#fdf8f3] dark:bg-[#2a1a08]">
+        <tr>
+          <th class="py-1 px-2 text-left font-bold text-xs text-[#92400e] dark:text-[#c4956a] border-b border-[#f0d5a8] dark:border-[#3a2510]">Day</th>
+          ${headerCells}
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-[#f0d5a8]/40 dark:divide-[#3a2510]/40">
+        <tr class="hover:bg-[#fdf8f3]/80 dark:hover:bg-[#2a1a08]/50">
+          <td class="py-1.5 px-2 text-left font-bold text-xs text-[#92400e] dark:text-[#c4956a] whitespace-nowrap border-b border-[#f0d5a8]/50 dark:border-[#3a2510]/50">${tx.amFeedRow}</td>
+          ${amBoxes}
+        </tr>
+        <tr class="hover:bg-[#fdf8f3]/80 dark:hover:bg-[#2a1a08]/50">
+          <td class="py-1.5 px-2 text-left font-bold text-xs text-[#92400e] dark:text-[#c4956a] whitespace-nowrap border-b border-[#f0d5a8]/50 dark:border-[#3a2510]/50">${tx.pmFeedRow}</td>
+          ${pmBoxes}
+        </tr>
+        ${medsRow}
+      </tbody>
+    `;
+  }
+
+  function getDietDisplayName(dietKey: string, lang: Lang): string {
+    const tx = getExtraTranslations(lang);
+    switch (dietKey) {
+      case 'fresh':
+      case 'fresh-cooked':
+        return tx.dietFresh;
+      case 'canned':
+        return tx.dietCanned;
+      case 'mixed':
+        return tx.dietMixed;
+      case 'raw':
+      case 'raw-barf':
+        return tx.dietRaw;
+      case 'kibble':
+      default:
+        return tx.dietKibble;
+    }
+  }
+
+  function getDetailedRecipeName(profile: any, dietKey: string, lang: Lang): { title: string; amazonQuery: string } {
+    const protein = profile.proteinChoice && profile.proteinChoice !== 'auto' ? profile.proteinChoice : 'Salmon';
+    const capitalizedProtein = protein.charAt(0).toUpperCase() + protein.slice(1);
+    const stage = profile.ageStage || 'adult';
+    const allergies = profile.allergies || [];
+    const isChickenFree = allergies.some((a: string) => a.toLowerCase().includes('chicken') || a.toLowerCase().includes('poultry'));
+
+    let stagePrefix = 'Adult Complete';
+    let queryStage = 'adult';
+
+    if (stage.includes('puppy')) {
+      stagePrefix = 'Puppy Growth & Skeletal DHA';
+      queryStage = 'puppy';
+    } else if (stage === 'senior') {
+      stagePrefix = 'Senior Vitality & Mobility';
+      queryStage = 'senior';
+    }
+
+    let dietSuffix = 'Dry Kibble';
+    let queryDiet = 'dry+dog+food';
+    if (dietKey === 'canned') {
+      dietSuffix = 'Grain-Free Wet Loaf';
+      queryDiet = 'grain+free+wet+dog+food';
+    } else if (dietKey === 'mixed') {
+      dietSuffix = 'Kibble & Fresh Topper Mix';
+      queryDiet = 'dry+dog+food+with+toppers';
+    } else if (dietKey === 'fresh' || dietKey === 'fresh-cooked') {
+      dietSuffix = 'Human-Grade Gently Cooked Bowl';
+      queryDiet = 'human+grade+fresh+dog+food';
+    } else if (dietKey === 'raw' || dietKey === 'raw-barf') {
+      dietSuffix = 'Freeze-Dried Raw BARF Patty';
+      queryDiet = 'freeze+dried+raw+dog+food';
+    }
+
+    let query = `${queryStage}+${protein}+${queryDiet}`;
+    if (isChickenFree && !query.includes('chicken+free')) {
+      query += '+chicken+free';
+    }
+
+    const title = `${stagePrefix} (${capitalizedProtein} Formula) ${dietSuffix}`;
+    return { title, amazonQuery: query };
+  }
+
+  function renderBowlsOnly(profile: any, lang: Lang) {
+    const result = calculateCanineNutrition(profile);
+    const tx = getExtraTranslations(lang);
+
+    const meals = Math.max(1, result.mealsPerDay || 2);
+    const perMealGrams = result.perMealGrams;
+    const perMealCups = (result.dailyCupsEst / meals).toFixed(2);
+    const dietKey = profile.currentDiet || profile.dietPreference || 'fresh';
+
+    const recipe = getDetailedRecipeName(profile, dietKey, lang);
+    const isFresh = dietKey === 'fresh' || dietKey === 'fresh-cooked';
+    const isKibble = dietKey === 'kibble';
+    const protein = (profile.proteinChoice || 'salmon').toLowerCase();
+
+    // Specific affiliate links requested:
+    // Fresh cooked: https://link.amazon/B02tVzYRk
+    // Salmon formula dry kibble: https://link.amazon/B0a6i8aIo
+    let recipeUrl = `https://www.amazon.com/s?k=${recipe.amazonQuery}&tag=dogfoodplanner-20`;
+    if (isFresh) {
+      recipeUrl = 'https://link.amazon/B02tVzYRk';
+    } else if (isKibble && (protein === 'salmon' || protein === 'auto')) {
+      recipeUrl = 'https://link.amazon/B0a6i8aIo';
+    }
+
+    const amList = document.getElementById('card-am-items');
+    const pmList = document.getElementById('card-pm-items');
+
+    const baseItemHtml = `
+      <li class="flex items-start gap-2 font-medium">
+        <span class="text-[#c47a2b] font-bold">•</span>
+        <span>
+          <strong class="font-bold">${perMealCups} ${tx.cupsUnit}</strong> (${perMealGrams}${tx.gramsUnit})
+          <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">
+            <span>${recipe.title}</span>
+            <span class="text-[10px] text-[#c47a2b] no-print ml-1">🛒</span>
+          </a>
+        </span>
+      </li>
+    `;
+
+    // Render custom dynamic items for AM
+    const amItemsHtml = amCustomItems.map((item, index) => `
+      <li class="flex items-start justify-between gap-2 text-xs text-[#6b4226] dark:text-[#c4956a] group">
+        <div class="flex items-start gap-1.5">
+          <span class="text-[#c47a2b] font-bold">•</span>
+          <span>
+            ${item.icon} <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono">${item.dose}</strong>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors ml-1">
+              <span>${item.name}</span>
+              <span class="text-[10px] text-[#c47a2b] no-print ml-0.5">🛒</span>
+            </a>
+          </span>
+        </div>
+        <button type="button" data-remove-bowl="am" data-item-index="${index}" class="remove-ingredient-btn text-[#92400e]/50 hover:text-red-500 transition-colors cursor-pointer text-xs leading-none p-0.5 no-print" title="Remove ingredient">✕</button>
+      </li>
+    `).join('');
+
+    // Render custom dynamic items for PM
+    const pmItemsHtml = pmCustomItems.map((item, index) => `
+      <li class="flex items-start justify-between gap-2 text-xs text-[#6b4226] dark:text-[#c4956a] group">
+        <div class="flex items-start gap-1.5">
+          <span class="text-[#c47a2b] font-bold">•</span>
+          <span>
+            ${item.icon} <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono">${item.dose}</strong>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors ml-1">
+              <span>${item.name}</span>
+              <span class="text-[10px] text-[#c47a2b] no-print ml-0.5">🛒</span>
+            </a>
+          </span>
+        </div>
+        <button type="button" data-remove-bowl="pm" data-item-index="${index}" class="remove-ingredient-btn text-[#92400e]/50 hover:text-red-500 transition-colors cursor-pointer text-xs leading-none p-0.5 no-print" title="Remove ingredient">✕</button>
+      </li>
+    `).join('');
+
+    const medsHtml = profile.hasMeds
+      ? `
+        <li class="flex items-start gap-2 text-xs text-[#16a34a] font-semibold">
+          <span>💊</span>
+          <span>[ ] Daily Medication (Administer in morning bowl)</span>
+        </li>
+      `
+      : '';
+
+    if (amList) {
+      amList.innerHTML = baseItemHtml + amItemsHtml + medsHtml;
+    }
+    if (pmList) {
+      pmList.innerHTML = baseItemHtml + pmItemsHtml;
+    }
+
+    // Attach remove handlers
+    document.querySelectorAll('.remove-ingredient-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const bowl = (btn as HTMLElement).dataset.removeBowl;
+        const index = parseInt((btn as HTMLElement).dataset.itemIndex || '-1', 10);
+        if (index >= 0) {
+          if (bowl === 'am') amCustomItems.splice(index, 1);
+          if (bowl === 'pm') pmCustomItems.splice(index, 1);
+          renderBowlsOnly(profile, lang);
+          saveCurrentState();
+        }
+      });
+    });
+
+    // Render the single '+' Add extra ingredient buttons for AM & PM
+    renderAddButton('am', profile);
+    renderAddButton('pm', profile);
+  }
+
+  // Renders the single initial '+' button or inline search box
+  function renderAddButton(bowl: 'am' | 'pm', profile: any) {
+    const container = document.getElementById(`${bowl}-add-container`);
+    if (!container) return;
+
+    container.innerHTML = `
+      <div class="add-wrapper relative">
+        <button type="button" class="open-search-btn text-xs font-semibold text-[#c47a2b] hover:text-[#92400e] dark:hover:text-[#fde8c8] flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-amber-50 dark:hover:bg-amber-950/30 transition-all cursor-pointer">
+          <span class="w-4 h-4 rounded-full border border-[#c47a2b] flex items-center justify-center font-bold text-xs leading-none">+</span>
+          <span>Add extra ingredient</span>
+        </button>
+      </div>
+    `;
+
+    const btn = container.querySelector('.open-search-btn');
+    btn?.addEventListener('click', () => {
+      openSearchInterface(bowl, profile);
+    });
+  }
+
+  function openSearchInterface(bowl: 'am' | 'pm', profile: any) {
+    const container = document.getElementById(`${bowl}-add-container`);
+    if (!container) return;
+
+    container.innerHTML = `
+      <div class="relative w-full">
+        <div class="flex items-center gap-1.5">
+          <div class="relative flex-1">
+            <span class="absolute left-2.5 top-1.5 text-xs text-[#92400e] opacity-60">🔍</span>
+            <input type="text" class="ingredient-search-input w-full pl-7 pr-7 py-1 text-xs bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b]" placeholder="Type ingredient (e.g. egg, blueberries, bone broth...)" autocomplete="off" />
+            <button type="button" class="cancel-search-btn absolute right-2 top-1 text-xs text-[#92400e] hover:text-[#c47a2b] cursor-pointer">✕</button>
+          </div>
+        </div>
+        <!-- Suggestions dropdown (starts hidden, only shows as user types) -->
+        <div class="ingredient-suggestions hidden absolute z-30 left-0 right-0 top-full mt-1 bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl shadow-lg max-h-48 overflow-y-auto p-1 divide-y divide-[#f0d5a8]/30 dark:divide-[#3a2510]/30">
+        </div>
+      </div>
+    `;
+
+    const input = container.querySelector('.ingredient-search-input') as HTMLInputElement | null;
+    const cancelBtn = container.querySelector('.cancel-search-btn');
+    const suggestions = container.querySelector('.ingredient-suggestions') as HTMLElement | null;
+
+    if (input) {
+      input.focus();
+
+      input.addEventListener('input', () => {
+        const query = input.value.trim().toLowerCase();
+        if (!query || !suggestions) {
+          suggestions?.classList.add('hidden');
+          return;
+        }
+
+        const matches = INGREDIENTS_CATALOG.filter(item =>
+          item.name.toLowerCase().includes(query)
+        );
+
+        if (matches.length === 0) {
+          suggestions.innerHTML = `
+            <div class="px-3 py-2 text-xs text-[#92400e] dark:text-[#c4956a]">
+              No matching dog-safe food found. Try "pumpkin", "egg", "blueberries", "kefir"...
+            </div>
+          `;
+          suggestions.classList.remove('hidden');
+          return;
+        }
+
+        const weightLbs = profile.weightLbs || 45;
+        const stage = profile.ageStage || 'adult';
+        const goal = profile.targetGoal || 'maintain';
+
+        suggestions.innerHTML = matches.map(item => {
+          const dose = item.calculateDose(weightLbs, stage, goal);
+          return `
+            <button type="button" data-pick-id="${item.id}" class="pick-item-btn w-full text-left px-2.5 py-1.5 text-xs rounded-lg hover:bg-amber-50 dark:hover:bg-amber-950/40 flex items-center justify-between transition-colors cursor-pointer">
+              <span class="flex items-center gap-2">
+                <span>${item.icon}</span>
+                <span class="font-semibold text-[#1c0f00] dark:text-[#fde8c8]">${item.name}</span>
+              </span>
+              <span class="font-mono text-[10px] text-[#c47a2b] font-bold">${dose}</span>
+            </button>
+          `;
+        }).join('');
+
+        suggestions.classList.remove('hidden');
+
+        // Click on suggestion
+        suggestions.querySelectorAll('.pick-item-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const pickId = (btn as HTMLElement).dataset.pickId;
+            const pickedItem = INGREDIENTS_CATALOG.find(i => i.id === pickId);
+            if (!pickedItem) return;
+
+            const dose = pickedItem.calculateDose(weightLbs, stage, goal);
+            const newItem: BowlCustomItem = {
+              id: pickedItem.id,
+              name: pickedItem.name,
+              icon: pickedItem.icon,
+              dose,
+              url: pickedItem.affiliateUrl,
+            };
+
+            if (bowl === 'am') amCustomItems.push(newItem);
+            if (bowl === 'pm') pmCustomItems.push(newItem);
+
+            renderBowlsOnly(profile, getCurrentLang());
+            saveCurrentState();
+          });
+        });
+      });
+    }
+
+    cancelBtn?.addEventListener('click', () => {
+      renderAddButton(bowl, profile);
+    });
+  }
+
+  function saveCurrentState() {
+    if (!currentProfile) return;
     sessionStorage.setItem(
       RESULTS_STATE_KEY,
       JSON.stringify({
-        profile,
-        diet,
+        profile: currentProfile,
+        diet: currentProfile.currentDiet || 'fresh',
+        amCustomItems,
+        pmCustomItems,
       })
     );
-  }
-
-  function clearResultsState() {
-    sessionStorage.removeItem(RESULTS_STATE_KEY);
-  }
-
-  function restoreResultsState() {
-    const raw = sessionStorage.getItem(RESULTS_STATE_KEY);
-    if (!raw) return;
-
-    try {
-      const state = JSON.parse(raw);
-      if (!state?.profile) return;
-      currentProfile = state.profile;
-      currentDiet = state.diet || state.profile.dietPreference || 'fresh-cooked';
-      renderResults(currentProfile, currentDiet, false);
-    } catch {
-      clearResultsState();
-    }
   }
 
   function renderResults(profile: any, dietOverride?: string, shouldScroll: boolean = true) {
     const lang = getCurrentLang();
     const result = calculateCanineNutrition(profile);
-    const diet = dietOverride || profile.dietPreference;
-    const { recipe, hadNoSafeMatch } = selectRecipe(profile, diet);
+    const diet = dietOverride || profile.dietPreference || 'fresh';
 
     const section = document.getElementById('results-section') as HTMLElement;
     section.classList.remove('hidden');
@@ -289,211 +696,159 @@ const p = plannerTranslations[lang] || plannerTranslations.en;
     const plannerSection = document.getElementById('planner-section') as HTMLElement;
     if (plannerSection) plannerSection.classList.add('hidden');
 
-    const dogName = result.dogName;
-    document.querySelectorAll('#res-dog-name, .res-dog-name-inline').forEach(el => el.textContent = dogName);
+    const dogName = result.dogName || 'Lucy';
+    const breed = profile.breed || 'Dog';
+    const weightDisplay = profile.weightLbs ? `${Math.round(profile.weightLbs)} lbs` : `${result.weightKg} kg`;
 
-    const summaryEl = document.getElementById('res-summary') as HTMLElement;
-    if (summaryEl) {
-      summaryEl.textContent = getLocalizedSummary({
-        dogName: result.dogName,
-        breed: profile.breed,
-        merKcal: result.merKcal,
-        goal: profile.targetGoal,
-        mealsPerDay: result.mealsPerDay,
-        perMealGrams: result.perMealGrams,
-      }, lang);
+    document.querySelectorAll('#card-dog-name').forEach(el => el.textContent = dogName);
+
+    // Card Header
+    const cardBreed = document.getElementById('card-dog-breed');
+    if (cardBreed) cardBreed.textContent = breed;
+    const cardWeight = document.getElementById('card-dog-weight');
+    if (cardWeight) cardWeight.textContent = weightDisplay;
+    const cardStage = document.getElementById('card-dog-stage');
+    if (cardStage) {
+      const stage = profile.ageStage || 'adult';
+      cardStage.textContent = stage.includes('puppy') ? 'Puppy' : (stage === 'senior' ? 'Senior' : 'Adult');
+    }
+    const cardDiet = document.getElementById('card-dog-diet');
+    if (cardDiet) cardDiet.textContent = getDietDisplayName(profile.currentDiet || profile.dietPreference, lang);
+    const cardKcal = document.getElementById('card-dog-kcal');
+    if (cardKcal) cardKcal.textContent = `${result.merKcal.toLocaleString(lang)} kcal/day`;
+
+    // Allergies banner
+    const allergyBanner = document.getElementById('card-allergy-banner');
+    const noAllergyBanner = document.getElementById('card-no-allergy-banner');
+    const allergiesList = document.getElementById('card-allergies-list');
+    const cleanAllergies = (profile.allergies || []).filter((a: string) => a !== 'none / no allergies');
+
+    if (cleanAllergies.length > 0) {
+      allergyBanner?.classList.remove('hidden');
+      noAllergyBanner?.classList.add('hidden');
+      if (allergiesList) allergiesList.textContent = `Strictly Avoid: ${cleanAllergies.join(', ')}`;
+    } else {
+      allergyBanner?.classList.add('hidden');
+      noAllergyBanner?.classList.remove('hidden');
     }
 
-    (document.getElementById('res-mer-calories') as HTMLElement).textContent = result.merKcal.toLocaleString(lang);
-    (document.getElementById('res-daily-grams') as HTMLElement).textContent = result.activeDailyGrams + 'g';
-    (document.getElementById('res-per-meal-grams') as HTMLElement).textContent = result.perMealGrams + 'g';
-    (document.getElementById('res-meals-label') as HTMLElement).textContent = getMealsLabel(result.mealsPerDay, lang);
-    (document.getElementById('res-treat-kcal') as HTMLElement).textContent = result.treatKcal.toLocaleString(lang);
+    // Treat Limit & breakdown (Daily treat cap text removed, Training Bites with exact link)
+    const treatLimitEl = document.getElementById('card-treat-limit');
+    if (treatLimitEl) treatLimitEl.textContent = String(result.treatKcal);
+    const treatBreakdown = document.getElementById('card-treat-breakdown');
+    const treatPiecesEl = document.getElementById('card-treat-pieces');
+    const trainingBitesCount = Math.max(2, Math.round(result.treatKcal / 10));
+    const smallBiscuitsCount = Math.max(1, Math.round(result.treatKcal / 35));
 
-    const schedContainer = document.getElementById('feeding-schedule-container') as HTMLElement;
-    const localizedSchedule = getLocalizedSchedule(result.dailySchedule, lang);
-    schedContainer.innerHTML = localizedSchedule.map((slot: any) => `
-      <div class="flex items-center justify-between p-3 rounded-xl bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510]">
-        <div>
-          <div class="text-xs font-mono font-semibold text-[#c47a2b] dark:text-[#e8a44a]">${slot.timeLabel}</div>
-          <div class="text-sm font-semibold text-[#1c0f00] dark:text-[#fde8c8]">${slot.slotName}</div>
-        </div>
-        <div class="text-right">
-          <div class="text-lg font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${slot.portionGrams}g</div>
-          <div class="text-[11px] text-[#92400e] dark:text-[#c4956a] font-mono">${slot.cupsText}</div>
-        </div>
-      </div>
-    `).join('');
-
-    // ── Single focused insight — specific to this dog's profile ──────────────
-    const insightEl = document.getElementById('insight-text') as HTMLElement;
-    if (insightEl) {
-      insightEl.textContent = getLocalizedInsight({
-        name: result.dogName,
-        ageStage: profile.ageStage || 'adult',
-        goal: profile.targetGoal,
-        bcs: Number(profile.bcs || 5),
-        activity: profile.activityLevel,
-        health: profile.healthFocus || '',
-        breed: profile.breed || '',
-        merKcal: result.merKcal,
-      }, lang);
+    if (treatBreakdown) {
+      treatBreakdown.innerHTML = `<a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link inline font-semibold text-[#b46218] dark:text-[#f0a85d] underline decoration-[#c47a2b] decoration-1.5 underline-offset-2 hover:decoration-[#8b4513] transition-colors">Training Bites <span class="no-print">🛒</span></a>`;
+    }
+    if (treatPiecesEl) {
+      treatPiecesEl.textContent = `~${trainingBitesCount} training bites OR ${smallBiscuitsCount} small biscuits`;
     }
 
-    const noRecipeWarning = document.getElementById('no-recipe-warning') as HTMLElement;
-    if (noRecipeWarning) noRecipeWarning.classList.toggle('hidden', !hadNoSafeMatch);
-
-    if (recipe) {
-      const localizedRecipe = getLocalizedRecipe(recipe, lang);
-      (document.getElementById('recipe-diet-tag') as HTMLElement).textContent = getDietTagName(diet, lang);
-      (document.getElementById('recipe-title') as HTMLElement).textContent = localizedRecipe.name;
-      (document.getElementById('recipe-description') as HTMLElement).textContent = localizedRecipe.description;
-
-      const buyBtnText = getBuyBtnText(lang);
-      const ingContainer = document.getElementById('ingredient-rows-container') as HTMLElement;
-      ingContainer.innerHTML = localizedRecipe.ingredients.map((ing: any) => {
-        const grams = Math.round((ing.percentage / 100) * result.activeDailyGrams);
-        const buyBtn = ing.affiliateUrl
-          ? `<a href="${ing.affiliateUrl}" target="_blank" rel="noopener noreferrer sponsored"
-               class="shrink-0 ml-3 px-2.5 py-1 text-[10px] font-semibold bg-[#c47a2b] hover:bg-[#a8621f] text-white rounded-lg transition-colors whitespace-nowrap">
-               ${buyBtnText}
-             </a>`
-          : '';
-        return `
-          <div class="flex items-center justify-between px-4 py-3 bg-white dark:bg-[#1c1208] hover:bg-[#fdf8f3] dark:hover:bg-[#2a1a08] transition-colors">
-            <div class="flex-1 min-w-0">
-              <div class="text-sm font-medium text-[#1c0f00] dark:text-[#fde8c8]">${ing.name}</div>
-            </div>
-            <div class="flex items-center gap-2 shrink-0 ml-3">
-              <span class="text-sm font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${grams}g</span>
-              ${buyBtn}
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      const prepContainer = document.getElementById('prep-steps-container') as HTMLElement;
-      prepContainer.innerHTML = localizedRecipe.preparationNotes.map((step: string, i: number) => `
-        <li class="flex items-start gap-3">
-          <span class="w-5 h-5 rounded-full bg-[#c47a2b]/10 text-[#c47a2b] dark:text-[#e8a44a] text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
-          <span class="text-[#6b4226] dark:text-[#c4956a]">${step}</span>
-        </li>
-      `).join('');
-
+    // Weekly checklist table
+    const table = document.getElementById('weekly-checklist-table');
+    if (table) {
+      table.innerHTML = renderWeeklyChecklist(Boolean(profile.hasMeds), lang);
     }
 
-    document.querySelectorAll('.diet-tab-btn').forEach(btn => {
-      const btnDiet = (btn as HTMLElement).dataset.diet;
-      const isActive = btnDiet === diet;
-      btn.classList.toggle('bg-white', isActive);
-      btn.classList.toggle('dark:bg-[#2a1a08]', isActive);
-      btn.classList.toggle('text-[#1c0f00]', isActive);
-      btn.classList.toggle('dark:text-[#fde8c8]', isActive);
-      btn.classList.toggle('shadow-sm', isActive);
-      btn.classList.toggle('text-[#92400e]', !isActive);
-      btn.classList.toggle('dark:text-[#c4956a]', !isActive);
-    });
+    // Initialize custom bowl items if not restored from session
+    if (!sessionStorage.getItem(RESULTS_STATE_KEY)) {
+      const weightLbs = profile.weightLbs || 45;
+      const stage = profile.ageStage || 'adult';
+      const goal = profile.targetGoal || 'maintain';
+
+      // AM default: Salmon Oil
+      const salmonItem = INGREDIENTS_CATALOG.find(i => i.id === 'salmon-oil');
+      amCustomItems = salmonItem ? [{
+        id: salmonItem.id,
+        name: salmonItem.name,
+        icon: salmonItem.icon,
+        dose: salmonItem.calculateDose(weightLbs, stage, goal),
+        url: salmonItem.affiliateUrl,
+      }] : [];
+
+      // PM default: Pumpkin Puree (or Joint Chew for senior)
+      const pmTargetId = stage === 'senior' ? 'joint-chew' : 'pumpkin';
+      const pmItem = INGREDIENTS_CATALOG.find(i => i.id === pmTargetId);
+      pmCustomItems = pmItem ? [{
+        id: pmItem.id,
+        name: pmItem.name,
+        icon: pmItem.icon,
+        dose: pmItem.calculateDose(weightLbs, stage, goal),
+        url: pmItem.affiliateUrl,
+      }] : [];
+    }
+
+    // Render bowls & initial '+' buttons
+    renderBowlsOnly(profile, lang);
 
     currentProfile = profile;
-    currentDiet = diet;
-    saveResultsState(profile, diet);
+    saveCurrentState();
   }
 
-  document.addEventListener('dogPlannerSubmit', (e: Event) => {
-    const profile = (e as CustomEvent).detail;
-    currentProfile = profile;
-    currentDiet = profile.dietPreference;
-    renderResults(profile);
-  });
-
-  document.querySelectorAll('.diet-tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (!currentProfile) return;
-      currentDiet = (btn as HTMLElement).dataset.diet || currentProfile.dietPreference;
-      renderResults(currentProfile, currentDiet);
-    });
-  });
-
-  // ── Cross-page navigation: if the user clicked "Plan Bowl" from another page,
-  //    skip restoring results and go straight to the planner instead ──────────
-  (function () {
-    var NAV_FLAG = 'dfp-navigate-to-planner';
-    var shouldGoToPlanner = false;
-    try { shouldGoToPlanner = !!sessionStorage.getItem(NAV_FLAG); } catch (_) {}
-
-    if (shouldGoToPlanner) {
-      try { sessionStorage.removeItem(NAV_FLAG); } catch (_) {}
-      // Make sure planner is visible and results stay hidden
-      var plannerEl = document.getElementById('planner-section');
-      if (plannerEl) {
-        plannerEl.classList.remove('hidden');
-        var targetEl = plannerEl;
-        // Scroll after a short tick so the layout has settled
-        setTimeout(function () {
-          targetEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 80);
-      }
-      // Do NOT call restoreResultsState — we want the planner, not the results
-      return;
-    }
-
-    // Check if the user navigated here from another page (e.g. "Calculate Your
-    // Dog's Bowl" CTA). If results exist, restore them and scroll into view.
-    var cameFromOtherPage = false;
+  function restoreResultsState() {
+    const raw = sessionStorage.getItem(RESULTS_STATE_KEY);
+    if (!raw) return;
     try {
-      // performance.navigation is legacy but widely supported; Navigation API
-      // is the modern alternative. We fall back gracefully if neither exists.
-      if (typeof performance !== 'undefined' && performance.getEntriesByType) {
-        var navEntries = performance.getEntriesByType('navigation');
-        if (navEntries.length && (navEntries[0] as any).type === 'navigate') {
-          cameFromOtherPage = true;
-        }
-      }
-    } catch (_) {}
-
-    restoreResultsState();
-
-    // If we restored results and the user came here via a cross-page link,
-    // scroll the results section into view after a short tick.
-    if (cameFromOtherPage) {
-      setTimeout(function () {
-        var resultsEl = document.getElementById('results-section');
-        if (resultsEl && !resultsEl.classList.contains('hidden')) {
-          resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 80);
+      const state = JSON.parse(raw);
+      if (!state?.profile) return;
+      currentProfile = state.profile;
+      if (Array.isArray(state.amCustomItems)) amCustomItems = state.amCustomItems;
+      if (Array.isArray(state.pmCustomItems)) pmCustomItems = state.pmCustomItems;
+      renderResults(currentProfile, state.diet || 'fresh', false);
+    } catch {
+      sessionStorage.removeItem(RESULTS_STATE_KEY);
     }
-  })();
+  }
 
   function startOver() {
-    const resultsSection = document.getElementById('results-section') as HTMLElement;
-    const plannerSection = document.getElementById('planner-section') as HTMLElement;
-    clearResultsState();
+    sessionStorage.removeItem(RESULTS_STATE_KEY);
     currentProfile = null;
-    currentDiet = 'fresh-cooked';
-    resultsSection.classList.add('hidden');
+    amCustomItems = [];
+    pmCustomItems = [];
+    document.getElementById('results-section')?.classList.add('hidden');
+    const plannerSection = document.getElementById('planner-section');
     if (plannerSection) {
       plannerSection.classList.remove('hidden');
-      // Dispatch a custom event so PlannerQuiz resets itself cleanly to step 1
       document.dispatchEvent(new CustomEvent('dogPlannerReset'));
       plannerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
-  function downloadPdf() {
-    // Add a class to body so @media print CSS can isolate the results section
+  function printPlan() {
     document.body.classList.add('printing-plan');
     window.print();
-    // Remove the class after the print dialog closes
-    window.addEventListener('afterprint', () => {
-      document.body.classList.remove('printing-plan');
-    }, { once: true });
   }
 
-  document.getElementById('start-over-btn')?.addEventListener('click', startOver);
-  document.getElementById('start-over-btn-mobile')?.addEventListener('click', startOver);
-  document.getElementById('download-pdf-btn')?.addEventListener('click', downloadPdf);
-  document.getElementById('download-pdf-btn-mobile')?.addEventListener('click', downloadPdf);
+  window.addEventListener('beforeprint', () => {
+    const results = document.getElementById('results-section');
+    if (results && !results.classList.contains('hidden')) {
+      document.body.classList.add('printing-plan');
+    }
+  });
+
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('printing-plan');
+  });
+
+  document.addEventListener('dogPlannerSubmit', (e: Event) => {
+    const profile = (e as CustomEvent).detail;
+    currentProfile = profile;
+    amCustomItems = [];
+    pmCustomItems = [];
+    sessionStorage.removeItem(RESULTS_STATE_KEY);
+    renderResults(profile);
+  });
+
+  document.querySelectorAll('.edit-plan-btn').forEach(btn => {
+    btn.addEventListener('click', startOver);
+  });
+  document.querySelectorAll('.print-card-btn').forEach(btn => {
+    btn.addEventListener('click', printPlan);
+  });
+
+  // Restore on page load if present
+  restoreResultsState();
 </script>
-
-
