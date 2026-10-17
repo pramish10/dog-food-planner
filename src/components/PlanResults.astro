@@ -465,21 +465,30 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const isKibble = dietKey === 'kibble';
     const protein = (profile.proteinChoice || 'salmon').toLowerCase();
 
-    // Specific affiliate links requested:
-    // Fresh cooked: https://link.amazon/B0fpxfvVg (JustFoodForDogs Pantry Fresh)
+    // Specific affiliate links:
+    // Fresh cooked Chicken: https://link.amazon/B0fpxfvVg (JustFoodForDogs Pantry Fresh Chicken & White Rice)
     // Salmon formula dry kibble: https://link.amazon/B0h1I7guA (VICTOR Select Ocean Fish & Salmon)
     // Chicken formula dry kibble: https://link.amazon/B0j9UbC9Z (Blue Buffalo Wilderness High-Protein Chicken)
-    // Canned / Wet loaf: https://link.amazon/B0cbv1oLz (Merrick Lil' Plates Grain Free Dinner)
+    // Canned / Wet Salmon: https://link.amazon/B0a52bV8X (Purina Pro Plan Sensitive Skin & Stomach Salmon)
+    // Canned / Wet Beef & Turkey: https://link.amazon/B0cbv1oLz (Merrick Lil' Plates Grain Free Dinner)
     // Raw BARF patty: https://link.amazon/B0i140Q91 (Stella & Chewy's Freeze-Dried Raw Beef)
     let recipeUrl = `https://www.amazon.com/s?k=${recipe.amazonQuery}&tag=dogfoodplanner-20`;
     if (isFresh) {
-      recipeUrl = 'https://link.amazon/B0fpxfvVg';
+      if (protein === 'chicken' || protein === 'turkey') {
+        recipeUrl = 'https://link.amazon/B0fpxfvVg';
+      } else {
+        recipeUrl = `https://www.amazon.com/s?k=${recipe.amazonQuery}&tag=dogfoodplanner-20`;
+      }
     } else if (isKibble && (protein === 'salmon' || protein === 'auto')) {
       recipeUrl = 'https://link.amazon/B0h1I7guA';
     } else if (isKibble && (protein === 'chicken' || protein === 'turkey')) {
       recipeUrl = 'https://link.amazon/B0j9UbC9Z';
     } else if (dietKey === 'canned') {
-      recipeUrl = 'https://link.amazon/B0cbv1oLz';
+      if (protein === 'salmon') {
+        recipeUrl = 'https://link.amazon/B0a52bV8X';
+      } else {
+        recipeUrl = 'https://link.amazon/B0cbv1oLz';
+      }
     } else if (dietKey === 'raw' || dietKey === 'raw-barf') {
       recipeUrl = 'https://link.amazon/B0i140Q91';
     }
