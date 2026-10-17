@@ -465,27 +465,36 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const isKibble = dietKey === 'kibble';
     const protein = (profile.proteinChoice || 'salmon').toLowerCase();
 
+    const isChickenFree = Array.isArray(profile.allergies) && profile.allergies.some((a: string) => a.toLowerCase().includes('chicken') || a.toLowerCase().includes('poultry'));
+
     // Specific affiliate links:
+    // Fresh cooked Salmon / Multi-protein: https://link.amazon/B0gWhHriE (Nature's Recipe Chicken, Salmon & Turkey Variety Pack)
     // Fresh cooked Chicken: https://link.amazon/B0fpxfvVg (JustFoodForDogs Pantry Fresh Chicken & White Rice)
     // Salmon formula dry kibble: https://link.amazon/B0h1I7guA (VICTOR Select Ocean Fish & Salmon)
     // Chicken formula dry kibble: https://link.amazon/B0j9UbC9Z (Blue Buffalo Wilderness High-Protein Chicken)
-    // Canned / Wet Salmon: https://link.amazon/B0a52bV8X (Purina Pro Plan Sensitive Skin & Stomach Salmon)
+    // Canned / Wet Salmon: https://link.amazon/B0gWhHriE (Nature's Recipe Variety Pack) or https://link.amazon/B0a52bV8X (Purina Pro Plan Sensitive Salmon)
     // Canned / Wet Beef & Turkey: https://link.amazon/B0cbv1oLz (Merrick Lil' Plates Grain Free Dinner)
     // Raw BARF patty: https://link.amazon/B0i140Q91 (Stella & Chewy's Freeze-Dried Raw Beef)
     let recipeUrl = `https://www.amazon.com/s?k=${recipe.amazonQuery}&tag=dogfoodplanner-20`;
     if (isFresh) {
-      if (protein === 'chicken' || protein === 'turkey') {
+      if (isChickenFree && protein === 'salmon') {
+        recipeUrl = 'https://link.amazon/B0a52bV8X';
+      } else if (protein === 'salmon' || protein === 'auto') {
+        recipeUrl = 'https://link.amazon/B0gWhHriE';
+      } else if (protein === 'chicken' || protein === 'turkey') {
         recipeUrl = 'https://link.amazon/B0fpxfvVg';
       } else {
-        recipeUrl = `https://www.amazon.com/s?k=${recipe.amazonQuery}&tag=dogfoodplanner-20`;
+        recipeUrl = 'https://link.amazon/B0gWhHriE';
       }
     } else if (isKibble && (protein === 'salmon' || protein === 'auto')) {
       recipeUrl = 'https://link.amazon/B0h1I7guA';
     } else if (isKibble && (protein === 'chicken' || protein === 'turkey')) {
       recipeUrl = 'https://link.amazon/B0j9UbC9Z';
     } else if (dietKey === 'canned') {
-      if (protein === 'salmon') {
+      if (isChickenFree && protein === 'salmon') {
         recipeUrl = 'https://link.amazon/B0a52bV8X';
+      } else if (protein === 'salmon' || protein === 'auto') {
+        recipeUrl = 'https://link.amazon/B0gWhHriE';
       } else {
         recipeUrl = 'https://link.amazon/B0cbv1oLz';
       }
