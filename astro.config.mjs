@@ -26,14 +26,25 @@ const INDEXABLE_FAQ_SLUGS = new Set([
   'how-long-does-it-take-for-a-dog-to-digest-food',
 ]);
 
+const EXCLUDED_EXACT_PATHS = new Set([
+  '/print',
+  '/404',
+  '/500',
+  '/feeding-calculator',
+  '/best-dog-food/recipe-blueprint',
+]);
+
 /**
  * @param {string} page
  */
 function sitemapFilter(page) {
   const path = new URL(page).pathname.replace(/\/$/, '') || '/';
-  if (path === '/print' || path === '/404' || path === '/500' || path === '/feeding-calculator') return false;
-
   const unprefixed = path.replace(LOCALE_PREFIX, '') || '/';
+
+  if (EXCLUDED_EXACT_PATHS.has(unprefixed)) {
+    return false;
+  }
+
   const faqMatch = unprefixed.match(/^\/faq\/([^/]+)$/);
   if (faqMatch && !INDEXABLE_FAQ_SLUGS.has(faqMatch[1])) {
     return false;

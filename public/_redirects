@@ -1,0 +1,20 @@
+# Cloudflare Static Assets Redirects
+# 301 Permanent Redirects for legacy routes and index fallbacks
+
+/feeding-calculator /#planner-section 301
+/de/feeding-calculator /de/#planner-section 301
+/es/feeding-calculator /es/#planner-section 301
+/fr/feeding-calculator /fr/#planner-section 301
+/it/feeding-calculator /it/#planner-section 301
+/ja/feeding-calculator /ja/#planner-section 301
+/ko/feeding-calculator /ko/#planner-section 301
+/pt/feeding-calculator /pt/#planner-section 301
+
+/best-dog-food/recipe-blueprint /best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance 301
+/de/best-dog-food/recipe-blueprint /de/best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance 301
+/es/best-dog-food/recipe-blueprint /es/best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance 301
+/fr/best-dog-food/recipe-blueprint /fr/best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance 301
+/it/best-dog-food/recipe-blueprint /it/best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance 301
+/ja/best-dog-food/recipe-blueprint /ja/best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance 301
+/ko/best-dog-food/recipe-blueprint /ko/best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance 301
+/pt/best-dog-food/recipe-blueprint /pt/best-dog-food/recipe-blueprint/turkey-pumpkin-maintenance 301
