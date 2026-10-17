@@ -31,8 +31,7 @@ export const PAGE_TRANSLATIONS = {
       ],
       "ctaTitle": "Ready to Calculate Your Dog's Nutritional Needs?",
       "ctaDesc": "Try our interactive calculator, explore our canine allergy guides, and read our dog food guides.",
-      "ctaBtn": "Launch Free Nutrition Calculator →",
-      "amazonDisclaimer": "As an Amazon Associate we earn from qualifying purchases."
+      "ctaBtn": "Launch Free Nutrition Calculator →"
     },
     "contact": {
       "eyebrow": "SUPPORT & FEEDBACK // DIRECT INQUIRIES",
@@ -659,8 +658,7 @@ export const PAGE_TRANSLATIONS = {
       ],
       "ctaTitle": "¿Listo para Calcular las Necesidades Nutricionales de tu Perro?",
       "ctaDesc": "Utiliza nuestra calculadora interactiva, explora las guías de alergias caninas y lee nuestras guías de comida para perros.",
-      "ctaBtn": "Abrir Calculadora Nutricional Gratuita →",
-      "amazonDisclaimer": "Como afiliados de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables."
+      "ctaBtn": "Abrir Calculadora Nutricional Gratuita →"
     },
     "contact": {
       "eyebrow": "ATENCIÓN Y SOPORTE // CONSULTAS DIRECTAS",
@@ -1285,8 +1283,7 @@ export const PAGE_TRANSLATIONS = {
       ],
       "ctaTitle": "愛犬に必要な適正カロリーと食事量を計算してみませんか？",
       "ctaDesc": "対話型計算ツールを試し、愛犬のアレルギー対策ガイドを確認し、ドッグフードガイドをお読みください。",
-      "ctaBtn": "無料の栄養計算機を起動する →",
-      "amazonDisclaimer": "Amazonアソシエイトとして、適格販売により収入を得ています。"
+      "ctaBtn": "無料の栄養計算機を起動する →"
     },
     "contact": {
       "eyebrow": "サポート＆お問い合わせ // 直接相談窓口",
@@ -1911,8 +1908,7 @@ export const PAGE_TRANSLATIONS = {
       ],
       "ctaTitle": "Prêt à Calculer les Besoins Nutritionnels de Votre Chien ?",
       "ctaDesc": "Essayez notre calculateur interactif, découvrez nos guides sur les allergies canines et lisez nos guides sur l'alimentation pour chien.",
-      "ctaBtn": "Lancer le Calculateur Nutritionnel Gratuit →",
-      "amazonDisclaimer": "En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises."
+      "ctaBtn": "Lancer le Calculateur Nutritionnel Gratuit →"
     },
     "contact": {
       "eyebrow": "SUPPORT & CONTACT // DEMANDES DIRECTES",
@@ -2537,8 +2533,7 @@ export const PAGE_TRANSLATIONS = {
       ],
       "ctaTitle": "Bereit, den Nährstoffbedarf Ihres Hundes zu berechnen?",
       "ctaDesc": "Nutzen Sie unseren interaktiven Rechner, erkunden Sie unsere Allergie-Ratgeber und lesen Sie unsere Hundefutter-Ratgeber.",
-      "ctaBtn": "Kostenlosen Futterrechner starten →",
-      "amazonDisclaimer": "Als Amazon-Partner verdienen wir an qualifizierten Verkäufen."
+      "ctaBtn": "Kostenlosen Futterrechner starten →"
     },
     "contact": {
       "eyebrow": "SUPPORT & KONTAKT // DIREKTE ANFRAGEN",
@@ -3163,8 +3158,7 @@ export const PAGE_TRANSLATIONS = {
       ],
       "ctaTitle": "Pronto para Calcular as Necessidades Nutricionais do Seu Cão?",
       "ctaDesc": "Experimente nossa calculadora interativa, explore nossos guias de alergias e leia nossos guias de alimentação canina.",
-      "ctaBtn": "Iniciar Calculadora Nutricional Gratuita →",
-      "amazonDisclaimer": "Como Associado da Amazon, recebemos remuneração por compras qualificadas."
+      "ctaBtn": "Iniciar Calculadora Nutricional Gratuita →"
     },
     "contact": {
       "eyebrow": "SUPORTE E CONTATO // ATENDIMENTO DIRETO",
@@ -3789,8 +3783,7 @@ export const PAGE_TRANSLATIONS = {
       ],
       "ctaTitle": "우리 강아지에게 필요한 정확한 영양과 칼로리를 계산해 보세요",
       "ctaDesc": "간편한 계산기를 사용해보고, 알레르기 케어 가이드를 확인하며, 강아지 사료 가이드를 읽어보세요.",
-      "ctaBtn": "무료 영양 계산기 실행하기 →",
-      "amazonDisclaimer": "Amazon 어소시에이트 활동의 일환으로 적격 구매를 통해 수수료를 제공받을 수 있습니다."
+      "ctaBtn": "무료 영양 계산기 실행하기 →"
     },
     "contact": {
       "eyebrow": "고객 지원 및 문의 // 직접 문의 창구",
@@ -4415,8 +4408,7 @@ export const PAGE_TRANSLATIONS = {
       ],
       "ctaTitle": "Pronto a Calcolare i Fabbisogni del Tuo Cane?",
       "ctaDesc": "Prova il nostro calcolatore interattivo, consulta le guide sulle allergie canine e leggi le nostre guide sul cibo per cani.",
-      "ctaBtn": "Avvia il Calcolatore Gratuito →",
-      "amazonDisclaimer": "In qualità di Affiliato Amazon, riceviamo un guadagno dagli acquisti idonei."
+      "ctaBtn": "Avvia il Calcolatore Gratuito →"
     },
     "contact": {
       "eyebrow": "SUPPORTO E CONTATTO // RICHIESTE DIRETTE",
