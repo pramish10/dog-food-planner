@@ -352,39 +352,215 @@ export const FAQ_CONTENT_TRANSLATIONS: Record<string, Partial<Record<Lang, FaqTr
 
   'is-blue-buffalo-good-dog-food': {
     es: {
-      question: '¿Es Blue Buffalo una buena marca de comida para perros?',
-      shortAnswer: 'Blue Buffalo es una marca comercial de gama media-alta que evita subproductos cárnicos y trigo/soja. Sin embargo, contiene niveles considerables de carbohidratos (40-50%) y ha registrado retiradas históricas de la FDA.',
-      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo</a> destaca por utilizar carnes reales deshuesadas en sus recetas y evitar conservantes artificiales. Como la mayoría de piensos extrusionados comerciales, el porcentaje de almidón sigue siendo elevado para aglutinar la croqueta.</p>`
+      question: '¿Es Blue Buffalo una buena comida para perros? Análisis nutricional y de seguridad',
+      shortAnswer: 'Blue Buffalo es una marca comercial de gama media-alta que destaca por utilizar carne real deshuesada como primer ingrediente y evitar subproductos avícolas, maíz, trigo y conservantes artificiales. No obstante, sus croquetas contienen entre un 40% y 50% de carbohidratos y cuentan con retiradas históricas de la FDA.',
+      fullAnswerHtml: `
+        <p><strong>Blue Buffalo</strong> es una de las marcas de comida para mascotas más vendidas y reconocidas. Fundada con el lema de alimentar a los perros como a la familia, se posicionó rechazando rellenos baratos como el maíz, el trigo y la soja en favor de carnes enteras y suplementos botánicos. A continuación presentamos una revisión veterinaria exhaustiva sobre su calidad nutricional:</p>
+
+        <h3>1. Calidad de Ingredientes y Proteína Animal</h3>
+        <ul>
+          <li><strong>Carne real como primer ingrediente:</strong> Emplea carne fresca deshuesada (pollo, cordero, pavo o salmón salvaje), garantizando aminoácidos esenciales de alta digestibilidad para el soporte muscular y articular.</li>
+          <li><strong>Sin harinas de subproductos avícolas:</strong> Descarta cabezas, patas o vísceras no identificadas, recurriendo a harinas de carne concentradas y etiquetadas (como harina de pollo o harina de pescado menhaden) para elevar el aporte proteico.</li>
+          <li><strong>Fuentes de almidón:</strong> En sus recetas con grano (Life Protection), utiliza avena, cebada y arroz integral. En sus fórmulas libres de grano (Wilderness), emplea guisantes, almidón de tapioca y batatas.</li>
+        </ul>
+
+        <h3>2. Perfil de Macronutrientes y Nivel de Carbohidratos</h3>
+        <p>Al igual que la inmensa mayoría de piensos secos extrusionados a altas temperaturas, requiere almidones aglutinantes para dar firmeza a la croqueta:</p>
+        <ul>
+          <li><strong>Proteína bruta (Materia Seca):</strong> Oscila entre el 24% y el 34% (alcanzando el 36% en Wilderness).</li>
+          <li><strong>Grasa bruta:</strong> Entre el 14% y el 16%, aportando ácidos grasos omega-6 y energía constante.</li>
+          <li><strong>Carbohidratos netos:</strong> Entre el 42% y el 50%. En perros sedentarios, un exceso prolongado de carbohidratos refinados puede propiciar sobrepeso y picos de glucosa.</li>
+        </ul>
+
+        <h3>3. Tecnología Exclusiva "LifeSource Bits"</h3>
+        <p>Una característica patentada de Blue Buffalo son los pequeños gránulos negros mezclados con el pienso: los <em>LifeSource Bits</em>. Estos se conforman en frío a temperaturas notablemente inferiores para evitar que el calor extremo destruya vitaminas termolábiles (C y E), minerales quelados y antioxidantes procedentes de arándanos y linaza.</p>
+
+        <h3>4. Historial de Recalls de la FDA</h3>
+        <p>Durante la última década y media, la marca enfrentó varios retiros voluntarios de la FDA por exceso de Vitamina D (2010), presencia de humedad/hongos en golosinas (2015) y problemas de envasado en latas (2017). Desde su adquisición por General Mills en 2018, sus protocolos de laboratorio y auditorías de inocuidad se han reforzado considerablemente.</p>
+
+        <h3>Veredicto Veterinario y Recomendación</h3>
+        <p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo Wilderness Chicken Adult Dry Dog Food</a> y sus líneas clásicas son opciones comerciales sólidas y por encima de la media. Para optimizar la salud de tu perro, se aconseja rehidratar siempre las croquetas con agua tibia o caldo de huesos casero sin sal, y complementar con un 10-20% de alimentos frescos (huevos al vapor, calabaza o aceite de salmón salvaje).</p>
+      `
     },
     ja: {
-      question: 'ブルーバッファロー（Blue Buffalo）は良質なドッグフードですか？',
-      shortAnswer: 'ブルーバッファローは副産物ミールや小麦・トウモロコシを避け、良質な生肉を第一原料にした高品質ブランドです。ただし炭水化物量は40〜50％あり、過去に米国FDAによる自主回収履歴があります。',
-      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">ブルーバッファロー</a>は独自の「ライフソース・ビッツ」で低温加熱のビタミン群を配合している点が特徴ですが、一般的なドライキブル同様、成形のための炭水化物を含みます。総合栄養食として安定していますが、生肉や野菜トッピングの併用がより推奨されます。</p>`
+      question: 'ブルーバッファロー（Blue Buffalo）は良質なドッグフードですか？獣医師の栄養評価',
+      shortAnswer: 'ブルーバッファローは骨抜き生肉を第1主原料とし、副産物ミールや小麦・トウモロコシ・人工添加物を排除した高品質な市販フードです。総合栄養食として優れていますが、ドライキブル特有の炭水化物比率（40〜50％）や過去の米国FDA自主回収歴への理解が必要です。',
+      fullAnswerHtml: `
+        <p><strong>ブルーバッファロー（Blue Buffalo）</strong>は、愛犬を家族として大切にするという理念のもと開発されたプレミアムフードブランドです。トウモロコシや小麦、家禽副産物ミールを使用せず、本物の肉と機能性成分にこだわっています。以下に専門的視点からの詳細評価をまとめました：</p>
+
+        <h3>1. 原材料の品質とタンパク質源</h3>
+        <ul>
+          <li><strong>生肉ファースト：</strong>骨抜きチキン、ラム、サーモンなどが第1原料で、消化吸収性の高いアミノ酸を提供します。</li>
+          <li><strong>副産物ミール不使用：</strong>正体不明の肉骨粉や羽毛粉は一切使わず、チキンミールやニシンミールなど明確に特定されたタンパク源を使用。</li>
+          <li><strong>炭水化物源：</strong>玄米、オーツ麦、大麦などの全粒穀物、または穀物不使用ライン（ウィルダネス）ではエンドウ豆やサツマイモを採用しています。</li>
+        </ul>
+
+        <h3>2. 栄養バランスと炭水化物比率</h3>
+        <ul>
+          <li><strong>粗タンパク質（乾物換算）：</strong>24％〜34％（高タンパクのウィルダネスは最大36％）。</li>
+          <li><strong>粗脂肪：</strong>14％〜16％で皮膚被毛の健康をサポート。</li>
+          <li><strong>炭水化物量：</strong>40％〜50％前後。一般的な押出成形ドライフードとして標準的ですが、運動量の少ない室内犬では給餌量の調整が大切です。</li>
+        </ul>
+
+        <h3>3. 独自技術「ライフソース・ビッツ」の利点</h3>
+        <p>黒色の小さな粒「ライフソース・ビッツ」は、通常のキブルより低温で加工されています。高熱に弱いビタミンC・E、キレートミネラル、ブルーベリーやクランベリーの抗酸化物質の変性を防ぎ、生きた栄養素を体内に届けます。</p>
+
+        <h3>4. 米国FDA回収履歴と品質管理体制</h3>
+        <p>過去にビタミンD過剰（2010年）や湿気によるカビ懸念（2015年）で自主回収を行った経緯がありますが、2018年に大手食品メーカー「ゼネラル・ミルズ」傘下に入って以降、検査基準と製造環境の近代化が進んでいます。</p>
+
+        <h3>総合評価とおすすめの与え方</h3>
+        <p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">ブルーバッファロー ウィルダネス 成犬用チキン</a>は市販の総合栄養食として十分信頼できます。さらなる健康増進には、ぬるま湯やボーンブロスでドライフードをふやかして水分補給を促し、オメガ3サーモンオイルや蒸し野菜をトッピングするのが理想的です。</p>
+      `
     },
     fr: {
-      question: 'Blue Buffalo est-elle une bonne marque de nourriture pour chien ?',
-      shortAnswer: 'Blue Buffalo est une marque commerciale de bonne réputation qui évite les sous-produits de volaille et le blé/maïs. Elle reste cependant riche en glucides (40-50%) et a connu plusieurs rappels par la FDA.',
-      fullAnswerHtml: `<p>La viande désossée est généralement le premier ingrédient chez <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo</a>. Ses croquettes restent extrudées à haute température, ce qui justifie d'ajouter des aliments frais ou des toppers hydratants à la gamelle.</p>`
+      question: 'Blue Buffalo est-elle une bonne nourriture pour chien ? Avis vétérinaire complet',
+      shortAnswer: 'Blue Buffalo est une marque industrielle haut de gamme réputée pour utiliser de la viande fraîche désossée en premier ingrédient et exclure les sous-produits de volaille, le maïs, le blé et les additifs artificiels. Ses croquettes renferment toutefois 40 à 50 % de glucides et ont fait l\'objet de rappels historiques par la FDA.',
+      fullAnswerHtml: `
+        <p><strong>Blue Buffalo</strong> est l'une des marques d'aliments pour animaux les plus influentes en Amérique du Nord. Réputée pour son refus des sous-produits animaux de basse qualité et des céréales bon marché, elle offre une formulation au-dessus de la moyenne des supermarchés. Voici notre audit nutritionnel complet :</p>
+
+        <h3>1. Qualité des Ingrédients et Protéines</h3>
+        <ul>
+          <li><strong>Viande désossée en premier :</strong> Poulet, dinde, agneau ou saumon frais constituent la base protéique indispensable au tonus musculaire.</li>
+          <li><strong>Zéro sous-produit avicole :</strong> Aucun déchet d'abattoir indéterminé ; seules des farines de viandes nobles identifiées (farine de poulet, farine de poisson menhaden) sont utilisées pour enrichir la teneur protéique.</li>
+          <li><strong>Sources de glucides :</strong> Riz brun, avoine et orge pour la gamme Life Protection ; fécule de pois et patates douces pour la gamme sans céréales Wilderness.</li>
+        </ul>
+
+        <h3>2. Teneur en Glucides et Macronutriments</h3>
+        <ul>
+          <li><strong>Protéines brutes (sur matière sèche) :</strong> 24 % à 34 % selon la gamme.</li>
+          <li><strong>Matières grasses :</strong> Équilibrées entre 14 % et 16 % (riches en acides gras essentiels).</li>
+          <li><strong>Glucides nets :</strong> 42 % à 50 %, nécessaires à l'extrusion mécanique des croquettes. Les chiens sédentaires devront être rationnés avec précision pour éviter l'embonpoint.</li>
+        </ul>
+
+        <h3>3. Les Granulés Brevetés « LifeSource Bits »</h3>
+        <p>Ces petites pastilles foncées incorporées aux croquettes sont pressées à froid afin de préserver les vitamines hydrosolubles (C et B), les minéraux chélatés et les baies riches en antioxydants (myrtilles, canneberges) qui seraient autrement détruits par la cuisson industrielle.</p>
+
+        <h3>4. Historique des Rappels FDA</h3>
+        <p>Bien que Blue Buffalo ait fait l'objet de rappels volontaires par le passé (taux de vitamine D en 2010, humidité en 2015), son acquisition en 2018 par le groupe General Mills a conduit à un durcissement drastique des contrôles de sécurité sanitaire.</p>
+
+        <h3>Verdict Vétérinaire et Conseils d'Alimentation</h3>
+        <p>Les croquettes <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo Wilderness Poulet Adulte</a> constituent une base commerciale solide. Pour un bien-être digestif et rénal optimal, pensez à toujours humidifier le repas avec de l'eau tiède ou un bouillon d'os et à ajouter des toppers frais (huile de saumon sauvage, courgettes ou purée de courge).</p>
+      `
     },
     de: {
-      question: 'Ist Blue Buffalo ein gutes Hundefutter?',
-      shortAnswer: 'Blue Buffalo ist eine überdurchschnittliche Marke, die auf Nebenerzeugnisse und Weizen/Mais verzichtet. Dennoch enthält Trockenfutter fertigungsbedingt 40–50 % Kohlenhydrate.',
-      fullAnswerHtml: `<p>Bei <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo</a> ist echtes Fleisch an erster Stelle der Deklaration positiv hervorzuheben. Für optimale Vitalität empfiehlt sich die Ergänzung mit schonend gegartem Frischfleisch und Omega-3-Ölen.</p>`
+      question: 'Ist Blue Buffalo ein gutes Hundefutter? Tierärztliche Bewertung & Analyse',
+      shortAnswer: 'Blue Buffalo ist eine überdurchschnittliche Premiummarke, die echtes Fleisch als Hauptzutat deklariert und auf Geflügelnebenprodukte, Mais, Weizen und künstliche Konservierungsstoffe verzichtet. Der fertigungsbedingt Kohlenhydratanteil liegt jedoch bei 40–50 %, und die Marke verzeichnete historische FDA-Rückrufe.',
+      fullAnswerHtml: `
+        <p><strong>Blue Buffalo</strong> zählt im nordamerikanischen Raum zu den beliebtesten Tiernahrungsmarken im Fachhandel. Mit dem Leitsatz, Haustiere wie Familienmitglieder zu ernähren, verzichtet der Hersteller auf minderwertige Füllstoffe wie Soja, Mais und Weizen. Nachfolgend die veterinärmedizinische Bewertung:</p>
+
+        <h3>1. Zutatenqualität und Proteinquellen</h3>
+        <ul>
+          <li><strong>Echtes Fleisch an 1. Stelle:</strong> Frisches entbeintes Hühner-, Lamm- oder Lachsfilet liefert hochverdauliche Aminosäuren für Muskulatur und Geweberegeneration.</li>
+          <li><strong>Keine tierischen Nebenerzeugnisse:</strong> Ausschluss von Schnäbeln, Federn oder undefinierten Fetten. Es kommen ausschließlich klar benannte Fleischmehle zum Einsatz.</li>
+          <li><strong>Kohlenhydratquellen:</strong> Brauner Reis, Hafer und Gerste bei getreidehaltigen Sorten; Erbsen und Süßkartoffeln bei getreidefreien Rezepturen (Wilderness).</li>
+        </ul>
+
+        <h3>2. Nährstoffprofil und Stärkeanteil</h3>
+        <ul>
+          <li><strong>Rohprotein (in der Trockensubstanz):</strong> 24 % bis 34 % (bei Wilderness bis zu 36 %).</li>
+          <li><strong>Rohfett:</strong> 14 % bis 16 % für gesunde Haut und glänzendes Fell.</li>
+          <li><strong>Kohlenhydrate:</strong> Ca. 42 % bis 50 % zur Bindung der Extrudatkrokette. Für wenig aktive Hunde sollte die Fütterungsmenge exakt abgewogen werden.</li>
+        </ul>
+
+        <h3>3. Die patentierten „LifeSource Bits“</h3>
+        <p>Ein Alleinstellungsmerkmal sind die dunklen Kaltpress-Kroketten (LifeSource Bits). Sie werden bei niedriger Temperatur verarbeitet, damit hitzeempfindliche Vitamine (C und E), chelierte Spurenelemente und sekundäre Pflanzenstoffe aus Blaubeeren und Cranberries erhalten bleiben.</p>
+
+        <h3>4. FDA-Rückrufhistorie und Qualitätskontrolle</h3>
+        <p>In den Jahren 2010 (Vitamin D) und 2015 (Feuchtigkeitsprobleme) kam es zu freiwilligen Produktrückrufen. Seit der Übernahme durch General Mills im Jahr 2018 wurden die mikrobiologischen Kontrollsysteme und Werksprüfungen signifikant modernisiert.</p>
+
+        <h3>Tierärztliches Fazit</h3>
+        <p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo Wilderness Chicken Adult Trockenfutter</a> ist ein zuverlässiges Alleinfutter über dem Marktdurchschnitt. Zur Förderung der Nierengesundheit empfiehlt sich das Einweichen mit warmem Wasser oder Knochenbrühe sowie das Ergänzen mit 10–20 % frischen Komponenten (Wildlachsöl, gedämpftes Ei oder Kürbispüree).</p>
+      `
     },
     pt: {
-      question: 'A ração Blue Buffalo é boa para cães?',
-      shortAnswer: 'A Blue Buffalo é uma ração de padrão elevado que dispensa subprodutos e grãos como milho e trigo. Contudo, ainda possui teor moderado a alto de carboidratos e histórico de recalls no mercado americano.',
-      fullAnswerHtml: `<p>A linha <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo</a> tem carne desossada como primeiro ingrediente e vitaminas preservadas a frio. É uma ração comercial confiável, mas se beneficia da adição de toppers úmidos naturais.</p>`
+      question: 'A ração Blue Buffalo é boa para cães? Análise veterinária e ingredientes',
+      shortAnswer: 'A Blue Buffalo é uma ração comercial de padrão elevado que utiliza carne desossada real como primeiro ingrediente e elimina subprodutos de aves, milho, trigo, soja e corantes artificiais. Apesar de oferecer nutrição balanceada, apresenta teores de carboidratos entre 40% e 50% e possui histórico de recalls na FDA.',
+      fullAnswerHtml: `
+        <p>A <strong>Blue Buffalo</strong> é uma das marcas de alimentos caninos mais prestigiadas nos Estados Unidos e no mercado internacional. Com a proposta de tratar os animais como membros da família, a marca construiu sua reputação excluindo ingredientes de baixo custo nutricional (como milho, trigo, soja e restos de abatedouro). Confira a análise técnica detalhada:</p>
+
+        <h3>1. Qualidade dos Ingredientes e Fontes Proteicas</h3>
+        <ul>
+          <li><strong>Carne real em primeiro lugar:</strong> Utiliza frango desossado, cordeiro ou salmão como primeiro ingrediente da lista, garantindo proteínas nobres com alta biodisponibilidade para a musculatura canina.</li>
+          <li><strong>Zero farinha de subprodutos de aves:</strong> Não utiliza penas, patas ou gorduras animais não identificadas; apenas farinhas proteicas rastreáveis (farinha de frango, farinha de peixe menhaden).</li>
+          <li><strong>Fontes de carboidratos:</strong> Grãos nobres como arroz integral, aveia e cevada na linha clássica; ervilhas, mandioca e batata-doce na linha grain-free Wilderness.</li>
+        </ul>
+
+        <h3>2. Perfil de Macronutrientes e Teor de Carboidratos</h3>
+        <ul>
+          <li><strong>Proteína Bruta (Matéria Seca):</strong> Varia de 24% a 34% (chegando a 36% na linha Wilderness de alta energia).</li>
+          <li><strong>Extrato Etéreo (Gordura):</strong> Entre 14% e 16%, equilibrada para aporte de ômega-6 e saciedade.</li>
+          <li><strong>Carboidratos Totais:</strong> Entre 42% e 50%, necessários ao processo térmico de extrusão. Cães sedentários requerem monitoramento de porção para prevenção de ganho de peso.</li>
+        </ul>
+
+        <h3>3. A Tecnologia dos "LifeSource Bits"</h3>
+        <p>Um diferencial marcante da Blue Buffalo são os pequenos grãos pretos misturados na ração, chamados <em>LifeSource Bits</em>. Eles são processados a frio em temperaturas mais baixas que a croqueta comum, evitando a quebra térmica de vitaminas (C e E), minerais quelatados e antioxidantes naturais de mirtilos, cranberries e semente de linhaça.</p>
+
+        <h3>4. Histórico de Recalls na FDA</h3>
+        <p>A Blue Buffalo realizou recalls voluntários no mercado norte-americano no passado (excesso de vitamina D em 2010 e umidade em petiscos em 2015). A partir de 2018, com a incorporação da marca pelo conglomerado General Mills, os laboratórios de controle de qualidade e rastreabilidade foram substancialmente aprimorados.</p>
+
+        <h3>Veredito Veterinário e Como Servir</h3>
+        <p>A ração <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo Wilderness Chicken Adult Dry Dog Food</a> é uma ótima escolha industrial de nível super-premium. Para maximizar a saúde renal e digestiva, recomendamos reidratar os grãos com água morna ou caldo de ossos natural e adicionar toppers saudáveis (óleo de salmão selvagem, ovos cozidos ou purê de abóbora).</p>
+      `
     },
     ko: {
-      question: '블루 버팔로(Blue Buffalo) 사료는 강아지에게 좋은 사료인가요?',
-      shortAnswer: '블루 버팔로는 부산물 육분, 옥수수, 밀, 대두를 배제하고 생육을 제1원료로 사용하는 프리미엄급 브랜드입니다. 다만 건식 사료 특성상 탄수화물 비율(40~50%)이 존재합니다.',
-      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">블루 버팔로(Blue Buffalo)</a>는 냉압착 항산화 알갱이인 \'라이프소스 비츠\'를 함유하여 영양 균형이 우수합니다. 일반的な 건식 키블로 훌륭하지만, 신선한 자연식 토핑을 곁들이면 체내 수분 균형에 큰 도움이 됩니다.</p>`
+      question: '블루 버팔로(Blue Buffalo) 사료는 강아지에게 좋은 사료인가요? 성분 및 영양 분석',
+      shortAnswer: '블루 버팔로는 뼈를 발라낸 신선한 생육을 제1원료로 사용하며, 가금류 부산물 육분, 옥수수, 밀, 인공 보존제를 철저히 배제하는 프리미엄 브랜드입니다. 영양학적으로 훌륭한 기본 사료이나, 익스트루전 건식 사료 특유의 탄수화물 비율(40~50%)과 과거 FDA 리콜 이력을 고려해야 합니다.',
+      fullAnswerHtml: `
+        <p><strong>블루 버팔로(Blue Buffalo)</strong>는 반려동물을 가족처럼 대우한다는 철학으로 설립된 북미 대표 프리미엄 사료 브랜드입니다. 저가 곡물 필러와 가금류 부산물을 쓰지 않고 품질 좋은 생육과 기능성 보조제를 결합하여 인기가 높습니다. 수의 영양학적 기준에 입각한 분석 결과는 다음과 같습니다:</p>
+
+        <h3>1. 원재료 품질 및 단백질 출처</h3>
+        <ul>
+          <li><strong>생육 제1원료 원칙:</strong> 뼈를 발라낸 순수 닭고기, 양고기, 연어를 1순위로 배치하여 생체 이용률이 뛰어난 필수 아미노산을 공급합니다.</li>
+          <li><strong>부산물 분말 배제:</strong> 출처 불명의 동물 사체 부위나 깃털 분말을 배제하고, 명확히 검증된 치킨 밀이나 멘하덴 피시 밀을 사용하여 단백질 밀도를 보강합니다.</li>
+          <li><strong>탄수화물 공급원:</strong> 라이프 프로텍션 라인은 현미, 오트밀, 보리를 사용하며, 그레인프리 라인인 윌더니스는 완두콩, 타피오카, 고구마를 사용합니다.</li>
+        </ul>
+
+        <h3>2. 다량 영양소 비율 및 탄수화물 함량</h3>
+        <ul>
+          <li><strong>조단백질 (건물 기준):</strong> 24%~34% (고에너지 윌더니스는 최대 36%).</li>
+          <li><strong>조지방:</strong> 14%~16% 수준으로 피모 건강과 필수 지방산 공급에 적합.</li>
+          <li><strong>탄수화물 비율:</strong> 알갱이 형성을 위한 전분 특성상 40%~50%를 차지합니다. 활동량이 적은 실내견은 비만 예방을 위해 정량 급여가 필수적입니다.</li>
+        </ul>
+
+        <h3>3. 특허받은 '라이프소스 비츠(LifeSource Bits)' 기술</h3>
+        <p>블루 버팔로 사료에 섞여 있는 짙은 색의 둥근 알갱이는 저온 가공된 '라이프소스 비츠'입니다. 일반 사료 알갱이의 고열 고압 제조 과정에서 파괴되기 쉬운 비타민 C·E, 킬레이트 미네랄, 블루베리·크랜베리의 항산화 성분을 생생하게 보존합니다.</p>
+
+        <h3>4. 미국 FDA 리콜 이력 및 안전성</h3>
+        <p>2010년 비타민 D 수치 이슈 및 2015년 수분 관련 자발적 회수 조치가 있었으나, 2018년 글로벌 식품 기업 제너럴 밀스(General Mills)에 인수된 후 품질 검사 및 제조 설비 기준이 대폭 강화되었습니다.</p>
+
+        <h3>수의학적 총평 및 급여 가이드</h3>
+        <p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">블루 버팔로 윌더니스 치킨 어덜트 건식 사료</a>는 상위권에 속하는 우수한 건식 사료입니다. 신장 결석 예방과 충분한 수분 보충을 위해 미온수나 뼈 국물을 부어 불려 급여하시고, 연어 오일이나 찐 달걀, 단호박 퓌레를 10~20% 토핑해주시면 더욱 이상적인 식단이 완성됩니다.</p>
+      `
     },
     it: {
-      question: 'Blue Buffalo è un buon cibo per cani?',
-      shortAnswer: 'Blue Buffalo è un marchio di fascia medio-alta che evita scarti animali e mais/frumento. Come tutte le crocchette estruse, contiene carboidrati (40-50%) necessari alla forma del croccantino.',
-      fullAnswerHtml: `<p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo</a> utilizza vera carne disossata al primo posto e complessi vitaminici a freddo. Una solida base commerciale a cui è consigliabile abbinare cibi freschi ricchi di idratazione.</p>`
+      question: 'Blue Buffalo è un buon cibo per cani? Recensione veterinaria e ingredienti',
+      shortAnswer: 'Blue Buffalo è un marchio commerciale di fascia alta che impiega vera carne disossata come primo ingrediente ed esclude scarti di macellazione, mais, grano e coloranti sintetici. Pur fornendo nutrienti completi, presenta il 40–50% di carboidrati e annovera passati richiami sanitari FDA.',
+      fullAnswerHtml: `
+        <p><strong>Blue Buffalo</strong> è uno dei marchi di pet food premium più noti a livello globale. Nato per offrire ai cani una nutrizione priva di scarti economici (come glutine di mais, frumento o sottoprodotti avicoli non identificati), rappresenta un'opzione commerciale nettamente superiore alla media. Ecco la scheda tecnica completa:</p>
+
+        <h3>1. Qualità degli Ingredienti e Proteine Nobili</h3>
+        <ul>
+          <li><strong>Vera carne disossata come primo ingrediente:</strong> Pollo, agnello, tacchino o salmone forniscono profili amminoacidici altamente digeribili per la salvaguardia di muscoli e difese immunitarie.</li>
+          <li><strong>Assenza di farine di sottoprodotti avicoli:</strong> Esclusione totale di scarti di macellazione; vengono utilizzate esclusivamente farine proteiche chiare e tracciabili (farina di pollo, farina di pesce menhaden).</li>
+          <li><strong>Carboidrati selezionati:</strong> Riso integrale, orzo e avena nella linea con cereali nobili; piselli e patate dolci nella gamma grain-free Wilderness.</li>
+        </ul>
+
+        <h3>2. Profilo Nutrizionale e Carboidrati</h3>
+        <ul>
+          <li><strong>Proteina Grezza (sostanza secca):</strong> Dal 24% al 34% (fino al 36% nella formulazione Wilderness).</li>
+          <li><strong>Grassi Greggi:</strong> Tra il 14% e il 16%, ottimali per cute, pelo ed energia.</li>
+          <li><strong>Livello di carboidrati:</strong> Tra il 42% e il 50%, essenziali per la struttura estrusa del croccantino. I cani sedentari necessitano di razionamento controllato.</li>
+        </ul>
+
+        <h3>3. Tecnologia dei "LifeSource Bits"</h3>
+        <p>Il punto di forza brevettato di Blue Buffalo sono i croccantini scuri lavorati a freddo (LifeSource Bits). Essendo pressati a temperature inferiori, conservano inalterati vitamine termolabili (C ed E), minerali chelati e polifenoli antiossidanti estratti da mirtilli e semi di lino.</p>
+
+        <h3>4. Cronologia dei Richiami FDA</h3>
+        <p>In passato il marchio ha affrontato richiami volontari FDA (vitamina D nel 2010 e umidità negli snack nel 2015). Dopo l'acquisizione nel 2018 da parte di General Mills, i protocolli analitici e i controlli sui lotti sono stati portati a standard industriali rigorosi.</p>
+
+        <h3>Verdetto del Veterinario</h3>
+        <p>Le crocchette <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo Wilderness Pollo Adulti</a> offrono un'alimentazione commerciale affidabile. Per prevenire la disidratazione renale tipica del cibo secco, consigliamo di inumidire i pasti con acqua tiepida o brodo d'ossa non salato e arricchire la ciotola con ingredienti freschi (olio di salmone, uova sode o zucca).</p>
+      `
     },
   },
 

@@ -34,17 +34,50 @@ export const FAQS_DATA: FaqItem[] = [
     slug: 'is-blue-buffalo-good-dog-food',
     question: 'Is Blue Buffalo good dog food?',
     category: 'Brand Reviews & Safety',
-    shortAnswer: 'Blue Buffalo is an above-average commercial brand that avoids poultry by-product meals and corn/wheat/soy. However, it still contains high carbohydrate levels (40-50%) and has faced historical FDA recalls for mold contamination and formulation issues.',
+    shortAnswer: 'Blue Buffalo is an above-average commercial pet food brand known for using real deboned meat as the first ingredient and eliminating poultry by-product meals, corn, wheat, and artificial additives. While its macronutrient profiles offer reliable baseline nutrition, pet owners should be aware of high carbohydrate levels (40–50%) and past FDA recall history.',
     fullAnswerHtml: `
-      <p><strong>Blue Buffalo</strong> is one of the most widely recognized pet food brands in North America. Here is an objective nutritional breakdown:</p>
+      <p><strong>Blue Buffalo</strong> is one of the most prominent premium commercial pet food brands in North America. Founded on the principle of feeding pets like family, the brand built its reputation by rejecting cheap fillers like corn, wheat, and soy in favor of whole meats and targeted botanical supplements. Below is an objective, veterinary-informed analysis of its ingredient quality, macronutrient ratios, safety history, and dietary suitability.</p>
+
+      <h3>1. Ingredient Quality & Protein Sourcing</h3>
+      <p>Across most recipes, Blue Buffalo prioritizes named animal proteins as the primary ingredient (such as deboned chicken, beef, lamb, or wild salmon). Key ingredient characteristics include:</p>
       <ul>
-        <li><strong>Pros:</strong> Real deboned meat is typically the first ingredient (e.g., real chicken, lamb, or salmon), and their recipes contain no corn, wheat, soy, or artificial preservatives. Their proprietary "LifeSource Bits" provide cold-formed antioxidants and vitamins.</li>
-        <li><strong>Cons:</strong> Like most commercial extruded dry kibbles, carbohydrate levels hover between 42% and 52% of the recipe to allow the kibble pieces to hold form during high-heat manufacturing. They have also had several past FDA recalls regarding moisture, mold, and elevated Vitamin D levels.</li>
-        <li><strong>Nutrition Verdict:</strong> <a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo Wilderness Chicken Adult Dry Dog Food</a> and Basics (limited ingredient) lines provide solid commercial baseline nutrition with real deboned chicken as the first ingredient and no corn/wheat/soy, but incorporating 20-30% fresh, gently cooked whole foods or transitioning to human-grade meal recipes significantly improves bioavailable hydration and micronutrient density.</li>
+        <li><strong>Real Whole Meats First:</strong> Real deboned meat provides highly digestible amino acids necessary for muscle maintenance, tissue repair, and canine immune function.</li>
+        <li><strong>No Poultry By-Product Meals:</strong> Blue Buffalo excludes generic animal digests, feather meals, and unnamed animal fats, relying instead on identified protein meals (e.g., chicken meal or menhaden fish meal) to elevate protein density.</li>
+        <li><strong>Carbohydrate Sources:</strong> In grain-inclusive recipes (Life Protection Formula), complex carbohydrates come from wholesome grains like brown rice, oatmeal, and barley. In grain-free lines (Wilderness), carbohydrates are derived from peas, tapioca starch, and sweet potatoes.</li>
       </ul>
+
+      <h3>2. Macronutrient Profile & Carbohydrate Content</h3>
+      <p>Like nearly all commercial dry kibbles produced through high-heat extrusion, Blue Buffalo recipes require a significant starch binder to shape and preserve the kibble pellets. On a Dry Matter Basis (DMB):</p>
+      <ul>
+        <li><strong>Crude Protein:</strong> Typically ranges from 24% to 34% (with Wilderness lines reaching up to 36% for high-energy dogs).</li>
+        <li><strong>Crude Fat:</strong> Moderately balanced between 14% and 16%, providing essential omega-6 fatty acids.</li>
+        <li><strong>Carbohydrates:</strong> Averages 42% to 50% of the total formulation. For sedentary dogs, excessive carbohydrate loads can contribute to gradual weight gain and insulin fluctuations.</li>
+      </ul>
+
+      <h3>3. Proprietary "LifeSource Bits" Technology</h3>
+      <p>A distinctive feature of Blue Buffalo dry kibble is the inclusion of small, dark spherical pellets called <em>LifeSource Bits</em>. These are processed at a lower temperature than the surrounding kibble to prevent heat degradation of delicate vitamins (such as Vitamin C and E), chelated minerals, and antioxidant-rich botanicals (including blueberries, cranberries, and flaxseed).</p>
+
+      <h3>4. FDA Recall History & Manufacturing Transparency</h3>
+      <p>An honest evaluation requires reviewing past quality control challenges. Over the past fifteen years, Blue Buffalo has experienced several voluntary FDA recalls:</p>
+      <ul>
+        <li><strong>2010 (Vitamin D):</strong> Potential elevation of Vitamin D levels in specific batches of dry dog food.</li>
+        <li><strong>2015 (Moisture/Mold):</strong> Voluntary recall of cured dog treats due to potential mold growth from packaging moisture.</li>
+        <li><strong>2017 (Aluminum & Moisture):</strong> Selected canned dog food recipes recalled due to packaging quality concerns.</li>
+      </ul>
+      <p>Since the brand's acquisition by General Mills in 2018, manufacturing oversight, facility audits, and ingredient testing protocols have been substantially modernized, resulting in improved safety consistency.</p>
+
+      <h3>5. Popular Product Lines Compared</h3>
+      <ul>
+        <li><strong>Life Protection Formula:</strong> The flagship line featuring wholesome grains, balanced protein, and lifestage-specific recipes for puppies, adults, and seniors.</li>
+        <li><strong>Wilderness:</strong> High-protein, grain-free recipes engineered for active dogs requiring dense animal protein without grain carbs.</li>
+        <li><strong>Basics (Limited Ingredient Diet):</strong> Formulated with a single animal protein (e.g., duck, turkey, or salmon) and easily digestible carbs for dogs with food allergies or sensitive stomachs.</li>
+      </ul>
+
+      <h3>Veterinary Verdict: How to Optimize Blue Buffalo</h3>
+      <p><a href="https://amzn.to/4gVmqiw" target="_blank" rel="noopener noreferrer sponsored" class="amazon-inline-link inline font-semibold text-black dark:text-[#ededed] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Blue Buffalo Wilderness Chicken Adult Dry Dog Food</a> and Life Protection recipes serve as solid, above-average commercial foundations. To maximize its health benefits, pet parents should add warm bone broth or filtered water at mealtime to support kidney hydration, and consider rotational feeding or adding 10–20% fresh whole-food toppers (such as wild salmon oil, steamed eggs, or pureed pumpkin) to boost biological enzyme activity.</p>
     `,
-    tags: ['blue buffalo', 'brand review', 'kibble', 'recalls'],
-    relatedSlugs: ['is-nutrish-a-good-dog-food', 'is-pure-balance-a-good-dog-food', 'whats-the-best-dog-food-brand']
+    tags: ['blue buffalo', 'brand review', 'kibble', 'recalls', 'dog food ingredients', 'dry dog food'],
+    relatedSlugs: ['is-nutrish-a-good-dog-food', 'is-pure-balance-a-good-dog-food', 'whats-the-best-dog-food-brand', 'can-dogs-live-on-dry-food-only']
   },
   {
     id: 'can-dogs-eat-cat-food',
