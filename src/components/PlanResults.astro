@@ -102,7 +102,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           <div>
             <div class="font-bold text-[#1c0f00] dark:text-[#fde8c8] uppercase font-mono">{px.treatBudgetHeader}</div>
             <div class="text-xs text-[#92400e] dark:text-[#c4956a] mt-0.5" id="card-treat-breakdown">
-              <a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
+              <a href="https://link.amazon/B0h2wswVk" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
                 Training Bites
               </a>
             </div>
@@ -189,21 +189,21 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       id: 'salmon-oil',
       icon: '🐟',
       name: 'Salmon Oil',
-      affiliateUrl: 'https://link.amazon/B0fm0lUNS',
+      affiliateUrl: 'https://link.amazon/B02zrZWPG',
       calculateDose: (w) => (w < 25 ? '1/2 pump (1/2 tsp)' : w > 60 ? '2 pumps (2 tsp)' : '1 pump (1 tsp)'),
     },
     {
       id: 'pumpkin',
       icon: '🎃',
       name: 'Pumpkin Puree',
-      affiliateUrl: 'https://link.amazon/B03dysm96',
+      affiliateUrl: 'https://link.amazon/B06zoxxSD',
       calculateDose: (w) => (w < 20 ? '1 tsp' : w > 50 ? '2 tbsp' : '1 tbsp'),
     },
     {
       id: 'bone-broth',
       icon: '🥣',
       name: 'Bone Broth',
-      affiliateUrl: 'https://link.amazon/B0gnQKj3j',
+      affiliateUrl: 'https://link.amazon/B0c8qZk7Y',
       calculateDose: (w) => (w < 20 ? '1 tbsp' : w > 50 ? '1/4 cup (2 oz)' : '2 tbsp (1 oz)'),
     },
     {
@@ -217,7 +217,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       id: 'joint-chew',
       icon: '🦴',
       name: 'Joint Chew',
-      affiliateUrl: 'https://link.amazon/B06C6BUEW',
+      affiliateUrl: 'https://link.amazon/B01H3PPzn',
       calculateDose: (w) => (w < 30 ? '1/2 chew' : w > 70 ? '2 chews' : '1 chew'),
     },
     {
@@ -231,7 +231,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       id: 'greek-yogurt',
       icon: '🥛',
       name: 'Plain Greek Yogurt',
-      affiliateUrl: 'https://www.amazon.com/s?k=dog+probiotic+digestive+support&tag=dogfoodplanner-20',
+      affiliateUrl: 'https://link.amazon/B0ar2KGqk',
       calculateDose: (w) => (w < 25 ? '1 tsp' : w > 60 ? '2 tbsp' : '1 tbsp'),
     },
     {
@@ -280,14 +280,14 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       id: 'beef-liver',
       icon: '🍖',
       name: 'Freeze-Dried Beef Liver',
-      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+beef+liver+dog+treats&tag=dogfoodplanner-20',
+      affiliateUrl: 'https://link.amazon/B0gmcEnwI',
       calculateDose: (w) => (w < 25 ? '1 small piece' : w > 60 ? '3 pieces' : '2 pieces'),
     },
     {
       id: 'sardines',
       icon: '🐟',
       name: 'Canned Sardines (in water)',
-      affiliateUrl: 'https://www.amazon.com/s?k=wild+sardines+in+water+for+dogs&tag=dogfoodplanner-20',
+      affiliateUrl: 'https://link.amazon/B01vM8LZC',
       calculateDose: (w) => (w < 25 ? '1/2 sardine' : w > 60 ? '2 sardines' : '1 sardine'),
     },
     {
@@ -466,13 +466,22 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const protein = (profile.proteinChoice || 'salmon').toLowerCase();
 
     // Specific affiliate links requested:
-    // Fresh cooked: https://link.amazon/B02tVzYRk
-    // Salmon formula dry kibble: https://link.amazon/B0a6i8aIo
+    // Fresh cooked: https://link.amazon/B0fpxfvVg (JustFoodForDogs Pantry Fresh)
+    // Salmon formula dry kibble: https://link.amazon/B0h1I7guA (VICTOR Select Ocean Fish & Salmon)
+    // Chicken formula dry kibble: https://link.amazon/B0j9UbC9Z (Blue Buffalo Wilderness High-Protein Chicken)
+    // Canned / Wet loaf: https://link.amazon/B0cbv1oLz (Merrick Lil' Plates Grain Free Dinner)
+    // Raw BARF patty: https://link.amazon/B0i140Q91 (Stella & Chewy's Freeze-Dried Raw Beef)
     let recipeUrl = `https://www.amazon.com/s?k=${recipe.amazonQuery}&tag=dogfoodplanner-20`;
     if (isFresh) {
-      recipeUrl = 'https://link.amazon/B02tVzYRk';
+      recipeUrl = 'https://link.amazon/B0fpxfvVg';
     } else if (isKibble && (protein === 'salmon' || protein === 'auto')) {
-      recipeUrl = 'https://link.amazon/B0a6i8aIo';
+      recipeUrl = 'https://link.amazon/B0h1I7guA';
+    } else if (isKibble && (protein === 'chicken' || protein === 'turkey')) {
+      recipeUrl = 'https://link.amazon/B0j9UbC9Z';
+    } else if (dietKey === 'canned') {
+      recipeUrl = 'https://link.amazon/B0cbv1oLz';
+    } else if (dietKey === 'raw' || dietKey === 'raw-barf') {
+      recipeUrl = 'https://link.amazon/B0i140Q91';
     }
 
     const amList = document.getElementById('card-am-items');
@@ -753,7 +762,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const smallBiscuitsCount = Math.max(1, Math.round(result.treatKcal / 35));
 
     if (treatBreakdown) {
-      treatBreakdown.innerHTML = `<a href="https://link.amazon/B06NKpZfh" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Training Bites</a>`;
+      treatBreakdown.innerHTML = `<a href="https://link.amazon/B0h2wswVk" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Training Bites</a>`;
     }
     if (treatPiecesEl) {
       treatPiecesEl.textContent = `~${trainingBitesCount} training bites OR ${smallBiscuitsCount} small biscuits`;

@@ -137,13 +137,13 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>If the basics are fine, try one change at a time so you can tell what works.</p>
 
       <h3 id="switch-to-a-food-with-a-named-meat-first">Switch to a food with a named meat first</h3>
-      <p>Sometimes the food itself is the issue, and a recipe with a named meat as the first ingredient can be more appealing, such as <AmazonLink url="https://link.amazon/B080XJxUX">Wag Chicken & Sweet Potato Grain Free Dry Dog Food</AmazonLink>, which lists cage-free chicken first. Grain-free diets are not right for every dog, so ask your vet whether one suits yours. If you are unsure whether kibble is the right fit at all, our guide to <a href="/blog/dry-vs-wet-dog-food">dry vs wet dog food</a> explains the differences.</p>
+      <p>Sometimes the food itself is the issue, and a recipe with a named meat as the first ingredient can be more appealing, such as <AmazonLink url="https://link.amazon/B06xUIapc">Wag Dry Dog Food</AmazonLink>, which lists cage-free chicken first. Grain-free diets are not right for every dog, so ask your vet whether one suits yours. If you are unsure whether kibble is the right fit at all, our guide to <a href="/blog/dry-vs-wet-dog-food">dry vs wet dog food</a> explains the differences.</p>
 
       <h3 id="add-a-warm-broth-topper">Add a warm broth topper</h3>
-      <p>A little broth poured over the bowl adds smell, flavor, and moisture, which is often enough to get a hesitant dog interested. <AmazonLink url="https://link.amazon/B0fXWJpSl">Caru Daily Dish Pumpkin Broth</AmazonLink> is one pour-over option made without garlic, onion, or soy. Warm water also works. Just skip any broth that contains onion or garlic.</p>
+      <p>A little broth poured over the bowl adds smell, flavor, and moisture, which is often enough to get a hesitant dog interested. <AmazonLink url="https://link.amazon/B0c8qZk7Y">Caru Daily Dish Pumpkin Broth</AmazonLink> is one pour-over option made without garlic, onion, or soy. Warm water also works. Just skip any broth that contains onion or garlic.</p>
 
       <h3 id="stir-in-freeze-dried-food">Stir in freeze-dried food</h3>
-      <p>A few crumbled pieces of freeze-dried food mixed into kibble add a strong aroma and a different texture, for example <AmazonLink url="https://link.amazon/B067FuABf">Nutra Complete Freeze-Dried Raw Duck</AmazonLink>, which can be used as a topper or mix-in. Raw and freeze-dried raw foods can carry bacteria, so wash your hands and your dog's bowl after every meal, and talk to your vet before feeding raw, especially if anyone in your home has a weakened immune system.</p>
+      <p>A few crumbled pieces of freeze-dried food mixed into kibble add a strong aroma and a different texture, for example <AmazonLink url="https://link.amazon/B0iFNdtJz">Nutra Complete Freeze-Dried Raw Infusions</AmazonLink>, which can be used as a topper or mix-in. Raw and freeze-dried raw foods can carry bacteria, so wash your hands and your dog's bowl after every meal, and talk to your vet before feeding raw, especially if anyone in your home has a weakened immune system.</p>
       <p>Toppers and mix-ins add calories, so use a little less kibble to keep the daily total the same.</p>
 
       <h2 id="build-a-mealtime-routine-that-works">Build a Mealtime Routine That Works</h2>
@@ -167,7 +167,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>If your dog gets loose stools or vomits, slow the switch down, and call your vet if it continues.</p>
 
       <h2 id="dont-forget-dental-health">Don't Forget Dental Health</h2>
-      <p>Dry food does not clean teeth on its own, and toppers can make mouths a little messier. Brushing is the foundation of dental care, and some owners add a daily dental chew on top, such as <AmazonLink url="https://link.amazon/B02clv1nC">C.E.T. VeggieDent Fr3sh Plaque and Tartar Control Chews</AmazonLink> for large dogs, which are listed as VOHC accepted. You can look up accepted products on the <a href="https://vohc.org" target="_blank" rel="noopener noreferrer">VOHC website</a>. Sore teeth can also be a reason a dog avoids hard kibble, so ask your vet to check your dog's mouth if you suspect pain.</p>
+      <p>Dry food does not clean teeth on its own, and toppers can make mouths a little messier. Brushing is the foundation of dental care, and some owners add a daily dental chew on top, such as <AmazonLink url="https://link.amazon/B0g16CQhe">C.E.T. VeggieDent Fr3sh Plaque and Tartar Control Chews</AmazonLink> for large dogs, which are listed as VOHC accepted. You can look up accepted products on the <a href="https://vohc.org" target="_blank" rel="noopener noreferrer">VOHC website</a>. Sore teeth can also be a reason a dog avoids hard kibble, so ask your vet to check your dog's mouth if you suspect pain.</p>
 
       <h2 id="foods-to-keep-out-of-the-bowl">Foods to Keep Out of the Bowl</h2>
       <p>When adding extras, stick to dog-safe foods. Never add onion, garlic, grapes, raisins, chocolate, or anything sweetened with xylitol. You can check specific ingredients in our <a href="/toxic-foods">dog food safety guide</a>, and if your dog eats something toxic, call your vet or the <a href="https://www.aspca.org/pet-care/animal-poison-control" target="_blank" rel="noopener noreferrer">ASPCA Animal Poison Control Center</a> right away.</p>
@@ -239,19 +239,19 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Dry food is the most popular choice because it is convenient and easy to store. It is simple to measure, stays fresh in the pantry, and usually costs less per day than wet food. Many formulas come in small bites for small breeds or are made for older dogs. The downside is that some picky dogs find kibble less appealing, and it holds less moisture than canned food.</p>
 
       <h3 id="for-senior-small-dogs">For senior small dogs</h3>
-      <p>Older small dogs often do better with smaller bites and a formula made for their life stage. <a href="https://link.amazon/B0dsA0VsH" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">Hill's Science Diet Adult 7+ Small Bites Dry Dog Food</a>, made with chicken meal, barley, and rice, is designed for adult dogs 7 and older in a small-bite size.</p>
+      <p>Older small dogs often do better with smaller bites and a formula made for their life stage. <AmazonLink url="https://link.amazon/B06X4XwnJ">Hill's Science Diet Senior Adult 7+ Dry Dog Food</AmazonLink>, made with chicken meal, barley, and rice, is designed for adult dogs 7 and older in a small-bite size.</p>
 
       <h3 id="for-small-breeds">For small breeds</h3>
-      <p>Small dogs have small mouths, so kibble size matters. <a href="https://link.amazon/B020buGuj" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">IAMS Proactive Health Small Breed Dry Dog Food</a> uses a small kibble made for small mouths and lists chicken as its first ingredient.</p>
+      <p>Small dogs have small mouths, so kibble size matters. <AmazonLink url="https://link.amazon/B06xUIapc">Wag Small Breed Dry Dog Food</AmazonLink> uses a small kibble made for small mouths and lists chicken as its first ingredient.</p>
 
       <h3 id="for-active-adult-dogs">For active adult dogs</h3>
-      <p>Active dogs burn more energy, so look for a higher-protein formula and always measure portions using the feeding guide on the bag. <a href="https://link.amazon/B0fo3nFjO" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">Blue Buffalo Wilderness Chicken & Wholesome Grains Adult Dry Dog Food</a> is a higher-protein option with chicken as its first ingredient.</p>
+      <p>Active dogs burn more energy, so look for a higher-protein formula and always measure portions using the feeding guide on the bag. <AmazonLink url="https://link.amazon/B0j9UbC9Z">Blue Buffalo Wilderness High-Protein Chicken</AmazonLink> is a higher-protein option with chicken as its first ingredient.</p>
 
       <h2 id="wet-dog-food-canned">2. Wet Dog Food (Canned)</h2>
       <p>Wet food has a strong smell and soft texture that many dogs love. It is a good fit for picky eaters, dogs with a low appetite, and dogs with sensitive or missing teeth. It also has more moisture than kibble and works well as a topper mixed over dry food. The downsides are a higher cost per meal, and opened cans must be covered and refrigerated.</p>
 
       <h3 id="variety-packs-to-rotate-flavors">Variety packs to rotate flavors</h3>
-      <p>A variety pack lets you rotate flavors and see which one your dog prefers. <a href="https://link.amazon/B041LREUS" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">Blue Buffalo Homestyle Recipe Adult Wet Dog Food</a> comes in a Turkey and Lamb Dinner Variety Pack, a soft homestyle recipe that works as a full meal or a topper. If your dog prefers other flavors, the same recipe line also has a <a href="https://link.amazon/B0eXydVse" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">Chicken and Beef Dinner Variety Pack</a>.</p>
+      <p>A variety pack lets you rotate flavors and see which one your dog prefers. <AmazonLink url="https://link.amazon/B0cbv1oLz">Merrick Lil' Plates Grain-Free Wet Dinner</AmazonLink> comes in a Turkey and Lamb Dinner Variety Pack, a soft homestyle recipe that works as a full meal or a topper. If your dog prefers other flavors, the same recipe line also has a <AmazonLink url="https://link.amazon/B0iZ9jSBB">Merrick Lil' Plates Wet Stew Bundle</AmazonLink>.</p>
 
       <h2 id="how-to-choose-for-your-dog">3. How to Choose for Your Dog</h2>
       <ul>
@@ -264,7 +264,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Whatever you choose, switch foods slowly over 7 to 10 days, and measure portions instead of free feeding.</p>
 
       <h2 id="dental-chews">4. Dental Chews</h2>
-      <p>Food type affects teeth, but daily dental care matters most. Some owners add a daily dental chew to help with plaque and tartar. When choosing one, look for products accepted by the Veterinary Oral Health Council (VOHC), and still brush your dog's teeth when you can. <a href="https://link.amazon/B028wbkaS" target="_blank" rel="sponsored nofollow noopener" class="text-[#c47a2b] dark:text-[#f59e0b] font-semibold underline hover:text-[#92400e]">C.E.T. VeggieDent Fr3sh Plaque and Tartar Control Chews for large dogs</a> are a plant-based daily chew listed by the maker as VOHC accepted.</p>
+      <p>Food type affects teeth, but daily dental care matters most. Some owners add a daily dental chew to help with plaque and tartar. When choosing one, look for products accepted by the Veterinary Oral Health Council (VOHC), and still brush your dog's teeth when you can. <AmazonLink url="https://link.amazon/B0g16CQhe">C.E.T. VeggieDent Fr3sh Dental Chews</AmazonLink> are a plant-based daily chew listed by the maker as VOHC accepted.</p>
     `,
     relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'the-science-of-canine-macros', 'senior-dog-nutrition-diet-adjustments'],
   },
@@ -339,7 +339,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </ul>
 
       <h2 id="fats-the-primary-energy-source">3. Fats: The Primary Energy Source</h2>
-      <p>Fats are twice as calorically dense as protein and carbohydrates, serving as your dog's primary stamina reservoir while delivering fat-soluble vitamins (A, D, E, and K). Furthermore, essential fatty acids are vital for cellular membrane fluidity, neurological development, and coat health.</p>
+      <p>Fats are twice as calorically dense as protein and carbohydrates, serving as your dog's primary stamina reservoir while delivering fat-soluble vitamins (A, D, E, and K). Furthermore, essential fatty acids are vital for cellular membrane fluidity, neurological development, and coat health. Marine-derived Omega-3s rich in EPA and DHA, such as <AmazonLink url="https://link.amazon/B02zrZWPG">Zesty Paws Wild Alaskan Salmon & Pollock Oil</AmazonLink>, play a direct role in damping down systemic inflammation.</p>
 
       <div class="overflow-x-auto my-6">
         <table class="w-full text-left border-collapse border border-[#f0d5a8] dark:border-[#3a2510] text-sm">
@@ -409,11 +409,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>To optimize your dog's daily bowl today, focus on nutrient density over marketing buzzwords. Calculate your dog's daily Resting Energy Requirements (RER), aim for real animal proteins within the first 3 ingredients, and consider topping meals with marine omega-3s to optimize their anti-inflammatory balance.</p>
     `,
     relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'top-vet-approved-superfoods-for-dogs', 'canine-gut-health-and-allergies'],
-    affiliateProduct: {
-      name: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz',
-      url: 'https://amzn.to/46HCJdW',
-    },
-  },
+      },
   {
     id: 'transition-dog-to-fresh-food',
     slug: 'how-to-transition-dog-to-fresh-food',
@@ -512,8 +508,8 @@ export const BLOG_POSTS: BlogPost[] = [
       <h2 id="digestive-buffers-pumpkin-and-probiotics">3. Digestive Buffers: Pumpkin, Bone Broth & Probiotics</h2>
       <p>To help prevent stomach upset during transition, consider these three natural digestive helpers:</p>
       <ul>
-        <li><strong>Pure Canned Pumpkin:</strong> Rich in soluble fiber, pumpkin absorbs excess water in loose stools while softening hard feces. Dosage: 1 teaspoon per 10 lbs body weight daily.</li>
-        <li><strong>Warm Bone Broth:</strong> Provides soothing glycine, gelatin, and hydration that coat the stomach lining and stimulate appetite.</li>
+        <li><strong>Pure Canned Pumpkin:</strong> Rich in soluble fiber, an addition like <AmazonLink url="https://link.amazon/B06zoxxSD">365 Organic Pumpkin Puree</AmazonLink> absorbs excess water in loose stools while softening hard feces. Dosage: 1 teaspoon per 10 lbs body weight daily.</li>
+        <li><strong>Warm Bone Broth:</strong> Adding a gentle pour-over like <AmazonLink url="https://link.amazon/B0bpw5YZy">Brutus Bone Broth Chicken Topper</AmazonLink> provides soothing glycine, gelatin, and hydration that coat the stomach lining and stimulate appetite.</li>
         <li><strong>Soil-Based Organisms (SBO Probiotics):</strong> Spore-forming strains like <em>Bacillus coagulans</em> survive harsh stomach acids and assist with novel protein fermentation.</li>
       </ul>
 
@@ -532,11 +528,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>If your dog vomits more than once, shows acute lethargy, or has bloody diarrhea, stop the new food immediately. While dietary transition upset is usually benign, preexisting pancreatitis or true protein allergies must be ruled out by your veterinarian.</p>
     `,
     relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'rotational-feeding-benefits'],
-    affiliateProduct: {
-      name: 'Brutus Broth Chicken Bone Broth – Hip & Joint Meal Topper, 16.9 fl oz',
-      url: 'https://amzn.to/4zSd7Zb',
-    },
-  },
+      },
   {
     id: 'superfoods-for-dogs-bowl',
     slug: 'top-vet-approved-superfoods-for-dogs',
@@ -593,7 +585,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>If you feed a commercially complete and balanced diet, adding up to 10% to 15% of your dog's daily calories as healthy fresh whole foods will not unbalance their mineral ratios. It gives your dog living nutrition without the intimidation of full home-cooking.</p>
 
       <h2 id="1-canned-sardines-in-water">2. Wild Canned Sardines in Water</h2>
-      <p>Sardines sit at the very bottom of the aquatic food chain, meaning they do not accumulate the heavy metal neurotoxins (like mercury and PCBs) found in tuna or apex fish. One small sardine delivers a massive burst of anti-inflammatory EPA and DHA, supporting silky coats, cognitive function, and supple joints.</p>
+      <p>Sardines sit at the very bottom of the aquatic food chain, meaning they do not accumulate heavy metal neurotoxins. Choosing wild-caught fish packed in water without added spices, such as <AmazonLink url="https://link.amazon/B01vM8LZC">Matiz Wild-Caught Sardines</AmazonLink>, delivers a potent burst of anti-inflammatory EPA and DHA supporting silky coats and supple joints.</p>
       <div class="callout callout-tip">
         <div class="callout-title">Feeding Tip</div>
         <p>Choose wild-caught sardines packed strictly in <strong>water with no added salt</strong>. Feed 1/2 sardine per 15 lbs body weight 2–3 times per week.</p>
@@ -603,7 +595,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Blueberries are packed with anthocyanins, polyphenols that have been shown in canine cognitive studies to cross the blood-brain barrier. Sled dogs supplemented with blueberries during intense endurance runs showed significantly lower oxidative stress biomarkers in blood plasma.</p>
 
       <h2 id="3-steamed-pure-pumpkin">4. Steamed Pure Pumpkin</h2>
-      <p>Rich in prebiotic fiber and potassium, pure canned pumpkin (not sugary pumpkin pie mix) acts as an intestinal regulator. Its soluble fiber ferments into short-chain fatty acids that nourish beneficial bifidobacteria in your dog's colon.</p>
+      <p>Rich in prebiotic fiber and potassium, pure pumpkin like <AmazonLink url="https://link.amazon/B06zoxxSD">365 Organic Pumpkin Puree</AmazonLink> acts as an intestinal regulator. Its soluble fiber ferments into short-chain fatty acids that nourish beneficial colonocytes.</p>
 
       <h2 id="4-plain-unsweetened-kefir">5. Plain Unsweetened Kefir / Goat Milk</h2>
       <p>Unlike cow's milk, which contains high levels of A1 beta-casein that many dogs cannot digest, goat milk and fermented kefir contain smaller fat globules and A2 proteins. Kefir contains over 30 distinct probiotic bacterial and yeast strains that seed the canine microbiome.</p>
@@ -615,14 +607,10 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Cruciferous vegetables contain glucoraphanin, which converts into <strong>sulforaphane</strong>—a potent activator of the Nrf2 pathway that triggers intracellular antioxidant and detoxification defenses. Lightly steam and puree before serving so canine digestive enzymes can access the plant cell walls.</p>
 
       <h2 id="7-organic-simmered-bone-broth">8. Organic Simmered Bone Broth</h2>
-      <p>Slowly simmering marrow bones and cartilage with a splash of apple cider vinegar extracts collagen, gelatin, glycine, and glucosamine. It is the ultimate hydration booster for dogs reluctant to drink from their water bowl.</p>
+      <p>Slowly simmering marrow bones extracts collagen, glycine, and glucosamine. Adding an all-natural dog-safe broth like <AmazonLink url="https://link.amazon/B0c8qZk7Y">Caru Daily Dish Pumpkin Broth</AmazonLink> provides the ultimate hydration booster without added sodium or alliums.</p>
     `,
     relatedSlugs: ['the-science-of-canine-macros', 'canine-gut-health-and-allergies', 'how-to-transition-dog-to-fresh-food'],
-    affiliateProduct: {
-      name: 'Wild Planet Wild Sardines in Water, No Salt Added, 4.4oz (Pack of 12)',
-      url: 'https://amzn.to/4xg3W2h',
-    },
-  },
+      },
   {
     id: 'puppy-feeding-growth-milestones',
     slug: 'puppy-feeding-roadmap-growth-curves',
@@ -692,7 +680,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </div>
 
       <h2 id="small-breed-vs-large-breed-differences">4. Small Breed vs. Large Breed Nutritional Needs</h2>
-      <p>A Chihuahua pup reaches adult size around 9 months, whereas an Irish Wolfhound continues skeletal maturation until 24 months. Large breed puppy diets are designed with lower overall fat and restricted calcium (typically 1.2% maximum dry matter) to promote steady, controlled growth rather than rapid weight spikes.</p>
+      <p>A Chihuahua pup reaches adult size around 9 months, whereas an Irish Wolfhound continues skeletal maturation until 24 months. Large breed puppy diets are designed with lower overall fat and restricted calcium (typically 1.2% maximum dry matter) to promote steady, controlled growth rather than rapid weight spikes. Choosing nutrient-dense, veterinary-crafted clusters like <AmazonLink url="https://link.amazon/B052f55Rv">The Honest Kitchen Whole Food Clusters</AmazonLink> ensures clean whole-food ingredients with tightly regulated mineral ratios for developing joints.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. Weekly Weigh-Ins & Portion Adjustment Protocol</h2>
       <p>Weigh your puppy on the same scale once every 7 days. Plug the new weight into our <a href="/#planner-section" class="text-[#c47a2b] font-semibold underline">Dog Feeding Calculator</a> to update daily grams. Remember: a slightly lean puppy with palpable ribs will live a longer, healthier life with pristine joints.</p>
@@ -756,12 +744,12 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Sarcopenia is the involuntary loss of skeletal muscle mass associated with aging. When an older dog lacks adequate dietary amino acids, the body catabolizes its own biceps, quadriceps, and dorsal back muscles for vital metabolic functions. Loss of hindquarter strength is often mistaken for arthritis, when in reality it is muscle atrophy caused by protein starvation.</p>
 
       <h2 id="caloric-needs-drop-as-metabolism-slows">3. Caloric Needs Drop as Metabolism Slows</h2>
-      <p>While protein requirements increase, total caloric needs decline by 20% to 30% due to reduced activity and decreased thyroid hormone output. The ideal senior formula is <strong>high in bioavailable protein, moderate in healthy fats, and low in empty starchy carbs</strong>.</p>
+      <p>While protein requirements increase, total caloric needs decline by 20% to 30% due to reduced activity and decreased thyroid hormone output. The ideal senior formula is <strong>high in bioavailable protein, moderate in healthy fats, and low in empty starchy carbs</strong>. Life-stage recipes tailored for seniors, such as <AmazonLink url="https://link.amazon/B06X4XwnJ">Hill's Science Diet Senior Adult 7+ Dry Dog Food</AmazonLink>, provide easily digested proteins and calibrated calories to maintain lean muscle.</p>
 
       <h2 id="essential-joint-and-renal-supplements">4. Essential Joint & Renal Nutrients</h2>
       <ul>
         <li><strong>Omega-3 EPA/DHA:</strong> Reduces inflammatory prostaglandins in arthritic joints and lowers glomerular pressure in kidneys.</li>
-        <li><strong>Glucosamine & Chondroitin Sulfate:</strong> Precursors for glycosaminoglycan synthesis in articular cartilage.</li>
+        <li><strong>Glucosamine & Chondroitin Sulfate:</strong> Precursors for glycosaminoglycan synthesis in articular cartilage. Adding a targeted chewable like <AmazonLink url="https://link.amazon/B01H3PPzn">Nutramax Cosequin Joint Supplement</AmazonLink> delivers bioavailable chondroitin and MSM to maintain comfortable joint lubrication.</li>
         <li><strong>Antioxidants (CoQ10 & Vitamin E):</strong> Combat mitochondrial reactive oxygen species in cardiac and brain tissue.</li>
       </ul>
 
@@ -769,11 +757,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Older dogs often lose their thirst drive and may avoid drinking because walking to the bowl is painful. Rehydrating meals with warm, low-sodium bone broth ensures optimal blood volume and flushes metabolic waste through the kidneys.</p>
     `,
     relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'puppy-feeding-roadmap-growth-curves'],
-    affiliateProduct: {
-      name: 'Zesty Paws Wild Alaskan Salmon Oil for Dogs & Cats, 16oz',
-      url: 'https://amzn.to/46HCJdW',
-    },
-  },
+      },
   {
     id: 'dog-food-recalls-guide',
     slug: 'understanding-dog-food-recalls',
@@ -861,11 +845,7 @@ export const BLOG_POSTS: BlogPost[] = [
       </ol>
     `,
     relatedSlugs: ['the-science-of-canine-macros', 'how-to-transition-dog-to-fresh-food', 'canine-gut-health-and-allergies'],
-    affiliateProduct: {
-      name: 'ORIJEN Grain-Free WHOLEPREY Dry Dog Food Original Recipe, 23.5lb',
-      url: 'https://amzn.to/4xF5aFr',
-    },
-  },
+      },
   {
     id: 'canine-gut-health-and-allergies',
     slug: 'canine-gut-health-and-allergies',
@@ -933,18 +913,14 @@ export const BLOG_POSTS: BlogPost[] = [
       <ol class="space-y-3 list-decimal list-inside text-sm">
         <li><strong>Identify Potential Irritants:</strong> Many owners choose a limited-ingredient diet with a single novel protein, avoiding ingredients their dog has previously reacted to.</li>
         <li><strong>Support the Mucosal Lining:</strong> Nutrients such as L-Glutamine and soothing fibers like slippery elm bark are commonly used to support digestive barrier health.</li>
-        <li><strong>Nurture the Microbiome:</strong> Quality probiotics and prebiotic fibers help maintain balanced, diverse intestinal flora.</li>
+        <li><strong>Nurture the Microbiome:</strong> Quality probiotics and prebiotic fibers help maintain balanced, diverse intestinal flora. Adding a clinically researched veterinary probiotic like <AmazonLink url="https://link.amazon/B0ar2KGqk">Purina Pro Plan FortiFlora Probiotics</AmazonLink> introduces microencapsulated beneficial bacteria directly into the lower GI tract.</li>
       </ol>
 
       <h2 id="conducting-a-flawless-elimination-diet">5. Conducting an Elimination Diet</h2>
-      <p>To evaluate potential food sensitivities, veterinarians frequently recommend an elimination trial with a novel protein your dog has never eaten before (such as venison, kangaroo, or rabbit). Following the plan strictly for 8 to 12 weeks without extra treats gives the clearest picture of what agrees with your dog.</p>
+      <p>To evaluate potential food sensitivities, veterinarians frequently recommend an elimination trial with a novel protein your dog has never eaten before (such as venison, kangaroo, or rabbit), or a gentle limited-ingredient formula like <AmazonLink url="https://link.amazon/B0a52bV8X">Purina Pro Plan Sensitive Skin & Stomach Salmon Wet Food</AmazonLink>. Following the plan strictly for 8 to 12 weeks without extra treats gives the clearest picture of what agrees with your dog.</p>
     `,
     relatedSlugs: ['the-science-of-canine-macros', 'top-vet-approved-superfoods-for-dogs', 'rotational-feeding-benefits'],
-    affiliateProduct: {
-      name: 'Royal Canin Veterinary Diet Hydrolyzed Protein Adult, 25.3lb',
-      url: 'https://amzn.to/4ykV9Nk',
-    },
-  },
+      },
   {
     id: 'rotational-feeding-benefits',
     slug: 'rotational-feeding-benefits-guide',
@@ -1011,7 +987,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>If your dog has only eaten one brand for years, begin slowly:</p>
       <ol class="space-y-2 list-decimal list-inside text-sm">
         <li><strong>Step 1 (First 2 Months):</strong> Stick with the same brand line, but switch from Chicken to Turkey or Salmon on your next bag purchase, using a 5-day transition.</li>
-        <li><strong>Step 2 (Months 3–6):</strong> Rotate between three distinct protein groups (Poultry, Red Meat, Fish) with every new bag.</li>
+        <li><strong>Step 2 (Months 3–6):</strong> Rotate between three distinct protein groups (Poultry, Red Meat, Fish) with every new bag—for example, cycling to <AmazonLink url="https://link.amazon/B0h1I7guA">VICTOR Ocean Fish Formula</AmazonLink> for a cold-water fish rotation, or incorporating <AmazonLink url="https://link.amazon/B0aUxYROz">Stella & Chewy's Freeze-Dried Raw Red Meat Patties</AmazonLink> to introduce nutrient-dense beef and venison.</li>
         <li><strong>Step 3 (Advanced):</strong> Once the microbiome is rich and resilient, many dogs can effortlessly alternate proteins every few days with zero digestive distress.</li>
       </ol>
 
@@ -1019,11 +995,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Dogs diagnosed with severe chronic inflammatory bowel disease (IBD), active pancreatitis, or those undergoing an active veterinary elimination diet should remain on their specialized prescription or single-protein regimen until their mucosal lining is stabilized.</p>
     `,
     relatedSlugs: ['how-to-transition-dog-to-fresh-food', 'the-science-of-canine-macros', 'canine-gut-health-and-allergies'],
-    affiliateProduct: {
-      name: "Stella & Chewy's Freeze-Dried Raw Dinner Patties – Variety Pack (5 Proteins)",
-      url: 'https://amzn.to/4gCgdJp',
-    },
-  }
+      }
 ];
 
 export function getAllBlogPosts(): BlogPost[] {

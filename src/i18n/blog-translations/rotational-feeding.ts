@@ -39,7 +39,7 @@ export const rotationalFeedingTranslations: BlogPostLocalizedRecord = {
       <h2 id="how-to-start-a-safe-rotational-schedule">4. Cómo Iniciar un Calendario Rotacional Seguro</h2>
       <ol>
         <li><strong>Paso 1:</strong> Rota dentro de la misma marca pasando de pollo a pavo o pescado con una transición suave de 5 días.</li>
-        <li><strong>Paso 2:</strong> Rota entre tres familias de carne (ave, carne roja, pescado azul) con cada saco nuevo.</li>
+        <li><strong>Paso 2:</strong> Rota entre distintas fuentes de proteína con cada saco nuevo; por ejemplo, alternando <AmazonLink url="https://link.amazon/B0h1I7guA">VICTOR Ocean Fish Formula</AmazonLink> para pescado azul o agregando <AmazonLink url="https://link.amazon/B0aUxYROz">Stella & Chewy's Freeze-Dried Raw Red Meat Patties</AmazonLink> para carnes rojas ricas en zinc.</li>
         <li><strong>Paso 3:</strong> Cuando el microbioma esté fuerte, tu perro alternará comidas sin ninguna molestia.</li>
       </ol>
 
@@ -85,7 +85,7 @@ export const rotationalFeedingTranslations: BlogPostLocalizedRecord = {
       <h2 id="how-to-start-a-safe-rotational-schedule">4. お腹を壊さない安全なローテーション実践法</h2>
       <ol>
         <li><strong>ステップ1：</strong> 同一ブランド内でチキンからターキーやサーモンへ、袋が変わるタイミングで5日かけて切り替える。</li>
-        <li><strong>ステップ2：</strong> 鳥類、赤身肉、魚類の3系統を1〜2ヶ月ごとにローテーションする。</li>
+        <li><strong>ステップ2：</strong> <AmazonLink url="https://link.amazon/B0h1I7guA">VICTOR Ocean Fish Formula</AmazonLink>で魚類を取り入れたり、<AmazonLink url="https://link.amazon/B0aUxYROz">Stella & Chewy's Freeze-Dried Raw Red Meat Patties</AmazonLink>で赤身肉をローテーションに加え、タンパク質の幅を広げます。</li>
         <li><strong>ステップ3：</strong> 腸内環境が整えば、数日おきに別のお肉を与えても全く軟便をしなくなります。</li>
       </ol>
 
@@ -129,7 +129,7 @@ export const rotationalFeedingTranslations: BlogPostLocalizedRecord = {
       </ul>
 
       <h2 id="how-to-start-a-safe-rotational-schedule">4. Comment Débuter Sans Risque de Diarrhée</h2>
-      <p>Changez de protéine au sein de la même marque lors du rachat de sac, avec 5 jours de transition, puis alternez volailles, poissons et viandes rouges.</p>
+      <p>Alternez les protéines lors du rachat de sac, par exemple en intégrant <AmazonLink url="https://link.amazon/B0h1I7guA">VICTOR Ocean Fish Formula</AmazonLink> pour le poisson ou <AmazonLink url="https://link.amazon/B0aUxYROz">Stella & Chewy's Freeze-Dried Raw Red Meat Patties</AmazonLink> pour les viandes rouges.</p>
 
       <h2 id="who-should-not-rotate-proteins">5. Quels Chiens Ne Doivent PAS Varier ?</h2>
       <p>Les chiens souffrant de maladies inflammatoires chroniques de l'intestin (MICI) ou sous protocole d'éviction doivent conserver leur ration stricte sous avis vétérinaire.</p>
@@ -171,7 +171,7 @@ export const rotationalFeedingTranslations: BlogPostLocalizedRecord = {
       </ul>
 
       <h2 id="how-to-start-a-safe-rotational-schedule">4. So starten Sie einen sicheren Rotationsplan</h2>
-      <p>Wechseln Sie bei jedem neuen Futtersack innerhalb derselben Qualitätsmarke zwischen Geflügel, Rind und Fisch mit jeweils 4 bis 5 Tagen Übergangszeit.</p>
+      <p>Wechseln Sie die Proteinquelle mit jedem Futtersack—etwa zu <AmazonLink url="https://link.amazon/B0h1I7guA">VICTOR Ocean Fish Formula</AmazonLink> für Meeresfisch oder <AmazonLink url="https://link.amazon/B0aUxYROz">Stella & Chewy's Freeze-Dried Raw Red Meat Patties</AmazonLink> für nährstoffreiches Rindfleisch.</p>
 
       <h2 id="who-should-not-rotate-proteins">5. Welche Hunde keine Proteine wechseln sollten</h2>
       <p>Hunde mit akuter chronischer Darmentzündung (IBD), Bauchspeicheldrüsenentzündung oder laufender tierärztlicher Eliminationsdiät sollten bei ihrer Monodiät bleiben.</p>
@@ -213,7 +213,7 @@ export const rotationalFeedingTranslations: BlogPostLocalizedRecord = {
       </ul>
 
       <h2 id="how-to-start-a-safe-rotational-schedule">4. Como Iniciar a Rotação sem Diarreia</h2>
-      <p>A cada saco novo, alterne a proteína dentro da mesma linha de produto fazendo 5 dias de transição suave.</p>
+      <p>A cada saco novo, alterne a proteína introduzindo opções como <AmazonLink url="https://link.amazon/B0h1I7guA">VICTOR Ocean Fish Formula</AmazonLink> para peixe ou <AmazonLink url="https://link.amazon/B0aUxYROz">Stella & Chewy's Freeze-Dried Raw Red Meat Patties</AmazonLink> para carnes vermelhas.</p>
 
       <h2 id="who-should-not-rotate-proteins">5. Quais Cães NÃO Devem Rotacionar?</h2>
       <p>Cães em tratamento de doença inflamatória intestinal grave (DII) ou sob protocolo de dieta de eliminação estrita devem seguir a indicação do médico veterinário.</p>
@@ -255,7 +255,7 @@ export const rotationalFeedingTranslations: BlogPostLocalizedRecord = {
       </ul>
 
       <h2 id="how-to-start-a-safe-rotational-schedule">4. 설사 없는 안전한 순환 급여 스케줄</h2>
-      <p>가장 안전한 방법은 사료 한 포가 끝날 때마다 같은 브랜드의 다른 단백질(치킨 → 칠면조 → 연어)로 5일간 섞어가며 교체해 주는 것입니다.</p>
+      <p>사료 포대가 바뀔 때마다 <AmazonLink url="https://link.amazon/B0h1I7guA">VICTOR Ocean Fish Formula</AmazonLink>로 생선 단백질을 제공하거나, <AmazonLink url="https://link.amazon/B0aUxYROz">Stella & Chewy's Freeze-Dried Raw Red Meat Patties</AmazonLink>로 붉은 육류를 순환 급여해 보세요.</p>
 
       <h2 id="who-should-not-rotate-proteins">5. 순환 급여를 하면 안 되는 경우</h2>
       <p>만성 염증성 장질환(IBD) 급성기 환견, 췌장염 병력이 있는 개, 또는 수의사의 배제 식이 테스트를 진행 중인 강아지는 진료 지침을 우선해야 합니다.</p>
@@ -297,7 +297,7 @@ export const rotationalFeedingTranslations: BlogPostLocalizedRecord = {
       </ul>
 
       <h2 id="how-to-start-a-safe-rotational-schedule">4. Come Iniziare una Rotazione Senza Rischi</h2>
-      <p>Alterna la proteina all'acquisto di ogni nuovo sacco all'interno della stessa linea di qualità, effettuando 5 giorni di transizione progressiva.</p>
+      <p>Alterna le proteine a ogni nuovo sacco, provando <AmazonLink url="https://link.amazon/B0h1I7guA">VICTOR Ocean Fish Formula</AmazonLink> per il pesce o <AmazonLink url="https://link.amazon/B0aUxYROz">Stella & Chewy's Freeze-Dried Raw Red Meat Patties</AmazonLink> per variare con carni rosse.</p>
 
       <h2 id="who-should-not-rotate-proteins">5. Quali Cani NON Devono Variare?</h2>
       <p>Cani affetti da patologie infiammatorie croniche intestinali (IBD) o sottoposti a dieta a eliminazione veterinaria devono attenersi strettamente alle indicazioni mediche.</p>

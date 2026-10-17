@@ -38,7 +38,7 @@ export const scienceOfCanineMacrosTranslations: BlogPostLocalizedRecord = {
       <p>La proteína no es un simple combustible; conforma la estructura viva del cuerpo de tu perro. Aporta los 10 aminoácidos esenciales que no puede sintetizar por sí mismo: <em>arginina, histidina, isoleucina, leucina, lisina, metionina, fenilalanina, treonina, triptófano y valina</em>.</p>
 
       <h2 id="fats-the-primary-energy-source">3. Las Grasas: La Fuente Principal de Energía</h2>
-      <p>Las grasas aportan más del doble de densidad calórica que las proteínas y carbohidratos, funcionando como la principal reserva de resistencia mientras transportan vitaminas liposolubles (A, D, E y K). Los ácidos grasos esenciales omega-3 y omega-6 son indispensables para la elasticidad de la membrana celular y el pelaje.</p>
+      <p>Las grasas aportan más del doble de densidad calórica que las proteínas y carbohidratos, funcionando como la principal reserva de resistencia mientras transportan vitaminas liposolubles (A, D, E y K). Los ácidos grasos esenciales omega-3 y omega-6 son indispensables para la elasticidad de la membrana celular y el pelaje; añadir un suplemento marino como <AmazonLink url="https://link.amazon/B02zrZWPG">Zesty Paws Wild Alaskan Salmon Oil</AmazonLink> modula las vías antiinflamatorias.</p>
 
       <h2 id="the-carbohydrate-controversy">4. La Controversia de los Carbohidratos</h2>
       <p>Ni la AAFCO ni el NRC establecen un requerimiento mínimo de carbohidratos para perros. Aunque poseen genes de amilasa pancreática (AMY2B) para digerir almidón, un exceso de carbohidratos refinados (45-60% en piensos industriales) favorece picos glucémicos, obesidad e inflamación sistémica.</p>

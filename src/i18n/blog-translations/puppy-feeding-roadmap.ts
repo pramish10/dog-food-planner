@@ -38,7 +38,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
       <p>A diferencia de los adultos, los cachorros menores de 6 meses no pueden frenar la absorción de calcio en el intestino. Absorbe todo el calcio que ingiere pasivamente. Dar suplementos de calcio o harina de hueso a un cachorro con pienso formulado altera la osificación y provoca deformidades óseas graves.</p>
 
       <h2 id="small-breed-vs-large-breed-differences">4. Razas Pequeñas vs. Razas Grandes</h2>
-      <p>Un Chihuahua madura a los 9-10 meses, mientras que un Gran Danés crece hasta los 2 años. Las fórmulas para razas grandes controlan la grasa y limitan el calcio a un máximo del 1.2% en materia seca para evitar picos de crecimiento repentinos.</p>
+      <p>Un Chihuahua madura a los 9-10 meses, mientras que un Gran Danés crece hasta los 2 años. Las fórmulas para razas en crecimiento controlan la grasa y el calcio, presentes en recetas de alta calidad como <AmazonLink url="https://link.amazon/B052f55Rv">The Honest Kitchen Whole Food Clusters</AmazonLink> para favorecer una osificación armónica.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. Pesajes Semanales y Ajuste de Ración</h2>
       <p>Pesa a tu cachorro cada 7 días e introduce su peso actualizado en nuestra calculadora para ajustar los gramos diarios. Un cachorro esbelto con costillas palpables crecerá con articulaciones sanas y sin dolor articular.</p>
@@ -81,7 +81,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
       <p>成犬の腸粘膜はカルシウム過多のときに吸収を抑える調節機能がありますが、生後6ヶ月未満の子犬にはそのバリアがありません。子犬用フードに勝手にカルシウム粉末や骨粉を足すと、骨格の軟骨形成異常を引き起こします。</p>
 
       <h2 id="small-breed-vs-large-breed-differences">4. 小型犬と大型犬で異なる成長ニーズ</h2>
-      <p>チワワなどの小型犬は生後9〜10ヶ月で骨格が完成しますが、ゴールデンやラブラドールなどの大型犬は15〜24ヶ月かけて成長します。大型犬用パピーフードはカルシウムと脂質が控えめに設計されています。</p>
+      <p>チワワなどの小型犬は生後9〜10ヶ月で骨格が完成しますが、ゴールデンやラブラドールなどの大型犬は15〜24ヶ月かけて成長します。大型犬用パピーフードはカルシウムと脂質が控えめに設計されています。<AmazonLink url="https://link.amazon/B052f55Rv">The Honest Kitchen Whole Food Clusters</AmazonLink>のような良質なヒューマングレードフードは、成長期の骨格形成をバランスよく支えます。</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. 毎週の体重測定と給餌量微調整ルール</h2>
       <p>7日ごとに同じ体重計で計測し、当サイトの計算機で給餌グラム数をアップデートしましょう。肋骨が軽く触れる引き締まった体型を保つことが、生涯にわたる関節炎の予防につながります。</p>
@@ -124,7 +124,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
       <p>Les chiots de moins de 6 mois ne savent pas bloquer l'absorption intestinale du calcium. Tout surplus passe dans le sang et fige prématurément les cartilages de croissance, favorisant de graves troubles articulaires.</p>
 
       <h2 id="small-breed-vs-large-breed-differences">4. Petites Races vs Grandes Races</h2>
-      <p>Un petit chien achève sa croissance vers 10 mois, alors qu'un grand chien continue jusqu'à 2 ans. Les aliments pour chiots de grande race sont moins gras et contrôlés en calcium pour éviter une prise de poids trop fulgurante.</p>
+      <p>Un petit chien achève sa croissance vers 10 mois, alors qu'un grand chien continue jusqu'à 2 ans. Les aliments pour chiots de grande race contrôlent les minéraux, comme dans <AmazonLink url="https://link.amazon/B052f55Rv">The Honest Kitchen Whole Food Clusters</AmazonLink>, pour assurer un développement squelettique régulier.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. Pesées Hebdomadaires et Rations</h2>
       <p>Pesez votre chiot chaque semaine et actualisez sa ration sur notre calculateur. Un chiot svelte dont on devine les côtes vivra plus longtemps avec des hanches solides.</p>
@@ -167,7 +167,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
       <p>Welpen unter 6 Monaten fehlt der Schutzmechanismus im Darm: Sie absorbieren fast 100 % des aufgenommenen Kalziums passiv. Geben Sie niemals eigenmächtig Kalziumpulver zu Alleinfuttermitteln hinzu, um Knorpelschäden zu vermeiden.</p>
 
       <h2 id="small-breed-vs-large-breed-differences">4. Kleine Rassen vs. Große Rassen</h2>
-      <p>Ein Mops ist mit knapp 10 Monaten ausgewachsen, eine Deutsche Dogge wächst bis zu 2 Jahre. Futter für große Rassen enthält moderatere Fett- und Kalziumwerte, um ein gleichmäßiges, langsames Wachstum zu fördern.</p>
+      <p>Ein Mops ist mit knapp 10 Monaten ausgewachsen, eine Deutsche Dogge wächst bis zu 2 Jahre. Futter für heranwachsende Hunde, wie <AmazonLink url="https://link.amazon/B052f55Rv">The Honest Kitchen Whole Food Clusters</AmazonLink>, bietet kontrollierte Kalziummengen für ein gleichmäßiges, gesundes Knochenwachstum.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. Wöchentliches Wiegen & Rationsanpassung</h2>
       <p>Wiegen Sie Ihren Welpen alle 7 Tage und passen Sie die Grammzahl mit unserem Futterrechner an. Ein schlanker Welpe mit leicht spürbaren Rippen hat die besten Chancen auf gesunde Gelenke ein Leben lang.</p>
@@ -210,7 +210,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
       <p>O filhote não possui a barreira intestinal madura para impedir o excesso de cálcio. Dar suplementos de cálcio além da ração causa ossificação precoce da cartilagem e deformidades nos membros.</p>
 
       <h2 id="small-breed-vs-large-breed-differences">4. Raças Pequenas vs. Raças Grandes</h2>
-      <p>Cães pequenos completam o esqueleto aos 10 meses; raças gigantes continuam até os 2 anos. Rações para filhotes de grande porte possuem menos gordura para evitar surtos de peso repentinos.</p>
+      <p>Cães pequenos completam o esqueleto aos 10 meses; raças gigantes continuam até os 2 anos. Rações para filhotes em crescimento, como o <AmazonLink url="https://link.amazon/B052f55Rv">The Honest Kitchen Whole Food Clusters</AmazonLink>, mantêm proporções equilibradas de cálcio para um desenvolvimento ósseo seguro.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. Pesagem Semanal e Ajuste de Ração</h2>
       <p>Pese seu filhote a cada 7 dias e atualize a gramatura na nossa calculadora. Um filhote esguio terá juntas protegidas por toda a vida.</p>
@@ -253,7 +253,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
       <p>성견과 달리 6개월 미만 강아지는 체내 칼슘 흡수 조절 장치가 미성숙하여 섭취한 칼슘을 고스란히 체내로 흡수합니다. 자견 사료에 임의로 칼슘제나 뼈 파우더를 섞어주면 심각한 골격 기형(HOD)을 초래합니다.</p>
 
       <h2 id="small-breed-vs-large-breed-differences">4. 소형견 vs 대형견 자견의 성장 특성</h2>
-      <p>말티즈나 포메라니안은 10개월 전후로 성장을 마치지만, 리트리버나 진돗개 등 중대형견은 18~24개월까지 성장합니다. 대형견 퍼피 사료는 지방과 칼슘을 제한하여 천천히 고르게 자라도록 돕습니다.</p>
+      <p>말티즈나 포메라니안은 10개월 전후로 성장을 마치지만, 리트리버나 진돗개 등 중대형견은 18~24개월까지 성장합니다. 대형견 퍼피 사료는 균형 잡힌 미네랄이 중요하며, <AmazonLink url="https://link.amazon/B052f55Rv">The Honest Kitchen Whole Food Clusters</AmazonLink> 같은 고품질 식단은 급격한 체중 증가 없이 뼈 성장을 돕습니다.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. 주간 체중 측정과 사료량 업데이트</h2>
       <p>매주 같은 요일에 체중을 재고 당사 계산기에 입력해 하루 사료량을 조절하세요. 갈비뼈가 가볍게 만져지는 날렵한 체형을 유지해야 평생 튼튼한 관절을 유지할 수 있습니다.</p>
@@ -296,7 +296,7 @@ export const puppyFeedingRoadmapTranslations: BlogPostLocalizedRecord = {
       <p>I cuccioli sotto i 6 mesi assorbono tutto il calcio introdotto senza filtri intestinali. Aggiungere polvere di calcio a un cibo per cuccioli bilanciato compromette la cartilagine e deforma gli arti.</p>
 
       <h2 id="small-breed-vs-large-breed-differences">4. Razze Piccole vs Razze Grandi</h2>
-      <p>Un cane piccolo completa la struttura scheletrica a 10 mesi, un Alano cresce fino a 2 anni. Le formule per taglie grandi contengono meno grassi per evitare picchi di peso troppo repentini.</p>
+      <p>Un cane piccolo completa la struttura scheletrica a 10 mesi, un Alano cresce fino a 2 anni. Le formule per cani in crescita, come <AmazonLink url="https://link.amazon/B052f55Rv">The Honest Kitchen Whole Food Clusters</AmazonLink>, mantengono un corretto rapporto di calcio per una crescita ossea armoniosa.</p>
 
       <h2 id="weekly-weigh-in-and-portion-adjustments">5. Peso Settimanale e Aggiustamento Razone</h2>
       <p>Pesa il tuo cucciolo ogni 7 giorni e aggiorna i grammi sul nostro calcolatore gratuito. Un cucciolo snello con costole facilmente palpabili crescerà con articolazioni perfette.</p>

@@ -41,11 +41,11 @@ export const gutHealthAllergiesTranslations: BlogPostLocalizedRecord = {
       <ol>
         <li><strong>Identificar posibles irritantes:</strong> Muchos dueños optan por dietas con ingredientes limitados y una proteína novel no consumida anteriormente.</li>
         <li><strong>Nutrir la mucosa digestiva:</strong> Compuestos como la L-Glutamina y fibras suaves como el olmo resbaladizo son comunes para apoyar la comodidad gastrointestinal.</li>
-        <li><strong>Favorecer la microbiota:</strong> El uso de probióticos y prebióticos adecuados ayuda a mantener una flora intestinal equilibrada.</li>
+        <li><strong>Favorecer la microbiota:</strong> El uso de probióticos veterinarios como <AmazonLink url="https://link.amazon/B0ar2KGqk">Purina Pro Plan FortiFlora Probiotics</AmazonLink> introduce bacterias beneficiosas para reequilibrar la flora intestinal.</li>
       </ol>
 
       <h2 id="conducting-a-flawless-elimination-diet">5. Cómo Realizar una Dieta de Eliminación</h2>
-      <p>Para valorar posibles intolerancias, los veterinarios suelen sugerir una prueba de eliminación con una proteína novel durante 8 a 12 semanas estrictas, evitando cualquier premio adicional durante ese periodo.</p>
+      <p>Para valorar posibles intolerancias, los veterinarios suelen sugerir una prueba de eliminación con una proteína novel o recetas para digestión delicada como <AmazonLink url="https://link.amazon/B0a52bV8X">Purina Pro Plan Sensitive Skin & Stomach Salmon Wet Food</AmazonLink> durante 8 a 12 semanas estrictas.</p>
     `
   },
   ja: {
@@ -276,11 +276,11 @@ export const gutHealthAllergiesTranslations: BlogPostLocalizedRecord = {
       <ol>
         <li><strong>자극 요인 파악:</strong> 이전에 먹어보지 않은 단일 단백질 기반의 제한 원료 식단(LID)을 고려할 수 있습니다.</li>
         <li><strong>점막 영양 공급:</strong> L-글루타민이나 부드러운 식이섬유는 소화관 환경을 편안하게 유지하는 데 도움을 줄 수 있습니다.</li>
-        <li><strong>유익균 균형:</strong> 반려견 전용 프로바이오틱스와 프리바이오틱스로 장내 미생물 균형을 돕습니다.</li>
+        <li><strong>유익균 균형:</strong> <AmazonLink url="https://link.amazon/B0ar2KGqk">Purina Pro Plan FortiFlora Probiotics</AmazonLink>와 같은 전용 프로바이오틱스는 장내 유익균 군집을 복원하는 데 기여합니다.</li>
       </ol>
 
       <h2 id="conducting-a-flawless-elimination-diet">5. 식이 배제 시험 진행 요령</h2>
-      <p>식이 민감증을 평가하기 위해 수의사들은 사슴고기, 토끼고기 등 접해보지 않은 단백질을 8~12주간 다른 간식 없이 급여하는 배제 시험을 흔히 권장합니다.</p>
+      <p>식이 민감증을 평가할 때는 <AmazonLink url="https://link.amazon/B0a52bV8X">Purina Pro Plan Sensitive Skin & Stomach Salmon Wet Food</AmazonLink>과 같은 저자극 단일 단백 식단을 8~12주간 엄격히 유지하는 방식이 도움이 됩니다.</p>
     `
   },
   it: {
@@ -323,11 +323,11 @@ export const gutHealthAllergiesTranslations: BlogPostLocalizedRecord = {
       <ol>
         <li><strong>Individuare ingredienti sospetti:</strong> Molti proprietari scelgono formule a ingredienti limitati con un'unica fonte proteica insolita.</li>
         <li><strong>Nutrire la mucosa:</strong> Elementi come la L-Glutammina e fibre lenitive come l'olmo rosso sono frequentemente utilizzati per sostenere il tratto digestivo.</li>
-        <li><strong>Curare il microbiota:</strong> Probiotici e prebiotici adeguati favoriscono la stabilità della flora intestinale.</li>
+        <li><strong>Curare il microbiota:</strong> Probiotici specifici come <AmazonLink url="https://link.amazon/B0ar2KGqk">Purina Pro Plan FortiFlora Probiotics</AmazonLink> favoriscono la stabilità e la salute della flora intestinale.</li>
       </ol>
 
       <h2 id="conducting-a-flawless-elimination-diet">5. Come Condurre una Dieta a Esclusione</h2>
-      <p>Per chiarire sospetti di sensibilità alimentare, i veterinari suggeriscono spesso una prova a esclusione con una proteina mai assunta prima (come cervo o cavallo) per 8-12 settimane senza snack esterni.</p>
+      <p>Per chiarire sensibilità alimentari, formule digeribili come <AmazonLink url="https://link.amazon/B0a52bV8X">Purina Pro Plan Sensitive Skin & Stomach Salmon Wet Food</AmazonLink> offrono un valido supporto nutrizionale durante le 8-12 settimane di prova.</p>
     `
   }
 };

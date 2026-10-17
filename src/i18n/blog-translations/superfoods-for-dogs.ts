@@ -30,13 +30,13 @@ export const superfoodsForDogsTranslations: BlogPostLocalizedRecord = {
       <p>Añadir hasta un 10-15% de las calorías diarias en forma de alimentos frescos no desbalancea el equilibrio de minerales de su pienso completo, y aporta nutrición viva de alto impacto.</p>
 
       <h2 id="1-canned-sardines-in-water">2. Sardinas Salvajes en Agua</h2>
-      <p>Al estar en la base de la cadena trófica marina, las sardinas no acumulan mercurio. Una sola sardina aporta una dosis valiosa de EPA y DHA para el pelaje y las articulaciones.</p>
+      <p>Al estar en la base de la cadena trófica marina, no acumulan mercurio. Opciones salvajes enlatadas en agua como <AmazonLink url="https://link.amazon/B01vM8LZC">Matiz Wild-Caught Sardines</AmazonLink> aportan una dosis concentrada de EPA y DHA para articulaciones y pelaje.</p>
 
       <h2 id="2-blueberries-and-dark-berries">3. Arándanos: Protectores Celulares</h2>
       <p>Cargados de antocianinas que cruzan la barrera hematoencefálica, protegiendo las neuronas del envejecimiento celular.</p>
 
       <h2 id="3-steamed-pure-pumpkin">4. Calabaza Pura al Vapor</h2>
-      <p>Fibra soluble prebiótica que nutre las bacterias beneficiosas del colon y regula el tránsito intestinal.</p>
+      <p>Fibra soluble prebiótica como <AmazonLink url="https://link.amazon/B06zoxxSD">365 Organic Pumpkin Puree</AmazonLink> que nutre las bacterias beneficiosas del colon y regula el tránsito intestinal.</p>
 
       <h2 id="4-plain-unsweetened-kefir">5. Kéfir Natural sin Azúcar o Leche de Cabra</h2>
       <p>Contiene numerosas cepas probióticas que colonizan el intestino sin causar la intolerancia propia de la leche de vaca.</p>
@@ -48,7 +48,7 @@ export const superfoodsForDogsTranslations: BlogPostLocalizedRecord = {
       <p>Rico en sulforafano, un compuesto que apoya las defensas antioxidantes celulares.</p>
 
       <h2 id="7-organic-simmered-bone-broth">8. Caldo de Huesos Casero</h2>
-      <p>Aporta colágeno, glucosamina y una hidratación excelente para proteger la salud renal.</p>
+      <p>Aporta colágeno, glucosamina e hidratación renal; aderezar el plato con caldos aptos como <AmazonLink url="https://link.amazon/B0c8qZk7Y">Caru Daily Dish Pumpkin Broth</AmazonLink> facilita el consumo de líquidos.</p>
     `
   },
   ja: {

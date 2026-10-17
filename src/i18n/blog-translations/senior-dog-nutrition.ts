@@ -30,12 +30,12 @@ export const seniorDogNutritionTranslations: BlogPostLocalizedRecord = {
       <p>La sarcopenia es la atrofia muscular involuntaria del envejecimiento. Cuando falta proteína en la dieta, el cuerpo canino puede recurrir a sus propios tejidos musculares para obtener aminoácidos vitales. Muchas veces la debilidad del tercio posterior se confunde con artrosis cuando en realidad involucra pérdida muscular.</p>
 
       <h2 id="caloric-needs-drop-as-metabolism-slows">3. Menos Calorías pero Mayor Calidad</h2>
-      <p>Aunque necesitan buena proteína, su gasto calórico total suele descender un 20-30% por menor actividad física. La combinación recomendada suele ser: buena proteína animal, grasas moderadas y menor contenido de almidones.</p>
+      <p>Aunque necesitan buena proteína, su gasto calórico total suele descender un 20-30% por menor actividad física. La combinación recomendada suele ser proteína animal de calidad y grasas moderadas, presentes en recetas como <AmazonLink url="https://link.amazon/B06X4XwnJ">Hill's Science Diet Senior Adult 7+ Dry Dog Food</AmazonLink> para mantener masa muscular sin ganar peso.</p>
 
       <h2 id="essential-joint-and-renal-supplements">4. Nutrientes Clave para Articulaciones y Riñones</h2>
       <ul>
         <li><strong>Omega-3 EPA y DHA:</strong> Ayuda a regular procesos inflamatorios articulares y apoya la salud circulatoria renal.</li>
-        <li><strong>Glucosamina y Condroitina:</strong> Sustratos para el mantenimiento del cartílago.</li>
+        <li><strong>Glucosamina y Condroitina:</strong> Sustratos para el cartílago; suplementos masticables como <AmazonLink url="https://link.amazon/B01H3PPzn">Nutramax Cosequin Joint Supplement</AmazonLink> aportan glucosamina y condroitina para cuidar la movilidad.</li>
         <li><strong>Antioxidantes (CoQ10 y Vitamina E):</strong> Apoyan la protección celular frente al estrés oxidativo.</li>
       </ul>
 

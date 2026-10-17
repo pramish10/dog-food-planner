@@ -36,7 +36,7 @@ export const transitionToFreshFoodTranslations: BlogPostLocalizedRecord = {
       </ul>
 
       <h2 id="digestive-buffers-pumpkin-and-probiotics">3. Amortiguadores Digestivos: Calabaza y Probióticos</h2>
-      <p>Para evitar molestias estomacales, añade puré de calabaza natural (rico en fibra soluble que absorbe el exceso de agua), caldo de huesos cocinado a fuego lento y probióticos de esporas (SBO) que resistan la acidez gástrica.</p>
+      <p>Para evitar molestias estomacales, añade puré de calabaza puro como <AmazonLink url="https://link.amazon/B06zoxxSD">365 Organic Pumpkin Puree</AmazonLink> (fibra soluble que absorbe el exceso de agua) o templa la ración con <AmazonLink url="https://link.amazon/B0bpw5YZy">Brutus Bone Broth Chicken Topper</AmazonLink> para nutrir la mucosa digestiva.</p>
 
       <h2 id="how-to-read-your-dogs-stool">4. Cómo Evaluar la Calidad de las Heces</h2>
       <p>La escala de Bristol canina clasifica las heces del Grado 1 (bolitas duras) al Grado 7 (diarrea líquida). Lo ideal es el Grado 2 (cilindro firme fácil de recoger). Si aparecen heces Grado 3 o 4, mantén la proporción dos días más antes de aumentar el alimento nuevo.</p>
