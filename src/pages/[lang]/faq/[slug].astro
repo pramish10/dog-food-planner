@@ -3,7 +3,7 @@ import Layout from '../../../layouts/Layout.astro';
 import Navbar from '../../../components/Navbar.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import Footer from '../../../components/Footer.astro';
-import { FAQS_DATA, isFaqNoindexed } from '../../../data/faqs';
+import { FAQS_DATA } from '../../../data/faqs';
 import { useTranslations, useTranslatedPath } from '../../../i18n/utils';
 import { ui, type Lang } from '../../../i18n/ui';
 import { getLocalizedFaq, getLocalizedFaqs } from '../../../i18n/faqs';
@@ -92,7 +92,6 @@ const articleJsonLd = {
   title={`${faq.question} | Dog Food Planner`}
   description={faq.shortAnswer}
   canonicalUrl={`https://dogfoodplanner.com/${lang}/faq/${faq.slug}`}
-  noindex={isFaqNoindexed(faq.slug)}
 >
   <Navbar />
   

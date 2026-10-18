@@ -107,7 +107,7 @@ const TOTAL_STEPS = 2;
                   </div>
                 </div>
                 <div class="relative">
-                  <input type="number" id="dog-weight" value="45" min="1" max="300" step="any"
+                  <input type="number" id="dog-weight" value="12" min="1" max="300" step="any"
                     class="w-full px-3.5 pr-12 py-2 text-sm bg-[#fdf8f3] dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] focus:ring-2 focus:ring-[#c47a2b]/20 transition-all font-medium [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
                   <span id="weight-unit-label" class="absolute right-3 top-2.5 text-xs text-[#92400e] dark:text-[#c4956a] font-mono font-semibold pointer-events-none">LBS</span>
                 </div>
@@ -274,6 +274,7 @@ const TOTAL_STEPS = 2;
 </section>
 
 <script>
+  import { CANINE_BREEDS } from '../data/breeds';
   import { plannerTranslations } from '../i18n/planner';
   import { plannerExtraTranslations } from '../i18n/plannerExtra';
   import type { Lang } from '../i18n/ui';
@@ -283,6 +284,109 @@ const TOTAL_STEPS = 2;
   let currentStep = 1;
   let weightUnit: 'lbs' | 'kg' = 'lbs';
   let currentWeightKg = false;
+
+  // ── Breed-based weight defaults & min/max enforcement ────────────
+  interface BreedWeightRule {
+    match: string;
+    defaultKg: number;
+    defaultLbs: number;
+    minKg: number;
+    maxKg: number;
+    minLbs: number;
+    maxLbs: number;
+  }
+
+  const BREED_WEIGHT_RULES: BreedWeightRule[] = [
+    { match: 'Toy: under', defaultKg: 5, defaultLbs: 12, minKg: 1, maxKg: 5.4, minLbs: 2.2, maxLbs: 12 },
+    { match: 'Small: 12', defaultKg: 8, defaultLbs: 18, minKg: 5.4, maxKg: 11.3, minLbs: 12, maxLbs: 25 },
+    { match: 'Medium: 25', defaultKg: 18, defaultLbs: 40, minKg: 11.3, maxKg: 25, minLbs: 25, maxLbs: 55 },
+    { match: 'Large: 55', defaultKg: 33, defaultLbs: 70, minKg: 25, maxKg: 41, minLbs: 55, maxLbs: 90 },
+    { match: 'Giant: 90', defaultKg: 50, defaultLbs: 110, minKg: 41, maxKg: 115, minLbs: 90, maxLbs: 250 },
+  ];
+
+  function getBreedRule(breedName: string): BreedWeightRule | null {
+    return BREED_WEIGHT_RULES.find(r => breedName.includes(r.match)) ?? null;
+  }
+
+  function applyBreedWeight(breedName: string) {
+    const input = document.getElementById('dog-weight') as HTMLInputElement;
+    if (!input) return;
+
+    const rule = getBreedRule(breedName);
+    if (rule) {
+      input.value = String(currentWeightKg ? rule.defaultKg : rule.defaultLbs);
+      return;
+    }
+
+    const breed = CANINE_BREEDS.find(b => b.name === breedName);
+    if (breed && breed.avgWeightLbs) {
+      const avgLbs = Math.round((breed.avgWeightLbs[0] + breed.avgWeightLbs[1]) / 2);
+      input.value = String(currentWeightKg ? Math.round(avgLbs * 0.453592) : avgLbs);
+    }
+  }
+
+  function handleWeightInput() {
+    const input = document.getElementById('dog-weight') as HTMLInputElement;
+    if (!input) return;
+    const breedSelect = document.getElementById('dog-breed') as HTMLSelectElement;
+    const rule = getBreedRule(breedSelect?.value ?? '');
+    if (!rule) return;
+
+    const maxVal = currentWeightKg ? rule.maxKg : rule.maxLbs;
+    const raw = input.value.trim();
+    const current = parseFloat(raw);
+
+    // If user types a value exceeding the maximum (e.g. typing 6 when max is 5.4 kg), automatically write 5.4 kg
+    if (!isNaN(current) && current > maxVal) {
+      input.value = String(maxVal);
+    }
+  }
+
+  function clampWeightOnBlur() {
+    const input = document.getElementById('dog-weight') as HTMLInputElement;
+    if (!input) return;
+    const breedSelect = document.getElementById('dog-breed') as HTMLSelectElement;
+    const rule = getBreedRule(breedSelect?.value ?? '');
+
+    const raw = input.value.trim();
+    const current = parseFloat(raw);
+
+    if (rule) {
+      const minVal = currentWeightKg ? rule.minKg : rule.minLbs;
+      const maxVal = currentWeightKg ? rule.maxKg : rule.maxLbs;
+      const defVal = currentWeightKg ? rule.defaultKg : rule.defaultLbs;
+
+      // Blank or invalid -> restore default
+      if (!raw || isNaN(current) || current <= 0) {
+        input.value = String(defVal);
+        return;
+      }
+      // Clamp to minimum (e.g. no minimum lower than 1 kg / 2.2 lb)
+      if (current < minVal) {
+        input.value = String(minVal);
+        return;
+      }
+      // Clamp to maximum (e.g. max 5.4 kg / 12 lb)
+      if (current > maxVal) {
+        input.value = String(maxVal);
+      }
+    } else {
+      const minVal = currentWeightKg ? 1 : 2.2;
+      const maxVal = currentWeightKg ? 115 : 250;
+      if (!raw || isNaN(current) || current <= 0) {
+        const breed = CANINE_BREEDS.find(b => b.name === breedSelect?.value);
+        if (breed && breed.avgWeightLbs) {
+          const avgLbs = Math.round((breed.avgWeightLbs[0] + breed.avgWeightLbs[1]) / 2);
+          input.value = String(currentWeightKg ? Math.round(avgLbs * 0.453592) : avgLbs);
+        } else {
+          input.value = String(currentWeightKg ? 20 : 45);
+        }
+        return;
+      }
+      if (current < minVal) input.value = String(minVal);
+      if (current > maxVal) input.value = String(maxVal);
+    }
+  }
 
   function getTranslations() {
     const section = document.getElementById('planner-section') as HTMLElement;
@@ -343,6 +447,7 @@ const TOTAL_STEPS = 2;
 
   // Next & Prev button listeners
   document.getElementById('next-btn')?.addEventListener('click', () => {
+    clampWeightOnBlur();
     if (currentStep < TOTAL_STEPS) {
       currentStep++;
       showStep(currentStep);
@@ -434,15 +539,33 @@ const TOTAL_STEPS = 2;
     });
   });
 
+  // Breed selection and weight listeners
+  const breedSelect = document.getElementById('dog-breed') as HTMLSelectElement | null;
+  breedSelect?.addEventListener('change', () => {
+    if (breedSelect) applyBreedWeight(breedSelect.value);
+  });
+
+  const weightInput = document.getElementById('dog-weight') as HTMLInputElement | null;
+  weightInput?.addEventListener('input', handleWeightInput);
+  weightInput?.addEventListener('blur', clampWeightOnBlur);
+
   // Weight unit toggle
   document.getElementById('unit-lbs')?.addEventListener('click', () => {
     if (currentWeightKg) {
       const input = document.getElementById('dog-weight') as HTMLInputElement;
-      const val = parseFloat(input.value) || 0;
-      input.value = Math.round(val * 2.20462).toString();
+      const val = parseFloat(input?.value || '0') || 0;
+      const rule = getBreedRule(breedSelect?.value ?? '');
+
+      currentWeightKg = false;
+      weightUnit = 'lbs';
+
+      if (rule && Math.abs(val - rule.defaultKg) < 0.05) {
+        input.value = String(rule.defaultLbs);
+      } else {
+        input.value = Math.round(val * 2.20462).toString();
+      }
+      clampWeightOnBlur();
     }
-    currentWeightKg = false;
-    weightUnit = 'lbs';
     (document.getElementById('unit-lbs') as HTMLElement).className = 'px-2 py-0.5 bg-[#b45309] text-white font-semibold transition-colors cursor-pointer text-xs';
     (document.getElementById('unit-kg') as HTMLElement).className = 'px-2 py-0.5 bg-white dark:bg-[#1c1208] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer text-xs';
     (document.getElementById('weight-unit-label') as HTMLElement).textContent = 'LBS';
@@ -451,11 +574,19 @@ const TOTAL_STEPS = 2;
   document.getElementById('unit-kg')?.addEventListener('click', () => {
     if (!currentWeightKg) {
       const input = document.getElementById('dog-weight') as HTMLInputElement;
-      const val = parseFloat(input.value) || 0;
-      input.value = Math.round(val / 2.20462).toString();
+      const val = parseFloat(input?.value || '0') || 0;
+      const rule = getBreedRule(breedSelect?.value ?? '');
+
+      currentWeightKg = true;
+      weightUnit = 'kg';
+
+      if (rule && Math.abs(val - rule.defaultLbs) < 0.05) {
+        input.value = String(rule.defaultKg);
+      } else {
+        input.value = Math.round(val / 2.20462).toString();
+      }
+      clampWeightOnBlur();
     }
-    currentWeightKg = true;
-    weightUnit = 'kg';
     (document.getElementById('unit-kg') as HTMLElement).className = 'px-2 py-0.5 bg-[#b45309] text-white font-semibold transition-colors cursor-pointer text-xs';
     (document.getElementById('unit-lbs') as HTMLElement).className = 'px-2 py-0.5 bg-white dark:bg-[#1c1208] text-[#92400e] dark:text-[#c4956a] transition-colors cursor-pointer text-xs';
     (document.getElementById('weight-unit-label') as HTMLElement).textContent = 'KG';
@@ -467,6 +598,7 @@ const TOTAL_STEPS = 2;
     currentStep = 1;
     const form = document.getElementById('dog-planner-form') as HTMLFormElement | null;
     if (form) form.reset();
+    if (breedSelect) applyBreedWeight(breedSelect.value);
     syncNoneVisual();
     syncProteinBlocking();
     showStep(1);
@@ -474,6 +606,7 @@ const TOTAL_STEPS = 2;
 
   // Submit handler
   function submitForm() {
+    clampWeightOnBlur();
     const name = (document.getElementById('dog-name') as HTMLInputElement).value.trim() || 'Lucy';
     const breed = (document.getElementById('dog-breed') as HTMLSelectElement).value;
     const ageStage = (document.querySelector('input[name="age-stage"]:checked') as HTMLInputElement)?.value || 'adult';
@@ -482,7 +615,7 @@ const TOTAL_STEPS = 2;
     const proteinChoice = (document.querySelector('input[name="protein"]:checked') as HTMLInputElement)?.value || 'salmon';
     const hasMeds = (document.querySelector('input[name="daily-meds"]:checked') as HTMLInputElement)?.value === 'yes';
 
-    const rawWeight = parseFloat((document.getElementById('dog-weight') as HTMLInputElement).value) || 45;
+    const rawWeight = parseFloat((document.getElementById('dog-weight') as HTMLInputElement).value) || 12;
     const weightLbs = currentWeightKg ? rawWeight * 2.20462 : rawWeight;
 
     const allergies = Array.from(document.querySelectorAll('input[name="allergy"]:checked'))
@@ -515,6 +648,11 @@ const TOTAL_STEPS = 2;
     submitForm();
   });
   document.getElementById('submit-btn')?.addEventListener('click', submitForm);
+
+  // Initialize breed weight
+  if (breedSelect) {
+    applyBreedWeight(breedSelect.value);
+  }
 
   syncNoneVisual();
   syncProteinBlocking();

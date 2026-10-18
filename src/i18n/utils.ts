@@ -96,12 +96,28 @@ export function getLangStaticPaths() {
  * Truncates and formats meta descriptions to at most maxLen (default 150) characters,
  * ensuring it never cuts off mid-word and terminates properly.
  */
-export function formatMetaDescription(text: string, maxLen = 150): string {
+export function formatMetaDescription(text: string, maxLen = 155): string {
   const clean = text.replace(/\s+/g, ' ').trim();
   if (clean.length <= maxLen) return clean;
+
+  // Check if two complete sentences fit within maxLen
+  const twoSentencesMatch = clean.match(/^([^.!?]+[.!?]\s+[^.!?]+[.!?])(?:\s|$)/);
+  if (twoSentencesMatch && twoSentencesMatch[1].length <= maxLen && twoSentencesMatch[1].length >= 80) {
+    return twoSentencesMatch[1].trim();
+  }
+
+  // Check if a single full sentence fits well (>= 60 chars and <= maxLen)
+  const sentenceMatch = clean.match(/^([^.!?]+[.!?])(?:\s|$)/);
+  if (sentenceMatch && sentenceMatch[1].length >= 60 && sentenceMatch[1].length <= maxLen) {
+    return sentenceMatch[1].trim();
+  }
+
   const cut = clean.slice(0, maxLen);
   const lastSpace = cut.lastIndexOf(' ');
-  const truncated = lastSpace !== -1 ? cut.slice(0, lastSpace) : cut;
+  let truncated = lastSpace !== -1 ? cut.slice(0, lastSpace) : cut;
+
+  // Remove trailing prepositions/conjunctions/articles that sound unnatural when truncated
+  truncated = truncated.replace(/\b(and|or|the|a|an|of|to|in|on|for|at|by|from|that|which|with|as|is|are|but|nor|so|yet)\s*$/i, '').trim();
   const stripped = truncated.replace(/[,;:\-\s]+$/, '');
   return /[.!?]$/.test(stripped) ? stripped : stripped + '.';
 }

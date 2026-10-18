@@ -37,9 +37,7 @@ const robotsContent = !isNoindex
   ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   : "noindex, follow";
 
-const finalDescription = lang === 'en'
-  ? formatMetaDescription(description, 150)
-  : description;
+const finalDescription = formatMetaDescription(description, 160);
 ---
 
 <!doctype html>

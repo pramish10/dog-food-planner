@@ -187,7 +187,11 @@ const faqJsonLd = generateFaqJsonLd(faqs);
 
             <div class="mt-4 pt-3 border-t border-[#f0d5a8]/60 dark:border-[#3a2510] flex flex-wrap items-center justify-between gap-2 text-[11px]">
               <span class="font-mono text-[#8f5e35] dark:text-[#c4956a]">{faq.category}</span>
-              <a href={translatePath(`/faq/${faq.slug}`)} class="font-mono font-semibold text-[#92400e] dark:text-[#f59e0b] hover:underline flex items-center gap-1">
+              <a 
+                href={translatePath(`/faq/${faq.slug}`)} 
+                aria-label={`Read full answer: ${faq.question}`}
+                class="font-mono font-semibold text-[#92400e] dark:text-[#f59e0b] hover:underline flex items-center gap-1"
+              >
                 Read More →
               </a>
             </div>

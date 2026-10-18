@@ -1011,7 +1011,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     if (e.key === 'Enter') {
       e.preventDefault();
       if (idx < inputs.length - 1) {
-        inputs[idx + 1].focus();
+        const next = inputs[idx + 1];
+        next.focus();
+        const nextLen = next.value.length;
+        next.setSelectionRange(nextLen, nextLen);
       } else {
         // Last line: add another line down and focus it
         const { lineDiv, input } = createSitterLine('', `Extra pet sitter instruction line ${inputs.length + 1}`);
@@ -1019,12 +1022,36 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         input.focus();
         saveCurrentState();
       }
-    } else if (e.key === 'Backspace' && target.value === '' && inputs.length > 3 && idx > 0) {
+    } else if (e.key === 'Backspace' && idx > 0) {
+      if (target.value === '') {
+        e.preventDefault();
+        const prev = inputs[idx - 1];
+        if (inputs.length > 3) {
+          target.closest('.sitter-blank-line')?.remove();
+        }
+        prev.focus();
+        const len = prev.value.length;
+        prev.setSelectionRange(len, len);
+        saveCurrentState();
+      } else if (target.selectionStart === 0 && target.selectionEnd === 0) {
+        e.preventDefault();
+        const prev = inputs[idx - 1];
+        prev.focus();
+        const len = prev.value.length;
+        prev.setSelectionRange(len, len);
+      }
+    } else if (e.key === 'ArrowUp' && idx > 0) {
       e.preventDefault();
       const prev = inputs[idx - 1];
-      target.closest('.sitter-blank-line')?.remove();
       prev.focus();
-      saveCurrentState();
+      const pos = Math.min(target.selectionStart ?? prev.value.length, prev.value.length);
+      prev.setSelectionRange(pos, pos);
+    } else if (e.key === 'ArrowDown' && idx < inputs.length - 1) {
+      e.preventDefault();
+      const next = inputs[idx + 1];
+      next.focus();
+      const pos = Math.min(target.selectionStart ?? next.value.length, next.value.length);
+      next.setSelectionRange(pos, pos);
     }
   });
 

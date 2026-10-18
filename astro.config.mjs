@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 const SITE = 'https://dogfoodplanner.com';
 const LOCALE_PREFIX = /^\/(es|ja|fr|de|pt|ko|it)(?=\/|$)/;
 
+/** @type {Record<string, string>} */
 const BLOG_POST_DATES = {
   'get-picky-dog-to-eat-kibble': '2026-10-15T00:00:00.000Z',
   'dry-vs-wet-dog-food': '2026-10-13T00:00:00.000Z',
@@ -18,14 +19,6 @@ const BLOG_POST_DATES = {
   'canine-gut-health-and-allergies': '2026-09-23T00:00:00.000Z',
   'rotational-feeding-benefits-guide': '2026-09-20T00:00:00.000Z',
 };
-
-const INDEXABLE_FAQ_SLUGS = new Set([
-  'what-does-spayed-neutered-intact-gender-mean-for-dogs',
-  'what-do-dog-food-nutrition-terms-mean-rer-mer-bcs-dmb',
-  'what-are-dog-food-planner-website-terms-and-disclaimers',
-  'how-long-does-it-take-for-a-dog-to-digest-food',
-  'is-blue-buffalo-good-dog-food',
-]);
 
 const EXCLUDED_EXACT_PATHS = new Set([
   '/print',
@@ -43,11 +36,6 @@ function sitemapFilter(page) {
   const unprefixed = path.replace(LOCALE_PREFIX, '') || '/';
 
   if (EXCLUDED_EXACT_PATHS.has(unprefixed)) {
-    return false;
-  }
-
-  const faqMatch = unprefixed.match(/^\/faq\/([^/]+)$/);
-  if (faqMatch && !INDEXABLE_FAQ_SLUGS.has(faqMatch[1])) {
     return false;
   }
 
