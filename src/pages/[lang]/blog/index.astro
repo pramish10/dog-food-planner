@@ -28,6 +28,7 @@ const regularPosts = posts.filter(p => p.id !== featuredPost.id);
   lang={lang}
   title={currentStrings['blog.title']}
   description={currentStrings['blog.desc']}
+  preloadImage={featuredPost.image}
 >
   <Navbar />
 
@@ -146,7 +147,7 @@ const regularPosts = posts.filter(p => p.id !== featuredPost.id);
         <button 
           type="button" 
           id="reset-filter-btn"
-          class="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#c47a2b] hover:bg-[#a86520] transition-colors shadow-sm cursor-pointer"
+          class="px-5 py-2 rounded-full text-xs font-bold text-white bg-[#92400e] hover:bg-[#78350f] transition-colors shadow-sm cursor-pointer"
         >
           {uiStrings.resetFilters}
         </button>

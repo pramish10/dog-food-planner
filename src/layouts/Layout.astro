@@ -10,6 +10,7 @@ interface Props {
   ogImage?: string;
   lang?: Lang;
   noindex?: boolean;
+  preloadImage?: string;
 }
 
 const lang: Lang = Astro.props.lang || getLangFromUrl(Astro.url);
@@ -22,7 +23,8 @@ const {
   title = defaultStrings['meta.title'],
   description = defaultStrings['meta.description'],
   canonicalUrl = getAbsoluteLocalizedUrl(cleanPath, lang),
-  ogImage = "https://dogfoodplanner.com/og-image.jpg"
+  ogImage = "https://dogfoodplanner.com/og-image.jpg",
+  preloadImage
 } = Astro.props;
 
 const isNoindex = Boolean(Astro.props.noindex || ['/404', '/500', '/print'].includes(cleanPath));
@@ -123,6 +125,9 @@ const finalDescription = lang === 'en'
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
     </noscript>
+    {preloadImage && (
+      <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />
+    )}
 
     <!-- Theme initialization: Defaults to light mode unless explicitly set to dark -->
     <script is:inline>

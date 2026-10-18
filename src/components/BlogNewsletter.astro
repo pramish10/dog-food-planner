@@ -23,15 +23,19 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
       {uiStrings.newsletterDesc}
     </p>
 
-    <!-- EmailOctopus Form Embed -->
+    <!-- EmailOctopus Form Embed (Deferred loading via IntersectionObserver for optimal performance) -->
     <div 
       class="emailoctopus-wrapper" 
+      data-form-id="3a32e580-c79f-11f1-ba68-8f65c387aa2a"
+      data-form-src="https://eomail5.com/form/3a32e580-c79f-11f1-ba68-8f65c387aa2a.js"
       data-placeholder={uiStrings.newsletterPlaceholder} 
       data-btn={uiStrings.newsletterBtn}
       data-msg-already-subscribed={uiStrings.newsletterAlreadySubscribed}
       data-msg-temp-error={uiStrings.newsletterTempEmailError}
     >
-      <script is:inline async src="https://eomail5.com/form/3a32e580-c79f-11f1-ba68-8f65c387aa2a.js" data-form="3a32e580-c79f-11f1-ba68-8f65c387aa2a"></script>
+      <noscript>
+        <script async src="https://eomail5.com/form/3a32e580-c79f-11f1-ba68-8f65c387aa2a.js" data-form="3a32e580-c79f-11f1-ba68-8f65c387aa2a"></script>
+      </noscript>
     </div>
   </div>
 </section>
@@ -187,10 +191,55 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
       });
     }
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', setupEmailOctopusEnhancements);
-    } else {
+    function loadEmailOctopus(wrapper) {
+      if (wrapper.dataset.eoScriptLoaded) return;
+      wrapper.dataset.eoScriptLoaded = 'true';
+      const formId = wrapper.getAttribute('data-form-id') || '3a32e580-c79f-11f1-ba68-8f65c387aa2a';
+      const formSrc = wrapper.getAttribute('data-form-src') || 'https://eomail5.com/form/3a32e580-c79f-11f1-ba68-8f65c387aa2a.js';
+      const script = document.createElement('script');
+      script.src = formSrc;
+      script.async = true;
+      script.dataset.form = formId;
+      wrapper.appendChild(script);
+    }
+
+    function initNewsletterLazyLoading() {
+      const wrappers = document.querySelectorAll('.emailoctopus-wrapper');
+      if (!wrappers.length) return;
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries, obs) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              loadEmailOctopus(entry.target);
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '400px 0px' });
+
+        wrappers.forEach(function(w) { observer.observe(w); });
+      } else {
+        wrappers.forEach(loadEmailOctopus);
+      }
+
+      function triggerOnInteraction() {
+        wrappers.forEach(loadEmailOctopus);
+        window.removeEventListener('scroll', triggerOnInteraction);
+        window.removeEventListener('touchstart', triggerOnInteraction);
+      }
+      window.addEventListener('scroll', triggerOnInteraction, { passive: true, once: true });
+      window.addEventListener('touchstart', triggerOnInteraction, { passive: true, once: true });
+    }
+
+    function initNewsletter() {
       setupEmailOctopusEnhancements();
+      initNewsletterLazyLoading();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNewsletter);
+    } else {
+      initNewsletter();
     }
   })();
 </script>
@@ -301,8 +350,8 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
     font-weight: 700 !important;
     padding: 0.5rem 1.125rem !important;
     border-radius: 0.75rem !important;
-    background-color: #c47a2b !important;
-    border: 1px solid #c47a2b !important;
+    background-color: #92400e !important;
+    border: 1px solid #92400e !important;
     color: #ffffff !important;
     cursor: pointer !important;
     transition: background-color 0.15s ease, transform 0.1s ease !important;
@@ -318,8 +367,8 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
   .emailoctopus-wrapper .btn-primary:hover,
   .emailoctopus-wrapper input[type="submit"]:hover,
   .emailoctopus-wrapper button[type="submit"]:hover {
-    background-color: #a86520 !important;
-    border-color: #a86520 !important;
+    background-color: #78350f !important;
+    border-color: #78350f !important;
   }
   .emailoctopus-wrapper .btn:active,
   .emailoctopus-wrapper .btn-primary:active,
