@@ -721,11 +721,38 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     });
   }
 
+  function createSitterLine(value = '', ariaLabel = 'Extra pet sitter instruction line') {
+    const lineDiv = document.createElement('div');
+    lineDiv.className = 'sitter-blank-line relative flex items-center border-b border-dashed border-[#d8b488] dark:border-[#523518] min-h-[22px]';
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = value;
+    input.setAttribute('value', value);
+    input.className = 'w-full text-xs bg-transparent border-none px-1 py-0.5 text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none';
+    input.setAttribute('aria-label', ariaLabel);
+    lineDiv.appendChild(input);
+    return { lineDiv, input };
+  }
+
+  function resetSitterLines() {
+    const sitterContainer = document.getElementById('sitter-blank-lines-container');
+    if (!sitterContainer) return;
+    const lines = Array.from(sitterContainer.querySelectorAll('.sitter-blank-line'));
+    while (lines.length > 3) {
+      lines.pop()?.remove();
+    }
+    const inputs = sitterContainer.querySelectorAll<HTMLInputElement>('input');
+    if (inputs[0]) { inputs[0].value = 'Fresh water changed 2x daily. Rest 30m before walks.'; inputs[0].setAttribute('value', inputs[0].value); }
+    if (inputs[1]) { inputs[1].value = ''; inputs[1].setAttribute('value', ''); }
+    if (inputs[2]) { inputs[2].value = ''; inputs[2].setAttribute('value', ''); }
+  }
+
   function saveCurrentState() {
     if (!currentProfile) return;
-    const note1 = (document.getElementById('sitter-note-input') as HTMLInputElement)?.value;
-    const note2 = (document.getElementById('sitter-note-input-2') as HTMLInputElement)?.value;
-    const note3 = (document.getElementById('sitter-note-input-3') as HTMLInputElement)?.value;
+    const sitterContainer = document.getElementById('sitter-blank-lines-container');
+    const sitterNotes = sitterContainer
+      ? Array.from(sitterContainer.querySelectorAll<HTMLInputElement>('input')).map(i => i.value)
+      : [];
     const vetPhone = (document.getElementById('vet-phone-input') as HTMLInputElement)?.value;
     const amTime = (document.getElementById('am-time-input') as HTMLInputElement)?.value;
     const pmTime = (document.getElementById('pm-time-input') as HTMLInputElement)?.value;
@@ -736,9 +763,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         diet: currentProfile.currentDiet || 'fresh',
         amCustomItems,
         pmCustomItems,
-        sitterNote1: note1,
-        sitterNote2: note2,
-        sitterNote3: note3,
+        sitterNotes,
+        sitterNote1: sitterNotes[0],
+        sitterNote2: sitterNotes[1],
+        sitterNote3: sitterNotes[2],
         vetPhone,
         amTime,
         pmTime,
@@ -871,18 +899,27 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       if (Array.isArray(state.amCustomItems)) amCustomItems = state.amCustomItems;
       if (Array.isArray(state.pmCustomItems)) pmCustomItems = state.pmCustomItems;
       renderResults(currentProfile, state.diet || 'fresh', false);
-      if (state.sitterNote1 !== undefined) {
-        const el = document.getElementById('sitter-note-input') as HTMLInputElement | null;
-        if (el) el.value = state.sitterNote1;
+
+      const sitterContainer = document.getElementById('sitter-blank-lines-container');
+      if (sitterContainer) {
+        const notesToRestore = Array.isArray(state.sitterNotes)
+          ? state.sitterNotes
+          : [state.sitterNote1, state.sitterNote2, state.sitterNote3].filter(n => n !== undefined);
+
+        if (notesToRestore.length > 0) {
+          const currentInputs = Array.from(sitterContainer.querySelectorAll<HTMLInputElement>('input'));
+          for (let i = 0; i < currentInputs.length; i++) {
+            if (notesToRestore[i] !== undefined) {
+              currentInputs[i].value = notesToRestore[i];
+            }
+          }
+          for (let i = currentInputs.length; i < notesToRestore.length; i++) {
+            const { lineDiv, input } = createSitterLine(notesToRestore[i], `Extra pet sitter instruction line ${i + 1}`);
+            sitterContainer.appendChild(lineDiv);
+          }
+        }
       }
-      if (state.sitterNote2 !== undefined) {
-        const el = document.getElementById('sitter-note-input-2') as HTMLInputElement | null;
-        if (el) el.value = state.sitterNote2;
-      }
-      if (state.sitterNote3 !== undefined) {
-        const el = document.getElementById('sitter-note-input-3') as HTMLInputElement | null;
-        if (el) el.value = state.sitterNote3;
-      }
+
       if (state.vetPhone !== undefined) {
         const el = document.getElementById('vet-phone-input') as HTMLInputElement | null;
         if (el) el.value = state.vetPhone;
@@ -906,12 +943,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     currentProfile = null;
     amCustomItems = [];
     pmCustomItems = [];
-    const note1 = document.getElementById('sitter-note-input') as HTMLInputElement | null;
-    if (note1) { note1.value = 'Fresh water changed 2x daily. Rest 30m before walks.'; note1.setAttribute('value', note1.value); }
-    const note2 = document.getElementById('sitter-note-input-2') as HTMLInputElement | null;
-    if (note2) { note2.value = ''; note2.setAttribute('value', ''); }
-    const note3 = document.getElementById('sitter-note-input-3') as HTMLInputElement | null;
-    if (note3) { note3.value = ''; note3.setAttribute('value', ''); }
+    resetSitterLines();
     document.getElementById('results-section')?.classList.add('hidden');
     const plannerSection = document.getElementById('planner-section');
     if (plannerSection) {
@@ -922,7 +954,11 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
   }
 
   function syncPrintInputs() {
-    ['sitter-note-input', 'sitter-note-input-2', 'sitter-note-input-3', 'vet-phone-input', 'am-time-input', 'pm-time-input'].forEach(id => {
+    const sitterContainer = document.getElementById('sitter-blank-lines-container');
+    sitterContainer?.querySelectorAll<HTMLInputElement>('input').forEach(input => {
+      input.setAttribute('value', input.value);
+    });
+    ['vet-phone-input', 'am-time-input', 'pm-time-input'].forEach(id => {
       const el = document.getElementById(id) as HTMLInputElement | null;
       if (el) el.setAttribute('value', el.value);
     });
@@ -953,10 +989,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     amCustomItems = [];
     pmCustomItems = [];
     sessionStorage.removeItem(RESULTS_STATE_KEY);
-    const note2 = document.getElementById('sitter-note-input-2') as HTMLInputElement | null;
-    if (note2) { note2.value = ''; note2.setAttribute('value', ''); }
-    const note3 = document.getElementById('sitter-note-input-3') as HTMLInputElement | null;
-    if (note3) { note3.value = ''; note3.setAttribute('value', ''); }
+    resetSitterLines();
     renderResults(profile);
   });
 
@@ -967,7 +1000,39 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     btn.addEventListener('click', printPlan);
   });
 
-  ['sitter-note-input', 'sitter-note-input-2', 'sitter-note-input-3', 'vet-phone-input', 'am-time-input', 'pm-time-input'].forEach(id => {
+  const sitterContainer = document.getElementById('sitter-blank-lines-container');
+  sitterContainer?.addEventListener('keydown', (e: KeyboardEvent) => {
+    const target = e.target as HTMLInputElement;
+    if (!target || target.tagName !== 'INPUT') return;
+    const inputs = Array.from(sitterContainer.querySelectorAll<HTMLInputElement>('input'));
+    const idx = inputs.indexOf(target);
+    if (idx === -1) return;
+
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (idx < inputs.length - 1) {
+        inputs[idx + 1].focus();
+      } else {
+        // Last line: add another line down and focus it
+        const { lineDiv, input } = createSitterLine('', `Extra pet sitter instruction line ${inputs.length + 1}`);
+        sitterContainer.appendChild(lineDiv);
+        input.focus();
+        saveCurrentState();
+      }
+    } else if (e.key === 'Backspace' && target.value === '' && inputs.length > 3 && idx > 0) {
+      e.preventDefault();
+      const prev = inputs[idx - 1];
+      target.closest('.sitter-blank-line')?.remove();
+      prev.focus();
+      saveCurrentState();
+    }
+  });
+
+  sitterContainer?.addEventListener('input', () => {
+    saveCurrentState();
+  });
+
+  ['vet-phone-input', 'am-time-input', 'pm-time-input'].forEach(id => {
     document.getElementById(id)?.addEventListener('input', () => {
       saveCurrentState();
     });
