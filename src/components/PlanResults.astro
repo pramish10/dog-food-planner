@@ -133,8 +133,21 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         <label for="sitter-note-input" class="block text-[10px] font-mono uppercase font-semibold text-[#92400e] dark:text-[#c4956a] mb-1">
           Pet Sitter & Family Instructions:
         </label>
-        <input type="text" id="sitter-note-input" value="Fresh water changed 2x daily. Rest 30m before walks."
-          class="w-full text-xs bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg px-2.5 py-1 text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b]" />
+        <!-- 3 matching lines: Line 1 with prefilled text, plus 2 blank lines for extra notes/handwriting -->
+        <div class="space-y-1.5" id="sitter-blank-lines-container">
+          <div class="sitter-blank-line relative flex items-center border-b border-dashed border-[#d8b488] dark:border-[#523518] min-h-[22px]">
+            <input type="text" id="sitter-note-input" value="Fresh water changed 2x daily. Rest 30m before walks." aria-label="Pet Sitter & Family Instructions Line 1"
+              class="w-full text-xs bg-transparent border-none px-1 py-0.5 text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none" />
+          </div>
+          <div class="sitter-blank-line relative flex items-center border-b border-dashed border-[#d8b488] dark:border-[#523518] min-h-[22px]">
+            <input type="text" id="sitter-note-input-2" placeholder="" aria-label="Extra pet sitter instruction line 2"
+              class="w-full text-xs bg-transparent border-none px-1 py-0.5 text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none" />
+          </div>
+          <div class="sitter-blank-line relative flex items-center border-b border-dashed border-[#d8b488] dark:border-[#523518] min-h-[22px]">
+            <input type="text" id="sitter-note-input-3" placeholder="" aria-label="Extra pet sitter instruction line 3"
+              class="w-full text-xs bg-transparent border-none px-1 py-0.5 text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none" />
+          </div>
+        </div>
       </div>
 
       <!-- Action Bar: Print Fridge Card only + Start Over near it (Zero duplicates, hidden in print) -->
@@ -710,6 +723,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
   function saveCurrentState() {
     if (!currentProfile) return;
+    const note1 = (document.getElementById('sitter-note-input') as HTMLInputElement)?.value;
+    const note2 = (document.getElementById('sitter-note-input-2') as HTMLInputElement)?.value;
+    const note3 = (document.getElementById('sitter-note-input-3') as HTMLInputElement)?.value;
+    const vetPhone = (document.getElementById('vet-phone-input') as HTMLInputElement)?.value;
+    const amTime = (document.getElementById('am-time-input') as HTMLInputElement)?.value;
+    const pmTime = (document.getElementById('pm-time-input') as HTMLInputElement)?.value;
     sessionStorage.setItem(
       RESULTS_STATE_KEY,
       JSON.stringify({
@@ -717,6 +736,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         diet: currentProfile.currentDiet || 'fresh',
         amCustomItems,
         pmCustomItems,
+        sitterNote1: note1,
+        sitterNote2: note2,
+        sitterNote3: note3,
+        vetPhone,
+        amTime,
+        pmTime,
       })
     );
   }
@@ -846,6 +871,30 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       if (Array.isArray(state.amCustomItems)) amCustomItems = state.amCustomItems;
       if (Array.isArray(state.pmCustomItems)) pmCustomItems = state.pmCustomItems;
       renderResults(currentProfile, state.diet || 'fresh', false);
+      if (state.sitterNote1 !== undefined) {
+        const el = document.getElementById('sitter-note-input') as HTMLInputElement | null;
+        if (el) el.value = state.sitterNote1;
+      }
+      if (state.sitterNote2 !== undefined) {
+        const el = document.getElementById('sitter-note-input-2') as HTMLInputElement | null;
+        if (el) el.value = state.sitterNote2;
+      }
+      if (state.sitterNote3 !== undefined) {
+        const el = document.getElementById('sitter-note-input-3') as HTMLInputElement | null;
+        if (el) el.value = state.sitterNote3;
+      }
+      if (state.vetPhone !== undefined) {
+        const el = document.getElementById('vet-phone-input') as HTMLInputElement | null;
+        if (el) el.value = state.vetPhone;
+      }
+      if (state.amTime !== undefined) {
+        const el = document.getElementById('am-time-input') as HTMLInputElement | null;
+        if (el) el.value = state.amTime;
+      }
+      if (state.pmTime !== undefined) {
+        const el = document.getElementById('pm-time-input') as HTMLInputElement | null;
+        if (el) el.value = state.pmTime;
+      }
       ensureCardLinksOpenNewTab();
     } catch {
       sessionStorage.removeItem(RESULTS_STATE_KEY);
@@ -857,6 +906,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     currentProfile = null;
     amCustomItems = [];
     pmCustomItems = [];
+    const note1 = document.getElementById('sitter-note-input') as HTMLInputElement | null;
+    if (note1) { note1.value = 'Fresh water changed 2x daily. Rest 30m before walks.'; note1.setAttribute('value', note1.value); }
+    const note2 = document.getElementById('sitter-note-input-2') as HTMLInputElement | null;
+    if (note2) { note2.value = ''; note2.setAttribute('value', ''); }
+    const note3 = document.getElementById('sitter-note-input-3') as HTMLInputElement | null;
+    if (note3) { note3.value = ''; note3.setAttribute('value', ''); }
     document.getElementById('results-section')?.classList.add('hidden');
     const plannerSection = document.getElementById('planner-section');
     if (plannerSection) {
@@ -866,8 +921,16 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     }
   }
 
+  function syncPrintInputs() {
+    ['sitter-note-input', 'sitter-note-input-2', 'sitter-note-input-3', 'vet-phone-input', 'am-time-input', 'pm-time-input'].forEach(id => {
+      const el = document.getElementById(id) as HTMLInputElement | null;
+      if (el) el.setAttribute('value', el.value);
+    });
+  }
+
   function printPlan() {
     ensureCardLinksOpenNewTab();
+    syncPrintInputs();
     document.body.classList.add('printing-plan');
     window.print();
   }
@@ -875,6 +938,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
   window.addEventListener('beforeprint', () => {
     const results = document.getElementById('results-section');
     if (results && !results.classList.contains('hidden')) {
+      syncPrintInputs();
       document.body.classList.add('printing-plan');
     }
   });
@@ -889,6 +953,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     amCustomItems = [];
     pmCustomItems = [];
     sessionStorage.removeItem(RESULTS_STATE_KEY);
+    const note2 = document.getElementById('sitter-note-input-2') as HTMLInputElement | null;
+    if (note2) { note2.value = ''; note2.setAttribute('value', ''); }
+    const note3 = document.getElementById('sitter-note-input-3') as HTMLInputElement | null;
+    if (note3) { note3.value = ''; note3.setAttribute('value', ''); }
     renderResults(profile);
   });
 
@@ -897,6 +965,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
   });
   document.querySelectorAll('.print-card-btn').forEach(btn => {
     btn.addEventListener('click', printPlan);
+  });
+
+  ['sitter-note-input', 'sitter-note-input-2', 'sitter-note-input-3', 'vet-phone-input', 'am-time-input', 'pm-time-input'].forEach(id => {
+    document.getElementById(id)?.addEventListener('input', () => {
+      saveCurrentState();
+    });
   });
 
   // Restore on page load if present

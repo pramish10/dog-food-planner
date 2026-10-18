@@ -446,6 +446,8 @@ html.dark .hairline-card-active {
 
   body.printing-plan #vet-phone-input,
   body.printing-plan #sitter-note-input,
+  body.printing-plan #sitter-note-input-2,
+  body.printing-plan #sitter-note-input-3,
   body.printing-plan #am-time-input,
   body.printing-plan #pm-time-input {
     border: none !important;
@@ -457,9 +459,32 @@ html.dark .hairline-card-active {
     font-size: 11.5px !important;
   }
 
-  body.printing-plan #sitter-note-input {
+  body.printing-plan #sitter-note-input,
+  body.printing-plan #sitter-note-input-2,
+  body.printing-plan #sitter-note-input-3 {
     width: 100% !important;
     font-weight: 600 !important;
+  }
+
+  body.printing-plan .sitter-blank-line {
+    border-bottom: 1px solid #000000 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    min-height: 22px !important;
+  }
+
+  body.printing-plan .sitter-blank-line:first-child {
+    margin-top: 2px !important;
+  }
+
+  body.printing-plan .sitter-blank-line + .sitter-blank-line {
+    margin-top: 6px !important;
+  }
+
+  body.printing-plan input::placeholder {
+    color: transparent !important;
+    opacity: 0 !important;
   }
 }
 
