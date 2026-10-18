@@ -94,11 +94,6 @@ const finalDescription = lang === 'en'
     <!-- Pinterest Verification -->
     <meta name="p:domain_verify" content="37c7f4ff6cbde75ea0963ff781f83070" />
     
-    <!-- Browser-based deep-learning models. They are fetched on demand by the scanner; visitors never install anything. -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js"></script>
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
@@ -120,10 +115,14 @@ const finalDescription = lang === 'en'
     <meta property="twitter:image" content={ogImage} />
     <meta name="twitter:site" content="@dogfoodplanner" />
 
-    <!-- Performance & Fonts -->
+    <!-- Performance & Fonts: Preconnect & Non-render-blocking Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
 
     <!-- Theme initialization: Defaults to light mode unless explicitly set to dark -->
     <script is:inline>

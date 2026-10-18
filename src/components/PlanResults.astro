@@ -35,7 +35,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           <span class="text-sm">🏥</span>
           <div>
             <div class="text-[9px] font-mono uppercase font-bold text-[#92400e] dark:text-[#c4956a] leading-none">{px.vetPhoneLabel}</div>
-            <input type="text" id="vet-phone-input" value="(555) 0199" placeholder={px.vetPhonePlaceholder}
+            <input type="text" id="vet-phone-input" value="(555) 0199" placeholder={px.vetPhonePlaceholder} aria-label={px.vetPhoneLabel}
               class="text-xs font-bold font-mono text-[#1c0f00] dark:text-[#fde8c8] bg-transparent border-none p-0 focus:outline-none w-32" />
           </div>
         </div>
@@ -63,7 +63,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
               <span>☀️</span>
               <span id="am-bowl-title">{px.morningBowlTitle}</span>
             </div>
-            <input type="text" id="am-time-input" value="7:30 AM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+            <input type="text" id="am-time-input" value="7:30 AM" aria-label={px.morningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
           </div>
           <ul id="card-am-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
             <!-- populated by JS -->
@@ -82,7 +82,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
               <span>🌙</span>
               <span id="pm-bowl-title">{px.eveningBowlTitle}</span>
             </div>
-            <input type="text" id="pm-time-input" value="6:00 PM" class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+            <input type="text" id="pm-time-input" value="6:00 PM" aria-label={px.eveningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
           </div>
           <ul id="card-pm-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
             <!-- populated by JS -->
@@ -153,7 +153,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       <!-- Action Bar: Print Fridge Card only + Start Over near it (Zero duplicates, hidden in print) -->
       <div class="mt-3 pt-3 border-t border-[#f0d5a8] dark:border-[#3a2510] flex items-center justify-between gap-3 no-print">
         <div class="flex items-center gap-2.5">
-          <button type="button" class="print-card-btn px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#c47a2b] hover:bg-[#a8621f] rounded-xl transition-all shadow-sm flex items-center gap-2 cursor-pointer touch-manipulation min-h-[42px]">
+          <button type="button" class="print-card-btn px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#b45309] hover:bg-[#92400e] rounded-xl transition-all shadow-sm flex items-center gap-2 cursor-pointer touch-manipulation min-h-[42px]">
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/>
             </svg>
