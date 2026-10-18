@@ -107,8 +107,9 @@ function serializeSitemapItem(item) {
   }
 
   const blogMatch = unprefixed.match(/^\/blog\/([^/]+)$/);
-  if (blogMatch && BLOG_POST_DATES[blogMatch[1]]) {
-    item.lastmod = BLOG_POST_DATES[blogMatch[1]];
+  const slug = blogMatch ? blogMatch[1] : '';
+  if (slug && BLOG_POST_DATES[slug]) {
+    item.lastmod = BLOG_POST_DATES[slug];
   } else {
     item.lastmod = new Date().toISOString();
   }
