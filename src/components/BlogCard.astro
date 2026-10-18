@@ -15,6 +15,7 @@ const translatePath = useTranslatedPath(lang);
 const categoryName = BLOG_CATEGORY_TRANSLATIONS[lang]?.[post.category] || post.category;
 const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 const articleUrl = translatePath(`/blog/${post.slug}`);
+const image600 = post.image.replace(/\.(webp|jpg)$/, '-600w.webp');
 ---
 
 <article 
@@ -29,20 +30,23 @@ const articleUrl = translatePath(`/blog/${post.slug}`);
   <!-- Card Header Image Banner (Real Preview Image) -->
   <div 
     class:list={[
-      "relative overflow-hidden shrink-0 flex items-end justify-start p-4 sm:p-5",
-      featured ? "lg:w-5/12 min-h-[240px] lg:min-h-full" : "h-48 sm:h-52"
+      "relative overflow-hidden shrink-0 flex items-end justify-start p-4 sm:p-5 aspect-[16/9]",
+      featured ? "lg:w-5/12 min-h-[240px] lg:min-h-full lg:aspect-auto" : "w-full"
     ]}
   >
-    <!-- Photographic Preview Image (Explicit 16:9 dimensions to prevent CLS, LCP optimized) -->
+    <!-- Photographic Preview Image (Explicit 16:9 dimensions to prevent CLS, responsive srcset) -->
     <img 
       src={post.image} 
+      srcset={`${image600} 600w, ${post.image} 1000w`}
+      sizes={featured ? "(max-width: 1024px) 100vw, 42vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"}
       alt={post.imageAlt}
       width="800"
       height="450"
-      class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      style="aspect-ratio: 16 / 9;"
+      class="absolute inset-0 w-full h-full object-cover aspect-[16/9] group-hover:scale-105 transition-transform duration-500"
       loading={featured ? "eager" : "lazy"}
-      fetchpriority={featured ? "high" : "auto"}
-      decoding={featured ? "sync" : "async"}
+      fetchpriority={featured ? "high" : "low"}
+      decoding="async"
     />
     
     <!-- Warm Vignette & Legibility Gradient -->

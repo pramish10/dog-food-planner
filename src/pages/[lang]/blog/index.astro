@@ -22,6 +22,7 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 const posts = getLocalizedBlogPosts(lang);
 const featuredPost = posts.find(p => p.featured) || posts[0];
 const regularPosts = posts.filter(p => p.id !== featuredPost.id);
+const featuredImage600 = featuredPost.image.replace(/\.(webp|jpg)$/, '-600w.webp');
 ---
 
 <Layout 
@@ -29,6 +30,8 @@ const regularPosts = posts.filter(p => p.id !== featuredPost.id);
   title={currentStrings['blog.title']}
   description={currentStrings['blog.desc']}
   preloadImage={featuredPost.image}
+  preloadImageSrcset={`${featuredImage600} 600w, ${featuredPost.image} 1000w`}
+  preloadImageSizes="(max-width: 1024px) 100vw, 42vw"
 >
   <Navbar />
 

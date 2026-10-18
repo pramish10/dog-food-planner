@@ -129,6 +129,24 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
             }
           }
 
+          // Enforce AA/AAA high contrast (7.55:1 against white) directly on the submit element
+          if (submitBtn) {
+            submitBtn.style.setProperty('background-color', '#92400e', 'important');
+            submitBtn.style.setProperty('border-color', '#92400e', 'important');
+            submitBtn.style.setProperty('color', '#ffffff', 'important');
+            submitBtn.style.setProperty('font-weight', '700', 'important');
+          }
+
+          // Neutralize EmailOctopus injected stylesheet @import (eliminates unused Montserrat font & bootstrap CSS)
+          const injectedStyles = wrapper.querySelectorAll('style');
+          injectedStyles.forEach(function(st) {
+            if (st.dataset.cleaned) return;
+            st.dataset.cleaned = 'true';
+            if (st.textContent && st.textContent.includes('Montserrat')) {
+              st.textContent = st.textContent.replace(/@import\s+url\([^)]+\);?/gi, '');
+            }
+          });
+
           // Attach pre-flight validation in capture phase before EmailOctopus recaptcha runs
           if (form && form !== attachedForm) {
             attachedForm = form;
@@ -215,20 +233,12 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
               obs.unobserve(entry.target);
             }
           });
-        }, { rootMargin: '400px 0px' });
+        }, { rootMargin: '200px 0px' });
 
         wrappers.forEach(function(w) { observer.observe(w); });
       } else {
         wrappers.forEach(loadEmailOctopus);
       }
-
-      function triggerOnInteraction() {
-        wrappers.forEach(loadEmailOctopus);
-        window.removeEventListener('scroll', triggerOnInteraction);
-        window.removeEventListener('touchstart', triggerOnInteraction);
-      }
-      window.addEventListener('scroll', triggerOnInteraction, { passive: true, once: true });
-      window.addEventListener('touchstart', triggerOnInteraction, { passive: true, once: true });
     }
 
     function initNewsletter() {
@@ -339,11 +349,14 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
     box-shadow: 0 0 0 2px rgba(196, 122, 43, 0.25) !important;
   }
 
-  /* Submit button styling: matched height, no drop-down, no rightward push */
+  /* Submit button styling: matched height, no drop-down, WCAG AAA compliant contrast (7.55:1) */
   .emailoctopus-wrapper .btn,
   .emailoctopus-wrapper .btn-primary,
   .emailoctopus-wrapper input[type="submit"],
-  .emailoctopus-wrapper button[type="submit"] {
+  .emailoctopus-wrapper input.btn.w-100.btn-primary.mb-2,
+  .emailoctopus-wrapper button[type="submit"],
+  [data-form="3a32e580-c79f-11f1-ba68-8f65c387aa2a"] .btn-primary,
+  [data-form="3a32e580-c79f-11f1-ba68-8f65c387aa2a"] input.btn.w-100.btn-primary.mb-2 {
     flex: 0 0 auto !important;
     width: auto !important;
     font-size: 0.8125rem !important;
@@ -366,14 +379,18 @@ const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
   .emailoctopus-wrapper .btn:hover,
   .emailoctopus-wrapper .btn-primary:hover,
   .emailoctopus-wrapper input[type="submit"]:hover,
-  .emailoctopus-wrapper button[type="submit"]:hover {
+  .emailoctopus-wrapper input.btn.w-100.btn-primary.mb-2:hover,
+  .emailoctopus-wrapper button[type="submit"]:hover,
+  [data-form="3a32e580-c79f-11f1-ba68-8f65c387aa2a"] .btn-primary:hover {
     background-color: #78350f !important;
     border-color: #78350f !important;
   }
   .emailoctopus-wrapper .btn:active,
   .emailoctopus-wrapper .btn-primary:active,
   .emailoctopus-wrapper input[type="submit"]:active,
-  .emailoctopus-wrapper button[type="submit"]:active {
+  .emailoctopus-wrapper input.btn.w-100.btn-primary.mb-2:active,
+  .emailoctopus-wrapper button[type="submit"]:active,
+  [data-form="3a32e580-c79f-11f1-ba68-8f65c387aa2a"] .btn-primary:active {
     transform: scale(0.98) !important;
   }
 
