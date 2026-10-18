@@ -46,7 +46,7 @@ const brandProducts = (item.affiliateProductKeys || [])
   .map((k) => AFFILIATE_PRODUCTS[k])
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
-const pageTitle = `${item.name} | ${t('nav.brands')} 2026 | DogFoodPlanner.com`;
+const pageTitle = `${item.name} | ${t('nav.brands')} 2026 | Dog Food Planner`;
 const pageDescription = `${item.overview.slice(0, 150)}... ${item.name}`;
 
 const articleJsonLd = {

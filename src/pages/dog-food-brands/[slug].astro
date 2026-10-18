@@ -36,7 +36,7 @@ const brandProducts = (item.affiliateProductKeys || [])
   .map((k) => AFFILIATE_PRODUCTS[k])
   .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
-const pageTitle = `${item.name} Dog Food Review & Nutrition Analysis 2026 | DogFoodPlanner.com`;
+const pageTitle = `${item.name} Dog Food Review & Analysis (2026) | Dog Food Planner`;
 const pageDescription = `${item.overview.slice(0, 150)}... Nutritional review, recall information, and macronutrient profile for ${item.name}.`;
 
 const articleJsonLd = {

@@ -54,7 +54,7 @@ const finalDescription = lang === 'en'
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="DogFoodPlanner" />
+    <meta name="apple-mobile-web-app-title" content="Dog Food Planner" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="sitemap" href="/sitemap.xml" />
@@ -81,7 +81,7 @@ const finalDescription = lang === 'en'
     <meta name="robots" content={robotsContent} />
     <meta name="googlebot" content={robotsContent} />
     <meta name="bingbot" content={robotsContent} />
-    <meta name="author" content="DogFoodPlanner Editorial Team" />
+    <meta name="author" content="Dog Food Planner Editorial Team" />
     
     <!-- Pinterest Verification -->
     <meta name="p:domain_verify" content="37c7f4ff6cbde75ea0963ff781f83070" />
@@ -129,11 +129,23 @@ const finalDescription = lang === 'en'
       })();
     </script>
 
-    <!-- Structured Data Schema.org (WebApplication + Organization) -->
+    <!-- Structured Data Schema.org (WebSite + WebApplication + Organization) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://dogfoodplanner.com/#website",
+            "url": "https://dogfoodplanner.com",
+            "name": "Dog Food Planner",
+            "alternateName": [
+              "Dog Food Planner",
+              "DogFoodPlanner",
+              "DogFoodPlanner.com"
+            ],
+            "inLanguage": ["en", "es", "ja", "fr", "de", "pt", "ko", "it"]
+          },
           {
             "@type": "WebApplication",
             "@id": "https://dogfoodplanner.com/#app",
