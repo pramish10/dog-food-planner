@@ -26,7 +26,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
             </h3>
           </div>
           <div class="text-xs font-mono text-[#92400e] dark:text-[#c4956a] mt-0.5">
-            <span id="card-dog-breed">Golden Retriever</span> • <span id="card-dog-weight">55 lbs</span> • <span id="card-dog-stage">Adult</span> • <span id="card-dog-diet">Fresh Cooked</span> • <span id="card-dog-kcal" class="text-[#c47a2b] font-bold">1,075 kcal/day</span>
+            <span id="card-dog-breed">Golden Retriever</span> • <span id="card-dog-weight">55 lbs</span> • <span id="card-dog-stage">Adult</span> • <span id="card-dog-diet">Fresh Cooked</span>
           </div>
         </div>
 
@@ -54,65 +54,61 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         <span>{px.noAllergiesNotice}</span>
       </div>
 
-      <!-- Morning & Evening Bowls (Side by Side with Interactive Inline Add Ingredient) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3 items-start" id="card-bowls-grid" style="align-items: start;">
+      <!-- Morning & Evening Bowls (Side by Side with Interactive Inline Add Ingredient & Calorie Widgets) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3 items-stretch" id="card-bowls-grid">
         <!-- Morning Bowl -->
-        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 self-start h-auto" style="align-self: start; height: fit-content;">
-          <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
-            <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
-              <span>☀️</span>
-              <span id="am-bowl-title">{px.morningBowlTitle}</span>
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 flex flex-col justify-between h-auto" id="card-am-bowl-wrapper">
+          <div>
+            <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
+              <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
+                <span>☀️</span>
+                <span id="am-bowl-title">{px.morningBowlTitle}</span>
+              </div>
+              <input type="text" id="am-time-input" value="7:30 AM" aria-label={px.morningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
             </div>
-            <input type="text" id="am-time-input" value="7:30 AM" aria-label={px.morningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
-          </div>
-          <ul id="card-am-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
-            <!-- populated by JS -->
-          </ul>
+            <ul id="card-am-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
+              <!-- populated by JS -->
+            </ul>
 
-          <!-- Add Ingredient Interactive Row (AM) - sits immediately below previous ingredient -->
-          <div id="am-add-container" class="mt-2 no-print">
+            <!-- Add Ingredient Interactive Row (AM) - sits immediately below previous ingredient -->
+            <div id="am-add-container" class="mt-2 no-print">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Calories bar container (AM) -->
+          <div id="am-calories-widget" class="mt-3 pt-2.5 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70">
             <!-- Populated by JS -->
           </div>
         </div>
 
         <!-- Evening Bowl -->
-        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 self-start h-auto" style="align-self: start; height: fit-content;" id="card-pm-bowl-wrapper">
-          <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
-            <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
-              <span>🌙</span>
-              <span id="pm-bowl-title">{px.eveningBowlTitle}</span>
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 flex flex-col justify-between h-auto" id="card-pm-bowl-wrapper">
+          <div>
+            <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
+              <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
+                <span>🌙</span>
+                <span id="pm-bowl-title">{px.eveningBowlTitle}</span>
+              </div>
+              <input type="text" id="pm-time-input" value="6:00 PM" aria-label={px.eveningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
             </div>
-            <input type="text" id="pm-time-input" value="6:00 PM" aria-label={px.eveningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
-          </div>
-          <ul id="card-pm-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
-            <!-- populated by JS -->
-          </ul>
+            <ul id="card-pm-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
+              <!-- populated by JS -->
+            </ul>
 
-          <!-- Add Ingredient Interactive Row (PM) - sits immediately below previous ingredient -->
-          <div id="pm-add-container" class="mt-2 no-print">
+            <!-- Add Ingredient Interactive Row (PM) - sits immediately below previous ingredient -->
+            <div id="pm-add-container" class="mt-2 no-print">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Calories bar container (PM) -->
+          <div id="pm-calories-widget" class="mt-3 pt-2.5 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70">
             <!-- Populated by JS -->
           </div>
         </div>
       </div>
 
-      <!-- Treat Limit & Training Budget Box (Daily treat cap text removed, Training Bites with inline styled link) -->
-      <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5 bg-amber-50/50 dark:bg-amber-950/20 mb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-        <div class="flex items-start gap-2">
-          <span class="text-base shrink-0">🦴</span>
-          <div>
-            <div class="font-bold text-[#1c0f00] dark:text-[#fde8c8] uppercase font-mono">{px.treatBudgetHeader}</div>
-            <div class="text-xs text-[#92400e] dark:text-[#c4956a] mt-0.5" id="card-treat-breakdown">
-              <a href="https://link.amazon/B0h2wswVk" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
-                Training Bites
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="font-mono font-bold text-sm text-[#c47a2b] sm:text-right shrink-0">
-          <span id="card-treat-limit">95</span> kcal/day
-          <div class="text-[10px] text-[#92400e] dark:text-[#c4956a] font-normal" id="card-treat-pieces">~2 small biscuits or rewards</div>
-        </div>
-      </div>
 
       <!-- Weekly Feeding Checklist Table -->
       <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5 mb-3 bg-white dark:bg-[#1c1208]">
@@ -194,16 +190,78 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     name: string;
     affiliateUrl: string;
     calculateDose: (weightLbs: number, stage: string, goal: string) => string;
+    calculateKcal: (weightLbs: number, stage: string, goal: string) => number;
   }
 
-  // Predefined catalog with exact affiliate URLs & automated personalized canine portion calculation
+  // Predefined catalog with exact affiliate URLs, personalized canine portions & accurate calorie calculation
   const INGREDIENTS_CATALOG: CatalogItem[] = [
+    {
+      id: 'dry-kibble-formula',
+      icon: '🥣',
+      name: 'Dry Kibble (Complete & Balanced Formula)',
+      affiliateUrl: 'https://link.amazon/B0h1I7guA',
+      calculateDose: (w) => {
+        const cups = Math.max(0.25, Math.round(((w * 0.015 + 0.2)) * 20) / 20);
+        const grams = Math.round(cups * 115);
+        return `${cups} cups (${grams}g)`;
+      },
+      calculateKcal: (w) => {
+        const cups = Math.max(0.25, Math.round(((w * 0.015 + 0.2)) * 20) / 20);
+        return Math.round(cups * 365);
+      },
+    },
+    {
+      id: 'fresh-cooked-formula',
+      icon: '🍲',
+      name: 'Fresh Gently Cooked Bowl (Human-Grade Formula)',
+      affiliateUrl: 'https://link.amazon/B0gWhHriE',
+      calculateDose: (w) => {
+        const cups = Math.max(0.25, Math.round(((w * 0.018 + 0.25)) * 20) / 20);
+        const grams = Math.round(cups * 150);
+        return `${cups} cups (${grams}g)`;
+      },
+      calculateKcal: (w) => {
+        const cups = Math.max(0.25, Math.round(((w * 0.018 + 0.25)) * 20) / 20);
+        return Math.round(cups * 320);
+      },
+    },
+    {
+      id: 'wet-canned-formula',
+      icon: '🥫',
+      name: 'Grain-Free Wet Dog Food (Loaf / Pate Can)',
+      affiliateUrl: 'https://link.amazon/B0cbv1oLz',
+      calculateDose: (w) => (w < 20 ? '1/2 can (6.5 oz)' : w > 50 ? '2 cans (26 oz)' : '1 can (13 oz)'),
+      calculateKcal: (w) => (w < 20 ? 190 : w > 50 ? 760 : 380),
+    },
+    {
+      id: 'raw-barf-formula',
+      icon: '🥩',
+      name: 'Freeze-Dried Raw BARF Patty',
+      affiliateUrl: 'https://link.amazon/B0i140Q91',
+      calculateDose: (w) => (w < 20 ? '1 patty (4 oz)' : w > 50 ? '3–4 patties' : '2 patties (8 oz)'),
+      calculateKcal: (w) => (w < 20 ? 180 : w > 50 ? 650 : 360),
+    },
+    {
+      id: 'chicken-rice-diet',
+      icon: '🍚',
+      name: 'Cooked Chicken & White Rice (Bland Diet)',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+canned+chicken+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => {
+        const cups = Math.max(0.5, Math.round(((w * 0.02 + 0.3)) * 10) / 10);
+        return `${cups} cups`;
+      },
+      calculateKcal: (w) => {
+        const cups = Math.max(0.5, Math.round(((w * 0.02 + 0.3)) * 10) / 10);
+        return Math.round(cups * 280);
+      },
+    },
     {
       id: 'salmon-oil',
       icon: '🐟',
       name: 'Salmon Oil',
       affiliateUrl: 'https://link.amazon/B02zrZWPG',
       calculateDose: (w) => (w < 25 ? '1/2 pump (1/2 tsp)' : w > 60 ? '2 pumps (2 tsp)' : '1 pump (1 tsp)'),
+      calculateKcal: (w) => (w < 25 ? 20 : w > 60 ? 80 : 40),
     },
     {
       id: 'pumpkin',
@@ -211,6 +269,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Pumpkin Puree',
       affiliateUrl: 'https://link.amazon/B06zoxxSD',
       calculateDose: (w) => (w < 20 ? '1 tsp' : w > 50 ? '2 tbsp' : '1 tbsp'),
+      calculateKcal: (w) => (w < 20 ? 4 : w > 50 ? 16 : 8),
     },
     {
       id: 'bone-broth',
@@ -218,6 +277,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Bone Broth',
       affiliateUrl: 'https://link.amazon/B0c8qZk7Y',
       calculateDose: (w) => (w < 20 ? '1 tbsp' : w > 50 ? '1/4 cup (2 oz)' : '2 tbsp (1 oz)'),
+      calculateKcal: (w) => (w < 20 ? 5 : w > 50 ? 20 : 10),
     },
     {
       id: 'blueberries',
@@ -225,6 +285,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Fresh Blueberries',
       affiliateUrl: 'https://link.amazon/B09gsTFIp',
       calculateDose: (w) => (w < 20 ? '3–4 berries' : w > 50 ? '2 tbsp (~12 berries)' : '1 tbsp (~6 berries)'),
+      calculateKcal: (w) => (w < 20 ? 3 : w > 50 ? 12 : 6),
     },
     {
       id: 'joint-chew',
@@ -232,6 +293,15 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Joint Chew',
       affiliateUrl: 'https://link.amazon/B01H3PPzn',
       calculateDose: (w) => (w < 30 ? '1/2 chew' : w > 70 ? '2 chews' : '1 chew'),
+      calculateKcal: (w) => (w < 30 ? 10 : w > 70 ? 30 : 15),
+    },
+    {
+      id: 'training-bites',
+      icon: '🍖',
+      name: 'Training Bites (Low-Calorie Treats)',
+      affiliateUrl: 'https://link.amazon/B0h2wswVk',
+      calculateDose: (w) => (w < 20 ? '3–5 bites (~30 kcal)' : w > 60 ? '12–16 bites (~120 kcal)' : '6–10 bites (~60 kcal)'),
+      calculateKcal: (w) => (w < 20 ? 30 : w > 60 ? 120 : 60),
     },
     {
       id: 'egg',
@@ -239,6 +309,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Hard-Boiled Egg',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+dog+food+eggs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1/4 egg' : w > 60 ? '1 whole egg' : '1/2 egg'),
+      calculateKcal: (w) => (w < 25 ? 18 : w > 60 ? 72 : 36),
     },
     {
       id: 'greek-yogurt',
@@ -246,6 +317,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Plain Greek Yogurt',
       affiliateUrl: 'https://link.amazon/B0ar2KGqk',
       calculateDose: (w) => (w < 25 ? '1 tsp' : w > 60 ? '2 tbsp' : '1 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 5 : w > 60 ? 30 : 15),
     },
     {
       id: 'goat-kefir',
@@ -253,6 +325,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Goat Milk Kefir',
       affiliateUrl: 'https://www.amazon.com/s?k=raw+goat+milk+for+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '1/4 cup' : '2 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 40 : 20),
     },
     {
       id: 'chia-seeds',
@@ -260,6 +333,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Chia Seeds (Hydrated)',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+chia+seeds+for+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+      calculateKcal: (w) => (w < 25 ? 6 : w > 60 ? 24 : 12),
     },
     {
       id: 'carrots',
@@ -267,6 +341,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Steamed Carrots (Diced)',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+carrots+for+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 4 : w > 60 ? 12 : 8),
     },
     {
       id: 'spinach',
@@ -274,6 +349,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Steamed Spinach',
       affiliateUrl: 'https://www.amazon.com/s?k=green+superfood+powder+for+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1/2 tbsp' : w > 60 ? '2 tbsp' : '1 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 2 : w > 60 ? 8 : 4),
     },
     {
       id: 'green-beans',
@@ -281,6 +357,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Steamed Green Beans',
       affiliateUrl: 'https://www.amazon.com/s?k=dehydrated+green+beans+dog&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '2–3 beans' : w > 60 ? '1/2 cup' : '1/4 cup'),
+      calculateKcal: (w) => (w < 25 ? 4 : w > 60 ? 16 : 8),
     },
     {
       id: 'beef-tripe',
@@ -288,6 +365,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Green Beef Tripe',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+green+beef+tripe+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '1/4 cup' : '2 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 60 : 30),
     },
     {
       id: 'beef-liver',
@@ -295,6 +373,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Freeze-Dried Beef Liver',
       affiliateUrl: 'https://link.amazon/B0gmcEnwI',
       calculateDose: (w) => (w < 25 ? '1 small piece' : w > 60 ? '3 pieces' : '2 pieces'),
+      calculateKcal: (w) => (w < 25 ? 12 : w > 60 ? 36 : 24),
     },
     {
       id: 'sardines',
@@ -302,6 +381,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Canned Sardines (in water)',
       affiliateUrl: 'https://link.amazon/B01vM8LZC',
       calculateDose: (w) => (w < 25 ? '1/2 sardine' : w > 60 ? '2 sardines' : '1 sardine'),
+      calculateKcal: (w) => (w < 25 ? 25 : w > 60 ? 100 : 50),
     },
     {
       id: 'coconut-oil',
@@ -309,6 +389,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Virgin Coconut Oil',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+virgin+coconut+oil+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+      calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 40 : 20),
     },
     {
       id: 'turmeric-paste',
@@ -316,6 +397,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Turmeric Golden Paste',
       affiliateUrl: 'https://www.amazon.com/s?k=turmeric+curcumin+supplement+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
+      calculateKcal: (w) => (w < 25 ? 2 : w > 60 ? 8 : 4),
     },
     {
       id: 'zucchini',
@@ -323,6 +405,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Steamed Zucchini',
       affiliateUrl: 'https://www.amazon.com/s?k=healthy+veggie+mix+for+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 3 : w > 60 ? 10 : 5),
     },
     {
       id: 'cranberries',
@@ -330,6 +413,199 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       name: 'Cranberries (Unsweetened)',
       affiliateUrl: 'https://www.amazon.com/s?k=cranberry+bladder+support+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => (w < 25 ? '3–4 berries' : w > 60 ? '1.5 tbsp' : '1 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 3 : w > 60 ? 12 : 6),
+    },
+    {
+      id: 'sweet-potato',
+      icon: '🍠',
+      name: 'Steamed Sweet Potato (Mashed)',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+sweet+potato+puree+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 12 : w > 60 ? 36 : 24),
+    },
+    {
+      id: 'chicken-hearts',
+      icon: '🫀',
+      name: 'Chicken Hearts (Taurine Rich)',
+      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+chicken+hearts+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 heart' : w > 60 ? '4 hearts' : '2 hearts'),
+      calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 60 : 30),
+    },
+    {
+      id: 'beef-heart',
+      icon: '🥩',
+      name: 'Cooked Beef Heart',
+      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+beef+heart+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/2 oz' : w > 60 ? '2 oz' : '1 oz'),
+      calculateKcal: (w) => (w < 25 ? 20 : w > 60 ? 80 : 40),
+    },
+    {
+      id: 'cottage-cheese',
+      icon: '🧀',
+      name: 'Plain Low-Fat Cottage Cheese',
+      affiliateUrl: 'https://www.amazon.com/s?k=low+fat+cottage+cheese+calcium+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 45 : 30),
+    },
+    {
+      id: 'steamed-broccoli',
+      icon: '🥦',
+      name: 'Steamed Broccoli Florets',
+      affiliateUrl: 'https://www.amazon.com/s?k=broccoli+sprouts+powder+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 small floret' : w > 60 ? '3 florets' : '2 florets'),
+      calculateKcal: (w) => (w < 25 ? 5 : w > 60 ? 15 : 10),
+    },
+    {
+      id: 'green-lipped-mussel',
+      icon: '🦪',
+      name: 'Green-Lipped Mussel Powder',
+      affiliateUrl: 'https://www.amazon.com/s?k=green+lipped+mussel+powder+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+      calculateKcal: (w) => (w < 25 ? 4 : w > 60 ? 12 : 8),
+    },
+    {
+      id: 'apple-slices',
+      icon: '🍎',
+      name: 'Fresh Apple Slices (Seedless)',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+freeze+dried+apples+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '2 thin slices' : w > 60 ? '5 slices' : '3 slices'),
+      calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 25 : 15),
+    },
+    {
+      id: 'ground-flaxseed',
+      icon: '🌾',
+      name: 'Ground Flaxseed (Cold-Milled)',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+ground+flaxseed+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+      calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 35 : 20),
+    },
+    {
+      id: 'fresh-parsley',
+      icon: '🌿',
+      name: 'Fresh Chopped Parsley',
+      affiliateUrl: 'https://www.amazon.com/s?k=chlorophyll+breath+parsley+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+      calculateKcal: (w) => (w < 25 ? 1 : w > 60 ? 3 : 2),
+    },
+    {
+      id: 'watermelon',
+      icon: '🍉',
+      name: 'Fresh Watermelon (Seedless Chunks)',
+      affiliateUrl: 'https://www.amazon.com/s?k=hydrating+dog+treats+natural&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '2 chunks' : w > 60 ? '5 chunks' : '3 chunks'),
+      calculateKcal: (w) => (w < 25 ? 8 : w > 60 ? 20 : 12),
+    },
+    {
+      id: 'freeze-dried-chicken',
+      icon: '🍗',
+      name: 'Freeze-Dried Chicken Breast Bites',
+      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+single+ingredient+chicken+breast+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '2 pieces' : w > 60 ? '6 pieces' : '4 pieces'),
+      calculateKcal: (w) => (w < 25 ? 14 : w > 60 ? 42 : 28),
+    },
+    {
+      id: 'freeze-dried-salmon',
+      icon: '🍣',
+      name: 'Freeze-Dried Wild Salmon Bites',
+      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+salmon+bites+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '2 bites' : w > 60 ? '6 bites' : '4 bites'),
+      calculateKcal: (w) => (w < 25 ? 16 : w > 60 ? 48 : 32),
+    },
+    {
+      id: 'kelp-powder',
+      icon: '🌊',
+      name: 'Organic Sea Kelp Powder',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+kelp+powder+dogs+thyroid&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
+      calculateKcal: (w) => (w < 25 ? 2 : w > 60 ? 6 : 3),
+    },
+    {
+      id: 'cooked-quinoa',
+      icon: '🍚',
+      name: 'Cooked Quinoa',
+      affiliateUrl: 'https://www.amazon.com/s?k=ancient+grains+dog+food+topper&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 14 : w > 60 ? 42 : 28),
+    },
+    {
+      id: 'turkey-bone-broth',
+      icon: '🍲',
+      name: 'Turkey Bone Broth',
+      affiliateUrl: 'https://www.amazon.com/s?k=turkey+bone+broth+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '1/4 cup' : '2 tbsp'),
+      calculateKcal: (w) => (w < 25 ? 5 : w > 60 ? 20 : 10),
+    },
+    {
+      id: 'peanut-butter',
+      icon: '🥜',
+      name: 'Pure Peanut Butter (Xylitol-Free)',
+      affiliateUrl: 'https://www.amazon.com/s?k=all+natural+xylitol+free+dog+peanut+butter&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/2 tsp' : w > 60 ? '1.5 tsp' : '1 tsp'),
+      calculateKcal: (w) => (w < 25 ? 16 : w > 60 ? 48 : 32),
+    },
+    {
+      id: 'goat-milk-powder',
+      icon: '🥛',
+      name: 'Whole Goat Milk Powder',
+      affiliateUrl: 'https://www.amazon.com/s?k=raw+goat+milk+powder+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1 tsp' : w > 60 ? '1 tbsp' : '2 tsp'),
+      calculateKcal: (w) => (w < 25 ? 12 : w > 60 ? 36 : 24),
+    },
+    {
+      id: 'coconut-flakes',
+      icon: '🥥',
+      name: 'Unsweetened Coconut Flakes',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+unsweetened+coconut+flakes+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/2 tsp' : w > 60 ? '1.5 tsp' : '1 tsp'),
+      calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 30 : 20),
+    },
+    {
+      id: 'hemp-seed-oil',
+      icon: '💧',
+      name: 'Cold-Pressed Hemp Seed Oil',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+cold+pressed+hemp+oil+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+      calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 40 : 20),
+    },
+    {
+      id: 'duck-neck',
+      icon: '🦆',
+      name: 'Freeze-Dried Duck Neck / Chew',
+      affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+duck+necks+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/2 piece' : w > 60 ? '1 whole piece' : '1/2 piece'),
+      calculateKcal: (w) => (w < 25 ? 35 : w > 60 ? 70 : 35),
+    },
+    {
+      id: 'spirulina',
+      icon: '🧪',
+      name: 'Organic Spirulina Powder',
+      affiliateUrl: 'https://www.amazon.com/s?k=organic+spirulina+powder+for+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
+      calculateKcal: (w) => (w < 25 ? 2 : w > 60 ? 6 : 3),
+    },
+    {
+      id: 'pumpkin-seeds',
+      icon: '🎃',
+      name: 'Raw Ground Pumpkin Seeds',
+      affiliateUrl: 'https://www.amazon.com/s?k=ground+pumpkin+seeds+for+dogs+zinc&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
+      calculateKcal: (w) => (w < 25 ? 8 : w > 60 ? 32 : 16),
+    },
+    {
+      id: 'krill-oil',
+      icon: '🦐',
+      name: 'Antarctic Wild Krill Oil',
+      affiliateUrl: 'https://www.amazon.com/s?k=antarctic+krill+oil+pump+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/2 pump' : w > 60 ? '2 pumps' : '1 pump'),
+      calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 60 : 30),
+    },
+    {
+      id: 'raw-honey',
+      icon: '🍯',
+      name: 'Raw Unfiltered Honey (Trace)',
+      affiliateUrl: 'https://www.amazon.com/s?k=raw+unfiltered+honey+local+dogs&tag=dogfoodplanner-20',
+      calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
+      calculateKcal: (w) => (w < 25 ? 8 : w > 60 ? 32 : 16),
     },
   ];
 
@@ -338,6 +614,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     name: string;
     icon: string;
     dose: string;
+    baseDose: string;
+    kcal: number;
+    baseKcal: number;
+    qty: number;
     url: string;
   }
 
@@ -345,6 +625,198 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
   let currentProfile: any = null;
   let amCustomItems: BowlCustomItem[] = [];
   let pmCustomItems: BowlCustomItem[] = [];
+  let amIncludeBase = true;
+  let pmIncludeBase = true;
+  let amCustomCups: number | null = null;
+  let pmCustomCups: number | null = null;
+
+  function parseFractionOrDecimal(str?: string): number {
+    if (!str) return 1;
+    str = str.trim();
+    if (str.includes('/')) {
+      const parts = str.split('/');
+      const n = parseFloat(parts[0]);
+      const d = parseFloat(parts[1]);
+      return d !== 0 ? n / d : 1;
+    }
+    return parseFloat(str) || 1;
+  }
+
+  function formatFraction(n: number): string {
+    if (n <= 0) return '0';
+    if (Math.abs(n - 0.125) < 0.04) return '1/8';
+    if (Math.abs(n - 0.25) < 0.05) return '1/4';
+    if (Math.abs(n - 0.33) < 0.05) return '1/3';
+    if (Math.abs(n - 0.5) < 0.05) return '1/2';
+    if (Math.abs(n - 0.66) < 0.05) return '2/3';
+    if (Math.abs(n - 0.75) < 0.05) return '3/4';
+    if (Math.abs(n - 1.25) < 0.05) return '1 1/4';
+    if (Math.abs(n - 1.5) < 0.05) return '1 1/2';
+    if (Math.abs(n - 1.75) < 0.05) return '1 3/4';
+    if (Math.abs(n - 2.5) < 0.05) return '2 1/2';
+    if (Number.isInteger(n)) return n.toString();
+    return (Math.round(n * 10) / 10).toString();
+  }
+
+  function formatDoseString(baseDose: string, qty: number): string {
+    if (!baseDose) return `${qty}x`;
+    // Check for pump with optional tsp note, e.g. "1 pump (1 tsp)" or "2 pumps (2 tsp)"
+    const pumpMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*pump[s]?\s*(?:\((?:([0-9]+(?:\.[0-9]+)?|\d+\/\d+))\s*tsp\))?/i);
+    if (pumpMatch) {
+      const basePumps = parseFractionOrDecimal(pumpMatch[1]);
+      const currentPumps = Math.max(0.25, basePumps * qty);
+      const pumpStr = `${formatFraction(currentPumps)} ${currentPumps === 1 ? 'pump' : 'pumps'}`;
+      if (pumpMatch[2]) {
+        const baseTsp = parseFractionOrDecimal(pumpMatch[2]);
+        const currentTsp = Math.max(0.25, baseTsp * qty);
+        return `${pumpStr} (${formatFraction(currentTsp)} ${currentTsp === 1 ? 'tsp' : 'tsp'})`;
+      }
+      return pumpStr;
+    }
+
+    // Check for "tbsp"
+    const tbspMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*tbsp(.*)$/i);
+    if (tbspMatch) {
+      const baseVal = parseFractionOrDecimal(tbspMatch[1]);
+      const currentVal = Math.max(0.25, baseVal * qty);
+      return `${formatFraction(currentVal)} tbsp${tbspMatch[2] || ''}`;
+    }
+
+    // Check for "tsp"
+    const tspMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*tsp(.*)$/i);
+    if (tspMatch) {
+      const baseVal = parseFractionOrDecimal(tspMatch[1]);
+      const currentVal = Math.max(0.125, baseVal * qty);
+      return `${formatFraction(currentVal)} tsp${tspMatch[2] || ''}`;
+    }
+
+    // Check for "chew"
+    const chewMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*chew[s]?(.*)$/i);
+    if (chewMatch) {
+      const baseVal = parseFractionOrDecimal(chewMatch[1]);
+      const currentVal = Math.max(0.25, baseVal * qty);
+      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'chew' : 'chews'}${chewMatch[2] || ''}`;
+    }
+
+    // Check for "egg"
+    const eggMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*(?:whole\s*)?egg(.*)$/i);
+    if (eggMatch) {
+      const baseVal = parseFractionOrDecimal(eggMatch[1]);
+      const currentVal = Math.max(0.25, baseVal * qty);
+      return `${formatFraction(currentVal)} egg${eggMatch[2] || ''}`;
+    }
+
+    // Check for "piece"
+    const pieceMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*(?:whole\s*)?piece[s]?(.*)$/i);
+    if (pieceMatch) {
+      const baseVal = parseFractionOrDecimal(pieceMatch[1]);
+      const currentVal = Math.max(0.25, baseVal * qty);
+      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'piece' : 'pieces'}${pieceMatch[2] || ''}`;
+    }
+
+    // Check for "can"
+    const canMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*can[s]?(.*)$/i);
+    if (canMatch) {
+      const baseVal = parseFractionOrDecimal(canMatch[1]);
+      const currentVal = Math.max(0.25, baseVal * qty);
+      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'can' : 'cans'}${canMatch[2] || ''}`;
+    }
+
+    // Check for "patty"
+    const pattyMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*patt(?:y|ies)(.*)$/i);
+    if (pattyMatch) {
+      const baseVal = parseFractionOrDecimal(pattyMatch[1]);
+      const currentVal = Math.max(0.5, baseVal * qty);
+      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'patty' : 'patties'}${pattyMatch[2] || ''}`;
+    }
+
+    // Check for "cup"
+    const cupMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*cup[s]?(.*)$/i);
+    if (cupMatch) {
+      const baseVal = parseFractionOrDecimal(cupMatch[1]);
+      const currentVal = Math.max(0.1, Math.round(baseVal * qty * 20) / 20);
+      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'cup' : 'cups'}${cupMatch[2] || ''}`;
+    }
+
+    // Check for leading fraction/number
+    const numMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)(.*)$/);
+    if (numMatch) {
+      const baseVal = parseFractionOrDecimal(numMatch[1]);
+      const currentVal = Math.max(0.25, baseVal * qty);
+      return `${formatFraction(currentVal)}${numMatch[2]}`;
+    }
+
+    return `${formatFraction(qty)}x ${baseDose}`;
+  }
+
+  function calculateOptimizedMealCalorieRange(profile: any, targetMealKcal: number): { minKcal: number; maxKcal: number } {
+    let minRatio = 0.90;
+    let maxRatio = 1.10;
+
+    const goal = (profile.targetGoal || 'maintain').toLowerCase();
+    const bcs = Number(profile.bcs) || 5;
+    const stage = (profile.ageStage || 'adult').toLowerCase();
+    const weight = Number(profile.weightLbs) || 45;
+    const breed = (profile.breed || '').toLowerCase();
+    const hasMeds = Boolean(profile.hasMeds);
+
+    // 1. Goal & Body Condition Score (BCS)
+    if (goal === 'lose' || bcs >= 7) {
+      // Weight loss target: tighter ceiling to prevent accidental surplus
+      minRatio = 0.86;
+      maxRatio = 1.02;
+    } else if (goal === 'gain' || bcs <= 3) {
+      // Weight gain / building: elevated floor and ceiling
+      minRatio = 0.98;
+      maxRatio = 1.16;
+    }
+
+    // 2. Life Stage
+    if (stage.includes('puppy')) {
+      minRatio = Math.max(minRatio, 0.92);
+      maxRatio = Math.max(maxRatio, 1.14);
+    } else if (stage === 'senior') {
+      maxRatio = Math.min(maxRatio, 1.07);
+      minRatio = Math.min(minRatio, 0.89);
+    }
+
+    // 3. Breed Metabolism & Predispositions
+    const slowMetabolismBreeds = ['labrador', 'bulldog', 'pug', 'beagle', 'basset', 'dachshund', 'cocker'];
+    const highEnergyBreeds = ['border collie', 'australian shepherd', 'jack russell', 'whippet', 'greyhound', 'husky', 'malinois', 'vizsla'];
+    const bloatRiskBreeds = ['great dane', 'german shepherd', 'boxer', 'weimaraner', 'doberman', 'poodle'];
+
+    if (slowMetabolismBreeds.some(b => breed.includes(b))) {
+      maxRatio -= 0.03;
+    } else if (highEnergyBreeds.some(b => breed.includes(b))) {
+      maxRatio += 0.04;
+    }
+
+    if (bloatRiskBreeds.some(b => breed.includes(b))) {
+      maxRatio = Math.min(maxRatio, 1.08);
+    }
+
+    // 4. Toy vs Giant size thermal & metabolic scaling
+    if (weight < 15) {
+      maxRatio += 0.02;
+    } else if (weight > 85) {
+      maxRatio -= 0.02;
+    }
+
+    // 5. Medicine: Ensure adequate food volume for GI buffer
+    if (hasMeds) {
+      minRatio = Math.max(minRatio, 0.92);
+    }
+
+    // Ensure min is always less than max
+    if (minRatio >= maxRatio) {
+      minRatio = maxRatio - 0.08;
+    }
+
+    const minKcal = Math.round(targetMealKcal * minRatio);
+    const maxKcal = Math.round(targetMealKcal * maxRatio);
+
+    return { minKcal, maxKcal };
+  }
 
   function getCurrentLang(): Lang {
     const section = document.getElementById('results-section');
@@ -469,10 +941,27 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const tx = getExtraTranslations(lang);
 
     const meals = Math.max(1, result.mealsPerDay || 2);
-    const perMealGrams = result.perMealGrams;
-    const perMealCups = (result.dailyCupsEst / meals).toFixed(2);
-    const dietKey = profile.currentDiet || profile.dietPreference || 'fresh';
+    const defaultMealCupsNum = Number((result.dailyCupsEst / meals).toFixed(2));
+    const defaultMealGramsNum = result.perMealGrams;
+    const defaultMealKcal = Math.round(result.mealKcal / meals);
 
+    // Scaling factors for cups to grams and kcal
+    const gramsPerCup = defaultMealCupsNum > 0 ? (defaultMealGramsNum / defaultMealCupsNum) : 230;
+    const kcalPerCup = defaultMealCupsNum > 0 ? (defaultMealKcal / defaultMealCupsNum) : 300;
+
+    // Initialize or keep custom cups state
+    if (amCustomCups === null) amCustomCups = defaultMealCupsNum;
+    if (pmCustomCups === null) pmCustomCups = defaultMealCupsNum;
+
+    const currentAmCups = amCustomCups;
+    const currentAmGrams = Math.round(currentAmCups * gramsPerCup);
+    const currentAmDishKcal = Math.round(currentAmCups * kcalPerCup);
+
+    const currentPmCups = pmCustomCups;
+    const currentPmGrams = Math.round(currentPmCups * gramsPerCup);
+    const currentPmDishKcal = Math.round(currentPmCups * kcalPerCup);
+
+    const dietKey = profile.currentDiet || profile.dietPreference || 'fresh';
     const recipe = getDetailedRecipeName(profile, dietKey, lang);
     const isFresh = dietKey === 'fresh' || dietKey === 'fresh-cooked';
     const isKibble = dietKey === 'kibble';
@@ -480,14 +969,6 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
     const isChickenFree = Array.isArray(profile.allergies) && profile.allergies.some((a: string) => a.toLowerCase().includes('chicken') || a.toLowerCase().includes('poultry'));
 
-    // Specific affiliate links:
-    // Fresh cooked Salmon / Multi-protein: https://link.amazon/B0gWhHriE (Nature's Recipe Chicken, Salmon & Turkey Variety Pack)
-    // Fresh cooked Chicken: https://link.amazon/B0fpxfvVg (JustFoodForDogs Pantry Fresh Chicken & White Rice)
-    // Salmon formula dry kibble: https://link.amazon/B0h1I7guA (VICTOR Select Ocean Fish & Salmon)
-    // Chicken formula dry kibble: https://link.amazon/B0j9UbC9Z (Blue Buffalo Wilderness High-Protein Chicken)
-    // Canned / Wet Salmon: https://link.amazon/B0gWhHriE (Nature's Recipe Variety Pack) or https://link.amazon/B0a52bV8X (Purina Pro Plan Sensitive Salmon)
-    // Canned / Wet Beef & Turkey: https://link.amazon/B0cbv1oLz (Merrick Lil' Plates Grain Free Dinner)
-    // Raw BARF patty: https://link.amazon/B0i140Q91 (Stella & Chewy's Freeze-Dried Raw Beef)
     let recipeUrl = `https://www.amazon.com/s?k=${recipe.amazonQuery}&tag=dogfoodplanner-20`;
     if (isFresh) {
       if (isChickenFree && protein === 'salmon') {
@@ -518,59 +999,112 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const amList = document.getElementById('card-am-items');
     const pmList = document.getElementById('card-pm-items');
 
-    const baseItemHtml = `
-      <li class="flex items-start gap-2 font-medium text-xs sm:text-sm mb-2.5 pb-0.5 print:mb-3 print:pb-1">
-        <span class="text-[#c47a2b] font-bold">•</span>
-        <div class="leading-relaxed">
-          <strong class="font-bold text-[#1c0f00] dark:text-[#fde8c8]">${perMealCups} ${tx.cupsUnit}</strong> (${perMealGrams}${tx.gramsUnit})
-          <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
-            <span>${recipe.title}</span>
-          </a>
-        </div>
-      </li>
-    `;
+    // Calculate scientifically optimized meal calorie range based on breed, age, weight, medicine, and goals
+    const targetMealKcal = defaultMealKcal;
+    const { minKcal, maxKcal } = calculateOptimizedMealCalorieRange(profile, targetMealKcal);
 
-    // Render custom dynamic items for AM (no emojis)
-    const amItemsHtml = amCustomItems.map((item, index) => `
-      <li class="flex items-center gap-1.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group py-1.5 ${index === 0 ? 'mt-3.5 pt-3 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70 print:mt-4 print:pt-3.5 print:border-black/40' : 'mt-1.5 print:mt-2.5'}">
-        <span class="text-[#c47a2b] font-bold shrink-0">•</span>
-        <div class="inline-flex items-center flex-wrap gap-x-1.5 gap-y-1 min-w-0 leading-relaxed">
-          <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono shrink-0">${item.dose}</strong>
-          <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
-            <span>${item.name}</span>
-          </a>
-          <button type="button" data-remove-bowl="am" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-4 h-4 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 no-print" title="Remove ingredient" aria-label="Remove ${item.name}">
+    // Calculate current total calories in AM and PM
+    const amBaseKcal = amIncludeBase ? currentAmDishKcal : 0;
+    const amItemsKcal = amCustomItems.reduce((acc, it) => acc + (it.kcal || 0), 0);
+    const amTotalKcal = amBaseKcal + amItemsKcal;
+
+    const pmBaseKcal = pmIncludeBase ? currentPmDishKcal : 0;
+    const pmItemsKcal = pmCustomItems.reduce((acc, it) => acc + (it.kcal || 0), 0);
+    const pmTotalKcal = pmBaseKcal + pmItemsKcal;
+
+    // Helper to generate base dish HTML for a given bowl with interactive portion steppers
+    function getBaseItemHtml(bowl: 'am' | 'pm', isIncluded: boolean): string {
+      const currentCups = bowl === 'am' ? currentAmCups : currentPmCups;
+      const currentGrams = bowl === 'am' ? currentAmGrams : currentPmGrams;
+      const dishKcal = bowl === 'am' ? currentAmDishKcal : currentPmDishKcal;
+
+      if (isIncluded) {
+        return `
+          <li class="flex items-start justify-between gap-2 font-medium text-xs sm:text-sm mb-2.5 pb-0.5 print:mb-3 print:pb-1 group">
+            <div class="flex items-start gap-2 leading-relaxed min-w-0 flex-1">
+              <span class="text-[#c47a2b] font-bold shrink-0 mt-0.5">•</span>
+              <div class="leading-relaxed flex-1">
+                <div class="inline-flex items-center gap-1.5 flex-wrap">
+                  <!-- Micro hairline up and down carets: zero bulk, seamlessly inline -->
+                  <span class="inline-flex items-center gap-0.5 whitespace-nowrap">
+                    <strong class="font-mono font-bold text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">${currentCups} ${tx.cupsUnit}</strong>
+                    <span class="inline-flex flex-col -space-y-0.5 ml-0.5 align-middle select-none no-print">
+                      <button type="button" data-step-base="${bowl}" data-delta="0.05" class="step-base-btn text-stone-400 hover:text-[#c47a2b] dark:text-stone-500 dark:hover:text-[#e8a44a] p-0 leading-none cursor-pointer transition-colors" title="Increase portion (+0.05 cups)" aria-label="Increase portion">
+                        <svg class="w-2.5 h-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+                      </button>
+                      <button type="button" data-step-base="${bowl}" data-delta="-0.05" class="step-base-btn text-stone-400 hover:text-[#c47a2b] dark:text-stone-500 dark:hover:text-[#e8a44a] p-0 leading-none cursor-pointer transition-colors" title="Decrease portion (-0.05 cups)" aria-label="Decrease portion">
+                        <svg class="w-2.5 h-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                      </button>
+                    </span>
+                  </span>
+                  <span class="text-xs font-medium text-stone-500 dark:text-stone-400 whitespace-nowrap">(${currentGrams}${tx.gramsUnit})</span>
+                  <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
+                    <span>${recipe.title}</span>
+                  </a>
+                  <span class="inline-block font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 shrink-0">${dishKcal} kcal</span>
+                </div>
+              </div>
+            </div>
+            <button type="button" data-remove-base="${bowl}" class="remove-base-btn inline-flex items-center justify-center w-4 h-4 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 mt-0.5 no-print" title="Remove main dish" aria-label="Remove main dish">
+              <svg class="w-3 h-3 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </li>
+        `;
+      }
+      return '';
+    }
+
+    // Helper to generate custom added items HTML for a given bowl with micro hairline vector carets
+    function getCustomItemsHtml(bowl: 'am' | 'pm', items: BowlCustomItem[], hasBase: boolean): string {
+      return items.map((item, index) => `
+        <li class="flex items-center justify-between gap-1.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group py-1.5 ${index === 0 && hasBase ? 'mt-3.5 pt-3 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70 print:mt-4 print:pt-3.5 print:border-black/40' : 'mt-1.5 print:mt-2.5'}">
+          <div class="flex items-start gap-1.5 leading-relaxed min-w-0 flex-1">
+            <span class="text-[#c47a2b] font-bold shrink-0 mt-0.5">•</span>
+            <div class="inline-flex items-center flex-wrap gap-x-1.5 gap-y-1 min-w-0 leading-relaxed flex-1">
+              <!-- Inline dose text (editable by clicking) with micro hairline carets -->
+              <span class="inline-flex items-center gap-0.5 whitespace-nowrap">
+                <strong
+                  contenteditable="true"
+                  role="textbox"
+                  spellcheck="false"
+                  data-bowl="${bowl}"
+                  data-item-index="${index}"
+                  class="dose-editable-text font-mono font-bold text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] outline-none hover:bg-amber-100/40 dark:hover:bg-amber-950/30 focus:bg-amber-100/60 dark:focus:bg-amber-950/50 rounded px-0.5 transition-colors cursor-text"
+                  title="Click to edit dose"
+                  aria-label="Portion dose for ${escapeHtml(item.name)}"
+                >${escapeHtml(item.dose)}</strong>
+                <span class="inline-flex flex-col -space-y-0.5 ml-0.5 align-middle select-none no-print">
+                  <button type="button" data-step-item="${bowl}" data-item-index="${index}" data-delta="0.5" class="step-item-btn text-stone-400 hover:text-[#c47a2b] dark:text-stone-500 dark:hover:text-[#e8a44a] p-0 leading-none cursor-pointer transition-colors" title="Increase dose" aria-label="Increase dose">
+                    <svg class="w-2.5 h-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+                  </button>
+                  <button type="button" data-step-item="${bowl}" data-item-index="${index}" data-delta="-0.5" class="step-item-btn text-stone-400 hover:text-[#c47a2b] dark:text-stone-500 dark:hover:text-[#e8a44a] p-0 leading-none cursor-pointer transition-colors" title="Decrease dose" aria-label="Decrease dose">
+                    <svg class="w-2.5 h-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                </span>
+              </span>
+
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
+                <span>${item.name}</span>
+              </a>
+              <span class="inline-block font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 shrink-0">+${item.kcal} kcal</span>
+            </div>
+          </div>
+          <button type="button" data-remove-bowl="${bowl}" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-4 h-4 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 no-print" title="Remove ingredient" aria-label="Remove ${item.name}">
             <svg class="w-3 h-3 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-        </div>
-      </li>
-    `).join('');
-
-    // Render custom dynamic items for PM (no emojis)
-    const pmItemsHtml = pmCustomItems.map((item, index) => `
-      <li class="flex items-center gap-1.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group py-1.5 ${index === 0 ? 'mt-3.5 pt-3 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70 print:mt-4 print:pt-3.5 print:border-black/40' : 'mt-1.5 print:mt-2.5'}">
-        <span class="text-[#c47a2b] font-bold shrink-0">•</span>
-        <div class="inline-flex items-center flex-wrap gap-x-1.5 gap-y-1 min-w-0 leading-relaxed">
-          <strong class="text-[#1c0f00] dark:text-[#fde8c8] font-mono shrink-0">${item.dose}</strong>
-          <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
-            <span>${item.name}</span>
-          </a>
-          <button type="button" data-remove-bowl="pm" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-4 h-4 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 no-print" title="Remove ingredient" aria-label="Remove ${item.name}">
-            <svg class="w-3 h-3 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-      </li>
-    `).join('');
+        </li>
+      `).join('');
+    }
 
     const medsHtml = profile.hasMeds
       ? `
-        <li class="flex items-start gap-2 text-xs text-[#16a34a] font-semibold">
+        <li class="flex items-start gap-2 text-xs text-[#16a34a] font-semibold mt-2 pt-2 border-t border-[#f0d5a8]/50 dark:border-[#3a2510]/50">
           <span>•</span>
           <span>[ ] Daily Medication (Administer in morning bowl)</span>
         </li>
@@ -578,13 +1112,108 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       : '';
 
     if (amList) {
-      amList.innerHTML = baseItemHtml + amItemsHtml + medsHtml;
+      amList.innerHTML = getBaseItemHtml('am', amIncludeBase) + getCustomItemsHtml('am', amCustomItems, amIncludeBase) + medsHtml;
     }
     if (pmList) {
-      pmList.innerHTML = baseItemHtml + pmItemsHtml;
+      pmList.innerHTML = getBaseItemHtml('pm', pmIncludeBase) + getCustomItemsHtml('pm', pmCustomItems, pmIncludeBase);
     }
 
-    // Attach remove handlers
+    // Helper to generate Calorie Display Widget HTML: Clean range only, no progressive meter line
+    function renderCalorieWidgetHtml(totalKcal: number): string {
+      return `
+        <div class="bg-[#fdf8f3] dark:bg-[#1a0f05]/70 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5">
+          <!-- Total calories in that food (Centered) -->
+          <div class="px-3 py-1.5 bg-[#c47a2b]/10 dark:bg-[#c47a2b]/25 border border-[#c47a2b]/30 dark:border-[#c47a2b]/40 rounded-lg text-center shadow-xs">
+            <span class="block text-[10px] sm:text-xs font-mono uppercase font-black text-[#c47a2b] dark:text-[#f59e0b] leading-tight">
+              ${tx.totalCaloriesLabel}
+            </span>
+            <span class="text-base sm:text-lg font-mono font-black text-[#b45309] dark:text-[#fbbf24] tracking-tight">
+              <span class="bowl-total-kcal">${totalKcal}</span> <span class="text-xs font-bold">kcal</span>
+            </span>
+          </div>
+
+          <!-- Clean Range of numbers below it (No progress lines, no extra text) -->
+          <div class="mt-1.5 text-center text-xs font-mono font-bold text-[#92400e] dark:text-[#e8a44a] tracking-wide">
+            <span>${minKcal} kcal – ${maxKcal} kcal</span>
+          </div>
+        </div>
+      `;
+    }
+
+    const amWidget = document.getElementById('am-calories-widget');
+    const pmWidget = document.getElementById('pm-calories-widget');
+    if (amWidget) amWidget.innerHTML = renderCalorieWidgetHtml(amTotalKcal);
+    if (pmWidget) pmWidget.innerHTML = renderCalorieWidgetHtml(pmTotalKcal);
+
+    // Attach base portion stepper handlers ([-] and [+] buttons for cups)
+    document.querySelectorAll('.step-base-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const delta = parseFloat((btn as HTMLElement).dataset.delta || '0');
+        const bowl = (btn as HTMLElement).dataset.stepBase;
+        if (bowl === 'am') {
+          amCustomCups = Math.max(0.05, Math.round(((amCustomCups ?? defaultMealCupsNum) + delta) * 100) / 100);
+        } else if (bowl === 'pm') {
+          pmCustomCups = Math.max(0.05, Math.round(((pmCustomCups ?? defaultMealCupsNum) + delta) * 100) / 100);
+        }
+        renderBowlsOnly(profile, lang);
+        saveCurrentState();
+      });
+    });
+
+    // Attach custom item stepper handlers ([-] and [+] buttons for extra ingredients)
+    document.querySelectorAll('.step-item-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const bowl = (btn as HTMLElement).dataset.stepItem;
+        const index = parseInt((btn as HTMLElement).dataset.itemIndex || '-1', 10);
+        const delta = parseFloat((btn as HTMLElement).dataset.delta || '0');
+        if (index >= 0) {
+          const list = bowl === 'am' ? amCustomItems : pmCustomItems;
+          const item = list[index];
+          if (item) {
+            item.qty = Math.max(0.25, Math.round(((item.qty || 1) + delta) * 100) / 100);
+            item.dose = formatDoseString(item.baseDose || item.dose, item.qty);
+            item.kcal = Math.max(1, Math.round((item.baseKcal || 20) * item.qty));
+            renderBowlsOnly(profile, lang);
+            saveCurrentState();
+          }
+        }
+      });
+    });
+
+    // Attach manual dose edit handlers for inline editable text
+    document.querySelectorAll('.dose-editable-text').forEach((el) => {
+      const finishEdit = () => {
+        const span = el as HTMLElement;
+        const bowl = span.dataset.bowl;
+        const index = parseInt(span.dataset.itemIndex || '-1', 10);
+        const val = span.textContent?.trim() || '';
+        if (index >= 0 && val) {
+          const list = bowl === 'am' ? amCustomItems : pmCustomItems;
+          const item = list[index];
+          if (item && item.dose !== val) {
+            item.dose = val;
+            const leadingNum = parseFractionOrDecimal(val.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)/)?.[1]);
+            const baseLeading = parseFractionOrDecimal((item.baseDose || '').match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)/)?.[1]);
+            if (leadingNum > 0 && baseLeading > 0) {
+              item.qty = Math.max(0.25, Math.round((leadingNum / baseLeading) * 100) / 100);
+              item.kcal = Math.max(1, Math.round((item.baseKcal || 20) * item.qty));
+            }
+            renderBowlsOnly(profile, lang);
+            saveCurrentState();
+          }
+        }
+      };
+
+      el.addEventListener('blur', finishEdit);
+      el.addEventListener('keydown', (e) => {
+        if ((e as KeyboardEvent).key === 'Enter') {
+          e.preventDefault();
+          (el as HTMLElement).blur();
+        }
+      });
+    });
+
+    // Attach remove handlers for custom ingredients
     document.querySelectorAll('.remove-ingredient-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         const bowl = (btn as HTMLElement).dataset.removeBowl;
@@ -595,6 +1224,17 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           renderBowlsOnly(profile, lang);
           saveCurrentState();
         }
+      });
+    });
+
+    // Attach remove handlers for base formula
+    document.querySelectorAll('.remove-base-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const bowl = (btn as HTMLElement).dataset.removeBase;
+        if (bowl === 'am') amIncludeBase = false;
+        if (bowl === 'pm') pmIncludeBase = false;
+        renderBowlsOnly(profile, lang);
+        saveCurrentState();
       });
     });
 
@@ -796,7 +1436,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         dropdownList.innerHTML = `
           <div class="px-3.5 py-3 text-center">
             <p class="text-xs text-[#92400e] dark:text-[#c4956a] font-medium">${escapeHtml(noMatchesMsg)}</p>
-            <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mt-1">Try pumpkin, egg, blueberries, kefir, sardines...</p>
+            <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mt-1">Try pumpkin, egg, blueberries, training bites, kefir...</p>
           </div>
         `;
         return;
@@ -804,6 +1444,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
       dropdownList.innerHTML = currentFiltered.map((item, idx) => {
         const dose = item.calculateDose(weightLbs, stage, goal);
+        const kcal = item.calculateKcal(weightLbs, stage, goal);
         return `
           <div
             role="option"
@@ -816,7 +1457,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
               <span class="text-sm shrink-0">${item.icon || '🥣'}</span>
               <span class="truncate font-medium">${highlightMatches(item.name, cleanQuery)}</span>
             </div>
-            <span class="font-mono text-[10px] text-[#c47a2b] dark:text-[#f59e0b] font-bold shrink-0 ml-2">${escapeHtml(dose)}</span>
+            <div class="flex items-center gap-1.5 shrink-0 ml-2">
+              <span class="font-mono text-[10px] text-[#c47a2b] dark:text-[#f59e0b] font-bold">${escapeHtml(dose)}</span>
+              <span class="font-mono text-[9px] text-[#92400e] dark:text-[#c4956a] font-semibold bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.2 rounded border border-amber-200 dark:border-amber-800/60">+${kcal} kcal</span>
+            </div>
           </div>
         `;
       }).join('');
@@ -838,11 +1482,16 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     function selectIngredient(item: CatalogItem) {
       document.removeEventListener('click', outsideClickListener);
       const dose = item.calculateDose(weightLbs, stage, goal);
+      const kcal = item.calculateKcal(weightLbs, stage, goal);
       const newItem: BowlCustomItem = {
         id: item.id,
         name: item.name,
         icon: '',
         dose,
+        baseDose: dose,
+        kcal,
+        baseKcal: kcal,
+        qty: 1,
         url: item.affiliateUrl,
       };
 
@@ -1053,6 +1702,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         diet: currentProfile.currentDiet || 'fresh',
         amCustomItems,
         pmCustomItems,
+        amIncludeBase,
+        pmIncludeBase,
+        amCustomCups,
+        pmCustomCups,
         sitterNotes,
         sitterNote1: sitterNotes[0],
         sitterNote2: sitterNotes[1],
@@ -1080,13 +1733,14 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
     const dogName = result.dogName || 'Lucy';
     const breed = profile.breed || 'Dog';
+    const displayBreed = breed.replace(/:\s*[^)]+\)/g, ')').trim();
     const weightDisplay = profile.weightLbs ? `${Math.round(profile.weightLbs)} lbs` : `${result.weightKg} kg`;
 
     document.querySelectorAll('#card-dog-name').forEach(el => el.textContent = dogName);
 
     // Card Header
     const cardBreed = document.getElementById('card-dog-breed');
-    if (cardBreed) cardBreed.textContent = breed;
+    if (cardBreed) cardBreed.textContent = displayBreed;
     const cardWeight = document.getElementById('card-dog-weight');
     if (cardWeight) cardWeight.textContent = weightDisplay;
     const cardStage = document.getElementById('card-dog-stage');
@@ -1096,8 +1750,6 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     }
     const cardDiet = document.getElementById('card-dog-diet');
     if (cardDiet) cardDiet.textContent = getDietDisplayName(profile.currentDiet || profile.dietPreference, lang);
-    const cardKcal = document.getElementById('card-dog-kcal');
-    if (cardKcal) cardKcal.textContent = `${result.merKcal.toLocaleString(lang)} kcal/day`;
 
     // Allergies banner
     const allergyBanner = document.getElementById('card-allergy-banner');
@@ -1114,20 +1766,6 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       noAllergyBanner?.classList.remove('hidden');
     }
 
-    // Treat Limit & breakdown (Daily treat cap text removed, Training Bites with exact link)
-    const treatLimitEl = document.getElementById('card-treat-limit');
-    if (treatLimitEl) treatLimitEl.textContent = String(result.treatKcal);
-    const treatBreakdown = document.getElementById('card-treat-breakdown');
-    const treatPiecesEl = document.getElementById('card-treat-pieces');
-    const trainingBitesCount = Math.max(2, Math.round(result.treatKcal / 10));
-    const smallBiscuitsCount = Math.max(1, Math.round(result.treatKcal / 35));
-
-    if (treatBreakdown) {
-      treatBreakdown.innerHTML = `<a href="https://link.amazon/B0h2wswVk" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">Training Bites</a>`;
-    }
-    if (treatPiecesEl) {
-      treatPiecesEl.textContent = `~${trainingBitesCount} training bites OR ${smallBiscuitsCount} small biscuits`;
-    }
 
     // Weekly checklist table
     const table = document.getElementById('weekly-checklist-table');
@@ -1144,24 +1782,40 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
       // AM default: Salmon Oil
       const salmonItem = INGREDIENTS_CATALOG.find(i => i.id === 'salmon-oil');
+      const salmonDose = salmonItem ? salmonItem.calculateDose(weightLbs, stage, goal) : '1 pump (1 tsp)';
+      const salmonKcal = salmonItem ? salmonItem.calculateKcal(weightLbs, stage, goal) : 40;
       amCustomItems = salmonItem ? [{
         id: salmonItem.id,
         name: salmonItem.name,
         icon: '',
-        dose: salmonItem.calculateDose(weightLbs, stage, goal),
+        dose: salmonDose,
+        baseDose: salmonDose,
+        kcal: salmonKcal,
+        baseKcal: salmonKcal,
+        qty: 1,
         url: salmonItem.affiliateUrl,
       }] : [];
 
       // PM default: Pumpkin Puree (or Joint Chew for senior)
       const pmTargetId = stage === 'senior' ? 'joint-chew' : 'pumpkin';
       const pmItem = INGREDIENTS_CATALOG.find(i => i.id === pmTargetId);
+      const pmDose = pmItem ? pmItem.calculateDose(weightLbs, stage, goal) : '1 tbsp';
+      const pmKcal = pmItem ? pmItem.calculateKcal(weightLbs, stage, goal) : 8;
       pmCustomItems = pmItem ? [{
         id: pmItem.id,
         name: pmItem.name,
         icon: '',
-        dose: pmItem.calculateDose(weightLbs, stage, goal),
+        dose: pmDose,
+        baseDose: pmDose,
+        kcal: pmKcal,
+        baseKcal: pmKcal,
+        qty: 1,
         url: pmItem.affiliateUrl,
       }] : [];
+      amIncludeBase = true;
+      pmIncludeBase = true;
+      amCustomCups = null;
+      pmCustomCups = null;
     }
 
     // Render bowls & initial '+' buttons
@@ -1186,8 +1840,36 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       const state = JSON.parse(raw);
       if (!state?.profile) return;
       currentProfile = state.profile;
-      if (Array.isArray(state.amCustomItems)) amCustomItems = state.amCustomItems;
-      if (Array.isArray(state.pmCustomItems)) pmCustomItems = state.pmCustomItems;
+      if (typeof state.amIncludeBase === 'boolean') amIncludeBase = state.amIncludeBase;
+      if (typeof state.pmIncludeBase === 'boolean') pmIncludeBase = state.pmIncludeBase;
+      if (typeof state.amCustomCups === 'number') amCustomCups = state.amCustomCups;
+      if (typeof state.pmCustomCups === 'number') pmCustomCups = state.pmCustomCups;
+      const weightLbs = currentProfile.weightLbs || 45;
+      const stage = currentProfile.ageStage || 'adult';
+      const goal = currentProfile.targetGoal || 'maintain';
+
+      if (Array.isArray(state.amCustomItems)) {
+        amCustomItems = state.amCustomItems.map((it: any) => {
+          const cat = INGREDIENTS_CATALOG.find(c => c.id === it.id);
+          const baseKcal = typeof it.baseKcal === 'number' ? it.baseKcal : (cat ? cat.calculateKcal(weightLbs, stage, goal) : (it.kcal || 20));
+          const baseDose = it.baseDose || it.dose || (cat ? cat.calculateDose(weightLbs, stage, goal) : '1 tsp');
+          const qty = typeof it.qty === 'number' ? it.qty : 1;
+          const kcal = typeof it.kcal === 'number' ? it.kcal : Math.round(baseKcal * qty);
+          const dose = it.dose || formatDoseString(baseDose, qty);
+          return { ...it, baseKcal, baseDose, qty, kcal, dose };
+        });
+      }
+      if (Array.isArray(state.pmCustomItems)) {
+        pmCustomItems = state.pmCustomItems.map((it: any) => {
+          const cat = INGREDIENTS_CATALOG.find(c => c.id === it.id);
+          const baseKcal = typeof it.baseKcal === 'number' ? it.baseKcal : (cat ? cat.calculateKcal(weightLbs, stage, goal) : (it.kcal || 20));
+          const baseDose = it.baseDose || it.dose || (cat ? cat.calculateDose(weightLbs, stage, goal) : '1 tsp');
+          const qty = typeof it.qty === 'number' ? it.qty : 1;
+          const kcal = typeof it.kcal === 'number' ? it.kcal : Math.round(baseKcal * qty);
+          const dose = it.dose || formatDoseString(baseDose, qty);
+          return { ...it, baseKcal, baseDose, qty, kcal, dose };
+        });
+      }
       renderResults(currentProfile, state.diet || 'fresh', false);
 
       const sitterContainer = document.getElementById('sitter-blank-lines-container');
@@ -1233,6 +1915,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     currentProfile = null;
     amCustomItems = [];
     pmCustomItems = [];
+    amIncludeBase = true;
+    pmIncludeBase = true;
+    amCustomCups = null;
+    pmCustomCups = null;
     resetSitterLines();
     document.getElementById('results-section')?.classList.add('hidden');
     const plannerSection = document.getElementById('planner-section');
@@ -1278,6 +1964,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     currentProfile = profile;
     amCustomItems = [];
     pmCustomItems = [];
+    amIncludeBase = true;
+    pmIncludeBase = true;
+    amCustomCups = null;
+    pmCustomCups = null;
     sessionStorage.removeItem(RESULTS_STATE_KEY);
     resetSitterLines();
     renderResults(profile);

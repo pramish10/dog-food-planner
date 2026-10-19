@@ -81,6 +81,13 @@ export interface ExtraQuestionTranslation {
   freshBaseLabel: string;
   cupsUnit: string;
   gramsUnit: string;
+  minCaloriesLabel: string;
+  maxCaloriesLabel: string;
+  totalCaloriesLabel: string;
+  balancedStatusLabel: string;
+  underTargetLabel: string;
+  overTargetLabel: string;
+  restoreBaseFormulaLabel: string;
 }
 
 export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = {
@@ -164,6 +171,13 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     freshBaseLabel: 'Fresh Cooked Base',
     cupsUnit: 'cups',
     gramsUnit: 'g',
+    minCaloriesLabel: 'Min Cal',
+    maxCaloriesLabel: 'Max Cal',
+    totalCaloriesLabel: 'Total Consumed',
+    balancedStatusLabel: 'Balanced Meal',
+    underTargetLabel: 'Below Target',
+    overTargetLabel: 'Above Target',
+    restoreBaseFormulaLabel: '+ Add Main Formula',
   },
   es: {
     step3Title: 'Apetito, Digestión y Alergias',
@@ -245,6 +259,13 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     freshBaseLabel: 'Base Cocinada Fresca',
     cupsUnit: 'tazas',
     gramsUnit: 'g',
+    minCaloriesLabel: 'Cal Mín',
+    maxCaloriesLabel: 'Cal Máx',
+    totalCaloriesLabel: 'Total Consumido',
+    balancedStatusLabel: 'Comida Equilibrada',
+    underTargetLabel: 'Bajo el Objetivo',
+    overTargetLabel: 'Sobre el Objetivo',
+    restoreBaseFormulaLabel: '+ Añadir Fórmula Principal',
   },
   ja: {
     step3Title: '食欲・消化・アレルギー',
@@ -326,6 +347,13 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     freshBaseLabel: '手作りフレッシュ基準',
     cupsUnit: 'カップ',
     gramsUnit: 'g',
+    minCaloriesLabel: '最小カロリー',
+    maxCaloriesLabel: '最大カロリー',
+    totalCaloriesLabel: '合計カロリー',
+    balancedStatusLabel: '適正バランス',
+    underTargetLabel: '目標未満',
+    overTargetLabel: '目標超過',
+    restoreBaseFormulaLabel: '+ メインフードを追加',
   },
   fr: {
     step3Title: 'Appétit, Digestion et Allergies',
@@ -407,6 +435,13 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     freshBaseLabel: 'Base Fraîche Cuisinée',
     cupsUnit: 'tasses',
     gramsUnit: 'g',
+    minCaloriesLabel: 'Cal Min',
+    maxCaloriesLabel: 'Cal Max',
+    totalCaloriesLabel: 'Total Consommé',
+    balancedStatusLabel: 'Repas Équilibré',
+    underTargetLabel: 'Sous l’objectif',
+    overTargetLabel: 'Au-dessus de l’objectif',
+    restoreBaseFormulaLabel: '+ Ajouter Formule Principale',
   },
   de: {
     step3Title: 'Appetit, Verdauung & Allergien',
@@ -488,6 +523,13 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     freshBaseLabel: 'Frischekoch-Basis',
     cupsUnit: 'Tassen',
     gramsUnit: 'g',
+    minCaloriesLabel: 'Min Kal',
+    maxCaloriesLabel: 'Max Kal',
+    totalCaloriesLabel: 'Gesamtverbrauch',
+    balancedStatusLabel: 'Ausgewogene Mahlzeit',
+    underTargetLabel: 'Unter Zielwert',
+    overTargetLabel: 'Über Zielwert',
+    restoreBaseFormulaLabel: '+ Hauptfutter hinzufügen',
   },
   pt: {
     step3Title: 'Apetite, Digestão e Alergias',
@@ -569,6 +611,13 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     freshBaseLabel: 'Base Natural Cozida',
     cupsUnit: 'xícaras',
     gramsUnit: 'g',
+    minCaloriesLabel: 'Cal Mín',
+    maxCaloriesLabel: 'Cal Máx',
+    totalCaloriesLabel: 'Total Consumido',
+    balancedStatusLabel: 'Refeição Equilibrada',
+    underTargetLabel: 'Abaixo da Meta',
+    overTargetLabel: 'Acima da Meta',
+    restoreBaseFormulaLabel: '+ Adicionar Fórmula Principal',
   },
   ko: {
     step3Title: '식욕, 소화 및 알레르기',
@@ -650,6 +699,13 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     freshBaseLabel: '화식/자연식 기준',
     cupsUnit: '컵',
     gramsUnit: 'g',
+    minCaloriesLabel: '최소 칼로리',
+    maxCaloriesLabel: '최대 칼로리',
+    totalCaloriesLabel: '총 섭취 칼로리',
+    balancedStatusLabel: '균형 잡힌 식단',
+    underTargetLabel: '목표 미달',
+    overTargetLabel: '목표 초과',
+    restoreBaseFormulaLabel: '+ 메인 사료 추가',
   },
   it: {
     step3Title: 'Appetito, Digestione e Allergie',
@@ -731,5 +787,12 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     freshBaseLabel: 'Base Fresca Cotta',
     cupsUnit: 'tazze',
     gramsUnit: 'g',
+    minCaloriesLabel: 'Cal Min',
+    maxCaloriesLabel: 'Cal Max',
+    totalCaloriesLabel: 'Totale Consumato',
+    balancedStatusLabel: 'Pasto Bilanciato',
+    underTargetLabel: 'Sotto l’Obiettivo',
+    overTargetLabel: 'Sopra l’Obiettivo',
+    restoreBaseFormulaLabel: '+ Aggiungi Formula Principale',
   },
 };
