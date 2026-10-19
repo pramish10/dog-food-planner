@@ -603,16 +603,80 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     renderAddButton('pm', profile);
   }
 
+  // ── Searchable Ingredient Combobox Logic & Translations ──────────────────────────
+  const ingredientSearchPlaceholders: Record<Lang, string> = {
+    en: 'Search ingredient (e.g. Pumpkin, Salmon Oil)...',
+    es: 'Buscar ingrediente (ej. Calabaza, Aceite de salmón)...',
+    ja: '食材を検索 (例: かぼちゃ、サーモンオイル)...',
+    fr: 'Rechercher un ingrédient (ex. Citrouille, Huile de saumon)...',
+    de: 'Zutat suchen (z.B. Kürbis, Lachsöl)...',
+    pt: 'Buscar ingrediente (ex: Abóbora, Óleo de salmão)...',
+    ko: '재료 검색 (예: 호박 퓌레, 연어 오일)...',
+    it: 'Cerca ingrediente (es. Zucca, Olio di salmone)...',
+  };
+
+  const ingredientNoMatchesLabels: Record<Lang, string> = {
+    en: 'No matching ingredients found.',
+    es: 'No se encontraron ingredientes coincidentes.',
+    ja: '該当する食材が見つかりません。',
+    fr: 'Aucun ingrédient correspondant trouvé.',
+    de: 'Keine passenden Zutaten gefunden.',
+    pt: 'Nenhum ingrediente correspondente encontrado.',
+    ko: '일치하는 재료가 없습니다.',
+    it: 'Nessun ingrediente trovato.',
+  };
+
+  const addIngredientLabels: Record<Lang, string> = {
+    en: 'Add extra ingredient',
+    es: 'Añadir ingrediente adicional',
+    ja: '追加の食材を加える',
+    fr: 'Ajouter un ingrédient supplémentaire',
+    de: 'Zusätzliche Zutat hinzufügen',
+    pt: 'Adicionar ingrediente extra',
+    ko: '추가 재료 더하기',
+    it: 'Aggiungi ingrediente extra',
+  };
+
+  function escapeHtml(text: string): string {
+    return text.replace(/[&<>"']/g, m => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    }[m] || m));
+  }
+
+  function highlightMatches(text: string, query: string): string {
+    if (!query) return escapeHtml(text);
+    const tokens = query.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!tokens.length) return escapeHtml(text);
+
+    const escapedTokens = tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    const regex = new RegExp(`(${escapedTokens.join('|')})`, 'gi');
+
+    const parts = text.split(regex);
+    return parts.map(part => {
+      if (tokens.some(t => part.toLowerCase() === t.toLowerCase())) {
+        return `<strong class="font-bold text-[#c47a2b] dark:text-[#f59e0b]">${escapeHtml(part)}</strong>`;
+      }
+      return escapeHtml(part);
+    }).join('');
+  }
+
   // Renders the single initial '+' button or inline search box
   function renderAddButton(bowl: 'am' | 'pm', profile: any) {
     const container = document.getElementById(`${bowl}-add-container`);
     if (!container) return;
 
+    const lang = getCurrentLang();
+    const btnLabel = addIngredientLabels[lang] || addIngredientLabels.en;
+
     container.innerHTML = `
       <div class="add-wrapper relative">
         <button type="button" class="open-search-btn text-xs font-semibold text-[#c47a2b] hover:text-[#92400e] dark:hover:text-[#fde8c8] flex items-center gap-1.5 py-0.5 px-1 rounded-md hover:bg-amber-50 dark:hover:bg-amber-950/30 transition-all cursor-pointer">
           <span class="w-3.5 h-3.5 rounded-full border border-[#c47a2b] flex items-center justify-center font-bold text-[11px] leading-none">+</span>
-          <span>Add extra ingredient</span>
+          <span>${btnLabel}</span>
         </button>
       </div>
     `;
@@ -627,98 +691,324 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const container = document.getElementById(`${bowl}-add-container`);
     if (!container) return;
 
+    const lang = getCurrentLang();
+    const placeholder = ingredientSearchPlaceholders[lang] || ingredientSearchPlaceholders.en;
+    const noMatchesMsg = ingredientNoMatchesLabels[lang] || ingredientNoMatchesLabels.en;
+
     container.innerHTML = `
-      <div class="relative w-full">
-        <div class="flex items-center gap-1.5">
+      <div class="relative w-full ingredient-combobox-wrapper" id="${bowl}-ingredient-combobox-wrapper">
+        <div class="relative flex items-center gap-1.5">
           <div class="relative flex-1 flex items-center">
-            <input type="text" class="ingredient-search-input w-full pl-2.5 pr-8 py-1 text-xs bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-lg text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b]" placeholder="Type ingredient" autocomplete="off" />
-            <button type="button" class="cancel-search-btn absolute right-1.5 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] dark:hover:text-[#fde8c8] rounded hover:bg-amber-100/50 dark:hover:bg-amber-950/40 transition-colors cursor-pointer" title="Cancel">
-              <svg class="w-3.5 h-3.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
+            <input
+              type="text"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-controls="${bowl}-ingredient-dropdown-list"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="${escapeHtml(placeholder)}"
+              class="ingredient-search-input w-full pl-3 pr-14 py-1.5 text-xs bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none focus:border-[#c47a2b] focus:ring-2 focus:ring-[#c47a2b]/20 transition-all font-medium truncate cursor-pointer focus:cursor-text"
+            />
+
+            <!-- Clear search button and chevron toggle -->
+            <div class="absolute right-1.5 flex items-center gap-0.5">
+              <button
+                type="button"
+                tabindex="-1"
+                aria-label="Clear ingredient search"
+                class="ingredient-clear-btn hidden p-1 text-[#92400e]/70 dark:text-[#c4956a]/70 hover:text-[#c47a2b] dark:hover:text-[#f59e0b] hover:bg-[#f0d5a8]/40 dark:hover:bg-[#3a2510]/60 rounded-full transition-colors cursor-pointer"
+              >
+                <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+
+              <button
+                type="button"
+                tabindex="-1"
+                aria-label="Toggle ingredients dropdown"
+                class="ingredient-dropdown-toggle p-1 text-[#92400e] dark:text-[#c4956a] hover:text-[#c47a2b] transition-transform duration-200 rounded-full cursor-pointer"
+              >
+                <svg class="ingredient-dropdown-chevron w-4 h-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
           </div>
+
+          <!-- Cancel / Close button -->
+          <button
+            type="button"
+            class="cancel-search-btn p-1.5 text-[#92400e]/70 dark:text-[#c4956a]/70 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg transition-colors cursor-pointer shrink-0"
+            title="Close"
+            aria-label="Close search"
+          >
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
         </div>
-        <!-- Suggestions dropdown (starts hidden, only shows as user types) -->
-        <div class="ingredient-suggestions hidden absolute z-30 left-0 right-0 top-full mt-1 bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl shadow-lg max-h-48 overflow-y-auto p-1 divide-y divide-[#f0d5a8]/30 dark:divide-[#3a2510]/30">
+
+        <!-- Dropdown list -->
+        <div
+          id="${bowl}-ingredient-dropdown-list"
+          role="listbox"
+          class="ingredient-dropdown-list hidden absolute z-50 left-0 right-0 top-full mt-1.5 max-h-56 overflow-y-auto overscroll-contain bg-white dark:bg-[#1c1208] border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl shadow-xl backdrop-blur-md py-1 divide-y divide-[#f0d5a8]/20 dark:divide-[#3a2510]/30 focus:outline-none"
+        >
         </div>
       </div>
     `;
 
     const input = container.querySelector('.ingredient-search-input') as HTMLInputElement | null;
-    const cancelBtn = container.querySelector('.cancel-search-btn');
-    const suggestions = container.querySelector('.ingredient-suggestions') as HTMLElement | null;
+    const clearBtn = container.querySelector('.ingredient-clear-btn') as HTMLButtonElement | null;
+    const toggleBtn = container.querySelector('.ingredient-dropdown-toggle') as HTMLButtonElement | null;
+    const chevron = container.querySelector('.ingredient-dropdown-chevron') as HTMLElement | null;
+    const dropdownList = container.querySelector('.ingredient-dropdown-list') as HTMLElement | null;
+    const cancelBtn = container.querySelector('.cancel-search-btn') as HTMLButtonElement | null;
 
-    if (input) {
-      input.focus();
+    let isDropdownOpen = false;
+    let activeHighlightedIndex = -1;
+    let currentFiltered: CatalogItem[] = [...INGREDIENTS_CATALOG];
 
-      input.addEventListener('input', () => {
-        const query = input.value.trim().toLowerCase();
-        if (!query || !suggestions) {
-          suggestions?.classList.add('hidden');
-          return;
-        }
+    const weightLbs = profile.weightLbs || 45;
+    const stage = profile.ageStage || 'adult';
+    const goal = profile.targetGoal || 'maintain';
 
-        const matches = INGREDIENTS_CATALOG.filter(item =>
-          item.name.toLowerCase().includes(query)
-        );
+    function renderIngredientList(query = '') {
+      if (!dropdownList) return;
+      const cleanQuery = query.trim().toLowerCase();
 
-        if (matches.length === 0) {
-          suggestions.innerHTML = `
-            <div class="px-3 py-2 text-xs text-[#92400e] dark:text-[#c4956a]">
-              No matching dog-safe food found. Try pumpkin, egg, blueberries, kefir...
+      if (!cleanQuery) {
+        currentFiltered = [...INGREDIENTS_CATALOG];
+      } else {
+        const tokens = cleanQuery.split(/\s+/).filter(Boolean);
+        currentFiltered = INGREDIENTS_CATALOG.filter(item => {
+          const nameLower = item.name.toLowerCase();
+          return tokens.every(token => nameLower.includes(token));
+        });
+      }
+
+      activeHighlightedIndex = -1;
+
+      if (currentFiltered.length === 0) {
+        dropdownList.innerHTML = `
+          <div class="px-3.5 py-3 text-center">
+            <p class="text-xs text-[#92400e] dark:text-[#c4956a] font-medium">${escapeHtml(noMatchesMsg)}</p>
+            <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mt-1">Try pumpkin, egg, blueberries, kefir, sardines...</p>
+          </div>
+        `;
+        return;
+      }
+
+      dropdownList.innerHTML = currentFiltered.map((item, idx) => {
+        const dose = item.calculateDose(weightLbs, stage, goal);
+        return `
+          <div
+            role="option"
+            tabindex="-1"
+            data-index="${idx}"
+            data-pick-id="${escapeHtml(item.id)}"
+            class="ingredient-option px-3 py-2 text-xs text-[#1c0f00] dark:text-[#fde8c8] hover:bg-[#c47a2b]/15 dark:hover:bg-[#c47a2b]/25 cursor-pointer flex items-center justify-between transition-colors select-none"
+          >
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="text-sm shrink-0">${item.icon || '🥣'}</span>
+              <span class="truncate font-medium">${highlightMatches(item.name, cleanQuery)}</span>
             </div>
-          `;
-          suggestions.classList.remove('hidden');
-          return;
-        }
+            <span class="font-mono text-[10px] text-[#c47a2b] dark:text-[#f59e0b] font-bold shrink-0 ml-2">${escapeHtml(dose)}</span>
+          </div>
+        `;
+      }).join('');
 
-        const weightLbs = profile.weightLbs || 45;
-        const stage = profile.ageStage || 'adult';
-        const goal = profile.targetGoal || 'maintain';
-
-        suggestions.innerHTML = matches.map(item => {
-          const dose = item.calculateDose(weightLbs, stage, goal);
-          return `
-            <button type="button" data-pick-id="${item.id}" class="pick-item-btn w-full text-left px-2.5 py-1.5 text-xs rounded-lg hover:bg-amber-50 dark:hover:bg-amber-950/40 flex items-center justify-between transition-colors cursor-pointer">
-              <span class="font-semibold text-[#1c0f00] dark:text-[#fde8c8]">${item.name}</span>
-              <span class="font-mono text-[10px] text-[#c47a2b] font-bold">${dose}</span>
-            </button>
-          `;
-        }).join('');
-
-        suggestions.classList.remove('hidden');
-
-        // Click on suggestion
-        suggestions.querySelectorAll('.pick-item-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const pickId = (btn as HTMLElement).dataset.pickId;
-            const pickedItem = INGREDIENTS_CATALOG.find(i => i.id === pickId);
-            if (!pickedItem) return;
-
-            const dose = pickedItem.calculateDose(weightLbs, stage, goal);
-            const newItem: BowlCustomItem = {
-              id: pickedItem.id,
-              name: pickedItem.name,
-              icon: '',
-              dose,
-              url: pickedItem.affiliateUrl,
-            };
-
-            if (bowl === 'am') amCustomItems.push(newItem);
-            if (bowl === 'pm') pmCustomItems.push(newItem);
-
-            renderBowlsOnly(profile, getCurrentLang());
-            saveCurrentState();
-          });
+      dropdownList.querySelectorAll<HTMLElement>('.ingredient-option').forEach(el => {
+        el.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+        });
+        el.addEventListener('click', () => {
+          const pickId = el.dataset.pickId;
+          const pickedItem = INGREDIENTS_CATALOG.find(i => i.id === pickId);
+          if (pickedItem) {
+            selectIngredient(pickedItem);
+          }
         });
       });
     }
 
-    cancelBtn?.addEventListener('click', () => {
+    function selectIngredient(item: CatalogItem) {
+      document.removeEventListener('click', outsideClickListener);
+      const dose = item.calculateDose(weightLbs, stage, goal);
+      const newItem: BowlCustomItem = {
+        id: item.id,
+        name: item.name,
+        icon: '',
+        dose,
+        url: item.affiliateUrl,
+      };
+
+      if (bowl === 'am') amCustomItems.push(newItem);
+      if (bowl === 'pm') pmCustomItems.push(newItem);
+
+      renderBowlsOnly(profile, lang);
+      saveCurrentState();
+    }
+
+    function openDropdown(forceShowAll = false) {
+      if (isDropdownOpen) return;
+      isDropdownOpen = true;
+      dropdownList?.classList.remove('hidden');
+      input?.setAttribute('aria-expanded', 'true');
+      chevron?.classList.add('rotate-180');
+
+      const initialQuery = forceShowAll ? '' : (input?.value || '');
+      renderIngredientList(initialQuery);
+    }
+
+    function closeDropdown() {
+      if (!isDropdownOpen) return;
+      isDropdownOpen = false;
+      activeHighlightedIndex = -1;
+      dropdownList?.classList.add('hidden');
+      input?.setAttribute('aria-expanded', 'false');
+      chevron?.classList.remove('rotate-180');
+    }
+
+    function updateClearBtnVisibility() {
+      if (!clearBtn || !input) return;
+      if (input.value.trim().length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+    }
+
+    function updateHighlightedOption() {
+      const options = dropdownList?.querySelectorAll<HTMLElement>('.ingredient-option');
+      if (!options || !options.length) return;
+      options.forEach((opt, idx) => {
+        if (idx === activeHighlightedIndex) {
+          opt.classList.add('bg-[#c47a2b]/20', 'dark:bg-[#c47a2b]/30', 'ring-1', 'ring-[#c47a2b]/50');
+          opt.scrollIntoView({ block: 'nearest' });
+        } else {
+          opt.classList.remove('bg-[#c47a2b]/20', 'dark:bg-[#c47a2b]/30', 'ring-1', 'ring-[#c47a2b]/50');
+        }
+      });
+    }
+
+    function moveHighlight(direction: number) {
+      if (!currentFiltered.length) return;
+      activeHighlightedIndex += direction;
+      if (activeHighlightedIndex < 0) activeHighlightedIndex = currentFiltered.length - 1;
+      if (activeHighlightedIndex >= currentFiltered.length) activeHighlightedIndex = 0;
+      updateHighlightedOption();
+    }
+
+    function cleanupAndClose() {
+      document.removeEventListener('click', outsideClickListener);
       renderAddButton(bowl, profile);
+    }
+
+    const outsideClickListener = (e: MouseEvent) => {
+      if (!container.contains(e.target as Node)) {
+        cleanupAndClose();
+      }
+    };
+
+    // Attach listeners
+    input?.addEventListener('click', () => {
+      if (!isDropdownOpen) {
+        openDropdown();
+        input.select();
+      }
     });
+
+    input?.addEventListener('focus', () => {
+      if (!isDropdownOpen) {
+        openDropdown();
+        input.select();
+      }
+    });
+
+    input?.addEventListener('input', () => {
+      const query = input.value;
+      updateClearBtnVisibility();
+      if (!isDropdownOpen) {
+        openDropdown();
+      }
+      renderIngredientList(query);
+    });
+
+    input?.addEventListener('keydown', (e) => {
+      if (!isDropdownOpen) {
+        if (e.key === 'ArrowDown' || e.key === 'Enter') {
+          e.preventDefault();
+          openDropdown();
+          input.select();
+          return;
+        }
+      }
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        moveHighlight(1);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        moveHighlight(-1);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (isDropdownOpen) {
+          if (activeHighlightedIndex >= 0 && activeHighlightedIndex < currentFiltered.length) {
+            selectIngredient(currentFiltered[activeHighlightedIndex]);
+          } else if (currentFiltered.length > 0) {
+            selectIngredient(currentFiltered[0]);
+          }
+        }
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        cleanupAndClose();
+      } else if (e.key === 'Tab') {
+        if (isDropdownOpen && activeHighlightedIndex >= 0 && activeHighlightedIndex < currentFiltered.length) {
+          selectIngredient(currentFiltered[activeHighlightedIndex]);
+        }
+      }
+    });
+
+    clearBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (input) {
+        input.value = '';
+        input.focus();
+        updateClearBtnVisibility();
+        renderIngredientList('');
+        if (!isDropdownOpen) openDropdown(true);
+      }
+    });
+
+    toggleBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (isDropdownOpen) {
+        closeDropdown();
+      } else {
+        openDropdown(true);
+        input?.focus();
+        input?.select();
+      }
+    });
+
+    cancelBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      cleanupAndClose();
+    });
+
+    // Auto-open and focus upon clicking "+ Add extra ingredient"
+    openDropdown(true);
+    input?.focus();
+
+    setTimeout(() => {
+      document.addEventListener('click', outsideClickListener);
+    }, 10);
   }
 
   function createSitterLine(value = '', ariaLabel = 'Extra pet sitter instruction line') {
