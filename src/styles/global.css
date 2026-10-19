@@ -435,9 +435,7 @@ html.dark .hairline-card-active {
   body.printing-plan a.amazon-inline-link,
   body.printing-plan .amazon-food-link,
   body.printing-plan .amazon-inline-link {
-    text-decoration: underline !important;
-    text-decoration-color: #000000 !important;
-    text-underline-offset: 2px !important;
+    text-decoration: none !important;
     font-weight: 700 !important;
     color: #000000 !important;
     cursor: pointer !important;
@@ -499,9 +497,29 @@ button, [role="button"], label[for], input[type="radio"] + div, input[type="chec
 }
 
 /* Minimum tap target size (WCAG 2.5.5) */
-button:not(.diet-tab-btn), 
+button:not(.diet-tab-btn):not(.stepper-arrow-btn):not(.remove-base-btn):not(.remove-ingredient-btn), 
 .quiz-step label > div {
   min-height: 44px;
+}
+
+/* Stepper micro-buttons in plan results: compact, no unwanted gaps */
+.stepper-arrow-btn {
+  min-height: 0 !important;
+  height: 7.5px !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.remove-base-btn,
+.remove-ingredient-btn {
+  min-height: 0 !important;
 }
 
 
@@ -913,20 +931,22 @@ html.dark .prose-canine h4 {
   font-feature-settings: 'tnum';
 }
 
-/* Links & Affiliate Links (No separate colour, inherits text colour, black underline) */
+/* Links & Affiliate Links (Clean text, no underline below dishes) */
 .amazon-inline-link,
 .amazon-food-link {
   color: inherit !important;
-  text-decoration-line: underline !important;
-  text-decoration-color: #000000 !important;
-  text-decoration-thickness: 1.5px !important;
-  text-underline-offset: 2px !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease;
 }
 
-html.dark .amazon-inline-link,
-html.dark .amazon-food-link {
-  color: inherit !important;
-  text-decoration-color: currentColor !important;
+.amazon-inline-link:hover,
+.amazon-food-link:hover {
+  color: #c47a2b !important;
+}
+
+html.dark .amazon-inline-link:hover,
+html.dark .amazon-food-link:hover {
+  color: #f59e0b !important;
 }
 
 .prose-canine a {

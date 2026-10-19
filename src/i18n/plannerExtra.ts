@@ -84,6 +84,7 @@ export interface ExtraQuestionTranslation {
   minCaloriesLabel: string;
   maxCaloriesLabel: string;
   totalCaloriesLabel: string;
+  totalDailyCaloriesLabel: string;
   balancedStatusLabel: string;
   underTargetLabel: string;
   overTargetLabel: string;
@@ -174,6 +175,7 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     minCaloriesLabel: 'Min Cal',
     maxCaloriesLabel: 'Max Cal',
     totalCaloriesLabel: 'Total Consumed',
+    totalDailyCaloriesLabel: 'Total Daily Consumed',
     balancedStatusLabel: 'Balanced Meal',
     underTargetLabel: 'Below Target',
     overTargetLabel: 'Above Target',
@@ -262,6 +264,7 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     minCaloriesLabel: 'Cal Mín',
     maxCaloriesLabel: 'Cal Máx',
     totalCaloriesLabel: 'Total Consumido',
+    totalDailyCaloriesLabel: 'Total Diario Consumido',
     balancedStatusLabel: 'Comida Equilibrada',
     underTargetLabel: 'Bajo el Objetivo',
     overTargetLabel: 'Sobre el Objetivo',
@@ -350,6 +353,7 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     minCaloriesLabel: '最小カロリー',
     maxCaloriesLabel: '最大カロリー',
     totalCaloriesLabel: '合計カロリー',
+    totalDailyCaloriesLabel: '1日あたりの合計カロリー',
     balancedStatusLabel: '適正バランス',
     underTargetLabel: '目標未満',
     overTargetLabel: '目標超過',
@@ -438,6 +442,7 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     minCaloriesLabel: 'Cal Min',
     maxCaloriesLabel: 'Cal Max',
     totalCaloriesLabel: 'Total Consommé',
+    totalDailyCaloriesLabel: 'Total Quotidien Consommé',
     balancedStatusLabel: 'Repas Équilibré',
     underTargetLabel: 'Sous l’objectif',
     overTargetLabel: 'Au-dessus de l’objectif',
@@ -526,6 +531,7 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     minCaloriesLabel: 'Min Kal',
     maxCaloriesLabel: 'Max Kal',
     totalCaloriesLabel: 'Gesamtverbrauch',
+    totalDailyCaloriesLabel: 'Täglicher Gesamtverbrauch',
     balancedStatusLabel: 'Ausgewogene Mahlzeit',
     underTargetLabel: 'Unter Zielwert',
     overTargetLabel: 'Über Zielwert',
@@ -614,6 +620,7 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     minCaloriesLabel: 'Cal Mín',
     maxCaloriesLabel: 'Cal Máx',
     totalCaloriesLabel: 'Total Consumido',
+    totalDailyCaloriesLabel: 'Total Diário Consumido',
     balancedStatusLabel: 'Refeição Equilibrada',
     underTargetLabel: 'Abaixo da Meta',
     overTargetLabel: 'Acima da Meta',
@@ -702,6 +709,7 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     minCaloriesLabel: '최소 칼로리',
     maxCaloriesLabel: '최대 칼로리',
     totalCaloriesLabel: '총 섭취 칼로리',
+    totalDailyCaloriesLabel: '일일 총 섭취 칼로리',
     balancedStatusLabel: '균형 잡힌 식단',
     underTargetLabel: '목표 미달',
     overTargetLabel: '목표 초과',
@@ -790,6 +798,7 @@ export const plannerExtraTranslations: Record<Lang, ExtraQuestionTranslation> = 
     minCaloriesLabel: 'Cal Min',
     maxCaloriesLabel: 'Cal Max',
     totalCaloriesLabel: 'Totale Consumato',
+    totalDailyCaloriesLabel: 'Totale Giornaliero Consumato',
     balancedStatusLabel: 'Pasto Bilanciato',
     underTargetLabel: 'Sotto l’Obiettivo',
     overTargetLabel: 'Sopra l’Obiettivo',

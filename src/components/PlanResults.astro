@@ -55,25 +55,23 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       </div>
 
       <!-- Morning & Evening Bowls (Side by Side with Interactive Inline Add Ingredient & Calorie Widgets) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3 items-stretch" id="card-bowls-grid">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3 items-start" id="card-bowls-grid" style="align-items: start;">
         <!-- Morning Bowl -->
-        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 flex flex-col justify-between h-auto" id="card-am-bowl-wrapper">
-          <div>
-            <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
-              <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
-                <span>☀️</span>
-                <span id="am-bowl-title">{px.morningBowlTitle}</span>
-              </div>
-              <input type="text" id="am-time-input" value="7:30 AM" aria-label={px.morningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 self-start h-auto" style="align-self: start; height: fit-content;" id="card-am-bowl-wrapper">
+          <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
+            <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
+              <span>☀️</span>
+              <span id="am-bowl-title">{px.morningBowlTitle}</span>
             </div>
-            <ul id="card-am-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
-              <!-- populated by JS -->
-            </ul>
+            <input type="text" id="am-time-input" value="7:30 AM" aria-label={px.morningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+          </div>
+          <ul id="card-am-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
+            <!-- populated by JS -->
+          </ul>
 
-            <!-- Add Ingredient Interactive Row (AM) - sits immediately below previous ingredient -->
-            <div id="am-add-container" class="mt-2 no-print">
-              <!-- Populated by JS -->
-            </div>
+          <!-- Add Ingredient Interactive Row (AM) - sits immediately below previous ingredient -->
+          <div id="am-add-container" class="mt-2 no-print">
+            <!-- Populated by JS -->
           </div>
 
           <!-- Calories bar container (AM) -->
@@ -83,23 +81,21 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         </div>
 
         <!-- Evening Bowl -->
-        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 flex flex-col justify-between h-auto" id="card-pm-bowl-wrapper">
-          <div>
-            <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
-              <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
-                <span>🌙</span>
-                <span id="pm-bowl-title">{px.eveningBowlTitle}</span>
-              </div>
-              <input type="text" id="pm-time-input" value="6:00 PM" aria-label={px.eveningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+        <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-3 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 self-start h-auto" style="align-self: start; height: fit-content;" id="card-pm-bowl-wrapper">
+          <div class="flex items-center justify-between border-b border-[#f0d5a8] dark:border-[#3a2510] pb-1.5 mb-2">
+            <div class="flex items-center gap-1.5 font-bold text-xs font-mono uppercase text-[#1c0f00] dark:text-[#fde8c8]">
+              <span>🌙</span>
+              <span id="pm-bowl-title">{px.eveningBowlTitle}</span>
             </div>
-            <ul id="card-pm-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
-              <!-- populated by JS -->
-            </ul>
+            <input type="text" id="pm-time-input" value="6:00 PM" aria-label={px.eveningBowlTitle} class="text-xs font-mono font-bold text-[#c47a2b] bg-transparent border-b border-[#c47a2b]/30 w-20 text-right focus:outline-none" />
+          </div>
+          <ul id="card-pm-items" class="space-y-2.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">
+            <!-- populated by JS -->
+          </ul>
 
-            <!-- Add Ingredient Interactive Row (PM) - sits immediately below previous ingredient -->
-            <div id="pm-add-container" class="mt-2 no-print">
-              <!-- Populated by JS -->
-            </div>
+          <!-- Add Ingredient Interactive Row (PM) - sits immediately below previous ingredient -->
+          <div id="pm-add-container" class="mt-2 no-print">
+            <!-- Populated by JS -->
           </div>
 
           <!-- Calories bar container (PM) -->
@@ -107,6 +103,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
             <!-- Populated by JS -->
           </div>
         </div>
+      </div>
+
+
+      <!-- Total Daily Consumed & Recommended Daily Calorie Range (Directly above Weekly Feeding Checklist) -->
+      <div id="daily-calories-widget" class="mb-3">
+        <!-- Populated by JS -->
       </div>
 
 
@@ -203,7 +205,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       calculateDose: (w) => {
         const cups = Math.max(0.25, Math.round(((w * 0.015 + 0.2)) * 20) / 20);
         const grams = Math.round(cups * 115);
-        return `${cups} cups (${grams}g)`;
+        return `${cups} ${cups === 1 ? 'cup' : 'cups'} (${grams}g)`;
       },
       calculateKcal: (w) => {
         const cups = Math.max(0.25, Math.round(((w * 0.015 + 0.2)) * 20) / 20);
@@ -218,7 +220,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       calculateDose: (w) => {
         const cups = Math.max(0.25, Math.round(((w * 0.018 + 0.25)) * 20) / 20);
         const grams = Math.round(cups * 150);
-        return `${cups} cups (${grams}g)`;
+        return `${cups} ${cups === 1 ? 'cup' : 'cups'} (${grams}g)`;
       },
       calculateKcal: (w) => {
         const cups = Math.max(0.25, Math.round(((w * 0.018 + 0.25)) * 20) / 20);
@@ -248,7 +250,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       affiliateUrl: 'https://www.amazon.com/s?k=organic+canned+chicken+for+dogs&tag=dogfoodplanner-20',
       calculateDose: (w) => {
         const cups = Math.max(0.5, Math.round(((w * 0.02 + 0.3)) * 10) / 10);
-        return `${cups} cups`;
+        return `${cups} ${cups === 1 ? 'cup' : 'cups'}`;
       },
       calculateKcal: (w) => {
         const cups = Math.max(0.5, Math.round(((w * 0.02 + 0.3)) * 10) / 10);
@@ -642,6 +644,78 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     return parseFloat(str) || 1;
   }
 
+  function parseLeadingNumber(str?: string): number {
+    if (!str) return 1;
+    const m = str.trim().match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)/);
+    if (m) {
+      return parseFractionOrDecimal(m[1]);
+    }
+    return 1;
+  }
+
+  interface DoseParts {
+    num: number;
+    step: number;
+    min: number;
+    unit: string;
+  }
+
+  function parseDoseParts(doseStr: string): DoseParts {
+    if (!doseStr) return { num: 1, step: 1, min: 0.1, unit: '' };
+
+    // 1. Cups with optional grams: e.g. "0.65 cups (152g)"
+    const cupMatch = doseStr.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*(cup[s]?(?:\s*\([0-9]+\s*g\))?.*)$/i);
+    if (cupMatch) {
+      const num = parseFractionOrDecimal(cupMatch[1]);
+      return {
+        num: Math.round(num * 100) / 100,
+        step: 0.05,
+        min: 0.05,
+        unit: cupMatch[2].trim()
+      };
+    }
+
+    // 2. Grams: e.g. "15g" or "25 g"
+    const gMatch = doseStr.match(/^([0-9]+(?:\.[0-9]+)?)\s*(g(?:rams?)?.*)$/i);
+    if (gMatch) {
+      const num = parseFloat(gMatch[1]) || 1;
+      return {
+        num: Math.round(num),
+        step: 1,
+        min: 1,
+        unit: gMatch[2].trim()
+      };
+    }
+
+    // 3. Small units like tsp, tbsp, pump, can, piece, egg, patty, chew
+    const unitMatch = doseStr.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*(.*)$/);
+    if (unitMatch) {
+      const num = parseFractionOrDecimal(unitMatch[1]);
+      const unit = unitMatch[2].trim();
+      const isFractional = /^(?:tsp|tbsp|cup|can|pump|oz|piece|egg|patty)/i.test(unit);
+      return {
+        num: Math.round(num * 100) / 100,
+        step: isFractional ? 0.25 : 1,
+        min: isFractional ? 0.25 : 1,
+        unit
+      };
+    }
+
+    // 4. Fallback for ranges like "3-5 bites (~30 kcal)"
+    const rangeMatch = doseStr.match(/^([0-9]+)(?:-[0-9]+)?\s*(.*)$/);
+    if (rangeMatch) {
+      const num = parseFloat(rangeMatch[1]) || 1;
+      return {
+        num,
+        step: 1,
+        min: 1,
+        unit: rangeMatch[2].trim()
+      };
+    }
+
+    return { num: 1, step: 1, min: 0.1, unit: doseStr };
+  }
+
   function formatFraction(n: number): string {
     if (n <= 0) return '0';
     if (Math.abs(n - 0.125) < 0.04) return '1/8';
@@ -661,21 +735,21 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
   function formatDoseString(baseDose: string, qty: number): string {
     if (!baseDose) return `${qty}x`;
     // Check for pump with optional tsp note, e.g. "1 pump (1 tsp)" or "2 pumps (2 tsp)"
-    const pumpMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*pump[s]?\s*(?:\((?:([0-9]+(?:\.[0-9]+)?|\d+\/\d+))\s*tsp\))?/i);
+    const pumpMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*pump[s]?\s*(?:\((?:(\d+\/\d+|[0-9]+(?:\.[0-9]+)?))\s*tsp\))?/i);
     if (pumpMatch) {
       const basePumps = parseFractionOrDecimal(pumpMatch[1]);
-      const currentPumps = Math.max(0.25, basePumps * qty);
-      const pumpStr = `${formatFraction(currentPumps)} ${currentPumps === 1 ? 'pump' : 'pumps'}`;
+      const currentPumps = Math.max(0.25, Math.round(basePumps * qty * 100) / 100);
+      const pumpStr = `${formatFraction(currentPumps)} ${currentPumps <= 1 ? 'pump' : 'pumps'}`;
       if (pumpMatch[2]) {
         const baseTsp = parseFractionOrDecimal(pumpMatch[2]);
-        const currentTsp = Math.max(0.25, baseTsp * qty);
-        return `${pumpStr} (${formatFraction(currentTsp)} ${currentTsp === 1 ? 'tsp' : 'tsp'})`;
+        const currentTsp = Math.max(0.25, Math.round(baseTsp * qty * 100) / 100);
+        return `${pumpStr} (${formatFraction(currentTsp)} tsp)`;
       }
       return pumpStr;
     }
 
     // Check for "tbsp"
-    const tbspMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*tbsp(.*)$/i);
+    const tbspMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*tbsp(.*)$/i);
     if (tbspMatch) {
       const baseVal = parseFractionOrDecimal(tbspMatch[1]);
       const currentVal = Math.max(0.25, baseVal * qty);
@@ -683,7 +757,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     }
 
     // Check for "tsp"
-    const tspMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*tsp(.*)$/i);
+    const tspMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*tsp(.*)$/i);
     if (tspMatch) {
       const baseVal = parseFractionOrDecimal(tspMatch[1]);
       const currentVal = Math.max(0.125, baseVal * qty);
@@ -691,15 +765,15 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     }
 
     // Check for "chew"
-    const chewMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*chew[s]?(.*)$/i);
+    const chewMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*chew[s]?(.*)$/i);
     if (chewMatch) {
       const baseVal = parseFractionOrDecimal(chewMatch[1]);
       const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'chew' : 'chews'}${chewMatch[2] || ''}`;
+      return `${formatFraction(currentVal)} ${currentVal <= 1 ? 'chew' : 'chews'}${chewMatch[2] || ''}`;
     }
 
     // Check for "egg"
-    const eggMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*(?:whole\s*)?egg(.*)$/i);
+    const eggMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*(?:whole\s*)?egg(.*)$/i);
     if (eggMatch) {
       const baseVal = parseFractionOrDecimal(eggMatch[1]);
       const currentVal = Math.max(0.25, baseVal * qty);
@@ -707,39 +781,45 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     }
 
     // Check for "piece"
-    const pieceMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*(?:whole\s*)?piece[s]?(.*)$/i);
+    const pieceMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*(?:whole\s*)?piece[s]?(.*)$/i);
     if (pieceMatch) {
       const baseVal = parseFractionOrDecimal(pieceMatch[1]);
       const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'piece' : 'pieces'}${pieceMatch[2] || ''}`;
+      return `${formatFraction(currentVal)} ${currentVal <= 1 ? 'piece' : 'pieces'}${pieceMatch[2] || ''}`;
     }
 
     // Check for "can"
-    const canMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*can[s]?(.*)$/i);
+    const canMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*can[s]?(.*)$/i);
     if (canMatch) {
       const baseVal = parseFractionOrDecimal(canMatch[1]);
       const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'can' : 'cans'}${canMatch[2] || ''}`;
+      return `${formatFraction(currentVal)} ${currentVal <= 1 ? 'can' : 'cans'}${canMatch[2] || ''}`;
     }
 
     // Check for "patty"
-    const pattyMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*patt(?:y|ies)(.*)$/i);
+    const pattyMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*patt(?:y|ies)(.*)$/i);
     if (pattyMatch) {
       const baseVal = parseFractionOrDecimal(pattyMatch[1]);
       const currentVal = Math.max(0.5, baseVal * qty);
-      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'patty' : 'patties'}${pattyMatch[2] || ''}`;
+      return `${formatFraction(currentVal)} ${currentVal <= 1 ? 'patty' : 'patties'}${pattyMatch[2] || ''}`;
     }
 
-    // Check for "cup"
-    const cupMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)\s*cup[s]?(.*)$/i);
+    // Check for "cup" with optional grams, e.g. "0.65 cups (152g)"
+    const cupMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*cup[s]?(?:\s*\(([0-9]+)\s*g\))?(.*)$/i);
     if (cupMatch) {
       const baseVal = parseFractionOrDecimal(cupMatch[1]);
-      const currentVal = Math.max(0.1, Math.round(baseVal * qty * 20) / 20);
-      return `${formatFraction(currentVal)} ${currentVal === 1 ? 'cup' : 'cups'}${cupMatch[2] || ''}`;
+      const currentVal = Math.max(0.05, Math.round(baseVal * qty * 100) / 100);
+      const cupStr = `${currentVal} ${currentVal === 1 ? 'cup' : 'cups'}`;
+      if (cupMatch[2]) {
+        const baseGrams = parseFloat(cupMatch[2]);
+        const currentGrams = Math.round((baseGrams / (baseVal || 1)) * currentVal);
+        return `${cupStr} (${currentGrams}g)${cupMatch[3] || ''}`;
+      }
+      return `${cupStr}${cupMatch[3] || ''}`;
     }
 
     // Check for leading fraction/number
-    const numMatch = baseDose.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)(.*)$/);
+    const numMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)(.*)$/);
     if (numMatch) {
       const baseVal = parseFractionOrDecimal(numMatch[1]);
       const currentVal = Math.max(0.25, baseVal * qty);
@@ -872,6 +952,17 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         ${medsRow}
       </tbody>
     `;
+  }
+
+  function getCupUnitString(val: number, lang: Lang): string {
+    if (lang === 'en') return val === 1 ? 'cup' : 'cups';
+    if (lang === 'es') return val === 1 ? 'taza' : 'tazas';
+    if (lang === 'fr') return val === 1 ? 'tasse' : 'tasses';
+    if (lang === 'de') return val === 1 ? 'Tasse' : 'Tassen';
+    if (lang === 'it') return val === 1 ? 'tazza' : 'tazze';
+    if (lang === 'pt') return val === 1 ? 'xícara' : 'xícaras';
+    const tx = getExtraTranslations(lang);
+    return tx.cupsUnit;
   }
 
   function getDietDisplayName(dietKey: string, lang: Lang): string {
@@ -1012,7 +1103,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const pmItemsKcal = pmCustomItems.reduce((acc, it) => acc + (it.kcal || 0), 0);
     const pmTotalKcal = pmBaseKcal + pmItemsKcal;
 
-    // Helper to generate base dish HTML for a given bowl with interactive portion steppers
+    const dailyTotalKcal = amTotalKcal + pmTotalKcal;
+    const dailyTargetKcal = defaultMealKcal * 2;
+    const { minKcal: dailyMinKcal, maxKcal: dailyMaxKcal } = calculateOptimizedMealCalorieRange(profile, dailyTargetKcal);
+
+    // Helper to generate base dish HTML for a given bowl with small adjuster before recipe name
+    // Helper to generate base dish HTML for a given bowl with small, simple up/down adjuster before recipe name
     function getBaseItemHtml(bowl: 'am' | 'pm', isIncluded: boolean): string {
       const currentCups = bowl === 'am' ? currentAmCups : currentPmCups;
       const currentGrams = bowl === 'am' ? currentAmGrams : currentPmGrams;
@@ -1020,86 +1116,98 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
       if (isIncluded) {
         return `
-          <li class="flex items-start justify-between gap-2 font-medium text-xs sm:text-sm mb-2.5 pb-0.5 print:mb-3 print:pb-1 group">
-            <div class="flex items-start gap-2 leading-relaxed min-w-0 flex-1">
-              <span class="text-[#c47a2b] font-bold shrink-0 mt-0.5">•</span>
-              <div class="leading-relaxed flex-1">
-                <div class="inline-flex items-center gap-1.5 flex-wrap">
-                  <!-- Micro hairline up and down carets: zero bulk, seamlessly inline -->
-                  <span class="inline-flex items-center gap-0.5 whitespace-nowrap">
-                    <strong class="font-mono font-bold text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8]">${currentCups} ${tx.cupsUnit}</strong>
-                    <span class="inline-flex flex-col -space-y-0.5 ml-0.5 align-middle select-none no-print">
-                      <button type="button" data-step-base="${bowl}" data-delta="0.05" class="step-base-btn text-stone-400 hover:text-[#c47a2b] dark:text-stone-500 dark:hover:text-[#e8a44a] p-0 leading-none cursor-pointer transition-colors" title="Increase portion (+0.05 cups)" aria-label="Increase portion">
-                        <svg class="w-2.5 h-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
-                      </button>
-                      <button type="button" data-step-base="${bowl}" data-delta="-0.05" class="step-base-btn text-stone-400 hover:text-[#c47a2b] dark:text-stone-500 dark:hover:text-[#e8a44a] p-0 leading-none cursor-pointer transition-colors" title="Decrease portion (-0.05 cups)" aria-label="Decrease portion">
-                        <svg class="w-2.5 h-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                      </button>
-                    </span>
-                  </span>
-                  <span class="text-xs font-medium text-stone-500 dark:text-stone-400 whitespace-nowrap">(${currentGrams}${tx.gramsUnit})</span>
-                  <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
-                    <span>${recipe.title}</span>
-                  </a>
-                  <span class="inline-block font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 shrink-0">${dishKcal} kcal</span>
-                </div>
-              </div>
+          <li class="flex items-start gap-2 font-medium text-xs sm:text-sm mb-2.5 pb-0.5 print:mb-3 print:pb-1 group">
+            <span class="text-[#c47a2b] font-bold shrink-0 mt-0.5">•</span>
+            <div class="leading-relaxed flex-1 min-w-0">
+              <strong class="font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${currentCups} ${getCupUnitString(currentCups, lang)}</strong>
+              <span class="text-[#92400e]/80 dark:text-[#c4956a]/80 font-mono">(${currentGrams}${tx.gramsUnit})</span>
+              <span class="stepper-box inline-flex flex-col justify-center items-center select-none no-print border border-[#d6c4b2] dark:border-[#523920] rounded-[3px] bg-[#fbf7f2] dark:bg-[#25170b] overflow-hidden shrink-0 mx-1" style="width: 14px; height: 16px; vertical-align: middle; position: relative; top: -2px;">
+                <button
+                  type="button"
+                  data-step-base="${bowl}"
+                  data-delta="0.05"
+                  class="step-base-btn stepper-arrow-btn text-stone-600 hover:text-[#c47a2b] hover:bg-[#c47a2b]/20 active:bg-[#c47a2b]/40 dark:text-stone-300 dark:hover:text-[#f59e0b] cursor-pointer transition-colors"
+                  title="Increase portion (+0.05 ${getCupUnitString(Math.round((currentCups + 0.05) * 100) / 100, lang)})"
+                  aria-label="Increase portion"
+                >
+                  <svg class="w-2 h-1.5 pointer-events-none" viewBox="0 0 10 6" fill="currentColor"><path d="M5 0.5L9.5 5.5H0.5L5 0.5Z"/></svg>
+                </button>
+                <div style="height: 1px; width: 100%;" class="bg-[#e5d5c5] dark:bg-[#3d2813]"></div>
+                <button
+                  type="button"
+                  data-step-base="${bowl}"
+                  data-delta="-0.05"
+                  class="step-base-btn stepper-arrow-btn text-stone-600 hover:text-[#c47a2b] hover:bg-[#c47a2b]/20 active:bg-[#c47a2b]/40 dark:text-stone-300 dark:hover:text-[#f59e0b] cursor-pointer transition-colors"
+                  title="Decrease portion (-0.05 ${getCupUnitString(Math.max(0.05, Math.round((currentCups - 0.05) * 100) / 100), lang)})"
+                  aria-label="Decrease portion"
+                >
+                  <svg class="w-2 h-1.5 pointer-events-none" viewBox="0 0 10 6" fill="currentColor"><path d="M5 5.5L0.5 0.5H9.5L5 5.5Z"/></svg>
+                </button>
+              </span>
+              <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] hover:text-[#c47a2b] transition-colors cursor-pointer">
+                <span>${recipe.title}</span>
+              </a>
+              <span class="base-dish-kcal inline-block ml-1 font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60">${dishKcal} kcal</span>
+              <button type="button" data-remove-base="${bowl}" class="remove-base-btn inline-flex items-center justify-center w-3.5 h-3.5 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer ml-1 align-middle no-print" title="Remove main dish" aria-label="Remove main dish">
+                <svg class="w-3 h-3 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </div>
-            <button type="button" data-remove-base="${bowl}" class="remove-base-btn inline-flex items-center justify-center w-4 h-4 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 mt-0.5 no-print" title="Remove main dish" aria-label="Remove main dish">
-              <svg class="w-3 h-3 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
           </li>
         `;
       }
       return '';
     }
 
-    // Helper to generate custom added items HTML for a given bowl with micro hairline vector carets
+    // Helper to generate custom added items HTML for a given bowl with small, simple up/down adjuster before ingredient name
     function getCustomItemsHtml(bowl: 'am' | 'pm', items: BowlCustomItem[], hasBase: boolean): string {
-      return items.map((item, index) => `
-        <li class="flex items-center justify-between gap-1.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group py-1.5 ${index === 0 && hasBase ? 'mt-3.5 pt-3 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70 print:mt-4 print:pt-3.5 print:border-black/40' : 'mt-1.5 print:mt-2.5'}">
-          <div class="flex items-start gap-1.5 leading-relaxed min-w-0 flex-1">
+      return items.map((item, index) => {
+        return `
+          <li class="flex items-start gap-1.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group py-1.5 ${index === 0 && hasBase ? 'mt-2.5 pt-1' : 'mt-1.5 print:mt-2.5'}">
             <span class="text-[#c47a2b] font-bold shrink-0 mt-0.5">•</span>
-            <div class="inline-flex items-center flex-wrap gap-x-1.5 gap-y-1 min-w-0 leading-relaxed flex-1">
-              <!-- Inline dose text (editable by clicking) with micro hairline carets -->
-              <span class="inline-flex items-center gap-0.5 whitespace-nowrap">
-                <strong
-                  contenteditable="true"
-                  role="textbox"
-                  spellcheck="false"
-                  data-bowl="${bowl}"
+            <div class="leading-relaxed flex-1 min-w-0">
+              <strong class="font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${escapeHtml(item.dose)}</strong>
+              <span class="stepper-box inline-flex flex-col justify-center items-center select-none no-print border border-[#d6c4b2] dark:border-[#523920] rounded-[3px] bg-[#fbf7f2] dark:bg-[#25170b] overflow-hidden shrink-0 mx-1" style="width: 14px; height: 16px; vertical-align: middle; position: relative; top: -2px;">
+                <button
+                  type="button"
+                  data-step-item="${bowl}"
                   data-item-index="${index}"
-                  class="dose-editable-text font-mono font-bold text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] outline-none hover:bg-amber-100/40 dark:hover:bg-amber-950/30 focus:bg-amber-100/60 dark:focus:bg-amber-950/50 rounded px-0.5 transition-colors cursor-text"
-                  title="Click to edit dose"
-                  aria-label="Portion dose for ${escapeHtml(item.name)}"
-                >${escapeHtml(item.dose)}</strong>
-                <span class="inline-flex flex-col -space-y-0.5 ml-0.5 align-middle select-none no-print">
-                  <button type="button" data-step-item="${bowl}" data-item-index="${index}" data-delta="0.5" class="step-item-btn text-stone-400 hover:text-[#c47a2b] dark:text-stone-500 dark:hover:text-[#e8a44a] p-0 leading-none cursor-pointer transition-colors" title="Increase dose" aria-label="Increase dose">
-                    <svg class="w-2.5 h-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
-                  </button>
-                  <button type="button" data-step-item="${bowl}" data-item-index="${index}" data-delta="-0.5" class="step-item-btn text-stone-400 hover:text-[#c47a2b] dark:text-stone-500 dark:hover:text-[#e8a44a] p-0 leading-none cursor-pointer transition-colors" title="Decrease dose" aria-label="Decrease dose">
-                    <svg class="w-2.5 h-2.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-                  </button>
-                </span>
+                  data-delta="0.25"
+                  class="step-item-btn stepper-arrow-btn text-stone-600 hover:text-[#c47a2b] hover:bg-[#c47a2b]/20 active:bg-[#c47a2b]/40 dark:text-stone-300 dark:hover:text-[#f59e0b] cursor-pointer transition-colors"
+                  title="Increase dose"
+                  aria-label="Increase dose"
+                >
+                  <svg class="w-2 h-1.5 pointer-events-none" viewBox="0 0 10 6" fill="currentColor"><path d="M5 0.5L9.5 5.5H0.5L5 0.5Z"/></svg>
+                </button>
+                <div style="height: 1px; width: 100%;" class="bg-[#e5d5c5] dark:bg-[#3d2813]"></div>
+                <button
+                  type="button"
+                  data-step-item="${bowl}"
+                  data-item-index="${index}"
+                  data-delta="-0.25"
+                  class="step-item-btn stepper-arrow-btn text-stone-600 hover:text-[#c47a2b] hover:bg-[#c47a2b]/20 active:bg-[#c47a2b]/40 dark:text-stone-300 dark:hover:text-[#f59e0b] cursor-pointer transition-colors"
+                  title="Decrease dose"
+                  aria-label="Decrease dose"
+                >
+                  <svg class="w-2 h-1.5 pointer-events-none" viewBox="0 0 10 6" fill="currentColor"><path d="M5 5.5L0.5 0.5H9.5L5 5.5Z"/></svg>
+                </button>
               </span>
-
-              <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-black dark:decoration-zinc-300 decoration-1.5 underline-offset-2 hover:opacity-80 transition-opacity cursor-pointer">
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] hover:text-[#c47a2b] transition-colors cursor-pointer">
                 <span>${item.name}</span>
               </a>
-              <span class="inline-block font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 shrink-0">+${item.kcal} kcal</span>
+              <span class="item-dish-kcal inline-block ml-1 font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 shrink-0">+${item.kcal} kcal</span>
+              <button type="button" data-remove-bowl="${bowl}" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-3.5 h-3.5 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 align-middle no-print" title="Remove ingredient" aria-label="Remove ${item.name}">
+                <svg class="w-3 h-3 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
             </div>
-          </div>
-          <button type="button" data-remove-bowl="${bowl}" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-4 h-4 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 no-print" title="Remove ingredient" aria-label="Remove ${item.name}">
-            <svg class="w-3 h-3 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </li>
-      `).join('');
+          </li>
+        `;
+      }).join('');
     }
 
     const medsHtml = profile.hasMeds
@@ -1140,14 +1248,61 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       `;
     }
 
+    // Helper to generate Total Daily Consumed Calorie Widget HTML (Clean range based on breed, age, weight, goal & medicine)
+    function renderDailyCalorieWidgetHtml(totalDailyKcal: number): string {
+      return `
+        <div class="bg-[#fdf8f3] dark:bg-[#1a0f05]/70 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5">
+          <div class="max-w-md mx-auto">
+            <!-- Total daily calories consumed (Centered) -->
+            <div class="px-3 py-1.5 bg-[#c47a2b]/10 dark:bg-[#c47a2b]/25 border border-[#c47a2b]/30 dark:border-[#c47a2b]/40 rounded-lg text-center shadow-xs">
+              <span class="block text-[10px] sm:text-xs font-mono uppercase font-black text-[#c47a2b] dark:text-[#f59e0b] leading-tight">
+                ${tx.totalDailyCaloriesLabel}
+              </span>
+              <span class="text-base sm:text-lg font-mono font-black text-[#b45309] dark:text-[#fbbf24] tracking-tight">
+                <span class="daily-total-kcal">${totalDailyKcal}</span> <span class="text-xs font-bold">kcal</span>
+              </span>
+            </div>
+
+            <!-- Clean Daily Range of numbers below it (Accurate to breed, age, weight, goal & medicine) -->
+            <div class="mt-1.5 text-center text-xs font-mono font-bold text-[#92400e] dark:text-[#e8a44a] tracking-wide">
+              <span>${dailyMinKcal} kcal – ${dailyMaxKcal} kcal</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     const amWidget = document.getElementById('am-calories-widget');
     const pmWidget = document.getElementById('pm-calories-widget');
+    const dailyWidget = document.getElementById('daily-calories-widget');
     if (amWidget) amWidget.innerHTML = renderCalorieWidgetHtml(amTotalKcal);
     if (pmWidget) pmWidget.innerHTML = renderCalorieWidgetHtml(pmTotalKcal);
+    if (dailyWidget) dailyWidget.innerHTML = renderDailyCalorieWidgetHtml(dailyTotalKcal);
+
+    // Helper to refresh total meal & daily calorie widgets dynamically
+    function refreshCalorieWidgets() {
+      const amBaseK = amIncludeBase ? Math.round(defaultMealKcal * ((amCustomCups ?? defaultMealCupsNum) / defaultMealCupsNum)) : 0;
+      const amItemsK = amCustomItems.reduce((acc, it) => acc + (it.kcal || 0), 0);
+      const pmBaseK = pmIncludeBase ? Math.round(defaultMealKcal * ((pmCustomCups ?? defaultMealCupsNum) / defaultMealCupsNum)) : 0;
+      const pmItemsK = pmCustomItems.reduce((acc, it) => acc + (it.kcal || 0), 0);
+
+      const amTot = amBaseK + amItemsK;
+      const pmTot = pmBaseK + pmItemsK;
+      const dailyTot = amTot + pmTot;
+
+      const amW = document.getElementById('am-calories-widget');
+      const pmW = document.getElementById('pm-calories-widget');
+      const dailyW = document.getElementById('daily-calories-widget');
+      if (amW) amW.innerHTML = renderCalorieWidgetHtml(amTot);
+      if (pmW) pmW.innerHTML = renderCalorieWidgetHtml(pmTot);
+      if (dailyW) dailyW.innerHTML = renderDailyCalorieWidgetHtml(dailyTot);
+    }
 
     // Attach base portion stepper handlers ([-] and [+] buttons for cups)
     document.querySelectorAll('.step-base-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const delta = parseFloat((btn as HTMLElement).dataset.delta || '0');
         const bowl = (btn as HTMLElement).dataset.stepBase;
         if (bowl === 'am') {
@@ -1162,7 +1317,9 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
     // Attach custom item stepper handlers ([-] and [+] buttons for extra ingredients)
     document.querySelectorAll('.step-item-btn').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const bowl = (btn as HTMLElement).dataset.stepItem;
         const index = parseInt((btn as HTMLElement).dataset.itemIndex || '-1', 10);
         const delta = parseFloat((btn as HTMLElement).dataset.delta || '0');
@@ -1170,45 +1327,14 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           const list = bowl === 'am' ? amCustomItems : pmCustomItems;
           const item = list[index];
           if (item) {
-            item.qty = Math.max(0.25, Math.round(((item.qty || 1) + delta) * 100) / 100);
+            const isFormula = item.id.includes('formula') || item.id.includes('diet') || (item.baseDose && item.baseDose.includes('cup'));
+            const stepDelta = isFormula ? (delta > 0 ? 0.05 : -0.05) : delta;
+            item.qty = Math.max(0.05, Math.round(((item.qty || 1) + stepDelta) * 100) / 100);
             item.dose = formatDoseString(item.baseDose || item.dose, item.qty);
             item.kcal = Math.max(1, Math.round((item.baseKcal || 20) * item.qty));
             renderBowlsOnly(profile, lang);
             saveCurrentState();
           }
-        }
-      });
-    });
-
-    // Attach manual dose edit handlers for inline editable text
-    document.querySelectorAll('.dose-editable-text').forEach((el) => {
-      const finishEdit = () => {
-        const span = el as HTMLElement;
-        const bowl = span.dataset.bowl;
-        const index = parseInt(span.dataset.itemIndex || '-1', 10);
-        const val = span.textContent?.trim() || '';
-        if (index >= 0 && val) {
-          const list = bowl === 'am' ? amCustomItems : pmCustomItems;
-          const item = list[index];
-          if (item && item.dose !== val) {
-            item.dose = val;
-            const leadingNum = parseFractionOrDecimal(val.match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)/)?.[1]);
-            const baseLeading = parseFractionOrDecimal((item.baseDose || '').match(/^([0-9]+(?:\.[0-9]+)?|\d+\/\d+)/)?.[1]);
-            if (leadingNum > 0 && baseLeading > 0) {
-              item.qty = Math.max(0.25, Math.round((leadingNum / baseLeading) * 100) / 100);
-              item.kcal = Math.max(1, Math.round((item.baseKcal || 20) * item.qty));
-            }
-            renderBowlsOnly(profile, lang);
-            saveCurrentState();
-          }
-        }
-      };
-
-      el.addEventListener('blur', finishEdit);
-      el.addEventListener('keydown', (e) => {
-        if ((e as KeyboardEvent).key === 'Enter') {
-          e.preventDefault();
-          (el as HTMLElement).blur();
         }
       });
     });
