@@ -22,11 +22,21 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           <div class="flex items-center gap-2 flex-wrap">
             <span class="text-xl">🐾</span>
             <h3 class="text-base sm:text-lg font-black text-[#1c0f00] dark:text-[#fde8c8] tracking-tight uppercase">
-              <span id="card-dog-name">LUCY</span>'S {px.cardHeaderBadge}
+              {lang === 'en' ? (
+                <><span id="card-dog-name">LUCY</span>'S {px.cardHeaderBadge}</>
+              ) : lang === 'ja' || lang === 'ko' ? (
+                <><span id="card-dog-name">LUCY</span>{lang === 'ja' ? 'の' : '의'} {px.cardHeaderBadge}</>
+              ) : lang === 'de' ? (
+                <>{px.cardHeaderBadge} FÜR <span id="card-dog-name">LUCY</span></>
+              ) : lang === 'it' ? (
+                <>{px.cardHeaderBadge} PER <span id="card-dog-name">LUCY</span></>
+              ) : (
+                <>{px.cardHeaderBadge} — <span id="card-dog-name">LUCY</span></>
+              )}
             </h3>
           </div>
           <div class="text-xs font-mono text-[#92400e] dark:text-[#c4956a] mt-0.5">
-            <span id="card-dog-breed">Golden Retriever</span> • <span id="card-dog-weight">55 lbs</span> • <span id="card-dog-stage">Adult</span> • <span id="card-dog-diet">Fresh Cooked</span>
+            <span id="card-dog-breed">Golden Retriever</span> • <span id="card-dog-weight">55 lbs</span> • <span id="card-dog-stage">{px.stageAdultLabel}</span> • <span id="card-dog-diet">{px.dietFresh}</span>
           </div>
         </div>
 
@@ -107,7 +117,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         <div class="text-xs font-bold font-mono text-[#1c0f00] dark:text-[#fde8c8] uppercase mb-1.5 flex items-center gap-1.5">
           <span>📅</span>
           <span>{px.weeklyChecklistHeader}</span>
-          <span class="text-[10px] font-normal text-[#92400e] dark:text-[#c4956a] normal-case ml-auto">(Tick when fed)</span>
+          <span class="text-[10px] font-normal text-[#92400e] dark:text-[#c4956a] normal-case ml-auto">{px.checklistTickWhenFed}</span>
         </div>
         <div class="overflow-x-auto">
           <table class="w-full text-center text-xs font-mono border-collapse" id="weekly-checklist-table">
@@ -119,12 +129,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       <!-- Pet Sitter & Family Instructions -->
       <div class="border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5 bg-[#fdf8f3]/60 dark:bg-[#2a1a08]/40 mb-3">
         <label for="sitter-note-input" class="block text-[10px] font-mono uppercase font-semibold text-[#92400e] dark:text-[#c4956a] mb-1">
-          Pet Sitter & Family Instructions:
+          {px.sitterInstructionsLabel}
         </label>
         <!-- 3 matching lines: Line 1 with prefilled text, plus 2 blank lines for extra notes/handwriting -->
         <div class="space-y-1.5" id="sitter-blank-lines-container">
           <div class="sitter-blank-line relative flex items-center border-b border-dashed border-[#d8b488] dark:border-[#523518] min-h-[22px]">
-            <input type="text" id="sitter-note-input" value="Fresh water changed 2x daily. Rest 30m before walks." aria-label="Pet Sitter & Family Instructions Line 1"
+            <input type="text" id="sitter-note-input" value={px.sitterInstructionsDefault} aria-label={px.sitterInstructionsLabel}
               class="w-full text-xs bg-transparent border-none px-1 py-0.5 text-[#1c0f00] dark:text-[#fde8c8] focus:outline-none" />
           </div>
           <div class="sitter-blank-line relative flex items-center border-b border-dashed border-[#d8b488] dark:border-[#523518] min-h-[22px]">
@@ -162,14 +172,23 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
 <script>
   import { calculateCanineNutrition } from '../utils/nutritionEngine';
+  import { plannerTranslations } from '../i18n/planner';
   import { plannerExtraTranslations } from '../i18n/plannerExtra';
+  import {
+    getLocalizedIngredientName,
+    STAGE_PREFIX_MAP,
+    DIET_SUFFIX_MAP,
+    PROTEIN_DISPLAY_MAP,
+    formatFormulaTitle,
+    localizeDoseText,
+  } from '../i18n/plannerIngredients';
   import type { Lang } from '../i18n/ui';
 
   const WEEK_DAYS: Record<Lang, string[]> = {
     en: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     es: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
     ja: ['月', '火', '水', '木', '金', '土', '日'],
-    fr: ['Lun', 'Mer', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+    fr: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
     de: ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'],
     pt: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
     ko: ['월', '화', '수', '목', '금', '토', '일'],
@@ -181,6 +200,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     icon: string;
     name: string;
     affiliateUrl: string;
+    allergens?: string[];
     calculateDose: (weightLbs: number, stage: string, goal: string) => string;
     calculateKcal: (weightLbs: number, stage: string, goal: string) => number;
   }
@@ -192,6 +212,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥣',
       name: 'Dry Kibble (Complete & Balanced Formula)',
       affiliateUrl: 'https://link.amazon/B0h1I7guA',
+      allergens: [],
       calculateDose: (w) => {
         const cups = Math.max(0.25, Math.round(((w * 0.015 + 0.2)) * 20) / 20);
         const grams = Math.round(cups * 115);
@@ -207,6 +228,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍲',
       name: 'Fresh Gently Cooked Bowl (Human-Grade Formula)',
       affiliateUrl: 'https://link.amazon/B0gWhHriE',
+      allergens: [],
       calculateDose: (w) => {
         const cups = Math.max(0.25, Math.round(((w * 0.018 + 0.25)) * 20) / 20);
         const grams = Math.round(cups * 150);
@@ -222,6 +244,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥫',
       name: 'Grain-Free Wet Dog Food (Loaf / Pate Can)',
       affiliateUrl: 'https://link.amazon/B0cbv1oLz',
+      allergens: [],
       calculateDose: (w) => (w < 20 ? '1/2 can (6.5 oz)' : w > 50 ? '2 cans (26 oz)' : '1 can (13 oz)'),
       calculateKcal: (w) => (w < 20 ? 190 : w > 50 ? 760 : 380),
     },
@@ -230,6 +253,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥩',
       name: 'Freeze-Dried Raw BARF Patty',
       affiliateUrl: 'https://link.amazon/B0i140Q91',
+      allergens: ['beef'],
       calculateDose: (w) => (w < 20 ? '1 patty (4 oz)' : w > 50 ? '3–4 patties' : '2 patties (8 oz)'),
       calculateKcal: (w) => (w < 20 ? 180 : w > 50 ? 650 : 360),
     },
@@ -238,6 +262,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍚',
       name: 'Cooked Chicken & White Rice (Bland Diet)',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+canned+chicken+for+dogs&tag=dogfoodplanner-20',
+      allergens: ['chicken', 'poultry', 'grain', 'grains', 'rice', 'wheat'],
       calculateDose: (w) => {
         const cups = Math.max(0.5, Math.round(((w * 0.02 + 0.3)) * 10) / 10);
         return `${cups} ${cups === 1 ? 'cup' : 'cups'}`;
@@ -248,10 +273,26 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       },
     },
     {
+      id: 'bland-beef-rice',
+      icon: '🍚',
+      name: 'Cooked Lean Beef & White Rice (Bland Diet)',
+      affiliateUrl: 'https://www.amazon.com/s?k=lean+ground+beef+dogs+bland+diet&tag=dogfoodplanner-20',
+      allergens: ['beef', 'grain', 'grains', 'rice', 'wheat'],
+      calculateDose: (w) => {
+        const cups = Math.max(0.5, Math.round(((w * 0.02 + 0.3)) * 10) / 10);
+        return `${cups} ${cups === 1 ? 'cup' : 'cups'}`;
+      },
+      calculateKcal: (w) => {
+        const cups = Math.max(0.5, Math.round(((w * 0.02 + 0.3)) * 10) / 10);
+        return Math.round(cups * 290);
+      },
+    },
+    {
       id: 'salmon-oil',
       icon: '🐟',
       name: 'Salmon Oil',
       affiliateUrl: 'https://link.amazon/B02zrZWPG',
+      allergens: ['fish', 'salmon', 'seafood'],
       calculateDose: (w) => (w < 25 ? '1/2 tsp' : w > 60 ? '2 tsp' : '1 tsp'),
       calculateKcal: (w) => (w < 25 ? 20 : w > 60 ? 80 : 40),
     },
@@ -260,6 +301,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🎃',
       name: 'Pumpkin Puree',
       affiliateUrl: 'https://link.amazon/B06zoxxSD',
+      allergens: [],
       calculateDose: (w) => (w < 20 ? '1 tsp' : w > 50 ? '2 tbsp' : '1 tbsp'),
       calculateKcal: (w) => (w < 20 ? 4 : w > 50 ? 16 : 8),
     },
@@ -268,6 +310,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥣',
       name: 'Bone Broth',
       affiliateUrl: 'https://link.amazon/B0c8qZk7Y',
+      allergens: ['beef'],
       calculateDose: (w) => (w < 20 ? '1 tbsp' : w > 50 ? '1/4 cup (2 oz)' : '2 tbsp (1 oz)'),
       calculateKcal: (w) => (w < 20 ? 5 : w > 50 ? 20 : 10),
     },
@@ -276,6 +319,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🫐',
       name: 'Fresh Blueberries',
       affiliateUrl: 'https://link.amazon/B09gsTFIp',
+      allergens: [],
       calculateDose: (w) => (w < 20 ? '3–4 berries' : w > 50 ? '2 tbsp (~12 berries)' : '1 tbsp (~6 berries)'),
       calculateKcal: (w) => (w < 20 ? 3 : w > 50 ? 12 : 6),
     },
@@ -284,6 +328,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🦴',
       name: 'Joint Chew',
       affiliateUrl: 'https://link.amazon/B01H3PPzn',
+      allergens: [],
       calculateDose: (w) => (w < 30 ? '1/2 chew' : w > 70 ? '2 chews' : '1 chew'),
       calculateKcal: (w) => (w < 30 ? 10 : w > 70 ? 30 : 15),
     },
@@ -292,6 +337,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍖',
       name: 'Training Bites (Low-Calorie Treats)',
       affiliateUrl: 'https://link.amazon/B0h2wswVk',
+      allergens: [],
       calculateDose: (w) => (w < 20 ? '3–5 bites (~30 kcal)' : w > 60 ? '12–16 bites (~120 kcal)' : '6–10 bites (~60 kcal)'),
       calculateKcal: (w) => (w < 20 ? 30 : w > 60 ? 120 : 60),
     },
@@ -300,6 +346,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥚',
       name: 'Hard-Boiled Egg',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+dog+food+eggs&tag=dogfoodplanner-20',
+      allergens: ['egg', 'eggs'],
       calculateDose: (w) => (w < 25 ? '1/4 egg' : w > 60 ? '1 whole egg' : '1/2 egg'),
       calculateKcal: (w) => (w < 25 ? 18 : w > 60 ? 72 : 36),
     },
@@ -308,6 +355,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥛',
       name: 'Plain Greek Yogurt',
       affiliateUrl: 'https://link.amazon/B0ar2KGqk',
+      allergens: ['dairy', 'milk', 'yogurt'],
       calculateDose: (w) => (w < 25 ? '1 tsp' : w > 60 ? '2 tbsp' : '1 tbsp'),
       calculateKcal: (w) => (w < 25 ? 5 : w > 60 ? 30 : 15),
     },
@@ -316,6 +364,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍶',
       name: 'Goat Milk Kefir',
       affiliateUrl: 'https://www.amazon.com/s?k=raw+goat+milk+for+dogs&tag=dogfoodplanner-20',
+      allergens: ['dairy', 'milk', 'kefir'],
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '1/4 cup' : '2 tbsp'),
       calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 40 : 20),
     },
@@ -324,6 +373,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🌱',
       name: 'Chia Seeds (Hydrated)',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+chia+seeds+for+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
       calculateKcal: (w) => (w < 25 ? 6 : w > 60 ? 24 : 12),
     },
@@ -332,6 +382,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥕',
       name: 'Steamed Carrots (Diced)',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+carrots+for+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
       calculateKcal: (w) => (w < 25 ? 4 : w > 60 ? 12 : 8),
     },
@@ -340,6 +391,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥬',
       name: 'Steamed Spinach',
       affiliateUrl: 'https://www.amazon.com/s?k=green+superfood+powder+for+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/2 tbsp' : w > 60 ? '2 tbsp' : '1 tbsp'),
       calculateKcal: (w) => (w < 25 ? 2 : w > 60 ? 8 : 4),
     },
@@ -348,6 +400,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🫘',
       name: 'Steamed Green Beans',
       affiliateUrl: 'https://www.amazon.com/s?k=dehydrated+green+beans+dog&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '2–3 beans' : w > 60 ? '1/2 cup' : '1/4 cup'),
       calculateKcal: (w) => (w < 25 ? 4 : w > 60 ? 16 : 8),
     },
@@ -356,6 +409,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥩',
       name: 'Green Beef Tripe',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+green+beef+tripe+dogs&tag=dogfoodplanner-20',
+      allergens: ['beef'],
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '1/4 cup' : '2 tbsp'),
       calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 60 : 30),
     },
@@ -364,6 +418,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍖',
       name: 'Freeze-Dried Beef Liver',
       affiliateUrl: 'https://link.amazon/B0gmcEnwI',
+      allergens: ['beef'],
       calculateDose: (w) => (w < 25 ? '1 small piece' : w > 60 ? '3 pieces' : '2 pieces'),
       calculateKcal: (w) => (w < 25 ? 12 : w > 60 ? 36 : 24),
     },
@@ -372,6 +427,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🐟',
       name: 'Canned Sardines (in water)',
       affiliateUrl: 'https://link.amazon/B01vM8LZC',
+      allergens: ['fish', 'seafood'],
       calculateDose: (w) => (w < 25 ? '1/2 sardine' : w > 60 ? '2 sardines' : '1 sardine'),
       calculateKcal: (w) => (w < 25 ? 25 : w > 60 ? 100 : 50),
     },
@@ -380,6 +436,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥥',
       name: 'Virgin Coconut Oil',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+virgin+coconut+oil+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
       calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 40 : 20),
     },
@@ -388,6 +445,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '✨',
       name: 'Turmeric Golden Paste',
       affiliateUrl: 'https://www.amazon.com/s?k=turmeric+curcumin+supplement+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
       calculateKcal: (w) => (w < 25 ? 2 : w > 60 ? 8 : 4),
     },
@@ -396,6 +454,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥒',
       name: 'Steamed Zucchini',
       affiliateUrl: 'https://www.amazon.com/s?k=healthy+veggie+mix+for+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
       calculateKcal: (w) => (w < 25 ? 3 : w > 60 ? 10 : 5),
     },
@@ -404,6 +463,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍒',
       name: 'Cranberries (Unsweetened)',
       affiliateUrl: 'https://www.amazon.com/s?k=cranberry+bladder+support+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '3–4 berries' : w > 60 ? '1.5 tbsp' : '1 tbsp'),
       calculateKcal: (w) => (w < 25 ? 3 : w > 60 ? 12 : 6),
     },
@@ -412,6 +472,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍠',
       name: 'Steamed Sweet Potato (Mashed)',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+sweet+potato+puree+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
       calculateKcal: (w) => (w < 25 ? 12 : w > 60 ? 36 : 24),
     },
@@ -420,6 +481,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🫀',
       name: 'Chicken Hearts (Taurine Rich)',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+chicken+hearts+for+dogs&tag=dogfoodplanner-20',
+      allergens: ['chicken', 'poultry'],
       calculateDose: (w) => (w < 25 ? '1 heart' : w > 60 ? '4 hearts' : '2 hearts'),
       calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 60 : 30),
     },
@@ -428,6 +490,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥩',
       name: 'Cooked Beef Heart',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+beef+heart+dogs&tag=dogfoodplanner-20',
+      allergens: ['beef'],
       calculateDose: (w) => (w < 25 ? '1/2 oz' : w > 60 ? '2 oz' : '1 oz'),
       calculateKcal: (w) => (w < 25 ? 20 : w > 60 ? 80 : 40),
     },
@@ -436,6 +499,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🧀',
       name: 'Plain Low-Fat Cottage Cheese',
       affiliateUrl: 'https://www.amazon.com/s?k=low+fat+cottage+cheese+calcium+dogs&tag=dogfoodplanner-20',
+      allergens: ['dairy', 'milk', 'cheese'],
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
       calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 45 : 30),
     },
@@ -444,6 +508,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥦',
       name: 'Steamed Broccoli Florets',
       affiliateUrl: 'https://www.amazon.com/s?k=broccoli+sprouts+powder+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1 small floret' : w > 60 ? '3 florets' : '2 florets'),
       calculateKcal: (w) => (w < 25 ? 5 : w > 60 ? 15 : 10),
     },
@@ -452,6 +517,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🦪',
       name: 'Green-Lipped Mussel Powder',
       affiliateUrl: 'https://www.amazon.com/s?k=green+lipped+mussel+powder+for+dogs&tag=dogfoodplanner-20',
+      allergens: ['shellfish', 'seafood'],
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
       calculateKcal: (w) => (w < 25 ? 4 : w > 60 ? 12 : 8),
     },
@@ -460,6 +526,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍎',
       name: 'Fresh Apple Slices (Seedless)',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+freeze+dried+apples+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '2 thin slices' : w > 60 ? '5 slices' : '3 slices'),
       calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 25 : 15),
     },
@@ -468,6 +535,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🌾',
       name: 'Ground Flaxseed (Cold-Milled)',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+ground+flaxseed+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
       calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 35 : 20),
     },
@@ -476,6 +544,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🌿',
       name: 'Fresh Chopped Parsley',
       affiliateUrl: 'https://www.amazon.com/s?k=chlorophyll+breath+parsley+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
       calculateKcal: (w) => (w < 25 ? 1 : w > 60 ? 3 : 2),
     },
@@ -484,6 +553,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍉',
       name: 'Fresh Watermelon (Seedless Chunks)',
       affiliateUrl: 'https://www.amazon.com/s?k=hydrating+dog+treats+natural&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '2 chunks' : w > 60 ? '5 chunks' : '3 chunks'),
       calculateKcal: (w) => (w < 25 ? 8 : w > 60 ? 20 : 12),
     },
@@ -492,6 +562,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍗',
       name: 'Freeze-Dried Chicken Breast Bites',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+single+ingredient+chicken+breast+dogs&tag=dogfoodplanner-20',
+      allergens: ['chicken', 'poultry'],
       calculateDose: (w) => (w < 25 ? '2 pieces' : w > 60 ? '6 pieces' : '4 pieces'),
       calculateKcal: (w) => (w < 25 ? 14 : w > 60 ? 42 : 28),
     },
@@ -500,6 +571,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍣',
       name: 'Freeze-Dried Wild Salmon Bites',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+salmon+bites+for+dogs&tag=dogfoodplanner-20',
+      allergens: ['fish', 'salmon', 'seafood'],
       calculateDose: (w) => (w < 25 ? '2 bites' : w > 60 ? '6 bites' : '4 bites'),
       calculateKcal: (w) => (w < 25 ? 16 : w > 60 ? 48 : 32),
     },
@@ -508,6 +580,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🌊',
       name: 'Organic Sea Kelp Powder',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+kelp+powder+dogs+thyroid&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
       calculateKcal: (w) => (w < 25 ? 2 : w > 60 ? 6 : 3),
     },
@@ -516,6 +589,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍚',
       name: 'Cooked Quinoa',
       affiliateUrl: 'https://www.amazon.com/s?k=ancient+grains+dog+food+topper&tag=dogfoodplanner-20',
+      allergens: ['grain', 'grains', 'quinoa'],
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '3 tbsp' : '2 tbsp'),
       calculateKcal: (w) => (w < 25 ? 14 : w > 60 ? 42 : 28),
     },
@@ -524,6 +598,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍲',
       name: 'Turkey Bone Broth',
       affiliateUrl: 'https://www.amazon.com/s?k=turkey+bone+broth+for+dogs&tag=dogfoodplanner-20',
+      allergens: ['poultry', 'turkey'],
       calculateDose: (w) => (w < 25 ? '1 tbsp' : w > 60 ? '1/4 cup' : '2 tbsp'),
       calculateKcal: (w) => (w < 25 ? 5 : w > 60 ? 20 : 10),
     },
@@ -532,6 +607,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥜',
       name: 'Pure Peanut Butter (Xylitol-Free)',
       affiliateUrl: 'https://www.amazon.com/s?k=all+natural+xylitol+free+dog+peanut+butter&tag=dogfoodplanner-20',
+      allergens: ['peanut', 'nuts'],
       calculateDose: (w) => (w < 25 ? '1/2 tsp' : w > 60 ? '1.5 tsp' : '1 tsp'),
       calculateKcal: (w) => (w < 25 ? 16 : w > 60 ? 48 : 32),
     },
@@ -540,6 +616,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥛',
       name: 'Whole Goat Milk Powder',
       affiliateUrl: 'https://www.amazon.com/s?k=raw+goat+milk+powder+for+dogs&tag=dogfoodplanner-20',
+      allergens: ['dairy', 'milk'],
       calculateDose: (w) => (w < 25 ? '1 tsp' : w > 60 ? '1 tbsp' : '2 tsp'),
       calculateKcal: (w) => (w < 25 ? 12 : w > 60 ? 36 : 24),
     },
@@ -548,6 +625,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🥥',
       name: 'Unsweetened Coconut Flakes',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+unsweetened+coconut+flakes+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/2 tsp' : w > 60 ? '1.5 tsp' : '1 tsp'),
       calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 30 : 20),
     },
@@ -556,6 +634,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '💧',
       name: 'Cold-Pressed Hemp Seed Oil',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+cold+pressed+hemp+oil+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
       calculateKcal: (w) => (w < 25 ? 10 : w > 60 ? 40 : 20),
     },
@@ -564,6 +643,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🦆',
       name: 'Freeze-Dried Duck Neck / Chew',
       affiliateUrl: 'https://www.amazon.com/s?k=freeze+dried+duck+necks+for+dogs&tag=dogfoodplanner-20',
+      allergens: ['poultry', 'duck'],
       calculateDose: (w) => (w < 25 ? '1/2 piece' : w > 60 ? '1 whole piece' : '1/2 piece'),
       calculateKcal: (w) => (w < 25 ? 35 : w > 60 ? 70 : 35),
     },
@@ -572,6 +652,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🧪',
       name: 'Organic Spirulina Powder',
       affiliateUrl: 'https://www.amazon.com/s?k=organic+spirulina+powder+for+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
       calculateKcal: (w) => (w < 25 ? 2 : w > 60 ? 6 : 3),
     },
@@ -580,6 +661,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🎃',
       name: 'Raw Ground Pumpkin Seeds',
       affiliateUrl: 'https://www.amazon.com/s?k=ground+pumpkin+seeds+for+dogs+zinc&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/4 tsp' : w > 60 ? '1 tsp' : '1/2 tsp'),
       calculateKcal: (w) => (w < 25 ? 8 : w > 60 ? 32 : 16),
     },
@@ -588,6 +670,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🦐',
       name: 'Antarctic Wild Krill Oil',
       affiliateUrl: 'https://www.amazon.com/s?k=antarctic+krill+oil+pump+dogs&tag=dogfoodplanner-20',
+      allergens: ['fish', 'shellfish', 'seafood'],
       calculateDose: (w) => (w < 25 ? '1/2 tsp' : w > 60 ? '2 tsp' : '1 tsp'),
       calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 60 : 30),
     },
@@ -596,10 +679,99 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🍯',
       name: 'Raw Unfiltered Honey (Trace)',
       affiliateUrl: 'https://www.amazon.com/s?k=raw+unfiltered+honey+local+dogs&tag=dogfoodplanner-20',
+      allergens: [],
       calculateDose: (w) => (w < 25 ? '1/8 tsp' : w > 60 ? '1/2 tsp' : '1/4 tsp'),
       calculateKcal: (w) => (w < 25 ? 8 : w > 60 ? 32 : 16),
     },
   ];
+
+  const ALLERGY_MAP: Record<string, string[]> = {
+    'chicken / poultry': ['chicken', 'poultry', 'turkey', 'duck'],
+    'chicken':           ['chicken', 'poultry'],
+    'poultry':           ['chicken', 'poultry', 'turkey', 'duck'],
+    'turkey':            ['turkey', 'poultry'],
+    'duck':              ['duck', 'poultry'],
+    'beef':              ['beef'],
+    'dairy':             ['dairy', 'milk', 'cheese', 'yogurt', 'kefir', 'lactose'],
+    'milk':              ['dairy', 'milk'],
+    'grains / wheat':    ['grain', 'grains', 'wheat', 'rice', 'gluten', 'corn', 'quinoa'],
+    'grain':             ['grain', 'grains', 'wheat', 'rice', 'gluten', 'corn', 'quinoa'],
+    'grains':            ['grain', 'grains', 'wheat', 'rice', 'gluten', 'corn', 'quinoa'],
+    'wheat':             ['wheat', 'grain', 'grains', 'gluten'],
+    'soy':               ['soy', 'soybean'],
+    'eggs':              ['egg', 'eggs'],
+    'egg':               ['egg', 'eggs'],
+    'fish':              ['fish', 'salmon', 'seafood', 'sardine', 'krill'],
+    'seafood':           ['fish', 'salmon', 'seafood', 'sardine', 'krill', 'mussel', 'shellfish'],
+    'peanut':            ['peanut', 'nuts'],
+  };
+
+  function isItemAllergenic(item: CatalogItem, rawAllergies: string[] = []): boolean {
+    if (!rawAllergies || !Array.isArray(rawAllergies) || !rawAllergies.length) return false;
+    const cleanAllergies = rawAllergies.filter(a => typeof a === 'string' && a.trim() && !a.toLowerCase().includes('none'));
+    if (!cleanAllergies.length) return false;
+
+    const bannedKeywords = new Set<string>();
+    for (const allergy of cleanAllergies) {
+      const lower = allergy.trim().toLowerCase();
+      if (ALLERGY_MAP[lower]) {
+        ALLERGY_MAP[lower].forEach(k => bannedKeywords.add(k));
+      }
+      lower.split(/[\/\s,]+/).filter(Boolean).forEach(part => {
+        bannedKeywords.add(part);
+        if (ALLERGY_MAP[part]) {
+          ALLERGY_MAP[part].forEach(k => bannedKeywords.add(k));
+        }
+      });
+      // Multilingual support
+      if (lower.includes('chicken') || lower.includes('poultry') || lower.includes('poulet') || lower.includes('pollo') || lower.includes('huhn') || lower.includes('frango') || lower.includes('닭고기') || lower.includes('チキン')) {
+        ['chicken', 'poultry', 'turkey', 'duck'].forEach(k => bannedKeywords.add(k));
+      }
+      if (lower.includes('beef') || lower.includes('boeuf') || lower.includes('bœuf') || lower.includes('rind') || lower.includes('carne') || lower.includes('소고기') || lower.includes('牛肉')) {
+        bannedKeywords.add('beef');
+      }
+      if (lower.includes('dairy') || lower.includes('lait') || lower.includes('leche') || lower.includes('milch') || lower.includes('leite') || lower.includes('유제품') || lower.includes('乳製品')) {
+        ['dairy', 'milk', 'cheese', 'yogurt', 'kefir', 'lactose'].forEach(k => bannedKeywords.add(k));
+      }
+      if (lower.includes('wheat') || lower.includes('grain') || lower.includes('blé') || lower.includes('trigo') || lower.includes('weizen') || lower.includes('곡물') || lower.includes('穀物')) {
+        ['grain', 'grains', 'wheat', 'rice', 'gluten', 'corn', 'quinoa'].forEach(k => bannedKeywords.add(k));
+      }
+      if (lower.includes('egg') || lower.includes('oeuf') || lower.includes('œuf') || lower.includes('huevo') || lower.includes('ei') || lower.includes('ovo') || lower.includes('계란') || lower.includes('卵')) {
+        ['egg', 'eggs'].forEach(k => bannedKeywords.add(k));
+      }
+      if (lower.includes('soy') || lower.includes('soja') || lower.includes('대두') || lower.includes('大豆')) {
+        ['soy', 'soybean'].forEach(k => bannedKeywords.add(k));
+      }
+    }
+
+    if (item.allergens && item.allergens.length) {
+      for (const tag of item.allergens) {
+        const tagLower = tag.toLowerCase();
+        if (bannedKeywords.has(tagLower)) return true;
+        for (const banned of bannedKeywords) {
+          if (tagLower === banned || tagLower.includes(banned) || banned.includes(tagLower)) {
+            return true;
+          }
+        }
+      }
+    }
+
+    const textToCheck = `${item.id} ${item.name}`.toLowerCase();
+    for (const banned of bannedKeywords) {
+      if (banned.length <= 2) continue;
+      const regex = new RegExp(`\\b${banned}\\b`, 'i');
+      if (regex.test(textToCheck)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function getAvailableIngredients(profile: any): CatalogItem[] {
+    const rawAllergies = profile?.allergies || [];
+    return INGREDIENTS_CATALOG.filter(item => !isItemAllergenic(item, rawAllergies));
+  }
 
   interface BowlCustomItem {
     id: string;
@@ -722,95 +894,98 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     return (Math.round(n * 10) / 10).toString();
   }
 
-  function formatDoseString(baseDose: string, qty: number): string {
+  function formatDoseString(baseDose: string, qty: number, lang: Lang = 'en'): string {
     if (!baseDose) return `${qty}x`;
+    let result = '';
     // Clean out any legacy pump notation to pure tsp
     const pumpMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*pump[s]?(?:\s*\((?:(\d+\/\d+|[0-9]+(?:\.[0-9]+)?))\s*tsp\))?/i);
     if (pumpMatch) {
       const tspVal = pumpMatch[2] ? parseFractionOrDecimal(pumpMatch[2]) : parseFractionOrDecimal(pumpMatch[1]);
       const currentTsp = Math.max(0.125, Math.round(tspVal * qty * 100) / 100);
-      return `${formatFraction(currentTsp)} tsp`;
-    }
-
-    // Check for "tbsp"
-    const tbspMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*tbsp(.*)$/i);
-    if (tbspMatch) {
-      const baseVal = parseFractionOrDecimal(tbspMatch[1]);
-      const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)} tbsp${tbspMatch[2] || ''}`;
-    }
-
-    // Check for "tsp"
-    const tspMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*tsp(.*)$/i);
-    if (tspMatch) {
-      const baseVal = parseFractionOrDecimal(tspMatch[1]);
-      const currentVal = Math.max(0.125, baseVal * qty);
-      return `${formatFraction(currentVal)} tsp${tspMatch[2] || ''}`;
-    }
-
-    // Check for "chew"
-    const chewMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*chew[s]?(.*)$/i);
-    if (chewMatch) {
-      const baseVal = parseFractionOrDecimal(chewMatch[1]);
-      const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)} ${currentVal <= 1 ? 'chew' : 'chews'}${chewMatch[2] || ''}`;
-    }
-
-    // Check for "egg"
-    const eggMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*(?:whole\s*)?egg(.*)$/i);
-    if (eggMatch) {
-      const baseVal = parseFractionOrDecimal(eggMatch[1]);
-      const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)} egg${eggMatch[2] || ''}`;
-    }
-
-    // Check for "piece"
-    const pieceMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*(?:whole\s*)?piece[s]?(.*)$/i);
-    if (pieceMatch) {
-      const baseVal = parseFractionOrDecimal(pieceMatch[1]);
-      const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)} ${currentVal <= 1 ? 'piece' : 'pieces'}${pieceMatch[2] || ''}`;
-    }
-
-    // Check for "can"
-    const canMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*can[s]?(.*)$/i);
-    if (canMatch) {
-      const baseVal = parseFractionOrDecimal(canMatch[1]);
-      const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)} ${currentVal <= 1 ? 'can' : 'cans'}${canMatch[2] || ''}`;
-    }
-
-    // Check for "patty"
-    const pattyMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*patt(?:y|ies)(.*)$/i);
-    if (pattyMatch) {
-      const baseVal = parseFractionOrDecimal(pattyMatch[1]);
-      const currentVal = Math.max(0.5, baseVal * qty);
-      return `${formatFraction(currentVal)} ${currentVal <= 1 ? 'patty' : 'patties'}${pattyMatch[2] || ''}`;
-    }
-
-    // Check for "cup" with optional grams, e.g. "0.65 cups (152g)"
-    const cupMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*cup[s]?(?:\s*\(([0-9]+)\s*g\))?(.*)$/i);
-    if (cupMatch) {
-      const baseVal = parseFractionOrDecimal(cupMatch[1]);
-      const currentVal = Math.max(0.05, Math.round(baseVal * qty * 100) / 100);
-      const cupStr = `${currentVal} ${currentVal === 1 ? 'cup' : 'cups'}`;
-      if (cupMatch[2]) {
-        const baseGrams = parseFloat(cupMatch[2]);
-        const currentGrams = Math.round((baseGrams / (baseVal || 1)) * currentVal);
-        return `${cupStr} (${currentGrams}g)${cupMatch[3] || ''}`;
+      result = `${formatFraction(currentTsp)} tsp`;
+    } else {
+      // Check for "tbsp"
+      const tbspMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*tbsp(.*)$/i);
+      if (tbspMatch) {
+        const baseVal = parseFractionOrDecimal(tbspMatch[1]);
+        const currentVal = Math.max(0.25, baseVal * qty);
+        result = `${formatFraction(currentVal)} tbsp${tbspMatch[2] || ''}`;
+      } else {
+        // Check for "tsp"
+        const tspMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*tsp(.*)$/i);
+        if (tspMatch) {
+          const baseVal = parseFractionOrDecimal(tspMatch[1]);
+          const currentVal = Math.max(0.125, baseVal * qty);
+          result = `${formatFraction(currentVal)} tsp${tspMatch[2] || ''}`;
+        } else {
+          // Check for "chew"
+          const chewMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*chew[s]?(.*)$/i);
+          if (chewMatch) {
+            const baseVal = parseFractionOrDecimal(chewMatch[1]);
+            const currentVal = Math.max(0.25, baseVal * qty);
+            result = `${formatFraction(currentVal)} ${currentVal <= 1 ? 'chew' : 'chews'}${chewMatch[2] || ''}`;
+          } else {
+            // Check for "egg"
+            const eggMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*(?:whole\s*)?egg(.*)$/i);
+            if (eggMatch) {
+              const baseVal = parseFractionOrDecimal(eggMatch[1]);
+              const currentVal = Math.max(0.25, baseVal * qty);
+              result = `${formatFraction(currentVal)} egg${eggMatch[2] || ''}`;
+            } else {
+              // Check for "piece"
+              const pieceMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*(?:whole\s*)?piece[s]?(.*)$/i);
+              if (pieceMatch) {
+                const baseVal = parseFractionOrDecimal(pieceMatch[1]);
+                const currentVal = Math.max(0.25, baseVal * qty);
+                result = `${formatFraction(currentVal)} ${currentVal <= 1 ? 'piece' : 'pieces'}${pieceMatch[2] || ''}`;
+              } else {
+                // Check for "can"
+                const canMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*can[s]?(.*)$/i);
+                if (canMatch) {
+                  const baseVal = parseFractionOrDecimal(canMatch[1]);
+                  const currentVal = Math.max(0.25, baseVal * qty);
+                  result = `${formatFraction(currentVal)} ${currentVal <= 1 ? 'can' : 'cans'}${canMatch[2] || ''}`;
+                } else {
+                  // Check for "patty"
+                  const pattyMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*patt(?:y|ies)(.*)$/i);
+                  if (pattyMatch) {
+                    const baseVal = parseFractionOrDecimal(pattyMatch[1]);
+                    const currentVal = Math.max(0.5, baseVal * qty);
+                    result = `${formatFraction(currentVal)} ${currentVal <= 1 ? 'patty' : 'patties'}${pattyMatch[2] || ''}`;
+                  } else {
+                    // Check for "cup" with optional grams, e.g. "0.65 cups (152g)"
+                    const cupMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*cup[s]?(?:\s*\(([0-9]+)\s*g\))?(.*)$/i);
+                    if (cupMatch) {
+                      const baseVal = parseFractionOrDecimal(cupMatch[1]);
+                      const currentVal = Math.max(0.05, Math.round(baseVal * qty * 100) / 100);
+                      const cupStr = `${currentVal} ${currentVal === 1 ? 'cup' : 'cups'}`;
+                      if (cupMatch[2]) {
+                        const baseGrams = parseFloat(cupMatch[2]);
+                        const currentGrams = Math.round((baseGrams / (baseVal || 1)) * currentVal);
+                        result = `${cupStr} (${currentGrams}g)${cupMatch[3] || ''}`;
+                      } else {
+                        result = `${cupStr}${cupMatch[3] || ''}`;
+                      }
+                    } else {
+                      // Check for leading fraction/number
+                      const numMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)(.*)$/);
+                      if (numMatch) {
+                        const baseVal = parseFractionOrDecimal(numMatch[1]);
+                        const currentVal = Math.max(0.25, baseVal * qty);
+                        result = `${formatFraction(currentVal)}${numMatch[2]}`;
+                      } else {
+                        result = `${formatFraction(qty)}x ${baseDose}`;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
-      return `${cupStr}${cupMatch[3] || ''}`;
     }
-
-    // Check for leading fraction/number
-    const numMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)(.*)$/);
-    if (numMatch) {
-      const baseVal = parseFractionOrDecimal(numMatch[1]);
-      const currentVal = Math.max(0.25, baseVal * qty);
-      return `${formatFraction(currentVal)}${numMatch[2]}`;
-    }
-
-    return `${formatFraction(qty)}x ${baseDose}`;
+    return localizeDoseText(result, lang);
   }
 
   function calculateOptimizedMealCalorieRange(profile: any, targetMealKcal: number): { minKcal: number; maxKcal: number } {
@@ -920,7 +1095,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     return `
       <thead class="bg-[#fdf8f3] dark:bg-[#2a1a08]">
         <tr>
-          <th class="py-1 px-2 text-left font-bold text-xs text-[#92400e] dark:text-[#c4956a] border-b border-[#f0d5a8] dark:border-[#3a2510]">Day</th>
+          <th class="py-1 px-2 text-left font-bold text-xs text-[#92400e] dark:text-[#c4956a] border-b border-[#f0d5a8] dark:border-[#3a2510]">${tx.dayLabel}</th>
           ${headerCells}
         </tr>
       </thead>
@@ -969,36 +1144,46 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
   }
 
   function getDetailedRecipeName(profile: any, dietKey: string, lang: Lang): { title: string; amazonQuery: string } {
-    const protein = profile.proteinChoice && profile.proteinChoice !== 'auto' ? profile.proteinChoice : 'Salmon';
-    const capitalizedProtein = protein.charAt(0).toUpperCase() + protein.slice(1);
+    let protein = profile.proteinChoice && profile.proteinChoice !== 'auto' ? profile.proteinChoice : 'Salmon';
     const stage = profile.ageStage || 'adult';
     const allergies = profile.allergies || [];
     const isChickenFree = allergies.some((a: string) => a.toLowerCase().includes('chicken') || a.toLowerCase().includes('poultry'));
+    const isBeefFree = allergies.some((a: string) => a.toLowerCase().includes('beef'));
 
-    let stagePrefix = 'Adult Complete';
+    // Guard against suggesting banned allergens as base protein
+    if (isChickenFree && (protein.toLowerCase() === 'chicken' || protein.toLowerCase() === 'turkey')) {
+      protein = 'Salmon';
+    }
+    if (isBeefFree && protein.toLowerCase() === 'beef') {
+      protein = 'Salmon';
+    }
+
+    const stagePrefixMap = STAGE_PREFIX_MAP[lang] || STAGE_PREFIX_MAP.en;
+    let stagePrefix = stagePrefixMap.adult;
     let queryStage = 'adult';
 
     if (stage.includes('puppy')) {
-      stagePrefix = 'Puppy Growth & Skeletal DHA';
+      stagePrefix = stagePrefixMap.puppy;
       queryStage = 'puppy';
     } else if (stage === 'senior') {
-      stagePrefix = 'Senior Vitality & Mobility';
+      stagePrefix = stagePrefixMap.senior;
       queryStage = 'senior';
     }
 
-    let dietSuffix = 'Dry Kibble';
+    const dietSuffixMap = DIET_SUFFIX_MAP[lang] || DIET_SUFFIX_MAP.en;
+    let dietSuffix = dietSuffixMap.kibble;
     let queryDiet = 'dry+dog+food';
     if (dietKey === 'canned') {
-      dietSuffix = 'Grain-Free Wet Loaf';
+      dietSuffix = dietSuffixMap.canned;
       queryDiet = 'grain+free+wet+dog+food';
     } else if (dietKey === 'mixed') {
-      dietSuffix = 'Kibble & Fresh Topper Mix';
+      dietSuffix = dietSuffixMap.mixed;
       queryDiet = 'dry+dog+food+with+toppers';
     } else if (dietKey === 'fresh' || dietKey === 'fresh-cooked') {
-      dietSuffix = 'Human-Grade Gently Cooked Bowl';
+      dietSuffix = dietSuffixMap.fresh;
       queryDiet = 'human+grade+fresh+dog+food';
     } else if (dietKey === 'raw' || dietKey === 'raw-barf') {
-      dietSuffix = 'Freeze-Dried Raw BARF Patty';
+      dietSuffix = dietSuffixMap.raw;
       queryDiet = 'freeze+dried+raw+dog+food';
     }
 
@@ -1007,7 +1192,9 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       query += '+chicken+free';
     }
 
-    const title = `${stagePrefix} (${capitalizedProtein} Formula) ${dietSuffix}`;
+    const proteinMap = PROTEIN_DISPLAY_MAP[lang] || PROTEIN_DISPLAY_MAP.en;
+    const proteinLabel = proteinMap[protein.toLowerCase()] || (protein.charAt(0).toUpperCase() + protein.slice(1));
+    const title = formatFormulaTitle(stagePrefix, proteinLabel, dietSuffix, lang);
     return { title, amazonQuery: query };
   }
 
@@ -1040,9 +1227,17 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const recipe = getDetailedRecipeName(profile, dietKey, lang);
     const isFresh = dietKey === 'fresh' || dietKey === 'fresh-cooked';
     const isKibble = dietKey === 'kibble';
-    const protein = (profile.proteinChoice || 'salmon').toLowerCase();
+    let protein = (profile.proteinChoice || 'salmon').toLowerCase();
 
     const isChickenFree = Array.isArray(profile.allergies) && profile.allergies.some((a: string) => a.toLowerCase().includes('chicken') || a.toLowerCase().includes('poultry'));
+    const isBeefFree = Array.isArray(profile.allergies) && profile.allergies.some((a: string) => a.toLowerCase().includes('beef'));
+
+    if (isChickenFree && (protein === 'chicken' || protein === 'turkey')) {
+      protein = 'salmon';
+    }
+    if (isBeefFree && protein === 'beef') {
+      protein = 'salmon';
+    }
 
     let recipeUrl = `https://www.amazon.com/s?k=${recipe.amazonQuery}&tag=dogfoodplanner-20`;
     if (isFresh) {
@@ -1050,14 +1245,14 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         recipeUrl = 'https://link.amazon/B0a52bV8X';
       } else if (protein === 'salmon' || protein === 'auto') {
         recipeUrl = 'https://link.amazon/B0gWhHriE';
-      } else if (protein === 'chicken' || protein === 'turkey') {
+      } else if (!isChickenFree && (protein === 'chicken' || protein === 'turkey')) {
         recipeUrl = 'https://link.amazon/B0fpxfvVg';
       } else {
         recipeUrl = 'https://link.amazon/B0gWhHriE';
       }
     } else if (isKibble && (protein === 'salmon' || protein === 'auto')) {
       recipeUrl = 'https://link.amazon/B0h1I7guA';
-    } else if (isKibble && (protein === 'chicken' || protein === 'turkey')) {
+    } else if (!isChickenFree && isKibble && (protein === 'chicken' || protein === 'turkey')) {
       recipeUrl = 'https://link.amazon/B0j9UbC9Z';
     } else if (dietKey === 'canned') {
       if (isChickenFree && protein === 'salmon') {
@@ -1144,11 +1339,13 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     // Helper to generate custom added items HTML for a given bowl with small, simple up/down adjuster before ingredient name
     function getCustomItemsHtml(bowl: 'am' | 'pm', items: BowlCustomItem[], hasBase: boolean): string {
       return items.map((item, index) => {
+        const localizedName = getLocalizedIngredientName(item.id, item.name, lang);
+        const localizedDose = localizeDoseText(item.dose, lang);
         return `
           <li class="flex items-start gap-1.5 text-xs sm:text-sm text-[#1c0f00] dark:text-[#fde8c8] group py-1.5 ${index === 0 && hasBase ? 'mt-2.5 pt-1' : 'mt-1.5 print:mt-2.5'}">
             <span class="text-[#c47a2b] font-bold shrink-0 mt-0.5">•</span>
             <div class="leading-relaxed flex-1 min-w-0">
-              <strong class="font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${escapeHtml(item.dose)}</strong>
+              <strong class="font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${escapeHtml(localizedDose)}</strong>
               <span class="stepper-box inline-flex flex-col justify-center items-center select-none no-print border border-[#d6c4b2] dark:border-[#523920] rounded-[3px] bg-[#fbf7f2] dark:bg-[#25170b] overflow-hidden shrink-0 mx-1" style="width: 14px; height: 16px; vertical-align: middle; position: relative; top: -2px;">
                 <button
                   type="button"
@@ -1175,10 +1372,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
                 </button>
               </span>
               <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-current underline-offset-2 hover:text-[#c47a2b] print:no-underline transition-colors cursor-pointer">
-                <span>${item.name}</span>
+                <span>${escapeHtml(localizedName)}</span>
               </a>
               <span class="item-dish-kcal inline-block ml-1 font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 shrink-0">+${item.kcal} kcal</span>
-              <button type="button" data-remove-bowl="${bowl}" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-3.5 h-3.5 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 align-middle no-print" title="Remove ingredient" aria-label="Remove ${item.name}">
+              <button type="button" data-remove-bowl="${bowl}" data-item-index="${index}" class="remove-ingredient-btn inline-flex items-center justify-center w-3.5 h-3.5 rounded text-[#92400e]/50 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer shrink-0 ml-1 align-middle no-print" title="Remove ingredient" aria-label="Remove ${escapeHtml(localizedName)}">
                 <svg class="w-3 h-3 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1194,7 +1391,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       ? `
         <li class="flex items-start gap-2 text-xs text-[#16a34a] font-semibold mt-2 pt-2 border-t border-[#f0d5a8]/50 dark:border-[#3a2510]/50">
           <span>•</span>
-          <span>[ ] Daily Medication (Administer in morning bowl)</span>
+          <span>${tx.dailyMedsBowlNote}</span>
         </li>
       `
       : '';
@@ -1265,7 +1462,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
             const isFormula = item.id.includes('formula') || item.id.includes('diet') || (item.baseDose && item.baseDose.includes('cup'));
             const stepDelta = isFormula ? (delta > 0 ? 0.05 : -0.05) : delta;
             item.qty = Math.max(0.05, Math.round(((item.qty || 1) + stepDelta) * 100) / 100);
-            item.dose = formatDoseString(item.baseDose || item.dose, item.qty);
+            item.dose = formatDoseString(item.baseDose || item.dose, item.qty, lang);
             item.kcal = Math.max(1, Math.round((item.baseKcal || 20) * item.qty));
             renderBowlsOnly(profile, lang);
             saveCurrentState();
@@ -1469,9 +1666,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const dropdownList = container.querySelector('.ingredient-dropdown-list') as HTMLElement | null;
     const cancelBtn = container.querySelector('.cancel-search-btn') as HTMLButtonElement | null;
 
+    const safeCatalog = getAvailableIngredients(profile);
     let isDropdownOpen = false;
     let activeHighlightedIndex = -1;
-    let currentFiltered: CatalogItem[] = [...INGREDIENTS_CATALOG];
+    let currentFiltered: CatalogItem[] = [...safeCatalog];
 
     const weightLbs = profile.weightLbs || 45;
     const stage = profile.ageStage || 'adult';
@@ -1482,29 +1680,34 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       const cleanQuery = query.trim().toLowerCase();
 
       if (!cleanQuery) {
-        currentFiltered = [...INGREDIENTS_CATALOG];
+        currentFiltered = [...safeCatalog];
       } else {
         const tokens = cleanQuery.split(/\s+/).filter(Boolean);
-        currentFiltered = INGREDIENTS_CATALOG.filter(item => {
-          const nameLower = item.name.toLowerCase();
-          return tokens.every(token => nameLower.includes(token));
+        currentFiltered = safeCatalog.filter(item => {
+          const locName = getLocalizedIngredientName(item.id, item.name, lang).toLowerCase();
+          const origName = item.name.toLowerCase();
+          return tokens.every(token => locName.includes(token) || origName.includes(token));
         });
       }
 
       activeHighlightedIndex = -1;
 
       if (currentFiltered.length === 0) {
+        const sampleSuggestions = safeCatalog.slice(0, 4).map(i => getLocalizedIngredientName(i.id, i.name, lang).split('(')[0].trim().toLowerCase()).join(', ');
+        const tx = getExtraTranslations(lang);
         dropdownList.innerHTML = `
           <div class="px-3.5 py-3 text-center">
             <p class="text-xs text-[#92400e] dark:text-[#c4956a] font-medium">${escapeHtml(noMatchesMsg)}</p>
-            <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mt-1">Try pumpkin, egg, blueberries, training bites, kefir...</p>
+            ${sampleSuggestions ? `<p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mt-1">${escapeHtml(tx.tryDifferentSearchLabel)} (${escapeHtml(sampleSuggestions)})...</p>` : ''}
           </div>
         `;
         return;
       }
 
       dropdownList.innerHTML = currentFiltered.map((item, idx) => {
-        const dose = item.calculateDose(weightLbs, stage, goal);
+        const localizedName = getLocalizedIngredientName(item.id, item.name, lang);
+        const rawDose = item.calculateDose(weightLbs, stage, goal);
+        const dose = localizeDoseText(rawDose, lang);
         const kcal = item.calculateKcal(weightLbs, stage, goal);
         return `
           <div
@@ -1516,7 +1719,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           >
             <div class="flex items-center gap-2 min-w-0">
               <span class="text-sm shrink-0">${item.icon || '🥣'}</span>
-              <span class="truncate font-medium">${highlightMatches(item.name, cleanQuery)}</span>
+              <span class="truncate font-medium">${highlightMatches(localizedName, cleanQuery)}</span>
             </div>
             <div class="flex items-center gap-1.5 shrink-0 ml-2">
               <span class="font-mono text-[10px] text-[#c47a2b] dark:text-[#f59e0b] font-bold">${escapeHtml(dose)}</span>
@@ -1532,7 +1735,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         });
         el.addEventListener('click', () => {
           const pickId = el.dataset.pickId;
-          const pickedItem = INGREDIENTS_CATALOG.find(i => i.id === pickId);
+          const pickedItem = safeCatalog.find(i => i.id === pickId);
           if (pickedItem) {
             selectIngredient(pickedItem);
           }
@@ -1741,8 +1944,10 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     while (lines.length > 3) {
       lines.pop()?.remove();
     }
+    const lang = getCurrentLang();
+    const tx = getExtraTranslations(lang);
     const inputs = sitterContainer.querySelectorAll<HTMLInputElement>('input');
-    if (inputs[0]) { inputs[0].value = 'Fresh water changed 2x daily. Rest 30m before walks.'; inputs[0].setAttribute('value', inputs[0].value); }
+    if (inputs[0]) { inputs[0].value = tx.sitterInstructionsDefault; inputs[0].setAttribute('value', inputs[0].value); }
     if (inputs[1]) { inputs[1].value = ''; inputs[1].setAttribute('value', ''); }
     if (inputs[2]) { inputs[2].value = ''; inputs[2].setAttribute('value', ''); }
   }
@@ -1778,8 +1983,21 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     );
   }
 
+  function getAllergyLabel(allergyStr: string, currentLang: Lang): string {
+    const pl = plannerTranslations[currentLang] || plannerTranslations.en;
+    const lower = allergyStr.toLowerCase().trim();
+    if (lower.includes('chicken') || lower.includes('poultry')) return pl.allergyChicken || 'Chicken';
+    if (lower.includes('beef')) return pl.allergyBeef || 'Beef';
+    if (lower.includes('dairy') || lower.includes('milk')) return pl.allergyDairy || 'Dairy';
+    if (lower.includes('grain') || lower.includes('wheat') || lower.includes('rice')) return pl.allergyWheat || 'Wheat / Grains';
+    if (lower.includes('soy')) return pl.allergySoy || 'Soy';
+    if (lower.includes('egg')) return pl.allergyEggs || 'Eggs';
+    return allergyStr;
+  }
+
   function renderResults(profile: any, dietOverride?: string, shouldScroll: boolean = true) {
     const lang = getCurrentLang();
+    const tx = getExtraTranslations(lang);
     const result = calculateCanineNutrition(profile);
     const diet = dietOverride || profile.dietPreference || 'fresh';
 
@@ -1807,7 +2025,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const cardStage = document.getElementById('card-dog-stage');
     if (cardStage) {
       const stage = profile.ageStage || 'adult';
-      cardStage.textContent = stage.includes('puppy') ? 'Puppy' : (stage === 'senior' ? 'Senior' : 'Adult');
+      cardStage.textContent = stage.includes('puppy') ? tx.stagePuppyLabel : (stage === 'senior' ? tx.stageSeniorLabel : tx.stageAdultLabel);
     }
     const cardDiet = document.getElementById('card-dog-diet');
     if (cardDiet) cardDiet.textContent = getDietDisplayName(profile.currentDiet || profile.dietPreference, lang);
@@ -1816,12 +2034,13 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const allergyBanner = document.getElementById('card-allergy-banner');
     const noAllergyBanner = document.getElementById('card-no-allergy-banner');
     const allergiesList = document.getElementById('card-allergies-list');
-    const cleanAllergies = (profile.allergies || []).filter((a: string) => a !== 'none / no allergies');
+    const cleanAllergies = (profile.allergies || []).filter((a: string) => a !== 'none / no allergies' && a !== 'none');
 
     if (cleanAllergies.length > 0) {
       allergyBanner?.classList.remove('hidden');
       noAllergyBanner?.classList.add('hidden');
-      if (allergiesList) allergiesList.textContent = `Strictly Avoid: ${cleanAllergies.join(', ')}`;
+      const translatedAllergies = cleanAllergies.map((a: string) => getAllergyLabel(a, lang));
+      if (allergiesList) allergiesList.textContent = `${tx.strictlyAvoidPrefix} ${translatedAllergies.join(', ')}`;
     } else {
       allergyBanner?.classList.add('hidden');
       noAllergyBanner?.classList.remove('hidden');
@@ -1835,14 +2054,17 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     }
 
 
+    const userAllergies = profile.allergies || [];
+    const safeCatalog = getAvailableIngredients(profile);
+
     // Initialize custom bowl items if not restored from session
     if (!sessionStorage.getItem(RESULTS_STATE_KEY)) {
       const weightLbs = profile.weightLbs || 45;
       const stage = profile.ageStage || 'adult';
       const goal = profile.targetGoal || 'maintain';
 
-      // AM default: Salmon Oil
-      const salmonItem = INGREDIENTS_CATALOG.find(i => i.id === 'salmon-oil');
+      // AM default: Salmon Oil if safe, else Pumpkin Puree or first safe item
+      const salmonItem = safeCatalog.find(i => i.id === 'salmon-oil') || safeCatalog.find(i => i.id === 'pumpkin') || safeCatalog[0];
       const salmonDose = salmonItem ? salmonItem.calculateDose(weightLbs, stage, goal) : '1 tsp';
       const salmonKcal = salmonItem ? salmonItem.calculateKcal(weightLbs, stage, goal) : 40;
       amCustomItems = salmonItem ? [{
@@ -1857,9 +2079,9 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         url: salmonItem.affiliateUrl,
       }] : [];
 
-      // PM default: Pumpkin Puree (or Joint Chew for senior)
+      // PM default: Pumpkin Puree (or Joint Chew for senior) if safe
       const pmTargetId = stage === 'senior' ? 'joint-chew' : 'pumpkin';
-      const pmItem = INGREDIENTS_CATALOG.find(i => i.id === pmTargetId);
+      const pmItem = safeCatalog.find(i => i.id === pmTargetId) || safeCatalog.find(i => i.id === 'pumpkin') || safeCatalog[0];
       const pmDose = pmItem ? pmItem.calculateDose(weightLbs, stage, goal) : '1 tbsp';
       const pmKcal = pmItem ? pmItem.calculateKcal(weightLbs, stage, goal) : 8;
       pmCustomItems = pmItem ? [{
@@ -1877,6 +2099,16 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       pmIncludeBase = true;
       amCustomCups = null;
       pmCustomCups = null;
+    } else {
+      // Purge any restored items conflicting with current profile allergies
+      amCustomItems = amCustomItems.filter(it => {
+        const cat = INGREDIENTS_CATALOG.find(c => c.id === it.id);
+        return !cat || !isItemAllergenic(cat, userAllergies);
+      });
+      pmCustomItems = pmCustomItems.filter(it => {
+        const cat = INGREDIENTS_CATALOG.find(c => c.id === it.id);
+        return !cat || !isItemAllergenic(cat, userAllergies);
+      });
     }
 
     // Render bowls & initial '+' buttons
@@ -1917,6 +2149,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         });
       };
 
+      const currentLang = getCurrentLang();
       if (Array.isArray(state.amCustomItems)) {
         amCustomItems = state.amCustomItems.map((it: any) => {
           const cat = INGREDIENTS_CATALOG.find(c => c.id === it.id);
@@ -1925,7 +2158,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           const baseDose = cleanLegacyDose(rawBaseDose);
           const qty = typeof it.qty === 'number' ? it.qty : 1;
           const kcal = typeof it.kcal === 'number' ? it.kcal : Math.round(baseKcal * qty);
-          const dose = cleanLegacyDose(it.dose) || formatDoseString(baseDose, qty);
+          const dose = cleanLegacyDose(it.dose) || formatDoseString(baseDose, qty, currentLang);
           return { ...it, baseKcal, baseDose, qty, kcal, dose };
         });
       }
@@ -1937,7 +2170,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           const baseDose = cleanLegacyDose(rawBaseDose);
           const qty = typeof it.qty === 'number' ? it.qty : 1;
           const kcal = typeof it.kcal === 'number' ? it.kcal : Math.round(baseKcal * qty);
-          const dose = cleanLegacyDose(it.dose) || formatDoseString(baseDose, qty);
+          const dose = cleanLegacyDose(it.dose) || formatDoseString(baseDose, qty, currentLang);
           return { ...it, baseKcal, baseDose, qty, kcal, dose };
         });
       }

@@ -142,24 +142,24 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                     <input type="radio" name="age-stage" value="puppy" class="peer sr-only" />
                     <div class="p-2 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex flex-col items-center justify-center gap-0.5">
                       <div class="text-base">🍼</div>
-                      <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">Puppy</div>
-                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">Growth</div>
+                      <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{px.stagePuppyLabel}</div>
+                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">{px.stagePuppySub}</div>
                     </div>
                   </label>
                   <label class="cursor-pointer">
                     <input type="radio" name="age-stage" value="adult" checked class="peer sr-only" />
                     <div class="p-2 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex flex-col items-center justify-center gap-0.5">
                       <div class="text-base">🦮</div>
-                      <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{p.adult}</div>
-                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">1–7 yrs</div>
+                      <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{px.stageAdultLabel}</div>
+                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">{px.stageAdultSub}</div>
                     </div>
                   </label>
                   <label class="cursor-pointer">
                     <input type="radio" name="age-stage" value="senior" class="peer sr-only" />
                     <div class="p-2 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex flex-col items-center justify-center gap-0.5">
                       <div class="text-base">🐾</div>
-                      <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{p.senior}</div>
-                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">7+ yrs</div>
+                      <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{px.stageSeniorLabel}</div>
+                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">{px.stageSeniorSub}</div>
                     </div>
                   </label>
                 </div>
@@ -190,7 +190,7 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                   <div class="p-2.5 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex flex-col items-center justify-center gap-0.5">
                     <div class="text-base">⚖️</div>
                     <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{p.goalMaintain}</div>
-                    <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">Stable</div>
+                    <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">{p.goalMaintainSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
@@ -198,7 +198,7 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                   <div class="p-2.5 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex flex-col items-center justify-center gap-0.5">
                     <div class="text-base">📉</div>
                     <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{p.goalLose}</div>
-                    <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">-15% Calorie Deficit</div>
+                    <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">{p.goalLoseSub}</div>
                   </div>
                 </label>
                 <label class="cursor-pointer">
@@ -206,7 +206,7 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                   <div class="p-2.5 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] flex flex-col items-center justify-center gap-0.5">
                     <div class="text-base">💪</div>
                     <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8]">{p.goalGain}</div>
-                    <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">+10% Calorie Surplus</div>
+                    <div class="text-[9px] text-[#92400e] dark:text-[#c4956a]">{p.goalGainSub}</div>
                   </div>
                 </label>
               </div>
@@ -219,20 +219,20 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
         <div class="quiz-step hidden" data-step="2">
           <div class="flex flex-col gap-3 sm:gap-3.5">
 
-            <!-- Primary Food Type (Compact Element with Hover Flyout to Right on PC, Dropdown on Mobile) -->
+            <!-- Primary Food Type (Direct Options on PC, Dropdown on Mobile) -->
             <fieldset class="border-0 p-0 m-0 min-w-0" id="diet-dropdown-group">
               <legend class="block w-full text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2.5 font-mono leading-none">
                 {px.currentDietLabel}
               </legend>
               <div class="quiz-dropdown-wrapper relative flex flex-col sm:flex-row sm:items-center gap-2.5" id="diet-wrapper">
-                <!-- Active Selected Display Card (Current Element Size) -->
+                <!-- Active Selected Display Card (Mobile only) -->
                 <div
                   id="diet-active-card"
                   tabindex="0"
                   role="button"
                   aria-haspopup="listbox"
                   aria-expanded="false"
-                  class="cursor-pointer relative p-2.5 h-[56px] border-2 border-[#c47a2b] bg-[#c47a2b]/8 rounded-xl flex items-center justify-between gap-3 w-full sm:w-[220px] transition-all shadow-xs select-none focus:outline-none focus:ring-2 focus:ring-[#c47a2b]/30 shrink-0"
+                  class="cursor-pointer relative p-2.5 h-[56px] border-2 border-[#c47a2b] bg-[#c47a2b]/8 rounded-xl flex sm:hidden items-center justify-between gap-3 w-full sm:w-[220px] transition-all shadow-xs select-none focus:outline-none focus:ring-2 focus:ring-[#c47a2b]/30 shrink-0"
                 >
                   <div class="flex items-center gap-2.5 min-w-0">
                     <span id="diet-active-emoji" class="text-xl shrink-0">🍲</span>
@@ -260,11 +260,11 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                   </button>
                 </div>
 
-                <!-- Dropdown Flyout to the Right on PC, or Dropdown Grid on Mobile -->
+                <!-- Direct Options on PC, Dropdown Grid on Mobile -->
                 <div
                   id="diet-options-list"
                   role="listbox"
-                  class="quiz-options-flyout hidden sm:flex sm:opacity-0 sm:pointer-events-none sm:transition-all sm:duration-200 sm:items-center gap-2 flex-wrap sm:flex-nowrap z-20 bg-white/95 dark:bg-[#1c1208]/95 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-xl sm:rounded-none border border-[#f0d5a8] dark:border-[#3a2510] sm:border-0 shadow-lg sm:shadow-none"
+                  class="quiz-options-flyout hidden sm:flex items-center gap-2 flex-wrap z-20 bg-white/95 dark:bg-[#1c1208]/95 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-xl sm:rounded-none border border-[#f0d5a8] dark:border-[#3a2510] sm:border-0 shadow-lg sm:shadow-none"
                 >
                   {[
                     { value: 'fresh',  label: px.dietFresh,  sub: px.dietFreshSub,  emoji: '🍲', checked: true },
@@ -285,20 +285,20 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
               </div>
             </fieldset>
 
-            <!-- Preferred Protein Source (Compact Element with Hover Flyout to Right on PC, Dropdown on Mobile) -->
+            <!-- Preferred Protein Source (Direct Options on PC, Dropdown on Mobile) -->
             <fieldset class="border-0 p-0 m-0 min-w-0" id="protein-dropdown-group">
               <legend class="block w-full text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2.5 font-mono leading-none">
                 {p.proteinLabel}
               </legend>
               <div class="quiz-dropdown-wrapper relative flex flex-col sm:flex-row sm:items-center gap-2.5" id="protein-wrapper">
-                <!-- Active Selected Display Card (Current Element Size) -->
+                <!-- Active Selected Display Card (Mobile only) -->
                 <div
                   id="protein-active-card"
                   tabindex="0"
                   role="button"
                   aria-haspopup="listbox"
                   aria-expanded="false"
-                  class="cursor-pointer relative p-2.5 h-[56px] border-2 border-[#c47a2b] bg-[#c47a2b]/8 rounded-xl flex items-center justify-between gap-3 w-full sm:w-[220px] transition-all shadow-xs select-none focus:outline-none focus:ring-2 focus:ring-[#c47a2b]/30 shrink-0"
+                  class="cursor-pointer relative p-2.5 h-[56px] border-2 border-[#c47a2b] bg-[#c47a2b]/8 rounded-xl flex sm:hidden items-center justify-between gap-3 w-full sm:w-[220px] transition-all shadow-xs select-none focus:outline-none focus:ring-2 focus:ring-[#c47a2b]/30 shrink-0"
                 >
                   <div class="flex items-center gap-2.5 min-w-0">
                     <span id="protein-active-emoji" class="text-xl shrink-0">🐟</span>
@@ -307,7 +307,7 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                         {p.proteinSalmon}
                       </div>
                       <div class="text-[9px] text-[#92400e] dark:text-[#c4956a] truncate">
-                        Selected Protein
+                        {px.selectedProteinLabel}
                       </div>
                     </div>
                   </div>
@@ -326,11 +326,11 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                   </button>
                 </div>
 
-                <!-- Dropdown Flyout to the Right on PC, or Dropdown Grid on Mobile -->
+                <!-- Direct Options on PC, Dropdown Grid on Mobile -->
                 <div
                   id="protein-options-list"
                   role="listbox"
-                  class="quiz-options-flyout hidden sm:flex sm:opacity-0 sm:pointer-events-none sm:transition-all sm:duration-200 sm:items-center gap-1.5 flex-wrap sm:flex-nowrap z-20 bg-white/95 dark:bg-[#1c1208]/95 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-xl sm:rounded-none border border-[#f0d5a8] dark:border-[#3a2510] sm:border-0 shadow-lg sm:shadow-none"
+                  class="quiz-options-flyout hidden sm:flex items-center gap-1.5 flex-wrap z-20 bg-white/95 dark:bg-[#1c1208]/95 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-xl sm:rounded-none border border-[#f0d5a8] dark:border-[#3a2510] sm:border-0 shadow-lg sm:shadow-none"
                 >
                   {[
                     { value: 'salmon',  label: p.proteinSalmon,   emoji: '🐟', checked: true },
@@ -353,20 +353,20 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
               </div>
             </fieldset>
 
-            <!-- Exclude Food Allergens & Sensitivities Dropdown -->
+            <!-- Exclude Food Allergens & Sensitivities (Direct Options on PC, Dropdown on Mobile) -->
             <fieldset class="border-0 p-0 m-0 min-w-0" id="allergy-dropdown-group">
               <legend class="block w-full text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2.5 font-mono leading-none">
                 {p.allergiesLabel}
               </legend>
               <div class="quiz-dropdown-wrapper relative flex flex-col sm:flex-row sm:items-center gap-2.5" id="allergy-wrapper">
-                <!-- Active Selected Display Card (Current Element Size) -->
+                <!-- Active Selected Display Card (Mobile only) -->
                 <div
                   id="allergy-active-card"
                   tabindex="0"
                   role="button"
                   aria-haspopup="listbox"
                   aria-expanded="false"
-                  class="cursor-pointer relative p-2.5 h-[56px] border-2 border-[#22c55e] bg-[#22c55e]/8 rounded-xl flex items-center justify-between gap-3 w-full sm:w-[220px] transition-all shadow-xs select-none focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30 shrink-0"
+                  class="cursor-pointer relative p-2.5 h-[56px] border-2 border-[#22c55e] bg-[#22c55e]/8 rounded-xl flex sm:hidden items-center justify-between gap-3 w-full sm:w-[220px] transition-all shadow-xs select-none focus:outline-none focus:ring-2 focus:ring-[#22c55e]/30 shrink-0"
                 >
                   <div class="flex items-center gap-2.5 min-w-0">
                     <span id="allergy-active-emoji" class="text-xl shrink-0">✅</span>
@@ -375,7 +375,7 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                         {p.allergyNone}
                       </div>
                       <div id="allergy-active-sub" class="text-[9px] text-[#22c55e] dark:text-[#4ade80] font-medium truncate">
-                        Safe • No Exclusions
+                        {px.safeNoExclusionsLabel}
                       </div>
                     </div>
                   </div>
@@ -394,11 +394,11 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                   </button>
                 </div>
 
-                <!-- Dropdown Flyout to the Right on PC, or Dropdown Grid on Mobile -->
+                <!-- Direct Options on PC, Dropdown Grid on Mobile -->
                 <div
                   id="allergy-options-list"
                   role="group"
-                  class="quiz-options-flyout hidden sm:flex sm:opacity-0 sm:pointer-events-none sm:transition-all sm:duration-200 sm:items-center gap-1.5 flex-wrap sm:flex-nowrap z-20 bg-white/95 dark:bg-[#1c1208]/95 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-xl sm:rounded-none border border-[#f0d5a8] dark:border-[#3a2510] sm:border-0 shadow-lg sm:shadow-none"
+                  class="quiz-options-flyout hidden sm:flex items-center gap-1.5 flex-wrap z-20 bg-white/95 dark:bg-[#1c1208]/95 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-xl sm:rounded-none border border-[#f0d5a8] dark:border-[#3a2510] sm:border-0 shadow-lg sm:shadow-none"
                 >
                   <!-- None Chip -->
                   <label id="allergy-none-label" class="cursor-pointer relative flex-1 sm:flex-initial">
@@ -432,20 +432,20 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
               </div>
             </fieldset>
 
-            <!-- Daily Medication With Meals (Compact Element with Hover Flyout to Right on PC, Dropdown on Mobile) -->
+            <!-- Daily Medication With Meals (Direct Options on PC, Dropdown on Mobile) -->
             <fieldset class="border-0 p-0 m-0 min-w-0" id="meds-dropdown-group">
               <legend class="block w-full text-xs font-semibold text-[#92400e] dark:text-[#c4956a] uppercase tracking-wider mb-2.5 font-mono leading-none">
                 {px.medsLabel}
               </legend>
               <div class="quiz-dropdown-wrapper relative flex flex-col sm:flex-row sm:items-center gap-2.5" id="meds-wrapper">
-                <!-- Active Selected Display Card (Current Element Size) -->
+                <!-- Active Selected Display Card (Mobile only) -->
                 <div
                   id="meds-active-card"
                   tabindex="0"
                   role="button"
                   aria-haspopup="listbox"
                   aria-expanded="false"
-                  class="cursor-pointer relative p-2.5 h-[56px] border-2 border-[#c47a2b] bg-[#c47a2b]/8 rounded-xl flex items-center justify-between gap-3 w-full sm:w-[220px] transition-all shadow-xs select-none focus:outline-none focus:ring-2 focus:ring-[#c47a2b]/30 shrink-0"
+                  class="cursor-pointer relative p-2.5 h-[56px] border-2 border-[#c47a2b] bg-[#c47a2b]/8 rounded-xl flex sm:hidden items-center justify-between gap-3 w-full sm:w-[220px] transition-all shadow-xs select-none focus:outline-none focus:ring-2 focus:ring-[#c47a2b]/30 shrink-0"
                 >
                   <div class="flex items-center gap-2.5 min-w-0">
                     <span id="meds-active-emoji" class="text-xl shrink-0">❌</span>
@@ -454,7 +454,7 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                         {px.medsNone}
                       </div>
                       <div id="meds-active-sub" class="text-[9px] text-[#92400e] dark:text-[#c4956a] truncate">
-                        Standard Feeding
+                        {px.standardFeedingLabel}
                       </div>
                     </div>
                   </div>
@@ -473,18 +473,18 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                   </button>
                 </div>
 
-                <!-- Dropdown Flyout to the Right on PC, or Dropdown Grid on Mobile -->
+                <!-- Direct Options on PC, Dropdown Grid on Mobile -->
                 <div
                   id="meds-options-list"
                   role="listbox"
-                  class="quiz-options-flyout hidden sm:flex sm:opacity-0 sm:pointer-events-none sm:transition-all sm:duration-200 sm:items-center gap-2 flex-wrap sm:flex-nowrap z-20 bg-white/95 dark:bg-[#1c1208]/95 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-xl sm:rounded-none border border-[#f0d5a8] dark:border-[#3a2510] sm:border-0 shadow-lg sm:shadow-none"
+                  class="quiz-options-flyout hidden sm:flex items-center gap-2 flex-wrap z-20 bg-white/95 dark:bg-[#1c1208]/95 sm:bg-transparent sm:dark:bg-transparent p-2 sm:p-0 rounded-xl sm:rounded-none border border-[#f0d5a8] dark:border-[#3a2510] sm:border-0 shadow-lg sm:shadow-none"
                 >
                   <label class="meds-option cursor-pointer flex-1 sm:flex-initial">
                     <input type="radio" name="daily-meds" value="none" checked class="peer sr-only" />
                     <div class="p-2 sm:p-2.5 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] hover:border-[#c47a2b]/60 flex flex-col items-center justify-center gap-0.5 min-w-[95px] sm:min-w-[115px]">
                       <div class="text-base sm:text-lg">❌</div>
                       <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8] truncate w-full">{px.medsNone}</div>
-                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a] truncate w-full">No Medication</div>
+                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a] truncate w-full">{px.noMedicationLabel}</div>
                     </div>
                   </label>
                   <label class="meds-option cursor-pointer flex-1 sm:flex-initial">
@@ -492,7 +492,7 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
                     <div class="p-2 sm:p-2.5 border-2 border-[#f0d5a8] dark:border-[#3a2510] rounded-xl text-center peer-checked:border-[#c47a2b] peer-checked:bg-[#c47a2b]/8 transition-all bg-white dark:bg-[#1c1208] hover:border-[#c47a2b]/60 flex flex-col items-center justify-center gap-0.5 min-w-[95px] sm:min-w-[115px]">
                       <div class="text-base sm:text-lg">💊</div>
                       <div class="font-semibold text-xs text-[#1c0f00] dark:text-[#fde8c8] truncate w-full">{px.medsYes}</div>
-                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a] truncate w-full">Takes With Meals</div>
+                      <div class="text-[9px] text-[#92400e] dark:text-[#c4956a] truncate w-full">{px.takesWithMealsLabel}</div>
                     </div>
                   </label>
                 </div>
@@ -717,7 +717,7 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
 
   // Allergy blocking
   const ALLERGEN_PROTEIN_MAP: Record<string, string[]> = {
-    'chicken / poultry': ['chicken'],
+    'chicken / poultry': ['chicken', 'turkey'],
     'beef':              ['beef'],
     'dairy':             [],
     'grains / wheat':    [],
@@ -750,8 +750,13 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
           if (safeRadio && !safeRadio.disabled) {
             safeRadio.checked = true;
           } else {
-            const autoRadio = document.querySelector<HTMLInputElement>('input[name="protein"][value="auto"]');
-            if (autoRadio) autoRadio.checked = true;
+            const lambRadio = document.querySelector<HTMLInputElement>('input[name="protein"][value="lamb"]');
+            if (lambRadio && !lambRadio.disabled) {
+              lambRadio.checked = true;
+            } else {
+              const autoRadio = document.querySelector<HTMLInputElement>('input[name="protein"][value="auto"]');
+              if (autoRadio) autoRadio.checked = true;
+            }
           }
         }
         card.classList.add('opacity-40', 'cursor-not-allowed', 'pointer-events-none');
@@ -868,13 +873,14 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
 
     if (currentFilteredBreeds.length === 0) {
       const section = document.getElementById('planner-section');
-      const curLang = section?.dataset.lang || 'en';
+      const curLang = (section?.dataset.lang || 'en') as Lang;
       const noMatchesMsg = noMatchesLabels[curLang] || noMatchesLabels.en;
+      const px = getExtraTranslations();
 
       breedDropdownList.innerHTML = `
         <div class="px-4 py-4 text-center">
           <p class="text-xs text-[#92400e] dark:text-[#c4956a] font-medium">${escapeHtml(noMatchesMsg)}</p>
-          <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mt-1">Try a different search term or select an Unknown / Mixed size tier.</p>
+          <p class="text-[11px] text-[#92400e]/70 dark:text-[#c4956a]/70 mt-1">${escapeHtml(px.tryDifferentSearchLabel)}</p>
         </div>
       `;
       return;
@@ -1294,13 +1300,14 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
 
   function syncAllergyActiveCard() {
     const p = getTranslations();
+    const px = getExtraTranslations();
     const checkedChips = Array.from(allergyChips).filter(cb => cb.checked);
 
     if (noneBox?.checked || checkedChips.length === 0) {
       if (allergyActiveEmoji) allergyActiveEmoji.textContent = '✅';
       if (allergyActiveTitle) allergyActiveTitle.textContent = p.allergyNone || 'None / No Allergies';
       if (allergyActiveSub) {
-        allergyActiveSub.textContent = 'Safe • No Exclusions';
+        allergyActiveSub.textContent = px.safeNoExclusionsLabel;
         allergyActiveSub.className = 'text-[9px] text-[#22c55e] dark:text-[#4ade80] font-medium truncate';
       }
       if (allergyActiveCard) {
@@ -1312,7 +1319,8 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
         return item?.querySelector('span.font-semibold')?.textContent?.trim() || cb.value;
       });
       if (allergyActiveEmoji) allergyActiveEmoji.textContent = '⚠️';
-      if (allergyActiveTitle) allergyActiveTitle.textContent = `${checkedChips.length} Excluded`;
+      const excludedText = (px.nExcludedLabel || '{n} Excluded').replace('{n}', String(checkedChips.length));
+      if (allergyActiveTitle) allergyActiveTitle.textContent = excludedText;
       if (allergyActiveSub) {
         allergyActiveSub.textContent = labels.join(', ');
         allergyActiveSub.className = 'text-[9px] text-[#ef4444] dark:text-[#f87171] font-semibold truncate';
@@ -1330,11 +1338,11 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
     if (val === 'yes') {
       if (medsActiveEmoji) medsActiveEmoji.textContent = '💊';
       if (medsActiveTitle) medsActiveTitle.textContent = px.medsYes || 'Takes Daily Meds';
-      if (medsActiveSub) medsActiveSub.textContent = 'Takes With Meals';
+      if (medsActiveSub) medsActiveSub.textContent = px.takesWithMealsLabel;
     } else {
       if (medsActiveEmoji) medsActiveEmoji.textContent = '❌';
       if (medsActiveTitle) medsActiveTitle.textContent = px.medsNone || 'No Daily Meds';
-      if (medsActiveSub) medsActiveSub.textContent = 'Standard Feeding';
+      if (medsActiveSub) medsActiveSub.textContent = px.standardFeedingLabel;
     }
   }
 
@@ -1476,29 +1484,33 @@ const breedSearchPlaceholder = breedSearchPlaceholders[lang] || breedSearchPlace
     background-color: rgba(196, 122, 43, 0.08) !important;
   }
 
-  /* PC (Desktop): Hover reveals the options smoothly to the right side */
+  /* Diet and Meds options: Amber border on hover */
+  .diet-option:hover > div,
+  .meds-option:hover > div {
+    border-color: #c47a2b !important;
+  }
+
+  /* PC (Desktop): Show options directly in current space, no dropdown type flyout */
   @media (min-width: 640px) {
-    .quiz-dropdown-wrapper .quiz-options-flyout {
-      position: absolute !important;
-      left: 228px !important;
-      top: 50% !important;
-      transform: translateY(-50%) translateX(4px) !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      transition: all 0.2s ease-out !important;
-      display: flex !important;
-      z-index: 30 !important;
-      white-space: nowrap !important;
+    #diet-active-card,
+    #protein-active-card,
+    #allergy-active-card,
+    #meds-active-card {
+      display: none !important;
     }
-    .quiz-dropdown-wrapper:hover .quiz-options-flyout,
-    .quiz-dropdown-wrapper.is-open .quiz-options-flyout {
+    .quiz-dropdown-wrapper .quiz-options-flyout {
+      position: static !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
       opacity: 1 !important;
       pointer-events: auto !important;
-      transform: translateY(-50%) translateX(0) !important;
-    }
-    .quiz-dropdown-wrapper:hover .dropdown-chevron,
-    .quiz-dropdown-wrapper.is-open .dropdown-chevron {
-      transform: rotate(90deg);
+      display: flex !important;
+      white-space: normal !important;
+      box-shadow: none !important;
+      border: none !important;
+      background: transparent !important;
+      padding: 0 !important;
     }
   }
 

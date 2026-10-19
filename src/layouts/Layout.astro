@@ -230,8 +230,8 @@ const finalDescription = formatMetaDescription(description, 160);
   <body class="bg-[#fafafa] dark:bg-[#0d0d0d] text-[#4d4d4d] dark:text-[#a1a1a1] antialiased selection:bg-[#0070f3] selection:text-white min-h-screen flex flex-col justify-between pb-[env(safe-area-inset-bottom)] overflow-x-clip">
     <slot />
     <script is:inline>
-      // ── Site-wide: "Plan Bowl" / #planner-section link handler ──────────────
-      // Works from ANY page on the site.
+      // ── Site-wide: "Plan Bowl" link handler & clean URL maintenance ─────────
+      // Smoothly scrolls to planner/results without polluting URL with '#planner-section'
       (function () {
         var NAV_FLAG = 'dfp-navigate-to-planner';
 
@@ -239,34 +239,60 @@ const finalDescription = formatMetaDescription(description, 160);
           var link = e.target && e.target.closest('a[href*="#planner-section"]');
           if (!link) return;
 
-          var href = link.getAttribute('href') || '';
-          var plannerSection  = document.getElementById('planner-section');
-          var resultsSection  = document.getElementById('results-section');
+          var plannerSection = document.getElementById('planner-section');
+          var resultsSection = document.getElementById('results-section');
 
           // ── Case 1: We're already on the home page (planner exists in DOM) ──
           if (plannerSection) {
-            // Results are showing — scroll to them instead of resetting
-            if (resultsSection && !resultsSection.classList.contains('hidden')) {
-              e.preventDefault();
-              resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            e.preventDefault();
+            var target = (resultsSection && !resultsSection.classList.contains('hidden'))
+              ? resultsSection
+              : plannerSection;
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Ensure address bar stays clean as '/'
+            if (window.location.hash) {
+              try {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+              } catch (_) {}
             }
-            // Planner already visible — let the default anchor scroll happen
             return;
           }
 
           // ── Case 2: We're on a different page ──
-          // If the user already has results saved, navigate home and let the
-          // results restore automatically (don't set the reset flag).
-          // Only set the reset flag when there are no saved results, so the
-          // planner starts fresh at step 1.
           var hasResults = false;
           try { hasResults = !!sessionStorage.getItem('dfp-results-state'); } catch (_) {}
 
           if (!hasResults) {
             try { sessionStorage.setItem(NAV_FLAG, '1'); } catch (_) {}
           }
-          // Let the browser navigate normally (href="/#planner-section")
+          // Let the browser navigate to the homepage; on-load handler below will clean the hash
         });
+
+        // ── Clean any "#planner-section" hash from the URL bar on page load ───
+        function cleanPlannerHashOnLoad() {
+          if (window.location.hash === '#planner-section') {
+            setTimeout(function () {
+              var plannerSection = document.getElementById('planner-section');
+              var resultsSection = document.getElementById('results-section');
+              var target = (resultsSection && !resultsSection.classList.contains('hidden'))
+                ? resultsSection
+                : plannerSection;
+              if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+              try {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+              } catch (_) {}
+            }, 60);
+          }
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', cleanPlannerHashOnLoad);
+        } else {
+          cleanPlannerHashOnLoad();
+        }
       })();
     </script>
 
