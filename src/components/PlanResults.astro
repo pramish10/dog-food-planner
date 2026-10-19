@@ -73,11 +73,6 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           <div id="am-add-container" class="mt-2 no-print">
             <!-- Populated by JS -->
           </div>
-
-          <!-- Calories bar container (AM) -->
-          <div id="am-calories-widget" class="mt-3 pt-2.5 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70">
-            <!-- Populated by JS -->
-          </div>
         </div>
 
         <!-- Evening Bowl -->
@@ -95,11 +90,6 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
           <!-- Add Ingredient Interactive Row (PM) - sits immediately below previous ingredient -->
           <div id="pm-add-container" class="mt-2 no-print">
-            <!-- Populated by JS -->
-          </div>
-
-          <!-- Calories bar container (PM) -->
-          <div id="pm-calories-widget" class="mt-3 pt-2.5 border-t border-[#f0d5a8]/70 dark:border-[#3a2510]/70">
             <!-- Populated by JS -->
           </div>
         </div>
@@ -262,7 +252,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🐟',
       name: 'Salmon Oil',
       affiliateUrl: 'https://link.amazon/B02zrZWPG',
-      calculateDose: (w) => (w < 25 ? '1/2 pump (1/2 tsp)' : w > 60 ? '2 pumps (2 tsp)' : '1 pump (1 tsp)'),
+      calculateDose: (w) => (w < 25 ? '1/2 tsp' : w > 60 ? '2 tsp' : '1 tsp'),
       calculateKcal: (w) => (w < 25 ? 20 : w > 60 ? 80 : 40),
     },
     {
@@ -598,7 +588,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       icon: '🦐',
       name: 'Antarctic Wild Krill Oil',
       affiliateUrl: 'https://www.amazon.com/s?k=antarctic+krill+oil+pump+dogs&tag=dogfoodplanner-20',
-      calculateDose: (w) => (w < 25 ? '1/2 pump' : w > 60 ? '2 pumps' : '1 pump'),
+      calculateDose: (w) => (w < 25 ? '1/2 tsp' : w > 60 ? '2 tsp' : '1 tsp'),
       calculateKcal: (w) => (w < 25 ? 15 : w > 60 ? 60 : 30),
     },
     {
@@ -734,18 +724,12 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
   function formatDoseString(baseDose: string, qty: number): string {
     if (!baseDose) return `${qty}x`;
-    // Check for pump with optional tsp note, e.g. "1 pump (1 tsp)" or "2 pumps (2 tsp)"
-    const pumpMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*pump[s]?\s*(?:\((?:(\d+\/\d+|[0-9]+(?:\.[0-9]+)?))\s*tsp\))?/i);
+    // Clean out any legacy pump notation to pure tsp
+    const pumpMatch = baseDose.match(/^(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*pump[s]?(?:\s*\((?:(\d+\/\d+|[0-9]+(?:\.[0-9]+)?))\s*tsp\))?/i);
     if (pumpMatch) {
-      const basePumps = parseFractionOrDecimal(pumpMatch[1]);
-      const currentPumps = Math.max(0.25, Math.round(basePumps * qty * 100) / 100);
-      const pumpStr = `${formatFraction(currentPumps)} ${currentPumps <= 1 ? 'pump' : 'pumps'}`;
-      if (pumpMatch[2]) {
-        const baseTsp = parseFractionOrDecimal(pumpMatch[2]);
-        const currentTsp = Math.max(0.25, Math.round(baseTsp * qty * 100) / 100);
-        return `${pumpStr} (${formatFraction(currentTsp)} tsp)`;
-      }
-      return pumpStr;
+      const tspVal = pumpMatch[2] ? parseFractionOrDecimal(pumpMatch[2]) : parseFractionOrDecimal(pumpMatch[1]);
+      const currentTsp = Math.max(0.125, Math.round(tspVal * qty * 100) / 100);
+      return `${formatFraction(currentTsp)} tsp`;
     }
 
     // Check for "tbsp"
@@ -1090,10 +1074,6 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
     const amList = document.getElementById('card-am-items');
     const pmList = document.getElementById('card-pm-items');
 
-    // Calculate scientifically optimized meal calorie range based on breed, age, weight, medicine, and goals
-    const targetMealKcal = defaultMealKcal;
-    const { minKcal, maxKcal } = calculateOptimizedMealCalorieRange(profile, targetMealKcal);
-
     // Calculate current total calories in AM and PM
     const amBaseKcal = amIncludeBase ? currentAmDishKcal : 0;
     const amItemsKcal = amCustomItems.reduce((acc, it) => acc + (it.kcal || 0), 0);
@@ -1120,7 +1100,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
             <span class="text-[#c47a2b] font-bold shrink-0 mt-0.5">•</span>
             <div class="leading-relaxed flex-1 min-w-0">
               <strong class="font-bold text-[#1c0f00] dark:text-[#fde8c8] font-mono">${currentCups} ${getCupUnitString(currentCups, lang)}</strong>
-              <span class="text-[#92400e]/80 dark:text-[#c4956a]/80 font-mono">(${currentGrams}${tx.gramsUnit})</span>
+              <span class="text-[#1c0f00] dark:text-[#fde8c8] font-mono">(${currentGrams}${tx.gramsUnit})</span>
               <span class="stepper-box inline-flex flex-col justify-center items-center select-none no-print border border-[#d6c4b2] dark:border-[#523920] rounded-[3px] bg-[#fbf7f2] dark:bg-[#25170b] overflow-hidden shrink-0 mx-1" style="width: 14px; height: 16px; vertical-align: middle; position: relative; top: -2px;">
                 <button
                   type="button"
@@ -1144,7 +1124,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
                   <svg class="w-2 h-1.5 pointer-events-none" viewBox="0 0 10 6" fill="currentColor"><path d="M5 5.5L0.5 0.5H9.5L5 5.5Z"/></svg>
                 </button>
               </span>
-              <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] hover:text-[#c47a2b] transition-colors cursor-pointer">
+              <a href="${recipeUrl}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-current underline-offset-2 hover:text-[#c47a2b] print:no-underline transition-colors cursor-pointer">
                 <span>${recipe.title}</span>
               </a>
               <span class="base-dish-kcal inline-block ml-1 font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60">${dishKcal} kcal</span>
@@ -1194,7 +1174,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
                   <svg class="w-2 h-1.5 pointer-events-none" viewBox="0 0 10 6" fill="currentColor"><path d="M5 5.5L0.5 0.5H9.5L5 5.5Z"/></svg>
                 </button>
               </span>
-              <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] hover:text-[#c47a2b] transition-colors cursor-pointer">
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer sponsored" class="amazon-food-link amazon-inline-link inline font-semibold text-[#1c0f00] dark:text-[#fde8c8] underline decoration-current underline-offset-2 hover:text-[#c47a2b] print:no-underline transition-colors cursor-pointer">
                 <span>${item.name}</span>
               </a>
               <span class="item-dish-kcal inline-block ml-1 font-mono text-[10px] font-bold text-[#b45309] dark:text-[#fbbf24] bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-200 dark:border-amber-800/60 shrink-0">+${item.kcal} kcal</span>
@@ -1226,28 +1206,6 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       pmList.innerHTML = getBaseItemHtml('pm', pmIncludeBase) + getCustomItemsHtml('pm', pmCustomItems, pmIncludeBase);
     }
 
-    // Helper to generate Calorie Display Widget HTML: Clean range only, no progressive meter line
-    function renderCalorieWidgetHtml(totalKcal: number): string {
-      return `
-        <div class="bg-[#fdf8f3] dark:bg-[#1a0f05]/70 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl p-2.5">
-          <!-- Total calories in that food (Centered) -->
-          <div class="px-3 py-1.5 bg-[#c47a2b]/10 dark:bg-[#c47a2b]/25 border border-[#c47a2b]/30 dark:border-[#c47a2b]/40 rounded-lg text-center shadow-xs">
-            <span class="block text-[10px] sm:text-xs font-mono uppercase font-black text-[#c47a2b] dark:text-[#f59e0b] leading-tight">
-              ${tx.totalCaloriesLabel}
-            </span>
-            <span class="text-base sm:text-lg font-mono font-black text-[#b45309] dark:text-[#fbbf24] tracking-tight">
-              <span class="bowl-total-kcal">${totalKcal}</span> <span class="text-xs font-bold">kcal</span>
-            </span>
-          </div>
-
-          <!-- Clean Range of numbers below it (No progress lines, no extra text) -->
-          <div class="mt-1.5 text-center text-xs font-mono font-bold text-[#92400e] dark:text-[#e8a44a] tracking-wide">
-            <span>${minKcal} kcal – ${maxKcal} kcal</span>
-          </div>
-        </div>
-      `;
-    }
-
     // Helper to generate Total Daily Consumed Calorie Widget HTML (Clean range based on breed, age, weight, goal & medicine)
     function renderDailyCalorieWidgetHtml(totalDailyKcal: number): string {
       return `
@@ -1272,31 +1230,8 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       `;
     }
 
-    const amWidget = document.getElementById('am-calories-widget');
-    const pmWidget = document.getElementById('pm-calories-widget');
     const dailyWidget = document.getElementById('daily-calories-widget');
-    if (amWidget) amWidget.innerHTML = renderCalorieWidgetHtml(amTotalKcal);
-    if (pmWidget) pmWidget.innerHTML = renderCalorieWidgetHtml(pmTotalKcal);
     if (dailyWidget) dailyWidget.innerHTML = renderDailyCalorieWidgetHtml(dailyTotalKcal);
-
-    // Helper to refresh total meal & daily calorie widgets dynamically
-    function refreshCalorieWidgets() {
-      const amBaseK = amIncludeBase ? Math.round(defaultMealKcal * ((amCustomCups ?? defaultMealCupsNum) / defaultMealCupsNum)) : 0;
-      const amItemsK = amCustomItems.reduce((acc, it) => acc + (it.kcal || 0), 0);
-      const pmBaseK = pmIncludeBase ? Math.round(defaultMealKcal * ((pmCustomCups ?? defaultMealCupsNum) / defaultMealCupsNum)) : 0;
-      const pmItemsK = pmCustomItems.reduce((acc, it) => acc + (it.kcal || 0), 0);
-
-      const amTot = amBaseK + amItemsK;
-      const pmTot = pmBaseK + pmItemsK;
-      const dailyTot = amTot + pmTot;
-
-      const amW = document.getElementById('am-calories-widget');
-      const pmW = document.getElementById('pm-calories-widget');
-      const dailyW = document.getElementById('daily-calories-widget');
-      if (amW) amW.innerHTML = renderCalorieWidgetHtml(amTot);
-      if (pmW) pmW.innerHTML = renderCalorieWidgetHtml(pmTot);
-      if (dailyW) dailyW.innerHTML = renderDailyCalorieWidgetHtml(dailyTot);
-    }
 
     // Attach base portion stepper handlers ([-] and [+] buttons for cups)
     document.querySelectorAll('.step-base-btn').forEach((btn) => {
@@ -1908,7 +1843,7 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
 
       // AM default: Salmon Oil
       const salmonItem = INGREDIENTS_CATALOG.find(i => i.id === 'salmon-oil');
-      const salmonDose = salmonItem ? salmonItem.calculateDose(weightLbs, stage, goal) : '1 pump (1 tsp)';
+      const salmonDose = salmonItem ? salmonItem.calculateDose(weightLbs, stage, goal) : '1 tsp';
       const salmonKcal = salmonItem ? salmonItem.calculateKcal(weightLbs, stage, goal) : 40;
       amCustomItems = salmonItem ? [{
         id: salmonItem.id,
@@ -1974,14 +1909,23 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
       const stage = currentProfile.ageStage || 'adult';
       const goal = currentProfile.targetGoal || 'maintain';
 
+      const cleanLegacyDose = (d: string) => {
+        if (!d) return d;
+        return d.replace(/(\d+\/\d+|[0-9]+(?:\.[0-9]+)?)\s*pump[s]?(?:\s*\(([^)]+)\))?/gi, (_m, pVal, inside) => {
+          if (inside && inside.toLowerCase().includes('tsp')) return inside.trim();
+          return `${pVal} tsp`;
+        });
+      };
+
       if (Array.isArray(state.amCustomItems)) {
         amCustomItems = state.amCustomItems.map((it: any) => {
           const cat = INGREDIENTS_CATALOG.find(c => c.id === it.id);
           const baseKcal = typeof it.baseKcal === 'number' ? it.baseKcal : (cat ? cat.calculateKcal(weightLbs, stage, goal) : (it.kcal || 20));
-          const baseDose = it.baseDose || it.dose || (cat ? cat.calculateDose(weightLbs, stage, goal) : '1 tsp');
+          const rawBaseDose = it.baseDose || it.dose || (cat ? cat.calculateDose(weightLbs, stage, goal) : '1 tsp');
+          const baseDose = cleanLegacyDose(rawBaseDose);
           const qty = typeof it.qty === 'number' ? it.qty : 1;
           const kcal = typeof it.kcal === 'number' ? it.kcal : Math.round(baseKcal * qty);
-          const dose = it.dose || formatDoseString(baseDose, qty);
+          const dose = cleanLegacyDose(it.dose) || formatDoseString(baseDose, qty);
           return { ...it, baseKcal, baseDose, qty, kcal, dose };
         });
       }
@@ -1989,10 +1933,11 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
         pmCustomItems = state.pmCustomItems.map((it: any) => {
           const cat = INGREDIENTS_CATALOG.find(c => c.id === it.id);
           const baseKcal = typeof it.baseKcal === 'number' ? it.baseKcal : (cat ? cat.calculateKcal(weightLbs, stage, goal) : (it.kcal || 20));
-          const baseDose = it.baseDose || it.dose || (cat ? cat.calculateDose(weightLbs, stage, goal) : '1 tsp');
+          const rawBaseDose = it.baseDose || it.dose || (cat ? cat.calculateDose(weightLbs, stage, goal) : '1 tsp');
+          const baseDose = cleanLegacyDose(rawBaseDose);
           const qty = typeof it.qty === 'number' ? it.qty : 1;
           const kcal = typeof it.kcal === 'number' ? it.kcal : Math.round(baseKcal * qty);
-          const dose = it.dose || formatDoseString(baseDose, qty);
+          const dose = cleanLegacyDose(it.dose) || formatDoseString(baseDose, qty);
           return { ...it, baseKcal, baseDose, qty, kcal, dose };
         });
       }

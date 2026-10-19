@@ -423,19 +423,25 @@ html.dark .hairline-card-active {
 
   body.printing-plan a {
     text-decoration: none !important;
+    text-decoration-line: none !important;
     color: #000000 !important;
   }
 
-  /* Interactive affiliate product links in PDF prints */
+  /* Interactive affiliate product links in PDF prints: Clickable, bold, but NO underline */
   a.amazon-food-link,
   a.amazon-inline-link,
   .amazon-food-link,
   .amazon-inline-link,
+  #fridge-planner-card a,
   body.printing-plan a.amazon-food-link,
   body.printing-plan a.amazon-inline-link,
   body.printing-plan .amazon-food-link,
-  body.printing-plan .amazon-inline-link {
+  body.printing-plan .amazon-inline-link,
+  body.printing-plan #fridge-planner-card a,
+  body.printing-plan #fridge-planner-card a * {
     text-decoration: none !important;
+    text-decoration-line: none !important;
+    border-bottom: none !important;
     font-weight: 700 !important;
     color: #000000 !important;
     cursor: pointer !important;
@@ -931,22 +937,28 @@ html.dark .prose-canine h4 {
   font-feature-settings: 'tnum';
 }
 
-/* Links & Affiliate Links (Clean text, no underline below dishes) */
+/* Links & Affiliate Links (Visible line/underline on screen for product affiliate links) */
 .amazon-inline-link,
 .amazon-food-link {
-  color: inherit !important;
-  text-decoration: none !important;
-  transition: color 0.15s ease;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-line: underline;
+  text-underline-offset: 2.5px;
+  text-decoration-thickness: 1.5px;
+  cursor: pointer;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 .amazon-inline-link:hover,
 .amazon-food-link:hover {
-  color: #c47a2b !important;
+  color: #c47a2b;
+  text-decoration-color: #c47a2b;
 }
 
 html.dark .amazon-inline-link:hover,
 html.dark .amazon-food-link:hover {
-  color: #f59e0b !important;
+  color: #f59e0b;
+  text-decoration-color: #f59e0b;
 }
 
 .prose-canine a {
