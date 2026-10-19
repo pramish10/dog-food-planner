@@ -448,6 +448,10 @@ html.dark .hairline-card-active {
     pointer-events: auto !important;
   }
 
+  body.printing-plan #card-vet-phone-wrapper {
+    display: flex !important;
+  }
+
   body.printing-plan .sitter-blank-line input,
   body.printing-plan #vet-phone-input,
   body.printing-plan #sitter-note-input,

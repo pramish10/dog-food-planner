@@ -30,8 +30,8 @@ const px = plannerExtraTranslations[lang] || plannerExtraTranslations.en;
           </div>
         </div>
 
-        <!-- Emergency Vet Phone Box -->
-        <div class="flex items-center gap-2 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl px-3 py-1.5 bg-[#fdf8f3] dark:bg-[#2a1a08] shrink-0">
+        <!-- Emergency Vet Phone Box (Hidden on screen result, visible on PDF / print) -->
+        <div id="card-vet-phone-wrapper" class="hidden print:flex items-center gap-2 border border-[#f0d5a8] dark:border-[#3a2510] rounded-xl px-3 py-1.5 bg-[#fdf8f3] dark:bg-[#2a1a08] shrink-0">
           <span class="text-sm">🏥</span>
           <div>
             <div class="text-[9px] font-mono uppercase font-bold text-[#92400e] dark:text-[#c4956a] leading-none">{px.vetPhoneLabel}</div>
