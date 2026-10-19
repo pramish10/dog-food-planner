@@ -715,11 +715,6 @@ input[type="checkbox"] {
   min-height: 16px;
 }
 
-/* Ensure has-[:checked] works for allergy checkboxes */
-label:has(input[type="checkbox"]:checked) {
-  border-color: #0070f3 !important;
-  background-color: rgba(0, 112, 243, 0.05) !important;
-}
 
 /* Better select on all platforms */
 select {
