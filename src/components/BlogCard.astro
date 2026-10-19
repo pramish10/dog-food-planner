@@ -15,7 +15,9 @@ const translatePath = useTranslatedPath(lang);
 const categoryName = BLOG_CATEGORY_TRANSLATIONS[lang]?.[post.category] || post.category;
 const uiStrings = BLOG_UI_STRINGS[lang] || BLOG_UI_STRINGS.en;
 const articleUrl = translatePath(`/blog/${post.slug}`);
+const image400 = post.image.replace(/\.(webp|jpg)$/, '-400w.webp');
 const image600 = post.image.replace(/\.(webp|jpg)$/, '-600w.webp');
+const image680 = post.image.replace(/\.(webp|jpg)$/, '-680w.webp');
 ---
 
 <article 
@@ -37,8 +39,11 @@ const image600 = post.image.replace(/\.(webp|jpg)$/, '-600w.webp');
     <!-- Photographic Preview Image (Explicit 16:9 dimensions to prevent CLS, responsive srcset) -->
     <img 
       src={post.image} 
-      srcset={`${image600} 600w, ${post.image} 1000w`}
-      sizes={featured ? "(max-width: 1024px) 100vw, 42vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"}
+      srcset={`${image400} 400w, ${image600} 600w, ${image680} 680w, ${post.image} 1000w`}
+      sizes={featured 
+        ? "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 480px" 
+        : "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(50vw - 40px), 380px"
+      }
       alt={post.imageAlt}
       width="800"
       height="450"

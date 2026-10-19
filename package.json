@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "deploy": "npm run build && npx wrangler deploy",
+    "generate:images": "node scripts/generate-blog-images.js",
     "astro": "astro"
   },
   "dependencies": {

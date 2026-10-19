@@ -46,7 +46,9 @@ const disclaimerPrefix = disclaimerMatch ? disclaimerMatch[1] : '';
 const disclaimerBody = disclaimerMatch ? disclaimerMatch[2] : uiStrings.disclaimer;
 const categoryName = BLOG_CATEGORY_TRANSLATIONS[lang]?.[post.category] || post.category;
 const relatedPosts = getLocalizedRelatedBlogPosts(post.slug, lang, 3);
+const image400 = post.image.replace(/\.(webp|jpg)$/, '-400w.webp');
 const image600 = post.image.replace(/\.(webp|jpg)$/, '-600w.webp');
+const image680 = post.image.replace(/\.(webp|jpg)$/, '-680w.webp');
 
 // Split content for inline affiliate product insertion if product exists
 const hasProduct = Boolean(post.affiliateProduct && post.affiliateProduct.url);
@@ -139,7 +141,8 @@ const schemaOrgBlogPosting = {
   canonicalUrl={canonicalUrl}
   ogImage={"https://dogfoodplanner.com" + post.image}
   preloadImage={post.image}
-  preloadImageSrcset={`${image600} 600w, ${post.image} 1000w`}
+  preloadImageSrcset={`${image400} 400w, ${image600} 600w, ${image680} 680w, ${post.image} 1000w`}
+  preloadImageSizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 90vw, 750px"
 >
   <!-- Reading Progress Bar -->
   <div id="reading-progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#c47a2b] to-[#e8a44a] z-[100] transition-all duration-75" style="width: 0%;"></div>
@@ -210,8 +213,8 @@ const schemaOrgBlogPosting = {
             <div class="relative aspect-[16/9] w-full overflow-hidden">
               <img 
                 src={post.image} 
-                srcset={`${image600} 600w, ${post.image} 1000w`}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 750px"
+                srcset={`${image400} 400w, ${image600} 600w, ${image680} 680w, ${post.image} 1000w`}
+                sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 90vw, 750px"
                 alt={post.imageAlt}
                 width="1000"
                 height="558"

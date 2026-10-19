@@ -202,10 +202,6 @@ const isHomeActive = cleanPath === '/';
 
 <script is:inline>
   function setupNavbar() {
-    // Scroll active quicknav pill into view on page load
-    const activeQuickLink = document.querySelector('.quicknav-link[aria-current="page"]');
-    activeQuickLink?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'instant' });
-
     // Theme toggle
     document.querySelectorAll('.theme-toggle').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -219,6 +215,14 @@ const isHomeActive = cleanPath === '/';
         }
       });
     });
+
+    // Scroll active quicknav pill into view without synchronous forced reflow
+    const activeQuickLink = document.querySelector('.quicknav-link[aria-current="page"]');
+    if (activeQuickLink && activeQuickLink.offsetLeft > 50) {
+      requestAnimationFrame(() => {
+        activeQuickLink.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+      });
+    }
   }
 
   setupNavbar();
